@@ -8,7 +8,7 @@ Example
 
 Simple example how to convert MARC XML to JSON.
 
-.. code-style:: python
+.. code:: python
 
     from dojson.contrib.marc21.utils import create_record, split_blob
     from dojson.contrib.marc21 import marc21
