@@ -76,6 +76,7 @@ setup(
     platforms='any',
     install_requires=[
         'esmre',
+        'lxml',
         'six',
     ],
     classifiers=[
