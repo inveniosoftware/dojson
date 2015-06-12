@@ -38,3 +38,7 @@ class Overdo(object):
                 output[name] = creator(output, key, value)
 
         return output
+
+    def missing(self, blob):
+        """Return keys with missing rules."""
+        return [key for key in blob.keys() if not len(self.index.query(key))]
