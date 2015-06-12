@@ -28,5 +28,5 @@ def for_each_value(f):
     def wrapper(self, key, values, **kwargs):
         if isinstance(values, list):
             return [f(self, key, value, **kwargs) for value in values]
-        return f(self, key, values, **kwargs)
+        return [f(self, key, values, **kwargs)]
     return wrapper
