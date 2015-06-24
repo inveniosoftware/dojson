@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+#
+# This file is part of DoJSON
+# Copyright (C) 2015 CERN.
+#
+# DoJSON is free software; you can redistribute it and/or
+# modify it under the terms of the Revised BSD License; see LICENSE
+# file for more details.
+
+from ..model import marc21
+
+@marc21.over('control_number', '^001')
+def control_number(self, key, value):
+    return value[0]
+
+@marc21.over('control_number_identifier', '^003')
+def control_number_identifier(self, key, value):
+    return value[0]
+
+@marc21.over('date_and_time_of_latest_transaction', '^005')
+def date_and_time_of_latest_transaction(self, key, value):
+    return value[0]
+
+@marc21.over('fixed_length_data_elements_additional_material_characteristics', '^006')
+def fixed_length_data_elements_additional_material_characteristics(self, key, value):
+    return value[0]
+
+@marc21.over('fixed_length_data_elements', '^008')
+def fixed_length_data_elements(self, key, value):
+    return value[0]
