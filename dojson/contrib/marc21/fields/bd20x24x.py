@@ -72,7 +72,7 @@ def translation_of_title_by_cataloging_agency(self, key, value):
     indicator_map2 = {u'0': u'No nonfiling characters'}
     return {
         'title': value.get('a'),
-        'statement_of_responsibility_': value.get('c'),
+        'statement_of_responsibility': value.get('c'),
         'remainder_of_title': value.get('b'),
         'medium': value.get('h'),
         'number_of_part_section_of_a_work': value.get('n'),
@@ -114,7 +114,7 @@ def title_statement(self, key, value):
     indicator_map2 = {u'0': u'No nonfiling characters'}
     return {
         'title': value.get('a'),
-        'statement_of_responsibility_': value.get('c'),
+        'statement_of_responsibility': value.get('c'),
         'remainder_of_title': value.get('b'),
         'bulk_dates': value.get('g'),
         'inclusive_dates': value.get('f'),

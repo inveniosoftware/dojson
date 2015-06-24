@@ -219,13 +219,13 @@ def date_time_and_place_of_an_event_note(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
-@marc21.over('summary_', '^520[.103248].')
+@marc21.over('summary', '^520[.103248].')
 @utils.for_each_value
 @utils.filter_values
-def summary_(self, key, value):
+def summary(self, key, value):
     indicator_map1 = {u'#': u'Summary', u'1': u'Review', u'0': u'Subject', u'3': u'Abstract', u'2': u'Scope and content', u'4': u'Content advice', u'8': u'No display constant generated'}
     return {
-        'summary_': value.get('a'),
+        'summary': value.get('a'),
         'assigning_source': value.get('c'),
         'expansion_of_summary_note': value.get('b'),
         'materials_specified': value.get('3'),

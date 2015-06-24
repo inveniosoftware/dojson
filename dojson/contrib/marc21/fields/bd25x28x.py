@@ -85,9 +85,9 @@ def philatelic_issue_data(self, key, value):
 def publication_distribution__imprint(self, key, value):
     indicator_map1 = {u'#': u'Not applicable/No information provided/Earliest available publisher', u'2': u'Intervening publisher', u'3': u'Current/latest publisher'}
     return {
-        'place_of_publication_distribution_': value.get('a'),
-        'date_of_publication_distribution_': value.get('c'),
-        'name_of_publisher_distributor_': value.get('b'),
+        'place_of_publication_distribution': value.get('a'),
+        'date_of_publication_distribution': value.get('c'),
+        'name_of_publisher_distributor': value.get('b'),
         'place_of_manufacture': value.get('e'),
         'date_of_manufacture': value.get('g'),
         'manufacturer': value.get('f'),
@@ -104,8 +104,8 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
         'producing_company': value.get('a'),
         'releasing_company': value.get('b'),
         'contractual_producer': value.get('e'),
-        'date_of_production_release_': value.get('d'),
-        'place_of_production_release_': value.get('f'),
+        'date_of_production_release': value.get('d'),
+        'place_of_production_release': value.get('f'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
@@ -114,8 +114,8 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
 @utils.filter_values
 def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     return {
-        'place_of_production_release_': value.get('a'),
-        'date_of_production_release_': value.get('c'),
+        'place_of_production_release': value.get('a'),
+        'date_of_production_release': value.get('c'),
         'publisher_or_trade_name': value.get('b'),
         'serial_identification': value.get('k'),
         'matrix_and_or_take_number': value.get('l'),

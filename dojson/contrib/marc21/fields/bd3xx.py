@@ -36,10 +36,10 @@ def playing_time(self, key, value):
         'linkage': value.get('6'),
     }
 
-@marc21.over('hours_', '^307[8.].')
+@marc21.over('hours', '^307[8.].')
 @utils.for_each_value
 @utils.filter_values
-def hours_(self, key, value):
+def hours(self, key, value):
     indicator_map1 = {u'8': u'No display constant generated', u'#': u'Hours'}
     return {
         'hours': value.get('a'),
