@@ -19,19 +19,29 @@ class Overdo(object):
     """Translation index."""
 
     def __init__(self):
+        self.rules = []
+        self.index = None
+
+    def build(self):
         self.index = esmre.Index()
+        for rule in self.rules:
+            self.index.enter(*rule)
 
     def over(self, name, *source_tags):
         """Register creator rule."""
         def decorator(creator):
+            self.index = None
             for field in source_tags:
-                self.index.enter(field, (name, creator))
+                self.rules.append((field, (name, creator)))
             return creator
         return decorator
 
     def do(self, blob):
         """Translate blob values and instantiate new model instance."""
         output = {}
+
+        if self.index is None:
+            self.build()
 
         for key, value in iteritems(blob):
             for name, creator in self.index.query(key):
