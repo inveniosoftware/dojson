@@ -51,4 +51,8 @@ class Overdo(object):
 
     def missing(self, blob):
         """Return keys with missing rules."""
+
+        if self.index is None:
+            self.build()
+
         return [key for key in blob.keys() if not len(self.index.query(key))]
