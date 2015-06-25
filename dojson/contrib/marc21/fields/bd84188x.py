@@ -9,7 +9,7 @@
 
 from dojson import utils
 
-from ..model import marr21
+from ..model import marc21
 
 @marc21.over('holding_institution', '^850..')
 @utils.for_each_value
