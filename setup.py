@@ -64,7 +64,7 @@ tests_require = [
 setup(
     name='DoJSON',
     version=version,
-    url='http://github.com/inveniosoftware/flask-registry/',
+    url='http://github.com/inveniosoftware/dojson/',
     license='BSD',
     author='Invenio collaboration',
     author_email='info@invenio-software.org',
