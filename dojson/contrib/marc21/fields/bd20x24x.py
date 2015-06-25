@@ -12,7 +12,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('abbreviated_title', '^210[10][0.]')
+@marc21.over('abbreviated_title', '^210[10_][0_]')
 @utils.for_each_value
 @utils.filter_values
 def abbreviated_title(self, key, value):
@@ -30,7 +30,7 @@ def abbreviated_title(self, key, value):
     }
 
 
-@marc21.over('key_title', '^222.[0]')
+@marc21.over('key_title', '^222.[0_]')
 @utils.for_each_value
 @utils.filter_values
 def key_title(self, key, value):
@@ -44,7 +44,7 @@ def key_title(self, key, value):
     }
 
 
-@marc21.over('uniform_title', '^240[10].')
+@marc21.over('uniform_title', '^240[10_].')
 @utils.filter_values
 def uniform_title(self, key, value):
     indicator_map1 = {
@@ -70,7 +70,7 @@ def uniform_title(self, key, value):
     }
 
 
-@marc21.over('translation_of_title_by_cataloging_agency', '^242[10][0]')
+@marc21.over('translation_of_title_by_cataloging_agency', '^242[10_][0_]')
 @utils.for_each_value
 @utils.filter_values
 def translation_of_title_by_cataloging_agency(self, key, value):
@@ -91,7 +91,7 @@ def translation_of_title_by_cataloging_agency(self, key, value):
     }
 
 
-@marc21.over('collective_uniform_title', '^243[10].')
+@marc21.over('collective_uniform_title', '^243[10_].')
 @utils.filter_values
 def collective_uniform_title(self, key, value):
     indicator_map1 = {
@@ -116,7 +116,7 @@ def collective_uniform_title(self, key, value):
     }
 
 
-@marc21.over('title_statement', '^245[10][0]')
+@marc21.over('title_statement', '^245[10_][0_]')
 @utils.filter_values
 def title_statement(self, key, value):
     indicator_map1 = {u'1': u'Added entry', u'0': u'No added entry'}
@@ -139,7 +139,7 @@ def title_statement(self, key, value):
     }
 
 
-@marc21.over('varying_form_of_title', '^246[1032][.103254768]')
+@marc21.over('varying_form_of_title', '^246[1032_][_103254768]')
 @utils.for_each_value
 @utils.filter_values
 def varying_form_of_title(self, key, value):
@@ -164,7 +164,7 @@ def varying_form_of_title(self, key, value):
     }
 
 
-@marc21.over('former_title', '^247[10][10]')
+@marc21.over('former_title', '^247[10_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def former_title(self, key, value):

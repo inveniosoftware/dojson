@@ -12,7 +12,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('subject_added_entry_personal_name', '^600[103][10325476]')
+@marc21.over('subject_added_entry_personal_name', '^600[103_][10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_personal_name(self, key, value):
@@ -56,7 +56,7 @@ def subject_added_entry_personal_name(self, key, value):
     }
 
 
-@marc21.over('subject_added_entry_corporate_name', '^610[102][10325476]')
+@marc21.over('subject_added_entry_corporate_name', '^610[102_][10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_corporate_name(self, key, value):
@@ -98,7 +98,7 @@ def subject_added_entry_corporate_name(self, key, value):
     }
 
 
-@marc21.over('subject_added_entry_meeting_name', '^611[102][10325476]')
+@marc21.over('subject_added_entry_meeting_name', '^611[102_][10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_meeting_name(self, key, value):
@@ -138,7 +138,7 @@ def subject_added_entry_meeting_name(self, key, value):
     }
 
 
-@marc21.over('subject_added_entry_uniform_title', '^630.[10325476]')
+@marc21.over('subject_added_entry_uniform_title', '^630.[10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_uniform_title(self, key, value):
@@ -174,7 +174,7 @@ def subject_added_entry_uniform_title(self, key, value):
     }
 
 
-@marc21.over('subject_added_entry_chronological_term', '^648[10.][10325476]')
+@marc21.over('subject_added_entry_chronological_term', '^648[10_][10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_chronological_term(self, key, value):
@@ -198,7 +198,7 @@ def subject_added_entry_chronological_term(self, key, value):
     }
 
 
-@marc21.over('subject_added_entry_topical_term', '^650[10.2][10325476]')
+@marc21.over('subject_added_entry_topical_term', '^650[10_2][10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_topical_term(self, key, value):
@@ -227,7 +227,7 @@ def subject_added_entry_topical_term(self, key, value):
     }
 
 
-@marc21.over('subject_added_entry_geographic_name', '^651.[10325476]')
+@marc21.over('subject_added_entry_geographic_name', '^651.[10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_geographic_name(self, key, value):
@@ -250,7 +250,7 @@ def subject_added_entry_geographic_name(self, key, value):
     }
 
 
-@marc21.over('index_term_uncontrolled', '^653[10.2][.1032546]')
+@marc21.over('index_term_uncontrolled', '^653[10_2][_1032546]')
 @utils.for_each_value
 @utils.filter_values
 def index_term_uncontrolled(self, key, value):
@@ -267,7 +267,7 @@ def index_term_uncontrolled(self, key, value):
     }
 
 
-@marc21.over('subject_added_entry_faceted_topical_terms', '^654[10.2].')
+@marc21.over('subject_added_entry_faceted_topical_terms', '^654[10_2].')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_faceted_topical_terms(self, key, value):
@@ -291,7 +291,7 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
     }
 
 
-@marc21.over('index_term_genre_form', '^655[0.][10325476]')
+@marc21.over('index_term_genre_form', '^655[0_][10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def index_term_genre_form(self, key, value):

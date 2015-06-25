@@ -86,7 +86,7 @@ def philatelic_issue_data(self, key, value):
     }
 
 
-@marc21.over('publication_distribution_imprint', '^260[.23].')
+@marc21.over('publication_distribution_imprint', '^260[_23].')
 @utils.for_each_value
 @utils.filter_values
 def publication_distribution_imprint(self, key, value):
@@ -144,7 +144,7 @@ def projected_publication_date(self, key, value):
     }
 
 
-@marc21.over('production_publication_distribution_manufacture_and_copyright_notice', '^264[.23][10324]')
+@marc21.over('production_publication_distribution_manufacture_and_copyright_notice', '^264[_23][10324_]')
 @utils.for_each_value
 @utils.filter_values
 def production_publication_distribution_manufacture_and_copyright_notice(self, key, value):
@@ -164,7 +164,7 @@ def production_publication_distribution_manufacture_and_copyright_notice(self, k
     }
 
 
-@marc21.over('address', '^270[1.2].')
+@marc21.over('address', '^270[1_2].')
 @utils.for_each_value
 @utils.filter_values
 def address(self, key, value):

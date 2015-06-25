@@ -12,7 +12,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('added_entry_personal_name', '^700[103][.2]')
+@marc21.over('added_entry_personal_name', '^700[103_][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_personal_name(self, key, value):
@@ -54,7 +54,7 @@ def added_entry_personal_name(self, key, value):
     }
 
 
-@marc21.over('added_entry_corporate_name', '^710[102][.2]')
+@marc21.over('added_entry_corporate_name', '^710[102_][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_corporate_name(self, key, value):
@@ -94,7 +94,7 @@ def added_entry_corporate_name(self, key, value):
     }
 
 
-@marc21.over('added_entry_meeting_name', '^711[102][.2]')
+@marc21.over('added_entry_meeting_name', '^711[102_][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_meeting_name(self, key, value):
@@ -132,7 +132,7 @@ def added_entry_meeting_name(self, key, value):
     }
 
 
-@marc21.over('added_entry_uncontrolled_name', '^720[1.2].')
+@marc21.over('added_entry_uncontrolled_name', '^720[1_2].')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uncontrolled_name(self, key, value):
@@ -148,7 +148,7 @@ def added_entry_uncontrolled_name(self, key, value):
     }
 
 
-@marc21.over('added_entry_uniform_title', '^730.[.2]')
+@marc21.over('added_entry_uniform_title', '^730.[_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uniform_title(self, key, value):
@@ -180,7 +180,7 @@ def added_entry_uniform_title(self, key, value):
     }
 
 
-@marc21.over('added_entry_uncontrolled_related_analytical_title', '^740[0][.2]')
+@marc21.over('added_entry_uncontrolled_related_analytical_title', '^740[0_][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uncontrolled_related_analytical_title(self, key, value):

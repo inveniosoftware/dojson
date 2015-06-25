@@ -22,7 +22,7 @@ def holding_institution(self, key, value):
     }
 
 
-@marc21.over('location', '^852[.103254768][10.2]')
+@marc21.over('location', '^852[_103254768][10_2]')
 @utils.for_each_value
 @utils.filter_values
 def location(self, key, value):
@@ -61,7 +61,7 @@ def location(self, key, value):
     }
 
 
-@marc21.over('electronic_location_and_access', '^856.[10.28]')
+@marc21.over('electronic_location_and_access', '^856.[10_28]')
 @utils.for_each_value
 @utils.filter_values
 def electronic_location_and_access(self, key, value):
@@ -115,7 +115,7 @@ def replacement_record_information(self, key, value):
     }
 
 
-@marc21.over('machine_generated_metadata_provenance', '^883[10.].')
+@marc21.over('machine_generated_metadata_provenance', '^883[10_].')
 @utils.for_each_value
 @utils.filter_values
 def machine_generated_metadata_provenance(self, key, value):

@@ -65,7 +65,7 @@ def bibliography_note(self, key, value):
     }
 
 
-@marc21.over('formatted_contents_note', '^505[1028][0.]')
+@marc21.over('formatted_contents_note', '^505[1028_][0_]')
 @utils.for_each_value
 @utils.filter_values
 def formatted_contents_note(self, key, value):
@@ -85,7 +85,7 @@ def formatted_contents_note(self, key, value):
     }
 
 
-@marc21.over('restrictions_on_access_note', '^506[10.].')
+@marc21.over('restrictions_on_access_note', '^506[10_].')
 @utils.for_each_value
 @utils.filter_values
 def restrictions_on_access_note(self, key, value):
@@ -130,7 +130,7 @@ def creation_production_credits_note(self, key, value):
     }
 
 
-@marc21.over('citation_references_note', '^510[10324].')
+@marc21.over('citation_references_note', '^510[10324_].')
 @utils.for_each_value
 @utils.filter_values
 def citation_references_note(self, key, value):
@@ -149,7 +149,7 @@ def citation_references_note(self, key, value):
     }
 
 
-@marc21.over('participant_or_performer_note', '^511[10].')
+@marc21.over('participant_or_performer_note', '^511[10_].')
 @utils.for_each_value
 @utils.filter_values
 def participant_or_performer_note(self, key, value):
@@ -208,7 +208,7 @@ def numbering_peculiarities_note(self, key, value):
     }
 
 
-@marc21.over('type_of_computer_file_or_data_note', '^516[8.].')
+@marc21.over('type_of_computer_file_or_data_note', '^516[8_].')
 @utils.for_each_value
 @utils.filter_values
 def type_of_computer_file_or_data_note(self, key, value):
@@ -239,7 +239,7 @@ def date_time_and_place_of_an_event_note(self, key, value):
     }
 
 
-@marc21.over('summary', '^520[.103248].')
+@marc21.over('summary', '^520[_103248].')
 @utils.for_each_value
 @utils.filter_values
 def summary(self, key, value):
@@ -258,7 +258,7 @@ def summary(self, key, value):
     }
 
 
-@marc21.over('target_audience_note', '^521[.103248].')
+@marc21.over('target_audience_note', '^521[_103248].')
 @utils.for_each_value
 @utils.filter_values
 def target_audience_note(self, key, value):
@@ -274,7 +274,7 @@ def target_audience_note(self, key, value):
     }
 
 
-@marc21.over('geographic_coverage_note', '^522[8.].')
+@marc21.over('geographic_coverage_note', '^522[8_].')
 @utils.for_each_value
 @utils.filter_values
 def geographic_coverage_note(self, key, value):
@@ -288,7 +288,7 @@ def geographic_coverage_note(self, key, value):
     }
 
 
-@marc21.over('preferred_citation_of_described_materials_note', '^524[8.].')
+@marc21.over('preferred_citation_of_described_materials_note', '^524[8_].')
 @utils.for_each_value
 @utils.filter_values
 def preferred_citation_of_described_materials_note(self, key, value):
@@ -314,7 +314,7 @@ def supplement_note(self, key, value):
     }
 
 
-@marc21.over('study_program_information_note', '^526[08].')
+@marc21.over('study_program_information_note', '^526[08_].')
 @utils.for_each_value
 @utils.filter_values
 def study_program_information_note(self, key, value):
@@ -397,7 +397,7 @@ def original_version_note(self, key, value):
     }
 
 
-@marc21.over('location_of_originals_duplicates_note', '^535[12].')
+@marc21.over('location_of_originals_duplicates_note', '^535[12_].')
 @utils.for_each_value
 @utils.filter_values
 def location_of_originals_duplicates_note(self, key, value):
@@ -466,7 +466,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
     }
 
 
-@marc21.over('immediate_source_of_acquisition_note', '^541[10.].')
+@marc21.over('immediate_source_of_acquisition_note', '^541[10_].')
 @utils.for_each_value
 @utils.filter_values
 def immediate_source_of_acquisition_note(self, key, value):
@@ -490,7 +490,7 @@ def immediate_source_of_acquisition_note(self, key, value):
     }
 
 
-@marc21.over('information_relating_to_copyright_status', '^542[10.].')
+@marc21.over('information_relating_to_copyright_status', '^542[10_].')
 @utils.for_each_value
 @utils.filter_values
 def information_relating_to_copyright_status(self, key, value):
@@ -524,7 +524,7 @@ def information_relating_to_copyright_status(self, key, value):
     }
 
 
-@marc21.over('location_of_other_archival_materials_note', '^544[10.].')
+@marc21.over('location_of_other_archival_materials_note', '^544[10_].')
 @utils.for_each_value
 @utils.filter_values
 def location_of_other_archival_materials_note(self, key, value):
@@ -544,7 +544,7 @@ def location_of_other_archival_materials_note(self, key, value):
     }
 
 
-@marc21.over('biographical_or_historical_data', '^545[10.].')
+@marc21.over('biographical_or_historical_data', '^545[10_].')
 @utils.for_each_value
 @utils.filter_values
 def biographical_or_historical_data(self, key, value):
@@ -623,7 +623,7 @@ def entity_and_attribute_information_note(self, key, value):
     }
 
 
-@marc21.over('cumulative_index_finding_aids_note', '^555[0.8].')
+@marc21.over('cumulative_index_finding_aids_note', '^555[0_8].')
 @utils.for_each_value
 @utils.filter_values
 def cumulative_index_finding_aids_note(self, key, value):
@@ -642,7 +642,7 @@ def cumulative_index_finding_aids_note(self, key, value):
     }
 
 
-@marc21.over('information_about_documentation_note', '^556[8.].')
+@marc21.over('information_about_documentation_note', '^556[8_].')
 @utils.for_each_value
 @utils.filter_values
 def information_about_documentation_note(self, key, value):
@@ -657,7 +657,7 @@ def information_about_documentation_note(self, key, value):
     }
 
 
-@marc21.over('ownership_and_custodial_history', '^561[10.].')
+@marc21.over('ownership_and_custodial_history', '^561[10_].')
 @utils.for_each_value
 @utils.filter_values
 def ownership_and_custodial_history(self, key, value):
@@ -705,7 +705,7 @@ def binding_information(self, key, value):
     }
 
 
-@marc21.over('case_file_characteristics_note', '^565[0.8].')
+@marc21.over('case_file_characteristics_note', '^565[0_8].')
 @utils.for_each_value
 @utils.filter_values
 def case_file_characteristics_note(self, key, value):
@@ -724,7 +724,7 @@ def case_file_characteristics_note(self, key, value):
     }
 
 
-@marc21.over('methodology_note', '^567[8.].')
+@marc21.over('methodology_note', '^567[8_].')
 @utils.for_each_value
 @utils.filter_values
 def methodology_note(self, key, value):
@@ -749,7 +749,7 @@ def linking_entry_complexity_note(self, key, value):
     }
 
 
-@marc21.over('publications_about_described_materials_note', '^581[8.].')
+@marc21.over('publications_about_described_materials_note', '^581[8_].')
 @utils.for_each_value
 @utils.filter_values
 def publications_about_described_materials_note(self, key, value):
@@ -765,7 +765,7 @@ def publications_about_described_materials_note(self, key, value):
     }
 
 
-@marc21.over('action_note', '^583[10.].')
+@marc21.over('action_note', '^583[10_].')
 @utils.for_each_value
 @utils.filter_values
 def action_note(self, key, value):
@@ -824,7 +824,7 @@ def exhibitions_note(self, key, value):
     }
 
 
-@marc21.over('awards_note', '^586[8.].')
+@marc21.over('awards_note', '^586[8_].')
 @utils.for_each_value
 @utils.filter_values
 def awards_note(self, key, value):

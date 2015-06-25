@@ -39,7 +39,7 @@ def playing_time(self, key, value):
     }
 
 
-@marc21.over('hours', '^307[8.].')
+@marc21.over('hours', '^307[8_].')
 @utils.for_each_value
 @utils.filter_values
 def hours(self, key, value):
@@ -144,7 +144,7 @@ def physical_medium(self, key, value):
     }
 
 
-@marc21.over('geospatial_reference_data', '^342[10][103254768]')
+@marc21.over('geospatial_reference_data', '^342[10_][103254768_]')
 @utils.for_each_value
 @utils.filter_values
 def geospatial_reference_data(self, key, value):
@@ -306,7 +306,7 @@ def digital_graphic_representation(self, key, value):
     }
 
 
-@marc21.over('security_classification_control', '^355[1032548].')
+@marc21.over('security_classification_control', '^355[1032548_].')
 @utils.for_each_value
 @utils.filter_values
 def security_classification_control(self, key, value):
@@ -341,7 +341,7 @@ def originator_dissemination_control(self, key, value):
     }
 
 
-@marc21.over('dates_of_publication_and_or_sequential_designation', '^362[10].')
+@marc21.over('dates_of_publication_and_or_sequential_designation', '^362[10_].')
 @utils.for_each_value
 @utils.filter_values
 def dates_of_publication_and_or_sequential_designation(self, key, value):
@@ -355,7 +355,7 @@ def dates_of_publication_and_or_sequential_designation(self, key, value):
     }
 
 
-@marc21.over('normalized_date_and_sequential_designation', '^363[10.][10.]')
+@marc21.over('normalized_date_and_sequential_designation', '^363[10_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def normalized_date_and_sequential_designation(self, key, value):
@@ -472,7 +472,7 @@ def other_distinguishing_characteristics_of_work_or_expression(self, key, value)
     }
 
 
-@marc21.over('medium_of_performance', '^382[10.][10.]')
+@marc21.over('medium_of_performance', '^382[10_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def medium_of_performance(self, key, value):
@@ -513,7 +513,7 @@ def numeric_designation_of_musical_work(self, key, value):
     }
 
 
-@marc21.over('key', '^384[10.].')
+@marc21.over('key', '^384[10_].')
 @utils.filter_values
 def key(self, key, value):
     indicator_map1 = {u'1': u'Transposed key ', u'0':

@@ -12,7 +12,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('series_added_entry_personal_name', '^800[103].')
+@marc21.over('series_added_entry_personal_name', '^800[103_].')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_personal_name(self, key, value):
@@ -53,7 +53,7 @@ def series_added_entry_personal_name(self, key, value):
     }
 
 
-@marc21.over('series_added_entry_corporate_name', '^810[102].')
+@marc21.over('series_added_entry_corporate_name', '^810[102_].')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_corporate_name(self, key, value):
@@ -92,7 +92,7 @@ def series_added_entry_corporate_name(self, key, value):
     }
 
 
-@marc21.over('series_added_entry_meeting_name', '^811[102].')
+@marc21.over('series_added_entry_meeting_name', '^811[102_].')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_meeting_name(self, key, value):
@@ -129,7 +129,7 @@ def series_added_entry_meeting_name(self, key, value):
     }
 
 
-@marc21.over('series_added_entry_uniform_title', '^830.[0]')
+@marc21.over('series_added_entry_uniform_title', '^830.[0_]')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_uniform_title(self, key, value):

@@ -12,7 +12,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('main_entry_personal_name', '^100[103].')
+@marc21.over('main_entry_personal_name', '^100[103_].')
 @utils.filter_values
 def main_entry_personal_name(self, key, value):
     indicator_map1 = {
@@ -41,7 +41,7 @@ def main_entry_personal_name(self, key, value):
     }
 
 
-@marc21.over('main_entry_corporate_name', '^110[102].')
+@marc21.over('main_entry_corporate_name', '^110[102_].')
 @utils.filter_values
 def main_entry_corporate_name(self, key, value):
     indicator_map1 = {u'1': u'Jurisdiction name',
@@ -68,7 +68,7 @@ def main_entry_corporate_name(self, key, value):
     }
 
 
-@marc21.over('main_entry_meeting_name', '^111[102].')
+@marc21.over('main_entry_meeting_name', '^111[102_].')
 @utils.filter_values
 def main_entry_meeting_name(self, key, value):
     indicator_map1 = {u'1': u'Jurisdiction name',

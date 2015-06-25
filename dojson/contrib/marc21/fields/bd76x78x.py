@@ -12,7 +12,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('main_series_entry', '^760[10][8.]')
+@marc21.over('main_series_entry', '^760[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def main_series_entry(self, key, value):
@@ -44,7 +44,7 @@ def main_series_entry(self, key, value):
     }
 
 
-@marc21.over('subseries_entry', '^762[10][8.]')
+@marc21.over('subseries_entry', '^762[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def subseries_entry(self, key, value):
@@ -76,7 +76,7 @@ def subseries_entry(self, key, value):
     }
 
 
-@marc21.over('original_language_entry', '^765[10][8.]')
+@marc21.over('original_language_entry', '^765[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def original_language_entry(self, key, value):
@@ -112,7 +112,7 @@ def original_language_entry(self, key, value):
     }
 
 
-@marc21.over('translation_entry', '^767[10][8.]')
+@marc21.over('translation_entry', '^767[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def translation_entry(self, key, value):
@@ -148,7 +148,7 @@ def translation_entry(self, key, value):
     }
 
 
-@marc21.over('supplement_special_issue_entry', '^770[10][8.]')
+@marc21.over('supplement_special_issue_entry', '^770[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def supplement_special_issue_entry(self, key, value):
@@ -184,7 +184,7 @@ def supplement_special_issue_entry(self, key, value):
     }
 
 
-@marc21.over('supplement_parent_entry', '^772[10][0.8]')
+@marc21.over('supplement_parent_entry', '^772[10_][0_8]')
 @utils.for_each_value
 @utils.filter_values
 def supplement_parent_entry(self, key, value):
@@ -220,7 +220,7 @@ def supplement_parent_entry(self, key, value):
     }
 
 
-@marc21.over('host_item_entry', '^773[10][8.]')
+@marc21.over('host_item_entry', '^773[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def host_item_entry(self, key, value):
@@ -257,7 +257,7 @@ def host_item_entry(self, key, value):
     }
 
 
-@marc21.over('constituent_unit_entry', '^774[10][8.]')
+@marc21.over('constituent_unit_entry', '^774[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def constituent_unit_entry(self, key, value):
@@ -293,7 +293,7 @@ def constituent_unit_entry(self, key, value):
     }
 
 
-@marc21.over('other_edition_entry', '^775[10][8.]')
+@marc21.over('other_edition_entry', '^775[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def other_edition_entry(self, key, value):
@@ -331,7 +331,7 @@ def other_edition_entry(self, key, value):
     }
 
 
-@marc21.over('additional_physical_form_entry', '^776[10][8.]')
+@marc21.over('additional_physical_form_entry', '^776[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def additional_physical_form_entry(self, key, value):
@@ -367,7 +367,7 @@ def additional_physical_form_entry(self, key, value):
     }
 
 
-@marc21.over('issued_with_entry', '^777[10][8.]')
+@marc21.over('issued_with_entry', '^777[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def issued_with_entry(self, key, value):
@@ -400,7 +400,7 @@ def issued_with_entry(self, key, value):
     }
 
 
-@marc21.over('preceding_entry', '^780[10][10325476]')
+@marc21.over('preceding_entry', '^780[10_][10325476_]')
 @utils.for_each_value
 @utils.filter_values
 def preceding_entry(self, key, value):
@@ -436,7 +436,7 @@ def preceding_entry(self, key, value):
     }
 
 
-@marc21.over('succeeding_entry', '^785[10][103254768]')
+@marc21.over('succeeding_entry', '^785[10_][103254768_]')
 @utils.for_each_value
 @utils.filter_values
 def succeeding_entry(self, key, value):
@@ -472,7 +472,7 @@ def succeeding_entry(self, key, value):
     }
 
 
-@marc21.over('data_source_entry', '^786[10][8.]')
+@marc21.over('data_source_entry', '^786[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def data_source_entry(self, key, value):
@@ -511,7 +511,7 @@ def data_source_entry(self, key, value):
     }
 
 
-@marc21.over('other_relationship_entry', '^787[10][8.]')
+@marc21.over('other_relationship_entry', '^787[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def other_relationship_entry(self, key, value):

@@ -53,7 +53,7 @@ def national_bibliography_number(self, key, value):
     }
 
 
-@marc21.over('national_bibliographic_agency_control_number', '^016[.7].')
+@marc21.over('national_bibliographic_agency_control_number', '^016[_7].')
 @utils.for_each_value
 @utils.filter_values
 def national_bibliographic_agency_control_number(self, key, value):
@@ -68,7 +68,7 @@ def national_bibliographic_agency_control_number(self, key, value):
     }
 
 
-@marc21.over('copyright_or_legal_deposit_number', '^017.[8.]')
+@marc21.over('copyright_or_legal_deposit_number', '^017.[8_]')
 @utils.for_each_value
 @utils.filter_values
 def copyright_or_legal_deposit_number(self, key, value):
@@ -111,7 +111,7 @@ def international_standard_book_number(self, key, value):
     }
 
 
-@marc21.over('international_standard_serial_number', '^022[10.].')
+@marc21.over('international_standard_serial_number', '^022[10_].')
 @utils.for_each_value
 @utils.filter_values
 def international_standard_serial_number(self, key, value):
@@ -130,7 +130,7 @@ def international_standard_serial_number(self, key, value):
     }
 
 
-@marc21.over('other_standard_identifier', '^024[1032478][10.]')
+@marc21.over('other_standard_identifier', '^024[1032478_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def other_standard_identifier(self, key, value):
@@ -192,7 +192,7 @@ def standard_technical_report_number(self, key, value):
     }
 
 
-@marc21.over('publisher_number', '^028[103254][1032]')
+@marc21.over('publisher_number', '^028[103254_][1032_]')
 @utils.for_each_value
 @utils.filter_values
 def publisher_number(self, key, value):
@@ -263,7 +263,7 @@ def postal_registration_number(self, key, value):
     }
 
 
-@marc21.over('date_time_and_place_of_an_event', '^033[10.2][10.2]')
+@marc21.over('date_time_and_place_of_an_event', '^033[10_2][10_2]')
 @utils.for_each_value
 @utils.filter_values
 def date_time_and_place_of_an_event(self, key, value):
@@ -286,7 +286,7 @@ def date_time_and_place_of_an_event(self, key, value):
     }
 
 
-@marc21.over('coded_cartographic_mathematical_data', '^034[103][10.]')
+@marc21.over('coded_cartographic_mathematical_data', '^034[103_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def coded_cartographic_mathematical_data(self, key, value):
@@ -387,7 +387,7 @@ def cataloging_source(self, key, value):
     }
 
 
-@marc21.over('language_code', '^041[10.].')
+@marc21.over('language_code', '^041[10_].')
 @utils.for_each_value
 @utils.filter_values
 def language_code(self, key, value):
@@ -447,7 +447,7 @@ def country_of_publishing_producing_entity_code(self, key, value):
     }
 
 
-@marc21.over('time_period_of_content', '^045[10.2].')
+@marc21.over('time_period_of_content', '^045[10_2].')
 @utils.filter_values
 def time_period_of_content(self, key, value):
     indicator_map1 = {u'1': u'Multiple single dates/times', u'0': u'Single date/time',
@@ -508,7 +508,7 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
     }
 
 
-@marc21.over('library_of_congress_call_number', '^050[10.][04]')
+@marc21.over('library_of_congress_call_number', '^050[10_][04_]')
 @utils.for_each_value
 @utils.filter_values
 def library_of_congress_call_number(self, key, value):
@@ -553,7 +553,7 @@ def geographic_classification(self, key, value):
     }
 
 
-@marc21.over('classification_numbers_assigned_in_canada', '^055[10.][1032547698]')
+@marc21.over('classification_numbers_assigned_in_canada', '^055[10_][1032547698_]')
 @utils.for_each_value
 @utils.filter_values
 def classification_numbers_assigned_in_canada(self, key, value):
@@ -572,7 +572,7 @@ def classification_numbers_assigned_in_canada(self, key, value):
     }
 
 
-@marc21.over('national_library_of_medicine_call_number', '^060[10.][04]')
+@marc21.over('national_library_of_medicine_call_number', '^060[10_][04_]')
 @utils.for_each_value
 @utils.filter_values
 def national_library_of_medicine_call_number(self, key, value):
@@ -611,7 +611,7 @@ def character_sets_present(self, key, value):
     }
 
 
-@marc21.over('national_agricultural_library_call_number', '^070[10].')
+@marc21.over('national_agricultural_library_call_number', '^070[10_].')
 @utils.for_each_value
 @utils.filter_values
 def national_agricultural_library_call_number(self, key, value):
@@ -660,7 +660,7 @@ def gpo_item_number(self, key, value):
     }
 
 
-@marc21.over('universal_decimal_classification_number', '^080[10.].')
+@marc21.over('universal_decimal_classification_number', '^080[10_].')
 @utils.for_each_value
 @utils.filter_values
 def universal_decimal_classification_number(self, key, value):
@@ -677,7 +677,7 @@ def universal_decimal_classification_number(self, key, value):
     }
 
 
-@marc21.over('dewey_decimal_classification_number', '^082[107][0.4]')
+@marc21.over('dewey_decimal_classification_number', '^082[107_][0_4]')
 @utils.for_each_value
 @utils.filter_values
 def dewey_decimal_classification_number(self, key, value):
@@ -698,7 +698,7 @@ def dewey_decimal_classification_number(self, key, value):
     }
 
 
-@marc21.over('additional_dewey_decimal_classification_number', '^083[107].')
+@marc21.over('additional_dewey_decimal_classification_number', '^083[107_].')
 @utils.for_each_value
 @utils.filter_values
 def additional_dewey_decimal_classification_number(self, key, value):

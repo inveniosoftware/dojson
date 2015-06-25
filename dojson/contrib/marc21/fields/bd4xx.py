@@ -12,7 +12,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('series_statement_added_entry_personal_name', '^400[103][10]')
+@marc21.over('series_statement_added_entry_personal_name', '^400[103_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_personal_name(self, key, value):
@@ -44,7 +44,7 @@ def series_statement_added_entry_personal_name(self, key, value):
     }
 
 
-@marc21.over('series_statement_added_entry_corporate_name', '^410[102][10]')
+@marc21.over('series_statement_added_entry_corporate_name', '^410[102_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_corporate_name(self, key, value):
@@ -76,7 +76,7 @@ def series_statement_added_entry_corporate_name(self, key, value):
     }
 
 
-@marc21.over('series_statement_added_entry_meeting_name', '^411[102][10]')
+@marc21.over('series_statement_added_entry_meeting_name', '^411[102_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_meeting_name(self, key, value):
@@ -108,7 +108,7 @@ def series_statement_added_entry_meeting_name(self, key, value):
     }
 
 
-@marc21.over('series_statement_added_entry_title', '^440.[0]')
+@marc21.over('series_statement_added_entry_title', '^440.[0_]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_title(self, key, value):
@@ -127,7 +127,7 @@ def series_statement_added_entry_title(self, key, value):
     }
 
 
-@marc21.over('series_statement', '^490[10].')
+@marc21.over('series_statement', '^490[10_].')
 @utils.for_each_value
 @utils.filter_values
 def series_statement(self, key, value):
