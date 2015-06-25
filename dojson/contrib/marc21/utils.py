@@ -118,7 +118,7 @@ def create_record(marcxml, correct=False, keep_singletons=True):
     return rec_tree
 
 
-def  split_blob(blob):
+def split_blob(blob):
     """Split the blob using <record.*?>.*?</record> as pattern."""
     for match in split_marc.finditer(blob):
         yield match.group()

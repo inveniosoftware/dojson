@@ -11,10 +11,12 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('main_entry_personal_name', '^100[103].')
 @utils.filter_values
 def main_entry_personal_name(self, key, value):
-    indicator_map1 = {u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
+    indicator_map1 = {
+        u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
     return {
         'personal_name': value.get('a'),
         'titles_and_words_associated_with_a_name': value.get('c'),
@@ -38,10 +40,12 @@ def main_entry_personal_name(self, key, value):
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('main_entry_corporate_name', '^110[102].')
 @utils.filter_values
 def main_entry_corporate_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
     return {
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'location_of_meeting': value.get('c'),
@@ -63,10 +67,12 @@ def main_entry_corporate_name(self, key, value):
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('main_entry_meeting_name', '^111[102].')
 @utils.filter_values
 def main_entry_meeting_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
     return {
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'location_of_meeting': value.get('c'),
@@ -88,6 +94,7 @@ def main_entry_meeting_name(self, key, value):
         'title_of_a_work': value.get('t'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
     }
+
 
 @marc21.over('main_entry_uniform_title', '^130..')
 @utils.filter_values

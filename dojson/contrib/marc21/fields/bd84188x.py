@@ -11,6 +11,7 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('holding_institution', '^850..')
 @utils.for_each_value
 @utils.filter_values
@@ -20,12 +21,15 @@ def holding_institution(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('location', '^852[.103254768][10.2]')
 @utils.for_each_value
 @utils.filter_values
 def location(self, key, value):
-    indicator_map1 = {u'#': u'No information provided', u'1': u'Dewey Decimal classification', u'0': u'Library of Congress classification', u'3': u'Superintendent of Documents classification', u'2': u'National Library of Medicine classification', u'5': u'Title', u'4': u'Shelving control number', u'7': u'Source specified in subfield $2', u'6': u'Shelved separately', u'8': u'Other scheme'}
-    indicator_map2 = {u'1': u'Primary enumeration', u'0': u'Not enumeration', u'#': u'No information provided', u'2': u'Alternative enumeration'}
+    indicator_map1 = {u'#': u'No information provided', u'1': u'Dewey Decimal classification', u'0': u'Library of Congress classification', u'3': u'Superintendent of Documents classification', u'2':
+                      u'National Library of Medicine classification', u'5': u'Title', u'4': u'Shelving control number', u'7': u'Source specified in subfield $2', u'6': u'Shelved separately', u'8': u'Other scheme'}
+    indicator_map2 = {u'1': u'Primary enumeration', u'0': u'Not enumeration',
+                      u'#': u'No information provided', u'2': u'Alternative enumeration'}
     return {
         'materials_specified': value.get('3'),
         'source_of_classification_or_shelving_scheme': value.get('2'),
@@ -56,12 +60,15 @@ def location(self, key, value):
         'shelving_order': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('electronic_location_and_access', '^856.[10.28]')
 @utils.for_each_value
 @utils.filter_values
 def electronic_location_and_access(self, key, value):
-    indicator_map1 = {u'1': u'FTP', u'0': u'Email', u'#': u'No information provided', u'2': u'Remote login (Telnet)', u'3': u'Dial-up', u'4': 'HTTP', u'7': 'Method specified in subfield access_method'}
-    indicator_map2 = {u'1': u'Version of resource', u'0': u'Resource', u'#': u'No information provided', u'2': u'Related resource', u'8': u'No display constant generated'}
+    indicator_map1 = {u'1': u'FTP', u'0': u'Email', u'#': u'No information provided', u'2':
+                      u'Remote login (Telnet)', u'3': u'Dial-up', u'4': 'HTTP', u'7': 'Method specified in subfield access_method'}
+    indicator_map2 = {u'1': u'Version of resource', u'0': u'Resource', u'#':
+                      u'No information provided', u'2': u'Related resource', u'8': u'No display constant generated'}
     return {
         'materials_specified': value.get('3'),
         'access_method': value.get('2'),
@@ -95,6 +102,7 @@ def electronic_location_and_access(self, key, value):
         'relationship': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('replacement_record_information', '^882..')
 @utils.filter_values
 def replacement_record_information(self, key, value):
@@ -106,11 +114,13 @@ def replacement_record_information(self, key, value):
         'linkage': value.get('6'),
     }
 
+
 @marc21.over('machine_generated_metadata_provenance', '^883[10.].')
 @utils.for_each_value
 @utils.filter_values
 def machine_generated_metadata_provenance(self, key, value):
-    indicator_map1 = {u'1': u'Partially machine-generated', u'0': u'Fully machine-generated', u'#': u'No information provided/not applicable'}
+    indicator_map1 = {u'1': u'Partially machine-generated', u'0':
+                      u'Fully machine-generated', u'#': u'No information provided/not applicable'}
     return {
         'generation_process': value.get('a'),
         'confidence_value': value.get('c'),
@@ -123,6 +133,7 @@ def machine_generated_metadata_provenance(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'method_of_machine_assignment': indicator_map1.get(key[3]),
     }
+
 
 @marc21.over('non_marc_information_field', '^887..')
 @utils.for_each_value

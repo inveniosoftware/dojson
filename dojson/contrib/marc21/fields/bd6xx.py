@@ -11,12 +11,15 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('subject_added_entry_personal_name', '^600[103][10325476]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_personal_name(self, key, value):
-    indicator_map1 = {u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
+    indicator_map1 = {
+        u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file',
+                      u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -52,12 +55,15 @@ def subject_added_entry_personal_name(self, key, value):
         'thesaurus': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('subject_added_entry_corporate_name', '^610[102][10325476]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_corporate_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file',
+                      u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -91,12 +97,15 @@ def subject_added_entry_corporate_name(self, key, value):
         'thesaurus': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('subject_added_entry_meeting_name', '^611[102][10325476]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_meeting_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file',
+                      u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -128,11 +137,13 @@ def subject_added_entry_meeting_name(self, key, value):
         'thesaurus': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('subject_added_entry_uniform_title', '^630.[10325476]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_uniform_title(self, key, value):
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file',
+                      u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -162,12 +173,15 @@ def subject_added_entry_uniform_title(self, key, value):
         'thesaurus': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('subject_added_entry_chronological_term', '^648[10.][10325476]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_chronological_term(self, key, value):
-    indicator_map1 = {u'1': u'Date or time period of creation or origin', u'0': u'Date or time period covered or depicted', u'#': u'No information provided'}
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xc3\xa9pertoire de vedettes-mati\xc3\xa8re'}
+    indicator_map1 = {u'1': u'Date or time period of creation or origin', u'0':
+                      u'Date or time period covered or depicted', u'#': u'No information provided'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2':
+                      u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xc3\xa9pertoire de vedettes-mati\xc3\xa8re'}
     return {
         'chronological_term': value.get('a'),
         'general_subdivision': value.get('x'),
@@ -183,12 +197,15 @@ def subject_added_entry_chronological_term(self, key, value):
         'thesaurus': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('subject_added_entry_topical_term', '^650[10.2][10325476]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_topical_term(self, key, value):
-    indicator_map1 = {u'1': u'Primary', u'0': u'No level specified', u'#': u'No information provided', u'2': u'Secondary'}
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
+    indicator_map1 = {u'1': u'Primary', u'0': u'No level specified',
+                      u'#': u'No information provided', u'2': u'Secondary'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file',
+                      u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
     return {
         'topical_term_or_geographic_name_entry_element': value.get('a'),
         'general_subdivision': value.get('x'),
@@ -209,11 +226,13 @@ def subject_added_entry_topical_term(self, key, value):
         'thesaurus': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('subject_added_entry_geographic_name', '^651.[10325476]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_geographic_name(self, key, value):
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file',
+                      u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
     return {
         'geographic_name': value.get('a'),
         'general_subdivision': value.get('x'),
@@ -230,12 +249,15 @@ def subject_added_entry_geographic_name(self, key, value):
         'thesaurus': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('index_term_uncontrolled', '^653[10.2][.1032546]')
 @utils.for_each_value
 @utils.filter_values
 def index_term_uncontrolled(self, key, value):
-    indicator_map1 = {u'1': u'Primary', u'0': u'No level specified', u'#': u'No information provided', u'2': u'Secondary'}
-    indicator_map2 = {u'#': u'No information provided', u'1': u'Personal name', u'0': u'Topical term', u'3': u'Meeting name', u'2': u'Corporate name', u'5': u'Geographic name', u'4': u'Chronological term', u'6': u'Genre/form term'}
+    indicator_map1 = {u'1': u'Primary', u'0': u'No level specified',
+                      u'#': u'No information provided', u'2': u'Secondary'}
+    indicator_map2 = {u'#': u'No information provided', u'1': u'Personal name', u'0': u'Topical term', u'3': u'Meeting name',
+                      u'2': u'Corporate name', u'5': u'Geographic name', u'4': u'Chronological term', u'6': u'Genre/form term'}
     return {
         'uncontrolled_term': value.get('a'),
         'field_link_and_sequence_number': value.get('8'),
@@ -244,11 +266,13 @@ def index_term_uncontrolled(self, key, value):
         'type_of_term_or_name': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('subject_added_entry_faceted_topical_terms', '^654[10.2].')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_faceted_topical_terms(self, key, value):
-    indicator_map1 = {u'1': u'Primary', u'0': u'No level specified', u'#': u'No information provided', u'2': u'Secondary'}
+    indicator_map1 = {u'1': u'Primary', u'0': u'No level specified',
+                      u'#': u'No information provided', u'2': u'Secondary'}
     return {
         'focus_term': value.get('a'),
         'facet_hierarchy_designation': value.get('c'),
@@ -266,12 +290,14 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
         'level_of_subject': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('index_term_genre_form', '^655[0.][10325476]')
 @utils.for_each_value
 @utils.filter_values
 def index_term_genre_form(self, key, value):
     indicator_map1 = {u'0': u'Faceted', u'#': u'Basic'}
-    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file', u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
+    indicator_map2 = {u'1': u"LC subject headings for children's literature", u'0': u'Library of Congress Subject Headings', u'3': u'National Agricultural Library subject authority file',
+                      u'2': u'Medical Subject Headings', u'5': u'Canadian Subject Headings', u'4': u'Source not specified', u'7': u'Source specified in subfield $2', u'6': u'R\xe9pertoire de vedettes-mati\xe8re'}
     return {
         'genre_form_data_or_focus_term': value.get('a'),
         'general_subdivision': value.get('x'),
@@ -289,6 +315,7 @@ def index_term_genre_form(self, key, value):
         'type_of_heading': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('index_term_occupation', '^656..')
 @utils.for_each_value
@@ -308,6 +335,7 @@ def index_term_occupation(self, key, value):
         'geographic_subdivision': value.get('z'),
     }
 
+
 @marc21.over('index_term_function', '^657..')
 @utils.for_each_value
 @utils.filter_values
@@ -325,6 +353,7 @@ def index_term_function(self, key, value):
         'geographic_subdivision': value.get('z'),
     }
 
+
 @marc21.over('index_term_curriculum_objective', '^658..')
 @utils.for_each_value
 @utils.filter_values
@@ -338,6 +367,7 @@ def index_term_curriculum_objective(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('subject_added_entry_hierarchical_place_name', '^662..')
 @utils.for_each_value

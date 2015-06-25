@@ -11,6 +11,7 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('physical_description', '^300..')
 @utils.for_each_value
 @utils.filter_values
@@ -27,6 +28,7 @@ def physical_description(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('playing_time', '^306..')
 @utils.filter_values
 def playing_time(self, key, value):
@@ -35,6 +37,7 @@ def playing_time(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'linkage': value.get('6'),
     }
+
 
 @marc21.over('hours', '^307[8.].')
 @utils.for_each_value
@@ -49,6 +52,7 @@ def hours(self, key, value):
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('current_publication_frequency', '^310..')
 @utils.filter_values
 def current_publication_frequency(self, key, value):
@@ -58,6 +62,7 @@ def current_publication_frequency(self, key, value):
         'date_of_current_publication_frequency': value.get('b'),
         'linkage': value.get('6'),
     }
+
 
 @marc21.over('former_publication_frequency', '^321..')
 @utils.for_each_value
@@ -69,6 +74,7 @@ def former_publication_frequency(self, key, value):
         'dates_of_former_publication_frequency': value.get('b'),
         'linkage': value.get('6'),
     }
+
 
 @marc21.over('content_type', '^336..')
 @utils.for_each_value
@@ -83,6 +89,7 @@ def content_type(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('media_type', '^337..')
 @utils.for_each_value
 @utils.filter_values
@@ -96,6 +103,7 @@ def media_type(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('carrier_type', '^338..')
 @utils.for_each_value
 @utils.filter_values
@@ -108,6 +116,7 @@ def carrier_type(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('physical_medium', '^340..')
 @utils.for_each_value
@@ -134,12 +143,15 @@ def physical_medium(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('geospatial_reference_data', '^342[10][103254768]')
 @utils.for_each_value
 @utils.filter_values
 def geospatial_reference_data(self, key, value):
-    indicator_map1 = {u'1': u'Vertical coordinate system', u'0': u'Horizontal coordinate system'}
-    indicator_map2 = {u'1': u'Map projection', u'0': u'Geographic', u'3': u'Local planar', u'2': u'Grid coordinate system', u'5': u'Geodetic model', u'4': u'Local', u'7': u'Method specified in $2', u'6': u'Altitude', u'8': u'Depth'}
+    indicator_map1 = {u'1': u'Vertical coordinate system',
+                      u'0': u'Horizontal coordinate system'}
+    indicator_map2 = {u'1': u'Map projection', u'0': u'Geographic', u'3': u'Local planar', u'2': u'Grid coordinate system',
+                      u'5': u'Geodetic model', u'4': u'Local', u'7': u'Method specified in $2', u'6': u'Altitude', u'8': u'Depth'}
     return {
         'reference_method_used': value.get('2'),
         'linkage': value.get('6'),
@@ -171,6 +183,7 @@ def geospatial_reference_data(self, key, value):
         'geospatial_reference_method': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('planar_coordinate_data', '^343..')
 @utils.for_each_value
 @utils.filter_values
@@ -188,6 +201,7 @@ def planar_coordinate_data(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('sound_characteristics', '^344..')
 @utils.for_each_value
@@ -209,6 +223,7 @@ def sound_characteristics(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('projection_characteristics_of_moving_image', '^345..')
 @utils.for_each_value
 @utils.filter_values
@@ -223,6 +238,7 @@ def projection_characteristics_of_moving_image(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('video_characteristics', '^346..')
 @utils.for_each_value
 @utils.filter_values
@@ -236,6 +252,7 @@ def video_characteristics(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('digital_file_characteristics', '^347..')
 @utils.for_each_value
@@ -255,6 +272,7 @@ def digital_file_characteristics(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('organization_and_arrangement_of_materials', '^351..')
 @utils.for_each_value
 @utils.filter_values
@@ -267,6 +285,7 @@ def organization_and_arrangement_of_materials(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('digital_graphic_representation', '^352..')
 @utils.for_each_value
@@ -286,11 +305,13 @@ def digital_graphic_representation(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('security_classification_control', '^355[1032548].')
 @utils.for_each_value
 @utils.filter_values
 def security_classification_control(self, key, value):
-    indicator_map1 = {u'1': u'Title', u'0': u'Document', u'3': u'Contents note', u'2': u'Abstract', u'5': u'Record', u'4': u'Author', u'8': u'None of the above'}
+    indicator_map1 = {u'1': u'Title', u'0': u'Document', u'3': u'Contents note',
+                      u'2': u'Abstract', u'5': u'Record', u'4': u'Author', u'8': u'None of the above'}
     return {
         'security_classification': value.get('a'),
         'external_dissemination_information': value.get('c'),
@@ -306,6 +327,7 @@ def security_classification_control(self, key, value):
         'controlled_element': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('originator_dissemination_control', '^357..')
 @utils.filter_values
 def originator_dissemination_control(self, key, value):
@@ -317,6 +339,7 @@ def originator_dissemination_control(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('dates_of_publication_and_or_sequential_designation', '^362[10].')
 @utils.for_each_value
@@ -331,11 +354,13 @@ def dates_of_publication_and_or_sequential_designation(self, key, value):
         'format_of_date': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('normalized_date_and_sequential_designation', '^363[10.][10.]')
 @utils.for_each_value
 @utils.filter_values
 def normalized_date_and_sequential_designation(self, key, value):
-    indicator_map1 = {u'1': u'Ending information', u'0': u'Starting information', u'#': u'No information provided'}
+    indicator_map1 = {u'1': u'Ending information', u'0':
+                      u'Starting information', u'#': u'No information provided'}
     indicator_map2 = {u'1': u'Open', u'0': u'Closed', u'#': u'Not specified'}
     return {
         'first_level_of_enumeration': value.get('a'),
@@ -361,6 +386,7 @@ def normalized_date_and_sequential_designation(self, key, value):
         'state_of_issuance': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('trade_price', '^365..')
 @utils.for_each_value
 @utils.filter_values
@@ -383,6 +409,7 @@ def trade_price(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('trade_availability_information', '^366..')
 @utils.for_each_value
 @utils.filter_values
@@ -403,6 +430,7 @@ def trade_availability_information(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('associated_language', '^377..')
 @utils.for_each_value
 @utils.filter_values
@@ -415,6 +443,7 @@ def associated_language(self, key, value):
         'linkage': value.get('6'),
     }
 
+
 @marc21.over('form_of_work', '^380..')
 @utils.for_each_value
 @utils.filter_values
@@ -426,6 +455,7 @@ def form_of_work(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'linkage': value.get('6'),
     }
+
 
 @marc21.over('other_distinguishing_characteristics_of_work_or_expression', '^381..')
 @utils.for_each_value
@@ -441,12 +471,15 @@ def other_distinguishing_characteristics_of_work_or_expression(self, key, value)
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('medium_of_performance', '^382[10.][10.]')
 @utils.for_each_value
 @utils.filter_values
 def medium_of_performance(self, key, value):
-    indicator_map1 = {u'1': u'Partial medium of performance', u'0': u'Medium of performance', u'#': u'No information provided'}
-    indicator_map2 = {u'1': u'Intended for access', u'0': u'Not intended for access', u'#': u'No information provided'}
+    indicator_map1 = {u'1': u'Partial medium of performance',
+                      u'0': u'Medium of performance', u'#': u'No information provided'}
+    indicator_map2 = {u'1': u'Intended for access', u'0':
+                      u'Not intended for access', u'#': u'No information provided'}
     return {
         'medium_of_performance': value.get('a'),
         'soloist': value.get('b'),
@@ -463,6 +496,7 @@ def medium_of_performance(self, key, value):
         'access_control': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('numeric_designation_of_musical_work', '^383..')
 @utils.for_each_value
 @utils.filter_values
@@ -478,16 +512,19 @@ def numeric_designation_of_musical_work(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('key', '^384[10.].')
 @utils.filter_values
 def key(self, key, value):
-    indicator_map1 = {u'1': u'Transposed key ', u'0': u'Original key ', u'#': u'Relationship to original unknown '}
+    indicator_map1 = {u'1': u'Transposed key ', u'0':
+                      u'Original key ', u'#': u'Relationship to original unknown '}
     return {
         'key': value.get('a'),
         'field_link_and_sequence_number': value.get('8'),
         'linkage': value.get('6'),
         'key_type': indicator_map1.get(key[3]),
     }
+
 
 @marc21.over('audience_characteristics', '^385..')
 @utils.for_each_value
@@ -504,6 +541,7 @@ def audience_characteristics(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('creator_contributor_characteristics', '^386..')
 @utils.for_each_value

@@ -11,11 +11,13 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('series_added_entry_personal_name', '^800[103].')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_personal_name(self, key, value):
-    indicator_map1 = {u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
+    indicator_map1 = {
+        u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -50,11 +52,13 @@ def series_added_entry_personal_name(self, key, value):
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('series_added_entry_corporate_name', '^810[102].')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_corporate_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -87,11 +91,13 @@ def series_added_entry_corporate_name(self, key, value):
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('series_added_entry_meeting_name', '^811[102].')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_meeting_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -121,6 +127,7 @@ def series_added_entry_meeting_name(self, key, value):
         'international_standard_serial_number': value.get('x'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
     }
+
 
 @marc21.over('series_added_entry_uniform_title', '^830.[0]')
 @utils.for_each_value

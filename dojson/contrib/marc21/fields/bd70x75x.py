@@ -11,12 +11,15 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('added_entry_personal_name', '^700[103][.2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_personal_name(self, key, value):
-    indicator_map1 = {u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
-    indicator_map2 = {u'#': u'No information provided', u'2': u'Analytical entry'}
+    indicator_map1 = {
+        u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
+    indicator_map2 = {
+        u'#': u'No information provided', u'2': u'Analytical entry'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -50,12 +53,15 @@ def added_entry_personal_name(self, key, value):
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('added_entry_corporate_name', '^710[102][.2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_corporate_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
-    indicator_map2 = {u'#': u'No information provided', u'2': u'Analytical entry'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map2 = {
+        u'#': u'No information provided', u'2': u'Analytical entry'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -87,12 +93,15 @@ def added_entry_corporate_name(self, key, value):
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('added_entry_meeting_name', '^711[102][.2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_meeting_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
-    indicator_map2 = {u'#': u'No information provided', u'2': u'Analytical entry'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map2 = {
+        u'#': u'No information provided', u'2': u'Analytical entry'}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': value.get('3'),
@@ -122,11 +131,13 @@ def added_entry_meeting_name(self, key, value):
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('added_entry_uncontrolled_name', '^720[1.2].')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uncontrolled_name(self, key, value):
-    indicator_map1 = {u'1': u'Personal', u'#': u'Not specified', u'2': u'Other'}
+    indicator_map1 = {
+        u'1': u'Personal', u'#': u'Not specified', u'2': u'Other'}
     return {
         'name': value.get('a'),
         'field_link_and_sequence_number': value.get('8'),
@@ -136,11 +147,13 @@ def added_entry_uncontrolled_name(self, key, value):
         'type_of_name': indicator_map1.get(key[3]),
     }
 
+
 @marc21.over('added_entry_uniform_title', '^730.[.2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uniform_title(self, key, value):
-    indicator_map2 = {u'#': u'No information provided', u'2': u'Analytical entry'}
+    indicator_map2 = {
+        u'#': u'No information provided', u'2': u'Analytical entry'}
     return {
         'uniform_title': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -166,12 +179,14 @@ def added_entry_uniform_title(self, key, value):
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('added_entry_uncontrolled_related_analytical_title', '^740[0][.2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uncontrolled_related_analytical_title(self, key, value):
     indicator_map1 = {u'0': u'No nonfiling characters'}
-    indicator_map2 = {u'#': u'No information provided', u'2': u'Analytical entry'}
+    indicator_map2 = {
+        u'#': u'No information provided', u'2': u'Analytical entry'}
     return {
         'uncontrolled_related_analytical_title': value.get('a'),
         'medium': value.get('h'),
@@ -183,6 +198,7 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
         'nonfiling_characters': indicator_map1.get(key[3]),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('added_entry_geographic_name', '^751..')
 @utils.for_each_value
@@ -198,6 +214,7 @@ def added_entry_geographic_name(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
     }
+
 
 @marc21.over('added_entry_hierarchical_place_name', '^752..')
 @utils.for_each_value
@@ -217,6 +234,7 @@ def added_entry_hierarchical_place_name(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('system_details_access_to_computer_files', '^753..')
 @utils.for_each_value
 @utils.filter_values
@@ -228,6 +246,7 @@ def system_details_access_to_computer_files(self, key, value):
         'programming_language': value.get('b'),
         'linkage': value.get('6'),
     }
+
 
 @marc21.over('added_entry_taxonomic_identification', '^754..')
 @utils.for_each_value

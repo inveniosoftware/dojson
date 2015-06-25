@@ -11,12 +11,14 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('main_series_entry', '^760[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def main_series_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Main series'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Main series'}
     return {
         'main_entry_heading': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -40,13 +42,15 @@ def main_series_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('subseries_entry', '^762[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def subseries_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Has subseries'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Has subseries'}
     return {
         'main_entry_heading': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -70,13 +74,15 @@ def subseries_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('original_language_entry', '^765[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def original_language_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Translation of'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Translation of'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -104,13 +110,15 @@ def original_language_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('translation_entry', '^767[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def translation_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Translated as'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Translated as'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -138,13 +146,15 @@ def translation_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('supplement_special_issue_entry', '^770[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def supplement_special_issue_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Has supplement'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Has supplement'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -173,12 +183,14 @@ def supplement_special_issue_entry(self, key, value):
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('supplement_parent_entry', '^772[10][0.8]')
 @utils.for_each_value
 @utils.filter_values
 def supplement_parent_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'0': u'Parent', u'#': u'Supplement to', u'8': u'No display constant generated'}
+    indicator_map2 = {u'0': u'Parent', u'#': u'Supplement to',
+                      u'8': u'No display constant generated'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -206,6 +218,7 @@ def supplement_parent_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('host_item_entry', '^773[10][8.]')
 @utils.for_each_value
@@ -243,12 +256,14 @@ def host_item_entry(self, key, value):
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('constituent_unit_entry', '^774[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def constituent_unit_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Constituent unit'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Constituent unit'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -277,12 +292,14 @@ def constituent_unit_entry(self, key, value):
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('other_edition_entry', '^775[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def other_edition_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Other edition available'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Other edition available'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -313,12 +330,14 @@ def other_edition_entry(self, key, value):
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('additional_physical_form_entry', '^776[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def additional_physical_form_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Available in another form'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Available in another form'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -346,13 +365,15 @@ def additional_physical_form_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('issued_with_entry', '^777[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def issued_with_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Issued with'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Issued with'}
     return {
         'main_entry_heading': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -378,12 +399,14 @@ def issued_with_entry(self, key, value):
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('preceding_entry', '^780[10][10325476]')
 @utils.for_each_value
 @utils.filter_values
 def preceding_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'1': u'Continues in part', u'0': u'Continues', u'3': u'Supersedes in part', u'2': u'Supersedes', u'5': u'Absorbed', u'4': u'Formed by the union of ... and ...', u'7': u'Separated from', u'6': u'Absorbed in part'}
+    indicator_map2 = {u'1': u'Continues in part', u'0': u'Continues', u'3': u'Supersedes in part', u'2': u'Supersedes',
+                      u'5': u'Absorbed', u'4': u'Formed by the union of ... and ...', u'7': u'Separated from', u'6': u'Absorbed in part'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -411,13 +434,15 @@ def preceding_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'type_of_relationship': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('succeeding_entry', '^785[10][103254768]')
 @utils.for_each_value
 @utils.filter_values
 def succeeding_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'1': u'Continued in part by', u'0': u'Continued by', u'3': u'Superseded in part by', u'2': u'Superseded by', u'5': u'Absorbed in part by', u'4': u'Absorbed by', u'7': u'Merged with ... to form ...', u'6': u'Split into ... and ...', u'8': u'Changed back to'}
+    indicator_map2 = {u'1': u'Continued in part by', u'0': u'Continued by', u'3': u'Superseded in part by', u'2': u'Superseded by', u'5':
+                      u'Absorbed in part by', u'4': u'Absorbed by', u'7': u'Merged with ... to form ...', u'6': u'Split into ... and ...', u'8': u'Changed back to'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -446,12 +471,14 @@ def succeeding_entry(self, key, value):
         'type_of_relationship': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('data_source_entry', '^786[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def data_source_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Data source'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Data source'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),
@@ -483,12 +510,14 @@ def data_source_entry(self, key, value):
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('other_relationship_entry', '^787[10][8.]')
 @utils.for_each_value
 @utils.filter_values
 def other_relationship_entry(self, key, value):
     indicator_map1 = {u'1': u'Do not display note', u'0': u'Display note'}
-    indicator_map2 = {u'8': u'No display constant generated', u'#': u'Related item'}
+    indicator_map2 = {
+        u'8': u'No display constant generated', u'#': u'Related item'}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': value.get('7'),

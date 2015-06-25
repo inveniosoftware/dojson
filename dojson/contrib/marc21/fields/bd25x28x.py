@@ -11,6 +11,7 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('edition_statement', '^250..')
 @utils.for_each_value
 @utils.filter_values
@@ -23,6 +24,7 @@ def edition_statement(self, key, value):
         'linkage': value.get('6'),
     }
 
+
 @marc21.over('musical_presentation_statement', '^254..')
 @utils.filter_values
 def musical_presentation_statement(self, key, value):
@@ -31,6 +33,7 @@ def musical_presentation_statement(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'linkage': value.get('6'),
     }
+
 
 @marc21.over('cartographic_mathematical_data', '^255..')
 @utils.for_each_value
@@ -48,6 +51,7 @@ def cartographic_mathematical_data(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('computer_file_characteristics', '^256..')
 @utils.filter_values
 def computer_file_characteristics(self, key, value):
@@ -56,6 +60,7 @@ def computer_file_characteristics(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'linkage': value.get('6'),
     }
+
 
 @marc21.over('country_of_producing_entity', '^257..')
 @utils.for_each_value
@@ -68,6 +73,7 @@ def country_of_producing_entity(self, key, value):
         'linkage': value.get('6'),
     }
 
+
 @marc21.over('philatelic_issue_data', '^258..')
 @utils.for_each_value
 @utils.filter_values
@@ -79,11 +85,13 @@ def philatelic_issue_data(self, key, value):
         'linkage': value.get('6'),
     }
 
+
 @marc21.over('publication_distribution_imprint', '^260[.23].')
 @utils.for_each_value
 @utils.filter_values
 def publication_distribution_imprint(self, key, value):
-    indicator_map1 = {u'#': u'Not applicable/No information provided/Earliest available publisher', u'2': u'Intervening publisher', u'3': u'Current/latest publisher'}
+    indicator_map1 = {u'#': u'Not applicable/No information provided/Earliest available publisher',
+                      u'2': u'Intervening publisher', u'3': u'Current/latest publisher'}
     return {
         'place_of_publication_distribution': value.get('a'),
         'date_of_publication_distribution': value.get('c'),
@@ -96,6 +104,7 @@ def publication_distribution_imprint(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'sequence_of_publishing_statements': indicator_map1.get(key[3]),
     }
+
 
 @marc21.over('imprint_statement_for_films_pre_aacr_1_revised', '^261..')
 @utils.filter_values
@@ -110,6 +119,7 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('imprint_statement_for_sound_recordings_pre_aacr_1', '^262..')
 @utils.filter_values
 def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
@@ -123,6 +133,7 @@ def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
+
 @marc21.over('projected_publication_date', '^263..')
 @utils.filter_values
 def projected_publication_date(self, key, value):
@@ -132,12 +143,15 @@ def projected_publication_date(self, key, value):
         'linkage': value.get('6'),
     }
 
+
 @marc21.over('production_publication_distribution_manufacture_and_copyright_notice', '^264[.23][10324]')
 @utils.for_each_value
 @utils.filter_values
 def production_publication_distribution_manufacture_and_copyright_notice(self, key, value):
-    indicator_map1 = {u'#': u'Not applicable/No information provided/Earliest', u'2': u'Intervening', u'3': u'Current/latest'}
-    indicator_map2 = {u'1': u'Publication', u'0': u'Production', u'3': u'Manufacture', u'2': u'Distribution', u'4': u'Copyright notice date'}
+    indicator_map1 = {u'#': u'Not applicable/No information provided/Earliest',
+                      u'2': u'Intervening', u'3': u'Current/latest'}
+    indicator_map2 = {u'1': u'Publication', u'0': u'Production', u'3':
+                      u'Manufacture', u'2': u'Distribution', u'4': u'Copyright notice date'}
     return {
         'place_of_production_publication_distribution_manufacture': value.get('a'),
         'date_of_production_publication_distribution_manufacture_or_copyright_notice': value.get('c'),
@@ -149,11 +163,13 @@ def production_publication_distribution_manufacture_and_copyright_notice(self, k
         'function_of_entity': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('address', '^270[1.2].')
 @utils.for_each_value
 @utils.filter_values
 def address(self, key, value):
-    indicator_map1 = {u'1': u'Primary', u'#': u'No level specified', u'2': u'Secondary'}
+    indicator_map1 = {
+        u'1': u'Primary', u'#': u'No level specified', u'2': u'Secondary'}
     return {
         'address': value.get('a'),
         'state_or_province': value.get('c'),

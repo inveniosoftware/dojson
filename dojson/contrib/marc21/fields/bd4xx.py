@@ -11,12 +11,15 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('series_statement_added_entry_personal_name', '^400[103][10]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_personal_name(self, key, value):
-    indicator_map1 = {u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
-    indicator_map2 = {u'1': u'Main entry represented by pronoun', u'0': u'Main entry not represented by pronoun'}
+    indicator_map1 = {
+        u'1': u'Surname', u'0': u'Forename', u'3': u'Family name'}
+    indicator_map2 = {u'1': u'Main entry represented by pronoun',
+                      u'0': u'Main entry not represented by pronoun'}
     return {
         'personal_name': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -40,12 +43,15 @@ def series_statement_added_entry_personal_name(self, key, value):
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('series_statement_added_entry_corporate_name', '^410[102][10]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_corporate_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
-    indicator_map2 = {u'1': u'Main entry represented by pronoun', u'0': u'Main entry not represented by pronoun'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map2 = {u'1': u'Main entry represented by pronoun',
+                      u'0': u'Main entry not represented by pronoun'}
     return {
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -69,12 +75,15 @@ def series_statement_added_entry_corporate_name(self, key, value):
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('series_statement_added_entry_meeting_name', '^411[102][10]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_meeting_name(self, key, value):
-    indicator_map1 = {u'1': u'Jurisdiction name', u'0': u'Inverted name', u'2': u'Name in direct order'}
-    indicator_map2 = {u'1': u'Main entry represented by pronoun', u'0': u'Main entry not represented by pronoun'}
+    indicator_map1 = {u'1': u'Jurisdiction name',
+                      u'0': u'Inverted name', u'2': u'Name in direct order'}
+    indicator_map2 = {u'1': u'Main entry represented by pronoun',
+                      u'0': u'Main entry not represented by pronoun'}
     return {
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -98,6 +107,7 @@ def series_statement_added_entry_meeting_name(self, key, value):
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('series_statement_added_entry_title', '^440.[0]')
 @utils.for_each_value
 @utils.filter_values
@@ -115,6 +125,7 @@ def series_statement_added_entry_title(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('series_statement', '^490[10].')
 @utils.for_each_value

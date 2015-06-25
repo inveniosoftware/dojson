@@ -11,12 +11,14 @@ from dojson import utils
 
 from ..model import marc21
 
+
 @marc21.over('abbreviated_title', '^210[10][0.]')
 @utils.for_each_value
 @utils.filter_values
 def abbreviated_title(self, key, value):
     indicator_map1 = {u'1': u'Added entry', u'0': u'No added entry'}
-    indicator_map2 = {u'0': u'Other abbreviated title', u'#': u'Abbreviated key title'}
+    indicator_map2 = {
+        u'0': u'Other abbreviated title', u'#': u'Abbreviated key title'}
     return {
         'abbreviated_title': value.get('a'),
         'field_link_and_sequence_number': value.get('8'),
@@ -26,6 +28,7 @@ def abbreviated_title(self, key, value):
         'title_added_entry': indicator_map1.get(key[3]),
         'type': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('key_title', '^222.[0]')
 @utils.for_each_value
@@ -40,10 +43,12 @@ def key_title(self, key, value):
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('uniform_title', '^240[10].')
 @utils.filter_values
 def uniform_title(self, key, value):
-    indicator_map1 = {u'1': u'Printed or displayed', u'0': u'Not printed or displayed'}
+    indicator_map1 = {
+        u'1': u'Printed or displayed', u'0': u'Not printed or displayed'}
     return {
         'uniform_title': value.get('a'),
         'name_of_part_section_of_a_work': value.get('p'),
@@ -63,6 +68,7 @@ def uniform_title(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
     }
+
 
 @marc21.over('translation_of_title_by_cataloging_agency', '^242[10][0]')
 @utils.for_each_value
@@ -84,10 +90,12 @@ def translation_of_title_by_cataloging_agency(self, key, value):
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('collective_uniform_title', '^243[10].')
 @utils.filter_values
 def collective_uniform_title(self, key, value):
-    indicator_map1 = {u'1': u'Printed or displayed', u'0': u'Not printed or displayed'}
+    indicator_map1 = {
+        u'1': u'Printed or displayed', u'0': u'Not printed or displayed'}
     return {
         'uniform_title': value.get('a'),
         'date_of_treaty_signing': value.get('d'),
@@ -106,6 +114,7 @@ def collective_uniform_title(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
     }
+
 
 @marc21.over('title_statement', '^245[10][0]')
 @utils.filter_values
@@ -129,12 +138,15 @@ def title_statement(self, key, value):
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
 
+
 @marc21.over('varying_form_of_title', '^246[1032][.103254768]')
 @utils.for_each_value
 @utils.filter_values
 def varying_form_of_title(self, key, value):
-    indicator_map1 = {u'1': u'Note, added entry', u'0': u'Note, no added entry', u'3': u'No note, added entry', u'2': u'No note, no added entry'}
-    indicator_map2 = {u'#': u'No type specified', u'1': u'Parallel title', u'0': u'Portion of title', u'3': u'Other title', u'2': u'Distinctive title', u'5': u'Added title page title', u'4': u'Cover title', u'7': u'Running title', u'6': u'Caption title', u'8': u'Spine title'}
+    indicator_map1 = {u'1': u'Note, added entry', u'0': u'Note, no added entry',
+                      u'3': u'No note, added entry', u'2': u'No note, no added entry'}
+    indicator_map2 = {u'#': u'No type specified', u'1': u'Parallel title', u'0': u'Portion of title', u'3': u'Other title', u'2': u'Distinctive title',
+                      u'5': u'Added title page title', u'4': u'Cover title', u'7': u'Running title', u'6': u'Caption title', u'8': u'Spine title'}
     return {
         'title_proper_short_title': value.get('a'),
         'remainder_of_title': value.get('b'),
@@ -150,6 +162,7 @@ def varying_form_of_title(self, key, value):
         'note_added_entry_controller': indicator_map1.get(key[3]),
         'type_of_title': indicator_map2.get(key[4]),
     }
+
 
 @marc21.over('former_title', '^247[10][10]')
 @utils.for_each_value
