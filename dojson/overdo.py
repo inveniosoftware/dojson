@@ -9,6 +9,8 @@
 
 """Do JSON translation."""
 
+import re
+
 import esmre
 
 from six import iteritems
@@ -32,9 +34,14 @@ class Overdo(object):
         def decorator(creator):
             self.index = None
             for field in source_tags:
-                self.rules.append((field, (name, creator)))
+                self.rules.append((field, (name, creator, re.compile(field))))
             return creator
         return decorator
+
+    def _query(self, key):
+        for name, creator, field in self.index.query(key):
+            if field.match(key):
+                yield name, creator, field
 
     def do(self, blob):
         """Translate blob values and instantiate new model instance."""
@@ -44,7 +51,7 @@ class Overdo(object):
             self.build()
 
         for key, value in iteritems(blob):
-            for name, creator in self.index.query(key):
+            for name, creator, field in self._query(key):
                 output[name] = creator(output, key, value)
 
         return output
@@ -55,4 +62,4 @@ class Overdo(object):
         if self.index is None:
             self.build()
 
-        return [key for key in blob.keys() if not len(self.index.query(key))]
+        return [key for key in blob.keys() if not len(list(self._query(key)))]

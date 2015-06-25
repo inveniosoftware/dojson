@@ -10,7 +10,9 @@
 """DoJSON API."""
 
 from .overdo import Overdo
+from .version import __version__
 
 __all__ = (
     'Overdo',
+    '__version__',
 )
