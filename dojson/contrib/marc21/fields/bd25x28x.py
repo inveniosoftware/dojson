@@ -79,10 +79,10 @@ def philatelic_issue_data(self, key, value):
         'linkage': value.get('6'),
     }
 
-@marc21.over('publication_distribution__imprint', '^260[.23].')
+@marc21.over('publication_distribution_imprint', '^260[.23].')
 @utils.for_each_value
 @utils.filter_values
-def publication_distribution__imprint(self, key, value):
+def publication_distribution_imprint(self, key, value):
     indicator_map1 = {u'#': u'Not applicable/No information provided/Earliest available publisher', u'2': u'Intervening publisher', u'3': u'Current/latest publisher'}
     return {
         'place_of_publication_distribution': value.get('a'),

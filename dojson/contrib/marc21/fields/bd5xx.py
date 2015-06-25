@@ -49,12 +49,12 @@ def dissertation_note(self, key, value):
         'field_link_and_sequence_number': value.get('8'),
     }
 
-@marc21.over('bibliography__note', '^504..')
+@marc21.over('bibliography_note', '^504..')
 @utils.for_each_value
 @utils.filter_values
-def bibliography__note(self, key, value):
+def bibliography_note(self, key, value):
     return {
-        'bibliography__note': value.get('a'),
+        'bibliography_note': value.get('a'),
         'field_link_and_sequence_number': value.get('8'),
         'number_of_references': value.get('b'),
         'linkage': value.get('6'),
@@ -347,9 +347,9 @@ def original_version_note(self, key, value):
     return {
         'main_entry_of_original': value.get('a'),
         'international_standard_serial_number': value.get('x'),
-        'publication_distribution__of_original': value.get('c'),
+        'publication_distribution_of_original': value.get('c'),
         'edition_statement_of_original': value.get('b'),
-        'physical_description__of_original': value.get('e'),
+        'physical_description_of_original': value.get('e'),
         'series_statement_of_original': value.get('f'),
         'key_title_of_original': value.get('k'),
         'material_specific_details': value.get('m'),
