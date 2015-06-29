@@ -7,7 +7,7 @@
 # modify it under the terms of the Revised BSD License; see LICENSE
 # file for more details.
 
-"""Simple pythonic JSON to JSON converter."""
+"""A Pythonic JSON to JSON converter."""
 
 import os
 import re
@@ -79,6 +79,9 @@ setup(
         'lxml',
         'six',
     ],
+    extras_require={
+        'docs': ['sphinx_rtd_theme'],
+    },
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',

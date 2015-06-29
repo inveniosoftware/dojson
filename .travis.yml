@@ -27,8 +27,7 @@ install:
 script:
 # FIXME contrib.marc21 has tons of undefined docstrings
 #  - pep257 dojson
-# FIXME sphinx build
-#  - "sphinx-build -qnNW docs docs/_build/html"
+  - "sphinx-build -qnNW docs docs/_build/html"
   - python setup.py test
 
 after_success:

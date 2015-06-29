@@ -1,15 +1,42 @@
-DoJSON
-======
+========
+ DoJSON
+========
 
-Simple pythonic JSON to JSON converter.
+.. image:: https://travis-ci.org/inveniosoftware/dojson.png?branch=master
+   :target: https://travis-ci.org/inveniosoftware/dojson
+.. image:: https://coveralls.io/repos/inveniosoftware/dojson/badge.png?branch=master
+   :target: https://coveralls.io/r/inveniosoftware/dojson
+.. image:: https://pypip.in/v/dojson/badge.png
+   :target: https://pypi.python.org/pypi/dojson/
+.. image:: https://pypip.in/d/dojson/badge.png
+   :target: https://pypi.python.org/pypi/dojson/
+.. image:: https://readthedocs.org/projects/dojson/badge/?version=latest
+   :target: https://dojson.readthedocs.org/
 
-Example
--------
+About
+=====
 
-Simple example how to convert MARC XML to JSON.
+A Pythonic JSON to JSON converter.
 
-.. code:: python
+Installation
+============
 
-    from dojson.contrib.marc21.utils import create_record, split_blob
-    from dojson.contrib.marc21 import marc21
-    [marc21.do(create_record(data)) for data in split_blob(open('./data.xml', 'r').read())]
+DoJSON is on PyPI so all you need is: ::
+
+  pip install dojson
+
+Documentation
+=============
+
+Documentation is readable at http://dojson.readthedocs.org or
+it can be built using Sphinx: ::
+
+  pip install dojson[docs]
+  python setup.py build_sphinx
+
+Testing
+=======
+
+Running the test suite is as simple as: ::
+
+  python setup.py test
