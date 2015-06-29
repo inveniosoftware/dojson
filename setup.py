@@ -62,7 +62,7 @@ tests_require = [
 ]
 
 setup(
-    name='DoJSON',
+    name='dojson',
     version=version,
     url='http://github.com/inveniosoftware/dojson/',
     license='BSD',
