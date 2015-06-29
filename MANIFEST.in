@@ -1,0 +1,22 @@
+# This file is part of DoJSON
+# Copyright (C) 2015 CERN.
+#
+# DoJSON is free software; you can redistribute it and/or
+# modify it under the terms of the Revised BSD License; see LICENSE
+# file for more details.
+
+include *.rst
+include *.sh
+include *.yml
+include .coveragerc
+include .travis.yml
+include .dockerignore
+include Dockerfile
+include LICENSE
+include pytest.ini
+include tox.ini
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile
+recursive-include dojson *.py
+recursive-include tests *.py
