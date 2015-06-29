@@ -7,7 +7,6 @@
 # it under the terms of the Revised BSD License; see LICENSE file for
 # more details.
 
-# FIXME contrib.marc21 has tons of undefined docstrings
-#pep257 dojson && \
+pep257 --match-dir='dojson' dojson && \
 sphinx-build -qnNW docs docs/_build/html && \
 python setup.py test

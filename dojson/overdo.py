@@ -21,10 +21,12 @@ class Overdo(object):
     """Translation index."""
 
     def __init__(self):
+        """Constructor."""
         self.rules = []
         self.index = None
 
     def build(self):
+        """Build."""
         self.index = esmre.Index()
         for rule in self.rules:
             self.index.enter(*rule)
@@ -39,6 +41,7 @@ class Overdo(object):
         return decorator
 
     def _query(self, key):
+        """Query."""
         for name, creator, field in self.index.query(key):
             if field.match(key):
                 yield name, creator, field
@@ -58,8 +61,6 @@ class Overdo(object):
 
     def missing(self, blob):
         """Return keys with missing rules."""
-
         if self.index is None:
             self.build()
-
         return [key for key in blob.keys() if not len(list(self._query(key)))]

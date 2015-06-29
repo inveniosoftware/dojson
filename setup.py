@@ -19,9 +19,15 @@ from setuptools.command.test import test as TestCommand
 
 class PyTest(TestCommand):
 
+    """PyTest test runner.
+
+    See: http://pytest.org/latest/goodpractises.html?highlight=setuptools
+    """
+
     user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
 
     def initialize_options(self):
+        """Initialise test options."""
         TestCommand.initialize_options(self)
         try:
             from ConfigParser import ConfigParser
@@ -32,11 +38,13 @@ class PyTest(TestCommand):
         self.pytest_args = config.get("pytest", "addopts").split(" ")
 
     def finalize_options(self):
+        """Finalise test options."""
         TestCommand.finalize_options(self)
         self.test_args = []
         self.test_suite = True
 
     def run_tests(self):
+        """Rest tests."""
         # import here, cause outside the eggs aren't loaded
         import pytest
         import _pytest.config

@@ -27,3 +27,4 @@ You can also test your feature branch using Docker::
   $ docker-compose build
   $ docker-compose run web python setup.py test
   $ docker-compose run web python setup.py build_sphinx
+  $ docker-compose run web pep257 --match-dir='dojson'

@@ -8,7 +8,7 @@
 # file for more details.
 
 """
-Version information for DoJSON
+Version information for DoJSON.
 
 This file is imported by ``dojson.__init__``, and parsed by
 ``setup.py`` as well as ``docs/conf.py``.

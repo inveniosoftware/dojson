@@ -7,6 +7,8 @@
 # it under the terms of the Revised BSD License; see LICENSE file for
 # more details.
 
+"""Test suite for DoJSON."""
+
 import dojson
 
 RECORD = """<record>
@@ -17,7 +19,7 @@ RECORD = """<record>
     <subfield code="a">10.5281/zenodo.17575</subfield>
   </datafield>
   <datafield tag="520" ind1=" " ind2=" ">
-    <subfield code="a">&lt;p>Model definitions and data for BrainPigletHI&lt;/p></subfield>
+    <subfield code="a">&lt;p>Model definitions and data...&lt;/p></subfield>
   </datafield>
   <datafield tag="540" ind1=" " ind2=" ">
     <subfield code="u"></subfield>
@@ -38,7 +40,7 @@ RECORD = """<record>
   </datafield>
   <datafield tag="856" ind1="4" ind2=" ">
     <subfield code="s">272681</subfield>
-    <subfield code="u">https://zenodo.org/record/17575/files/bphi-v1.0.zip</subfield>
+    <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
     <subfield code="z">0</subfield>
   </datafield>
   <datafield tag="980" ind1=" " ind2=" ">
@@ -62,6 +64,7 @@ RECORD = """<record>
 
 
 def test_index_creation():
+    """Test index creation."""
     overdo = dojson.Overdo()
 
     @overdo.over('247', '^247..')
@@ -79,6 +82,7 @@ def test_index_creation():
 
 
 def test_missing_fields():
+    """Test missing fields."""
     overdo = dojson.Overdo()
 
     @overdo.over('247', '^247..')
@@ -89,6 +93,7 @@ def test_missing_fields():
 
 
 def test_marc21_field_247_matching():
+    """Test MARC21 0247/247 field matching."""
     from dojson.contrib.marc21 import marc21
 
     data = marc21.do({
@@ -96,12 +101,14 @@ def test_marc21_field_247_matching():
         '247__': [{'a': 'B'}],
     })
 
-    assert data['other_standard_identifier'][0]['standard_number_or_code'] == 'A'
+    assert data['other_standard_identifier'][0]['standard_number_or_code'] \
+        == 'A'
     assert data['former_title'][0]['title'] == 'B'
     assert len(data) == 2
 
 
 def test_marc21_from_xml():
+    """Test MARC21 loading from XML."""
     from dojson.contrib.marc21 import marc21
     from dojson.contrib.marc21.utils import create_record
 
