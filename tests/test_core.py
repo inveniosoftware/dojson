@@ -102,8 +102,8 @@ def test_marc21_field_247_matching():
     })
 
     assert data['other_standard_identifier'][0]['standard_number_or_code'] \
-        == 'A'
-    assert data['former_title'][0]['title'] == 'B'
+        == ['A']  # repeatable subfield
+    assert data['former_title'][0]['title'] == ['B']
     assert len(data) == 2
 
 
