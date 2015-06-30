@@ -30,3 +30,10 @@ def for_each_value(f):
             return [f(self, key, value, **kwargs) for value in values]
         return [f(self, key, values, **kwargs)]
     return wrapper
+
+
+def force_list(data):
+    """Wrap data in list."""
+    if data is not None and not isinstance(data, (list, set)):
+        return [data]
+    return data
