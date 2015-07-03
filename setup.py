@@ -7,7 +7,7 @@
 # modify it under the terms of the Revised BSD License; see LICENSE
 # file for more details.
 
-"""A Pythonic JSON to JSON converter."""
+"""DoJSON is a simple Pythonic JSON to JSON converter."""
 
 import os
 import re

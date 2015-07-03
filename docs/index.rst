@@ -24,7 +24,7 @@
         </a>
     </p>
 
-DoJSON is a Pythonic library that converts JSON to JSON.
+DoJSON is a simple Pythonic JSON to JSON converter.
 
 Installation
 ============

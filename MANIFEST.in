@@ -19,4 +19,5 @@ recursive-include docs *.py
 recursive-include docs *.rst
 recursive-include docs Makefile
 recursive-include dojson *.py
+recursive-include dojson *.json
 recursive-include tests *.py

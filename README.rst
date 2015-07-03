@@ -16,7 +16,7 @@
 About
 =====
 
-A Pythonic JSON to JSON converter.
+DoJSON is a simple Pythonic JSON to JSON converter.
 
 Installation
 ============
