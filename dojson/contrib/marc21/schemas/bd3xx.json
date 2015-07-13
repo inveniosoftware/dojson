@@ -8,43 +8,46 @@
                 "type": "object",
                 "properties": {
                     "extent": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "dimensions": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "other_physical_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "accompanying_material": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "size_of_unit": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "type_of_unit": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -53,16 +56,19 @@
             "description": "Playing Time",
             "properties": {
                 "playing_time": {
-                    "type": "string"
-                },
-                "field_link_and_sequence_number": {
-                    "type": "string"
-                },
-                "linkage": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
                 }
             }
         },
@@ -76,25 +82,19 @@
                         "enum": ["Hours", "No display constant generated"]
                     },
                     "hours": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "additional_information": {
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
+                    "additional_information": {
+                        "type": "string"
+                    },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -103,25 +103,19 @@
             "description": "Current Publication Frequency",
             "properties": {
                 "current_publication_frequency": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "field_link_and_sequence_number": {
                     "type": "string"
                 },
-                "date_of_current_publication_frequency": {
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
+                "date_of_current_publication_frequency": {
+                    "type": "string"
+                },
                 "linkage": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 }
             }
         },
@@ -132,25 +126,19 @@
                 "type": "object",
                 "properties": {
                     "former_publication_frequency": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "dates_of_former_publication_frequency": {
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
+                    "dates_of_former_publication_frequency": {
+                        "type": "string"
+                    },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -162,31 +150,31 @@
                 "type": "object",
                 "properties": {
                     "content_type_term": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "content_type_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -198,31 +186,31 @@
                 "type": "object",
                 "properties": {
                     "media_type_term": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "media_type_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -234,31 +222,31 @@
                 "type": "object",
                 "properties": {
                     "carrier_type_term": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "carrier_type_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -270,67 +258,103 @@
                 "type": "object",
                 "properties": {
                     "material_base_and_configuration": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_applied_to_surface": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "dimensions": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "support": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "information_recording_technique": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "production_rate_ratio": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "technical_specifications_of_medium": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "location_within_medium": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "layout": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "generation": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "book_format": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "polarity": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "font_size": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -348,151 +372,91 @@
                         "enum": ["Map projection", "Method specified in $2", "Altitude", "Depth", "Geodetic model", "Geographic", "Local", "Local planar", "Grid coordinate system"]
                     },
                     "reference_method_used": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "name": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "latitude_resolution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "coordinate_units_or_distance_units": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "standard_parallel_or_oblique_line_latitude": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "longitude_resolution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "longitude_of_central_meridian_or_projection_center": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "oblique_line_longitude": {
                         "type": "string"
                     },
-                    "false_easting": {
+                    "longitude_of_central_meridian_or_projection_center": {
+                        "type": "string"
+                    },
+                    "oblique_line_longitude": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "false_easting": {
+                        "type": "string"
                     },
                     "latitude_of_projection_center_or_projection_origin": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "scale_factor": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "false_northing": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "azimuthal_angle": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "height_of_perspective_point_above_surface": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "landsat_number_and_path_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "azimuth_measure_point_longitude_or_straight_vertical_longitude_from_pole": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "ellipsoid_name": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "zone_identifier": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "denominator_of_flattening_ratio": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "semi_major_axis": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "vertical_encoding_method": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "vertical_resolution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "local_planar_or_local_georeference_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "local_planar_local_or_other_projection_or_grid_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -504,67 +468,40 @@
                 "type": "object",
                 "properties": {
                     "planar_coordinate_encoding_method": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "abscissa_resolution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "planar_distance_units": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "distance_resolution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "ordinate_resolution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "bearing_units": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "bearing_resolution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "bearing_reference_meridian": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "bearing_reference_direction": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -576,52 +513,73 @@
                 "type": "object",
                 "properties": {
                     "type_of_recording": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "playing_speed": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "recording_medium": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "track_configuration": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "groove_characteristic": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "configuration_of_playback_channels": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "tape_configuration": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "special_playback_characteristics": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -633,34 +591,37 @@
                 "type": "object",
                 "properties": {
                     "presentation_format": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "projection_speed": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -672,34 +633,37 @@
                 "type": "object",
                 "properties": {
                     "video_format": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "broadcast_standard": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -711,46 +675,61 @@
                 "type": "object",
                 "properties": {
                     "file_type": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "file_size": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "encoding_format": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "regional_encoding": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "resolution": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "transmission_speed": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -762,31 +741,31 @@
                 "type": "object",
                 "properties": {
                     "organization": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "hierarchical_level": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "arrangement": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -798,61 +777,46 @@
                 "type": "object",
                 "properties": {
                     "direct_reference_method": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "object_count": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "object_type": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "column_count": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "row_count": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "vpf_topology_level": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "vertical_count": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "indirect_reference_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "format_of_the_digital_image": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -867,58 +831,49 @@
                         "enum": ["Contents note", "Author", "Abstract", "Title", "Record", "Document", "None of the above"]
                     },
                     "security_classification": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "external_dissemination_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "handling_instructions": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "classification_system": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "downgrading_or_declassification_event": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "downgrading_date": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "country_of_origin_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "declassification_date": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "authorization": {
-                        "type": "string"
-                    },
-                    "linkage": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
-                    "field_link_and_sequence_number": {
+                    "linkage": {
                         "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }
             }
@@ -927,28 +882,34 @@
             "description": "Originator Dissemination Control",
             "properties": {
                 "originator_control_term": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "authorized_recipients_of_material": {
-                    "type": "string"
-                },
-                "originating_agency": {
-                    "type": "string"
-                },
-                "other_restrictions": {
-                    "type": "string"
-                },
-                "linkage": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "field_link_and_sequence_number": {
+                "originating_agency": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "other_restrictions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
                     "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -962,25 +923,19 @@
                         "enum": ["Unformatted note", "Formatted style"]
                     },
                     "dates_of_publication_and_or_sequential_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "source_of_information": {
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
+                    "source_of_information": {
+                        "type": "string"
+                    },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -998,112 +953,67 @@
                         "enum": ["Not specified", "Open", "Closed"]
                     },
                     "first_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "nonpublic_note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "third_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "second_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "fifth_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "fourth_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "alternative_numbering_scheme_first_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "sixth_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "first_level_of_chronology": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "alternative_numbering_scheme_second_level_of_enumeration": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "third_level_of_chronology": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "second_level_of_chronology": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "alternative_numbering_scheme_chronology": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "fourth_level_of_chronology": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "first_level_textual_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "public_note": {
                         "type": "string"
                     },
-                    "first_level_of_chronology_issuance": {
+                    "second_level_of_enumeration": {
+                        "type": "string"
+                    },
+                    "fifth_level_of_enumeration": {
+                        "type": "string"
+                    },
+                    "fourth_level_of_enumeration": {
+                        "type": "string"
+                    },
+                    "alternative_numbering_scheme_first_level_of_enumeration": {
+                        "type": "string"
+                    },
+                    "sixth_level_of_enumeration": {
+                        "type": "string"
+                    },
+                    "first_level_of_chronology": {
+                        "type": "string"
+                    },
+                    "alternative_numbering_scheme_second_level_of_enumeration": {
+                        "type": "string"
+                    },
+                    "third_level_of_chronology": {
+                        "type": "string"
+                    },
+                    "second_level_of_chronology": {
+                        "type": "string"
+                    },
+                    "alternative_numbering_scheme_chronology": {
+                        "type": "string"
+                    },
+                    "fourth_level_of_chronology": {
+                        "type": "string"
+                    },
+                    "first_level_textual_designation": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "string"
+                    },
+                    "public_note": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "first_level_of_chronology_issuance": {
+                        "type": "string"
                     }
                 }
             }
@@ -1115,91 +1025,52 @@
                 "type": "object",
                 "properties": {
                     "price_type_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "currency_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "price_amount": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "price_note": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "unit_of_pricing": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "price_effective_until": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "price_effective_from": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "tax_rate_2": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "tax_rate_1": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "marc_country_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "iso_country_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "identification_of_pricing_entity": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source_of_price_type_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1211,79 +1082,46 @@
                 "type": "object",
                 "properties": {
                     "publishers_compressed_title_identification": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "availability_status_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "detailed_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "note": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "expected_next_availability_date": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "date_made_out_of_print": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "publisher_s_discount_category": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "marc_country_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "iso_country_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "identification_of_agency": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source_of_availability_status_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1295,25 +1133,28 @@
                 "type": "object",
                 "properties": {
                     "language_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "language_term": {
                         "type": "string"
                     },
-                    "linkage": {
+                    "language_term": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "linkage": {
+                        "type": "string"
                     }
                 }
             }
@@ -1325,25 +1166,28 @@
                 "type": "object",
                 "properties": {
                     "form_of_work": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source_of_term": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "linkage": {
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "linkage": {
+                        "type": "string"
                     }
                 }
             }
@@ -1355,31 +1199,40 @@
                 "type": "object",
                 "properties": {
                     "other_distinguishing_characteristic": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source_of_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source_of_term": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "uniform_resource_identifier": {
-                        "type": "string"
-                    },
-                    "linkage": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
-                    "field_link_and_sequence_number": {
+                    "linkage": {
                         "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }
             }
@@ -1397,43 +1250,64 @@
                         "enum": ["No information provided", "Intended for access", "Not intended for access"]
                     },
                     "medium_of_performance": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "soloist": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "doubling_instrument": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "alternative_medium_of_performance": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "number_of_performers_of_the_same_medium": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "total_number_of_performers": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source_of_term": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1445,40 +1319,40 @@
                 "type": "object",
                 "properties": {
                     "serial_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "thematic_index_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "opus_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "publisher_associated_with_opus_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "thematic_index_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1490,19 +1364,16 @@
                     "enum": ["Original key ", "Transposed key ", "Relationship to original unknown "]
                 },
                 "key": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "field_link_and_sequence_number": {
                     "type": "string"
                 },
-                "linkage": {
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
+                },
+                "linkage": {
+                    "type": "string"
                 }
             }
         },
@@ -1513,46 +1384,43 @@
                 "type": "object",
                 "properties": {
                     "audience_term": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "audience_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "demographic_group_term": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "demographic_group_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1564,46 +1432,43 @@
                 "type": "object",
                 "properties": {
                     "creator_contributor_term": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "creator_contributor_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "demographic_group_term": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "demographic_group_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }

@@ -24,46 +24,38 @@ def series_statement_added_entry_personal_name(self, key, value):
         "0": "Main entry not represented by pronoun",
         "1": "Main entry represented by pronoun"}
     return {
-        'personal_name': utils.force_list(
-            value.get('a')
+        'personal_name': value.get('a'),
+        'international_standard_serial_number': value.get('x'),
+        'titles_and_other_words_associated_with_a_name': utils.force_list(
+            value.get('c')
         ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
+        'numeration': value.get('b'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'titles_and_other_words_associated_with_a_name': value.get('c'),
-        'numeration': utils.force_list(
-            value.get('b')
+        'dates_associated_with_a_name': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'relator_term': value.get('e'),
-        'dates_associated_with_a_name': utils.force_list(
-            value.get('d')
+        'volume_sequential_designation': value.get('v'),
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'affiliation': value.get('u'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'form_subheading': value.get('k'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
-        ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'affiliation': utils.force_list(
-            value.get('u')
-        ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
+        'title_of_a_work': value.get('t'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
@@ -82,44 +74,40 @@ def series_statement_added_entry_corporate_name(self, key, value):
         "0": "Main entry not represented by pronoun",
         "1": "Main entry represented by pronoun"}
     return {
-        'corporate_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'international_standard_serial_number': value.get('x'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('b')
         ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'date_of_meeting_or_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'subordinate_unit': value.get('b'),
-        'relator_term': value.get('e'),
-        'date_of_meeting_or_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'volume_sequential_designation': value.get('v'),
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'form_subheading': value.get('k'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'affiliation': value.get('u'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'number_of_part_section_meeting': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'affiliation': utils.force_list(
-            value.get('u')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
+        'title_of_a_work': value.get('t'),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
@@ -138,48 +126,36 @@ def series_statement_added_entry_meeting_name(self, key, value):
         "0": "Main entry not represented by pronoun",
         "1": "Main entry represented by pronoun"}
     return {
-        'meeting_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'international_standard_serial_number': value.get('x'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('e')
         ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
+        'date_of_meeting': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'volume_sequential_designation': value.get('v'),
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'subordinate_unit': value.get('e'),
-        'date_of_meeting': utils.force_list(
-            value.get('d')
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'affiliation': value.get('u'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'form_subheading': value.get('k'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
-        ),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
-        ),
-        'number_of_part_section_meeting': value.get('n'),
-        'name_of_meeting_following_jurisdiction_name_entry_element': utils.force_list(
-            value.get('q')
-        ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'affiliation': utils.force_list(
-            value.get('u')
-        ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
+        'title_of_a_work': value.get('t'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
@@ -202,23 +178,25 @@ def series_statement_added_entry_title(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'title': utils.force_list(
-            value.get('a')
+        'title': value.get('a'),
+        'international_standard_serial_number': value.get('x'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
+        'volume_sequential_designation': value.get('v'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'authority_record_control_number': value.get('0'),
-        'bibliographic_record_control_number': value.get('w'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'bibliographic_record_control_number': utils.force_list(
+            value.get('w')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
 
@@ -230,18 +208,20 @@ def series_statement(self, key, value):
     """Series Statement."""
     indicator_map1 = {"0": "Series not traced", "1": "Series traced"}
     return {
-        'series_statement': value.get('a'),
-        'international_standard_serial_number': value.get('x'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'series_statement': utils.force_list(
+            value.get('a')
         ),
-        'library_of_congress_call_number': utils.force_list(
-            value.get('l')
+        'international_standard_serial_number': utils.force_list(
+            value.get('x')
         ),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'linkage': value.get('6'),
+        'library_of_congress_call_number': value.get('l'),
+        'materials_specified': value.get('3'),
+        'volume_sequential_designation': utils.force_list(
+            value.get('v')
         ),
-        'volume_sequential_designation': value.get('v'),
-        'field_link_and_sequence_number': value.get('8'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'series_tracing_policy': indicator_map1.get(key[3]),
     }

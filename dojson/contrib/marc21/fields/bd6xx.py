@@ -30,68 +30,64 @@ def subject_added_entry_personal_name(self, key, value):
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'personal_name': utils.force_list(
-            value.get('a')
+        'personal_name': value.get('a'),
+        'titles_and_other_words_associated_with_a_name': utils.force_list(
+            value.get('c')
         ),
-        'titles_and_other_words_associated_with_a_name': value.get('c'),
-        'numeration': utils.force_list(
-            value.get('b')
+        'numeration': value.get('b'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'relator_term': value.get('e'),
-        'dates_associated_with_a_name': utils.force_list(
-            value.get('d')
+        'dates_associated_with_a_name': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'attribution_qualifier': utils.force_list(
+            value.get('j')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'form_subheading': value.get('k'),
-        'attribution_qualifier': value.get('j'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'fuller_form_of_name': value.get('q'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'affiliation': value.get('u'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'fuller_form_of_name': utils.force_list(
-            value.get('q')
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'key_for_music': utils.force_list(
-            value.get('r')
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
         ),
-        'affiliation': utils.force_list(
-            value.get('u')
-        ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
-        'form_subdivision': value.get('v'),
-        'chronological_subdivision': value.get('y'),
-        'general_subdivision': value.get('x'),
-        'geographic_subdivision': value.get('z'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
@@ -116,62 +112,62 @@ def subject_added_entry_corporate_name(self, key, value):
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'corporate_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('b')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'subordinate_unit': value.get('b'),
-        'relator_term': value.get('e'),
-        'date_of_meeting_or_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'date_of_meeting_or_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'form_subheading': value.get('k'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'number_of_part_section_meeting': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'affiliation': value.get('u'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'key_for_music': utils.force_list(
-            value.get('r')
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'affiliation': utils.force_list(
-            value.get('u')
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
         ),
-        'form_subdivision': value.get('v'),
-        'chronological_subdivision': value.get('y'),
-        'general_subdivision': value.get('x'),
-        'geographic_subdivision': value.get('z'),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
@@ -196,60 +192,56 @@ def subject_added_entry_meeting_name(self, key, value):
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'meeting_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('e')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'date_of_meeting': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'subordinate_unit': value.get('e'),
-        'date_of_meeting': utils.force_list(
-            value.get('d')
+        'relator_term': utils.force_list(
+            value.get('j')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'version': value.get('s'),
+        'affiliation': value.get('u'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'form_subheading': value.get('k'),
-        'relator_term': value.get('j'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'number_of_part_section_meeting': value.get('n'),
-        'name_of_meeting_following_jurisdiction_name_entry_element': utils.force_list(
-            value.get('q')
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
         ),
-        'affiliation': utils.force_list(
-            value.get('u')
-        ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
-        'form_subdivision': value.get('v'),
-        'chronological_subdivision': value.get('y'),
-        'general_subdivision': value.get('x'),
-        'geographic_subdivision': value.get('z'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
@@ -282,55 +274,57 @@ def subject_added_entry_uniform_title(self, key, value):
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'uniform_title': utils.force_list(
-            value.get('a')
+        'uniform_title': value.get('a'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'relator_term': value.get('e'),
-        'date_of_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'date_of_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'form_subheading': value.get('k'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'key_for_music': utils.force_list(
-            value.get('r')
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'form_subdivision': value.get('v'),
-        'chronological_subdivision': value.get('y'),
-        'general_subdivision': value.get('x'),
-        'geographic_subdivision': value.get('z'),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
         'nonfiling_characters': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
@@ -355,24 +349,28 @@ def subject_added_entry_chronological_term(self, key, value):
         "6": "R\u00c3\u00a9pertoire de vedettes-mati\u00c3\u00a8re",
         "7": "Source specified in subfield $2"}
     return {
-        'chronological_term': utils.force_list(
-            value.get('a')
+        'chronological_term': value.get('a'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'general_subdivision': value.get('x'),
-        'form_subdivision': value.get('v'),
-        'authority_record_control_number_or_standard_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'linkage': value.get('6'),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'chronological_subdivision': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'geographic_subdivision': value.get('z'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
         'type_of_date_or_time_period': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
@@ -398,35 +396,37 @@ def subject_added_entry_topical_term(self, key, value):
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
     return {
-        'topical_term_or_geographic_name_entry_element': utils.force_list(
-            value.get('a')
+        'topical_term_or_geographic_name_entry_element': value.get('a'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'general_subdivision': value.get('x'),
-        'location_of_event': utils.force_list(
-            value.get('c')
+        'location_of_event': value.get('c'),
+        'topical_term_following_geographic_name_entry_element': value.get('b'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'topical_term_following_geographic_name_entry_element': utils.force_list(
-            value.get('b')
+        'active_dates': value.get('d'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'relator_term': value.get('e'),
-        'active_dates': utils.force_list(
-            value.get('d')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'form_subdivision': value.get('v'),
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'linkage': value.get('6'),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'chronological_subdivision': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'geographic_subdivision': value.get('z'),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
         'level_of_subject': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
@@ -447,26 +447,34 @@ def subject_added_entry_geographic_name(self, key, value):
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
     return {
-        'geographic_name': utils.force_list(
-            value.get('a')
+        'geographic_name': value.get('a'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'general_subdivision': value.get('x'),
-        'relator_term': value.get('e'),
-        'form_subdivision': value.get('v'),
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'chronological_subdivision': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'geographic_subdivision': value.get('z'),
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
+        ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
         'thesaurus': indicator_map2.get(key[4]),
     }
 
@@ -491,11 +499,13 @@ def index_term_uncontrolled(self, key, value):
         "5": "Geographic name",
         "6": "Genre/form term"}
     return {
-        'uncontrolled_term': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'uncontrolled_term': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'linkage': value.get('6'),
         'level_of_index_term': indicator_map1.get(key[3]),
         'type_of_term_or_name': indicator_map2.get(key[4]),
     }
@@ -512,25 +522,39 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
         "1": "Primary",
         "2": "Secondary"}
     return {
-        'focus_term': value.get('a'),
-        'facet_hierarchy_designation': value.get('c'),
-        'non_focus_term': value.get('b'),
-        'relator_term': value.get('e'),
-        'form_subdivision': value.get('v'),
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'focus_term': utils.force_list(
+            value.get('a')
         ),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'facet_hierarchy_designation': utils.force_list(
+            value.get('c')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'non_focus_term': utils.force_list(
+            value.get('b')
         ),
-        'chronological_subdivision': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'geographic_subdivision': value.get('z'),
+        'relator_term': utils.force_list(
+            value.get('e')
+        ),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'materials_specified': value.get('3'),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
+        ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
         'level_of_subject': indicator_map1.get(key[3]),
     }
 
@@ -551,29 +575,35 @@ def index_term_genre_form(self, key, value):
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
     return {
-        'genre_form_data_or_focus_term': utils.force_list(
-            value.get('a')
+        'genre_form_data_or_focus_term': value.get('a'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'general_subdivision': value.get('x'),
-        'facet_hierarchy_designation': value.get('c'),
-        'non_focus_term': value.get('b'),
-        'form_subdivision': value.get('v'),
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'facet_hierarchy_designation': utils.force_list(
+            value.get('c')
         ),
-        'source_of_term': utils.force_list(
-            value.get('2')
+        'non_focus_term': utils.force_list(
+            value.get('b')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'chronological_subdivision': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'geographic_subdivision': value.get('z'),
+        'materials_specified': value.get('3'),
+        'source_of_term': value.get('2'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
+        ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
         'type_of_heading': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
@@ -585,27 +615,29 @@ def index_term_genre_form(self, key, value):
 def index_term_occupation(self, key, value):
     """Index Term-Occupation."""
     return {
-        'occupation': utils.force_list(
-            value.get('a')
+        'occupation': value.get('a'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'general_subdivision': value.get('x'),
-        'form': utils.force_list(
-            value.get('k')
+        'form': value.get('k'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'form_subdivision': value.get('v'),
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'source_of_term': utils.force_list(
-            value.get('2')
+        'materials_specified': value.get('3'),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'chronological_subdivision': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'geographic_subdivision': value.get('z'),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
     }
 
 
@@ -615,24 +647,28 @@ def index_term_occupation(self, key, value):
 def index_term_function(self, key, value):
     """Index Term-Function."""
     return {
-        'function': utils.force_list(
-            value.get('a')
+        'function': value.get('a'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'general_subdivision': value.get('x'),
-        'form_subdivision': value.get('v'),
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'source_of_term': utils.force_list(
-            value.get('2')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'materials_specified': value.get('3'),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
-        'chronological_subdivision': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'geographic_subdivision': value.get('z'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
     }
 
 
@@ -642,23 +678,17 @@ def index_term_function(self, key, value):
 def index_term_curriculum_objective(self, key, value):
     """Index Term-Curriculum Objective."""
     return {
-        'main_curriculum_objective': utils.force_list(
-            value.get('a')
+        'main_curriculum_objective': value.get('a'),
+        'curriculum_code': value.get('c'),
+        'subordinate_curriculum_objective': utils.force_list(
+            value.get('b')
         ),
-        'curriculum_code': utils.force_list(
-            value.get('c')
+        'correlation_factor': value.get('d'),
+        'source_of_term_or_code': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'subordinate_curriculum_objective': value.get('b'),
-        'correlation_factor': utils.force_list(
-            value.get('d')
-        ),
-        'source_of_term_or_code': utils.force_list(
-            value.get('2')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -668,25 +698,35 @@ def index_term_curriculum_objective(self, key, value):
 def subject_added_entry_hierarchical_place_name(self, key, value):
     """Subject Added Entry-Hierarchical Place Name."""
     return {
-        'country_or_larger_entity': value.get('a'),
-        'intermediate_political_jurisdiction': value.get('c'),
-        'first_order_political_jurisdiction': utils.force_list(
-            value.get('b')
+        'country_or_larger_entity': utils.force_list(
+            value.get('a')
         ),
-        'relator_term': value.get('e'),
-        'city': utils.force_list(
-            value.get('d')
+        'intermediate_political_jurisdiction': utils.force_list(
+            value.get('c')
         ),
-        'other_nonjurisdictional_geographic_region_and_feature': value.get('g'),
-        'city_subsection': value.get('f'),
-        'extraterrestrial_area': value.get('h'),
-        'authority_record_control_number': value.get('0'),
-        'source_of_heading_or_term': utils.force_list(
-            value.get('2')
+        'first_order_political_jurisdiction': value.get('b'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'city': value.get('d'),
+        'other_nonjurisdictional_geographic_region_and_feature': utils.force_list(
+            value.get('g')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'city_subsection': utils.force_list(
+            value.get('f')
+        ),
+        'extraterrestrial_area': utils.force_list(
+            value.get('h')
+        ),
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_heading_or_term': value.get('2'),
+        'relator_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }

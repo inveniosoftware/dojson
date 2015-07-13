@@ -24,17 +24,15 @@ def abbreviated_title(self, key, value):
         "#": "Abbreviated key title",
         "0": "Other abbreviated title"}
     return {
-        'abbreviated_title': utils.force_list(
-            value.get('a')
+        'abbreviated_title': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'source': value.get('2'),
-        'qualifying_information': utils.force_list(
-            value.get('b')
+        'source': utils.force_list(
+            value.get('2')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'qualifying_information': value.get('b'),
+        'linkage': value.get('6'),
         'title_added_entry': indicator_map1.get(key[3]),
         'type': indicator_map2.get(key[4]),
     }
@@ -57,16 +55,12 @@ def key_title(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'key_title': utils.force_list(
-            value.get('a')
+        'key_title': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'qualifying_information': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'qualifying_information': value.get('b'),
+        'linkage': value.get('6'),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
 
@@ -90,40 +84,36 @@ def uniform_title(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'uniform_title': utils.force_list(
-            value.get('a')
+        'uniform_title': value.get('a'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'date_of_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'date_of_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'form_subheading': value.get('k'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'authority_record_control_number': value.get('0'),
-        'version': utils.force_list(
-            value.get('s')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'key_for_music': utils.force_list(
-            value.get('r')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
@@ -148,27 +138,21 @@ def translation_of_title_by_cataloging_agency(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'title': utils.force_list(
-            value.get('a')
+        'title': value.get('a'),
+        'statement_of_responsibility': value.get('c'),
+        'remainder_of_title': value.get('b'),
+        'medium': value.get('h'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'statement_of_responsibility': utils.force_list(
-            value.get('c')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'remainder_of_title': utils.force_list(
-            value.get('b')
+        'linkage': value.get('6'),
+        'language_code_of_translated_title': value.get('y'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'medium': utils.force_list(
-            value.get('h')
-        ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'language_code_of_translated_title': utils.force_list(
-            value.get('y')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'title_added_entry': indicator_map1.get(key[3]),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
@@ -193,39 +177,33 @@ def collective_uniform_title(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'uniform_title': utils.force_list(
-            value.get('a')
+        'uniform_title': value.get('a'),
+        'date_of_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'date_of_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'form_subheading': value.get('k'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
-        ),
-        'key_for_music': utils.force_list(
-            value.get('r')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
@@ -248,34 +226,26 @@ def title_statement(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'title': utils.force_list(
-            value.get('a')
+        'title': value.get('a'),
+        'statement_of_responsibility': value.get('c'),
+        'remainder_of_title': value.get('b'),
+        'bulk_dates': value.get('g'),
+        'inclusive_dates': value.get('f'),
+        'medium': value.get('h'),
+        'form': utils.force_list(
+            value.get('k')
         ),
-        'statement_of_responsibility': utils.force_list(
-            value.get('c')
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'remainder_of_title': utils.force_list(
-            value.get('b')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'bulk_dates': utils.force_list(
-            value.get('g')
+        'version': value.get('s'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'inclusive_dates': utils.force_list(
-            value.get('f')
-        ),
-        'medium': utils.force_list(
-            value.get('h')
-        ),
-        'form': value.get('k'),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'title_added_entry': indicator_map1.get(key[3]),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
@@ -303,33 +273,23 @@ def varying_form_of_title(self, key, value):
         "7": "Running title",
         "8": "Spine title"}
     return {
-        'title_proper_short_title': utils.force_list(
-            value.get('a')
+        'title_proper_short_title': value.get('a'),
+        'remainder_of_title': value.get('b'),
+        'miscellaneous_information': value.get('g'),
+        'date_or_sequential_designation': value.get('f'),
+        'display_text': value.get('i'),
+        'medium': value.get('h'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'remainder_of_title': utils.force_list(
-            value.get('b')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'date_or_sequential_designation': utils.force_list(
-            value.get('f')
-        ),
-        'display_text': utils.force_list(
-            value.get('i')
-        ),
-        'medium': utils.force_list(
-            value.get('h')
-        ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'note_added_entry_controller': indicator_map1.get(key[3]),
         'type_of_title': indicator_map2.get(key[4]),
     }
@@ -343,30 +303,22 @@ def former_title(self, key, value):
     indicator_map1 = {"0": "No added entry", "1": "Added entry"}
     indicator_map2 = {"0": "Display note", "1": "Do not display note"}
     return {
-        'title': utils.force_list(
-            value.get('a')
+        'title': value.get('a'),
+        'international_standard_serial_number': value.get('x'),
+        'remainder_of_title': value.get('b'),
+        'miscellaneous_information': value.get('g'),
+        'date_or_sequential_designation': value.get('f'),
+        'medium': value.get('h'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'remainder_of_title': utils.force_list(
-            value.get('b')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
-        ),
-        'date_or_sequential_designation': utils.force_list(
-            value.get('f')
-        ),
-        'medium': utils.force_list(
-            value.get('h')
-        ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'title_added_entry': indicator_map1.get(key[3]),
         'note_controller': indicator_map2.get(key[4]),
     }

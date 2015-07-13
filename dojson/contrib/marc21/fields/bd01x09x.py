@@ -19,12 +19,16 @@ from ..model import marc21
 def library_of_congress_control_number(self, key, value):
     """Library of Congress Control Number."""
     return {
-        'lc_control_number': utils.force_list(
-            value.get('a')
+        'lc_control_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'nucmc_control_number': value.get('b'),
-        'canceled_invalid_lc_control_number': value.get('z'),
+        'nucmc_control_number': utils.force_list(
+            value.get('b')
+        ),
+        'canceled_invalid_lc_control_number': utils.force_list(
+            value.get('z')
+        ),
     }
 
 
@@ -34,22 +38,22 @@ def library_of_congress_control_number(self, key, value):
 def patent_control_information(self, key, value):
     """Patent Control Information."""
     return {
-        'number': utils.force_list(
-            value.get('a')
+        'number': value.get('a'),
+        'type_of_number': value.get('c'),
+        'country': value.get('b'),
+        'status': utils.force_list(
+            value.get('e')
         ),
-        'type_of_number': utils.force_list(
-            value.get('c')
+        'date': utils.force_list(
+            value.get('d')
         ),
-        'country': utils.force_list(
-            value.get('b')
+        'party_to_document': utils.force_list(
+            value.get('f')
         ),
-        'status': value.get('e'),
-        'date': value.get('d'),
-        'party_to_document': value.get('f'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -59,16 +63,20 @@ def patent_control_information(self, key, value):
 def national_bibliography_number(self, key, value):
     """National Bibliography Number."""
     return {
-        'national_bibliography_number': value.get('a'),
-        'qualifying_information': value.get('q'),
-        'source': utils.force_list(
-            value.get('2')
+        'national_bibliography_number': utils.force_list(
+            value.get('a')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'qualifying_information': utils.force_list(
+            value.get('q')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_national_bibliography_number': value.get('z'),
+        'source': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'canceled_invalid_national_bibliography_number': utils.force_list(
+            value.get('z')
+        ),
     }
 
 
@@ -81,14 +89,14 @@ def national_bibliographic_agency_control_number(self, key, value):
         "#": "Library and Archives Canada",
         "7": "Source specified in subfield $2"}
     return {
-        'record_control_number': utils.force_list(
-            value.get('a')
+        'record_control_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'source': utils.force_list(
-            value.get('2')
+        'source': value.get('2'),
+        'canceled_invalid_control_number': utils.force_list(
+            value.get('z')
         ),
-        'canceled_invalid_control_number': value.get('z'),
         'national_bibliographic_agency': indicator_map1.get(key[3]),
     }
 
@@ -102,24 +110,20 @@ def copyright_or_legal_deposit_number(self, key, value):
         "#": "Copyright or legal deposit number",
         "8": "No display constant generated"}
     return {
-        'copyright_or_legal_deposit_number': value.get('a'),
-        'assigning_agency': utils.force_list(
-            value.get('b')
+        'copyright_or_legal_deposit_number': utils.force_list(
+            value.get('a')
         ),
-        'date': utils.force_list(
-            value.get('d')
+        'assigning_agency': value.get('b'),
+        'date': value.get('d'),
+        'display_text': value.get('i'),
+        'source': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'display_text': utils.force_list(
-            value.get('i')
+        'canceled_invalid_copyright_or_legal_deposit_number': utils.force_list(
+            value.get('z')
         ),
-        'source': utils.force_list(
-            value.get('2')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_copyright_or_legal_deposit_number': value.get('z'),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
@@ -129,11 +133,13 @@ def copyright_or_legal_deposit_number(self, key, value):
 def copyright_article_fee_code(self, key, value):
     """Copyright Article-Fee Code."""
     return {
-        'copyright_article_fee_code_nr': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'copyright_article_fee_code_nr': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -143,18 +149,18 @@ def copyright_article_fee_code(self, key, value):
 def international_standard_book_number(self, key, value):
     """International Standard Book Number."""
     return {
-        'international_standard_book_number': utils.force_list(
-            value.get('a')
+        'international_standard_book_number': value.get('a'),
+        'terms_of_availability': value.get('c'),
+        'qualifying_information': utils.force_list(
+            value.get('q')
         ),
-        'terms_of_availability': utils.force_list(
-            value.get('c')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'qualifying_information': value.get('q'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'canceled_invalid_isbn': utils.force_list(
+            value.get('z')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_isbn': value.get('z'),
     }
 
 
@@ -168,22 +174,22 @@ def international_standard_serial_number(self, key, value):
         "0": "Continuing resource of international interest",
         "1": "Continuing resource not of international interest"}
     return {
-        'international_standard_serial_number': utils.force_list(
-            value.get('a')
+        'international_standard_serial_number': value.get('a'),
+        'canceled_issn_l': utils.force_list(
+            value.get('m')
         ),
-        'canceled_issn_l': value.get('m'),
-        'issn_l': utils.force_list(
-            value.get('l')
+        'issn_l': value.get('l'),
+        'source': value.get('2'),
+        'linkage': value.get('6'),
+        'incorrect_issn': utils.force_list(
+            value.get('y')
         ),
-        'source': utils.force_list(
-            value.get('2')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'canceled_issn': utils.force_list(
+            value.get('z')
         ),
-        'incorrect_issn': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_issn': value.get('z'),
         'level_of_international_interest': indicator_map1.get(key[3]),
     }
 
@@ -206,24 +212,20 @@ def other_standard_identifier(self, key, value):
         "0": "No difference",
         "1": "Difference"}
     return {
-        'standard_number_or_code': utils.force_list(
-            value.get('a')
+        'standard_number_or_code': value.get('a'),
+        'terms_of_availability': value.get('c'),
+        'additional_codes_following_the_standard_number_or_code': value.get('d'),
+        'qualifying_information': utils.force_list(
+            value.get('q')
         ),
-        'terms_of_availability': utils.force_list(
-            value.get('c')
+        'source_of_number_or_code': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'additional_codes_following_the_standard_number_or_code': utils.force_list(
-            value.get('d')
+        'canceled_invalid_standard_number_or_code': utils.force_list(
+            value.get('z')
         ),
-        'qualifying_information': value.get('q'),
-        'source_of_number_or_code': utils.force_list(
-            value.get('2')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_standard_number_or_code': value.get('z'),
         'type_of_standard_number_or_code': indicator_map1.get(key[3]),
         'difference_indicator': indicator_map2.get(key[4]),
     }
@@ -235,8 +237,12 @@ def other_standard_identifier(self, key, value):
 def overseas_acquisition_number(self, key, value):
     """Overseas Acquisition Number."""
     return {
-        'overseas_acquisition_number': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
+        'overseas_acquisition_number': utils.force_list(
+            value.get('a')
+        ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -246,27 +252,21 @@ def overseas_acquisition_number(self, key, value):
 def fingerprint_identifier(self, key, value):
     """Fingerprint Identifier."""
     return {
-        'first_and_second_groups_of_characters': utils.force_list(
-            value.get('a')
+        'first_and_second_groups_of_characters': value.get('a'),
+        'date': value.get('c'),
+        'third_and_fourth_groups_of_characters': value.get('b'),
+        'unparsed_fingerprint': value.get('e'),
+        'number_of_volume_or_part': utils.force_list(
+            value.get('d')
         ),
-        'date': utils.force_list(
-            value.get('c')
+        'source': value.get('2'),
+        'institution_to_which_field_applies': utils.force_list(
+            value.get('5')
         ),
-        'third_and_fourth_groups_of_characters': utils.force_list(
-            value.get('b')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'unparsed_fingerprint': utils.force_list(
-            value.get('e')
-        ),
-        'number_of_volume_or_part': value.get('d'),
-        'source': utils.force_list(
-            value.get('2')
-        ),
-        'institution_to_which_field_applies': value.get('5'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -276,15 +276,17 @@ def fingerprint_identifier(self, key, value):
 def standard_technical_report_number(self, key, value):
     """Standard Technical Report Number."""
     return {
-        'standard_technical_report_number': utils.force_list(
-            value.get('a')
+        'standard_technical_report_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_number': value.get('z'),
-        'qualifying_information': value.get('q'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'canceled_invalid_number': utils.force_list(
+            value.get('z')
         ),
+        'qualifying_information': utils.force_list(
+            value.get('q')
+        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -306,17 +308,15 @@ def publisher_number(self, key, value):
         "2": "Note, no added entry",
         "3": "No note, added entry"}
     return {
-        'publisher_number': utils.force_list(
-            value.get('a')
+        'publisher_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'source': utils.force_list(
-            value.get('b')
+        'source': value.get('b'),
+        'qualifying_information': utils.force_list(
+            value.get('q')
         ),
-        'qualifying_information': value.get('q'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
         'type_of_publisher_number': indicator_map1.get(key[3]),
         'note_added_entry_controller': indicator_map2.get(key[4]),
     }
@@ -328,14 +328,14 @@ def publisher_number(self, key, value):
 def coden_designation(self, key, value):
     """CODEN Designation."""
     return {
-        'coden': utils.force_list(
-            value.get('a')
+        'coden': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_coden': value.get('z'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'canceled_invalid_coden': utils.force_list(
+            value.get('z')
         ),
+        'linkage': value.get('6'),
     }
 
 
@@ -345,50 +345,42 @@ def coden_designation(self, key, value):
 def musical_incipits_information(self, key, value):
     """Musical Incipits Information."""
     return {
-        'number_of_work': utils.force_list(
-            value.get('a')
+        'number_of_work': value.get('a'),
+        'number_of_excerpt': value.get('c'),
+        'number_of_movement': value.get('b'),
+        'role': value.get('e'),
+        'caption_or_heading': utils.force_list(
+            value.get('d')
         ),
-        'number_of_excerpt': utils.force_list(
-            value.get('c')
+        'clef': value.get('g'),
+        'public_note': utils.force_list(
+            value.get('z')
         ),
-        'number_of_movement': utils.force_list(
-            value.get('b')
+        'voice_instrument': value.get('m'),
+        'time_signature': value.get('o'),
+        'key_signature': value.get('n'),
+        'general_note': utils.force_list(
+            value.get('q')
         ),
-        'role': utils.force_list(
-            value.get('e')
+        'musical_notation': value.get('p'),
+        'coded_validity_note': utils.force_list(
+            value.get('s')
         ),
-        'caption_or_heading': value.get('d'),
-        'clef': utils.force_list(
-            value.get('g')
+        'system_code': value.get('2'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'public_note': value.get('z'),
-        'voice_instrument': utils.force_list(
-            value.get('m')
+        'text_incipit': utils.force_list(
+            value.get('t')
         ),
-        'time_signature': utils.force_list(
-            value.get('o')
+        'linkage': value.get('6'),
+        'link_text': utils.force_list(
+            value.get('y')
         ),
-        'key_signature': utils.force_list(
-            value.get('n')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'general_note': value.get('q'),
-        'musical_notation': utils.force_list(
-            value.get('p')
-        ),
-        'coded_validity_note': value.get('s'),
-        'system_code': utils.force_list(
-            value.get('2')
-        ),
-        'uniform_resource_identifier': value.get('u'),
-        'text_incipit': value.get('t'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'link_text': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'key_or_mode': utils.force_list(
-            value.get('r')
-        ),
+        'key_or_mode': value.get('r'),
     }
 
 
@@ -398,16 +390,12 @@ def musical_incipits_information(self, key, value):
 def postal_registration_number(self, key, value):
     """Postal Registration Number."""
     return {
-        'postal_registration_number': utils.force_list(
-            value.get('a')
+        'postal_registration_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'source_agency_assigning_number': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'source_agency_assigning_number': value.get('b'),
+        'linkage': value.get('6'),
     }
 
 
@@ -427,19 +415,29 @@ def date_time_and_place_of_an_event(self, key, value):
         "1": "Broadcast ",
         "2": "Finding "}
     return {
-        'formatted_date_time': value.get('a'),
-        'geographic_classification_subarea_code': value.get('c'),
-        'geographic_classification_area_code': value.get('b'),
-        'place_of_event': value.get('p'),
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'formatted_date_time': utils.force_list(
+            value.get('a')
         ),
-        'source_of_term': value.get('2'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'geographic_classification_subarea_code': utils.force_list(
+            value.get('c')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'geographic_classification_area_code': utils.force_list(
+            value.get('b')
+        ),
+        'place_of_event': utils.force_list(
+            value.get('p')
+        ),
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'materials_specified': value.get('3'),
+        'source_of_term': utils.force_list(
+            value.get('2')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'type_of_date_in_subfield_a': indicator_map1.get(key[3]),
         'type_of_event': indicator_map2.get(key[4]),
     }
@@ -459,64 +457,44 @@ def coded_cartographic_mathematical_data(self, key, value):
         "0": "Outer ring",
         "1": "Exclusion ring"}
     return {
-        'authority_record_control_number_or_standard_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
         ),
-        'source': utils.force_list(
-            value.get('2')
+        'materials_specified': value.get('3'),
+        'source': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'category_of_scale': value.get('a'),
+        'constant_ratio_linear_vertical_scale': utils.force_list(
+            value.get('c')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'category_of_scale': utils.force_list(
-            value.get('a')
+        'constant_ratio_linear_horizontal_scale': utils.force_list(
+            value.get('b')
         ),
-        'constant_ratio_linear_vertical_scale': value.get('c'),
-        'constant_ratio_linear_horizontal_scale': value.get('b'),
-        'coordinates_easternmost_longitude': utils.force_list(
-            value.get('e')
+        'coordinates_easternmost_longitude': value.get('e'),
+        'coordinates_westernmost_longitude': value.get('d'),
+        'coordinates_southernmost_latitude': value.get('g'),
+        'coordinates_northernmost_latitude': value.get('f'),
+        'angular_scale': utils.force_list(
+            value.get('h')
         ),
-        'coordinates_westernmost_longitude': utils.force_list(
-            value.get('d')
+        'declination_southern_limit': value.get('k'),
+        'declination_northern_limit': value.get('j'),
+        'right_ascension_eastern_limit': value.get('m'),
+        'right_ascension_western_limit': value.get('n'),
+        'equinox': value.get('p'),
+        'g_ring_latitude': utils.force_list(
+            value.get('s')
         ),
-        'coordinates_southernmost_latitude': utils.force_list(
-            value.get('g')
+        'distance_from_earth': value.get('r'),
+        'g_ring_longitude': utils.force_list(
+            value.get('t')
         ),
-        'coordinates_northernmost_latitude': utils.force_list(
-            value.get('f')
-        ),
-        'angular_scale': value.get('h'),
-        'declination_southern_limit': utils.force_list(
-            value.get('k')
-        ),
-        'declination_northern_limit': utils.force_list(
-            value.get('j')
-        ),
-        'right_ascension_eastern_limit': utils.force_list(
-            value.get('m')
-        ),
-        'right_ascension_western_limit': utils.force_list(
-            value.get('n')
-        ),
-        'equinox': utils.force_list(
-            value.get('p')
-        ),
-        'g_ring_latitude': value.get('s'),
-        'distance_from_earth': utils.force_list(
-            value.get('r')
-        ),
-        'g_ring_longitude': value.get('t'),
-        'ending_date': utils.force_list(
-            value.get('y')
-        ),
-        'beginning_date': utils.force_list(
-            value.get('x')
-        ),
-        'name_of_extraterrestrial_body': utils.force_list(
-            value.get('z')
-        ),
+        'ending_date': value.get('y'),
+        'beginning_date': value.get('x'),
+        'name_of_extraterrestrial_body': value.get('z'),
         'type_of_scale': indicator_map1.get(key[3]),
         'type_of_ring': indicator_map2.get(key[4]),
     }
@@ -528,14 +506,14 @@ def coded_cartographic_mathematical_data(self, key, value):
 def system_control_number(self, key, value):
     """System Control Number."""
     return {
-        'system_control_number': utils.force_list(
-            value.get('a')
+        'system_control_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_control_number': value.get('z'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'canceled_invalid_control_number': utils.force_list(
+            value.get('z')
         ),
+        'linkage': value.get('6'),
     }
 
 
@@ -544,16 +522,12 @@ def system_control_number(self, key, value):
 def original_study_number_for_computer_data_files(self, key, value):
     """Original Study Number for Computer Data Files."""
     return {
-        'original_study_number': utils.force_list(
-            value.get('a')
+        'original_study_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'source_agency_assigning_number': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'source_agency_assigning_number': value.get('b'),
+        'linkage': value.get('6'),
     }
 
 
@@ -563,20 +537,24 @@ def original_study_number_for_computer_data_files(self, key, value):
 def source_of_acquisition(self, key, value):
     """Source of Acquisition."""
     return {
-        'stock_number': utils.force_list(
-            value.get('a')
+        'stock_number': value.get('a'),
+        'terms_of_availability': utils.force_list(
+            value.get('c')
         ),
-        'terms_of_availability': value.get('c'),
-        'source_of_stock_number_acquisition': utils.force_list(
-            value.get('b')
+        'source_of_stock_number_acquisition': value.get('b'),
+        'additional_format_characteristics': utils.force_list(
+            value.get('g')
         ),
-        'additional_format_characteristics': value.get('g'),
-        'form_of_issue': value.get('f'),
-        'note': value.get('n'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'form_of_issue': utils.force_list(
+            value.get('f')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'note': utils.force_list(
+            value.get('n')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -585,13 +563,11 @@ def source_of_acquisition(self, key, value):
 def record_content_licensor(self, key, value):
     """Record Content Licensor."""
     return {
-        'record_content_licensor': utils.force_list(
-            value.get('a')
+        'record_content_licensor': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -600,21 +576,19 @@ def record_content_licensor(self, key, value):
 def cataloging_source(self, key, value):
     """Cataloging Source."""
     return {
-        'original_cataloging_agency': utils.force_list(
-            value.get('a')
+        'original_cataloging_agency': value.get('a'),
+        'transcribing_agency': value.get('c'),
+        'language_of_cataloging': value.get('b'),
+        'description_conventions': utils.force_list(
+            value.get('e')
         ),
-        'transcribing_agency': utils.force_list(
-            value.get('c')
+        'modifying_agency': utils.force_list(
+            value.get('d')
         ),
-        'language_of_cataloging': utils.force_list(
-            value.get('b')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'description_conventions': value.get('e'),
-        'modifying_agency': value.get('d'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -628,24 +602,44 @@ def language_code(self, key, value):
         "0": "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation",
         "1": "Item is or includes a translation"}
     return {
-        'language_code_of_text_sound_track_or_separate_title': value.get('a'),
-        'language_code_of_summary_or_abstract': value.get('b'),
-        'language_code_of_librettos': value.get('e'),
-        'language_code_of_sung_or_spoken_text': value.get('d'),
-        'language_code_of_accompanying_material_other_than_librettos': value.get('g'),
-        'language_code_of_table_of_contents': value.get('f'),
-        'language_code_of_original': value.get('h'),
-        'language_code_of_intermediate_translations': value.get('k'),
-        'language_code_of_subtitles_or_captions': value.get('j'),
-        'language_code_of_original_accompanying_materials_other_than_librettos': value.get('m'),
-        'language_code_of_original_libretto': value.get('n'),
-        'source_of_code': utils.force_list(
-            value.get('2')
+        'language_code_of_text_sound_track_or_separate_title': utils.force_list(
+            value.get('a')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'language_code_of_summary_or_abstract': utils.force_list(
+            value.get('b')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'language_code_of_librettos': utils.force_list(
+            value.get('e')
+        ),
+        'language_code_of_sung_or_spoken_text': utils.force_list(
+            value.get('d')
+        ),
+        'language_code_of_accompanying_material_other_than_librettos': utils.force_list(
+            value.get('g')
+        ),
+        'language_code_of_table_of_contents': utils.force_list(
+            value.get('f')
+        ),
+        'language_code_of_original': utils.force_list(
+            value.get('h')
+        ),
+        'language_code_of_intermediate_translations': utils.force_list(
+            value.get('k')
+        ),
+        'language_code_of_subtitles_or_captions': utils.force_list(
+            value.get('j')
+        ),
+        'language_code_of_original_accompanying_materials_other_than_librettos': utils.force_list(
+            value.get('m')
+        ),
+        'language_code_of_original_libretto': utils.force_list(
+            value.get('n')
+        ),
+        'source_of_code': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'translation_indication': indicator_map1.get(key[3]),
     }
 
@@ -655,7 +649,9 @@ def language_code(self, key, value):
 def authentication_code(self, key, value):
     """Authentication Code."""
     return {
-        'authentication_code': value.get('a'),
+        'authentication_code': utils.force_list(
+            value.get('a')
+        ),
     }
 
 
@@ -664,15 +660,25 @@ def authentication_code(self, key, value):
 def geographic_area_code(self, key, value):
     """Geographic Area Code."""
     return {
-        'geographic_area_code': value.get('a'),
-        'iso_code': value.get('c'),
-        'local_gac_code': value.get('b'),
-        'authority_record_control_number_or_standard_number': value.get('0'),
-        'source_of_local_code': value.get('2'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'geographic_area_code': utils.force_list(
+            value.get('a')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'iso_code': utils.force_list(
+            value.get('c')
+        ),
+        'local_gac_code': utils.force_list(
+            value.get('b')
+        ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_local_code': utils.force_list(
+            value.get('2')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -681,14 +687,22 @@ def geographic_area_code(self, key, value):
 def country_of_publishing_producing_entity_code(self, key, value):
     """Country of Publishing/Producing Entity Code."""
     return {
-        'marc_country_code': value.get('a'),
-        'iso_country_code': value.get('c'),
-        'local_subentity_code': value.get('b'),
-        'source_of_local_subentity_code': value.get('2'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'marc_country_code': utils.force_list(
+            value.get('a')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'iso_country_code': utils.force_list(
+            value.get('c')
+        ),
+        'local_subentity_code': utils.force_list(
+            value.get('b')
+        ),
+        'source_of_local_subentity_code': utils.force_list(
+            value.get('2')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -702,13 +716,19 @@ def time_period_of_content(self, key, value):
         "1": "Multiple single dates/times",
         "2": "Range of dates/times"}
     return {
-        'time_period_code': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'formatted_pre_9999_bc_time_period': value.get('c'),
-        'formatted_9999_bc_through_ce_time_period': value.get('b'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'time_period_code': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'formatted_pre_9999_bc_time_period': utils.force_list(
+            value.get('c')
+        ),
+        'formatted_9999_bc_through_ce_time_period': utils.force_list(
+            value.get('b')
+        ),
+        'linkage': value.get('6'),
         'type_of_time_period_in_subfield_b_or_c': indicator_map1.get(key[3]),
     }
 
@@ -719,49 +739,23 @@ def time_period_of_content(self, key, value):
 def special_coded_dates(self, key, value):
     """Special Coded Dates."""
     return {
-        'type_of_date_code': utils.force_list(
-            value.get('a')
+        'type_of_date_code': value.get('a'),
+        'date_1_ce_date': value.get('c'),
+        'date_1_bc_date': value.get('b'),
+        'date_2_ce_date': value.get('e'),
+        'date_2_bc_date': value.get('d'),
+        'beginning_or_single_date_created': value.get('k'),
+        'date_resource_modified': value.get('j'),
+        'beginning_of_date_valid': value.get('m'),
+        'ending_date_created': value.get('l'),
+        'single_or_starting_date_for_aggregated_content': value.get('o'),
+        'end_of_date_valid': value.get('n'),
+        'ending_date_for_aggregated_content': value.get('p'),
+        'source_of_date': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'date_1_ce_date': utils.force_list(
-            value.get('c')
-        ),
-        'date_1_bc_date': utils.force_list(
-            value.get('b')
-        ),
-        'date_2_ce_date': utils.force_list(
-            value.get('e')
-        ),
-        'date_2_bc_date': utils.force_list(
-            value.get('d')
-        ),
-        'beginning_or_single_date_created': utils.force_list(
-            value.get('k')
-        ),
-        'date_resource_modified': utils.force_list(
-            value.get('j')
-        ),
-        'beginning_of_date_valid': utils.force_list(
-            value.get('m')
-        ),
-        'ending_date_created': utils.force_list(
-            value.get('l')
-        ),
-        'single_or_starting_date_for_aggregated_content': utils.force_list(
-            value.get('o')
-        ),
-        'end_of_date_valid': utils.force_list(
-            value.get('n')
-        ),
-        'ending_date_for_aggregated_content': utils.force_list(
-            value.get('p')
-        ),
-        'source_of_date': utils.force_list(
-            value.get('2')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -771,11 +765,13 @@ def special_coded_dates(self, key, value):
 def form_of_musical_composition_code(self, key, value):
     """Form of Musical Composition Code."""
     return {
-        'form_of_musical_composition_code': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'source_of_code': utils.force_list(
-            value.get('2')
+        'form_of_musical_composition_code': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'source_of_code': value.get('2'),
     }
 
 
@@ -785,12 +781,16 @@ def form_of_musical_composition_code(self, key, value):
 def number_of_musical_instruments_or_voices_code(self, key, value):
     """Number of Musical Instruments or Voices Code."""
     return {
-        'performer_or_ensemble': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'source_of_code': utils.force_list(
-            value.get('2')
+        'performer_or_ensemble': utils.force_list(
+            value.get('a')
         ),
-        'soloist': value.get('b'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'source_of_code': value.get('2'),
+        'soloist': utils.force_list(
+            value.get('b')
+        ),
     }
 
 
@@ -807,17 +807,15 @@ def library_of_congress_call_number(self, key, value):
         "0": "Assigned by LC",
         "4": "Assigned by agency other than LC"}
     return {
-        'classification_number': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'classification_number': utils.force_list(
+            value.get('a')
         ),
-        'item_number': utils.force_list(
-            value.get('b')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'materials_specified': value.get('3'),
+        'item_number': value.get('b'),
+        'linkage': value.get('6'),
         'existence_in_lc_collection': indicator_map1.get(key[3]),
         'source_of_call_number': indicator_map2.get(key[4]),
     }
@@ -829,16 +827,12 @@ def library_of_congress_call_number(self, key, value):
 def library_of_congress_copy_issue_offprint_statement(self, key, value):
     """Library of Congress Copy, Issue, Offprint Statement."""
     return {
-        'classification_number': utils.force_list(
-            value.get('a')
+        'classification_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'copy_information': utils.force_list(
-            value.get('c')
-        ),
-        'item_number': utils.force_list(
-            value.get('b')
-        ),
+        'copy_information': value.get('c'),
+        'item_number': value.get('b'),
     }
 
 
@@ -848,18 +842,18 @@ def library_of_congress_copy_issue_offprint_statement(self, key, value):
 def geographic_classification(self, key, value):
     """Geographic Classification."""
     return {
-        'geographic_classification_area_code': utils.force_list(
-            value.get('a')
+        'geographic_classification_area_code': value.get('a'),
+        'geographic_classification_subarea_code': utils.force_list(
+            value.get('b')
         ),
-        'geographic_classification_subarea_code': value.get('b'),
-        'populated_place_name': value.get('d'),
-        'code_source': utils.force_list(
-            value.get('2')
+        'populated_place_name': utils.force_list(
+            value.get('d')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'code_source': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -885,19 +879,13 @@ def classification_numbers_assigned_in_canada(self, key, value):
         "8": "Other call number assigned by the contributing library",
         "9": "Other class number assigned by the contributing library"}
     return {
-        'classification_number': utils.force_list(
-            value.get('a')
+        'classification_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'source_of_call_class_number': utils.force_list(
-            value.get('2')
-        ),
-        'item_number': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'source_of_call_class_number': value.get('2'),
+        'item_number': value.get('b'),
+        'linkage': value.get('6'),
         'existence_in_lac_collection': indicator_map1.get(key[3]),
         'type_completeness_source_of_class_call_number': indicator_map2.get(key[4]),
     }
@@ -916,11 +904,13 @@ def national_library_of_medicine_call_number(self, key, value):
         "0": "Assigned by NLM",
         "4": "Assigned by agency other than NLM"}
     return {
-        'classification_number_r': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'item_number': utils.force_list(
-            value.get('b')
+        'classification_number_r': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'item_number': value.get('b'),
         'existence_in_nlm_collection': indicator_map1.get(key[3]),
         'source_of_call_number': indicator_map2.get(key[4]),
     }
@@ -932,14 +922,14 @@ def national_library_of_medicine_call_number(self, key, value):
 def national_library_of_medicine_copy_statement(self, key, value):
     """National Library of Medicine Copy Statement."""
     return {
-        'classification_number': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'copy_information': utils.force_list(
-            value.get('c')
+        'classification_number': utils.force_list(
+            value.get('a')
         ),
-        'item_number': utils.force_list(
-            value.get('b')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
+        'copy_information': value.get('c'),
+        'item_number': value.get('b'),
     }
 
 
@@ -948,13 +938,11 @@ def national_library_of_medicine_copy_statement(self, key, value):
 def character_sets_present(self, key, value):
     """Character Sets Present."""
     return {
-        'primary_g0_character_set': utils.force_list(
-            value.get('a')
+        'primary_g0_character_set': value.get('a'),
+        'alternate_g0_or_g1_character_set': utils.force_list(
+            value.get('c')
         ),
-        'alternate_g0_or_g1_character_set': value.get('c'),
-        'primary_g1_character_set': utils.force_list(
-            value.get('b')
-        ),
+        'primary_g1_character_set': value.get('b'),
     }
 
 
@@ -965,11 +953,13 @@ def national_agricultural_library_call_number(self, key, value):
     """National Agricultural Library Call Number."""
     indicator_map1 = {"0": "Item is in NAL", "1": "Item is not in NAL"}
     return {
-        'classification_number': value.get('a'),
-        'field_link_and_sequence_number_r': value.get('8'),
-        'item_number': utils.force_list(
-            value.get('b')
+        'classification_number': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number_r': utils.force_list(
+            value.get('8')
+        ),
+        'item_number': value.get('b'),
         'existence_in_nal_collection': indicator_map1.get(key[3]),
     }
 
@@ -980,12 +970,16 @@ def national_agricultural_library_call_number(self, key, value):
 def national_agricultural_library_copy_statement(self, key, value):
     """National Agricultural Library Copy Statement."""
     return {
-        'classification_number': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'copy_information': value.get('c'),
-        'item_number': utils.force_list(
-            value.get('b')
+        'classification_number': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'copy_information': utils.force_list(
+            value.get('c')
+        ),
+        'item_number': value.get('b'),
     }
 
 
@@ -995,17 +989,15 @@ def national_agricultural_library_copy_statement(self, key, value):
 def subject_category_code(self, key, value):
     """Subject Category Code."""
     return {
-        'subject_category_code': utils.force_list(
-            value.get('a')
+        'subject_category_code': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'source': utils.force_list(
-            value.get('2')
+        'source': value.get('2'),
+        'subject_category_code_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'subject_category_code_subdivision': value.get('x'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -1015,11 +1007,13 @@ def subject_category_code(self, key, value):
 def gpo_item_number(self, key, value):
     """GPO Item Number."""
     return {
-        'gpo_item_number': utils.force_list(
-            value.get('a')
+        'gpo_item_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_gpo_item_number': value.get('z'),
+        'canceled_invalid_gpo_item_number': utils.force_list(
+            value.get('z')
+        ),
     }
 
 
@@ -1033,20 +1027,16 @@ def universal_decimal_classification_number(self, key, value):
         "0": "Full",
         "1": "Abridged"}
     return {
-        'universal_decimal_classification_number': utils.force_list(
-            value.get('a')
+        'universal_decimal_classification_number': value.get('a'),
+        'item_number': value.get('b'),
+        'linkage': value.get('6'),
+        'edition_identifier': value.get('2'),
+        'common_auxiliary_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'item_number': utils.force_list(
-            value.get('b')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'edition_identifier': utils.force_list(
-            value.get('2')
-        ),
-        'common_auxiliary_subdivision': value.get('x'),
-        'field_link_and_sequence_number': value.get('8'),
         'type_of_edition': indicator_map1.get(key[3]),
     }
 
@@ -1065,23 +1055,17 @@ def dewey_decimal_classification_number(self, key, value):
         "0": "Assigned by LC",
         "4": "Assigned by agency other than LC"}
     return {
-        'classification_number': value.get('a'),
-        'item_number': utils.force_list(
-            value.get('b')
+        'classification_number': utils.force_list(
+            value.get('a')
         ),
-        'standard_or_optional_designation': utils.force_list(
-            value.get('m')
+        'item_number': value.get('b'),
+        'standard_or_optional_designation': value.get('m'),
+        'assigning_agency': value.get('q'),
+        'edition_number': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'assigning_agency': utils.force_list(
-            value.get('q')
-        ),
-        'edition_number': utils.force_list(
-            value.get('2')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'type_of_edition': indicator_map1.get(key[3]),
         'source_of_classification_number': indicator_map2.get(key[4]),
     }
@@ -1097,23 +1081,25 @@ def additional_dewey_decimal_classification_number(self, key, value):
         "1": "Abridged edition",
         "7": "Other edition specified in subfield $2"}
     return {
-        'classification_number': value.get('a'),
-        'classification_number_ending_number_of_span': value.get('c'),
-        'standard_or_optional_designation': utils.force_list(
-            value.get('m')
+        'classification_number': utils.force_list(
+            value.get('a')
         ),
-        'assigning_agency': utils.force_list(
-            value.get('q')
+        'classification_number_ending_number_of_span': utils.force_list(
+            value.get('c')
         ),
-        'edition_number': utils.force_list(
-            value.get('2')
+        'standard_or_optional_designation': value.get('m'),
+        'assigning_agency': value.get('q'),
+        'edition_number': value.get('2'),
+        'linkage': value.get('6'),
+        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(
+            value.get('y')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'table_sequence_number_for_internal_subarrangement_or_add_table': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'table_identification': value.get('z'),
+        'table_identification': utils.force_list(
+            value.get('z')
+        ),
         'type_of_edition': indicator_map1.get(key[3]),
     }
 
@@ -1124,20 +1110,16 @@ def additional_dewey_decimal_classification_number(self, key, value):
 def other_classification_number(self, key, value):
     """Other Classification Number."""
     return {
-        'classification_number': value.get('a'),
-        'item_number': utils.force_list(
-            value.get('b')
+        'classification_number': utils.force_list(
+            value.get('a')
         ),
-        'assigning_agency': utils.force_list(
-            value.get('q')
+        'item_number': value.get('b'),
+        'assigning_agency': value.get('q'),
+        'number_source': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'number_source': utils.force_list(
-            value.get('2')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -1147,22 +1129,46 @@ def other_classification_number(self, key, value):
 def synthesized_classification_number_components(self, key, value):
     """Synthesized Classification Number Components."""
     return {
-        'number_where_instructions_are_found_single_number_or_beginning_number_of_span': value.get('a'),
-        'classification_number_ending_number_of_span': value.get('c'),
-        'base_number': value.get('b'),
-        'facet_designator': value.get('f'),
-        'number_in_internal_subarrangement_or_add_table_where_instructions_are_found': value.get('v'),
-        'digits_added_from_classification_number_in_schedule_or_external_table': value.get('s'),
-        'root_number': value.get('r'),
-        'number_being_analyzed': value.get('u'),
-        'digits_added_from_internal_subarrangement_or_add_table': value.get('t'),
-        'table_identification_internal_subarrangement_or_add_table': value.get('w'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'number_where_instructions_are_found_single_number_or_beginning_number_of_span': utils.force_list(
+            value.get('a')
         ),
-        'table_sequence_number_for_internal_subarrangement_or_add_table': value.get('y'),
-        'field_link_and_sequence_number': value.get('8'),
-        'table_identification': value.get('z'),
+        'classification_number_ending_number_of_span': utils.force_list(
+            value.get('c')
+        ),
+        'base_number': utils.force_list(
+            value.get('b')
+        ),
+        'facet_designator': utils.force_list(
+            value.get('f')
+        ),
+        'number_in_internal_subarrangement_or_add_table_where_instructions_are_found': utils.force_list(
+            value.get('v')
+        ),
+        'digits_added_from_classification_number_in_schedule_or_external_table': utils.force_list(
+            value.get('s')
+        ),
+        'root_number': utils.force_list(
+            value.get('r')
+        ),
+        'number_being_analyzed': utils.force_list(
+            value.get('u')
+        ),
+        'digits_added_from_internal_subarrangement_or_add_table': utils.force_list(
+            value.get('t')
+        ),
+        'table_identification_internal_subarrangement_or_add_table': utils.force_list(
+            value.get('w')
+        ),
+        'linkage': value.get('6'),
+        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(
+            value.get('y')
+        ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'table_identification': utils.force_list(
+            value.get('z')
+        ),
     }
 
 
@@ -1172,17 +1178,15 @@ def synthesized_classification_number_components(self, key, value):
 def government_document_classification_number(self, key, value):
     """Government Document Classification Number."""
     return {
-        'classification_number': utils.force_list(
-            value.get('a')
+        'classification_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'number_source': utils.force_list(
-            value.get('2')
+        'number_source': value.get('2'),
+        'canceled_invalid_classification_number': utils.force_list(
+            value.get('z')
         ),
-        'canceled_invalid_classification_number': value.get('z'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -1192,12 +1196,12 @@ def government_document_classification_number(self, key, value):
 def report_number(self, key, value):
     """Report Number."""
     return {
-        'report_number': utils.force_list(
-            value.get('a')
+        'report_number': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'canceled_invalid_report_number': value.get('z'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'canceled_invalid_report_number': utils.force_list(
+            value.get('z')
         ),
+        'linkage': value.get('6'),
     }

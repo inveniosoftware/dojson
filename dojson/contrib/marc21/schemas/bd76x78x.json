@@ -14,97 +14,82 @@
                         "enum": ["Main series", "No display constant generated"]
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "title": {
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "coden_designation": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "title": {
+                        "type": "string"
                     }
                 }
             }
@@ -122,97 +107,82 @@
                         "enum": ["Has subseries", "No display constant generated"]
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "title": {
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "coden_designation": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "title": {
+                        "type": "string"
                     }
                 }
             }
@@ -230,112 +200,103 @@
                         "enum": ["Translation of", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -353,112 +314,103 @@
                         "enum": ["Translated as", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -476,112 +428,103 @@
                         "enum": ["Has supplement", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -599,112 +542,103 @@
                         "enum": ["Supplement to", "Parent", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -722,124 +656,109 @@
                         "enum": ["In", "No display constant generated"]
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "enumeration_and_first_page": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "abbreviated_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -857,112 +776,103 @@
                         "enum": ["Constituent unit", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -980,124 +890,109 @@
                         "enum": ["Other edition available", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "language_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "country_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1115,112 +1010,103 @@
                         "enum": ["Available in another form", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1238,100 +1124,88 @@
                         "enum": ["Issued with", "No display constant generated"]
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "title": {
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "coden_designation": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "title": {
+                        "type": "string"
                     }
                 }
             }
@@ -1349,112 +1223,103 @@
                         "enum": ["Continues", "Continues in part", "Absorbed in part", "Supersedes in part", "Absorbed", "Formed by the union of ... and ...", "Separated from", "Supersedes"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1472,112 +1337,103 @@
                         "enum": ["Merged with ... to form ...", "Changed back to", "Continued by", "Absorbed in part by", "Superseded in part by", "Split into ... and ...", "Absorbed by", "Superseded by", "Continued in part by"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1595,130 +1451,112 @@
                         "enum": ["Data source", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "period_of_content": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "abbreviated_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source_contribution": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -1736,112 +1574,103 @@
                         "enum": ["Related item", "No display constant generated"]
                     },
                     "relationship_code": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "control_subfield": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "main_entry_heading": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "edition": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "place_publisher_and_date_of_publication": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "related_parts": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "relationship_information": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "physical_description": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "series_data_for_related_item": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "material_specific_details": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "other_item_identifier": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "uniform_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "report_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "standard_technical_report_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "record_control_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "coden_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "international_standard_book_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "international_standard_book_number": {
-                        "type": "string"
                     }
                 }
             }

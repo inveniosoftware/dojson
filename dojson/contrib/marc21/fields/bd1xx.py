@@ -20,45 +20,43 @@ def main_entry_personal_name(self, key, value):
     """Main Entry-Personal Name."""
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     return {
-        'personal_name': utils.force_list(
-            value.get('a')
+        'personal_name': value.get('a'),
+        'titles_and_words_associated_with_a_name': utils.force_list(
+            value.get('c')
         ),
-        'titles_and_words_associated_with_a_name': value.get('c'),
-        'numeration': utils.force_list(
-            value.get('b')
+        'numeration': value.get('b'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'relator_term': value.get('e'),
-        'dates_associated_with_a_name': utils.force_list(
-            value.get('d')
+        'dates_associated_with_a_name': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'attribution_qualifier': utils.force_list(
+            value.get('j')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'language_of_a_work': value.get('l'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'form_subheading': value.get('k'),
-        'attribution_qualifier': value.get('j'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'fuller_form_of_name': utils.force_list(
-            value.get('q')
+        'fuller_form_of_name': value.get('q'),
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'authority_record_control_number': value.get('0'),
-        'affiliation': utils.force_list(
-            value.get('u')
+        'affiliation': value.get('u'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
+        'title_of_a_work': value.get('t'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
     }
 
@@ -72,39 +70,41 @@ def main_entry_corporate_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     return {
-        'corporate_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('b')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'subordinate_unit': value.get('b'),
-        'relator_term': value.get('e'),
-        'date_of_meeting_or_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'date_of_meeting_or_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'form_subheading': value.get('k'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'language_of_a_work': value.get('l'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'number_of_part_section_meeting': value.get('n'),
-        'authority_record_control_number': value.get('0'),
-        'affiliation': utils.force_list(
-            value.get('u')
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'field_link_and_sequence_number_r': value.get('8'),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
+        'affiliation': value.get('u'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number_r': utils.force_list(
+            value.get('8')
+        ),
+        'title_of_a_work': value.get('t'),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
     }
 
@@ -118,44 +118,40 @@ def main_entry_meeting_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     return {
-        'meeting_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('e')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'date_of_meeting': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'subordinate_unit': value.get('e'),
-        'date_of_meeting': utils.force_list(
-            value.get('d')
+        'relator_term': utils.force_list(
+            value.get('j')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'language_of_a_work': value.get('l'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'form_subheading': value.get('k'),
-        'relator_term': value.get('j'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'number_of_part_section_meeting': value.get('n'),
-        'name_of_meeting_following_jurisdiction_name_entry_element': utils.force_list(
-            value.get('q')
+        'affiliation': value.get('u'),
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'authority_record_control_number': value.get('0'),
-        'affiliation': utils.force_list(
-            value.get('u')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
+        'title_of_a_work': value.get('t'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
     }
 
@@ -176,42 +172,36 @@ def main_entry_uniform_title(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'uniform_title': utils.force_list(
-            value.get('a')
+        'uniform_title': value.get('a'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'date_of_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'date_of_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'form_subheading': value.get('k'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'authority_record_control_number': value.get('0'),
-        'version': utils.force_list(
-            value.get('s')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'title_of_a_work': value.get('t'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'key_for_music': utils.force_list(
-            value.get('r')
-        ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'nonfiling_characters': indicator_map1.get(key[3]),
     }

@@ -20,8 +20,12 @@ from ..model import marc21
 def holding_institution(self, key, value):
     """Holding Institution."""
     return {
-        'holding_institution': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
+        'holding_institution': utils.force_list(
+            value.get('a')
+        ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -47,55 +51,57 @@ def location(self, key, value):
         "1": "Primary enumeration",
         "2": "Alternative enumeration"}
     return {
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'materials_specified': value.get('3'),
+        'source_of_classification_or_shelving_scheme': value.get('2'),
+        'linkage': value.get('6'),
+        'sequence_number': value.get('8'),
+        'location': value.get('a'),
+        'shelving_location': utils.force_list(
+            value.get('c')
         ),
-        'source_of_classification_or_shelving_scheme': utils.force_list(
-            value.get('2')
+        'sublocation_or_collection': utils.force_list(
+            value.get('b')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'address': utils.force_list(
+            value.get('e')
         ),
-        'sequence_number': utils.force_list(
-            value.get('8')
+        'former_shelving_location': utils.force_list(
+            value.get('d')
         ),
-        'location': utils.force_list(
-            value.get('a')
+        'non_coded_location_qualifier': utils.force_list(
+            value.get('g')
         ),
-        'shelving_location': value.get('c'),
-        'sublocation_or_collection': value.get('b'),
-        'address': value.get('e'),
-        'former_shelving_location': value.get('d'),
-        'non_coded_location_qualifier': value.get('g'),
-        'coded_location_qualifier': value.get('f'),
-        'item_part': value.get('i'),
-        'classification_part': utils.force_list(
-            value.get('h')
+        'coded_location_qualifier': utils.force_list(
+            value.get('f')
         ),
-        'call_number_prefix': value.get('k'),
-        'shelving_control_number': utils.force_list(
-            value.get('j')
+        'item_part': utils.force_list(
+            value.get('i')
         ),
-        'call_number_suffix': value.get('m'),
-        'shelving_form_of_title': utils.force_list(
-            value.get('l')
+        'classification_part': value.get('h'),
+        'call_number_prefix': utils.force_list(
+            value.get('k')
         ),
-        'country_code': utils.force_list(
-            value.get('n')
+        'shelving_control_number': value.get('j'),
+        'call_number_suffix': utils.force_list(
+            value.get('m')
         ),
-        'piece_physical_condition': utils.force_list(
-            value.get('q')
+        'shelving_form_of_title': value.get('l'),
+        'country_code': value.get('n'),
+        'piece_physical_condition': value.get('q'),
+        'piece_designation': value.get('p'),
+        'copyright_article_fee_code': utils.force_list(
+            value.get('s')
         ),
-        'piece_designation': utils.force_list(
-            value.get('p')
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'copyright_article_fee_code': value.get('s'),
-        'uniform_resource_identifier': value.get('u'),
-        'copy_number': utils.force_list(
-            value.get('t')
+        'copy_number': value.get('t'),
+        'nonpublic_note': utils.force_list(
+            value.get('x')
         ),
-        'nonpublic_note': value.get('x'),
-        'public_note': value.get('z'),
+        'public_note': utils.force_list(
+            value.get('z')
+        ),
         'shelving_scheme': indicator_map1.get(key[3]),
         'shelving_order': indicator_map2.get(key[4]),
     }
@@ -113,58 +119,66 @@ def electronic_location_and_access(self, key, value):
         "2": "Related resource",
         "8": "No display constant generated"}
     return {
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'materials_specified': value.get('3'),
+        'access_method': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'access_method': utils.force_list(
-            value.get('2')
+        'host_name': utils.force_list(
+            value.get('a')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'compression_information': utils.force_list(
+            value.get('c')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'host_name': value.get('a'),
-        'compression_information': value.get('c'),
-        'access_number': value.get('b'),
-        'path': value.get('d'),
-        'electronic_name': value.get('f'),
-        'instruction': value.get('i'),
-        'processor_of_request': utils.force_list(
-            value.get('h')
+        'access_number': utils.force_list(
+            value.get('b')
         ),
-        'password': utils.force_list(
-            value.get('k')
+        'path': utils.force_list(
+            value.get('d')
         ),
-        'bits_per_second': utils.force_list(
-            value.get('j')
+        'electronic_name': utils.force_list(
+            value.get('f')
         ),
-        'contact_for_access_assistance': value.get('m'),
-        'logon': utils.force_list(
-            value.get('l')
+        'instruction': utils.force_list(
+            value.get('i')
         ),
-        'operating_system': utils.force_list(
-            value.get('o')
+        'processor_of_request': value.get('h'),
+        'password': value.get('k'),
+        'bits_per_second': value.get('j'),
+        'contact_for_access_assistance': utils.force_list(
+            value.get('m')
         ),
-        'name_of_location_of_host': utils.force_list(
-            value.get('n')
+        'logon': value.get('l'),
+        'operating_system': value.get('o'),
+        'name_of_location_of_host': value.get('n'),
+        'electronic_format_type': value.get('q'),
+        'port': value.get('p'),
+        'file_size': utils.force_list(
+            value.get('s')
         ),
-        'electronic_format_type': utils.force_list(
-            value.get('q')
+        'settings': value.get('r'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'port': utils.force_list(
-            value.get('p')
+        'terminal_emulation': utils.force_list(
+            value.get('t')
         ),
-        'file_size': value.get('s'),
-        'settings': utils.force_list(
-            value.get('r')
+        'record_control_number': utils.force_list(
+            value.get('w')
         ),
-        'uniform_resource_identifier': value.get('u'),
-        'terminal_emulation': value.get('t'),
-        'record_control_number': value.get('w'),
-        'hours_access_method_available': value.get('v'),
-        'link_text': value.get('y'),
-        'nonpublic_note': value.get('x'),
-        'public_note': value.get('z'),
+        'hours_access_method_available': utils.force_list(
+            value.get('v')
+        ),
+        'link_text': utils.force_list(
+            value.get('y')
+        ),
+        'nonpublic_note': utils.force_list(
+            value.get('x')
+        ),
+        'public_note': utils.force_list(
+            value.get('z')
+        ),
         'relationship': indicator_map2.get(key[4]),
     }
 
@@ -174,13 +188,19 @@ def electronic_location_and_access(self, key, value):
 def replacement_record_information(self, key, value):
     """Replacement Record Information."""
     return {
-        'replacement_title': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'explanatory_text': value.get('i'),
-        'replacement_bibliographic_record_control_number': value.get('w'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'replacement_title': utils.force_list(
+            value.get('a')
         ),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'explanatory_text': utils.force_list(
+            value.get('i')
+        ),
+        'replacement_bibliographic_record_control_number': utils.force_list(
+            value.get('w')
+        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -194,27 +214,21 @@ def machine_generated_metadata_provenance(self, key, value):
         "0": "Fully machine-generated",
         "1": "Partially machine-generated"}
     return {
-        'generation_process': utils.force_list(
-            value.get('a')
+        'generation_process': value.get('a'),
+        'confidence_value': value.get('c'),
+        'generation_date': value.get('d'),
+        'generation_agency': value.get('q'),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
         ),
-        'confidence_value': utils.force_list(
-            value.get('c')
+        'uniform_resource_identifier': value.get('u'),
+        'bibliographic_record_control_number': utils.force_list(
+            value.get('w')
         ),
-        'generation_date': utils.force_list(
-            value.get('d')
+        'validity_end_date': value.get('x'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'generation_agency': utils.force_list(
-            value.get('q')
-        ),
-        'authority_record_control_number_or_standard_number': value.get('0'),
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
-        'bibliographic_record_control_number': value.get('w'),
-        'validity_end_date': utils.force_list(
-            value.get('x')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'method_of_machine_assignment': indicator_map1.get(key[3]),
     }
 
@@ -225,10 +239,6 @@ def machine_generated_metadata_provenance(self, key, value):
 def non_marc_information_field(self, key, value):
     """Non-MARC Information Field."""
     return {
-        'content_of_non_marc_field': utils.force_list(
-            value.get('a')
-        ),
-        'source_of_data': utils.force_list(
-            value.get('2')
-        ),
+        'content_of_non_marc_field': value.get('a'),
+        'source_of_data': value.get('2'),
     }

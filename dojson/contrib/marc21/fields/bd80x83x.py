@@ -21,72 +21,60 @@ def series_added_entry_personal_name(self, key, value):
     """Series Added Entry-Personal Name."""
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'institution_to_which_field_applies': value.get('5'),
-        'relator_code': value.get('4'),
-        'control_subfield': utils.force_list(
-            value.get('7')
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': utils.force_list(
+            value.get('5')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'personal_name': utils.force_list(
-            value.get('a')
+        'control_subfield': value.get('7'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'titles_and_other_words_associated_with_a_name': value.get('c'),
-        'numeration': utils.force_list(
-            value.get('b')
+        'personal_name': value.get('a'),
+        'titles_and_other_words_associated_with_a_name': utils.force_list(
+            value.get('c')
         ),
-        'relator_term': value.get('e'),
-        'dates_associated_with_a_name': utils.force_list(
-            value.get('d')
+        'numeration': value.get('b'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'dates_associated_with_a_name': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'attribution_qualifier': utils.force_list(
+            value.get('j')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'form_subheading': value.get('k'),
-        'attribution_qualifier': value.get('j'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'fuller_form_of_name': value.get('q'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'fuller_form_of_name': utils.force_list(
-            value.get('q')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'affiliation': value.get('u'),
+        'title_of_a_work': value.get('t'),
+        'bibliographic_record_control_number': utils.force_list(
+            value.get('w')
         ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
-        ),
-        'key_for_music': utils.force_list(
-            value.get('r')
-        ),
-        'affiliation': utils.force_list(
-            value.get('u')
-        ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
-        'bibliographic_record_control_number': value.get('w'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
-        ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
-        ),
+        'volume_sequential_designation': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
     }
 
@@ -101,66 +89,58 @@ def series_added_entry_corporate_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'institution_to_which_field_applies': value.get('5'),
-        'relator_code': value.get('4'),
-        'control_subfield': utils.force_list(
-            value.get('7')
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': utils.force_list(
+            value.get('5')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'corporate_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'control_subfield': value.get('7'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('b')
         ),
-        'subordinate_unit': value.get('b'),
-        'relator_term': value.get('e'),
-        'date_of_meeting_or_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'date_of_meeting_or_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'form_subheading': value.get('k'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'number_of_part_section_meeting': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'key_for_music': utils.force_list(
-            value.get('r')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'affiliation': value.get('u'),
+        'title_of_a_work': value.get('t'),
+        'bibliographic_record_control_number': utils.force_list(
+            value.get('w')
         ),
-        'affiliation': utils.force_list(
-            value.get('u')
-        ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
-        'bibliographic_record_control_number': value.get('w'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
-        ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
-        ),
+        'volume_sequential_designation': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
     }
 
@@ -175,64 +155,52 @@ def series_added_entry_meeting_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'institution_to_which_field_applies': value.get('5'),
-        'relator_code': value.get('4'),
-        'control_subfield': utils.force_list(
-            value.get('7')
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': utils.force_list(
+            value.get('5')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'relator_code': utils.force_list(
+            value.get('4')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'meeting_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')
+        'control_subfield': value.get('7'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': value.get('c'),
+        'subordinate_unit': utils.force_list(
+            value.get('e')
         ),
-        'subordinate_unit': value.get('e'),
-        'date_of_meeting': utils.force_list(
-            value.get('d')
+        'date_of_meeting': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'relator_term': utils.force_list(
+            value.get('j')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'form_subheading': value.get('k'),
-        'relator_term': value.get('j'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'version': value.get('s'),
+        'affiliation': value.get('u'),
+        'title_of_a_work': value.get('t'),
+        'bibliographic_record_control_number': utils.force_list(
+            value.get('w')
         ),
-        'number_of_part_section_meeting': value.get('n'),
-        'name_of_meeting_following_jurisdiction_name_entry_element': utils.force_list(
-            value.get('q')
-        ),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
-        ),
-        'affiliation': utils.force_list(
-            value.get('u')
-        ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
-        'bibliographic_record_control_number': value.get('w'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
-        ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
-        ),
+        'volume_sequential_designation': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
     }
 
@@ -254,56 +222,46 @@ def series_added_entry_uniform_title(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'authority_record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
         ),
-        'institution_to_which_field_applies': value.get('5'),
-        'control_subfield': utils.force_list(
-            value.get('7')
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': utils.force_list(
+            value.get('5')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'control_subfield': value.get('7'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'uniform_title': utils.force_list(
-            value.get('a')
+        'uniform_title': value.get('a'),
+        'date_of_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'date_of_treaty_signing': value.get('d'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'miscellaneous_information': value.get('g'),
+        'date_of_a_work': value.get('f'),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'date_of_a_work': utils.force_list(
-            value.get('f')
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
-        'medium': utils.force_list(
-            value.get('h')
+        'language_of_a_work': value.get('l'),
+        'arranged_statement_for_music': value.get('o'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
         ),
-        'form_subheading': value.get('k'),
-        'medium_of_performance_for_music': value.get('m'),
-        'language_of_a_work': utils.force_list(
-            value.get('l')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'arranged_statement_for_music': utils.force_list(
-            value.get('o')
+        'version': value.get('s'),
+        'key_for_music': value.get('r'),
+        'title_of_a_work': value.get('t'),
+        'bibliographic_record_control_number': utils.force_list(
+            value.get('w')
         ),
-        'number_of_part_section_of_a_work': value.get('n'),
-        'name_of_part_section_of_a_work': value.get('p'),
-        'version': utils.force_list(
-            value.get('s')
-        ),
-        'key_for_music': utils.force_list(
-            value.get('r')
-        ),
-        'title_of_a_work': utils.force_list(
-            value.get('t')
-        ),
-        'bibliographic_record_control_number': value.get('w'),
-        'volume_sequential_designation': utils.force_list(
-            value.get('v')
-        ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
-        ),
+        'volume_sequential_designation': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }

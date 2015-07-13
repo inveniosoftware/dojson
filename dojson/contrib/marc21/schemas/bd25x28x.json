@@ -8,31 +8,22 @@
                 "type": "object",
                 "properties": {
                     "edition_statement": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "materials_specified": {
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "materials_specified": {
+                        "type": "string"
                     },
                     "remainder_of_edition_statement": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -41,19 +32,16 @@
             "description": "Musical Presentation Statement",
             "properties": {
                 "musical_presentation_statement": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "field_link_and_sequence_number": {
                     "type": "string"
                 },
-                "linkage": {
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
+                },
+                "linkage": {
+                    "type": "string"
                 }
             }
         },
@@ -64,55 +52,34 @@
                 "type": "object",
                 "properties": {
                     "statement_of_scale": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "statement_of_coordinates": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "statement_of_projection": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "statement_of_equinox": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "statement_of_zone": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "exclusion_g_ring_coordinate_pairs": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "outer_g_ring_coordinate_pairs": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -121,19 +88,16 @@
             "description": "Computer File Characteristics",
             "properties": {
                 "computer_file_characteristics": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "field_link_and_sequence_number": {
                     "type": "string"
                 },
-                "linkage": {
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
+                },
+                "linkage": {
+                    "type": "string"
                 }
             }
         },
@@ -144,22 +108,22 @@
                 "type": "object",
                 "properties": {
                     "country_of_producing_entity": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -171,25 +135,19 @@
                 "type": "object",
                 "properties": {
                     "issuing_jurisdiction": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "denomination": {
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
+                    "denomination": {
+                        "type": "string"
+                    },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -204,37 +162,52 @@
                         "enum": ["Intervening publisher", "Current/latest publisher", "Not applicable/No information provided/Earliest available publisher"]
                     },
                     "place_of_publication_distribution": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "date_of_publication_distribution": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "name_of_publisher_distributor": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "place_of_manufacture": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "date_of_manufacture": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "manufacturer": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -243,28 +216,43 @@
             "description": "Imprint Statement for Films (Pre-AACR 1 Revised)",
             "properties": {
                 "producing_company": {
-                    "type": "string"
-                },
-                "releasing_company": {
-                    "type": "string"
-                },
-                "contractual_producer": {
-                    "type": "string"
-                },
-                "date_of_production_release": {
-                    "type": "string"
-                },
-                "place_of_production_release": {
-                    "type": "string"
-                },
-                "linkage": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
-                "field_link_and_sequence_number": {
+                "releasing_company": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "contractual_producer": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "date_of_production_release": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "place_of_production_release": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
                     "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -272,43 +260,28 @@
             "description": "Imprint Statement for Sound Recordings (Pre-AACR 1)",
             "properties": {
                 "place_of_production_release": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "date_of_production_release": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "publisher_or_trade_name": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "serial_identification": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "matrix_and_or_take_number": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
-                },
-                "field_link_and_sequence_number": {
-                    "type": "string"
                 }
             }
         },
@@ -316,19 +289,16 @@
             "description": "Projected Publication Date",
             "properties": {
                 "projected_publication_date": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "field_link_and_sequence_number": {
                     "type": "string"
                 },
-                "linkage": {
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
+                },
+                "linkage": {
+                    "type": "string"
                 }
             }
         },
@@ -345,28 +315,34 @@
                         "enum": ["Manufacture", "Distribution", "Production", "Publication", "Copyright notice date"]
                     },
                     "place_of_production_publication_distribution_manufacture": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "date_of_production_publication_distribution_manufacture_or_copyright_notice": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "name_of_producer_publisher_distributor_manufacturer": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "materials_specified": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -381,94 +357,103 @@
                         "enum": ["No level specified", "Primary", "Secondary"]
                     },
                     "address": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "state_or_province": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "city": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "postal_code": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "country": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "attention_name": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "terms_preceding_attention_name": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "type_of_address": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "attention_position": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "telephone_number": {
-                        "type": "string"
-                    },
-                    "specialized_telephone_number": {
-                        "type": "string"
-                    },
-                    "electronic_mail_address": {
-                        "type": "string"
-                    },
-                    "fax_number": {
-                        "type": "string"
-                    },
-                    "tdd_or_tty_number": {
-                        "type": "string"
-                    },
-                    "title_of_contact_person": {
-                        "type": "string"
-                    },
-                    "contact_person": {
-                        "type": "string"
-                    },
-                    "hours": {
-                        "type": "string"
-                    },
-                    "relator_code": {
-                        "type": "string"
-                    },
-                    "linkage": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
-                    "field_link_and_sequence_number": {
+                    "specialized_telephone_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "electronic_mail_address": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "fax_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "tdd_or_tty_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "title_of_contact_person": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "contact_person": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "hours": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "relator_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
                         "type": "string"
                     },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
                     "public_note": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }
             }

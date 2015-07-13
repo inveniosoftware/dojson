@@ -14,28 +14,25 @@
                         "enum": ["Other abbreviated title", "Abbreviated key title"]
                     },
                     "abbreviated_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "field_link_and_sequence_number": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "source": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "qualifying_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -50,25 +47,19 @@
                         "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                     },
                     "key_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "field_link_and_sequence_number": {
                         "type": "string"
                     },
-                    "qualifying_information": {
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
+                    "qualifying_information": {
+                        "type": "string"
+                    },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     }
                 }
             }
@@ -83,79 +74,73 @@
                     "enum": ["Number of nonfiling characters"]
                 },
                 "uniform_title": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "name_of_part_section_of_a_work": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "date_of_treaty_signing": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "miscellaneous_information": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "date_of_a_work": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "medium": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "form_subheading": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "medium_of_performance_for_music": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "language_of_a_work": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "arranged_statement_for_music": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "number_of_part_section_of_a_work": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "authority_record_control_number": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "version": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "key_for_music": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
-                },
-                "field_link_and_sequence_number": {
-                    "type": "string"
                 }
             }
         },
@@ -172,49 +157,40 @@
                         "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "statement_of_responsibility": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "remainder_of_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "medium": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "number_of_part_section_of_a_work": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "name_of_part_section_of_a_work": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "linkage": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "language_code_of_translated_title": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -229,76 +205,67 @@
                     "enum": ["Number of nonfiling characters"]
                 },
                 "uniform_title": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "date_of_treaty_signing": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "miscellaneous_information": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "date_of_a_work": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "medium": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "form_subheading": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "medium_of_performance_for_music": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "language_of_a_work": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "arranged_statement_for_music": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "number_of_part_section_of_a_work": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "name_of_part_section_of_a_work": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "version": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "key_for_music": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
-                },
-                "field_link_and_sequence_number": {
-                    "type": "string"
                 }
             }
         },
@@ -312,64 +279,52 @@
                     "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                 },
                 "title": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "statement_of_responsibility": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "remainder_of_title": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "bulk_dates": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "inclusive_dates": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "medium": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "form": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "number_of_part_section_of_a_work": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "name_of_part_section_of_a_work": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "version": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
+                    "type": "string"
                 },
                 "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
-                },
-                "field_link_and_sequence_number": {
-                    "type": "string"
                 }
             }
         },
@@ -386,61 +341,46 @@
                         "enum": ["Portion of title", "Added title page title", "Other title", "Caption title", "No type specified", "Cover title", "Parallel title", "Running title", "Spine title", "Distinctive title"]
                     },
                     "title_proper_short_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "remainder_of_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "miscellaneous_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "date_or_sequential_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "display_text": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "medium": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "number_of_part_section_of_a_work": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "name_of_part_section_of_a_work": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     },
                     "institution_to_which_field_applies": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "field_link_and_sequence_number": {
-                        "type": "string"
                     }
                 }
             }
@@ -458,55 +398,43 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "international_standard_serial_number": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "remainder_of_title": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "miscellaneous_information": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "date_or_sequential_designation": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "medium": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
+                        "type": "string"
                     },
                     "number_of_part_section_of_a_work": {
-                        "type": "string"
-                    },
-                    "name_of_part_section_of_a_work": {
-                        "type": "string"
-                    },
-                    "linkage": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         }
                     },
-                    "field_link_and_sequence_number": {
+                    "name_of_part_section_of_a_work": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
                         "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 }
             }

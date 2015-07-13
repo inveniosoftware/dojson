@@ -20,19 +20,13 @@ from ..model import marc21
 def edition_statement(self, key, value):
     """Edition Statement."""
     return {
-        'edition_statement': utils.force_list(
-            value.get('a')
+        'edition_statement': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'remainder_of_edition_statement': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'materials_specified': value.get('3'),
+        'remainder_of_edition_statement': value.get('b'),
+        'linkage': value.get('6'),
     }
 
 
@@ -41,13 +35,11 @@ def edition_statement(self, key, value):
 def musical_presentation_statement(self, key, value):
     """Musical Presentation Statement."""
     return {
-        'musical_presentation_statement': utils.force_list(
-            value.get('a')
+        'musical_presentation_statement': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -57,31 +49,17 @@ def musical_presentation_statement(self, key, value):
 def cartographic_mathematical_data(self, key, value):
     """Cartographic Mathematical Data."""
     return {
-        'statement_of_scale': utils.force_list(
-            value.get('a')
+        'statement_of_scale': value.get('a'),
+        'statement_of_coordinates': value.get('c'),
+        'statement_of_projection': value.get('b'),
+        'statement_of_equinox': value.get('e'),
+        'statement_of_zone': value.get('d'),
+        'exclusion_g_ring_coordinate_pairs': value.get('g'),
+        'outer_g_ring_coordinate_pairs': value.get('f'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'statement_of_coordinates': utils.force_list(
-            value.get('c')
-        ),
-        'statement_of_projection': utils.force_list(
-            value.get('b')
-        ),
-        'statement_of_equinox': utils.force_list(
-            value.get('e')
-        ),
-        'statement_of_zone': utils.force_list(
-            value.get('d')
-        ),
-        'exclusion_g_ring_coordinate_pairs': utils.force_list(
-            value.get('g')
-        ),
-        'outer_g_ring_coordinate_pairs': utils.force_list(
-            value.get('f')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -90,13 +68,11 @@ def cartographic_mathematical_data(self, key, value):
 def computer_file_characteristics(self, key, value):
     """Computer File Characteristics."""
     return {
-        'computer_file_characteristics': utils.force_list(
-            value.get('a')
+        'computer_file_characteristics': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -106,14 +82,14 @@ def computer_file_characteristics(self, key, value):
 def country_of_producing_entity(self, key, value):
     """Country of Producing Entity."""
     return {
-        'country_of_producing_entity': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'source': utils.force_list(
-            value.get('2')
+        'country_of_producing_entity': utils.force_list(
+            value.get('a')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
+        'source': value.get('2'),
+        'linkage': value.get('6'),
     }
 
 
@@ -123,16 +99,12 @@ def country_of_producing_entity(self, key, value):
 def philatelic_issue_data(self, key, value):
     """Philatelic Issue Data."""
     return {
-        'issuing_jurisdiction': utils.force_list(
-            value.get('a')
+        'issuing_jurisdiction': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'denomination': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'denomination': value.get('b'),
+        'linkage': value.get('6'),
     }
 
 
@@ -146,19 +118,29 @@ def publication_distribution_imprint(self, key, value):
         "2": "Intervening publisher",
         "3": "Current/latest publisher"}
     return {
-        'place_of_publication_distribution': value.get('a'),
-        'date_of_publication_distribution': value.get('c'),
-        'name_of_publisher_distributor': value.get('b'),
-        'place_of_manufacture': value.get('e'),
-        'date_of_manufacture': value.get('g'),
-        'manufacturer': value.get('f'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'place_of_publication_distribution': utils.force_list(
+            value.get('a')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'date_of_publication_distribution': utils.force_list(
+            value.get('c')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'name_of_publisher_distributor': utils.force_list(
+            value.get('b')
+        ),
+        'place_of_manufacture': utils.force_list(
+            value.get('e')
+        ),
+        'date_of_manufacture': utils.force_list(
+            value.get('g')
+        ),
+        'manufacturer': utils.force_list(
+            value.get('f')
+        ),
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'sequence_of_publishing_statements': indicator_map1.get(key[3]),
     }
 
@@ -168,15 +150,25 @@ def publication_distribution_imprint(self, key, value):
 def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     """Imprint Statement for Films (Pre-AACR 1 Revised)."""
     return {
-        'producing_company': value.get('a'),
-        'releasing_company': value.get('b'),
-        'contractual_producer': value.get('e'),
-        'date_of_production_release': value.get('d'),
-        'place_of_production_release': value.get('f'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'producing_company': utils.force_list(
+            value.get('a')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'releasing_company': utils.force_list(
+            value.get('b')
+        ),
+        'contractual_producer': utils.force_list(
+            value.get('e')
+        ),
+        'date_of_production_release': utils.force_list(
+            value.get('d')
+        ),
+        'place_of_production_release': utils.force_list(
+            value.get('f')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -185,25 +177,15 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
 def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     """Imprint Statement for Sound Recordings (Pre-AACR 1)."""
     return {
-        'place_of_production_release': utils.force_list(
-            value.get('a')
+        'place_of_production_release': value.get('a'),
+        'date_of_production_release': value.get('c'),
+        'publisher_or_trade_name': value.get('b'),
+        'serial_identification': value.get('k'),
+        'matrix_and_or_take_number': value.get('l'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'date_of_production_release': utils.force_list(
-            value.get('c')
-        ),
-        'publisher_or_trade_name': utils.force_list(
-            value.get('b')
-        ),
-        'serial_identification': utils.force_list(
-            value.get('k')
-        ),
-        'matrix_and_or_take_number': utils.force_list(
-            value.get('l')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -212,13 +194,11 @@ def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
 def projected_publication_date(self, key, value):
     """Projected Publication Date."""
     return {
-        'projected_publication_date': utils.force_list(
-            value.get('a')
+        'projected_publication_date': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -240,16 +220,20 @@ def production_publication_distribution_manufacture_and_copyright_notice(
         "3": "Manufacture",
         "4": "Copyright notice date"}
     return {
-        'place_of_production_publication_distribution_manufacture': value.get('a'),
-        'date_of_production_publication_distribution_manufacture_or_copyright_notice': value.get('c'),
-        'name_of_producer_publisher_distributor_manufacturer': value.get('b'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'place_of_production_publication_distribution_manufacture': utils.force_list(
+            value.get('a')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'date_of_production_publication_distribution_manufacture_or_copyright_notice': utils.force_list(
+            value.get('c')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'name_of_producer_publisher_distributor_manufacturer': utils.force_list(
+            value.get('b')
+        ),
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'sequence_of_statements': indicator_map1.get(key[3]),
         'function_of_entity': indicator_map2.get(key[4]),
     }
@@ -265,44 +249,50 @@ def address(self, key, value):
         "1": "Primary",
         "2": "Secondary"}
     return {
-        'address': value.get('a'),
-        'state_or_province': utils.force_list(
-            value.get('c')
+        'address': utils.force_list(
+            value.get('a')
         ),
-        'city': utils.force_list(
-            value.get('b')
+        'state_or_province': value.get('c'),
+        'city': value.get('b'),
+        'postal_code': value.get('e'),
+        'country': value.get('d'),
+        'attention_name': value.get('g'),
+        'terms_preceding_attention_name': value.get('f'),
+        'type_of_address': value.get('i'),
+        'attention_position': value.get('h'),
+        'telephone_number': utils.force_list(
+            value.get('k')
         ),
-        'postal_code': utils.force_list(
-            value.get('e')
+        'specialized_telephone_number': utils.force_list(
+            value.get('j')
         ),
-        'country': utils.force_list(
-            value.get('d')
+        'electronic_mail_address': utils.force_list(
+            value.get('m')
         ),
-        'attention_name': utils.force_list(
-            value.get('g')
+        'fax_number': utils.force_list(
+            value.get('l')
         ),
-        'terms_preceding_attention_name': utils.force_list(
-            value.get('f')
+        'tdd_or_tty_number': utils.force_list(
+            value.get('n')
         ),
-        'type_of_address': utils.force_list(
-            value.get('i')
+        'title_of_contact_person': utils.force_list(
+            value.get('q')
         ),
-        'attention_position': utils.force_list(
-            value.get('h')
+        'contact_person': utils.force_list(
+            value.get('p')
         ),
-        'telephone_number': value.get('k'),
-        'specialized_telephone_number': value.get('j'),
-        'electronic_mail_address': value.get('m'),
-        'fax_number': value.get('l'),
-        'tdd_or_tty_number': value.get('n'),
-        'title_of_contact_person': value.get('q'),
-        'contact_person': value.get('p'),
-        'hours': value.get('r'),
-        'relator_code': value.get('4'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'hours': utils.force_list(
+            value.get('r')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'public_note': value.get('z'),
+        'relator_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'public_note': utils.force_list(
+            value.get('z')
+        ),
         'level': indicator_map1.get(key[3]),
     }

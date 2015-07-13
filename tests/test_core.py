@@ -62,6 +62,12 @@ RECORD = """<record>
   </datafield>
 </record>"""
 
+RECORD_SIMPLE = """<record>
+  <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">Donges, Jonathan F</subfield>
+  </datafield>
+</record>"""
+
 
 def test_index_creation():
     """Test index creation."""
@@ -102,8 +108,8 @@ def test_marc21_field_247_matching():
     })
 
     assert data['other_standard_identifier'][0]['standard_number_or_code'] \
-        == ['A']  # repeatable subfield
-    assert data['former_title'][0]['title'] == ['B']
+        == 'A'
+    assert data['former_title'][0]['title'] == 'B'
     assert len(data) == 2
 
 
@@ -117,3 +123,15 @@ def test_marc21_from_xml():
     data = marc21.do(blob)
 
     assert 'former_title' not in data
+
+
+def test_simple_record_from_xml():
+    """Test simple record loading from XML."""
+    from dojson.contrib.marc21 import marc21
+    from dojson.contrib.marc21.utils import create_record
+
+    blob = create_record(RECORD_SIMPLE)
+    data = marc21.do(blob)
+    expected = {'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}
+
+    assert data == expected

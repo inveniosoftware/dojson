@@ -20,19 +20,13 @@ from ..model import marc21
 def general_note(self, key, value):
     """General Note."""
     return {
-        'general_note': utils.force_list(
-            value.get('a')
+        'general_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
     }
 
 
@@ -42,16 +36,12 @@ def general_note(self, key, value):
 def with_note(self, key, value):
     """With Note."""
     return {
-        'with_note': utils.force_list(
-            value.get('a')
+        'with_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
     }
 
 
@@ -61,24 +51,20 @@ def with_note(self, key, value):
 def dissertation_note(self, key, value):
     """Dissertation Note."""
     return {
-        'dissertation_note': utils.force_list(
-            value.get('a')
+        'dissertation_note': value.get('a'),
+        'name_of_granting_institution': value.get('c'),
+        'degree_type': value.get('b'),
+        'year_degree_granted': value.get('d'),
+        'miscellaneous_information': utils.force_list(
+            value.get('g')
         ),
-        'name_of_granting_institution': utils.force_list(
-            value.get('c')
+        'dissertation_identifier': utils.force_list(
+            value.get('o')
         ),
-        'degree_type': utils.force_list(
-            value.get('b')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'year_degree_granted': utils.force_list(
-            value.get('d')
-        ),
-        'miscellaneous_information': value.get('g'),
-        'dissertation_identifier': value.get('o'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -88,16 +74,12 @@ def dissertation_note(self, key, value):
 def bibliography_note(self, key, value):
     """Bibliography, Etc. Note."""
     return {
-        'bibliography_note': utils.force_list(
-            value.get('a')
+        'bibliography_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'number_of_references': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'number_of_references': value.get('b'),
+        'linkage': value.get('6'),
     }
 
 
@@ -113,17 +95,23 @@ def formatted_contents_note(self, key, value):
         "8": "No display constant generated"}
     indicator_map2 = {"#": "Basic", "0": "Enhanced"}
     return {
-        'formatted_contents_note': utils.force_list(
-            value.get('a')
+        'formatted_contents_note': value.get('a'),
+        'miscellaneous_information': utils.force_list(
+            value.get('g')
         ),
-        'miscellaneous_information': value.get('g'),
-        'statement_of_responsibility': value.get('r'),
-        'uniform_resource_identifier': value.get('u'),
-        'title': value.get('t'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'statement_of_responsibility': utils.force_list(
+            value.get('r')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
+        ),
+        'title': utils.force_list(
+            value.get('t')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'display_constant_controller': indicator_map1.get(key[3]),
         'level_of_content_designation': indicator_map2.get(key[4]),
     }
@@ -139,28 +127,32 @@ def restrictions_on_access_note(self, key, value):
         "0": "No restrictions",
         "1": "Restrictions apply"}
     return {
-        'terms_governing_access': utils.force_list(
-            value.get('a')
+        'terms_governing_access': value.get('a'),
+        'physical_access_provisions': utils.force_list(
+            value.get('c')
         ),
-        'physical_access_provisions': value.get('c'),
-        'jurisdiction': value.get('b'),
-        'authorization': value.get('e'),
-        'authorized_users': value.get('d'),
-        'standardized_terminology_for_access_restriction': value.get('f'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'jurisdiction': utils.force_list(
+            value.get('b')
         ),
-        'source_of_term': utils.force_list(
-            value.get('2')
+        'authorization': utils.force_list(
+            value.get('e')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
+        'authorized_users': utils.force_list(
+            value.get('d')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'standardized_terminology_for_access_restriction': utils.force_list(
+            value.get('f')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'uniform_resource_identifier': value.get('u'),
+        'materials_specified': value.get('3'),
+        'source_of_term': value.get('2'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
+        ),
         'restriction': indicator_map1.get(key[3]),
     }
 
@@ -170,16 +162,12 @@ def restrictions_on_access_note(self, key, value):
 def scale_note_for_graphic_material(self, key, value):
     """Scale Note for Graphic Material."""
     return {
-        'representative_fraction_of_scale_note': utils.force_list(
-            value.get('a')
+        'representative_fraction_of_scale_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'remainder_of_scale_note': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'remainder_of_scale_note': value.get('b'),
+        'linkage': value.get('6'),
     }
 
 
@@ -189,13 +177,11 @@ def scale_note_for_graphic_material(self, key, value):
 def creation_production_credits_note(self, key, value):
     """Creation/Production Credits Note."""
     return {
-        'creation_production_credits_note': utils.force_list(
-            value.get('a')
+        'creation_production_credits_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -211,26 +197,18 @@ def citation_references_note(self, key, value):
         "3": "Location in source not given",
         "4": "Location in source given"}
     return {
-        'name_of_source': utils.force_list(
-            value.get('a')
+        'name_of_source': value.get('a'),
+        'international_standard_serial_number': value.get('x'),
+        'location_within_source': value.get('c'),
+        'coverage_of_source': value.get('b'),
+        'materials_specified': value.get('3'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'location_within_source': utils.force_list(
-            value.get('c')
-        ),
-        'coverage_of_source': utils.force_list(
-            value.get('b')
-        ),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'uniform_resource_identifier': value.get('u'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'coverage_location_in_source': indicator_map1.get(key[3]),
     }
 
@@ -242,13 +220,11 @@ def participant_or_performer_note(self, key, value):
     """Participant or Performer Note."""
     indicator_map1 = {"0": "No display constant generated", "1": "Cast"}
     return {
-        'participant_or_performer_note': utils.force_list(
-            value.get('a')
+        'participant_or_performer_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -259,16 +235,12 @@ def participant_or_performer_note(self, key, value):
 def type_of_report_and_period_covered_note(self, key, value):
     """Type of Report and Period Covered Note."""
     return {
-        'type_of_report': utils.force_list(
-            value.get('a')
+        'type_of_report': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'period_covered': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'period_covered': value.get('b'),
+        'linkage': value.get('6'),
     }
 
 
@@ -277,36 +249,40 @@ def type_of_report_and_period_covered_note(self, key, value):
 def data_quality_note(self, key, value):
     """Data Quality Note."""
     return {
-        'attribute_accuracy_report': utils.force_list(
-            value.get('a')
+        'attribute_accuracy_report': value.get('a'),
+        'attribute_accuracy_explanation': utils.force_list(
+            value.get('c')
         ),
-        'attribute_accuracy_explanation': value.get('c'),
-        'attribute_accuracy_value': value.get('b'),
-        'completeness_report': utils.force_list(
-            value.get('e')
+        'attribute_accuracy_value': utils.force_list(
+            value.get('b')
         ),
-        'logical_consistency_report': utils.force_list(
-            value.get('d')
+        'completeness_report': value.get('e'),
+        'logical_consistency_report': value.get('d'),
+        'horizontal_position_accuracy_value': utils.force_list(
+            value.get('g')
         ),
-        'horizontal_position_accuracy_value': value.get('g'),
-        'horizontal_position_accuracy_report': utils.force_list(
-            value.get('f')
+        'horizontal_position_accuracy_report': value.get('f'),
+        'vertical_positional_accuracy_report': value.get('i'),
+        'horizontal_position_accuracy_explanation': utils.force_list(
+            value.get('h')
         ),
-        'vertical_positional_accuracy_report': utils.force_list(
-            value.get('i')
+        'vertical_positional_accuracy_explanation': utils.force_list(
+            value.get('k')
         ),
-        'horizontal_position_accuracy_explanation': value.get('h'),
-        'vertical_positional_accuracy_explanation': value.get('k'),
-        'vertical_positional_accuracy_value': value.get('j'),
-        'cloud_cover': utils.force_list(
-            value.get('m')
+        'vertical_positional_accuracy_value': utils.force_list(
+            value.get('j')
         ),
-        'uniform_resource_identifier': value.get('u'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'cloud_cover': value.get('m'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'display_note': value.get('z'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'display_note': utils.force_list(
+            value.get('z')
+        ),
     }
 
 
@@ -316,13 +292,11 @@ def data_quality_note(self, key, value):
 def numbering_peculiarities_note(self, key, value):
     """Numbering Peculiarities Note."""
     return {
-        'numbering_peculiarities_note': utils.force_list(
-            value.get('a')
+        'numbering_peculiarities_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -335,13 +309,11 @@ def type_of_computer_file_or_data_note(self, key, value):
         "#": "Type of file",
         "8": "No display constant generated"}
     return {
-        'type_of_computer_file_or_data_note': utils.force_list(
-            value.get('a')
+        'type_of_computer_file_or_data_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -352,21 +324,27 @@ def type_of_computer_file_or_data_note(self, key, value):
 def date_time_and_place_of_an_event_note(self, key, value):
     """Date/Time and Place of an Event Note."""
     return {
-        'date_time_and_place_of_an_event_note': utils.force_list(
-            value.get('a')
+        'date_time_and_place_of_an_event_note': value.get('a'),
+        'date_of_event': utils.force_list(
+            value.get('d')
         ),
-        'date_of_event': value.get('d'),
-        'place_of_event': value.get('p'),
-        'other_event_information': value.get('o'),
-        'record_control_number': value.get('0'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'place_of_event': utils.force_list(
+            value.get('p')
         ),
-        'source_of_term': value.get('2'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'other_event_information': utils.force_list(
+            value.get('o')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'materials_specified': value.get('3'),
+        'source_of_term': utils.force_list(
+            value.get('2')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -384,26 +362,18 @@ def summary(self, key, value):
         "4": "Content advice",
         "8": "No display constant generated"}
     return {
-        'summary': utils.force_list(
-            value.get('a')
+        'summary': value.get('a'),
+        'assigning_source': value.get('c'),
+        'expansion_of_summary_note': value.get('b'),
+        'materials_specified': value.get('3'),
+        'source': value.get('2'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'assigning_source': utils.force_list(
-            value.get('c')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'expansion_of_summary_note': utils.force_list(
-            value.get('b')
-        ),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'source': utils.force_list(
-            value.get('2')
-        ),
-        'uniform_resource_identifier': value.get('u'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -422,17 +392,15 @@ def target_audience_note(self, key, value):
         "4": "Motivation/interest level",
         "8": "No display constant generated"}
     return {
-        'target_audience_note': value.get('a'),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'target_audience_note': utils.force_list(
+            value.get('a')
         ),
-        'source': utils.force_list(
-            value.get('b')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'materials_specified': value.get('3'),
+        'source': value.get('b'),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -446,13 +414,11 @@ def geographic_coverage_note(self, key, value):
         "#": "Geographic coverage",
         "8": "No display constant generated"}
     return {
-        'geographic_coverage_note': utils.force_list(
-            value.get('a')
+        'geographic_coverage_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -464,19 +430,13 @@ def preferred_citation_of_described_materials_note(self, key, value):
     """Preferred Citation of Described Materials Note."""
     indicator_map1 = {"#": "Cite as", "8": "No display constant generated"}
     return {
-        'preferred_citation_of_described_materials_note': utils.force_list(
-            value.get('a')
+        'preferred_citation_of_described_materials_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'source_of_schema_used': utils.force_list(
-            value.get('2')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'materials_specified': value.get('3'),
+        'source_of_schema_used': value.get('2'),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -487,13 +447,11 @@ def preferred_citation_of_described_materials_note(self, key, value):
 def supplement_note(self, key, value):
     """Supplement Note."""
     return {
-        'supplement_note': utils.force_list(
-            value.get('a')
+        'supplement_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -506,30 +464,22 @@ def study_program_information_note(self, key, value):
         "0": "Reading program",
         "8": "No display constant generated"}
     return {
-        'program_name': utils.force_list(
-            value.get('a')
+        'program_name': value.get('a'),
+        'nonpublic_note': utils.force_list(
+            value.get('x')
         ),
-        'nonpublic_note': value.get('x'),
-        'reading_level': utils.force_list(
-            value.get('c')
+        'reading_level': value.get('c'),
+        'interest_level': value.get('b'),
+        'title_point_value': value.get('d'),
+        'display_text': value.get('i'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'interest_level': utils.force_list(
-            value.get('b')
+        'public_note': utils.force_list(
+            value.get('z')
         ),
-        'title_point_value': utils.force_list(
-            value.get('d')
-        ),
-        'display_text': utils.force_list(
-            value.get('i')
-        ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'public_note': value.get('z'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -540,26 +490,18 @@ def study_program_information_note(self, key, value):
 def additional_physical_form_available_note(self, key, value):
     """Additional Physical Form Available Note."""
     return {
-        'additional_physical_form_available_note': utils.force_list(
-            value.get('a')
+        'additional_physical_form_available_note': value.get('a'),
+        'availability_conditions': value.get('c'),
+        'availability_source': value.get('b'),
+        'order_number': value.get('d'),
+        'materials_specified': value.get('3'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'availability_conditions': utils.force_list(
-            value.get('c')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'availability_source': utils.force_list(
-            value.get('b')
-        ),
-        'order_number': utils.force_list(
-            value.get('d')
-        ),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'uniform_resource_identifier': value.get('u'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -569,33 +511,31 @@ def additional_physical_form_available_note(self, key, value):
 def reproduction_note(self, key, value):
     """Reproduction Note."""
     return {
-        'type_of_reproduction': utils.force_list(
-            value.get('a')
+        'type_of_reproduction': value.get('a'),
+        'agency_responsible_for_reproduction': utils.force_list(
+            value.get('c')
         ),
-        'agency_responsible_for_reproduction': value.get('c'),
-        'place_of_reproduction': value.get('b'),
-        'physical_description_of_reproduction': utils.force_list(
-            value.get('e')
+        'place_of_reproduction': utils.force_list(
+            value.get('b')
         ),
-        'date_of_reproduction': utils.force_list(
-            value.get('d')
+        'physical_description_of_reproduction': value.get('e'),
+        'date_of_reproduction': value.get('d'),
+        'series_statement_of_reproduction': utils.force_list(
+            value.get('f')
         ),
-        'series_statement_of_reproduction': value.get('f'),
-        'dates_and_or_sequential_designation_of_issues_reproduced': value.get('m'),
-        'note_about_reproduction': value.get('n'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'dates_and_or_sequential_designation_of_issues_reproduced': utils.force_list(
+            value.get('m')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
+        'note_about_reproduction': utils.force_list(
+            value.get('n')
         ),
-        'fixed_length_data_elements_of_reproduction': utils.force_list(
-            value.get('7')
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'fixed_length_data_elements_of_reproduction': value.get('7'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -605,43 +545,37 @@ def reproduction_note(self, key, value):
 def original_version_note(self, key, value):
     """Original Version Note."""
     return {
-        'main_entry_of_original': utils.force_list(
-            value.get('a')
+        'main_entry_of_original': value.get('a'),
+        'international_standard_serial_number': utils.force_list(
+            value.get('x')
         ),
-        'international_standard_serial_number': value.get('x'),
-        'publication_distribution_of_original': utils.force_list(
-            value.get('c')
+        'publication_distribution_of_original': value.get('c'),
+        'edition_statement_of_original': value.get('b'),
+        'physical_description_of_original': value.get('e'),
+        'series_statement_of_original': utils.force_list(
+            value.get('f')
         ),
-        'edition_statement_of_original': utils.force_list(
-            value.get('b')
+        'key_title_of_original': utils.force_list(
+            value.get('k')
         ),
-        'physical_description_of_original': utils.force_list(
-            value.get('e')
+        'material_specific_details': value.get('m'),
+        'location_of_original': value.get('l'),
+        'other_resource_identifier': utils.force_list(
+            value.get('o')
         ),
-        'series_statement_of_original': value.get('f'),
-        'key_title_of_original': value.get('k'),
-        'material_specific_details': utils.force_list(
-            value.get('m')
+        'note_about_original': utils.force_list(
+            value.get('n')
         ),
-        'location_of_original': utils.force_list(
-            value.get('l')
+        'introductory_phrase': value.get('p'),
+        'materials_specified': value.get('3'),
+        'title_statement_of_original': value.get('t'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'other_resource_identifier': value.get('o'),
-        'note_about_original': value.get('n'),
-        'introductory_phrase': utils.force_list(
-            value.get('p')
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
         ),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'title_statement_of_original': utils.force_list(
-            value.get('t')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'international_standard_book_number': value.get('z'),
     }
 
 
@@ -652,22 +586,22 @@ def location_of_originals_duplicates_note(self, key, value):
     """Location of Originals/Duplicates Note."""
     indicator_map1 = {"1": "Holder of originals", "2": "Holder of duplicates"}
     return {
-        'custodian': utils.force_list(
-            value.get('a')
+        'custodian': value.get('a'),
+        'country': utils.force_list(
+            value.get('c')
         ),
-        'country': value.get('c'),
-        'postal_address': value.get('b'),
-        'telecommunications_address': value.get('d'),
-        'repository_location_code': utils.force_list(
-            value.get('g')
+        'postal_address': utils.force_list(
+            value.get('b')
         ),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'telecommunications_address': utils.force_list(
+            value.get('d')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'repository_location_code': value.get('g'),
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
         'custodial_role': indicator_map1.get(key[3]),
     }
 
@@ -678,20 +612,32 @@ def location_of_originals_duplicates_note(self, key, value):
 def funding_information_note(self, key, value):
     """Funding Information Note."""
     return {
-        'text_of_note': utils.force_list(
-            value.get('a')
+        'text_of_note': value.get('a'),
+        'grant_number': utils.force_list(
+            value.get('c')
         ),
-        'grant_number': value.get('c'),
-        'contract_number': value.get('b'),
-        'program_element_number': value.get('e'),
-        'undifferentiated_number': value.get('d'),
-        'task_number': value.get('g'),
-        'project_number': value.get('f'),
-        'work_unit_number': value.get('h'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'contract_number': utils.force_list(
+            value.get('b')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'program_element_number': utils.force_list(
+            value.get('e')
+        ),
+        'undifferentiated_number': utils.force_list(
+            value.get('d')
+        ),
+        'task_number': utils.force_list(
+            value.get('g')
+        ),
+        'project_number': utils.force_list(
+            value.get('f')
+        ),
+        'work_unit_number': utils.force_list(
+            value.get('h')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -701,21 +647,19 @@ def funding_information_note(self, key, value):
 def system_details_note(self, key, value):
     """System Details Note."""
     return {
-        'system_details_note': utils.force_list(
-            value.get('a')
+        'system_details_note': value.get('a'),
+        'display_text': value.get('i'),
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': utils.force_list(
+            value.get('5')
         ),
-        'display_text': utils.force_list(
-            value.get('i')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'institution_to_which_field_applies': value.get('5'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'uniform_resource_identifier': value.get('u'),
     }
 
 
@@ -725,29 +669,19 @@ def system_details_note(self, key, value):
 def terms_governing_use_and_reproduction_note(self, key, value):
     """Terms Governing Use and Reproduction Note."""
     return {
-        'terms_governing_use_and_reproduction': utils.force_list(
-            value.get('a')
+        'terms_governing_use_and_reproduction': value.get('a'),
+        'authorization': value.get('c'),
+        'jurisdiction': value.get('b'),
+        'authorized_users': value.get('d'),
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'authorization': utils.force_list(
-            value.get('c')
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'jurisdiction': utils.force_list(
-            value.get('b')
-        ),
-        'authorized_users': utils.force_list(
-            value.get('d')
-        ),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'uniform_resource_identifier': value.get('u'),
     }
 
 
@@ -761,39 +695,25 @@ def immediate_source_of_acquisition_note(self, key, value):
         "0": "Private",
         "1": "Not private"}
     return {
-        'source_of_acquisition': utils.force_list(
-            value.get('a')
+        'source_of_acquisition': value.get('a'),
+        'method_of_acquisition': value.get('c'),
+        'address': value.get('b'),
+        'accession_number': value.get('e'),
+        'date_of_acquisition': value.get('d'),
+        'owner': value.get('f'),
+        'purchase_price': value.get('h'),
+        'type_of_unit': utils.force_list(
+            value.get('o')
         ),
-        'method_of_acquisition': utils.force_list(
-            value.get('c')
+        'extent': utils.force_list(
+            value.get('n')
         ),
-        'address': utils.force_list(
-            value.get('b')
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'accession_number': utils.force_list(
-            value.get('e')
-        ),
-        'date_of_acquisition': utils.force_list(
-            value.get('d')
-        ),
-        'owner': utils.force_list(
-            value.get('f')
-        ),
-        'purchase_price': utils.force_list(
-            value.get('h')
-        ),
-        'type_of_unit': value.get('o'),
-        'extent': value.get('n'),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'privacy': indicator_map1.get(key[3]),
     }
 
@@ -808,57 +728,47 @@ def information_relating_to_copyright_status(self, key, value):
         "0": "Private",
         "1": "Not private"}
     return {
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'personal_creator': value.get('a'),
+        'corporate_creator': value.get('c'),
+        'personal_creator_death_date': value.get('b'),
+        'copyright_holder_contact_information': utils.force_list(
+            value.get('e')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'personal_creator': utils.force_list(
-            value.get('a')
+        'copyright_holder': utils.force_list(
+            value.get('d')
         ),
-        'corporate_creator': utils.force_list(
-            value.get('c')
+        'copyright_date': value.get('g'),
+        'copyright_statement': utils.force_list(
+            value.get('f')
         ),
-        'personal_creator_death_date': utils.force_list(
-            value.get('b')
+        'publication_date': value.get('i'),
+        'copyright_renewal_date': utils.force_list(
+            value.get('h')
         ),
-        'copyright_holder_contact_information': value.get('e'),
-        'copyright_holder': value.get('d'),
-        'copyright_date': utils.force_list(
-            value.get('g')
+        'publisher': utils.force_list(
+            value.get('k')
         ),
-        'copyright_statement': value.get('f'),
-        'publication_date': utils.force_list(
-            value.get('i')
+        'creation_date': value.get('j'),
+        'publication_status': value.get('m'),
+        'copyright_status': value.get('l'),
+        'research_date': value.get('o'),
+        'note': utils.force_list(
+            value.get('n')
         ),
-        'copyright_renewal_date': value.get('h'),
-        'publisher': value.get('k'),
-        'creation_date': utils.force_list(
-            value.get('j')
+        'supplying_agency': value.get('q'),
+        'country_of_publication_or_creation': utils.force_list(
+            value.get('p')
         ),
-        'publication_status': utils.force_list(
-            value.get('m')
+        'source_of_information': value.get('s'),
+        'jurisdiction_of_copyright_assessment': value.get('r'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'copyright_status': utils.force_list(
-            value.get('l')
-        ),
-        'research_date': utils.force_list(
-            value.get('o')
-        ),
-        'note': value.get('n'),
-        'supplying_agency': utils.force_list(
-            value.get('q')
-        ),
-        'country_of_publication_or_creation': value.get('p'),
-        'source_of_information': utils.force_list(
-            value.get('s')
-        ),
-        'jurisdiction_of_copyright_assessment': utils.force_list(
-            value.get('r')
-        ),
-        'uniform_resource_identifier': value.get('u'),
         'privacy': indicator_map1.get(key[3]),
     }
 
@@ -873,19 +783,29 @@ def location_of_other_archival_materials_note(self, key, value):
         "0": "Associated materials",
         "1": "Related materials"}
     return {
-        'custodian': value.get('a'),
-        'country': value.get('c'),
-        'address': value.get('b'),
-        'provenance': value.get('e'),
-        'title': value.get('d'),
-        'note': value.get('n'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'custodian': utils.force_list(
+            value.get('a')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'country': utils.force_list(
+            value.get('c')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'address': utils.force_list(
+            value.get('b')
+        ),
+        'provenance': utils.force_list(
+            value.get('e')
+        ),
+        'title': utils.force_list(
+            value.get('d')
+        ),
+        'note': utils.force_list(
+            value.get('n')
+        ),
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'relationship': indicator_map1.get(key[3]),
     }
 
@@ -900,17 +820,15 @@ def biographical_or_historical_data(self, key, value):
         "0": "Biographical sketch",
         "1": "Administrative history"}
     return {
-        'biographical_or_historical_data': utils.force_list(
-            value.get('a')
+        'biographical_or_historical_data': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'expansion': utils.force_list(
-            value.get('b')
+        'expansion': value.get('b'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'uniform_resource_identifier': value.get('u'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
         'type_of_data': indicator_map1.get(key[3]),
     }
 
@@ -921,17 +839,15 @@ def biographical_or_historical_data(self, key, value):
 def language_note(self, key, value):
     """Language Note."""
     return {
-        'language_note': utils.force_list(
-            value.get('a')
+        'language_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'materials_specified': value.get('3'),
+        'information_code_or_alphabet': utils.force_list(
+            value.get('b')
         ),
-        'information_code_or_alphabet': value.get('b'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -941,13 +857,11 @@ def language_note(self, key, value):
 def former_title_complexity_note(self, key, value):
     """Former Title Complexity Note."""
     return {
-        'former_title_complexity_note': utils.force_list(
-            value.get('a')
+        'former_title_complexity_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -957,13 +871,11 @@ def former_title_complexity_note(self, key, value):
 def issuing_body_note(self, key, value):
     """Issuing Body Note."""
     return {
-        'issuing_body_note': utils.force_list(
-            value.get('a')
+        'issuing_body_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -973,52 +885,40 @@ def issuing_body_note(self, key, value):
 def entity_and_attribute_information_note(self, key, value):
     """Entity and Attribute Information Note."""
     return {
-        'entity_type_label': utils.force_list(
-            value.get('a')
+        'entity_type_label': value.get('a'),
+        'attribute_label': value.get('c'),
+        'entity_type_definition_and_source': value.get('b'),
+        'enumerated_domain_value': utils.force_list(
+            value.get('e')
         ),
-        'attribute_label': utils.force_list(
-            value.get('c')
+        'attribute_definition_and_source': value.get('d'),
+        'range_domain_minimum_and_maximum': value.get('g'),
+        'enumerated_domain_value_definition_and_source': utils.force_list(
+            value.get('f')
         ),
-        'entity_type_definition_and_source': utils.force_list(
-            value.get('b')
+        'unrepresentable_domain': value.get('i'),
+        'codeset_name_and_source': value.get('h'),
+        'beginning_and_ending_date_of_attribute_values': value.get('k'),
+        'attribute_units_of_measurement_and_resolution': value.get('j'),
+        'attribute_value_accuracy_explanation': value.get('m'),
+        'attribute_value_accuracy': value.get('l'),
+        'entity_and_attribute_overview': utils.force_list(
+            value.get('o')
         ),
-        'enumerated_domain_value': value.get('e'),
-        'attribute_definition_and_source': utils.force_list(
-            value.get('d')
+        'attribute_measurement_frequency': value.get('n'),
+        'entity_and_attribute_detail_citation': utils.force_list(
+            value.get('p')
         ),
-        'range_domain_minimum_and_maximum': utils.force_list(
-            value.get('g')
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'enumerated_domain_value_definition_and_source': value.get('f'),
-        'unrepresentable_domain': utils.force_list(
-            value.get('i')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'codeset_name_and_source': utils.force_list(
-            value.get('h')
+        'display_note': utils.force_list(
+            value.get('z')
         ),
-        'beginning_and_ending_date_of_attribute_values': utils.force_list(
-            value.get('k')
-        ),
-        'attribute_units_of_measurement_and_resolution': utils.force_list(
-            value.get('j')
-        ),
-        'attribute_value_accuracy_explanation': utils.force_list(
-            value.get('m')
-        ),
-        'attribute_value_accuracy': utils.force_list(
-            value.get('l')
-        ),
-        'entity_and_attribute_overview': value.get('o'),
-        'attribute_measurement_frequency': utils.force_list(
-            value.get('n')
-        ),
-        'entity_and_attribute_detail_citation': value.get('p'),
-        'uniform_resource_identifier': value.get('u'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'display_note': value.get('z'),
     }
 
 
@@ -1032,24 +932,20 @@ def cumulative_index_finding_aids_note(self, key, value):
         "0": "Finding aids",
         "8": "No display constant generated"}
     return {
-        'cumulative_index_finding_aids_note': utils.force_list(
-            value.get('a')
+        'cumulative_index_finding_aids_note': value.get('a'),
+        'degree_of_control': value.get('c'),
+        'availability_source': utils.force_list(
+            value.get('b')
         ),
-        'degree_of_control': utils.force_list(
-            value.get('c')
+        'bibliographic_reference': value.get('d'),
+        'materials_specified': value.get('3'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'availability_source': value.get('b'),
-        'bibliographic_reference': utils.force_list(
-            value.get('d')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'uniform_resource_identifier': value.get('u'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -1063,14 +959,14 @@ def information_about_documentation_note(self, key, value):
         "#": "Documentation",
         "8": "No display constant generated"}
     return {
-        'information_about_documentation_note': utils.force_list(
-            value.get('a')
+        'information_about_documentation_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'international_standard_book_number': value.get('z'),
-        'linkage': utils.force_list(
-            value.get('6')
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
         ),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -1085,20 +981,16 @@ def ownership_and_custodial_history(self, key, value):
         "0": "Private",
         "1": "Not private"}
     return {
-        'history': utils.force_list(
-            value.get('a')
+        'history': value.get('a'),
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'uniform_resource_identifier': value.get('u'),
         'privacy': indicator_map1.get(key[3]),
     }
 
@@ -1109,21 +1001,27 @@ def ownership_and_custodial_history(self, key, value):
 def copy_and_version_identification_note(self, key, value):
     """Copy and Version Identification Note."""
     return {
-        'identifying_markings': value.get('a'),
-        'version_identification': value.get('c'),
-        'copy_identification': value.get('b'),
-        'number_of_copies': value.get('e'),
-        'presentation_format': value.get('d'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'identifying_markings': utils.force_list(
+            value.get('a')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
+        'version_identification': utils.force_list(
+            value.get('c')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'copy_identification': utils.force_list(
+            value.get('b')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'number_of_copies': utils.force_list(
+            value.get('e')
+        ),
+        'presentation_format': utils.force_list(
+            value.get('d')
+        ),
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -1133,20 +1031,16 @@ def copy_and_version_identification_note(self, key, value):
 def binding_information(self, key, value):
     """Binding Information."""
     return {
-        'binding_note': utils.force_list(
-            value.get('a')
+        'binding_note': value.get('a'),
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
-        'field_link_and_sequence_number': value.get('8'),
-        'uniform_resource_identifier': value.get('u'),
     }
 
 
@@ -1160,20 +1054,24 @@ def case_file_characteristics_note(self, key, value):
         "0": "Case file characteristics",
         "8": "No display constant generated"}
     return {
-        'number_of_cases_variables': utils.force_list(
-            value.get('a')
+        'number_of_cases_variables': value.get('a'),
+        'unit_of_analysis': utils.force_list(
+            value.get('c')
         ),
-        'unit_of_analysis': value.get('c'),
-        'name_of_variable': value.get('b'),
-        'filing_scheme_or_code': value.get('e'),
-        'universe_of_data': value.get('d'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'name_of_variable': utils.force_list(
+            value.get('b')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'filing_scheme_or_code': utils.force_list(
+            value.get('e')
         ),
-        'field_link_and_sequence_number': value.get('8'),
+        'universe_of_data': utils.force_list(
+            value.get('d')
+        ),
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -1185,13 +1083,11 @@ def methodology_note(self, key, value):
     """Methodology Note."""
     indicator_map1 = {"#": "Methodology", "8": "No display constant generated"}
     return {
-        'methodology_note': utils.force_list(
-            value.get('a')
+        'methodology_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -1202,13 +1098,11 @@ def methodology_note(self, key, value):
 def linking_entry_complexity_note(self, key, value):
     """Linking Entry Complexity Note."""
     return {
-        'linking_entry_complexity_note': utils.force_list(
-            value.get('a')
+        'linking_entry_complexity_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
     }
 
 
@@ -1221,17 +1115,15 @@ def publications_about_described_materials_note(self, key, value):
         "#": "Publications",
         "8": "No display constant generated"}
     return {
-        'publications_about_described_materials_note': utils.force_list(
-            value.get('a')
+        'publications_about_described_materials_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'materials_specified': value.get('3'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
         ),
-        'international_standard_book_number': value.get('z'),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -1246,37 +1138,59 @@ def action_note(self, key, value):
         "0": "Private",
         "1": "Not private"}
     return {
-        'action': utils.force_list(
-            value.get('a')
+        'action': value.get('a'),
+        'nonpublic_note': utils.force_list(
+            value.get('x')
         ),
-        'nonpublic_note': value.get('x'),
-        'time_date_of_action': value.get('c'),
-        'action_identification': value.get('b'),
-        'contingency_for_action': value.get('e'),
-        'action_interval': value.get('d'),
-        'authorization': value.get('f'),
-        'method_of_action': value.get('i'),
-        'jurisdiction': value.get('h'),
-        'action_agent': value.get('k'),
-        'site_of_action': value.get('j'),
-        'status': value.get('l'),
-        'type_of_unit': value.get('o'),
-        'extent': value.get('n'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'time_date_of_action': utils.force_list(
+            value.get('c')
         ),
-        'source_of_term': utils.force_list(
-            value.get('2')
+        'action_identification': utils.force_list(
+            value.get('b')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
+        'contingency_for_action': utils.force_list(
+            value.get('e')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'action_interval': utils.force_list(
+            value.get('d')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'public_note': value.get('z'),
-        'uniform_resource_identifier': value.get('u'),
+        'authorization': utils.force_list(
+            value.get('f')
+        ),
+        'method_of_action': utils.force_list(
+            value.get('i')
+        ),
+        'jurisdiction': utils.force_list(
+            value.get('h')
+        ),
+        'action_agent': utils.force_list(
+            value.get('k')
+        ),
+        'site_of_action': utils.force_list(
+            value.get('j')
+        ),
+        'status': utils.force_list(
+            value.get('l')
+        ),
+        'type_of_unit': utils.force_list(
+            value.get('o')
+        ),
+        'extent': utils.force_list(
+            value.get('n')
+        ),
+        'materials_specified': value.get('3'),
+        'source_of_term': value.get('2'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
+        'public_note': utils.force_list(
+            value.get('z')
+        ),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
+        ),
         'privacy': indicator_map1.get(key[3]),
     }
 
@@ -1287,18 +1201,18 @@ def action_note(self, key, value):
 def accumulation_and_frequency_of_use_note(self, key, value):
     """Accumulation and Frequency of Use Note."""
     return {
-        'accumulation': value.get('a'),
-        'frequency_of_use': value.get('b'),
-        'materials_specified': utils.force_list(
-            value.get('3')
+        'accumulation': utils.force_list(
+            value.get('a')
         ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
+        'frequency_of_use': utils.force_list(
+            value.get('b')
         ),
-        'linkage': utils.force_list(
-            value.get('6')
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
     }
 
 
@@ -1308,19 +1222,13 @@ def accumulation_and_frequency_of_use_note(self, key, value):
 def exhibitions_note(self, key, value):
     """Exhibitions Note."""
     return {
-        'exhibitions_note': utils.force_list(
-            value.get('a')
+        'exhibitions_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'materials_specified': value.get('3'),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
     }
 
 
@@ -1331,16 +1239,12 @@ def awards_note(self, key, value):
     """Awards Note."""
     indicator_map1 = {"#": "Awards", "8": "No display constant generated"}
     return {
-        'awards_note': utils.force_list(
-            value.get('a')
+        'awards_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'materials_specified': utils.force_list(
-            value.get('3')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -1351,14 +1255,10 @@ def awards_note(self, key, value):
 def source_of_description_note(self, key, value):
     """Source of Description Note."""
     return {
-        'source_of_description_note': utils.force_list(
-            value.get('a')
+        'source_of_description_note': value.get('a'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'field_link_and_sequence_number': value.get('8'),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
-        'linkage': utils.force_list(
-            value.get('6')
-        ),
+        'institution_to_which_field_applies': value.get('5'),
+        'linkage': value.get('6'),
     }
