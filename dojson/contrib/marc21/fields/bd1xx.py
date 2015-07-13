@@ -73,32 +73,39 @@ def main_entry_corporate_name(self, key, value):
         "2": "Name in direct order"}
     return {
         'corporate_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')),
+            value.get('a')
+        ),
         'location_of_meeting': utils.force_list(
-            value.get('c')),
+            value.get('c')
+        ),
         'subordinate_unit': value.get('b'),
         'relator_term': value.get('e'),
         'date_of_meeting_or_treaty_signing': value.get('d'),
         'miscellaneous_information': utils.force_list(
-            value.get('g')),
+            value.get('g')
+        ),
         'date_of_a_work': utils.force_list(
-            value.get('f')),
+            value.get('f')
+        ),
         'form_subheading': value.get('k'),
         'language_of_a_work': utils.force_list(
-            value.get('l')),
+            value.get('l')
+        ),
         'name_of_part_section_of_a_work': value.get('p'),
         'number_of_part_section_meeting': value.get('n'),
         'authority_record_control_number': value.get('0'),
         'affiliation': utils.force_list(
-            value.get('u')),
+            value.get('u')
+        ),
         'relator_code': value.get('4'),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number_r': value.get('8'),
         'title_of_a_work': utils.force_list(
-            value.get('t')),
-        'type_of_corporate_name_entry_element': indicator_map1.get(
-            key[3]),
+            value.get('t')
+        ),
+        'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
     }
 
 
@@ -112,42 +119,62 @@ def main_entry_meeting_name(self, key, value):
         "2": "Name in direct order"}
     return {
         'meeting_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')),
+            value.get('a')
+        ),
         'location_of_meeting': utils.force_list(
-            value.get('c')),
+            value.get('c')
+        ),
         'subordinate_unit': value.get('e'),
         'date_of_meeting': utils.force_list(
-            value.get('d')),
+            value.get('d')
+        ),
         'miscellaneous_information': utils.force_list(
-            value.get('g')),
+            value.get('g')
+        ),
         'date_of_a_work': utils.force_list(
-            value.get('f')),
+            value.get('f')
+        ),
         'form_subheading': value.get('k'),
         'relator_term': value.get('j'),
         'language_of_a_work': utils.force_list(
-            value.get('l')),
+            value.get('l')
+        ),
         'name_of_part_section_of_a_work': value.get('p'),
         'number_of_part_section_meeting': value.get('n'),
         'name_of_meeting_following_jurisdiction_name_entry_element': utils.force_list(
-            value.get('q')),
+            value.get('q')
+        ),
         'authority_record_control_number': value.get('0'),
         'affiliation': utils.force_list(
-            value.get('u')),
+            value.get('u')
+        ),
         'relator_code': value.get('4'),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number': value.get('8'),
         'title_of_a_work': utils.force_list(
-            value.get('t')),
-        'type_of_meeting_name_entry_element': indicator_map1.get(
-            key[3]),
+            value.get('t')
+        ),
+        'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('main_entry_uniform_title', '^130..')
+@marc21.over('main_entry_uniform_title', '^130[_1032547698].')
 @utils.filter_values
 def main_entry_uniform_title(self, key, value):
     """Main Entry-Uniform Title."""
+    indicator_map1 = {
+        "0": "Number of nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'uniform_title': utils.force_list(
             value.get('a')
@@ -186,4 +213,5 @@ def main_entry_uniform_title(self, key, value):
             value.get('6')
         ),
         'field_link_and_sequence_number': value.get('8'),
+        'nonfiling_characters': indicator_map1.get(key[3]),
     }

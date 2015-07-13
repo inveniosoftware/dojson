@@ -97,7 +97,9 @@ def series_added_entry_personal_name(self, key, value):
 def series_added_entry_corporate_name(self, key, value):
     """Series Added Entry-Corporate Name."""
     indicator_map1 = {
-        "0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
+        "0": "Inverted name",
+        "1": "Jurisdiction name",
+        "2": "Name in direct order"}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': utils.force_list(
@@ -169,7 +171,9 @@ def series_added_entry_corporate_name(self, key, value):
 def series_added_entry_meeting_name(self, key, value):
     """Series Added Entry-Meeting Name."""
     indicator_map1 = {
-        "0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
+        "0": "Inverted name",
+        "1": "Jurisdiction name",
+        "2": "Name in direct order"}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': utils.force_list(
@@ -233,12 +237,22 @@ def series_added_entry_meeting_name(self, key, value):
     }
 
 
-@marc21.over('series_added_entry_uniform_title', '^830.[0_]')
+@marc21.over('series_added_entry_uniform_title', '^830.[_1032547698]')
 @utils.for_each_value
 @utils.filter_values
 def series_added_entry_uniform_title(self, key, value):
     """Series Added Entry-Uniform Title."""
-    indicator_map2 = {"0": "No nonfiling characters"}
+    indicator_map2 = {
+        "0": "No nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'authority_record_control_number': value.get('0'),
         'materials_specified': utils.force_list(

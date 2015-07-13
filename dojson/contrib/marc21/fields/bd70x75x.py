@@ -95,7 +95,9 @@ def added_entry_personal_name(self, key, value):
 def added_entry_corporate_name(self, key, value):
     """Added Entry-Corporate Name."""
     indicator_map1 = {
-        "0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
+        "0": "Inverted name",
+        "1": "Jurisdiction name",
+        "2": "Name in direct order"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
     return {
         'authority_record_control_number': value.get('0'),
@@ -165,7 +167,9 @@ def added_entry_corporate_name(self, key, value):
 def added_entry_meeting_name(self, key, value):
     """Added Entry-Meeting Name."""
     indicator_map1 = {
-        "0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
+        "0": "Inverted name",
+        "1": "Jurisdiction name",
+        "2": "Name in direct order"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
     return {
         'authority_record_control_number': value.get('0'),
@@ -247,11 +251,22 @@ def added_entry_uncontrolled_name(self, key, value):
     }
 
 
-@marc21.over('added_entry_uniform_title', '^730.[_2]')
+@marc21.over('added_entry_uniform_title', '^730[_1032547698][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uniform_title(self, key, value):
     """Added Entry-Uniform Title."""
+    indicator_map1 = {
+        "0": "Number of nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
     return {
         'uniform_title': utils.force_list(
@@ -301,17 +316,28 @@ def added_entry_uniform_title(self, key, value):
         'version': utils.force_list(
             value.get('s')
         ),
+        'nonfiling_characters': indicator_map1.get(key[3]),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
 
 @marc21.over(
-    'added_entry_uncontrolled_related_analytical_title', '^740[0_][_2]')
+    'added_entry_uncontrolled_related_analytical_title', '^740[_1032547698][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uncontrolled_related_analytical_title(self, key, value):
     """Added Entry-Uncontrolled Related/Analytical Title."""
-    indicator_map1 = {"0": "No nonfiling characters"}
+    indicator_map1 = {
+        "0": "No nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
     return {
         'uncontrolled_related_analytical_title': utils.force_list(

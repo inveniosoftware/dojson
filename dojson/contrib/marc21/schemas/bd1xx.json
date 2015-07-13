@@ -5,7 +5,7 @@
             "description": "Main Entry-Personal Name",
             "properties": {
                 "type_of_personal_name_entry_element": {
-                    "enum": ["Surname", "Forename", "Family name"]
+                    "enum": ["Family name", "Surname", "Forename"]
                 },
                 "personal_name": {
                     "type": "array",
@@ -100,7 +100,7 @@
             "description": "Main Entry-Corporate Name",
             "properties": {
                 "type_of_corporate_name_entry_element": {
-                    "enum": ["Jurisdiction name", "Inverted name", "Name in direct order"]
+                    "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                 },
                 "corporate_name_or_jurisdiction_name_as_entry_element": {
                     "type": "array",
@@ -183,7 +183,7 @@
             "description": "Main Entry-Meeting Name",
             "properties": {
                 "type_of_meeting_name_entry_element": {
-                    "enum": ["Jurisdiction name", "Inverted name", "Name in direct order"]
+                    "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                 },
                 "meeting_name_or_jurisdiction_name_as_entry_element": {
                     "type": "array",
@@ -274,6 +274,9 @@
         "main_entry_uniform_title": {
             "description": "Main Entry-Uniform Title",
             "properties": {
+                "nonfiling_characters": {
+                    "enum": ["Number of nonfiling characters"]
+                },
                 "uniform_title": {
                     "type": "array",
                     "items": {

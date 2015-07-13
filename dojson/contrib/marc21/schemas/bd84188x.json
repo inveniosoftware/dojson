@@ -23,10 +23,10 @@
                 "type": "object",
                 "properties": {
                     "shelving_scheme": {
-                        "enum": ["No information provided", "Dewey Decimal classification", "Library of Congress classification", "Superintendent of Documents classification", "National Library of Medicine classification", "Title", "Shelving control number", "Source specified in subfield $2", "Shelved separately", "Other scheme"]
+                        "enum": ["No information provided", "Dewey Decimal classification", "Title", "Shelved separately", "Source specified in subfield $2", "Shelving control number", "Superintendent of Documents classification", "Other scheme", "Library of Congress classification", "National Library of Medicine classification"]
                     },
                     "shelving_order": {
-                        "enum": ["Primary enumeration", "Not enumeration", "No information provided", "Alternative enumeration"]
+                        "enum": ["No information provided", "Primary enumeration", "Not enumeration", "Alternative enumeration"]
                     },
                     "materials_specified": {
                         "type": "array",
@@ -149,7 +149,7 @@
                 "type": "object",
                 "properties": {
                     "relationship": {
-                        "enum": ["Version of resource", "Resource", "No information provided", "Related resource", "No display constant generated"]
+                        "enum": ["Version of resource", "No information provided", "Resource", "Related resource", "No display constant generated"]
                     },
                     "materials_specified": {
                         "type": "array",
@@ -304,7 +304,7 @@
                 "type": "object",
                 "properties": {
                     "method_of_machine_assignment": {
-                        "enum": ["Partially machine-generated", "Fully machine-generated", "No information provided/not applicable"]
+                        "enum": ["Fully machine-generated", "No information provided/not applicable", "Partially machine-generated"]
                     },
                     "generation_process": {
                         "type": "array",

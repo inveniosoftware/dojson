@@ -47,7 +47,7 @@
                 "type": "object",
                 "properties": {
                     "nonfiling_characters": {
-                        "enum": ["No nonfiling characters"]
+                        "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                     },
                     "key_title": {
                         "type": "array",
@@ -78,6 +78,9 @@
             "properties": {
                 "uniform_title_printed_or_displayed": {
                     "enum": ["Printed or displayed", "Not printed or displayed"]
+                },
+                "nonfiling_characters": {
+                    "enum": ["Number of nonfiling characters"]
                 },
                 "uniform_title": {
                     "type": "array",
@@ -166,7 +169,7 @@
                         "enum": ["Added entry", "No added entry"]
                     },
                     "nonfiling_characters": {
-                        "enum": ["No nonfiling characters"]
+                        "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                     },
                     "title": {
                         "type": "array",
@@ -221,6 +224,9 @@
             "properties": {
                 "uniform_title_printed_or_displayed": {
                     "enum": ["Printed or displayed", "Not printed or displayed"]
+                },
+                "nonfiling_characters": {
+                    "enum": ["Number of nonfiling characters"]
                 },
                 "uniform_title": {
                     "type": "array",
@@ -303,7 +309,7 @@
                     "enum": ["Added entry", "No added entry"]
                 },
                 "nonfiling_characters": {
-                    "enum": ["No nonfiling characters"]
+                    "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                 },
                 "title": {
                     "type": "array",
@@ -374,10 +380,10 @@
                 "type": "object",
                 "properties": {
                     "note_added_entry_controller": {
-                        "enum": ["Note, added entry", "Note, no added entry", "No note, added entry", "No note, no added entry"]
+                        "enum": ["Note, added entry", "No note, no added entry", "No note, added entry", "Note, no added entry"]
                     },
                     "type_of_title": {
-                        "enum": ["No type specified", "Parallel title", "Portion of title", "Other title", "Distinctive title", "Added title page title", "Cover title", "Running title", "Caption title", "Spine title"]
+                        "enum": ["Portion of title", "Added title page title", "Other title", "Caption title", "No type specified", "Cover title", "Parallel title", "Running title", "Spine title", "Distinctive title"]
                     },
                     "title_proper_short_title": {
                         "type": "array",

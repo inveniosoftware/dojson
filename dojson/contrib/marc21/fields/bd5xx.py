@@ -134,8 +134,10 @@ def formatted_contents_note(self, key, value):
 @utils.filter_values
 def restrictions_on_access_note(self, key, value):
     """Restrictions on Access Note."""
-    indicator_map1 = {"#": "No information provided",
-                      "0": "No restrictions", "1": "Restrictions apply"}
+    indicator_map1 = {
+        "#": "No information provided",
+        "0": "No restrictions",
+        "1": "Restrictions apply"}
     return {
         'terms_governing_access': utils.force_list(
             value.get('a')
@@ -330,7 +332,8 @@ def numbering_peculiarities_note(self, key, value):
 def type_of_computer_file_or_data_note(self, key, value):
     """Type of Computer File or Data Note."""
     indicator_map1 = {
-        "#": "Type of file", "8": "No display constant generated"}
+        "#": "Type of file",
+        "8": "No display constant generated"}
     return {
         'type_of_computer_file_or_data_note': utils.force_list(
             value.get('a')
@@ -440,7 +443,8 @@ def target_audience_note(self, key, value):
 def geographic_coverage_note(self, key, value):
     """Geographic Coverage Note."""
     indicator_map1 = {
-        "#": "Geographic coverage", "8": "No display constant generated"}
+        "#": "Geographic coverage",
+        "8": "No display constant generated"}
     return {
         'geographic_coverage_note': utils.force_list(
             value.get('a')
@@ -499,7 +503,8 @@ def supplement_note(self, key, value):
 def study_program_information_note(self, key, value):
     """Study Program Information Note."""
     indicator_map1 = {
-        "0": "Reading program", "8": "No display constant generated"}
+        "0": "Reading program",
+        "8": "No display constant generated"}
     return {
         'program_name': utils.force_list(
             value.get('a')
@@ -565,24 +570,31 @@ def reproduction_note(self, key, value):
     """Reproduction Note."""
     return {
         'type_of_reproduction': utils.force_list(
-            value.get('a')),
+            value.get('a')
+        ),
         'agency_responsible_for_reproduction': value.get('c'),
         'place_of_reproduction': value.get('b'),
         'physical_description_of_reproduction': utils.force_list(
-            value.get('e')),
+            value.get('e')
+        ),
         'date_of_reproduction': utils.force_list(
-            value.get('d')),
+            value.get('d')
+        ),
         'series_statement_of_reproduction': value.get('f'),
         'dates_and_or_sequential_designation_of_issues_reproduced': value.get('m'),
         'note_about_reproduction': value.get('n'),
         'materials_specified': utils.force_list(
-            value.get('3')),
+            value.get('3')
+        ),
         'institution_to_which_field_applies': utils.force_list(
-            value.get('5')),
+            value.get('5')
+        ),
         'fixed_length_data_elements_of_reproduction': utils.force_list(
-            value.get('7')),
+            value.get('7')
+        ),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number': value.get('8'),
     }
 
@@ -745,7 +757,9 @@ def terms_governing_use_and_reproduction_note(self, key, value):
 def immediate_source_of_acquisition_note(self, key, value):
     """Immediate Source of Acquisition Note."""
     indicator_map1 = {
-        "#": "No information provided", "0": "Private", "1": "Not private"}
+        "#": "No information provided",
+        "0": "Private",
+        "1": "Not private"}
     return {
         'source_of_acquisition': utils.force_list(
             value.get('a')
@@ -790,7 +804,9 @@ def immediate_source_of_acquisition_note(self, key, value):
 def information_relating_to_copyright_status(self, key, value):
     """Information Relating to Copyright Status."""
     indicator_map1 = {
-        "#": "No information provided", "0": "Private", "1": "Not private"}
+        "#": "No information provided",
+        "0": "Private",
+        "1": "Not private"}
     return {
         'materials_specified': utils.force_list(
             value.get('3')
@@ -852,8 +868,10 @@ def information_relating_to_copyright_status(self, key, value):
 @utils.filter_values
 def location_of_other_archival_materials_note(self, key, value):
     """Location of Other Archival Materials Note."""
-    indicator_map1 = {"#": "No information provided",
-                      "0": "Associated materials", "1": "Related materials"}
+    indicator_map1 = {
+        "#": "No information provided",
+        "0": "Associated materials",
+        "1": "Related materials"}
     return {
         'custodian': value.get('a'),
         'country': value.get('c'),
@@ -1042,7 +1060,8 @@ def cumulative_index_finding_aids_note(self, key, value):
 def information_about_documentation_note(self, key, value):
     """Information About Documentation Note."""
     indicator_map1 = {
-        "#": "Documentation", "8": "No display constant generated"}
+        "#": "Documentation",
+        "8": "No display constant generated"}
     return {
         'information_about_documentation_note': utils.force_list(
             value.get('a')
@@ -1062,7 +1081,9 @@ def information_about_documentation_note(self, key, value):
 def ownership_and_custodial_history(self, key, value):
     """Ownership and Custodial History."""
     indicator_map1 = {
-        "#": "No information provided", "0": "Private", "1": "Not private"}
+        "#": "No information provided",
+        "0": "Private",
+        "1": "Not private"}
     return {
         'history': utils.force_list(
             value.get('a')
@@ -1197,7 +1218,8 @@ def linking_entry_complexity_note(self, key, value):
 def publications_about_described_materials_note(self, key, value):
     """Publications About Described Materials Note."""
     indicator_map1 = {
-        "#": "Publications", "8": "No display constant generated"}
+        "#": "Publications",
+        "8": "No display constant generated"}
     return {
         'publications_about_described_materials_note': utils.force_list(
             value.get('a')
@@ -1220,7 +1242,9 @@ def publications_about_described_materials_note(self, key, value):
 def action_note(self, key, value):
     """Action Note."""
     indicator_map1 = {
-        "#": "No information provided", "0": "Private", "1": "Not private"}
+        "#": "No information provided",
+        "0": "Private",
+        "1": "Not private"}
     return {
         'action': utils.force_list(
             value.get('a')

@@ -20,8 +20,9 @@ from ..model import marc21
 def series_statement_added_entry_personal_name(self, key, value):
     """Series Statement/Added Entry-Personal Name."""
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
-    indicator_map2 = {"0": "Main entry not represented by pronoun",
-                      "1": "Main entry represented by pronoun"}
+    indicator_map2 = {
+        "0": "Main entry not represented by pronoun",
+        "1": "Main entry represented by pronoun"}
     return {
         'personal_name': utils.force_list(
             value.get('a')
@@ -77,41 +78,50 @@ def series_statement_added_entry_corporate_name(self, key, value):
         "0": "Inverted name",
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
-    indicator_map2 = {"0": "Main entry not represented by pronoun",
-                      "1": "Main entry represented by pronoun"}
+    indicator_map2 = {
+        "0": "Main entry not represented by pronoun",
+        "1": "Main entry represented by pronoun"}
     return {
         'corporate_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')),
+            value.get('a')
+        ),
         'international_standard_serial_number': utils.force_list(
-            value.get('x')),
+            value.get('x')
+        ),
         'location_of_meeting': utils.force_list(
-            value.get('c')),
+            value.get('c')
+        ),
         'subordinate_unit': value.get('b'),
         'relator_term': value.get('e'),
         'date_of_meeting_or_treaty_signing': value.get('d'),
         'miscellaneous_information': utils.force_list(
-            value.get('g')),
+            value.get('g')
+        ),
         'date_of_a_work': utils.force_list(
-            value.get('f')),
+            value.get('f')
+        ),
         'form_subheading': value.get('k'),
         'volume_sequential_designation': utils.force_list(
-            value.get('v')),
+            value.get('v')
+        ),
         'language_of_a_work': utils.force_list(
-            value.get('l')),
+            value.get('l')
+        ),
         'number_of_part_section_meeting': value.get('n'),
         'name_of_part_section_of_a_work': value.get('p'),
         'affiliation': utils.force_list(
-            value.get('u')),
+            value.get('u')
+        ),
         'relator_code': value.get('4'),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number': value.get('8'),
         'title_of_a_work': utils.force_list(
-            value.get('t')),
-        'type_of_corporate_name_entry_element': indicator_map1.get(
-            key[3]),
-        'pronoun_represents_main_entry': indicator_map2.get(
-            key[4]),
+            value.get('t')
+        ),
+        'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
+        'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
 
 
@@ -124,52 +134,73 @@ def series_statement_added_entry_meeting_name(self, key, value):
         "0": "Inverted name",
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
-    indicator_map2 = {"0": "Main entry not represented by pronoun",
-                      "1": "Main entry represented by pronoun"}
+    indicator_map2 = {
+        "0": "Main entry not represented by pronoun",
+        "1": "Main entry represented by pronoun"}
     return {
         'meeting_name_or_jurisdiction_name_as_entry_element': utils.force_list(
-            value.get('a')),
+            value.get('a')
+        ),
         'international_standard_serial_number': utils.force_list(
-            value.get('x')),
+            value.get('x')
+        ),
         'location_of_meeting': utils.force_list(
-            value.get('c')),
+            value.get('c')
+        ),
         'subordinate_unit': value.get('e'),
         'date_of_meeting': utils.force_list(
-            value.get('d')),
+            value.get('d')
+        ),
         'miscellaneous_information': utils.force_list(
-            value.get('g')),
+            value.get('g')
+        ),
         'date_of_a_work': utils.force_list(
-            value.get('f')),
+            value.get('f')
+        ),
         'form_subheading': value.get('k'),
         'volume_sequential_designation': utils.force_list(
-            value.get('v')),
+            value.get('v')
+        ),
         'language_of_a_work': utils.force_list(
-            value.get('l')),
+            value.get('l')
+        ),
         'number_of_part_section_meeting': value.get('n'),
         'name_of_meeting_following_jurisdiction_name_entry_element': utils.force_list(
-            value.get('q')),
+            value.get('q')
+        ),
         'name_of_part_section_of_a_work': value.get('p'),
         'affiliation': utils.force_list(
-            value.get('u')),
+            value.get('u')
+        ),
         'relator_code': value.get('4'),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number': value.get('8'),
         'title_of_a_work': utils.force_list(
-            value.get('t')),
-        'type_of_meeting_name_entry_element': indicator_map1.get(
-            key[3]),
-        'pronoun_represents_main_entry': indicator_map2.get(
-            key[4]),
+            value.get('t')
+        ),
+        'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
+        'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('series_statement_added_entry_title', '^440.[0_]')
+@marc21.over('series_statement_added_entry_title', '^440.[_1032547698]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_title(self, key, value):
     """Series Statement/Added Entry-Title."""
-    indicator_map2 = {"0": "No nonfiling characters"}
+    indicator_map2 = {
+        "0": "No nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'title': utils.force_list(
             value.get('a')

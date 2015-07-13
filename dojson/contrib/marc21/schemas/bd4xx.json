@@ -8,7 +8,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_personal_name_entry_element": {
-                        "enum": ["Surname", "Forename", "Family name"]
+                        "enum": ["Family name", "Surname", "Forename"]
                     },
                     "pronoun_represents_main_entry": {
                         "enum": ["Main entry represented by pronoun", "Main entry not represented by pronoun"]
@@ -110,7 +110,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_corporate_name_entry_element": {
-                        "enum": ["Jurisdiction name", "Inverted name", "Name in direct order"]
+                        "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "pronoun_represents_main_entry": {
                         "enum": ["Main entry represented by pronoun", "Main entry not represented by pronoun"]
@@ -209,7 +209,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_meeting_name_entry_element": {
-                        "enum": ["Jurisdiction name", "Inverted name", "Name in direct order"]
+                        "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "pronoun_represents_main_entry": {
                         "enum": ["Main entry represented by pronoun", "Main entry not represented by pronoun"]
@@ -314,7 +314,7 @@
                 "type": "object",
                 "properties": {
                     "nonfiling_characters": {
-                        "enum": ["No nonfiling characters"]
+                        "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                     },
                     "title": {
                         "type": "array",
@@ -365,7 +365,7 @@
                 "type": "object",
                 "properties": {
                     "series_tracing_policy": {
-                        "enum": ["Series traced", "Series not traced"]
+                        "enum": ["Series not traced", "Series traced"]
                     },
                     "series_statement": {
                         "type": "string"

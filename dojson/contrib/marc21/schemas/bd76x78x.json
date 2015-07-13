@@ -11,7 +11,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Main series"]
+                        "enum": ["Main series", "No display constant generated"]
                     },
                     "main_entry_heading": {
                         "type": "array",
@@ -119,7 +119,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Has subseries"]
+                        "enum": ["Has subseries", "No display constant generated"]
                     },
                     "main_entry_heading": {
                         "type": "array",
@@ -227,7 +227,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Translation of"]
+                        "enum": ["Translation of", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -350,7 +350,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Translated as"]
+                        "enum": ["Translated as", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -473,7 +473,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Has supplement"]
+                        "enum": ["Has supplement", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -596,7 +596,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["Parent", "Supplement to", "No display constant generated"]
+                        "enum": ["Supplement to", "Parent", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -719,7 +719,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "In"]
+                        "enum": ["In", "No display constant generated"]
                     },
                     "materials_specified": {
                         "type": "array",
@@ -854,7 +854,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Constituent unit"]
+                        "enum": ["Constituent unit", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -977,7 +977,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Other edition available"]
+                        "enum": ["Other edition available", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -1112,7 +1112,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Available in another form"]
+                        "enum": ["Available in another form", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -1235,7 +1235,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Issued with"]
+                        "enum": ["Issued with", "No display constant generated"]
                     },
                     "main_entry_heading": {
                         "type": "array",
@@ -1346,7 +1346,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "type_of_relationship": {
-                        "enum": ["Continues in part", "Continues", "Supersedes in part", "Supersedes", "Absorbed", "Formed by the union of ... and ...", "Separated from", "Absorbed in part"]
+                        "enum": ["Continues", "Continues in part", "Absorbed in part", "Supersedes in part", "Absorbed", "Formed by the union of ... and ...", "Separated from", "Supersedes"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -1469,7 +1469,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "type_of_relationship": {
-                        "enum": ["Continued in part by", "Continued by", "Superseded in part by", "Superseded by", "Absorbed in part by", "Absorbed by", "Merged with ... to form ...", "Split into ... and ...", "Changed back to"]
+                        "enum": ["Merged with ... to form ...", "Changed back to", "Continued by", "Absorbed in part by", "Superseded in part by", "Split into ... and ...", "Absorbed by", "Superseded by", "Continued in part by"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -1592,7 +1592,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Data source"]
+                        "enum": ["Data source", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"
@@ -1733,7 +1733,7 @@
                         "enum": ["Do not display note", "Display note"]
                     },
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Related item"]
+                        "enum": ["Related item", "No display constant generated"]
                     },
                     "relationship_code": {
                         "type": "string"

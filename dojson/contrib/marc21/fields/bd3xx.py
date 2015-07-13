@@ -213,9 +213,18 @@ def physical_medium(self, key, value):
 def geospatial_reference_data(self, key, value):
     """Geospatial Reference Data."""
     indicator_map1 = {
-        "0": "Horizontal coordinate system", "1": "Vertical coordinate system"}
-    indicator_map2 = {"0": "Geographic", "1": "Map projection", "2": "Grid coordinate system", "3": "Local planar",
-                      "4": "Local", "5": "Geodetic model", "6": "Altitude", "7": "Method specified in $2", "8": "Depth"}
+        "0": "Horizontal coordinate system",
+        "1": "Vertical coordinate system"}
+    indicator_map2 = {
+        "0": "Geographic",
+        "1": "Map projection",
+        "2": "Grid coordinate system",
+        "3": "Local planar",
+        "4": "Local",
+        "5": "Geodetic model",
+        "6": "Altitude",
+        "7": "Method specified in $2",
+        "8": "Depth"}
     return {
         'reference_method_used': utils.force_list(
             value.get('2')
@@ -494,8 +503,14 @@ def digital_graphic_representation(self, key, value):
 @utils.filter_values
 def security_classification_control(self, key, value):
     """Security Classification Control."""
-    indicator_map1 = {"0": "Document", "1": "Title", "2": "Abstract", "3":
-                      "Contents note", "4": "Author", "5": "Record", "8": "None of the above"}
+    indicator_map1 = {
+        "0": "Document",
+        "1": "Title",
+        "2": "Abstract",
+        "3": "Contents note",
+        "4": "Author",
+        "5": "Record",
+        "8": "None of the above"}
     return {
         'security_classification': utils.force_list(
             value.get('a')
@@ -571,8 +586,10 @@ def dates_of_publication_and_or_sequential_designation(self, key, value):
 @utils.filter_values
 def normalized_date_and_sequential_designation(self, key, value):
     """Normalized Date and Sequential Designation."""
-    indicator_map1 = {"#": "No information provided",
-                      "0": "Starting information", "1": "Ending information"}
+    indicator_map1 = {
+        "#": "No information provided",
+        "0": "Starting information",
+        "1": "Ending information"}
     indicator_map2 = {"#": "Not specified", "0": "Closed", "1": "Open"}
     return {
         'first_level_of_enumeration': utils.force_list(
@@ -794,10 +811,14 @@ def other_distinguishing_characteristics_of_work_or_expression(
 @utils.filter_values
 def medium_of_performance(self, key, value):
     """Medium of Performance."""
-    indicator_map1 = {"#": "No information provided", "0":
-                      "Medium of performance", "1": "Partial medium of performance"}
-    indicator_map2 = {"#": "No information provided",
-                      "0": "Not intended for access", "1": "Intended for access"}
+    indicator_map1 = {
+        "#": "No information provided",
+        "0": "Medium of performance",
+        "1": "Partial medium of performance"}
+    indicator_map2 = {
+        "#": "No information provided",
+        "0": "Not intended for access",
+        "1": "Intended for access"}
     return {
         'medium_of_performance': value.get('a'),
         'soloist': value.get('b'),
@@ -848,8 +869,10 @@ def numeric_designation_of_musical_work(self, key, value):
 @utils.filter_values
 def key(self, key, value):
     """Key."""
-    indicator_map1 = {"#": "Relationship to original unknown ",
-                      "0": "Original key ", "1": "Transposed key "}
+    indicator_map1 = {
+        "#": "Relationship to original unknown ",
+        "0": "Original key ",
+        "1": "Transposed key "}
     return {
         'key': utils.force_list(
             value.get('a')

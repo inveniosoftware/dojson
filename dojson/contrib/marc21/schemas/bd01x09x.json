@@ -106,7 +106,7 @@
                 "type": "object",
                 "properties": {
                     "national_bibliographic_agency": {
-                        "enum": ["Library and Archives Canada", "Source specified in subfield $2"]
+                        "enum": ["Source specified in subfield $2", "Library and Archives Canada"]
                     },
                     "record_control_number": {
                         "type": "array",
@@ -136,7 +136,7 @@
                 "type": "object",
                 "properties": {
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Copyright or legal deposit number"]
+                        "enum": ["Copyright or legal deposit number", "No display constant generated"]
                     },
                     "copyright_or_legal_deposit_number": {
                         "type": "string"
@@ -288,10 +288,10 @@
                 "type": "object",
                 "properties": {
                     "type_of_standard_number_or_code": {
-                        "enum": ["Universal Product Code", "International Standard Recording Code", "International Article Number", "International Standard Music Number", "Serial Item and Contribution Identifier", "Source specified in subfield $2", "Unspecified type of standard number or code"]
+                        "enum": ["International Standard Music Number", "Source specified in subfield $2", "International Standard Recording Code", "International Article Number", "Unspecified type of standard number or code", "Serial Item and Contribution Identifier", "Universal Product Code"]
                     },
                     "difference_indicator": {
-                        "enum": ["Difference", "No difference", "No information provided"]
+                        "enum": ["No difference", "Difference", "No information provided"]
                     },
                     "standard_number_or_code": {
                         "type": "array",
@@ -441,10 +441,10 @@
                 "type": "object",
                 "properties": {
                     "type_of_publisher_number": {
-                        "enum": ["Matrix number", "Issue number", "Other music number", "Plate number", "Other publisher number", "Videorecording number"]
+                        "enum": ["Other music number", "Other publisher number", "Videorecording number", "Matrix number", "Issue number", "Plate number"]
                     },
                     "note_added_entry_controller": {
-                        "enum": ["Note, added entry", "No note, no added entry", "No note, added entry", "Note, no added entry"]
+                        "enum": ["Note, no added entry", "Note, added entry", "No note, no added entry", "No note, added entry"]
                     },
                     "publisher_number": {
                         "type": "array",
@@ -642,7 +642,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_date_in_subfield_a": {
-                        "enum": ["Multiple single dates ", "Single date ", "No date information ", "Range of dates "]
+                        "enum": ["No date information ", "Range of dates ", "Multiple single dates ", "Single date "]
                     },
                     "type_of_event": {
                         "enum": ["Broadcast ", "Capture ", "No information provided ", "Finding "]
@@ -690,10 +690,10 @@
                 "type": "object",
                 "properties": {
                     "type_of_scale": {
-                        "enum": ["Single scale", "Scale indeterminable/No scale recorded", "Range of scales"]
+                        "enum": ["Range of scales", "Single scale", "Scale indeterminable/No scale recorded"]
                     },
                     "type_of_ring": {
-                        "enum": ["Exclusion ring", "Outer ring", "Not applicable"]
+                        "enum": ["Not applicable", "Exclusion ring", "Outer ring"]
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "string"
@@ -1101,7 +1101,7 @@
             "description": "Time Period of Content",
             "properties": {
                 "type_of_time_period_in_subfield_b_or_c": {
-                    "enum": ["Multiple single dates/times", "Single date/time", "Subfield $b or $c not present", "Range of dates/times"]
+                    "enum": ["Subfield $b or $c not present", "Range of dates/times", "Single date/time", "Multiple single dates/times"]
                 },
                 "time_period_code": {
                     "type": "string"
@@ -1271,10 +1271,10 @@
                 "type": "object",
                 "properties": {
                     "existence_in_lc_collection": {
-                        "enum": ["Item is not in LC", "Item is in LC", "No information provided"]
+                        "enum": ["Item is not in LC", "No information provided", "Item is in LC"]
                     },
                     "source_of_call_number": {
-                        "enum": ["Assigned by LC", "Assigned by agency other than LC"]
+                        "enum": ["Assigned by agency other than LC", "Assigned by LC"]
                     },
                     "classification_number": {
                         "type": "string"
@@ -1376,10 +1376,10 @@
                 "type": "object",
                 "properties": {
                     "existence_in_lac_collection": {
-                        "enum": ["Work not held by LAC", "Work held by LAC", "Information not provided"]
+                        "enum": ["Information not provided", "Work held by LAC", "Work not held by LAC"]
                     },
                     "type_completeness_source_of_class_call_number": {
-                        "enum": ["Complete LC class number assigned by LAC", "LC-based call number assigned by LAC", "LC-based call number assigned by the contributing library", "Incomplete LC class number assigned by LAC", "Incomplete LC class number assigned by the contributing library", "Complete LC class number assigned by the contributing library", "Other class number assigned by LAC", "Other call number assigned by LAC", "Other class number assigned by the contributing library", "Other call number assigned by the contributing library"]
+                        "enum": ["Other class number assigned by LAC", "Incomplete LC class number assigned by the contributing library", "Incomplete LC class number assigned by LAC", "LC-based call number assigned by LAC", "Other call number assigned by LAC", "Complete LC class number assigned by LAC", "LC-based call number assigned by the contributing library", "Other class number assigned by the contributing library", "Other call number assigned by the contributing library", "Complete LC class number assigned by the contributing library"]
                     },
                     "classification_number": {
                         "type": "array",
@@ -1418,10 +1418,10 @@
                 "type": "object",
                 "properties": {
                     "existence_in_nlm_collection": {
-                        "enum": ["Item is not in NLM", "Item is in NLM", "No information provided"]
+                        "enum": ["Item is not in NLM", "No information provided", "Item is in NLM"]
                     },
                     "source_of_call_number": {
-                        "enum": ["Assigned by NLM", "Assigned by agency other than NLM"]
+                        "enum": ["Assigned by agency other than NLM", "Assigned by NLM"]
                     },
                     "classification_number_r": {
                         "type": "string"
@@ -1594,7 +1594,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_edition": {
-                        "enum": ["Abridged", "Full", "No information provided"]
+                        "enum": ["Full", "No information provided", "Abridged"]
                     },
                     "universal_decimal_classification_number": {
                         "type": "array",
@@ -1636,10 +1636,10 @@
                 "type": "object",
                 "properties": {
                     "type_of_edition": {
-                        "enum": ["Abridged edition", "Full edition", "Other edition specified in subfield $2"]
+                        "enum": ["Full edition", "Abridged edition", "Other edition specified in subfield $2"]
                     },
                     "source_of_classification_number": {
-                        "enum": ["Assigned by LC", "No information provided", "Assigned by agency other than LC"]
+                        "enum": ["Assigned by agency other than LC", "No information provided", "Assigned by LC"]
                     },
                     "classification_number": {
                         "type": "string"
@@ -1687,7 +1687,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_edition": {
-                        "enum": ["Abridged edition", "Full edition", "Other edition specified in subfield $2"]
+                        "enum": ["Full edition", "Abridged edition", "Other edition specified in subfield $2"]
                     },
                     "classification_number": {
                         "type": "string"

@@ -77,7 +77,8 @@ def subseries_entry(self, key, value):
     """Subseries Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Has subseries", "8": "No display constant generated"}
+        "#": "Has subseries",
+        "8": "No display constant generated"}
     return {
         'main_entry_heading': utils.force_list(
             value.get('a')
@@ -134,7 +135,8 @@ def original_language_entry(self, key, value):
     """Original Language Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Translation of", "8": "No display constant generated"}
+        "#": "Translation of",
+        "8": "No display constant generated"}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': utils.force_list(
@@ -197,7 +199,8 @@ def translation_entry(self, key, value):
     """Translation Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Translated as", "8": "No display constant generated"}
+        "#": "Translated as",
+        "8": "No display constant generated"}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': utils.force_list(
@@ -260,7 +263,8 @@ def supplement_special_issue_entry(self, key, value):
     """Supplement/Special Issue Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Has supplement", "8": "No display constant generated"}
+        "#": "Has supplement",
+        "8": "No display constant generated"}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': utils.force_list(
@@ -456,7 +460,8 @@ def constituent_unit_entry(self, key, value):
     """Constituent Unit Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Constituent unit", "8": "No display constant generated"}
+        "#": "Constituent unit",
+        "8": "No display constant generated"}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': utils.force_list(
@@ -519,7 +524,8 @@ def other_edition_entry(self, key, value):
     """Other Edition Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Other edition available", "8": "No display constant generated"}
+        "#": "Other edition available",
+        "8": "No display constant generated"}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': utils.force_list(
@@ -588,7 +594,8 @@ def additional_physical_form_entry(self, key, value):
     """Additional Physical Form Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Available in another form", "8": "No display constant generated"}
+        "#": "Available in another form",
+        "8": "No display constant generated"}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': utils.force_list(
@@ -920,7 +927,8 @@ def other_relationship_entry(self, key, value):
     """Other Relationship Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
-        "#": "Related item", "8": "No display constant generated"}
+        "#": "Related item",
+        "8": "No display constant generated"}
     return {
         'relationship_code': value.get('4'),
         'control_subfield': utils.force_list(

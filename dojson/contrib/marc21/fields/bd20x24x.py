@@ -21,7 +21,8 @@ def abbreviated_title(self, key, value):
     """Abbreviated Title."""
     indicator_map1 = {"0": "No added entry", "1": "Added entry"}
     indicator_map2 = {
-        "#": "Abbreviated key title", "0": "Other abbreviated title"}
+        "#": "Abbreviated key title",
+        "0": "Other abbreviated title"}
     return {
         'abbreviated_title': utils.force_list(
             value.get('a')
@@ -39,12 +40,22 @@ def abbreviated_title(self, key, value):
     }
 
 
-@marc21.over('key_title', '^222.[0_]')
+@marc21.over('key_title', '^222.[_1032547698]')
 @utils.for_each_value
 @utils.filter_values
 def key_title(self, key, value):
     """Key Title."""
-    indicator_map2 = {"0": "No nonfiling characters"}
+    indicator_map2 = {
+        "0": "No nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'key_title': utils.force_list(
             value.get('a')
@@ -60,12 +71,24 @@ def key_title(self, key, value):
     }
 
 
-@marc21.over('uniform_title', '^240[10_].')
+@marc21.over('uniform_title', '^240[10_][_1032547698]')
 @utils.filter_values
 def uniform_title(self, key, value):
     """Uniform Title."""
     indicator_map1 = {
-        "0": "Not printed or displayed", "1": "Printed or displayed"}
+        "0": "Not printed or displayed",
+        "1": "Printed or displayed"}
+    indicator_map2 = {
+        "0": "Number of nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'uniform_title': utils.force_list(
             value.get('a')
@@ -102,16 +125,28 @@ def uniform_title(self, key, value):
         ),
         'field_link_and_sequence_number': value.get('8'),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
+        'nonfiling_characters': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('translation_of_title_by_cataloging_agency', '^242[10_][0_]')
+@marc21.over(
+    'translation_of_title_by_cataloging_agency', '^242[10_][_1032547698]')
 @utils.for_each_value
 @utils.filter_values
 def translation_of_title_by_cataloging_agency(self, key, value):
     """Translation of Title by Cataloging Agency."""
     indicator_map1 = {"0": "No added entry", "1": "Added entry"}
-    indicator_map2 = {"0": "No nonfiling characters"}
+    indicator_map2 = {
+        "0": "No nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'title': utils.force_list(
             value.get('a')
@@ -139,12 +174,24 @@ def translation_of_title_by_cataloging_agency(self, key, value):
     }
 
 
-@marc21.over('collective_uniform_title', '^243[10_].')
+@marc21.over('collective_uniform_title', '^243[10_][_1032547698]')
 @utils.filter_values
 def collective_uniform_title(self, key, value):
     """Collective Uniform Title."""
     indicator_map1 = {
-        "0": "Not printed or displayed", "1": "Printed or displayed"}
+        "0": "Not printed or displayed",
+        "1": "Printed or displayed"}
+    indicator_map2 = {
+        "0": "Number of nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'uniform_title': utils.force_list(
             value.get('a')
@@ -180,15 +227,26 @@ def collective_uniform_title(self, key, value):
         ),
         'field_link_and_sequence_number': value.get('8'),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
+        'nonfiling_characters': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('title_statement', '^245[10_][0_]')
+@marc21.over('title_statement', '^245[10_][_1032547698]')
 @utils.filter_values
 def title_statement(self, key, value):
     """Title Statement."""
     indicator_map1 = {"0": "No added entry", "1": "Added entry"}
-    indicator_map2 = {"0": "No nonfiling characters"}
+    indicator_map2 = {
+        "0": "No nonfiling characters",
+        "1": "Number of nonfiling characters",
+        "2": "Number of nonfiling characters",
+        "3": "Number of nonfiling characters",
+        "4": "Number of nonfiling characters",
+        "5": "Number of nonfiling characters",
+        "6": "Number of nonfiling characters",
+        "7": "Number of nonfiling characters",
+        "8": "Number of nonfiling characters",
+        "9": "Number of nonfiling characters"}
     return {
         'title': utils.force_list(
             value.get('a')

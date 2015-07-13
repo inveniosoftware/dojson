@@ -77,8 +77,9 @@ def national_bibliography_number(self, key, value):
 @utils.filter_values
 def national_bibliographic_agency_control_number(self, key, value):
     """National Bibliographic Agency Control Number."""
-    indicator_map1 = {"#": "Library and Archives Canada",
-                      "7": "Source specified in subfield $2"}
+    indicator_map1 = {
+        "#": "Library and Archives Canada",
+        "7": "Source specified in subfield $2"}
     return {
         'record_control_number': utils.force_list(
             value.get('a')
@@ -206,22 +207,25 @@ def other_standard_identifier(self, key, value):
         "1": "Difference"}
     return {
         'standard_number_or_code': utils.force_list(
-            value.get('a')),
+            value.get('a')
+        ),
         'terms_of_availability': utils.force_list(
-            value.get('c')),
+            value.get('c')
+        ),
         'additional_codes_following_the_standard_number_or_code': utils.force_list(
-            value.get('d')),
+            value.get('d')
+        ),
         'qualifying_information': value.get('q'),
         'source_of_number_or_code': utils.force_list(
-            value.get('2')),
+            value.get('2')
+        ),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number': value.get('8'),
         'canceled_invalid_standard_number_or_code': value.get('z'),
-        'type_of_standard_number_or_code': indicator_map1.get(
-            key[3]),
-        'difference_indicator': indicator_map2.get(
-            key[4]),
+        'type_of_standard_number_or_code': indicator_map1.get(key[3]),
+        'difference_indicator': indicator_map2.get(key[4]),
     }
 
 
@@ -296,8 +300,11 @@ def publisher_number(self, key, value):
         "3": "Other music number",
         "4": "Videorecording number",
         "5": "Other publisher number"}
-    indicator_map2 = {"0": "No note, no added entry", "1": "Note, added entry",
-                      "2": "Note, no added entry", "3": "No note, added entry"}
+    indicator_map2 = {
+        "0": "No note, no added entry",
+        "1": "Note, added entry",
+        "2": "Note, no added entry",
+        "3": "No note, added entry"}
     return {
         'publisher_number': utils.force_list(
             value.get('a')
@@ -409,10 +416,16 @@ def postal_registration_number(self, key, value):
 @utils.filter_values
 def date_time_and_place_of_an_event(self, key, value):
     """Date/Time and Place of an Event."""
-    indicator_map1 = {"#": "No date information ", "0": "Single date ",
-                      "1": "Multiple single dates ", "2": "Range of dates "}
-    indicator_map2 = {"#": "No information provided ",
-                      "0": "Capture ", "1": "Broadcast ", "2": "Finding "}
+    indicator_map1 = {
+        "#": "No date information ",
+        "0": "Single date ",
+        "1": "Multiple single dates ",
+        "2": "Range of dates "}
+    indicator_map2 = {
+        "#": "No information provided ",
+        "0": "Capture ",
+        "1": "Broadcast ",
+        "2": "Finding "}
     return {
         'formatted_date_time': value.get('a'),
         'geographic_classification_subarea_code': value.get('c'),
@@ -437,10 +450,14 @@ def date_time_and_place_of_an_event(self, key, value):
 @utils.filter_values
 def coded_cartographic_mathematical_data(self, key, value):
     """Coded Cartographic Mathematical Data."""
-    indicator_map1 = {"0": "Scale indeterminable/No scale recorded",
-                      "1": "Single scale", "3": "Range of scales"}
+    indicator_map1 = {
+        "0": "Scale indeterminable/No scale recorded",
+        "1": "Single scale",
+        "3": "Range of scales"}
     indicator_map2 = {
-        "#": "Not applicable", "0": "Outer ring", "1": "Exclusion ring"}
+        "#": "Not applicable",
+        "0": "Outer ring",
+        "1": "Exclusion ring"}
     return {
         'authority_record_control_number_or_standard_number': value.get('0'),
         'materials_specified': utils.force_list(
@@ -608,7 +625,7 @@ def language_code(self, key, value):
     """Language Code."""
     indicator_map1 = {
         "#": "No information provided",
-        "0": "Item not a translation/does not include a translation",
+        "0": "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation",
         "1": "Item is or includes a translation"}
     return {
         'language_code_of_text_sound_track_or_separate_title': value.get('a'),
@@ -623,12 +640,13 @@ def language_code(self, key, value):
         'language_code_of_original_accompanying_materials_other_than_librettos': value.get('m'),
         'language_code_of_original_libretto': value.get('n'),
         'source_of_code': utils.force_list(
-            value.get('2')),
+            value.get('2')
+        ),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number': value.get('8'),
-        'translation_indication': indicator_map1.get(
-            key[3]),
+        'translation_indication': indicator_map1.get(key[3]),
     }
 
 
@@ -781,10 +799,13 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
 @utils.filter_values
 def library_of_congress_call_number(self, key, value):
     """Library of Congress Call Number."""
-    indicator_map1 = {"#": "No information provided",
-                      "0": "Item is in LC", "1": "Item is not in LC"}
+    indicator_map1 = {
+        "#": "No information provided",
+        "0": "Item is in LC",
+        "1": "Item is not in LC"}
     indicator_map2 = {
-        "0": "Assigned by LC", "4": "Assigned by agency other than LC"}
+        "0": "Assigned by LC",
+        "4": "Assigned by agency other than LC"}
     return {
         'classification_number': value.get('a'),
         'field_link_and_sequence_number': value.get('8'),
@@ -848,8 +869,10 @@ def geographic_classification(self, key, value):
 @utils.filter_values
 def classification_numbers_assigned_in_canada(self, key, value):
     """Classification Numbers Assigned in Canada."""
-    indicator_map1 = {"#": "Information not provided",
-                      "0": "Work held by LAC", "1": "Work not held by LAC"}
+    indicator_map1 = {
+        "#": "Information not provided",
+        "0": "Work held by LAC",
+        "1": "Work not held by LAC"}
     indicator_map2 = {
         "0": "LC-based call number assigned by LAC",
         "1": "Complete LC class number assigned by LAC",
@@ -863,18 +886,20 @@ def classification_numbers_assigned_in_canada(self, key, value):
         "9": "Other class number assigned by the contributing library"}
     return {
         'classification_number': utils.force_list(
-            value.get('a')),
+            value.get('a')
+        ),
         'field_link_and_sequence_number': value.get('8'),
         'source_of_call_class_number': utils.force_list(
-            value.get('2')),
+            value.get('2')
+        ),
         'item_number': utils.force_list(
-            value.get('b')),
+            value.get('b')
+        ),
         'linkage': utils.force_list(
-            value.get('6')),
-        'existence_in_lac_collection': indicator_map1.get(
-            key[3]),
-        'type_completeness_source_of_class_call_number': indicator_map2.get(
-            key[4]),
+            value.get('6')
+        ),
+        'existence_in_lac_collection': indicator_map1.get(key[3]),
+        'type_completeness_source_of_class_call_number': indicator_map2.get(key[4]),
     }
 
 
@@ -883,10 +908,13 @@ def classification_numbers_assigned_in_canada(self, key, value):
 @utils.filter_values
 def national_library_of_medicine_call_number(self, key, value):
     """National Library of Medicine Call Number."""
-    indicator_map1 = {"#": "No information provided",
-                      "0": "Item is in NLM", "1": "Item is not in NLM"}
+    indicator_map1 = {
+        "#": "No information provided",
+        "0": "Item is in NLM",
+        "1": "Item is not in NLM"}
     indicator_map2 = {
-        "0": "Assigned by NLM", "4": "Assigned by agency other than NLM"}
+        "0": "Assigned by NLM",
+        "4": "Assigned by agency other than NLM"}
     return {
         'classification_number_r': value.get('a'),
         'field_link_and_sequence_number': value.get('8'),
@@ -1001,7 +1029,9 @@ def gpo_item_number(self, key, value):
 def universal_decimal_classification_number(self, key, value):
     """Universal Decimal Classification Number."""
     indicator_map1 = {
-        "#": "No information provided", "0": "Full", "1": "Abridged"}
+        "#": "No information provided",
+        "0": "Full",
+        "1": "Abridged"}
     return {
         'universal_decimal_classification_number': utils.force_list(
             value.get('a')
@@ -1026,8 +1056,10 @@ def universal_decimal_classification_number(self, key, value):
 @utils.filter_values
 def dewey_decimal_classification_number(self, key, value):
     """Dewey Decimal Classification Number."""
-    indicator_map1 = {"0": "Full edition", "1": "Abridged edition",
-                      "7": "Other edition specified in subfield $2"}
+    indicator_map1 = {
+        "0": "Full edition",
+        "1": "Abridged edition",
+        "7": "Other edition specified in subfield $2"}
     indicator_map2 = {
         "#": "No information provided",
         "0": "Assigned by LC",
@@ -1060,24 +1092,29 @@ def dewey_decimal_classification_number(self, key, value):
 @utils.filter_values
 def additional_dewey_decimal_classification_number(self, key, value):
     """Additional Dewey Decimal Classification Number."""
-    indicator_map1 = {"0": "Full edition", "1": "Abridged edition",
-                      "7": "Other edition specified in subfield $2"}
+    indicator_map1 = {
+        "0": "Full edition",
+        "1": "Abridged edition",
+        "7": "Other edition specified in subfield $2"}
     return {
         'classification_number': value.get('a'),
         'classification_number_ending_number_of_span': value.get('c'),
         'standard_or_optional_designation': utils.force_list(
-            value.get('m')),
+            value.get('m')
+        ),
         'assigning_agency': utils.force_list(
-            value.get('q')),
+            value.get('q')
+        ),
         'edition_number': utils.force_list(
-            value.get('2')),
+            value.get('2')
+        ),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'table_sequence_number_for_internal_subarrangement_or_add_table': value.get('y'),
         'field_link_and_sequence_number': value.get('8'),
         'table_identification': value.get('z'),
-        'type_of_edition': indicator_map1.get(
-            key[3]),
+        'type_of_edition': indicator_map1.get(key[3]),
     }
 
 
@@ -1121,7 +1158,8 @@ def synthesized_classification_number_components(self, key, value):
         'digits_added_from_internal_subarrangement_or_add_table': value.get('t'),
         'table_identification_internal_subarrangement_or_add_table': value.get('w'),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'table_sequence_number_for_internal_subarrangement_or_add_table': value.get('y'),
         'field_link_and_sequence_number': value.get('8'),
         'table_identification': value.get('z'),

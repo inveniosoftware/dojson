@@ -8,7 +8,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_personal_name_entry_element": {
-                        "enum": ["Surname", "Forename", "Family name"]
+                        "enum": ["Family name", "Surname", "Forename"]
                     },
                     "authority_record_control_number": {
                         "type": "string"
@@ -164,7 +164,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_corporate_name_entry_element": {
-                        "enum": ["Jurisdiction name", "Inverted name", "Name in direct order"]
+                        "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "authority_record_control_number": {
                         "type": "string"
@@ -308,7 +308,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_meeting_name_entry_element": {
-                        "enum": ["Jurisdiction name", "Inverted name", "Name in direct order"]
+                        "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "authority_record_control_number": {
                         "type": "string"
@@ -446,7 +446,7 @@
                 "type": "object",
                 "properties": {
                     "nonfiling_characters": {
-                        "enum": ["No nonfiling characters"]
+                        "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                     },
                     "authority_record_control_number": {
                         "type": "string"

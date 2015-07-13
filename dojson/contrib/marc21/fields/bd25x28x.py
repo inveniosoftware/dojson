@@ -223,15 +223,16 @@ def projected_publication_date(self, key, value):
 
 
 @marc21.over(
-    'production_publication_distribution_manufacture_and_copyright_notice',
-    '^264[_23][10324_]')
+    'production_publication_distribution_manufacture_and_copyright_notice', '^264[_23][10324_]')
 @utils.for_each_value
 @utils.filter_values
 def production_publication_distribution_manufacture_and_copyright_notice(
         self, key, value):
     """Production, Publication, Distribution, Manufacture, and Copyright Notice."""
-    indicator_map1 = {"#": "Not applicable/No information provided/Earliest",
-                      "2": "Intervening", "3": "Current/latest"}
+    indicator_map1 = {
+        "#": "Not applicable/No information provided/Earliest",
+        "2": "Intervening",
+        "3": "Current/latest"}
     indicator_map2 = {
         "0": "Production",
         "1": "Publication",
@@ -243,14 +244,14 @@ def production_publication_distribution_manufacture_and_copyright_notice(
         'date_of_production_publication_distribution_manufacture_or_copyright_notice': value.get('c'),
         'name_of_producer_publisher_distributor_manufacturer': value.get('b'),
         'materials_specified': utils.force_list(
-            value.get('3')),
+            value.get('3')
+        ),
         'linkage': utils.force_list(
-            value.get('6')),
+            value.get('6')
+        ),
         'field_link_and_sequence_number': value.get('8'),
-        'sequence_of_statements': indicator_map1.get(
-            key[3]),
-        'function_of_entity': indicator_map2.get(
-            key[4]),
+        'sequence_of_statements': indicator_map1.get(key[3]),
+        'function_of_entity': indicator_map2.get(key[4]),
     }
 
 
@@ -260,7 +261,9 @@ def production_publication_distribution_manufacture_and_copyright_notice(
 def address(self, key, value):
     """Address."""
     indicator_map1 = {
-        "#": "No level specified", "1": "Primary", "2": "Secondary"}
+        "#": "No level specified",
+        "1": "Primary",
+        "2": "Secondary"}
     return {
         'address': value.get('a'),
         'state_or_province': utils.force_list(

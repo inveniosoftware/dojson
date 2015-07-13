@@ -201,7 +201,7 @@
                 "type": "object",
                 "properties": {
                     "sequence_of_publishing_statements": {
-                        "enum": ["Not applicable/No information provided/Earliest available publisher", "Intervening publisher", "Current/latest publisher"]
+                        "enum": ["Intervening publisher", "Current/latest publisher", "Not applicable/No information provided/Earliest available publisher"]
                     },
                     "place_of_publication_distribution": {
                         "type": "string"
@@ -339,10 +339,10 @@
                 "type": "object",
                 "properties": {
                     "sequence_of_statements": {
-                        "enum": ["Not applicable/No information provided/Earliest", "Intervening", "Current/latest"]
+                        "enum": ["Intervening", "Current/latest", "Not applicable/No information provided/Earliest"]
                     },
                     "function_of_entity": {
-                        "enum": ["Publication", "Production", "Manufacture", "Distribution", "Copyright notice date"]
+                        "enum": ["Manufacture", "Distribution", "Production", "Publication", "Copyright notice date"]
                     },
                     "place_of_production_publication_distribution_manufacture": {
                         "type": "string"
@@ -378,7 +378,7 @@
                 "type": "object",
                 "properties": {
                     "level": {
-                        "enum": ["Primary", "No level specified", "Secondary"]
+                        "enum": ["No level specified", "Primary", "Secondary"]
                     },
                     "address": {
                         "type": "string"

@@ -73,7 +73,7 @@
                 "type": "object",
                 "properties": {
                     "display_constant_controller": {
-                        "enum": ["No display constant generated", "Hours"]
+                        "enum": ["Hours", "No display constant generated"]
                     },
                     "hours": {
                         "type": "array",
@@ -345,7 +345,7 @@
                         "enum": ["Vertical coordinate system", "Horizontal coordinate system"]
                     },
                     "geospatial_reference_method": {
-                        "enum": ["Map projection", "Geographic", "Local planar", "Grid coordinate system", "Geodetic model", "Local", "Method specified in $2", "Altitude", "Depth"]
+                        "enum": ["Map projection", "Method specified in $2", "Altitude", "Depth", "Geodetic model", "Geographic", "Local", "Local planar", "Grid coordinate system"]
                     },
                     "reference_method_used": {
                         "type": "array",
@@ -864,7 +864,7 @@
                 "type": "object",
                 "properties": {
                     "controlled_element": {
-                        "enum": ["Title", "Document", "Contents note", "Abstract", "Record", "Author", "None of the above"]
+                        "enum": ["Contents note", "Author", "Abstract", "Title", "Record", "Document", "None of the above"]
                     },
                     "security_classification": {
                         "type": "array",
@@ -995,7 +995,7 @@
                         "enum": ["Ending information", "Starting information", "No information provided"]
                     },
                     "state_of_issuance": {
-                        "enum": ["Open", "Closed", "Not specified"]
+                        "enum": ["Not specified", "Open", "Closed"]
                     },
                     "first_level_of_enumeration": {
                         "type": "array",
@@ -1391,10 +1391,10 @@
                 "type": "object",
                 "properties": {
                     "display_constant_controller": {
-                        "enum": ["Partial medium of performance", "Medium of performance", "No information provided"]
+                        "enum": ["No information provided", "Partial medium of performance", "Medium of performance"]
                     },
                     "access_control": {
-                        "enum": ["Intended for access", "Not intended for access", "No information provided"]
+                        "enum": ["No information provided", "Intended for access", "Not intended for access"]
                     },
                     "medium_of_performance": {
                         "type": "string"
@@ -1487,7 +1487,7 @@
             "description": "Key",
             "properties": {
                 "key_type": {
-                    "enum": ["Transposed key ", "Original key ", "Relationship to original unknown "]
+                    "enum": ["Original key ", "Transposed key ", "Relationship to original unknown "]
                 },
                 "key": {
                     "type": "array",
