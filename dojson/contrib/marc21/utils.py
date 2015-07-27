@@ -33,9 +33,10 @@ def create_record(marcxml, correct=False, keep_singletons=True):
     parser = etree.XMLParser(dtd_validation=correct, recover=True)
 
     if correct:
-        marcxml = '<?xml version="1.0" encoding="UTF-8"?>\n' \
-                  '<!DOCTYPE collection SYSTEM "file://%s">\n' \
-                  '<collection>\n%s\n</collection>' % (MARC21_DTD, marcxml)
+        marcxml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                   '<!DOCTYPE collection SYSTEM "file://{0}">\n'
+                   '<collection>\n{1}\n</collection>'.format(
+                       MARC21_DTD, marcxml))
 
     tree = etree.parse(StringIO(marcxml), parser)
     record = {}
@@ -122,5 +123,4 @@ def split_blob(blob):
     """Split the blob using <record.*?>.*?</record> as pattern."""
     for match in split_marc.finditer(blob):
         yield match.group()
-    else:
-        raise StopIteration()
+    raise StopIteration()
