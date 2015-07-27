@@ -2,16 +2,21 @@
  DoJSON
 ========
 
-.. image:: https://travis-ci.org/inveniosoftware/dojson.png?branch=master
-   :target: https://travis-ci.org/inveniosoftware/dojson
-.. image:: https://coveralls.io/repos/inveniosoftware/dojson/badge.png?branch=master
-   :target: https://coveralls.io/r/inveniosoftware/dojson
-.. image:: https://pypip.in/v/dojson/badge.png
-   :target: https://pypi.python.org/pypi/dojson/
-.. image:: https://pypip.in/d/dojson/badge.png
-   :target: https://pypi.python.org/pypi/dojson/
-.. image:: https://readthedocs.org/projects/dojson/badge/?version=latest
-   :target: https://dojson.readthedocs.org/
+.. image:: https://img.shields.io/travis/inveniosoftware/dojson.svg
+        :target: https://travis-ci.org/inveniosoftware/dojson
+
+.. image:: https://img.shields.io/coveralls/inveniosoftware/dojson.svg
+        :target: https://coveralls.io/r/inveniosoftware/dojson
+
+.. image:: https://img.shields.io/github/tag/inveniosoftware/dojson.svg
+        :target: https://github.com/inveniosoftware/dojson/releases
+
+.. image:: https://img.shields.io/pypi/dm/dojson.svg
+        :target: https://pypi.python.org/pypi/dojson
+
+.. image:: https://img.shields.io/github/license/inveniosoftware/dojson.svg
+        :target: https://github.com/inveniosoftware/dojson/blob/master/LICENSE
+
 
 About
 =====
