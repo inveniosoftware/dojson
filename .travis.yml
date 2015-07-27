@@ -34,3 +34,13 @@ after_success:
 
 notifications:
   email: false
+
+deploy:
+  provider: pypi
+  user: jirikuncar
+  password:
+    secure: y+GnRjWIBvpZLm4BfiwZuhIPx7n8KppAkODmbPOu/KMtapyF1qVpBJTUteoI6905SlvsNMOT4Buy754JLuUCbhSoqPR8c2wVvjl/oQKu2gzF+FLpiZ9cig2xYZMfny2OT9tphEC9zxqIJ6rcHMlfjOIELtn7nE33ZXZdS9ij31hSXq4/jC85xo4wpETH/x6nM6tS+E/eZ+i56l2K/Vq3qts7HZNKkjYT6jyVWfQC4gHeEYmrKYnFa2vfNBrtv3jdsyurYVbl1HKiE+vlaBTTAKFY77RbgfVJjbhfIpHbzrNHW3T5qdCEvQd/Uwz4NHKL2/c8D0D8mrllthygzfQ7Zj+fn1JIm3ptiH5OlmUL2jZGvAyeJDj2MxvKe4mWJbsing8N56+jIxm8Jh4Akj1EiHDEd5vy1emrzxbJ8HPzl8YZa4Xu7uCs+oaAruJjfyOL7w8d+1AvmxuxhDbq/QJAA1gtHx08ANeerVfq2v4vUrsJioyPVF1tp06paOT1NSEjxpoosOflV7iiWHiWbv4UtmXhp5ttHWprT5HBgHZdR17we6zyyw81C1bLLCnM3aWT0OB52fZJ2d3oYLsbc5JuEYOoV9+d9iTEzCzwzqGe8hDena26eVQq5/VUsd80No7wEa40vfzXJkcbXjrvHykIBZe2pHVk3VO9bgy6ZIaGGIc=
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
+    python: "2.7"

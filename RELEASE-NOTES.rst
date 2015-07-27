@@ -1,28 +1,35 @@
 ===========================
- DoJSON v0.1.0 is released
+ DoJSON v0.1.1 is released
 ===========================
 
-DoJSON v0.1.0 was released on July 3, 2015.
+DoJSON v0.1.1 was released on July 27, 2015.
 
 About
 -----
 
 DoJSON is a simple Pythonic JSON to JSON converter.
 
-What's new
-----------
+Improved features
+-----------------
 
-- Initial public release.
+- Sorts and removes duplicated enum values.
+
+Bug fixes
+---------
+
+- Swaps wrongly defined repeatable and non-repeatable subfields. (#23)
+- Addresses issue when allowed indicators where defined as a range.
+  (#22)
 
 Installation
 ------------
 
-   $ pip install dojson
+   $ pip install dojson==0.1.1
 
 Documentation
 -------------
 
-   http://dojson.readthedocs.org/en/v0.1.0
+   http://dojson.readthedocs.org/en/v0.1.1
 
 Happy hacking and thanks for flying DoJSON.
 
