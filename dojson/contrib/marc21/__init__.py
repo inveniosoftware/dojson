@@ -23,6 +23,6 @@ from .fields import (
     bd84188x,
 )
 
-from model import marc21
+from model import marc21, tomarc21
 
-__all__ = ('marc21',)
+__all__ = ('marc21', 'tomarc21')
