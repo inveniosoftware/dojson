@@ -37,3 +37,25 @@ def force_list(data):
     if data is not None and not isinstance(data, (list, set)):
         return [data]
     return data
+
+
+def for_each_squash(f):
+    @functools.wraps(f)
+    def wrapper(self, key, values, **kwargs):
+        if isinstance(values, list):
+            unmerged_list = [f(self, key, value, **kwargs) for value in values]
+            merged_dict = {}
+            for unmerged_dict in unmerged_list:
+                for key, element in unmerged_dict.iteritems():
+                    if key in merged_dict:
+                        if isinstance(merged_dict[key], list):
+                            # already a list - append
+                            merged_dict[key] += element
+                        else:
+                            # not a list - create one
+                            merged_dict[key] = [merged_dict[key], element]
+                    else:  # new key
+                        merged_dict[key] = element
+            return merged_dict
+        return [f(self, key, values, **kwargs)]
+    return wrapper
