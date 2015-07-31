@@ -41,22 +41,16 @@ def abbreviated_title(self, key, value):
 @utils.filter_values
 def reverse_abbreviated_title(self, key, value):
     """Reverse - Abbreviated Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
+    indicator_map2 = {"Abbreviated key title": "#", "Other abbreviated title": "0"}
     return {
         'a': utils.reverse_force_list(value.get('abbreviated_title')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source')),
         'b': utils.reverse_force_list(value.get('qualifying_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
+        '_indicator2': indicator_map2.get(value.get('type')),
     }
 
 
@@ -82,16 +76,13 @@ def key_title(self, key, value):
 @utils.filter_values
 def reverse_key_title(self, key, value):
     """Reverse - Key Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map2 = {"No nonfiling characters": "0", "Number of nonfiling characters": "8"}
     return {
         'a': utils.reverse_force_list(value.get('key_title')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('qualifying_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -141,16 +132,8 @@ def uniform_title(self, key, value):
 @utils.filter_values
 def reverse_uniform_title(self, key, value):
     """Reverse - Uniform Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Not printed or displayed": "0", "Printed or displayed": "1"}
+    indicator_map2 = {"Number of nonfiling characters": "8"}
     return {
         'a': utils.reverse_force_list(value.get('uniform_title')),
         'p': utils.reverse_force_list(value.get('name_of_part_section_of_a_work')),
@@ -168,6 +151,8 @@ def reverse_uniform_title(self, key, value):
         'r': utils.reverse_force_list(value.get('key_for_music')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('uniform_title_printed_or_displayed')),
+        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -204,16 +189,8 @@ def translation_of_title_by_cataloging_agency(self, key, value):
 @utils.filter_values
 def reverse_translation_of_title_by_cataloging_agency(self, key, value):
     """Reverse - Translation of Title by Cataloging Agency."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
+    indicator_map2 = {"No nonfiling characters": "0", "Number of nonfiling characters": "8"}
     return {
         'a': utils.reverse_force_list(value.get('title')),
         'c': utils.reverse_force_list(value.get('statement_of_responsibility')),
@@ -224,6 +201,8 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         'y': utils.reverse_force_list(value.get('language_code_of_translated_title')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
+        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -270,16 +249,8 @@ def collective_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_collective_uniform_title(self, key, value):
     """Reverse - Collective Uniform Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Not printed or displayed": "0", "Printed or displayed": "1"}
+    indicator_map2 = {"Number of nonfiling characters": "8"}
     return {
         'a': utils.reverse_force_list(value.get('uniform_title')),
         'd': utils.reverse_force_list(value.get('date_of_treaty_signing')),
@@ -296,6 +267,8 @@ def reverse_collective_uniform_title(self, key, value):
         'r': utils.reverse_force_list(value.get('key_for_music')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('uniform_title_printed_or_displayed')),
+        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -335,16 +308,8 @@ def title_statement(self, key, value):
 @utils.filter_values
 def reverse_title_statement(self, key, value):
     """Reverse - Title Statement."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
+    indicator_map2 = {"No nonfiling characters": "0", "Number of nonfiling characters": "8"}
     return {
         'a': utils.reverse_force_list(value.get('title')),
         'c': utils.reverse_force_list(value.get('statement_of_responsibility')),
@@ -358,6 +323,8 @@ def reverse_title_statement(self, key, value):
         's': utils.reverse_force_list(value.get('version')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
+        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -396,16 +363,8 @@ def varying_form_of_title(self, key, value):
 @utils.filter_values
 def reverse_varying_form_of_title(self, key, value):
     """Reverse - Varying Form of Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No note, added entry": "3", "No note, no added entry": "2", "Note, added entry": "1", "Note, no added entry": "0"}
+    indicator_map2 = {"Added title page title": "5", "Caption title": "6", "Cover title": "4", "Distinctive title": "2", "No type specified": "#", "Other title": "3", "Parallel title": "1", "Portion of title": "0", "Running title": "7", "Spine title": "8"}
     return {
         'a': utils.reverse_force_list(value.get('title_proper_short_title')),
         'b': utils.reverse_force_list(value.get('remainder_of_title')),
@@ -418,6 +377,8 @@ def reverse_varying_form_of_title(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('note_added_entry_controller')),
+        '_indicator2': indicator_map2.get(value.get('type_of_title')),
     }
 
 
@@ -455,16 +416,8 @@ def former_title(self, key, value):
 @utils.filter_values
 def reverse_former_title(self, key, value):
     """Reverse - Former Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
+    indicator_map2 = {"Display note": "0", "Do not display note": "1"}
     return {
         'a': utils.reverse_force_list(value.get('title')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -476,4 +429,6 @@ def reverse_former_title(self, key, value):
         'p': utils.reverse_force_list(value.get('name_of_part_section_of_a_work')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
+        '_indicator2': indicator_map2.get(value.get('note_controller')),
     }

@@ -175,16 +175,8 @@ def formatted_contents_note(self, key, value):
 @utils.filter_values
 def reverse_formatted_contents_note(self, key, value):
     """Reverse - Formatted Contents Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Contents": "0", "Incomplete contents": "1", "No display constant generated": "8", "Partial contents": "2"}
+    indicator_map2 = {"Basic": "#", "Enhanced": "0"}
     return {
         'a': utils.reverse_force_list(value.get('formatted_contents_note')),
         'g': utils.reverse_force_list(value.get('miscellaneous_information')),
@@ -193,6 +185,8 @@ def reverse_formatted_contents_note(self, key, value):
         't': utils.reverse_force_list(value.get('title')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '_indicator2': indicator_map2.get(value.get('level_of_content_designation')),
     }
 
 
@@ -238,11 +232,7 @@ def restrictions_on_access_note(self, key, value):
 @utils.filter_values
 def reverse_restrictions_on_access_note(self, key, value):
     """Reverse - Restrictions on Access Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "No restrictions": "0", "Restrictions apply": "1"}
     return {
         'a': utils.reverse_force_list(value.get('terms_governing_access')),
         'c': utils.reverse_force_list(value.get('physical_access_provisions')),
@@ -256,6 +246,7 @@ def reverse_restrictions_on_access_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        '_indicator1': indicator_map1.get(value.get('restriction')),
     }
 
 
@@ -339,11 +330,7 @@ def citation_references_note(self, key, value):
 @utils.filter_values
 def reverse_citation_references_note(self, key, value):
     """Reverse - Citation/References Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Coverage complete": "1", "Coverage is selective": "2", "Coverage unknown": "0", "Location in source given": "4", "Location in source not given": "3"}
     return {
         'a': utils.reverse_force_list(value.get('name_of_source')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -353,6 +340,7 @@ def reverse_citation_references_note(self, key, value):
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('coverage_location_in_source')),
     }
 
 
@@ -377,15 +365,12 @@ def participant_or_performer_note(self, key, value):
 @utils.filter_values
 def reverse_participant_or_performer_note(self, key, value):
     """Reverse - Participant or Performer Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Cast": "1", "No display constant generated": "0"}
     return {
         'a': utils.reverse_force_list(value.get('participant_or_performer_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -530,15 +515,12 @@ def type_of_computer_file_or_data_note(self, key, value):
 @utils.filter_values
 def reverse_type_of_computer_file_or_data_note(self, key, value):
     """Reverse - Type of Computer File or Data Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No display constant generated": "8", "Type of file": "#"}
     return {
         'a': utils.reverse_force_list(value.get('type_of_computer_file_or_data_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -618,11 +600,7 @@ def summary(self, key, value):
 @utils.filter_values
 def reverse_summary(self, key, value):
     """Reverse - Summary, Etc.."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Abstract": "3", "Content advice": "4", "No display constant generated": "8", "Review": "1", "Scope and content": "2", "Subject": "0", "Summary": "#"}
     return {
         'a': utils.reverse_force_list(value.get('summary')),
         'c': utils.reverse_force_list(value.get('assigning_source')),
@@ -632,6 +610,7 @@ def reverse_summary(self, key, value):
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -660,17 +639,14 @@ def target_audience_note(self, key, value):
 @utils.filter_values
 def reverse_target_audience_note(self, key, value):
     """Reverse - Target Audience Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Audience": "#", "Interest age level": "1", "Interest grade level": "2", "Motivation/interest level": "4", "No display constant generated": "8", "Reading grade level": "0", "Special audience characteristics": "3"}
     return {
         'a': utils.reverse_force_list(value.get('target_audience_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'b': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -695,15 +671,12 @@ def geographic_coverage_note(self, key, value):
 @utils.filter_values
 def reverse_geographic_coverage_note(self, key, value):
     """Reverse - Geographic Coverage Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Geographic coverage": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('geographic_coverage_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -730,17 +703,14 @@ def preferred_citation_of_described_materials_note(self, key, value):
 @utils.filter_values
 def reverse_preferred_citation_of_described_materials_note(self, key, value):
     """Reverse - Preferred Citation of Described Materials Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Cite as": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('preferred_citation_of_described_materials_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '2': utils.reverse_force_list(value.get('source_of_schema_used')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -802,11 +772,7 @@ def study_program_information_note(self, key, value):
 @utils.filter_values
 def reverse_study_program_information_note(self, key, value):
     """Reverse - Study Program Information Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No display constant generated": "8", "Reading program": "0"}
     return {
         'a': utils.reverse_force_list(value.get('program_name')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
@@ -818,6 +784,7 @@ def reverse_study_program_information_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -1013,11 +980,7 @@ def location_of_originals_duplicates_note(self, key, value):
 @utils.filter_values
 def reverse_location_of_originals_duplicates_note(self, key, value):
     """Reverse - Location of Originals/Duplicates Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Holder of duplicates": "2", "Holder of originals": "1"}
     return {
         'a': utils.reverse_force_list(value.get('custodian')),
         'c': utils.reverse_force_list(value.get('country')),
@@ -1027,6 +990,7 @@ def reverse_location_of_originals_duplicates_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('custodial_role')),
     }
 
 
@@ -1197,11 +1161,7 @@ def immediate_source_of_acquisition_note(self, key, value):
 @utils.filter_values
 def reverse_immediate_source_of_acquisition_note(self, key, value):
     """Reverse - Immediate Source of Acquisition Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
     return {
         'a': utils.reverse_force_list(value.get('source_of_acquisition')),
         'c': utils.reverse_force_list(value.get('method_of_acquisition')),
@@ -1216,6 +1176,7 @@ def reverse_immediate_source_of_acquisition_note(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('privacy')),
     }
 
 
@@ -1276,11 +1237,7 @@ def information_relating_to_copyright_status(self, key, value):
 @utils.filter_values
 def reverse_information_relating_to_copyright_status(self, key, value):
     """Reverse - Information Relating to Copyright Status."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
     return {
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
@@ -1305,6 +1262,7 @@ def reverse_information_relating_to_copyright_status(self, key, value):
         's': utils.reverse_force_list(value.get('source_of_information')),
         'r': utils.reverse_force_list(value.get('jurisdiction_of_copyright_assessment')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        '_indicator1': indicator_map1.get(value.get('privacy')),
     }
 
 
@@ -1347,11 +1305,7 @@ def location_of_other_archival_materials_note(self, key, value):
 @utils.filter_values
 def reverse_location_of_other_archival_materials_note(self, key, value):
     """Reverse - Location of Other Archival Materials Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Associated materials": "0", "No information provided": "#", "Related materials": "1"}
     return {
         'a': utils.reverse_force_list(value.get('custodian')),
         'c': utils.reverse_force_list(value.get('country')),
@@ -1362,6 +1316,7 @@ def reverse_location_of_other_archival_materials_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('relationship')),
     }
 
 
@@ -1390,17 +1345,14 @@ def biographical_or_historical_data(self, key, value):
 @utils.filter_values
 def reverse_biographical_or_historical_data(self, key, value):
     """Reverse - Biographical or Historical Data."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Administrative history": "1", "Biographical sketch": "0", "No information provided": "#"}
     return {
         'a': utils.reverse_force_list(value.get('biographical_or_historical_data')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('expansion')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('type_of_data')),
     }
 
 
@@ -1590,11 +1542,7 @@ def cumulative_index_finding_aids_note(self, key, value):
 @utils.filter_values
 def reverse_cumulative_index_finding_aids_note(self, key, value):
     """Reverse - Cumulative Index/Finding Aids Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Finding aids": "0", "Indexes": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('cumulative_index_finding_aids_note')),
         'c': utils.reverse_force_list(value.get('degree_of_control')),
@@ -1604,6 +1552,7 @@ def reverse_cumulative_index_finding_aids_note(self, key, value):
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -1631,16 +1580,13 @@ def information_about_documentation_note(self, key, value):
 @utils.filter_values
 def reverse_information_about_documentation_note(self, key, value):
     """Reverse - Information About Documentation Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Documentation": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('information_about_documentation_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -1670,11 +1616,7 @@ def ownership_and_custodial_history(self, key, value):
 @utils.filter_values
 def reverse_ownership_and_custodial_history(self, key, value):
     """Reverse - Ownership and Custodial History."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
     return {
         'a': utils.reverse_force_list(value.get('history')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -1682,6 +1624,7 @@ def reverse_ownership_and_custodial_history(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        '_indicator1': indicator_map1.get(value.get('privacy')),
     }
 
 
@@ -1801,11 +1744,7 @@ def case_file_characteristics_note(self, key, value):
 @utils.filter_values
 def reverse_case_file_characteristics_note(self, key, value):
     """Reverse - Case File Characteristics Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Case file characteristics": "0", "File size": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('number_of_cases_variables')),
         'c': utils.reverse_force_list(value.get('unit_of_analysis')),
@@ -1815,6 +1754,7 @@ def reverse_case_file_characteristics_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -1839,15 +1779,12 @@ def methodology_note(self, key, value):
 @utils.filter_values
 def reverse_methodology_note(self, key, value):
     """Reverse - Methodology Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Methodology": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('methodology_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -1902,17 +1839,14 @@ def publications_about_described_materials_note(self, key, value):
 @utils.filter_values
 def reverse_publications_about_described_materials_note(self, key, value):
     """Reverse - Publications About Described Materials Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No display constant generated": "8", "Publications": "#"}
     return {
         'a': utils.reverse_force_list(value.get('publications_about_described_materials_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -1985,11 +1919,7 @@ def action_note(self, key, value):
 @utils.filter_values
 def reverse_action_note(self, key, value):
     """Reverse - Action Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
     return {
         'a': utils.reverse_force_list(value.get('action')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
@@ -2012,6 +1942,7 @@ def reverse_action_note(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        '_indicator1': indicator_map1.get(value.get('privacy')),
     }
 
 
@@ -2103,16 +2034,13 @@ def awards_note(self, key, value):
 @utils.filter_values
 def reverse_awards_note(self, key, value):
     """Reverse - Awards Note."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Awards": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('awards_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 

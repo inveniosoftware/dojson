@@ -90,16 +90,8 @@ def subject_added_entry_personal_name(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_personal_name(self, key, value):
     """Reverse - Subject Added Entry-Personal Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -131,6 +123,8 @@ def reverse_subject_added_entry_personal_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -208,16 +202,8 @@ def subject_added_entry_corporate_name(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_corporate_name(self, key, value):
     """Reverse - Subject Added Entry-Corporate Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -247,6 +233,8 @@ def reverse_subject_added_entry_corporate_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -318,16 +306,8 @@ def subject_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_meeting_name(self, key, value):
     """Reverse - Subject Added Entry-Meeting Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -355,6 +335,8 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -427,16 +409,8 @@ def subject_added_entry_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_uniform_title(self, key, value):
     """Reverse - Subject Added Entry-Uniform Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Number of nonfiling characters": "8"}
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -463,6 +437,8 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('nonfiling_characters')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -506,16 +482,8 @@ def subject_added_entry_chronological_term(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_chronological_term(self, key, value):
     """Reverse - Subject Added Entry-Chronological Term."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Date or time period covered or depicted": "0", "Date or time period of creation or origin": "1", "No information provided": "#"}
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00c3\u00a9pertoire de vedettes-mati\u00c3\u00a8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('chronological_term')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
@@ -527,6 +495,8 @@ def reverse_subject_added_entry_chronological_term(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('type_of_date_or_time_period')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -579,16 +549,8 @@ def subject_added_entry_topical_term(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_topical_term(self, key, value):
     """Reverse - Subject Added Entry-Topical Term."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "No level specified": "0", "Primary": "1", "Secondary": "2"}
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('topical_term_or_geographic_name_entry_element')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
@@ -605,6 +567,8 @@ def reverse_subject_added_entry_topical_term(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('level_of_subject')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -652,11 +616,7 @@ def subject_added_entry_geographic_name(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_geographic_name(self, key, value):
     """Reverse - Subject Added Entry-Geographic Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('geographic_name')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
@@ -670,6 +630,7 @@ def reverse_subject_added_entry_geographic_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -698,20 +659,14 @@ def index_term_uncontrolled(self, key, value):
 @utils.filter_values
 def reverse_index_term_uncontrolled(self, key, value):
     """Reverse - Index Term-Uncontrolled."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "No level specified": "0", "Primary": "1", "Secondary": "2"}
+    indicator_map2 = {"Chronological term": "4", "Corporate name": "2", "Genre/form term": "6", "Geographic name": "5", "Meeting name": "3", "No information provided": "#", "Personal name": "1", "Topical term": "0"}
     return {
         'a': utils.reverse_force_list(value.get('uncontrolled_term')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('level_of_index_term')),
+        '_indicator2': indicator_map2.get(value.get('type_of_term_or_name')),
     }
 
 
@@ -764,11 +719,7 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
     """Reverse - Subject Added Entry-Faceted Topical Terms."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No information provided": "#", "No level specified": "0", "Primary": "1", "Secondary": "2"}
     return {
         'a': utils.reverse_force_list(value.get('focus_term')),
         'c': utils.reverse_force_list(value.get('facet_hierarchy_designation')),
@@ -783,6 +734,7 @@ def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('level_of_subject')),
     }
 
 
@@ -833,16 +785,8 @@ def index_term_genre_form(self, key, value):
 @utils.filter_values
 def reverse_index_term_genre_form(self, key, value):
     """Reverse - Index Term-Genre/Form."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Basic": "#", "Faceted": "0"}
+    indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('genre_form_data_or_focus_term')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
@@ -857,6 +801,8 @@ def reverse_index_term_genre_form(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '_indicator1': indicator_map1.get(value.get('type_of_heading')),
+        '_indicator2': indicator_map2.get(value.get('thesaurus')),
     }
 
 

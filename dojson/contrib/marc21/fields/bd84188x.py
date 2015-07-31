@@ -109,16 +109,8 @@ def location(self, key, value):
 @utils.filter_values
 def reverse_location(self, key, value):
     """Reverse - Location."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Dewey Decimal classification": "1", "Library of Congress classification": "0", "National Library of Medicine classification": "2", "No information provided": "#", "Other scheme": "8", "Shelved separately": "6", "Shelving control number": "4", "Source specified in subfield $2": "7", "Superintendent of Documents classification": "3", "Title": "5"}
+    indicator_map2 = {"Alternative enumeration": "2", "No information provided": "#", "Not enumeration": "0", "Primary enumeration": "1"}
     return {
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '2': utils.reverse_force_list(value.get('source_of_classification_or_shelving_scheme')),
@@ -145,6 +137,8 @@ def reverse_location(self, key, value):
         't': utils.reverse_force_list(value.get('copy_number')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
         'z': utils.reverse_force_list(value.get('public_note')),
+        '_indicator1': indicator_map1.get(value.get('shelving_scheme')),
+        '_indicator2': indicator_map2.get(value.get('shelving_order')),
     }
 
 
@@ -224,11 +218,7 @@ def electronic_location_and_access(self, key, value):
 @utils.filter_values
 def reverse_electronic_location_and_access(self, key, value):
     """Reverse - Electronic Location and Access."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map2 = {"No display constant generated": "8", "No information provided": "#", "Related resource": "2", "Resource": "0", "Version of resource": "1"}
     return {
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '2': utils.reverse_force_list(value.get('access_method')),
@@ -258,6 +248,7 @@ def reverse_electronic_location_and_access(self, key, value):
         'y': utils.reverse_force_list(value.get('link_text')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
         'z': utils.reverse_force_list(value.get('public_note')),
+        '_indicator2': indicator_map2.get(value.get('relationship')),
     }
 
 
@@ -326,11 +317,7 @@ def machine_generated_metadata_provenance(self, key, value):
 @utils.filter_values
 def reverse_machine_generated_metadata_provenance(self, key, value):
     """Reverse - Machine-generated Metadata Provenance."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Fully machine-generated": "0", "No information provided/not applicable": "#", "Partially machine-generated": "1"}
     return {
         'a': utils.reverse_force_list(value.get('generation_process')),
         'c': utils.reverse_force_list(value.get('confidence_value')),
@@ -341,6 +328,7 @@ def reverse_machine_generated_metadata_provenance(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         'x': utils.reverse_force_list(value.get('validity_end_date')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('method_of_machine_assignment')),
     }
 
 

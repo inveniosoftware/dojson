@@ -82,16 +82,8 @@ def added_entry_personal_name(self, key, value):
 @utils.filter_values
 def reverse_added_entry_personal_name(self, key, value):
     """Reverse - Added Entry-Personal Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
+    indicator_map2 = {"Analytical entry": "2", "No information provided": "#"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -121,6 +113,8 @@ def reverse_added_entry_personal_name(self, key, value):
         'u': utils.reverse_force_list(value.get('affiliation')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        '_indicator1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('type_of_added_entry')),
     }
 
 
@@ -190,16 +184,8 @@ def added_entry_corporate_name(self, key, value):
 @utils.filter_values
 def reverse_added_entry_corporate_name(self, key, value):
     """Reverse - Added Entry-Corporate Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+    indicator_map2 = {"Analytical entry": "2", "No information provided": "#"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -227,6 +213,8 @@ def reverse_added_entry_corporate_name(self, key, value):
         'u': utils.reverse_force_list(value.get('affiliation')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        '_indicator1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('type_of_added_entry')),
     }
 
 
@@ -290,16 +278,8 @@ def added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_added_entry_meeting_name(self, key, value):
     """Reverse - Added Entry-Meeting Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+    indicator_map2 = {"Analytical entry": "2", "No information provided": "#"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -325,6 +305,8 @@ def reverse_added_entry_meeting_name(self, key, value):
         'u': utils.reverse_force_list(value.get('affiliation')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        '_indicator1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('type_of_added_entry')),
     }
 
 
@@ -355,17 +337,14 @@ def added_entry_uncontrolled_name(self, key, value):
 @utils.filter_values
 def reverse_added_entry_uncontrolled_name(self, key, value):
     """Reverse - Added Entry-Uncontrolled Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Not specified": "#", "Other": "2", "Personal": "1"}
     return {
         'a': utils.reverse_force_list(value.get('name')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'e': utils.reverse_force_list(value.get('relator_term')),
         '4': utils.reverse_force_list(value.get('relator_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('type_of_name')),
     }
 
 
@@ -424,16 +403,8 @@ def added_entry_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_added_entry_uniform_title(self, key, value):
     """Reverse - Added Entry-Uniform Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Number of nonfiling characters": "8"}
+    indicator_map2 = {"Analytical entry": "2", "No information provided": "#"}
     return {
         'a': utils.reverse_force_list(value.get('uniform_title')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -456,6 +427,8 @@ def reverse_added_entry_uniform_title(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         's': utils.reverse_force_list(value.get('version')),
+        '_indicator1': indicator_map1.get(value.get('nonfiling_characters')),
+        '_indicator2': indicator_map2.get(value.get('type_of_added_entry')),
     }
 
 
@@ -490,16 +463,8 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
 @utils.filter_values
 def reverse_added_entry_uncontrolled_related_analytical_title(self, key, value):
     """Reverse - Added Entry-Uncontrolled Related/Analytical Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No nonfiling characters": "0", "Number of nonfiling characters": "8"}
+    indicator_map2 = {"Analytical entry": "2", "No information provided": "#"}
     return {
         'a': utils.reverse_force_list(value.get('uncontrolled_related_analytical_title')),
         'h': utils.reverse_force_list(value.get('medium')),
@@ -508,6 +473,8 @@ def reverse_added_entry_uncontrolled_related_analytical_title(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('nonfiling_characters')),
+        '_indicator2': indicator_map2.get(value.get('type_of_added_entry')),
     }
 
 

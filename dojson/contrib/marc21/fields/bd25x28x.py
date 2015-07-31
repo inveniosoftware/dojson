@@ -227,11 +227,7 @@ def publication_distribution_imprint(self, key, value):
 @utils.filter_values
 def reverse_publication_distribution_imprint(self, key, value):
     """Reverse - Publication, Distribution, etc. (Imprint)."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Current/latest publisher": "3", "Intervening publisher": "2", "Not applicable/No information provided/Earliest available publisher": "#"}
     return {
         'a': utils.reverse_force_list(value.get('place_of_publication_distribution')),
         'c': utils.reverse_force_list(value.get('date_of_publication_distribution')),
@@ -242,6 +238,7 @@ def reverse_publication_distribution_imprint(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('sequence_of_publishing_statements')),
     }
 
 
@@ -375,16 +372,8 @@ def production_publication_distribution_manufacture_and_copyright_notice(self, k
 @utils.filter_values
 def reverse_production_publication_distribution_manufacture_and_copyright_notice(self, key, value):
     """Reverse - Production, Publication, Distribution, Manufacture, and Copyright Notice."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Current/latest": "3", "Intervening": "2", "Not applicable/No information provided/Earliest": "#"}
+    indicator_map2 = {"Copyright notice date": "4", "Distribution": "2", "Manufacture": "3", "Production": "0", "Publication": "1"}
     return {
         'a': utils.reverse_force_list(value.get('place_of_production_publication_distribution_manufacture')),
         'c': utils.reverse_force_list(value.get('date_of_production_publication_distribution_manufacture_or_copyright_notice')),
@@ -392,6 +381,8 @@ def reverse_production_publication_distribution_manufacture_and_copyright_notice
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('sequence_of_statements')),
+        '_indicator2': indicator_map2.get(value.get('function_of_entity')),
     }
 
 
@@ -456,11 +447,7 @@ def address(self, key, value):
 @utils.filter_values
 def reverse_address(self, key, value):
     """Reverse - Address."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"No level specified": "#", "Primary": "1", "Secondary": "2"}
     return {
         'a': utils.reverse_force_list(value.get('address')),
         'c': utils.reverse_force_list(value.get('state_or_province')),
@@ -483,4 +470,5 @@ def reverse_address(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
+        '_indicator1': indicator_map1.get(value.get('level')),
     }

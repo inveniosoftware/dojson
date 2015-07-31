@@ -108,16 +108,13 @@ def hours(self, key, value):
 @utils.filter_values
 def reverse_hours(self, key, value):
     """Reverse - Hours, Etc.."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Hours": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('hours')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('additional_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
     }
 
 
@@ -417,16 +414,8 @@ def geospatial_reference_data(self, key, value):
 @utils.filter_values
 def reverse_geospatial_reference_data(self, key, value):
     """Reverse - Geospatial Reference Data."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Horizontal coordinate system": "0", "Vertical coordinate system": "1"}
+    indicator_map2 = {"Altitude": "6", "Depth": "8", "Geodetic model": "5", "Geographic": "0", "Grid coordinate system": "2", "Local": "4", "Local planar": "3", "Map projection": "1", "Method specified in $2": "7"}
     return {
         '2': utils.reverse_force_list(value.get('reference_method_used')),
         '6': utils.reverse_force_list(value.get('linkage')),
@@ -454,6 +443,8 @@ def reverse_geospatial_reference_data(self, key, value):
         't': utils.reverse_force_list(value.get('vertical_resolution')),
         'w': utils.reverse_force_list(value.get('local_planar_or_local_georeference_information')),
         'v': utils.reverse_force_list(value.get('local_planar_local_or_other_projection_or_grid_description')),
+        '_indicator1': indicator_map1.get(value.get('geospatial_reference_dimension')),
+        '_indicator2': indicator_map2.get(value.get('geospatial_reference_method')),
     }
 
 
@@ -816,11 +807,7 @@ def security_classification_control(self, key, value):
 @utils.filter_values
 def reverse_security_classification_control(self, key, value):
     """Reverse - Security Classification Control."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Abstract": "2", "Author": "4", "Contents note": "3", "Document": "0", "None of the above": "8", "Record": "5", "Title": "1"}
     return {
         'a': utils.reverse_force_list(value.get('security_classification')),
         'c': utils.reverse_force_list(value.get('external_dissemination_information')),
@@ -833,6 +820,7 @@ def reverse_security_classification_control(self, key, value):
         'j': utils.reverse_force_list(value.get('authorization')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('controlled_element')),
     }
 
 
@@ -894,16 +882,13 @@ def dates_of_publication_and_or_sequential_designation(self, key, value):
 @utils.filter_values
 def reverse_dates_of_publication_and_or_sequential_designation(self, key, value):
     """Reverse - Dates of Publication and/or Sequential Designation."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Formatted style": "0", "Unformatted note": "1"}
     return {
         'a': utils.reverse_force_list(value.get('dates_of_publication_and_or_sequential_designation')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('source_of_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('format_of_date')),
     }
 
 
@@ -948,16 +933,8 @@ def normalized_date_and_sequential_designation(self, key, value):
 @utils.filter_values
 def reverse_normalized_date_and_sequential_designation(self, key, value):
     """Reverse - Normalized Date and Sequential Designation."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Ending information": "1", "No information provided": "#", "Starting information": "0"}
+    indicator_map2 = {"Closed": "0", "Not specified": "#", "Open": "1"}
     return {
         'a': utils.reverse_force_list(value.get('first_level_of_enumeration')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
@@ -978,6 +955,8 @@ def reverse_normalized_date_and_sequential_designation(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
         'v': utils.reverse_force_list(value.get('first_level_of_chronology_issuance')),
+        '_indicator1': indicator_map1.get(value.get('start_end_designator')),
+        '_indicator2': indicator_map2.get(value.get('state_of_issuance')),
     }
 
 
@@ -1234,16 +1213,8 @@ def medium_of_performance(self, key, value):
 @utils.filter_values
 def reverse_medium_of_performance(self, key, value):
     """Reverse - Medium of Performance."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Medium of performance": "0", "No information provided": "#", "Partial medium of performance": "1"}
+    indicator_map2 = {"Intended for access": "1", "No information provided": "#", "Not intended for access": "0"}
     return {
         'a': utils.reverse_force_list(value.get('medium_of_performance')),
         'b': utils.reverse_force_list(value.get('soloist')),
@@ -1256,6 +1227,8 @@ def reverse_medium_of_performance(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_term')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '_indicator2': indicator_map2.get(value.get('access_control')),
     }
 
 
@@ -1320,15 +1293,12 @@ def key(self, key, value):
 @utils.filter_values
 def reverse_key(self, key, value):
     """Reverse - Key."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Original key ": "0", "Relationship to original unknown ": "#", "Transposed key ": "1"}
     return {
         'a': utils.reverse_force_list(value.get('key')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('key_type')),
     }
 
 

@@ -148,16 +148,13 @@ def national_bibliographic_agency_control_number(self, key, value):
 @utils.filter_values
 def reverse_national_bibliographic_agency_control_number(self, key, value):
     """Reverse - National Bibliographic Agency Control Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Library and Archives Canada": "#", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('record_control_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_control_number')),
+        '_indicator1': indicator_map1.get(value.get('national_bibliographic_agency')),
     }
 
 
@@ -191,11 +188,7 @@ def copyright_or_legal_deposit_number(self, key, value):
 @utils.filter_values
 def reverse_copyright_or_legal_deposit_number(self, key, value):
     """Reverse - Copyright or Legal Deposit Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map2 = {"Copyright or legal deposit number": "#", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('copyright_or_legal_deposit_number')),
         'b': utils.reverse_force_list(value.get('assigning_agency')),
@@ -205,6 +198,7 @@ def reverse_copyright_or_legal_deposit_number(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_copyright_or_legal_deposit_number')),
+        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -302,11 +296,7 @@ def international_standard_serial_number(self, key, value):
 @utils.filter_values
 def reverse_international_standard_serial_number(self, key, value):
     """Reverse - International Standard Serial Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Continuing resource not of international interest": "1", "Continuing resource of international interest": "0", "No level specified": "#"}
     return {
         'a': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'm': utils.reverse_force_list(value.get('canceled_issn_l')),
@@ -316,6 +306,7 @@ def reverse_international_standard_serial_number(self, key, value):
         'y': utils.reverse_force_list(value.get('incorrect_issn')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_issn')),
+        '_indicator1': indicator_map1.get(value.get('level_of_international_interest')),
     }
 
 
@@ -351,16 +342,8 @@ def other_standard_identifier(self, key, value):
 @utils.filter_values
 def reverse_other_standard_identifier(self, key, value):
     """Reverse - Other Standard Identifier."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"International Article Number": "3", "International Standard Music Number": "2", "International Standard Recording Code": "0", "Serial Item and Contribution Identifier": "4", "Source specified in subfield $2": "7", "Universal Product Code": "1", "Unspecified type of standard number or code": "8"}
+    indicator_map2 = {"Difference": "1", "No difference": "0", "No information provided": "#"}
     return {
         'a': utils.reverse_force_list(value.get('standard_number_or_code')),
         'c': utils.reverse_force_list(value.get('terms_of_availability')),
@@ -370,6 +353,8 @@ def reverse_other_standard_identifier(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_standard_number_or_code')),
+        '_indicator1': indicator_map1.get(value.get('type_of_standard_number_or_code')),
+        '_indicator2': indicator_map2.get(value.get('difference_indicator')),
     }
 
 
@@ -502,22 +487,16 @@ def publisher_number(self, key, value):
 @utils.filter_values
 def reverse_publisher_number(self, key, value):
     """Reverse - Publisher Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Issue number": "0", "Matrix number": "1", "Other music number": "3", "Other publisher number": "5", "Plate number": "2", "Videorecording number": "4"}
+    indicator_map2 = {"No note, added entry": "3", "No note, no added entry": "0", "Note, added entry": "1", "Note, no added entry": "2"}
     return {
         'a': utils.reverse_force_list(value.get('publisher_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('source')),
         'q': utils.reverse_force_list(value.get('qualifying_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('type_of_publisher_number')),
+        '_indicator2': indicator_map2.get(value.get('note_added_entry_controller')),
     }
 
 
@@ -694,16 +673,8 @@ def date_time_and_place_of_an_event(self, key, value):
 @utils.filter_values
 def reverse_date_time_and_place_of_an_event(self, key, value):
     """Reverse - Date/Time and Place of an Event."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Multiple single dates ": "1", "No date information ": "#", "Range of dates ": "2", "Single date ": "0"}
+    indicator_map2 = {"Broadcast ": "1", "Capture ": "0", "Finding ": "2", "No information provided ": "#"}
     return {
         'a': utils.reverse_force_list(value.get('formatted_date_time')),
         'c': utils.reverse_force_list(value.get('geographic_classification_subarea_code')),
@@ -714,6 +685,8 @@ def reverse_date_time_and_place_of_an_event(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_term')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('type_of_date_in_subfield_a')),
+        '_indicator2': indicator_map2.get(value.get('type_of_event')),
     }
 
 
@@ -773,16 +746,8 @@ def coded_cartographic_mathematical_data(self, key, value):
 @utils.filter_values
 def reverse_coded_cartographic_mathematical_data(self, key, value):
     """Reverse - Coded Cartographic Mathematical Data."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Range of scales": "3", "Scale indeterminable/No scale recorded": "0", "Single scale": "1"}
+    indicator_map2 = {"Exclusion ring": "1", "Not applicable": "#", "Outer ring": "0"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -808,6 +773,8 @@ def reverse_coded_cartographic_mathematical_data(self, key, value):
         'y': utils.reverse_force_list(value.get('ending_date')),
         'x': utils.reverse_force_list(value.get('beginning_date')),
         'z': utils.reverse_force_list(value.get('name_of_extraterrestrial_body')),
+        '_indicator1': indicator_map1.get(value.get('type_of_scale')),
+        '_indicator2': indicator_map2.get(value.get('type_of_ring')),
     }
 
 
@@ -1025,11 +992,7 @@ def language_code(self, key, value):
 @utils.filter_values
 def reverse_language_code(self, key, value):
     """Reverse - Language Code."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Item is or includes a translation": "1", "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation": "0", "No information provided": "#"}
     return {
         'a': utils.reverse_force_list(value.get('language_code_of_text_sound_track_or_separate_title')),
         'b': utils.reverse_force_list(value.get('language_code_of_summary_or_abstract')),
@@ -1045,6 +1008,7 @@ def reverse_language_code(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('translation_indication')),
     }
 
 
@@ -1175,17 +1139,14 @@ def time_period_of_content(self, key, value):
 @utils.filter_values
 def reverse_time_period_of_content(self, key, value):
     """Reverse - Time Period of Content."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Multiple single dates/times": "1", "Range of dates/times": "2", "Single date/time": "0", "Subfield $b or $c not present": "#"}
     return {
         'a': utils.reverse_force_list(value.get('time_period_code')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'c': utils.reverse_force_list(value.get('formatted_pre_9999_bc_time_period')),
         'b': utils.reverse_force_list(value.get('formatted_9999_bc_through_ce_time_period')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('type_of_time_period_in_subfield_b_or_c')),
     }
 
 
@@ -1326,22 +1287,16 @@ def library_of_congress_call_number(self, key, value):
 @utils.filter_values
 def reverse_library_of_congress_call_number(self, key, value):
     """Reverse - Library of Congress Call Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Item is in LC": "0", "Item is not in LC": "1", "No information provided": "#"}
+    indicator_map2 = {"Assigned by LC": "0", "Assigned by agency other than LC": "4"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'b': utils.reverse_force_list(value.get('item_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('existence_in_lc_collection')),
+        '_indicator2': indicator_map2.get(value.get('source_of_call_number')),
     }
 
 
@@ -1434,22 +1389,16 @@ def classification_numbers_assigned_in_canada(self, key, value):
 @utils.filter_values
 def reverse_classification_numbers_assigned_in_canada(self, key, value):
     """Reverse - Classification Numbers Assigned in Canada."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Information not provided": "#", "Work held by LAC": "0", "Work not held by LAC": "1"}
+    indicator_map2 = {"Complete LC class number assigned by LAC": "1", "Complete LC class number assigned by the contributing library": "4", "Incomplete LC class number assigned by LAC": "2", "Incomplete LC class number assigned by the contributing library": "5", "LC-based call number assigned by LAC": "0", "LC-based call number assigned by the contributing library": "3", "Other call number assigned by LAC": "6", "Other call number assigned by the contributing library": "8", "Other class number assigned by LAC": "7", "Other class number assigned by the contributing library": "9"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source_of_call_class_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '_indicator1': indicator_map1.get(value.get('existence_in_lac_collection')),
+        '_indicator2': indicator_map2.get(value.get('type_completeness_source_of_class_call_number')),
     }
 
 
@@ -1478,20 +1427,14 @@ def national_library_of_medicine_call_number(self, key, value):
 @utils.filter_values
 def reverse_national_library_of_medicine_call_number(self, key, value):
     """Reverse - National Library of Medicine Call Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Item is in NLM": "0", "Item is not in NLM": "1", "No information provided": "#"}
+    indicator_map2 = {"Assigned by NLM": "0", "Assigned by agency other than NLM": "4"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number_r')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
+        '_indicator1': indicator_map1.get(value.get('existence_in_nlm_collection')),
+        '_indicator2': indicator_map2.get(value.get('source_of_call_number')),
     }
 
 
@@ -1572,15 +1515,12 @@ def national_agricultural_library_call_number(self, key, value):
 @utils.filter_values
 def reverse_national_agricultural_library_call_number(self, key, value):
     """Reverse - National Agricultural Library Call Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Item is in NAL": "0", "Item is not in NAL": "1"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number_r')),
         'b': utils.reverse_force_list(value.get('item_number')),
+        '_indicator1': indicator_map1.get(value.get('existence_in_nal_collection')),
     }
 
 
@@ -1702,11 +1642,7 @@ def universal_decimal_classification_number(self, key, value):
 @utils.filter_values
 def reverse_universal_decimal_classification_number(self, key, value):
     """Reverse - Universal Decimal Classification Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Abridged": "1", "Full": "0", "No information provided": "#"}
     return {
         'a': utils.reverse_force_list(value.get('universal_decimal_classification_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
@@ -1714,6 +1650,7 @@ def reverse_universal_decimal_classification_number(self, key, value):
         '2': utils.reverse_force_list(value.get('edition_identifier')),
         'x': utils.reverse_force_list(value.get('common_auxiliary_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('type_of_edition')),
     }
 
 
@@ -1746,16 +1683,8 @@ def dewey_decimal_classification_number(self, key, value):
 @utils.filter_values
 def reverse_dewey_decimal_classification_number(self, key, value):
     """Reverse - Dewey Decimal Classification Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Abridged edition": "1", "Full edition": "0", "Other edition specified in subfield $2": "7"}
+    indicator_map2 = {"Assigned by LC": "0", "Assigned by agency other than LC": "4", "No information provided": "#"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
@@ -1764,6 +1693,8 @@ def reverse_dewey_decimal_classification_number(self, key, value):
         '2': utils.reverse_force_list(value.get('edition_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('type_of_edition')),
+        '_indicator2': indicator_map2.get(value.get('source_of_classification_number')),
     }
 
 
@@ -1802,11 +1733,7 @@ def additional_dewey_decimal_classification_number(self, key, value):
 @utils.filter_values
 def reverse_additional_dewey_decimal_classification_number(self, key, value):
     """Reverse - Additional Dewey Decimal Classification Number."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Abridged edition": "1", "Full edition": "0", "Other edition specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
         'c': utils.reverse_force_list(value.get('classification_number_ending_number_of_span')),
@@ -1817,6 +1744,7 @@ def reverse_additional_dewey_decimal_classification_number(self, key, value):
         'y': utils.reverse_force_list(value.get('table_sequence_number_for_internal_subarrangement_or_add_table')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('table_identification')),
+        '_indicator1': indicator_map1.get(value.get('type_of_edition')),
     }
 
 

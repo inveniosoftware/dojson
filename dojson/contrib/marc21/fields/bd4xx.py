@@ -64,16 +64,8 @@ def series_statement_added_entry_personal_name(self, key, value):
 @utils.filter_values
 def reverse_series_statement_added_entry_personal_name(self, key, value):
     """Reverse - Series Statement/Added Entry-Personal Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
+    indicator_map2 = {"Main entry not represented by pronoun": "0", "Main entry represented by pronoun": "1"}
     return {
         'a': utils.reverse_force_list(value.get('personal_name')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -93,6 +85,8 @@ def reverse_series_statement_added_entry_personal_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
+        '_indicator1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
     }
 
 
@@ -148,16 +142,8 @@ def series_statement_added_entry_corporate_name(self, key, value):
 @utils.filter_values
 def reverse_series_statement_added_entry_corporate_name(self, key, value):
     """Reverse - Series Statement/Added Entry-Corporate Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+    indicator_map2 = {"Main entry not represented by pronoun": "0", "Main entry represented by pronoun": "1"}
     return {
         'a': utils.reverse_force_list(value.get('corporate_name_or_jurisdiction_name_as_entry_element')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -177,6 +163,8 @@ def reverse_series_statement_added_entry_corporate_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
+        '_indicator1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
     }
 
 
@@ -228,16 +216,8 @@ def series_statement_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_series_statement_added_entry_meeting_name(self, key, value):
     """Reverse - Series Statement/Added Entry Meeting Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+    indicator_map2 = {"Main entry not represented by pronoun": "0", "Main entry represented by pronoun": "1"}
     return {
         'a': utils.reverse_force_list(value.get('meeting_name_or_jurisdiction_name_as_entry_element')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -257,6 +237,8 @@ def reverse_series_statement_added_entry_meeting_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
+        '_indicator1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
+        '_indicator2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
     }
 
 
@@ -295,11 +277,7 @@ def series_statement_added_entry_title(self, key, value):
 @utils.filter_values
 def reverse_series_statement_added_entry_title(self, key, value):
     """Reverse - Series Statement/Added Entry-Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map2 = {"No nonfiling characters": "0", "Number of nonfiling characters": "8"}
     return {
         'a': utils.reverse_force_list(value.get('title')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -310,6 +288,7 @@ def reverse_series_statement_added_entry_title(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -344,11 +323,7 @@ def series_statement(self, key, value):
 @utils.filter_values
 def reverse_series_statement(self, key, value):
     """Reverse - Series Statement."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Series not traced": "0", "Series traced": "1"}
     return {
         'a': utils.reverse_force_list(value.get('series_statement')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -357,4 +332,5 @@ def reverse_series_statement(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'v': utils.reverse_force_list(value.get('volume_sequential_designation')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('series_tracing_policy')),
     }

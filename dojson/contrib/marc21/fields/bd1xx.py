@@ -65,11 +65,7 @@ def main_entry_personal_name(self, key, value):
 @utils.filter_values
 def reverse_main_entry_personal_name(self, key, value):
     """Reverse - Main Entry-Personal Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
     return {
         'a': utils.reverse_force_list(value.get('personal_name')),
         'c': utils.reverse_force_list(value.get('titles_and_words_associated_with_a_name')),
@@ -90,6 +86,7 @@ def reverse_main_entry_personal_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
+        '_indicator1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
     }
 
 
@@ -142,11 +139,7 @@ def main_entry_corporate_name(self, key, value):
 @utils.filter_values
 def reverse_main_entry_corporate_name(self, key, value):
     """Reverse - Main Entry-Corporate Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
     return {
         'a': utils.reverse_force_list(value.get('corporate_name_or_jurisdiction_name_as_entry_element')),
         'c': utils.reverse_force_list(value.get('location_of_meeting')),
@@ -165,6 +158,7 @@ def reverse_main_entry_corporate_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number_r')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
+        '_indicator1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
     }
 
 
@@ -216,11 +210,7 @@ def main_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_main_entry_meeting_name(self, key, value):
     """Reverse - Main Entry-Meeting Name."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
     return {
         'a': utils.reverse_force_list(value.get('meeting_name_or_jurisdiction_name_as_entry_element')),
         'c': utils.reverse_force_list(value.get('location_of_meeting')),
@@ -240,6 +230,7 @@ def reverse_main_entry_meeting_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
+        '_indicator1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
     }
 
 
@@ -288,11 +279,7 @@ def main_entry_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_main_entry_uniform_title(self, key, value):
     """Reverse - Main Entry-Uniform Title."""
-    indicator_map1 = {
-            # TODO
-            # TODO
-            # TODO
-    }
+    indicator_map1 = {"Number of nonfiling characters": "8"}
     return {
         'a': utils.reverse_force_list(value.get('uniform_title')),
         'p': utils.reverse_force_list(value.get('name_of_part_section_of_a_work')),
@@ -311,4 +298,5 @@ def reverse_main_entry_uniform_title(self, key, value):
         't': utils.reverse_force_list(value.get('title_of_a_work')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '_indicator1': indicator_map1.get(value.get('nonfiling_characters')),
     }
