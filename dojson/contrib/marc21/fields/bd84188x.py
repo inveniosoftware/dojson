@@ -29,7 +29,7 @@ def holding_institution(self, key, value):
     }
 
 
-@tomarc21.over('^850..', 'holding_institution')
+@tomarc21.over('850', 'holding_institution')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_holding_institution(self, key, value):
@@ -37,6 +37,8 @@ def reverse_holding_institution(self, key, value):
     return {
         'a': utils.reverse_force_list(value.get('holding_institution')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -104,13 +106,13 @@ def location(self, key, value):
     }
 
 
-@tomarc21.over('^852[_103254768][10_2]', 'location')
+@tomarc21.over('852', 'location')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_location(self, key, value):
     """Reverse - Location."""
-    indicator_map1 = {"Dewey Decimal classification": "1", "Library of Congress classification": "0", "National Library of Medicine classification": "2", "No information provided": "#", "Other scheme": "8", "Shelved separately": "6", "Shelving control number": "4", "Source specified in subfield $2": "7", "Superintendent of Documents classification": "3", "Title": "5"}
-    indicator_map2 = {"Alternative enumeration": "2", "No information provided": "#", "Not enumeration": "0", "Primary enumeration": "1"}
+    indicator_map1 = {"Dewey Decimal classification": "1", "Library of Congress classification": "0", "National Library of Medicine classification": "2", "No information provided": "_", "Other scheme": "8", "Shelved separately": "6", "Shelving control number": "4", "Source specified in subfield $2": "7", "Superintendent of Documents classification": "3", "Title": "5"}
+    indicator_map2 = {"Alternative enumeration": "2", "No information provided": "_", "Not enumeration": "0", "Primary enumeration": "1"}
     return {
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '2': utils.reverse_force_list(value.get('source_of_classification_or_shelving_scheme')),
@@ -137,8 +139,8 @@ def reverse_location(self, key, value):
         't': utils.reverse_force_list(value.get('copy_number')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
         'z': utils.reverse_force_list(value.get('public_note')),
-        '_indicator1': indicator_map1.get(value.get('shelving_scheme')),
-        '_indicator2': indicator_map2.get(value.get('shelving_order')),
+        '$ind1': indicator_map1.get(value.get('shelving_scheme')),
+        '$ind2': indicator_map2.get(value.get('shelving_order')),
     }
 
 
@@ -213,12 +215,12 @@ def electronic_location_and_access(self, key, value):
     }
 
 
-@tomarc21.over('^856.[10_28]', 'electronic_location_and_access')
+@tomarc21.over('856', 'electronic_location_and_access')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_electronic_location_and_access(self, key, value):
     """Reverse - Electronic Location and Access."""
-    indicator_map2 = {"No display constant generated": "8", "No information provided": "#", "Related resource": "2", "Resource": "0", "Version of resource": "1"}
+    indicator_map2 = {"No display constant generated": "8", "No information provided": "_", "Related resource": "2", "Resource": "0", "Version of resource": "1"}
     return {
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '2': utils.reverse_force_list(value.get('access_method')),
@@ -248,7 +250,8 @@ def reverse_electronic_location_and_access(self, key, value):
         'y': utils.reverse_force_list(value.get('link_text')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
         'z': utils.reverse_force_list(value.get('public_note')),
-        '_indicator2': indicator_map2.get(value.get('relationship')),
+        '$ind1': '_',
+        '$ind2': indicator_map2.get(value.get('relationship')),
     }
 
 
@@ -273,7 +276,7 @@ def replacement_record_information(self, key, value):
     }
 
 
-@tomarc21.over('^882..', 'replacement_record_information')
+@tomarc21.over('882', 'replacement_record_information')
 @utils.filter_values
 def reverse_replacement_record_information(self, key, value):
     """Reverse - Replacement Record Information."""
@@ -283,6 +286,8 @@ def reverse_replacement_record_information(self, key, value):
         'i': utils.reverse_force_list(value.get('explanatory_text')),
         'w': utils.reverse_force_list(value.get('replacement_bibliographic_record_control_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -312,12 +317,12 @@ def machine_generated_metadata_provenance(self, key, value):
     }
 
 
-@tomarc21.over('^883[10_].', 'machine_generated_metadata_provenance')
+@tomarc21.over('883', 'machine_generated_metadata_provenance')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_machine_generated_metadata_provenance(self, key, value):
     """Reverse - Machine-generated Metadata Provenance."""
-    indicator_map1 = {"Fully machine-generated": "0", "No information provided/not applicable": "#", "Partially machine-generated": "1"}
+    indicator_map1 = {"Fully machine-generated": "0", "No information provided/not applicable": "_", "Partially machine-generated": "1"}
     return {
         'a': utils.reverse_force_list(value.get('generation_process')),
         'c': utils.reverse_force_list(value.get('confidence_value')),
@@ -328,7 +333,8 @@ def reverse_machine_generated_metadata_provenance(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         'x': utils.reverse_force_list(value.get('validity_end_date')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('method_of_machine_assignment')),
+        '$ind1': indicator_map1.get(value.get('method_of_machine_assignment')),
+        '$ind2': '_',
     }
 
 
@@ -343,7 +349,7 @@ def non_marc_information_field(self, key, value):
     }
 
 
-@tomarc21.over('^887..', 'non_marc_information_field')
+@tomarc21.over('887', 'non_marc_information_field')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_non_marc_information_field(self, key, value):
@@ -351,4 +357,6 @@ def reverse_non_marc_information_field(self, key, value):
     return {
         'a': utils.reverse_force_list(value.get('content_of_non_marc_field')),
         '2': utils.reverse_force_list(value.get('source_of_data')),
+        '$ind1': '_',
+        '$ind2': '_',
     }

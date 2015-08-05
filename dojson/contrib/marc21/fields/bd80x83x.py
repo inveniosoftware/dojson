@@ -79,7 +79,7 @@ def series_added_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('^800[103_].', 'series_added_entry_personal_name')
+@tomarc21.over('800', 'series_added_entry_personal_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_personal_name(self, key, value):
@@ -116,7 +116,8 @@ def reverse_series_added_entry_personal_name(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         'v': utils.reverse_force_list(value.get('volume_sequential_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
-        '_indicator1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
+        '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
+        '$ind2': '_',
     }
 
 
@@ -183,7 +184,7 @@ def series_added_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('^810[10_2].', 'series_added_entry_corporate_name')
+@tomarc21.over('810', 'series_added_entry_corporate_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_corporate_name(self, key, value):
@@ -218,7 +219,8 @@ def reverse_series_added_entry_corporate_name(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         'v': utils.reverse_force_list(value.get('volume_sequential_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
-        '_indicator1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
+        '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
+        '$ind2': '_',
     }
 
 
@@ -279,7 +281,7 @@ def series_added_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('^811[10_2].', 'series_added_entry_meeting_name')
+@tomarc21.over('811', 'series_added_entry_meeting_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_meeting_name(self, key, value):
@@ -312,7 +314,8 @@ def reverse_series_added_entry_meeting_name(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         'v': utils.reverse_force_list(value.get('volume_sequential_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
-        '_indicator1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
+        '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
+        '$ind2': '_',
     }
 
 
@@ -368,7 +371,7 @@ def series_added_entry_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('^830.[_1032547698]', 'series_added_entry_uniform_title')
+@tomarc21.over('830', 'series_added_entry_uniform_title')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_uniform_title(self, key, value):
@@ -398,5 +401,6 @@ def reverse_series_added_entry_uniform_title(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         'v': utils.reverse_force_list(value.get('volume_sequential_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
-        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
+        '$ind1': '_',
+        '$ind2': indicator_map2.get(value.get('nonfiling_characters')),
     }

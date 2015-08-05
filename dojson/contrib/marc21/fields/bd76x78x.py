@@ -60,13 +60,13 @@ def main_series_entry(self, key, value):
     }
 
 
-@tomarc21.over('^760[10_][8_]', 'main_series_entry')
+@tomarc21.over('760', 'main_series_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_main_series_entry(self, key, value):
     """Reverse - Main Series Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"Main series": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Main series": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('main_entry_heading')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -87,8 +87,8 @@ def reverse_main_series_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -138,13 +138,13 @@ def subseries_entry(self, key, value):
     }
 
 
-@tomarc21.over('^762[10_][8_]', 'subseries_entry')
+@tomarc21.over('762', 'subseries_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subseries_entry(self, key, value):
     """Reverse - Subseries Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"Has subseries": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Has subseries": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('main_entry_heading')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -165,8 +165,8 @@ def reverse_subseries_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -226,13 +226,13 @@ def original_language_entry(self, key, value):
     }
 
 
-@tomarc21.over('^765[10_][8_]', 'original_language_entry')
+@tomarc21.over('765', 'original_language_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_original_language_entry(self, key, value):
     """Reverse - Original Language Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"No display constant generated": "8", "Translation of": "#"}
+    indicator_map2 = {"No display constant generated": "8", "Translation of": "_"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -257,8 +257,8 @@ def reverse_original_language_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -318,13 +318,13 @@ def translation_entry(self, key, value):
     }
 
 
-@tomarc21.over('^767[10_][8_]', 'translation_entry')
+@tomarc21.over('767', 'translation_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_translation_entry(self, key, value):
     """Reverse - Translation Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"No display constant generated": "8", "Translated as": "#"}
+    indicator_map2 = {"No display constant generated": "8", "Translated as": "_"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -349,8 +349,8 @@ def reverse_translation_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -410,13 +410,13 @@ def supplement_special_issue_entry(self, key, value):
     }
 
 
-@tomarc21.over('^770[10_][8_]', 'supplement_special_issue_entry')
+@tomarc21.over('770', 'supplement_special_issue_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_supplement_special_issue_entry(self, key, value):
     """Reverse - Supplement/Special Issue Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"Has supplement": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Has supplement": "_", "No display constant generated": "8"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -441,8 +441,8 @@ def reverse_supplement_special_issue_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -502,13 +502,13 @@ def supplement_parent_entry(self, key, value):
     }
 
 
-@tomarc21.over('^772[10_][0_8]', 'supplement_parent_entry')
+@tomarc21.over('772', 'supplement_parent_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_supplement_parent_entry(self, key, value):
     """Reverse - Supplement Parent Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"No display constant generated": "8", "Parent": "0", "Supplement to": "#"}
+    indicator_map2 = {"No display constant generated": "8", "Parent": "0", "Supplement to": "_"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -533,8 +533,8 @@ def reverse_supplement_parent_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -596,13 +596,13 @@ def host_item_entry(self, key, value):
     }
 
 
-@tomarc21.over('^773[10_][8_]', 'host_item_entry')
+@tomarc21.over('773', 'host_item_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_host_item_entry(self, key, value):
     """Reverse - Host Item Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"In": "#", "No display constant generated": "8"}
+    indicator_map2 = {"In": "_", "No display constant generated": "8"}
     return {
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '4': utils.reverse_force_list(value.get('relationship_code')),
@@ -629,8 +629,8 @@ def reverse_host_item_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -690,13 +690,13 @@ def constituent_unit_entry(self, key, value):
     }
 
 
-@tomarc21.over('^774[10_][8_]', 'constituent_unit_entry')
+@tomarc21.over('774', 'constituent_unit_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_constituent_unit_entry(self, key, value):
     """Reverse - Constituent Unit Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"Constituent unit": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Constituent unit": "_", "No display constant generated": "8"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -721,8 +721,8 @@ def reverse_constituent_unit_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -784,13 +784,13 @@ def other_edition_entry(self, key, value):
     }
 
 
-@tomarc21.over('^775[10_][8_]', 'other_edition_entry')
+@tomarc21.over('775', 'other_edition_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_edition_entry(self, key, value):
     """Reverse - Other Edition Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"No display constant generated": "8", "Other edition available": "#"}
+    indicator_map2 = {"No display constant generated": "8", "Other edition available": "_"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -817,8 +817,8 @@ def reverse_other_edition_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -878,13 +878,13 @@ def additional_physical_form_entry(self, key, value):
     }
 
 
-@tomarc21.over('^776[10_][8_]', 'additional_physical_form_entry')
+@tomarc21.over('776', 'additional_physical_form_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_additional_physical_form_entry(self, key, value):
     """Reverse - Additional Physical Form Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"Available in another form": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Available in another form": "_", "No display constant generated": "8"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -909,8 +909,8 @@ def reverse_additional_physical_form_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -963,13 +963,13 @@ def issued_with_entry(self, key, value):
     }
 
 
-@tomarc21.over('^777[10_][8_]', 'issued_with_entry')
+@tomarc21.over('777', 'issued_with_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_issued_with_entry(self, key, value):
     """Reverse - Issued With Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"Issued with": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Issued with": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('main_entry_heading')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
@@ -991,8 +991,8 @@ def reverse_issued_with_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -1052,7 +1052,7 @@ def preceding_entry(self, key, value):
     }
 
 
-@tomarc21.over('^780[10_][_10325476]', 'preceding_entry')
+@tomarc21.over('780', 'preceding_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_preceding_entry(self, key, value):
@@ -1083,8 +1083,8 @@ def reverse_preceding_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('type_of_relationship')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('type_of_relationship')),
     }
 
 
@@ -1144,7 +1144,7 @@ def succeeding_entry(self, key, value):
     }
 
 
-@tomarc21.over('^785[10_][_103254768]', 'succeeding_entry')
+@tomarc21.over('785', 'succeeding_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_succeeding_entry(self, key, value):
@@ -1175,8 +1175,8 @@ def reverse_succeeding_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('type_of_relationship')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('type_of_relationship')),
     }
 
 
@@ -1239,13 +1239,13 @@ def data_source_entry(self, key, value):
     }
 
 
-@tomarc21.over('^786[10_][8_]', 'data_source_entry')
+@tomarc21.over('786', 'data_source_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_data_source_entry(self, key, value):
     """Reverse - Data Source Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"Data source": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Data source": "_", "No display constant generated": "8"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -1273,8 +1273,8 @@ def reverse_data_source_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -1334,13 +1334,13 @@ def other_relationship_entry(self, key, value):
     }
 
 
-@tomarc21.over('^787[10_][8_]', 'other_relationship_entry')
+@tomarc21.over('787', 'other_relationship_entry')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_relationship_entry(self, key, value):
     """Reverse - Other Relationship Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
-    indicator_map2 = {"No display constant generated": "8", "Related item": "#"}
+    indicator_map2 = {"No display constant generated": "8", "Related item": "_"}
     return {
         '4': utils.reverse_force_list(value.get('relationship_code')),
         '7': utils.reverse_force_list(value.get('control_subfield')),
@@ -1365,6 +1365,6 @@ def reverse_other_relationship_entry(self, key, value):
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
-        '_indicator1': indicator_map1.get(value.get('note_controller')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }

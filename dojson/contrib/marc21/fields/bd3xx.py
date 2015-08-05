@@ -42,7 +42,7 @@ def physical_description(self, key, value):
     }
 
 
-@tomarc21.over('^300..', 'physical_description')
+@tomarc21.over('300', 'physical_description')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_physical_description(self, key, value):
@@ -57,6 +57,8 @@ def reverse_physical_description(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -75,7 +77,7 @@ def playing_time(self, key, value):
     }
 
 
-@tomarc21.over('^306..', 'playing_time')
+@tomarc21.over('306', 'playing_time')
 @utils.filter_values
 def reverse_playing_time(self, key, value):
     """Reverse - Playing Time."""
@@ -83,6 +85,8 @@ def reverse_playing_time(self, key, value):
         'a': utils.reverse_force_list(value.get('playing_time')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -103,18 +107,19 @@ def hours(self, key, value):
     }
 
 
-@tomarc21.over('^307[8_].', 'hours')
+@tomarc21.over('307', 'hours')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_hours(self, key, value):
     """Reverse - Hours, Etc.."""
-    indicator_map1 = {"Hours": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Hours": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('hours')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('additional_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -132,7 +137,7 @@ def current_publication_frequency(self, key, value):
     }
 
 
-@tomarc21.over('^310..', 'current_publication_frequency')
+@tomarc21.over('310', 'current_publication_frequency')
 @utils.filter_values
 def reverse_current_publication_frequency(self, key, value):
     """Reverse - Current Publication Frequency."""
@@ -141,6 +146,8 @@ def reverse_current_publication_frequency(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('date_of_current_publication_frequency')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -159,7 +166,7 @@ def former_publication_frequency(self, key, value):
     }
 
 
-@tomarc21.over('^321..', 'former_publication_frequency')
+@tomarc21.over('321', 'former_publication_frequency')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_former_publication_frequency(self, key, value):
@@ -169,6 +176,8 @@ def reverse_former_publication_frequency(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('dates_of_former_publication_frequency')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -193,7 +202,7 @@ def content_type(self, key, value):
     }
 
 
-@tomarc21.over('^336..', 'content_type')
+@tomarc21.over('336', 'content_type')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_content_type(self, key, value):
@@ -205,6 +214,8 @@ def reverse_content_type(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -229,7 +240,7 @@ def media_type(self, key, value):
     }
 
 
-@tomarc21.over('^337..', 'media_type')
+@tomarc21.over('337', 'media_type')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_media_type(self, key, value):
@@ -241,6 +252,8 @@ def reverse_media_type(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -265,7 +278,7 @@ def carrier_type(self, key, value):
     }
 
 
-@tomarc21.over('^338..', 'carrier_type')
+@tomarc21.over('338', 'carrier_type')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_carrier_type(self, key, value):
@@ -277,6 +290,8 @@ def reverse_carrier_type(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -337,7 +352,7 @@ def physical_medium(self, key, value):
     }
 
 
-@tomarc21.over('^340..', 'physical_medium')
+@tomarc21.over('340', 'physical_medium')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_physical_medium(self, key, value):
@@ -361,6 +376,8 @@ def reverse_physical_medium(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -409,7 +426,7 @@ def geospatial_reference_data(self, key, value):
     }
 
 
-@tomarc21.over('^342[10_][_103254768]', 'geospatial_reference_data')
+@tomarc21.over('342', 'geospatial_reference_data')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_geospatial_reference_data(self, key, value):
@@ -443,8 +460,8 @@ def reverse_geospatial_reference_data(self, key, value):
         't': utils.reverse_force_list(value.get('vertical_resolution')),
         'w': utils.reverse_force_list(value.get('local_planar_or_local_georeference_information')),
         'v': utils.reverse_force_list(value.get('local_planar_local_or_other_projection_or_grid_description')),
-        '_indicator1': indicator_map1.get(value.get('geospatial_reference_dimension')),
-        '_indicator2': indicator_map2.get(value.get('geospatial_reference_method')),
+        '$ind1': indicator_map1.get(value.get('geospatial_reference_dimension')),
+        '$ind2': indicator_map2.get(value.get('geospatial_reference_method')),
     }
 
 
@@ -470,7 +487,7 @@ def planar_coordinate_data(self, key, value):
     }
 
 
-@tomarc21.over('^343..', 'planar_coordinate_data')
+@tomarc21.over('343', 'planar_coordinate_data')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_planar_coordinate_data(self, key, value):
@@ -487,6 +504,8 @@ def reverse_planar_coordinate_data(self, key, value):
         'h': utils.reverse_force_list(value.get('bearing_reference_direction')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -532,7 +551,7 @@ def sound_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('^344..', 'sound_characteristics')
+@tomarc21.over('344', 'sound_characteristics')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_sound_characteristics(self, key, value):
@@ -551,6 +570,8 @@ def reverse_sound_characteristics(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -578,7 +599,7 @@ def projection_characteristics_of_moving_image(self, key, value):
     }
 
 
-@tomarc21.over('^345..', 'projection_characteristics_of_moving_image')
+@tomarc21.over('345', 'projection_characteristics_of_moving_image')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_projection_characteristics_of_moving_image(self, key, value):
@@ -591,6 +612,8 @@ def reverse_projection_characteristics_of_moving_image(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -618,7 +641,7 @@ def video_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('^346..', 'video_characteristics')
+@tomarc21.over('346', 'video_characteristics')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_video_characteristics(self, key, value):
@@ -631,6 +654,8 @@ def reverse_video_characteristics(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -670,7 +695,7 @@ def digital_file_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('^347..', 'digital_file_characteristics')
+@tomarc21.over('347', 'digital_file_characteristics')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_digital_file_characteristics(self, key, value):
@@ -687,6 +712,8 @@ def reverse_digital_file_characteristics(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -711,7 +738,7 @@ def organization_and_arrangement_of_materials(self, key, value):
     }
 
 
-@tomarc21.over('^351..', 'organization_and_arrangement_of_materials')
+@tomarc21.over('351', 'organization_and_arrangement_of_materials')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_organization_and_arrangement_of_materials(self, key, value):
@@ -723,6 +750,8 @@ def reverse_organization_and_arrangement_of_materials(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -752,7 +781,7 @@ def digital_graphic_representation(self, key, value):
     }
 
 
-@tomarc21.over('^352..', 'digital_graphic_representation')
+@tomarc21.over('352', 'digital_graphic_representation')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_digital_graphic_representation(self, key, value):
@@ -769,6 +798,8 @@ def reverse_digital_graphic_representation(self, key, value):
         'q': utils.reverse_force_list(value.get('format_of_the_digital_image')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -802,7 +833,7 @@ def security_classification_control(self, key, value):
     }
 
 
-@tomarc21.over('^355[1032548_].', 'security_classification_control')
+@tomarc21.over('355', 'security_classification_control')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_security_classification_control(self, key, value):
@@ -820,7 +851,8 @@ def reverse_security_classification_control(self, key, value):
         'j': utils.reverse_force_list(value.get('authorization')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('controlled_element')),
+        '$ind1': indicator_map1.get(value.get('controlled_element')),
+        '$ind2': '_',
     }
 
 
@@ -846,7 +878,7 @@ def originator_dissemination_control(self, key, value):
     }
 
 
-@tomarc21.over('^357..', 'originator_dissemination_control')
+@tomarc21.over('357', 'originator_dissemination_control')
 @utils.filter_values
 def reverse_originator_dissemination_control(self, key, value):
     """Reverse - Originator Dissemination Control."""
@@ -857,6 +889,8 @@ def reverse_originator_dissemination_control(self, key, value):
         'g': utils.reverse_force_list(value.get('other_restrictions')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -877,7 +911,7 @@ def dates_of_publication_and_or_sequential_designation(self, key, value):
     }
 
 
-@tomarc21.over('^362[10_].', 'dates_of_publication_and_or_sequential_designation')
+@tomarc21.over('362', 'dates_of_publication_and_or_sequential_designation')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dates_of_publication_and_or_sequential_designation(self, key, value):
@@ -888,7 +922,8 @@ def reverse_dates_of_publication_and_or_sequential_designation(self, key, value)
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('source_of_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('format_of_date')),
+        '$ind1': indicator_map1.get(value.get('format_of_date')),
+        '$ind2': '_',
     }
 
 
@@ -928,13 +963,13 @@ def normalized_date_and_sequential_designation(self, key, value):
     }
 
 
-@tomarc21.over('^363[10_][10_]', 'normalized_date_and_sequential_designation')
+@tomarc21.over('363', 'normalized_date_and_sequential_designation')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_normalized_date_and_sequential_designation(self, key, value):
     """Reverse - Normalized Date and Sequential Designation."""
-    indicator_map1 = {"Ending information": "1", "No information provided": "#", "Starting information": "0"}
-    indicator_map2 = {"Closed": "0", "Not specified": "#", "Open": "1"}
+    indicator_map1 = {"Ending information": "1", "No information provided": "_", "Starting information": "0"}
+    indicator_map2 = {"Closed": "0", "Not specified": "_", "Open": "1"}
     return {
         'a': utils.reverse_force_list(value.get('first_level_of_enumeration')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
@@ -955,8 +990,8 @@ def reverse_normalized_date_and_sequential_designation(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
         'v': utils.reverse_force_list(value.get('first_level_of_chronology_issuance')),
-        '_indicator1': indicator_map1.get(value.get('start_end_designator')),
-        '_indicator2': indicator_map2.get(value.get('state_of_issuance')),
+        '$ind1': indicator_map1.get(value.get('start_end_designator')),
+        '$ind2': indicator_map2.get(value.get('state_of_issuance')),
     }
 
 
@@ -986,7 +1021,7 @@ def trade_price(self, key, value):
     }
 
 
-@tomarc21.over('^365..', 'trade_price')
+@tomarc21.over('365', 'trade_price')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_trade_price(self, key, value):
@@ -1007,6 +1042,8 @@ def reverse_trade_price(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_price_type_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1034,7 +1071,7 @@ def trade_availability_information(self, key, value):
     }
 
 
-@tomarc21.over('^366..', 'trade_availability_information')
+@tomarc21.over('366', 'trade_availability_information')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_trade_availability_information(self, key, value):
@@ -1053,6 +1090,8 @@ def reverse_trade_availability_information(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_availability_status_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1076,7 +1115,7 @@ def associated_language(self, key, value):
     }
 
 
-@tomarc21.over('^377..', 'associated_language')
+@tomarc21.over('377', 'associated_language')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_associated_language(self, key, value):
@@ -1087,6 +1126,8 @@ def reverse_associated_language(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         'l': utils.reverse_force_list(value.get('language_term')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1110,7 +1151,7 @@ def form_of_work(self, key, value):
     }
 
 
-@tomarc21.over('^380..', 'form_of_work')
+@tomarc21.over('380', 'form_of_work')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_form_of_work(self, key, value):
@@ -1121,6 +1162,8 @@ def reverse_form_of_work(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_term')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1150,7 +1193,7 @@ def other_distinguishing_characteristics_of_work_or_expression(self, key, value)
     }
 
 
-@tomarc21.over('^381..', 'other_distinguishing_characteristics_of_work_or_expression')
+@tomarc21.over('381', 'other_distinguishing_characteristics_of_work_or_expression')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_distinguishing_characteristics_of_work_or_expression(self, key, value):
@@ -1163,6 +1206,8 @@ def reverse_other_distinguishing_characteristics_of_work_or_expression(self, key
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1208,13 +1253,13 @@ def medium_of_performance(self, key, value):
     }
 
 
-@tomarc21.over('^382[10_][10_]', 'medium_of_performance')
+@tomarc21.over('382', 'medium_of_performance')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_medium_of_performance(self, key, value):
     """Reverse - Medium of Performance."""
-    indicator_map1 = {"Medium of performance": "0", "No information provided": "#", "Partial medium of performance": "1"}
-    indicator_map2 = {"Intended for access": "1", "No information provided": "#", "Not intended for access": "0"}
+    indicator_map1 = {"Medium of performance": "0", "No information provided": "_", "Partial medium of performance": "1"}
+    indicator_map2 = {"Intended for access": "1", "No information provided": "_", "Not intended for access": "0"}
     return {
         'a': utils.reverse_force_list(value.get('medium_of_performance')),
         'b': utils.reverse_force_list(value.get('soloist')),
@@ -1227,8 +1272,8 @@ def reverse_medium_of_performance(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_term')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
-        '_indicator2': indicator_map2.get(value.get('access_control')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': indicator_map2.get(value.get('access_control')),
     }
 
 
@@ -1257,7 +1302,7 @@ def numeric_designation_of_musical_work(self, key, value):
     }
 
 
-@tomarc21.over('^383..', 'numeric_designation_of_musical_work')
+@tomarc21.over('383', 'numeric_designation_of_musical_work')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_numeric_designation_of_musical_work(self, key, value):
@@ -1271,6 +1316,8 @@ def reverse_numeric_designation_of_musical_work(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1289,16 +1336,17 @@ def key(self, key, value):
     }
 
 
-@tomarc21.over('^384[10_].', 'key')
+@tomarc21.over('384', 'key')
 @utils.filter_values
 def reverse_key(self, key, value):
     """Reverse - Key."""
-    indicator_map1 = {"Original key ": "0", "Relationship to original unknown ": "#", "Transposed key ": "1"}
+    indicator_map1 = {"Original key ": "0", "Relationship to original unknown ": "_", "Transposed key ": "1"}
     return {
         'a': utils.reverse_force_list(value.get('key')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('key_type')),
+        '$ind1': indicator_map1.get(value.get('key_type')),
+        '$ind2': '_',
     }
 
 
@@ -1328,7 +1376,7 @@ def audience_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('^385..', 'audience_characteristics')
+@tomarc21.over('385', 'audience_characteristics')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_audience_characteristics(self, key, value):
@@ -1343,6 +1391,8 @@ def reverse_audience_characteristics(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1372,7 +1422,7 @@ def creator_contributor_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('^386..', 'creator_contributor_characteristics')
+@tomarc21.over('386', 'creator_contributor_characteristics')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_creator_contributor_characteristics(self, key, value):
@@ -1387,4 +1437,6 @@ def reverse_creator_contributor_characteristics(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }

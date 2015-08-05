@@ -36,21 +36,21 @@ def abbreviated_title(self, key, value):
     }
 
 
-@tomarc21.over('^210[10_][0_]', 'abbreviated_title')
+@tomarc21.over('210', 'abbreviated_title')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_abbreviated_title(self, key, value):
     """Reverse - Abbreviated Title."""
     indicator_map1 = {"Added entry": "1", "No added entry": "0"}
-    indicator_map2 = {"Abbreviated key title": "#", "Other abbreviated title": "0"}
+    indicator_map2 = {"Abbreviated key title": "_", "Other abbreviated title": "0"}
     return {
         'a': utils.reverse_force_list(value.get('abbreviated_title')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source')),
         'b': utils.reverse_force_list(value.get('qualifying_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
-        '_indicator2': indicator_map2.get(value.get('type')),
+        '$ind1': indicator_map1.get(value.get('title_added_entry')),
+        '$ind2': indicator_map2.get(value.get('type')),
     }
 
 
@@ -71,7 +71,7 @@ def key_title(self, key, value):
     }
 
 
-@tomarc21.over('^222.[_1032547698]', 'key_title')
+@tomarc21.over('222', 'key_title')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_key_title(self, key, value):
@@ -82,7 +82,8 @@ def reverse_key_title(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('qualifying_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
+        '$ind1': '_',
+        '$ind2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -128,7 +129,7 @@ def uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('^240[10_][_1032547698]', 'uniform_title')
+@tomarc21.over('240', 'uniform_title')
 @utils.filter_values
 def reverse_uniform_title(self, key, value):
     """Reverse - Uniform Title."""
@@ -151,8 +152,8 @@ def reverse_uniform_title(self, key, value):
         'r': utils.reverse_force_list(value.get('key_for_music')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('uniform_title_printed_or_displayed')),
-        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
+        '$ind1': indicator_map1.get(value.get('uniform_title_printed_or_displayed')),
+        '$ind2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -184,7 +185,7 @@ def translation_of_title_by_cataloging_agency(self, key, value):
     }
 
 
-@tomarc21.over('^242[10_][_1032547698]', 'translation_of_title_by_cataloging_agency')
+@tomarc21.over('242', 'translation_of_title_by_cataloging_agency')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_translation_of_title_by_cataloging_agency(self, key, value):
@@ -201,8 +202,8 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         'y': utils.reverse_force_list(value.get('language_code_of_translated_title')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
-        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
+        '$ind1': indicator_map1.get(value.get('title_added_entry')),
+        '$ind2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -245,7 +246,7 @@ def collective_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('^243[10_][_1032547698]', 'collective_uniform_title')
+@tomarc21.over('243', 'collective_uniform_title')
 @utils.filter_values
 def reverse_collective_uniform_title(self, key, value):
     """Reverse - Collective Uniform Title."""
@@ -267,8 +268,8 @@ def reverse_collective_uniform_title(self, key, value):
         'r': utils.reverse_force_list(value.get('key_for_music')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('uniform_title_printed_or_displayed')),
-        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
+        '$ind1': indicator_map1.get(value.get('uniform_title_printed_or_displayed')),
+        '$ind2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -304,7 +305,7 @@ def title_statement(self, key, value):
     }
 
 
-@tomarc21.over('^245[10_][_1032547698]', 'title_statement')
+@tomarc21.over('245', 'title_statement')
 @utils.filter_values
 def reverse_title_statement(self, key, value):
     """Reverse - Title Statement."""
@@ -323,8 +324,8 @@ def reverse_title_statement(self, key, value):
         's': utils.reverse_force_list(value.get('version')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
-        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
+        '$ind1': indicator_map1.get(value.get('title_added_entry')),
+        '$ind2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -358,13 +359,13 @@ def varying_form_of_title(self, key, value):
     }
 
 
-@tomarc21.over('^246[1032_][_103254768]', 'varying_form_of_title')
+@tomarc21.over('246', 'varying_form_of_title')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_varying_form_of_title(self, key, value):
     """Reverse - Varying Form of Title."""
     indicator_map1 = {"No note, added entry": "3", "No note, no added entry": "2", "Note, added entry": "1", "Note, no added entry": "0"}
-    indicator_map2 = {"Added title page title": "5", "Caption title": "6", "Cover title": "4", "Distinctive title": "2", "No type specified": "#", "Other title": "3", "Parallel title": "1", "Portion of title": "0", "Running title": "7", "Spine title": "8"}
+    indicator_map2 = {"Added title page title": "5", "Caption title": "6", "Cover title": "4", "Distinctive title": "2", "No type specified": "_", "Other title": "3", "Parallel title": "1", "Portion of title": "0", "Running title": "7", "Spine title": "8"}
     return {
         'a': utils.reverse_force_list(value.get('title_proper_short_title')),
         'b': utils.reverse_force_list(value.get('remainder_of_title')),
@@ -377,8 +378,8 @@ def reverse_varying_form_of_title(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('note_added_entry_controller')),
-        '_indicator2': indicator_map2.get(value.get('type_of_title')),
+        '$ind1': indicator_map1.get(value.get('note_added_entry_controller')),
+        '$ind2': indicator_map2.get(value.get('type_of_title')),
     }
 
 
@@ -411,7 +412,7 @@ def former_title(self, key, value):
     }
 
 
-@tomarc21.over('^247[10_][10_]', 'former_title')
+@tomarc21.over('247', 'former_title')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_former_title(self, key, value):
@@ -429,6 +430,6 @@ def reverse_former_title(self, key, value):
         'p': utils.reverse_force_list(value.get('name_of_part_section_of_a_work')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('title_added_entry')),
-        '_indicator2': indicator_map2.get(value.get('note_controller')),
+        '$ind1': indicator_map1.get(value.get('title_added_entry')),
+        '$ind2': indicator_map2.get(value.get('note_controller')),
     }

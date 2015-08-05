@@ -59,7 +59,7 @@ def series_statement_added_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('^400[103_][10_]', 'series_statement_added_entry_personal_name')
+@tomarc21.over('400', 'series_statement_added_entry_personal_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_personal_name(self, key, value):
@@ -85,8 +85,8 @@ def reverse_series_statement_added_entry_personal_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
-        '_indicator1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
-        '_indicator2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
+        '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
+        '$ind2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
     }
 
 
@@ -137,7 +137,7 @@ def series_statement_added_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('^410[10_2][10_]', 'series_statement_added_entry_corporate_name')
+@tomarc21.over('410', 'series_statement_added_entry_corporate_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_corporate_name(self, key, value):
@@ -163,8 +163,8 @@ def reverse_series_statement_added_entry_corporate_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
-        '_indicator1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
-        '_indicator2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
+        '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
+        '$ind2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
     }
 
 
@@ -211,7 +211,7 @@ def series_statement_added_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('^411[10_2][10_]', 'series_statement_added_entry_meeting_name')
+@tomarc21.over('411', 'series_statement_added_entry_meeting_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_meeting_name(self, key, value):
@@ -237,8 +237,8 @@ def reverse_series_statement_added_entry_meeting_name(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         't': utils.reverse_force_list(value.get('title_of_a_work')),
-        '_indicator1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
-        '_indicator2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
+        '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
+        '$ind2': indicator_map2.get(value.get('pronoun_represents_main_entry')),
     }
 
 
@@ -272,7 +272,7 @@ def series_statement_added_entry_title(self, key, value):
     }
 
 
-@tomarc21.over('^440.[_1032547698]', 'series_statement_added_entry_title')
+@tomarc21.over('440', 'series_statement_added_entry_title')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_title(self, key, value):
@@ -288,7 +288,8 @@ def reverse_series_statement_added_entry_title(self, key, value):
         'w': utils.reverse_force_list(value.get('bibliographic_record_control_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator2': indicator_map2.get(value.get('nonfiling_characters')),
+        '$ind1': '_',
+        '$ind2': indicator_map2.get(value.get('nonfiling_characters')),
     }
 
 
@@ -318,7 +319,7 @@ def series_statement(self, key, value):
     }
 
 
-@tomarc21.over('^490[10_].', 'series_statement')
+@tomarc21.over('490', 'series_statement')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement(self, key, value):
@@ -332,5 +333,6 @@ def reverse_series_statement(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'v': utils.reverse_force_list(value.get('volume_sequential_designation')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('series_tracing_policy')),
+        '$ind1': indicator_map1.get(value.get('series_tracing_policy')),
+        '$ind2': '_',
     }

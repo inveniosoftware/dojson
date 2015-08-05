@@ -30,7 +30,7 @@ def general_note(self, key, value):
     }
 
 
-@tomarc21.over('^500..', 'general_note')
+@tomarc21.over('500', 'general_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_general_note(self, key, value):
@@ -41,6 +41,8 @@ def reverse_general_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -59,7 +61,7 @@ def with_note(self, key, value):
     }
 
 
-@tomarc21.over('^501..', 'with_note')
+@tomarc21.over('501', 'with_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_with_note(self, key, value):
@@ -69,6 +71,8 @@ def reverse_with_note(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -95,7 +99,7 @@ def dissertation_note(self, key, value):
     }
 
 
-@tomarc21.over('^502..', 'dissertation_note')
+@tomarc21.over('502', 'dissertation_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dissertation_note(self, key, value):
@@ -109,6 +113,8 @@ def reverse_dissertation_note(self, key, value):
         'o': utils.reverse_force_list(value.get('dissertation_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -127,7 +133,7 @@ def bibliography_note(self, key, value):
     }
 
 
-@tomarc21.over('^504..', 'bibliography_note')
+@tomarc21.over('504', 'bibliography_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_bibliography_note(self, key, value):
@@ -137,6 +143,8 @@ def reverse_bibliography_note(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('number_of_references')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -170,13 +178,13 @@ def formatted_contents_note(self, key, value):
     }
 
 
-@tomarc21.over('^505[10_28][0_]', 'formatted_contents_note')
+@tomarc21.over('505', 'formatted_contents_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_formatted_contents_note(self, key, value):
     """Reverse - Formatted Contents Note."""
     indicator_map1 = {"Contents": "0", "Incomplete contents": "1", "No display constant generated": "8", "Partial contents": "2"}
-    indicator_map2 = {"Basic": "#", "Enhanced": "0"}
+    indicator_map2 = {"Basic": "_", "Enhanced": "0"}
     return {
         'a': utils.reverse_force_list(value.get('formatted_contents_note')),
         'g': utils.reverse_force_list(value.get('miscellaneous_information')),
@@ -185,8 +193,8 @@ def reverse_formatted_contents_note(self, key, value):
         't': utils.reverse_force_list(value.get('title')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
-        '_indicator2': indicator_map2.get(value.get('level_of_content_designation')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': indicator_map2.get(value.get('level_of_content_designation')),
     }
 
 
@@ -227,12 +235,12 @@ def restrictions_on_access_note(self, key, value):
     }
 
 
-@tomarc21.over('^506[10_].', 'restrictions_on_access_note')
+@tomarc21.over('506', 'restrictions_on_access_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_restrictions_on_access_note(self, key, value):
     """Reverse - Restrictions on Access Note."""
-    indicator_map1 = {"No information provided": "#", "No restrictions": "0", "Restrictions apply": "1"}
+    indicator_map1 = {"No information provided": "_", "No restrictions": "0", "Restrictions apply": "1"}
     return {
         'a': utils.reverse_force_list(value.get('terms_governing_access')),
         'c': utils.reverse_force_list(value.get('physical_access_provisions')),
@@ -246,7 +254,8 @@ def reverse_restrictions_on_access_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
-        '_indicator1': indicator_map1.get(value.get('restriction')),
+        '$ind1': indicator_map1.get(value.get('restriction')),
+        '$ind2': '_',
     }
 
 
@@ -264,7 +273,7 @@ def scale_note_for_graphic_material(self, key, value):
     }
 
 
-@tomarc21.over('^507..', 'scale_note_for_graphic_material')
+@tomarc21.over('507', 'scale_note_for_graphic_material')
 @utils.filter_values
 def reverse_scale_note_for_graphic_material(self, key, value):
     """Reverse - Scale Note for Graphic Material."""
@@ -273,6 +282,8 @@ def reverse_scale_note_for_graphic_material(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('remainder_of_scale_note')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -290,7 +301,7 @@ def creation_production_credits_note(self, key, value):
     }
 
 
-@tomarc21.over('^508..', 'creation_production_credits_note')
+@tomarc21.over('508', 'creation_production_credits_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_creation_production_credits_note(self, key, value):
@@ -299,6 +310,8 @@ def reverse_creation_production_credits_note(self, key, value):
         'a': utils.reverse_force_list(value.get('creation_production_credits_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -325,7 +338,7 @@ def citation_references_note(self, key, value):
     }
 
 
-@tomarc21.over('^510[10324_].', 'citation_references_note')
+@tomarc21.over('510', 'citation_references_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_citation_references_note(self, key, value):
@@ -340,7 +353,8 @@ def reverse_citation_references_note(self, key, value):
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('coverage_location_in_source')),
+        '$ind1': indicator_map1.get(value.get('coverage_location_in_source')),
+        '$ind2': '_',
     }
 
 
@@ -360,7 +374,7 @@ def participant_or_performer_note(self, key, value):
     }
 
 
-@tomarc21.over('^511[10_].', 'participant_or_performer_note')
+@tomarc21.over('511', 'participant_or_performer_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_participant_or_performer_note(self, key, value):
@@ -370,7 +384,8 @@ def reverse_participant_or_performer_note(self, key, value):
         'a': utils.reverse_force_list(value.get('participant_or_performer_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -389,7 +404,7 @@ def type_of_report_and_period_covered_note(self, key, value):
     }
 
 
-@tomarc21.over('^513..', 'type_of_report_and_period_covered_note')
+@tomarc21.over('513', 'type_of_report_and_period_covered_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_type_of_report_and_period_covered_note(self, key, value):
@@ -399,6 +414,8 @@ def reverse_type_of_report_and_period_covered_note(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('period_covered')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -444,7 +461,7 @@ def data_quality_note(self, key, value):
     }
 
 
-@tomarc21.over('^514..', 'data_quality_note')
+@tomarc21.over('514', 'data_quality_note')
 @utils.filter_values
 def reverse_data_quality_note(self, key, value):
     """Reverse - Data Quality Note."""
@@ -465,6 +482,8 @@ def reverse_data_quality_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('display_note')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -482,7 +501,7 @@ def numbering_peculiarities_note(self, key, value):
     }
 
 
-@tomarc21.over('^515..', 'numbering_peculiarities_note')
+@tomarc21.over('515', 'numbering_peculiarities_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_numbering_peculiarities_note(self, key, value):
@@ -491,6 +510,8 @@ def reverse_numbering_peculiarities_note(self, key, value):
         'a': utils.reverse_force_list(value.get('numbering_peculiarities_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -510,17 +531,18 @@ def type_of_computer_file_or_data_note(self, key, value):
     }
 
 
-@tomarc21.over('^516[8_].', 'type_of_computer_file_or_data_note')
+@tomarc21.over('516', 'type_of_computer_file_or_data_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_type_of_computer_file_or_data_note(self, key, value):
     """Reverse - Type of Computer File or Data Note."""
-    indicator_map1 = {"No display constant generated": "8", "Type of file": "#"}
+    indicator_map1 = {"No display constant generated": "8", "Type of file": "_"}
     return {
         'a': utils.reverse_force_list(value.get('type_of_computer_file_or_data_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -554,7 +576,7 @@ def date_time_and_place_of_an_event_note(self, key, value):
     }
 
 
-@tomarc21.over('^518..', 'date_time_and_place_of_an_event_note')
+@tomarc21.over('518', 'date_time_and_place_of_an_event_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_date_time_and_place_of_an_event_note(self, key, value):
@@ -569,6 +591,8 @@ def reverse_date_time_and_place_of_an_event_note(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_term')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -595,12 +619,12 @@ def summary(self, key, value):
     }
 
 
-@tomarc21.over('^520[10_2483].', 'summary')
+@tomarc21.over('520', 'summary')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_summary(self, key, value):
     """Reverse - Summary, Etc.."""
-    indicator_map1 = {"Abstract": "3", "Content advice": "4", "No display constant generated": "8", "Review": "1", "Scope and content": "2", "Subject": "0", "Summary": "#"}
+    indicator_map1 = {"Abstract": "3", "Content advice": "4", "No display constant generated": "8", "Review": "1", "Scope and content": "2", "Subject": "0", "Summary": "_"}
     return {
         'a': utils.reverse_force_list(value.get('summary')),
         'c': utils.reverse_force_list(value.get('assigning_source')),
@@ -610,7 +634,8 @@ def reverse_summary(self, key, value):
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -634,19 +659,20 @@ def target_audience_note(self, key, value):
     }
 
 
-@tomarc21.over('^521[10_2483].', 'target_audience_note')
+@tomarc21.over('521', 'target_audience_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_target_audience_note(self, key, value):
     """Reverse - Target Audience Note."""
-    indicator_map1 = {"Audience": "#", "Interest age level": "1", "Interest grade level": "2", "Motivation/interest level": "4", "No display constant generated": "8", "Reading grade level": "0", "Special audience characteristics": "3"}
+    indicator_map1 = {"Audience": "_", "Interest age level": "1", "Interest grade level": "2", "Motivation/interest level": "4", "No display constant generated": "8", "Reading grade level": "0", "Special audience characteristics": "3"}
     return {
         'a': utils.reverse_force_list(value.get('target_audience_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'b': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -666,17 +692,18 @@ def geographic_coverage_note(self, key, value):
     }
 
 
-@tomarc21.over('^522[8_].', 'geographic_coverage_note')
+@tomarc21.over('522', 'geographic_coverage_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_geographic_coverage_note(self, key, value):
     """Reverse - Geographic Coverage Note."""
-    indicator_map1 = {"Geographic coverage": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Geographic coverage": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('geographic_coverage_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -698,19 +725,20 @@ def preferred_citation_of_described_materials_note(self, key, value):
     }
 
 
-@tomarc21.over('^524[8_].', 'preferred_citation_of_described_materials_note')
+@tomarc21.over('524', 'preferred_citation_of_described_materials_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_preferred_citation_of_described_materials_note(self, key, value):
     """Reverse - Preferred Citation of Described Materials Note."""
-    indicator_map1 = {"Cite as": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Cite as": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('preferred_citation_of_described_materials_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '2': utils.reverse_force_list(value.get('source_of_schema_used')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -728,7 +756,7 @@ def supplement_note(self, key, value):
     }
 
 
-@tomarc21.over('^525..', 'supplement_note')
+@tomarc21.over('525', 'supplement_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_supplement_note(self, key, value):
@@ -737,6 +765,8 @@ def reverse_supplement_note(self, key, value):
         'a': utils.reverse_force_list(value.get('supplement_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -767,7 +797,7 @@ def study_program_information_note(self, key, value):
     }
 
 
-@tomarc21.over('^526[0_8].', 'study_program_information_note')
+@tomarc21.over('526', 'study_program_information_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_study_program_information_note(self, key, value):
@@ -784,7 +814,8 @@ def reverse_study_program_information_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -809,7 +840,7 @@ def additional_physical_form_available_note(self, key, value):
     }
 
 
-@tomarc21.over('^530..', 'additional_physical_form_available_note')
+@tomarc21.over('530', 'additional_physical_form_available_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_additional_physical_form_available_note(self, key, value):
@@ -823,6 +854,8 @@ def reverse_additional_physical_form_available_note(self, key, value):
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -860,7 +893,7 @@ def reproduction_note(self, key, value):
     }
 
 
-@tomarc21.over('^533..', 'reproduction_note')
+@tomarc21.over('533', 'reproduction_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_reproduction_note(self, key, value):
@@ -879,6 +912,8 @@ def reverse_reproduction_note(self, key, value):
         '7': utils.reverse_force_list(value.get('fixed_length_data_elements_of_reproduction')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -922,7 +957,7 @@ def original_version_note(self, key, value):
     }
 
 
-@tomarc21.over('^534..', 'original_version_note')
+@tomarc21.over('534', 'original_version_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_original_version_note(self, key, value):
@@ -945,6 +980,8 @@ def reverse_original_version_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -975,7 +1012,7 @@ def location_of_originals_duplicates_note(self, key, value):
     }
 
 
-@tomarc21.over('^535[1_2].', 'location_of_originals_duplicates_note')
+@tomarc21.over('535', 'location_of_originals_duplicates_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_location_of_originals_duplicates_note(self, key, value):
@@ -990,7 +1027,8 @@ def reverse_location_of_originals_duplicates_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('custodial_role')),
+        '$ind1': indicator_map1.get(value.get('custodial_role')),
+        '$ind2': '_',
     }
 
 
@@ -1029,7 +1067,7 @@ def funding_information_note(self, key, value):
     }
 
 
-@tomarc21.over('^536..', 'funding_information_note')
+@tomarc21.over('536', 'funding_information_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_funding_information_note(self, key, value):
@@ -1045,6 +1083,8 @@ def reverse_funding_information_note(self, key, value):
         'h': utils.reverse_force_list(value.get('work_unit_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1070,7 +1110,7 @@ def system_details_note(self, key, value):
     }
 
 
-@tomarc21.over('^538..', 'system_details_note')
+@tomarc21.over('538', 'system_details_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_system_details_note(self, key, value):
@@ -1083,6 +1123,8 @@ def reverse_system_details_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1108,7 +1150,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
     }
 
 
-@tomarc21.over('^540..', 'terms_governing_use_and_reproduction_note')
+@tomarc21.over('540', 'terms_governing_use_and_reproduction_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_terms_governing_use_and_reproduction_note(self, key, value):
@@ -1123,6 +1165,8 @@ def reverse_terms_governing_use_and_reproduction_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1156,12 +1200,12 @@ def immediate_source_of_acquisition_note(self, key, value):
     }
 
 
-@tomarc21.over('^541[10_].', 'immediate_source_of_acquisition_note')
+@tomarc21.over('541', 'immediate_source_of_acquisition_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_immediate_source_of_acquisition_note(self, key, value):
     """Reverse - Immediate Source of Acquisition Note."""
-    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
+    indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
     return {
         'a': utils.reverse_force_list(value.get('source_of_acquisition')),
         'c': utils.reverse_force_list(value.get('method_of_acquisition')),
@@ -1176,7 +1220,8 @@ def reverse_immediate_source_of_acquisition_note(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('privacy')),
+        '$ind1': indicator_map1.get(value.get('privacy')),
+        '$ind2': '_',
     }
 
 
@@ -1232,12 +1277,12 @@ def information_relating_to_copyright_status(self, key, value):
     }
 
 
-@tomarc21.over('^542[10_].', 'information_relating_to_copyright_status')
+@tomarc21.over('542', 'information_relating_to_copyright_status')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_information_relating_to_copyright_status(self, key, value):
     """Reverse - Information Relating to Copyright Status."""
-    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
+    indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
     return {
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
@@ -1262,7 +1307,8 @@ def reverse_information_relating_to_copyright_status(self, key, value):
         's': utils.reverse_force_list(value.get('source_of_information')),
         'r': utils.reverse_force_list(value.get('jurisdiction_of_copyright_assessment')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
-        '_indicator1': indicator_map1.get(value.get('privacy')),
+        '$ind1': indicator_map1.get(value.get('privacy')),
+        '$ind2': '_',
     }
 
 
@@ -1300,12 +1346,12 @@ def location_of_other_archival_materials_note(self, key, value):
     }
 
 
-@tomarc21.over('^544[10_].', 'location_of_other_archival_materials_note')
+@tomarc21.over('544', 'location_of_other_archival_materials_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_location_of_other_archival_materials_note(self, key, value):
     """Reverse - Location of Other Archival Materials Note."""
-    indicator_map1 = {"Associated materials": "0", "No information provided": "#", "Related materials": "1"}
+    indicator_map1 = {"Associated materials": "0", "No information provided": "_", "Related materials": "1"}
     return {
         'a': utils.reverse_force_list(value.get('custodian')),
         'c': utils.reverse_force_list(value.get('country')),
@@ -1316,7 +1362,8 @@ def reverse_location_of_other_archival_materials_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('relationship')),
+        '$ind1': indicator_map1.get(value.get('relationship')),
+        '$ind2': '_',
     }
 
 
@@ -1340,19 +1387,20 @@ def biographical_or_historical_data(self, key, value):
     }
 
 
-@tomarc21.over('^545[10_].', 'biographical_or_historical_data')
+@tomarc21.over('545', 'biographical_or_historical_data')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_biographical_or_historical_data(self, key, value):
     """Reverse - Biographical or Historical Data."""
-    indicator_map1 = {"Administrative history": "1", "Biographical sketch": "0", "No information provided": "#"}
+    indicator_map1 = {"Administrative history": "1", "Biographical sketch": "0", "No information provided": "_"}
     return {
         'a': utils.reverse_force_list(value.get('biographical_or_historical_data')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('expansion')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('type_of_data')),
+        '$ind1': indicator_map1.get(value.get('type_of_data')),
+        '$ind2': '_',
     }
 
 
@@ -1374,7 +1422,7 @@ def language_note(self, key, value):
     }
 
 
-@tomarc21.over('^546..', 'language_note')
+@tomarc21.over('546', 'language_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_language_note(self, key, value):
@@ -1385,6 +1433,8 @@ def reverse_language_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'b': utils.reverse_force_list(value.get('information_code_or_alphabet')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1402,7 +1452,7 @@ def former_title_complexity_note(self, key, value):
     }
 
 
-@tomarc21.over('^547..', 'former_title_complexity_note')
+@tomarc21.over('547', 'former_title_complexity_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_former_title_complexity_note(self, key, value):
@@ -1411,6 +1461,8 @@ def reverse_former_title_complexity_note(self, key, value):
         'a': utils.reverse_force_list(value.get('former_title_complexity_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1428,7 +1480,7 @@ def issuing_body_note(self, key, value):
     }
 
 
-@tomarc21.over('^550..', 'issuing_body_note')
+@tomarc21.over('550', 'issuing_body_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_issuing_body_note(self, key, value):
@@ -1437,6 +1489,8 @@ def reverse_issuing_body_note(self, key, value):
         'a': utils.reverse_force_list(value.get('issuing_body_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1483,7 +1537,7 @@ def entity_and_attribute_information_note(self, key, value):
     }
 
 
-@tomarc21.over('^552..', 'entity_and_attribute_information_note')
+@tomarc21.over('552', 'entity_and_attribute_information_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_entity_and_attribute_information_note(self, key, value):
@@ -1509,6 +1563,8 @@ def reverse_entity_and_attribute_information_note(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('display_note')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1537,12 +1593,12 @@ def cumulative_index_finding_aids_note(self, key, value):
     }
 
 
-@tomarc21.over('^555[0_8].', 'cumulative_index_finding_aids_note')
+@tomarc21.over('555', 'cumulative_index_finding_aids_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_cumulative_index_finding_aids_note(self, key, value):
     """Reverse - Cumulative Index/Finding Aids Note."""
-    indicator_map1 = {"Finding aids": "0", "Indexes": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Finding aids": "0", "Indexes": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('cumulative_index_finding_aids_note')),
         'c': utils.reverse_force_list(value.get('degree_of_control')),
@@ -1552,7 +1608,8 @@ def reverse_cumulative_index_finding_aids_note(self, key, value):
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -1575,18 +1632,19 @@ def information_about_documentation_note(self, key, value):
     }
 
 
-@tomarc21.over('^556[8_].', 'information_about_documentation_note')
+@tomarc21.over('556', 'information_about_documentation_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_information_about_documentation_note(self, key, value):
     """Reverse - Information About Documentation Note."""
-    indicator_map1 = {"Documentation": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Documentation": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('information_about_documentation_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -1611,12 +1669,12 @@ def ownership_and_custodial_history(self, key, value):
     }
 
 
-@tomarc21.over('^561[10_].', 'ownership_and_custodial_history')
+@tomarc21.over('561', 'ownership_and_custodial_history')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_ownership_and_custodial_history(self, key, value):
     """Reverse - Ownership and Custodial History."""
-    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
+    indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
     return {
         'a': utils.reverse_force_list(value.get('history')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -1624,7 +1682,8 @@ def reverse_ownership_and_custodial_history(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
-        '_indicator1': indicator_map1.get(value.get('privacy')),
+        '$ind1': indicator_map1.get(value.get('privacy')),
+        '$ind2': '_',
     }
 
 
@@ -1658,7 +1717,7 @@ def copy_and_version_identification_note(self, key, value):
     }
 
 
-@tomarc21.over('^562..', 'copy_and_version_identification_note')
+@tomarc21.over('562', 'copy_and_version_identification_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_copy_and_version_identification_note(self, key, value):
@@ -1673,6 +1732,8 @@ def reverse_copy_and_version_identification_note(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1695,7 +1756,7 @@ def binding_information(self, key, value):
     }
 
 
-@tomarc21.over('^563..', 'binding_information')
+@tomarc21.over('563', 'binding_information')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_binding_information(self, key, value):
@@ -1707,6 +1768,8 @@ def reverse_binding_information(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1739,12 +1802,12 @@ def case_file_characteristics_note(self, key, value):
     }
 
 
-@tomarc21.over('^565[0_8].', 'case_file_characteristics_note')
+@tomarc21.over('565', 'case_file_characteristics_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_case_file_characteristics_note(self, key, value):
     """Reverse - Case File Characteristics Note."""
-    indicator_map1 = {"Case file characteristics": "0", "File size": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Case file characteristics": "0", "File size": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('number_of_cases_variables')),
         'c': utils.reverse_force_list(value.get('unit_of_analysis')),
@@ -1754,7 +1817,8 @@ def reverse_case_file_characteristics_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -1774,17 +1838,18 @@ def methodology_note(self, key, value):
     }
 
 
-@tomarc21.over('^567[8_].', 'methodology_note')
+@tomarc21.over('567', 'methodology_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_methodology_note(self, key, value):
     """Reverse - Methodology Note."""
-    indicator_map1 = {"Methodology": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Methodology": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('methodology_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -1802,7 +1867,7 @@ def linking_entry_complexity_note(self, key, value):
     }
 
 
-@tomarc21.over('^580..', 'linking_entry_complexity_note')
+@tomarc21.over('580', 'linking_entry_complexity_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_linking_entry_complexity_note(self, key, value):
@@ -1811,6 +1876,8 @@ def reverse_linking_entry_complexity_note(self, key, value):
         'a': utils.reverse_force_list(value.get('linking_entry_complexity_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1834,19 +1901,20 @@ def publications_about_described_materials_note(self, key, value):
     }
 
 
-@tomarc21.over('^581[8_].', 'publications_about_described_materials_note')
+@tomarc21.over('581', 'publications_about_described_materials_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_publications_about_described_materials_note(self, key, value):
     """Reverse - Publications About Described Materials Note."""
-    indicator_map1 = {"No display constant generated": "8", "Publications": "#"}
+    indicator_map1 = {"No display constant generated": "8", "Publications": "_"}
     return {
         'a': utils.reverse_force_list(value.get('publications_about_described_materials_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -1914,12 +1982,12 @@ def action_note(self, key, value):
     }
 
 
-@tomarc21.over('^583[10_].', 'action_note')
+@tomarc21.over('583', 'action_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_action_note(self, key, value):
     """Reverse - Action Note."""
-    indicator_map1 = {"No information provided": "#", "Not private": "1", "Private": "0"}
+    indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
     return {
         'a': utils.reverse_force_list(value.get('action')),
         'x': utils.reverse_force_list(value.get('nonpublic_note')),
@@ -1942,7 +2010,8 @@ def reverse_action_note(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
-        '_indicator1': indicator_map1.get(value.get('privacy')),
+        '$ind1': indicator_map1.get(value.get('privacy')),
+        '$ind2': '_',
     }
 
 
@@ -1967,7 +2036,7 @@ def accumulation_and_frequency_of_use_note(self, key, value):
     }
 
 
-@tomarc21.over('^584..', 'accumulation_and_frequency_of_use_note')
+@tomarc21.over('584', 'accumulation_and_frequency_of_use_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_accumulation_and_frequency_of_use_note(self, key, value):
@@ -1979,6 +2048,8 @@ def reverse_accumulation_and_frequency_of_use_note(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1998,7 +2069,7 @@ def exhibitions_note(self, key, value):
     }
 
 
-@tomarc21.over('^585..', 'exhibitions_note')
+@tomarc21.over('585', 'exhibitions_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_exhibitions_note(self, key, value):
@@ -2009,6 +2080,8 @@ def reverse_exhibitions_note(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -2029,18 +2102,19 @@ def awards_note(self, key, value):
     }
 
 
-@tomarc21.over('^586[8_].', 'awards_note')
+@tomarc21.over('586', 'awards_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_awards_note(self, key, value):
     """Reverse - Awards Note."""
-    indicator_map1 = {"Awards": "#", "No display constant generated": "8"}
+    indicator_map1 = {"Awards": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('awards_note')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind1': indicator_map1.get(value.get('display_constant_controller')),
+        '$ind2': '_',
     }
 
 
@@ -2059,7 +2133,7 @@ def source_of_description_note(self, key, value):
     }
 
 
-@tomarc21.over('^588..', 'source_of_description_note')
+@tomarc21.over('588', 'source_of_description_note')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_source_of_description_note(self, key, value):
@@ -2069,4 +2143,6 @@ def reverse_source_of_description_note(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }

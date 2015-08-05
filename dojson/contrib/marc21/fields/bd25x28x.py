@@ -30,7 +30,7 @@ def edition_statement(self, key, value):
     }
 
 
-@tomarc21.over('^250..', 'edition_statement')
+@tomarc21.over('250', 'edition_statement')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_edition_statement(self, key, value):
@@ -41,6 +41,8 @@ def reverse_edition_statement(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'b': utils.reverse_force_list(value.get('remainder_of_edition_statement')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -57,7 +59,7 @@ def musical_presentation_statement(self, key, value):
     }
 
 
-@tomarc21.over('^254..', 'musical_presentation_statement')
+@tomarc21.over('254', 'musical_presentation_statement')
 @utils.filter_values
 def reverse_musical_presentation_statement(self, key, value):
     """Reverse - Musical Presentation Statement."""
@@ -65,6 +67,8 @@ def reverse_musical_presentation_statement(self, key, value):
         'a': utils.reverse_force_list(value.get('musical_presentation_statement')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -88,7 +92,7 @@ def cartographic_mathematical_data(self, key, value):
     }
 
 
-@tomarc21.over('^255..', 'cartographic_mathematical_data')
+@tomarc21.over('255', 'cartographic_mathematical_data')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_cartographic_mathematical_data(self, key, value):
@@ -103,6 +107,8 @@ def reverse_cartographic_mathematical_data(self, key, value):
         'f': utils.reverse_force_list(value.get('outer_g_ring_coordinate_pairs')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -119,7 +125,7 @@ def computer_file_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('^256..', 'computer_file_characteristics')
+@tomarc21.over('256', 'computer_file_characteristics')
 @utils.filter_values
 def reverse_computer_file_characteristics(self, key, value):
     """Reverse - Computer File Characteristics."""
@@ -127,6 +133,8 @@ def reverse_computer_file_characteristics(self, key, value):
         'a': utils.reverse_force_list(value.get('computer_file_characteristics')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -147,7 +155,7 @@ def country_of_producing_entity(self, key, value):
     }
 
 
-@tomarc21.over('^257..', 'country_of_producing_entity')
+@tomarc21.over('257', 'country_of_producing_entity')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_country_of_producing_entity(self, key, value):
@@ -157,6 +165,8 @@ def reverse_country_of_producing_entity(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -175,7 +185,7 @@ def philatelic_issue_data(self, key, value):
     }
 
 
-@tomarc21.over('^258..', 'philatelic_issue_data')
+@tomarc21.over('258', 'philatelic_issue_data')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_philatelic_issue_data(self, key, value):
@@ -185,6 +195,8 @@ def reverse_philatelic_issue_data(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('denomination')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -222,12 +234,12 @@ def publication_distribution_imprint(self, key, value):
     }
 
 
-@tomarc21.over('^260[_23].', 'publication_distribution_imprint')
+@tomarc21.over('260', 'publication_distribution_imprint')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_publication_distribution_imprint(self, key, value):
     """Reverse - Publication, Distribution, etc. (Imprint)."""
-    indicator_map1 = {"Current/latest publisher": "3", "Intervening publisher": "2", "Not applicable/No information provided/Earliest available publisher": "#"}
+    indicator_map1 = {"Current/latest publisher": "3", "Intervening publisher": "2", "Not applicable/No information provided/Earliest available publisher": "_"}
     return {
         'a': utils.reverse_force_list(value.get('place_of_publication_distribution')),
         'c': utils.reverse_force_list(value.get('date_of_publication_distribution')),
@@ -238,7 +250,8 @@ def reverse_publication_distribution_imprint(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('sequence_of_publishing_statements')),
+        '$ind1': indicator_map1.get(value.get('sequence_of_publishing_statements')),
+        '$ind2': '_',
     }
 
 
@@ -269,7 +282,7 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     }
 
 
-@tomarc21.over('^261..', 'imprint_statement_for_films_pre_aacr_1_revised')
+@tomarc21.over('261', 'imprint_statement_for_films_pre_aacr_1_revised')
 @utils.filter_values
 def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     """Reverse - Imprint Statement for Films (Pre-AACR 1 Revised)."""
@@ -281,6 +294,8 @@ def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
         'f': utils.reverse_force_list(value.get('place_of_production_release')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -301,7 +316,7 @@ def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     }
 
 
-@tomarc21.over('^262..', 'imprint_statement_for_sound_recordings_pre_aacr_1')
+@tomarc21.over('262', 'imprint_statement_for_sound_recordings_pre_aacr_1')
 @utils.filter_values
 def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     """Reverse - Imprint Statement for Sound Recordings (Pre-AACR 1)."""
@@ -313,6 +328,8 @@ def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
         'l': utils.reverse_force_list(value.get('matrix_and_or_take_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -329,7 +346,7 @@ def projected_publication_date(self, key, value):
     }
 
 
-@tomarc21.over('^263..', 'projected_publication_date')
+@tomarc21.over('263', 'projected_publication_date')
 @utils.filter_values
 def reverse_projected_publication_date(self, key, value):
     """Reverse - Projected Publication Date."""
@@ -337,6 +354,8 @@ def reverse_projected_publication_date(self, key, value):
         'a': utils.reverse_force_list(value.get('projected_publication_date')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -367,12 +386,12 @@ def production_publication_distribution_manufacture_and_copyright_notice(self, k
     }
 
 
-@tomarc21.over('^264[_23][10324_]', 'production_publication_distribution_manufacture_and_copyright_notice')
+@tomarc21.over('264', 'production_publication_distribution_manufacture_and_copyright_notice')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_production_publication_distribution_manufacture_and_copyright_notice(self, key, value):
     """Reverse - Production, Publication, Distribution, Manufacture, and Copyright Notice."""
-    indicator_map1 = {"Current/latest": "3", "Intervening": "2", "Not applicable/No information provided/Earliest": "#"}
+    indicator_map1 = {"Current/latest": "3", "Intervening": "2", "Not applicable/No information provided/Earliest": "_"}
     indicator_map2 = {"Copyright notice date": "4", "Distribution": "2", "Manufacture": "3", "Production": "0", "Publication": "1"}
     return {
         'a': utils.reverse_force_list(value.get('place_of_production_publication_distribution_manufacture')),
@@ -381,8 +400,8 @@ def reverse_production_publication_distribution_manufacture_and_copyright_notice
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('sequence_of_statements')),
-        '_indicator2': indicator_map2.get(value.get('function_of_entity')),
+        '$ind1': indicator_map1.get(value.get('sequence_of_statements')),
+        '$ind2': indicator_map2.get(value.get('function_of_entity')),
     }
 
 
@@ -442,12 +461,12 @@ def address(self, key, value):
     }
 
 
-@tomarc21.over('^270[1_2].', 'address')
+@tomarc21.over('270', 'address')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_address(self, key, value):
     """Reverse - Address."""
-    indicator_map1 = {"No level specified": "#", "Primary": "1", "Secondary": "2"}
+    indicator_map1 = {"No level specified": "_", "Primary": "1", "Secondary": "2"}
     return {
         'a': utils.reverse_force_list(value.get('address')),
         'c': utils.reverse_force_list(value.get('state_or_province')),
@@ -470,5 +489,6 @@ def reverse_address(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('public_note')),
-        '_indicator1': indicator_map1.get(value.get('level')),
+        '$ind1': indicator_map1.get(value.get('level')),
+        '$ind2': '_',
     }

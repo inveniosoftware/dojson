@@ -85,7 +85,7 @@ def subject_added_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('^600[103_][_10325476]', 'subject_added_entry_personal_name')
+@tomarc21.over('600', 'subject_added_entry_personal_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_personal_name(self, key, value):
@@ -123,8 +123,8 @@ def reverse_subject_added_entry_personal_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element')),
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -197,7 +197,7 @@ def subject_added_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('^610[10_2][_10325476]', 'subject_added_entry_corporate_name')
+@tomarc21.over('610', 'subject_added_entry_corporate_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_corporate_name(self, key, value):
@@ -233,8 +233,8 @@ def reverse_subject_added_entry_corporate_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element')),
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -301,7 +301,7 @@ def subject_added_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('^611[10_2][_10325476]', 'subject_added_entry_meeting_name')
+@tomarc21.over('611', 'subject_added_entry_meeting_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_meeting_name(self, key, value):
@@ -335,8 +335,8 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element')),
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -404,7 +404,7 @@ def subject_added_entry_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('^630[_1032547698][_10325476]', 'subject_added_entry_uniform_title')
+@tomarc21.over('630', 'subject_added_entry_uniform_title')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_uniform_title(self, key, value):
@@ -437,8 +437,8 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         'x': utils.reverse_force_list(value.get('general_subdivision')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('nonfiling_characters')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': indicator_map1.get(value.get('nonfiling_characters')),
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -477,12 +477,12 @@ def subject_added_entry_chronological_term(self, key, value):
     }
 
 
-@tomarc21.over('^648[10_][_10325476]', 'subject_added_entry_chronological_term')
+@tomarc21.over('648', 'subject_added_entry_chronological_term')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_chronological_term(self, key, value):
     """Reverse - Subject Added Entry-Chronological Term."""
-    indicator_map1 = {"Date or time period covered or depicted": "0", "Date or time period of creation or origin": "1", "No information provided": "#"}
+    indicator_map1 = {"Date or time period covered or depicted": "0", "Date or time period of creation or origin": "1", "No information provided": "_"}
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00c3\u00a9pertoire de vedettes-mati\u00c3\u00a8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('chronological_term')),
@@ -495,8 +495,8 @@ def reverse_subject_added_entry_chronological_term(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('type_of_date_or_time_period')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': indicator_map1.get(value.get('type_of_date_or_time_period')),
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -544,12 +544,12 @@ def subject_added_entry_topical_term(self, key, value):
     }
 
 
-@tomarc21.over('^650[10_2][_10325476]', 'subject_added_entry_topical_term')
+@tomarc21.over('650', 'subject_added_entry_topical_term')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_topical_term(self, key, value):
     """Reverse - Subject Added Entry-Topical Term."""
-    indicator_map1 = {"No information provided": "#", "No level specified": "0", "Primary": "1", "Secondary": "2"}
+    indicator_map1 = {"No information provided": "_", "No level specified": "0", "Primary": "1", "Secondary": "2"}
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('topical_term_or_geographic_name_entry_element')),
@@ -567,8 +567,8 @@ def reverse_subject_added_entry_topical_term(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('level_of_subject')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': indicator_map1.get(value.get('level_of_subject')),
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -611,7 +611,7 @@ def subject_added_entry_geographic_name(self, key, value):
     }
 
 
-@tomarc21.over('^651.[_10325476]', 'subject_added_entry_geographic_name')
+@tomarc21.over('651', 'subject_added_entry_geographic_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_geographic_name(self, key, value):
@@ -630,7 +630,8 @@ def reverse_subject_added_entry_geographic_name(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': '_',
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -654,19 +655,19 @@ def index_term_uncontrolled(self, key, value):
     }
 
 
-@tomarc21.over('^653[10_2][_1032546]', 'index_term_uncontrolled')
+@tomarc21.over('653', 'index_term_uncontrolled')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_uncontrolled(self, key, value):
     """Reverse - Index Term-Uncontrolled."""
-    indicator_map1 = {"No information provided": "#", "No level specified": "0", "Primary": "1", "Secondary": "2"}
-    indicator_map2 = {"Chronological term": "4", "Corporate name": "2", "Genre/form term": "6", "Geographic name": "5", "Meeting name": "3", "No information provided": "#", "Personal name": "1", "Topical term": "0"}
+    indicator_map1 = {"No information provided": "_", "No level specified": "0", "Primary": "1", "Secondary": "2"}
+    indicator_map2 = {"Chronological term": "4", "Corporate name": "2", "Genre/form term": "6", "Geographic name": "5", "Meeting name": "3", "No information provided": "_", "Personal name": "1", "Topical term": "0"}
     return {
         'a': utils.reverse_force_list(value.get('uncontrolled_term')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('level_of_index_term')),
-        '_indicator2': indicator_map2.get(value.get('type_of_term_or_name')),
+        '$ind1': indicator_map1.get(value.get('level_of_index_term')),
+        '$ind2': indicator_map2.get(value.get('type_of_term_or_name')),
     }
 
 
@@ -714,12 +715,12 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
     }
 
 
-@tomarc21.over('^654[10_2].', 'subject_added_entry_faceted_topical_terms')
+@tomarc21.over('654', 'subject_added_entry_faceted_topical_terms')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
     """Reverse - Subject Added Entry-Faceted Topical Terms."""
-    indicator_map1 = {"No information provided": "#", "No level specified": "0", "Primary": "1", "Secondary": "2"}
+    indicator_map1 = {"No information provided": "_", "No level specified": "0", "Primary": "1", "Secondary": "2"}
     return {
         'a': utils.reverse_force_list(value.get('focus_term')),
         'c': utils.reverse_force_list(value.get('facet_hierarchy_designation')),
@@ -734,7 +735,8 @@ def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('level_of_subject')),
+        '$ind1': indicator_map1.get(value.get('level_of_subject')),
+        '$ind2': '_',
     }
 
 
@@ -780,12 +782,12 @@ def index_term_genre_form(self, key, value):
     }
 
 
-@tomarc21.over('^655[0_][_10325476]', 'index_term_genre_form')
+@tomarc21.over('655', 'index_term_genre_form')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_genre_form(self, key, value):
     """Reverse - Index Term-Genre/Form."""
-    indicator_map1 = {"Basic": "#", "Faceted": "0"}
+    indicator_map1 = {"Basic": "_", "Faceted": "0"}
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\u00e9pertoire de vedettes-mati\u00e8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('genre_form_data_or_focus_term')),
@@ -801,8 +803,8 @@ def reverse_index_term_genre_form(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
-        '_indicator1': indicator_map1.get(value.get('type_of_heading')),
-        '_indicator2': indicator_map2.get(value.get('thesaurus')),
+        '$ind1': indicator_map1.get(value.get('type_of_heading')),
+        '$ind2': indicator_map2.get(value.get('thesaurus')),
     }
 
 
@@ -838,7 +840,7 @@ def index_term_occupation(self, key, value):
     }
 
 
-@tomarc21.over('^656..', 'index_term_occupation')
+@tomarc21.over('656', 'index_term_occupation')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_occupation(self, key, value):
@@ -855,6 +857,8 @@ def reverse_index_term_occupation(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -889,7 +893,7 @@ def index_term_function(self, key, value):
     }
 
 
-@tomarc21.over('^657..', 'index_term_function')
+@tomarc21.over('657', 'index_term_function')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_function(self, key, value):
@@ -905,6 +909,8 @@ def reverse_index_term_function(self, key, value):
         'y': utils.reverse_force_list(value.get('chronological_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('geographic_subdivision')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -928,7 +934,7 @@ def index_term_curriculum_objective(self, key, value):
     }
 
 
-@tomarc21.over('^658..', 'index_term_curriculum_objective')
+@tomarc21.over('658', 'index_term_curriculum_objective')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_curriculum_objective(self, key, value):
@@ -941,6 +947,8 @@ def reverse_index_term_curriculum_objective(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_term_or_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -984,7 +992,7 @@ def subject_added_entry_hierarchical_place_name(self, key, value):
     }
 
 
-@tomarc21.over('^662..', 'subject_added_entry_hierarchical_place_name')
+@tomarc21.over('662', 'subject_added_entry_hierarchical_place_name')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_hierarchical_place_name(self, key, value):
@@ -1003,4 +1011,6 @@ def reverse_subject_added_entry_hierarchical_place_name(self, key, value):
         '4': utils.reverse_force_list(value.get('relator_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }

@@ -19,7 +19,7 @@ def control_number(self, key, value):
     """Control Number."""
     return value[0]
 
-@tomarc21.over('^001', 'control_number')
+@tomarc21.over('001', 'control_number')
 def reverse_control_number(self, key, value):
     """Reverse - Control Number."""
     return [value]
@@ -30,7 +30,7 @@ def control_number_identifier(self, key, value):
     """Control Number Identifier."""
     return value[0]
 
-@tomarc21.over('^003', 'control_number_identifier')
+@tomarc21.over('003', 'control_number_identifier')
 def reverse_control_number_identifier(self, key, value):
     """Reverse - Control Number Identifier."""
     return [value]
@@ -41,7 +41,7 @@ def date_and_time_of_latest_transaction(self, key, value):
     """Date and Time of Latest Transaction."""
     return value[0]
 
-@tomarc21.over('^005', 'date_and_time_of_latest_transaction')
+@tomarc21.over('005', 'date_and_time_of_latest_transaction')
 def reverse_date_and_time_of_latest_transaction(self, key, value):
     """Reverse - Date and Time of Latest Transaction."""
     return [value]
@@ -52,7 +52,7 @@ def fixed_length_data_elements_additional_material_characteristics(self, key, va
     """Fixed-Length Data Elements-Additional Material Characteristics."""
     return value[0]
 
-@tomarc21.over('^006', 'fixed_length_data_elements_additional_material_characteristics')
+@tomarc21.over('006', 'fixed_length_data_elements_additional_material_characteristics')
 def reverse_fixed_length_data_elements_additional_material_characteristics(self, key, value):
     """Reverse - Fixed-Length Data Elements-Additional Material Characteristics."""
     return [value]
@@ -63,7 +63,7 @@ def fixed_length_data_elements(self, key, value):
     """Fixed-Length Data Elements."""
     return value[0]
 
-@tomarc21.over('^008', 'fixed_length_data_elements')
+@tomarc21.over('008', 'fixed_length_data_elements')
 def reverse_fixed_length_data_elements(self, key, value):
     """Reverse - Fixed-Length Data Elements."""
     return [value]

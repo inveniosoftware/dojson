@@ -32,7 +32,7 @@ def library_of_congress_control_number(self, key, value):
     }
 
 
-@tomarc21.over('^010..', 'library_of_congress_control_number')
+@tomarc21.over('010', 'library_of_congress_control_number')
 @utils.filter_values
 def reverse_library_of_congress_control_number(self, key, value):
     """Reverse - Library of Congress Control Number."""
@@ -41,6 +41,8 @@ def reverse_library_of_congress_control_number(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('nucmc_control_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_lc_control_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -69,7 +71,7 @@ def patent_control_information(self, key, value):
     }
 
 
-@tomarc21.over('^013..', 'patent_control_information')
+@tomarc21.over('013', 'patent_control_information')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_patent_control_information(self, key, value):
@@ -83,6 +85,8 @@ def reverse_patent_control_information(self, key, value):
         'f': utils.reverse_force_list(value.get('party_to_document')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -109,7 +113,7 @@ def national_bibliography_number(self, key, value):
     }
 
 
-@tomarc21.over('^015..', 'national_bibliography_number')
+@tomarc21.over('015', 'national_bibliography_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_bibliography_number(self, key, value):
@@ -121,6 +125,8 @@ def reverse_national_bibliography_number(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_national_bibliography_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -143,18 +149,19 @@ def national_bibliographic_agency_control_number(self, key, value):
     }
 
 
-@tomarc21.over('^016[_7].', 'national_bibliographic_agency_control_number')
+@tomarc21.over('016', 'national_bibliographic_agency_control_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_bibliographic_agency_control_number(self, key, value):
     """Reverse - National Bibliographic Agency Control Number."""
-    indicator_map1 = {"Library and Archives Canada": "#", "Source specified in subfield $2": "7"}
+    indicator_map1 = {"Library and Archives Canada": "_", "Source specified in subfield $2": "7"}
     return {
         'a': utils.reverse_force_list(value.get('record_control_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_control_number')),
-        '_indicator1': indicator_map1.get(value.get('national_bibliographic_agency')),
+        '$ind1': indicator_map1.get(value.get('national_bibliographic_agency')),
+        '$ind2': '_',
     }
 
 
@@ -183,12 +190,12 @@ def copyright_or_legal_deposit_number(self, key, value):
     }
 
 
-@tomarc21.over('^017.[8_]', 'copyright_or_legal_deposit_number')
+@tomarc21.over('017', 'copyright_or_legal_deposit_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_copyright_or_legal_deposit_number(self, key, value):
     """Reverse - Copyright or Legal Deposit Number."""
-    indicator_map2 = {"Copyright or legal deposit number": "#", "No display constant generated": "8"}
+    indicator_map2 = {"Copyright or legal deposit number": "_", "No display constant generated": "8"}
     return {
         'a': utils.reverse_force_list(value.get('copyright_or_legal_deposit_number')),
         'b': utils.reverse_force_list(value.get('assigning_agency')),
@@ -198,7 +205,8 @@ def reverse_copyright_or_legal_deposit_number(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_copyright_or_legal_deposit_number')),
-        '_indicator2': indicator_map2.get(value.get('display_constant_controller')),
+        '$ind1': '_',
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -217,7 +225,7 @@ def copyright_article_fee_code(self, key, value):
     }
 
 
-@tomarc21.over('^018..', 'copyright_article_fee_code')
+@tomarc21.over('018', 'copyright_article_fee_code')
 @utils.filter_values
 def reverse_copyright_article_fee_code(self, key, value):
     """Reverse - Copyright Article-Fee Code."""
@@ -225,6 +233,8 @@ def reverse_copyright_article_fee_code(self, key, value):
         'a': utils.reverse_force_list(value.get('copyright_article_fee_code_nr')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -249,7 +259,7 @@ def international_standard_book_number(self, key, value):
     }
 
 
-@tomarc21.over('^020..', 'international_standard_book_number')
+@tomarc21.over('020', 'international_standard_book_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_international_standard_book_number(self, key, value):
@@ -261,6 +271,8 @@ def reverse_international_standard_book_number(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_isbn')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -291,12 +303,12 @@ def international_standard_serial_number(self, key, value):
     }
 
 
-@tomarc21.over('^022[10_].', 'international_standard_serial_number')
+@tomarc21.over('022', 'international_standard_serial_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_international_standard_serial_number(self, key, value):
     """Reverse - International Standard Serial Number."""
-    indicator_map1 = {"Continuing resource not of international interest": "1", "Continuing resource of international interest": "0", "No level specified": "#"}
+    indicator_map1 = {"Continuing resource not of international interest": "1", "Continuing resource of international interest": "0", "No level specified": "_"}
     return {
         'a': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'm': utils.reverse_force_list(value.get('canceled_issn_l')),
@@ -306,7 +318,8 @@ def reverse_international_standard_serial_number(self, key, value):
         'y': utils.reverse_force_list(value.get('incorrect_issn')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_issn')),
-        '_indicator1': indicator_map1.get(value.get('level_of_international_interest')),
+        '$ind1': indicator_map1.get(value.get('level_of_international_interest')),
+        '$ind2': '_',
     }
 
 
@@ -337,13 +350,13 @@ def other_standard_identifier(self, key, value):
     }
 
 
-@tomarc21.over('^024[1032478_][10_]', 'other_standard_identifier')
+@tomarc21.over('024', 'other_standard_identifier')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_standard_identifier(self, key, value):
     """Reverse - Other Standard Identifier."""
     indicator_map1 = {"International Article Number": "3", "International Standard Music Number": "2", "International Standard Recording Code": "0", "Serial Item and Contribution Identifier": "4", "Source specified in subfield $2": "7", "Universal Product Code": "1", "Unspecified type of standard number or code": "8"}
-    indicator_map2 = {"Difference": "1", "No difference": "0", "No information provided": "#"}
+    indicator_map2 = {"Difference": "1", "No difference": "0", "No information provided": "_"}
     return {
         'a': utils.reverse_force_list(value.get('standard_number_or_code')),
         'c': utils.reverse_force_list(value.get('terms_of_availability')),
@@ -353,8 +366,8 @@ def reverse_other_standard_identifier(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_standard_number_or_code')),
-        '_indicator1': indicator_map1.get(value.get('type_of_standard_number_or_code')),
-        '_indicator2': indicator_map2.get(value.get('difference_indicator')),
+        '$ind1': indicator_map1.get(value.get('type_of_standard_number_or_code')),
+        '$ind2': indicator_map2.get(value.get('difference_indicator')),
     }
 
 
@@ -373,7 +386,7 @@ def overseas_acquisition_number(self, key, value):
     }
 
 
-@tomarc21.over('^025..', 'overseas_acquisition_number')
+@tomarc21.over('025', 'overseas_acquisition_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_overseas_acquisition_number(self, key, value):
@@ -381,6 +394,8 @@ def reverse_overseas_acquisition_number(self, key, value):
     return {
         'a': utils.reverse_force_list(value.get('overseas_acquisition_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -408,7 +423,7 @@ def fingerprint_identifier(self, key, value):
     }
 
 
-@tomarc21.over('^026..', 'fingerprint_identifier')
+@tomarc21.over('026', 'fingerprint_identifier')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_fingerprint_identifier(self, key, value):
@@ -423,6 +438,8 @@ def reverse_fingerprint_identifier(self, key, value):
         '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -446,7 +463,7 @@ def standard_technical_report_number(self, key, value):
     }
 
 
-@tomarc21.over('^027..', 'standard_technical_report_number')
+@tomarc21.over('027', 'standard_technical_report_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_standard_technical_report_number(self, key, value):
@@ -457,6 +474,8 @@ def reverse_standard_technical_report_number(self, key, value):
         'z': utils.reverse_force_list(value.get('canceled_invalid_number')),
         'q': utils.reverse_force_list(value.get('qualifying_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -482,7 +501,7 @@ def publisher_number(self, key, value):
     }
 
 
-@tomarc21.over('^028[103254_][1032_]', 'publisher_number')
+@tomarc21.over('028', 'publisher_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_publisher_number(self, key, value):
@@ -495,8 +514,8 @@ def reverse_publisher_number(self, key, value):
         'b': utils.reverse_force_list(value.get('source')),
         'q': utils.reverse_force_list(value.get('qualifying_information')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('type_of_publisher_number')),
-        '_indicator2': indicator_map2.get(value.get('note_added_entry_controller')),
+        '$ind1': indicator_map1.get(value.get('type_of_publisher_number')),
+        '$ind2': indicator_map2.get(value.get('note_added_entry_controller')),
     }
 
 
@@ -517,7 +536,7 @@ def coden_designation(self, key, value):
     }
 
 
-@tomarc21.over('^030..', 'coden_designation')
+@tomarc21.over('030', 'coden_designation')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_coden_designation(self, key, value):
@@ -527,6 +546,8 @@ def reverse_coden_designation(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_coden')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -575,7 +596,7 @@ def musical_incipits_information(self, key, value):
     }
 
 
-@tomarc21.over('^031..', 'musical_incipits_information')
+@tomarc21.over('031', 'musical_incipits_information')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_musical_incipits_information(self, key, value):
@@ -601,6 +622,8 @@ def reverse_musical_incipits_information(self, key, value):
         'y': utils.reverse_force_list(value.get('link_text')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'r': utils.reverse_force_list(value.get('key_or_mode')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -619,7 +642,7 @@ def postal_registration_number(self, key, value):
     }
 
 
-@tomarc21.over('^032..', 'postal_registration_number')
+@tomarc21.over('032', 'postal_registration_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_postal_registration_number(self, key, value):
@@ -629,6 +652,8 @@ def reverse_postal_registration_number(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('source_agency_assigning_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -668,13 +693,13 @@ def date_time_and_place_of_an_event(self, key, value):
     }
 
 
-@tomarc21.over('^033[10_2][10_2]', 'date_time_and_place_of_an_event')
+@tomarc21.over('033', 'date_time_and_place_of_an_event')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_date_time_and_place_of_an_event(self, key, value):
     """Reverse - Date/Time and Place of an Event."""
-    indicator_map1 = {"Multiple single dates ": "1", "No date information ": "#", "Range of dates ": "2", "Single date ": "0"}
-    indicator_map2 = {"Broadcast ": "1", "Capture ": "0", "Finding ": "2", "No information provided ": "#"}
+    indicator_map1 = {"Multiple single dates ": "1", "No date information ": "_", "Range of dates ": "2", "Single date ": "0"}
+    indicator_map2 = {"Broadcast ": "1", "Capture ": "0", "Finding ": "2", "No information provided ": "_"}
     return {
         'a': utils.reverse_force_list(value.get('formatted_date_time')),
         'c': utils.reverse_force_list(value.get('geographic_classification_subarea_code')),
@@ -685,8 +710,8 @@ def reverse_date_time_and_place_of_an_event(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_term')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('type_of_date_in_subfield_a')),
-        '_indicator2': indicator_map2.get(value.get('type_of_event')),
+        '$ind1': indicator_map1.get(value.get('type_of_date_in_subfield_a')),
+        '$ind2': indicator_map2.get(value.get('type_of_event')),
     }
 
 
@@ -741,13 +766,13 @@ def coded_cartographic_mathematical_data(self, key, value):
     }
 
 
-@tomarc21.over('^034[103_][10_]', 'coded_cartographic_mathematical_data')
+@tomarc21.over('034', 'coded_cartographic_mathematical_data')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_coded_cartographic_mathematical_data(self, key, value):
     """Reverse - Coded Cartographic Mathematical Data."""
     indicator_map1 = {"Range of scales": "3", "Scale indeterminable/No scale recorded": "0", "Single scale": "1"}
-    indicator_map2 = {"Exclusion ring": "1", "Not applicable": "#", "Outer ring": "0"}
+    indicator_map2 = {"Exclusion ring": "1", "Not applicable": "_", "Outer ring": "0"}
     return {
         '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -773,8 +798,8 @@ def reverse_coded_cartographic_mathematical_data(self, key, value):
         'y': utils.reverse_force_list(value.get('ending_date')),
         'x': utils.reverse_force_list(value.get('beginning_date')),
         'z': utils.reverse_force_list(value.get('name_of_extraterrestrial_body')),
-        '_indicator1': indicator_map1.get(value.get('type_of_scale')),
-        '_indicator2': indicator_map2.get(value.get('type_of_ring')),
+        '$ind1': indicator_map1.get(value.get('type_of_scale')),
+        '$ind2': indicator_map2.get(value.get('type_of_ring')),
     }
 
 
@@ -795,7 +820,7 @@ def system_control_number(self, key, value):
     }
 
 
-@tomarc21.over('^035..', 'system_control_number')
+@tomarc21.over('035', 'system_control_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_system_control_number(self, key, value):
@@ -805,6 +830,8 @@ def reverse_system_control_number(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_control_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -822,7 +849,7 @@ def original_study_number_for_computer_data_files(self, key, value):
     }
 
 
-@tomarc21.over('^036..', 'original_study_number_for_computer_data_files')
+@tomarc21.over('036', 'original_study_number_for_computer_data_files')
 @utils.filter_values
 def reverse_original_study_number_for_computer_data_files(self, key, value):
     """Reverse - Original Study Number for Computer Data Files."""
@@ -831,6 +858,8 @@ def reverse_original_study_number_for_computer_data_files(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('source_agency_assigning_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -861,7 +890,7 @@ def source_of_acquisition(self, key, value):
     }
 
 
-@tomarc21.over('^037..', 'source_of_acquisition')
+@tomarc21.over('037', 'source_of_acquisition')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_source_of_acquisition(self, key, value):
@@ -875,6 +904,8 @@ def reverse_source_of_acquisition(self, key, value):
         'n': utils.reverse_force_list(value.get('note')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -891,7 +922,7 @@ def record_content_licensor(self, key, value):
     }
 
 
-@tomarc21.over('^038..', 'record_content_licensor')
+@tomarc21.over('038', 'record_content_licensor')
 @utils.filter_values
 def reverse_record_content_licensor(self, key, value):
     """Reverse - Record Content Licensor."""
@@ -899,6 +930,8 @@ def reverse_record_content_licensor(self, key, value):
         'a': utils.reverse_force_list(value.get('record_content_licensor')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -923,7 +956,7 @@ def cataloging_source(self, key, value):
     }
 
 
-@tomarc21.over('^040..', 'cataloging_source')
+@tomarc21.over('040', 'cataloging_source')
 @utils.filter_values
 def reverse_cataloging_source(self, key, value):
     """Reverse - Cataloging Source."""
@@ -935,6 +968,8 @@ def reverse_cataloging_source(self, key, value):
         'd': utils.reverse_force_list(value.get('modifying_agency')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -987,12 +1022,12 @@ def language_code(self, key, value):
     }
 
 
-@tomarc21.over('^041[10_].', 'language_code')
+@tomarc21.over('041', 'language_code')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_language_code(self, key, value):
     """Reverse - Language Code."""
-    indicator_map1 = {"Item is or includes a translation": "1", "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation": "0", "No information provided": "#"}
+    indicator_map1 = {"Item is or includes a translation": "1", "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation": "0", "No information provided": "_"}
     return {
         'a': utils.reverse_force_list(value.get('language_code_of_text_sound_track_or_separate_title')),
         'b': utils.reverse_force_list(value.get('language_code_of_summary_or_abstract')),
@@ -1008,7 +1043,8 @@ def reverse_language_code(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('translation_indication')),
+        '$ind1': indicator_map1.get(value.get('translation_indication')),
+        '$ind2': '_',
     }
 
 
@@ -1023,12 +1059,14 @@ def authentication_code(self, key, value):
     }
 
 
-@tomarc21.over('^042..', 'authentication_code')
+@tomarc21.over('042', 'authentication_code')
 @utils.filter_values
 def reverse_authentication_code(self, key, value):
     """Reverse - Authentication Code."""
     return {
         'a': utils.reverse_force_list(value.get('authentication_code')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1059,7 +1097,7 @@ def geographic_area_code(self, key, value):
     }
 
 
-@tomarc21.over('^043..', 'geographic_area_code')
+@tomarc21.over('043', 'geographic_area_code')
 @utils.filter_values
 def reverse_geographic_area_code(self, key, value):
     """Reverse - Geographic Area Code."""
@@ -1071,6 +1109,8 @@ def reverse_geographic_area_code(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_local_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1098,7 +1138,7 @@ def country_of_publishing_producing_entity_code(self, key, value):
     }
 
 
-@tomarc21.over('^044..', 'country_of_publishing_producing_entity_code')
+@tomarc21.over('044', 'country_of_publishing_producing_entity_code')
 @utils.filter_values
 def reverse_country_of_publishing_producing_entity_code(self, key, value):
     """Reverse - Country of Publishing/Producing Entity Code."""
@@ -1109,6 +1149,8 @@ def reverse_country_of_publishing_producing_entity_code(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_local_subentity_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1135,18 +1177,19 @@ def time_period_of_content(self, key, value):
     }
 
 
-@tomarc21.over('^045[10_2].', 'time_period_of_content')
+@tomarc21.over('045', 'time_period_of_content')
 @utils.filter_values
 def reverse_time_period_of_content(self, key, value):
     """Reverse - Time Period of Content."""
-    indicator_map1 = {"Multiple single dates/times": "1", "Range of dates/times": "2", "Single date/time": "0", "Subfield $b or $c not present": "#"}
+    indicator_map1 = {"Multiple single dates/times": "1", "Range of dates/times": "2", "Single date/time": "0", "Subfield $b or $c not present": "_"}
     return {
         'a': utils.reverse_force_list(value.get('time_period_code')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'c': utils.reverse_force_list(value.get('formatted_pre_9999_bc_time_period')),
         'b': utils.reverse_force_list(value.get('formatted_9999_bc_through_ce_time_period')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('type_of_time_period_in_subfield_b_or_c')),
+        '$ind1': indicator_map1.get(value.get('type_of_time_period_in_subfield_b_or_c')),
+        '$ind2': '_',
     }
 
 
@@ -1176,7 +1219,7 @@ def special_coded_dates(self, key, value):
     }
 
 
-@tomarc21.over('^046..', 'special_coded_dates')
+@tomarc21.over('046', 'special_coded_dates')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_special_coded_dates(self, key, value):
@@ -1197,6 +1240,8 @@ def reverse_special_coded_dates(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_date')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1216,7 +1261,7 @@ def form_of_musical_composition_code(self, key, value):
     }
 
 
-@tomarc21.over('^047..', 'form_of_musical_composition_code')
+@tomarc21.over('047', 'form_of_musical_composition_code')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_form_of_musical_composition_code(self, key, value):
@@ -1225,6 +1270,8 @@ def reverse_form_of_musical_composition_code(self, key, value):
         'a': utils.reverse_force_list(value.get('form_of_musical_composition_code')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source_of_code')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1247,7 +1294,7 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
     }
 
 
-@tomarc21.over('^048..', 'number_of_musical_instruments_or_voices_code')
+@tomarc21.over('048', 'number_of_musical_instruments_or_voices_code')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_number_of_musical_instruments_or_voices_code(self, key, value):
@@ -1257,6 +1304,8 @@ def reverse_number_of_musical_instruments_or_voices_code(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '2': utils.reverse_force_list(value.get('source_of_code')),
         'b': utils.reverse_force_list(value.get('soloist')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1282,12 +1331,12 @@ def library_of_congress_call_number(self, key, value):
     }
 
 
-@tomarc21.over('^050[10_][0_4]', 'library_of_congress_call_number')
+@tomarc21.over('050', 'library_of_congress_call_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_library_of_congress_call_number(self, key, value):
     """Reverse - Library of Congress Call Number."""
-    indicator_map1 = {"Item is in LC": "0", "Item is not in LC": "1", "No information provided": "#"}
+    indicator_map1 = {"Item is in LC": "0", "Item is not in LC": "1", "No information provided": "_"}
     indicator_map2 = {"Assigned by LC": "0", "Assigned by agency other than LC": "4"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
@@ -1295,8 +1344,8 @@ def reverse_library_of_congress_call_number(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         'b': utils.reverse_force_list(value.get('item_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('existence_in_lc_collection')),
-        '_indicator2': indicator_map2.get(value.get('source_of_call_number')),
+        '$ind1': indicator_map1.get(value.get('existence_in_lc_collection')),
+        '$ind2': indicator_map2.get(value.get('source_of_call_number')),
     }
 
 
@@ -1315,7 +1364,7 @@ def library_of_congress_copy_issue_offprint_statement(self, key, value):
     }
 
 
-@tomarc21.over('^051..', 'library_of_congress_copy_issue_offprint_statement')
+@tomarc21.over('051', 'library_of_congress_copy_issue_offprint_statement')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_library_of_congress_copy_issue_offprint_statement(self, key, value):
@@ -1325,6 +1374,8 @@ def reverse_library_of_congress_copy_issue_offprint_statement(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'c': utils.reverse_force_list(value.get('copy_information')),
         'b': utils.reverse_force_list(value.get('item_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1349,7 +1400,7 @@ def geographic_classification(self, key, value):
     }
 
 
-@tomarc21.over('^052..', 'geographic_classification')
+@tomarc21.over('052', 'geographic_classification')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_geographic_classification(self, key, value):
@@ -1361,6 +1412,8 @@ def reverse_geographic_classification(self, key, value):
         '2': utils.reverse_force_list(value.get('code_source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1384,12 +1437,12 @@ def classification_numbers_assigned_in_canada(self, key, value):
     }
 
 
-@tomarc21.over('^055[10_][_1032547698]', 'classification_numbers_assigned_in_canada')
+@tomarc21.over('055', 'classification_numbers_assigned_in_canada')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_classification_numbers_assigned_in_canada(self, key, value):
     """Reverse - Classification Numbers Assigned in Canada."""
-    indicator_map1 = {"Information not provided": "#", "Work held by LAC": "0", "Work not held by LAC": "1"}
+    indicator_map1 = {"Information not provided": "_", "Work held by LAC": "0", "Work not held by LAC": "1"}
     indicator_map2 = {"Complete LC class number assigned by LAC": "1", "Complete LC class number assigned by the contributing library": "4", "Incomplete LC class number assigned by LAC": "2", "Incomplete LC class number assigned by the contributing library": "5", "LC-based call number assigned by LAC": "0", "LC-based call number assigned by the contributing library": "3", "Other call number assigned by LAC": "6", "Other call number assigned by the contributing library": "8", "Other class number assigned by LAC": "7", "Other class number assigned by the contributing library": "9"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
@@ -1397,8 +1450,8 @@ def reverse_classification_numbers_assigned_in_canada(self, key, value):
         '2': utils.reverse_force_list(value.get('source_of_call_class_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
-        '_indicator1': indicator_map1.get(value.get('existence_in_lac_collection')),
-        '_indicator2': indicator_map2.get(value.get('type_completeness_source_of_class_call_number')),
+        '$ind1': indicator_map1.get(value.get('existence_in_lac_collection')),
+        '$ind2': indicator_map2.get(value.get('type_completeness_source_of_class_call_number')),
     }
 
 
@@ -1422,19 +1475,19 @@ def national_library_of_medicine_call_number(self, key, value):
     }
 
 
-@tomarc21.over('^060[10_][0_4]', 'national_library_of_medicine_call_number')
+@tomarc21.over('060', 'national_library_of_medicine_call_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_library_of_medicine_call_number(self, key, value):
     """Reverse - National Library of Medicine Call Number."""
-    indicator_map1 = {"Item is in NLM": "0", "Item is not in NLM": "1", "No information provided": "#"}
+    indicator_map1 = {"Item is in NLM": "0", "Item is not in NLM": "1", "No information provided": "_"}
     indicator_map2 = {"Assigned by NLM": "0", "Assigned by agency other than NLM": "4"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number_r')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
-        '_indicator1': indicator_map1.get(value.get('existence_in_nlm_collection')),
-        '_indicator2': indicator_map2.get(value.get('source_of_call_number')),
+        '$ind1': indicator_map1.get(value.get('existence_in_nlm_collection')),
+        '$ind2': indicator_map2.get(value.get('source_of_call_number')),
     }
 
 
@@ -1455,7 +1508,7 @@ def national_library_of_medicine_copy_statement(self, key, value):
     }
 
 
-@tomarc21.over('^061..', 'national_library_of_medicine_copy_statement')
+@tomarc21.over('061', 'national_library_of_medicine_copy_statement')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_library_of_medicine_copy_statement(self, key, value):
@@ -1465,6 +1518,8 @@ def reverse_national_library_of_medicine_copy_statement(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'c': utils.reverse_force_list(value.get('copy_information')),
         'b': utils.reverse_force_list(value.get('item_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1481,7 +1536,7 @@ def character_sets_present(self, key, value):
     }
 
 
-@tomarc21.over('^066..', 'character_sets_present')
+@tomarc21.over('066', 'character_sets_present')
 @utils.filter_values
 def reverse_character_sets_present(self, key, value):
     """Reverse - Character Sets Present."""
@@ -1489,6 +1544,8 @@ def reverse_character_sets_present(self, key, value):
         'a': utils.reverse_force_list(value.get('primary_g0_character_set')),
         'c': utils.reverse_force_list(value.get('alternate_g0_or_g1_character_set')),
         'b': utils.reverse_force_list(value.get('primary_g1_character_set')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1510,7 +1567,7 @@ def national_agricultural_library_call_number(self, key, value):
     }
 
 
-@tomarc21.over('^070[10_].', 'national_agricultural_library_call_number')
+@tomarc21.over('070', 'national_agricultural_library_call_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_agricultural_library_call_number(self, key, value):
@@ -1520,7 +1577,8 @@ def reverse_national_agricultural_library_call_number(self, key, value):
         'a': utils.reverse_force_list(value.get('classification_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number_r')),
         'b': utils.reverse_force_list(value.get('item_number')),
-        '_indicator1': indicator_map1.get(value.get('existence_in_nal_collection')),
+        '$ind1': indicator_map1.get(value.get('existence_in_nal_collection')),
+        '$ind2': '_',
     }
 
 
@@ -1543,7 +1601,7 @@ def national_agricultural_library_copy_statement(self, key, value):
     }
 
 
-@tomarc21.over('^071..', 'national_agricultural_library_copy_statement')
+@tomarc21.over('071', 'national_agricultural_library_copy_statement')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_agricultural_library_copy_statement(self, key, value):
@@ -1553,6 +1611,8 @@ def reverse_national_agricultural_library_copy_statement(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'c': utils.reverse_force_list(value.get('copy_information')),
         'b': utils.reverse_force_list(value.get('item_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1574,7 +1634,7 @@ def subject_category_code(self, key, value):
     }
 
 
-@tomarc21.over('^072..', 'subject_category_code')
+@tomarc21.over('072', 'subject_category_code')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_category_code(self, key, value):
@@ -1585,6 +1645,8 @@ def reverse_subject_category_code(self, key, value):
         '2': utils.reverse_force_list(value.get('source')),
         'x': utils.reverse_force_list(value.get('subject_category_code_subdivision')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1604,7 +1666,7 @@ def gpo_item_number(self, key, value):
     }
 
 
-@tomarc21.over('^074..', 'gpo_item_number')
+@tomarc21.over('074', 'gpo_item_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_gpo_item_number(self, key, value):
@@ -1613,6 +1675,8 @@ def reverse_gpo_item_number(self, key, value):
         'a': utils.reverse_force_list(value.get('gpo_item_number')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_gpo_item_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1637,12 +1701,12 @@ def universal_decimal_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('^080[10_].', 'universal_decimal_classification_number')
+@tomarc21.over('080', 'universal_decimal_classification_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_universal_decimal_classification_number(self, key, value):
     """Reverse - Universal Decimal Classification Number."""
-    indicator_map1 = {"Abridged": "1", "Full": "0", "No information provided": "#"}
+    indicator_map1 = {"Abridged": "1", "Full": "0", "No information provided": "_"}
     return {
         'a': utils.reverse_force_list(value.get('universal_decimal_classification_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
@@ -1650,7 +1714,8 @@ def reverse_universal_decimal_classification_number(self, key, value):
         '2': utils.reverse_force_list(value.get('edition_identifier')),
         'x': utils.reverse_force_list(value.get('common_auxiliary_subdivision')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('type_of_edition')),
+        '$ind1': indicator_map1.get(value.get('type_of_edition')),
+        '$ind2': '_',
     }
 
 
@@ -1678,13 +1743,13 @@ def dewey_decimal_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('^082[10_7][0_4]', 'dewey_decimal_classification_number')
+@tomarc21.over('082', 'dewey_decimal_classification_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dewey_decimal_classification_number(self, key, value):
     """Reverse - Dewey Decimal Classification Number."""
     indicator_map1 = {"Abridged edition": "1", "Full edition": "0", "Other edition specified in subfield $2": "7"}
-    indicator_map2 = {"Assigned by LC": "0", "Assigned by agency other than LC": "4", "No information provided": "#"}
+    indicator_map2 = {"Assigned by LC": "0", "Assigned by agency other than LC": "4", "No information provided": "_"}
     return {
         'a': utils.reverse_force_list(value.get('classification_number')),
         'b': utils.reverse_force_list(value.get('item_number')),
@@ -1693,8 +1758,8 @@ def reverse_dewey_decimal_classification_number(self, key, value):
         '2': utils.reverse_force_list(value.get('edition_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '_indicator1': indicator_map1.get(value.get('type_of_edition')),
-        '_indicator2': indicator_map2.get(value.get('source_of_classification_number')),
+        '$ind1': indicator_map1.get(value.get('type_of_edition')),
+        '$ind2': indicator_map2.get(value.get('source_of_classification_number')),
     }
 
 
@@ -1728,7 +1793,7 @@ def additional_dewey_decimal_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('^083[10_7].', 'additional_dewey_decimal_classification_number')
+@tomarc21.over('083', 'additional_dewey_decimal_classification_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_additional_dewey_decimal_classification_number(self, key, value):
@@ -1744,7 +1809,8 @@ def reverse_additional_dewey_decimal_classification_number(self, key, value):
         'y': utils.reverse_force_list(value.get('table_sequence_number_for_internal_subarrangement_or_add_table')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('table_identification')),
-        '_indicator1': indicator_map1.get(value.get('type_of_edition')),
+        '$ind1': indicator_map1.get(value.get('type_of_edition')),
+        '$ind2': '_',
     }
 
 
@@ -1767,7 +1833,7 @@ def other_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('^084..', 'other_classification_number')
+@tomarc21.over('084', 'other_classification_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_classification_number(self, key, value):
@@ -1779,6 +1845,8 @@ def reverse_other_classification_number(self, key, value):
         '2': utils.reverse_force_list(value.get('number_source')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1831,7 +1899,7 @@ def synthesized_classification_number_components(self, key, value):
     }
 
 
-@tomarc21.over('^085..', 'synthesized_classification_number_components')
+@tomarc21.over('085', 'synthesized_classification_number_components')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_synthesized_classification_number_components(self, key, value):
@@ -1851,6 +1919,8 @@ def reverse_synthesized_classification_number_components(self, key, value):
         'y': utils.reverse_force_list(value.get('table_sequence_number_for_internal_subarrangement_or_add_table')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('table_identification')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1872,7 +1942,7 @@ def government_document_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('^086..', 'government_document_classification_number')
+@tomarc21.over('086', 'government_document_classification_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_government_document_classification_number(self, key, value):
@@ -1883,6 +1953,8 @@ def reverse_government_document_classification_number(self, key, value):
         '2': utils.reverse_force_list(value.get('number_source')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_classification_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -1903,7 +1975,7 @@ def report_number(self, key, value):
     }
 
 
-@tomarc21.over('^088..', 'report_number')
+@tomarc21.over('088', 'report_number')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_report_number(self, key, value):
@@ -1913,4 +1985,6 @@ def reverse_report_number(self, key, value):
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(value.get('canceled_invalid_report_number')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '$ind1': '_',
+        '$ind2': '_',
     }
