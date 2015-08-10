@@ -29,7 +29,7 @@ def holding_institution(self, key, value):
     }
 
 
-@tomarc21.over('850', 'holding_institution')
+@tomarc21.over('850', '^holding_institution$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_holding_institution(self, key, value):
@@ -106,7 +106,7 @@ def location(self, key, value):
     }
 
 
-@tomarc21.over('852', 'location')
+@tomarc21.over('852', '^location$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_location(self, key, value):
@@ -215,7 +215,7 @@ def electronic_location_and_access(self, key, value):
     }
 
 
-@tomarc21.over('856', 'electronic_location_and_access')
+@tomarc21.over('856', '^electronic_location_and_access$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_electronic_location_and_access(self, key, value):
@@ -276,7 +276,7 @@ def replacement_record_information(self, key, value):
     }
 
 
-@tomarc21.over('882', 'replacement_record_information')
+@tomarc21.over('882', '^replacement_record_information$')
 @utils.filter_values
 def reverse_replacement_record_information(self, key, value):
     """Reverse - Replacement Record Information."""
@@ -317,7 +317,7 @@ def machine_generated_metadata_provenance(self, key, value):
     }
 
 
-@tomarc21.over('883', 'machine_generated_metadata_provenance')
+@tomarc21.over('883', '^machine_generated_metadata_provenance$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_machine_generated_metadata_provenance(self, key, value):
@@ -349,7 +349,7 @@ def non_marc_information_field(self, key, value):
     }
 
 
-@tomarc21.over('887', 'non_marc_information_field')
+@tomarc21.over('887', '^non_marc_information_field$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_non_marc_information_field(self, key, value):

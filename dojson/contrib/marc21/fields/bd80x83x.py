@@ -79,7 +79,7 @@ def series_added_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('800', 'series_added_entry_personal_name')
+@tomarc21.over('800', '^series_added_entry_personal_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_personal_name(self, key, value):
@@ -184,7 +184,7 @@ def series_added_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('810', 'series_added_entry_corporate_name')
+@tomarc21.over('810', '^series_added_entry_corporate_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_corporate_name(self, key, value):
@@ -281,7 +281,7 @@ def series_added_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('811', 'series_added_entry_meeting_name')
+@tomarc21.over('811', '^series_added_entry_meeting_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_meeting_name(self, key, value):
@@ -371,7 +371,7 @@ def series_added_entry_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('830', 'series_added_entry_uniform_title')
+@tomarc21.over('830', '^series_added_entry_uniform_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_added_entry_uniform_title(self, key, value):

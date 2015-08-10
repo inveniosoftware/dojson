@@ -32,7 +32,7 @@ def library_of_congress_control_number(self, key, value):
     }
 
 
-@tomarc21.over('010', 'library_of_congress_control_number')
+@tomarc21.over('010', '^library_of_congress_control_number$')
 @utils.filter_values
 def reverse_library_of_congress_control_number(self, key, value):
     """Reverse - Library of Congress Control Number."""
@@ -71,7 +71,7 @@ def patent_control_information(self, key, value):
     }
 
 
-@tomarc21.over('013', 'patent_control_information')
+@tomarc21.over('013', '^patent_control_information$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_patent_control_information(self, key, value):
@@ -113,7 +113,7 @@ def national_bibliography_number(self, key, value):
     }
 
 
-@tomarc21.over('015', 'national_bibliography_number')
+@tomarc21.over('015', '^national_bibliography_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_bibliography_number(self, key, value):
@@ -149,7 +149,7 @@ def national_bibliographic_agency_control_number(self, key, value):
     }
 
 
-@tomarc21.over('016', 'national_bibliographic_agency_control_number')
+@tomarc21.over('016', '^national_bibliographic_agency_control_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_bibliographic_agency_control_number(self, key, value):
@@ -190,7 +190,7 @@ def copyright_or_legal_deposit_number(self, key, value):
     }
 
 
-@tomarc21.over('017', 'copyright_or_legal_deposit_number')
+@tomarc21.over('017', '^copyright_or_legal_deposit_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_copyright_or_legal_deposit_number(self, key, value):
@@ -225,7 +225,7 @@ def copyright_article_fee_code(self, key, value):
     }
 
 
-@tomarc21.over('018', 'copyright_article_fee_code')
+@tomarc21.over('018', '^copyright_article_fee_code$')
 @utils.filter_values
 def reverse_copyright_article_fee_code(self, key, value):
     """Reverse - Copyright Article-Fee Code."""
@@ -259,7 +259,7 @@ def international_standard_book_number(self, key, value):
     }
 
 
-@tomarc21.over('020', 'international_standard_book_number')
+@tomarc21.over('020', '^international_standard_book_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_international_standard_book_number(self, key, value):
@@ -303,7 +303,7 @@ def international_standard_serial_number(self, key, value):
     }
 
 
-@tomarc21.over('022', 'international_standard_serial_number')
+@tomarc21.over('022', '^international_standard_serial_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_international_standard_serial_number(self, key, value):
@@ -337,6 +337,7 @@ def other_standard_identifier(self, key, value):
         'qualifying_information': utils.force_list(
             value.get('q')
         ),
+        'set_indicator': value.get('p'),
         'source_of_number_or_code': value.get('2'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
@@ -350,7 +351,7 @@ def other_standard_identifier(self, key, value):
     }
 
 
-@tomarc21.over('024', 'other_standard_identifier')
+@tomarc21.over('024', '^other_standard_identifier$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_standard_identifier(self, key, value):
@@ -362,6 +363,7 @@ def reverse_other_standard_identifier(self, key, value):
         'c': utils.reverse_force_list(value.get('terms_of_availability')),
         'd': utils.reverse_force_list(value.get('additional_codes_following_the_standard_number_or_code')),
         'q': utils.reverse_force_list(value.get('qualifying_information')),
+        'p': utils.reverse_force_list(value.get('set_indicator')),
         '2': utils.reverse_force_list(value.get('source_of_number_or_code')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
@@ -386,7 +388,7 @@ def overseas_acquisition_number(self, key, value):
     }
 
 
-@tomarc21.over('025', 'overseas_acquisition_number')
+@tomarc21.over('025', '^overseas_acquisition_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_overseas_acquisition_number(self, key, value):
@@ -423,7 +425,7 @@ def fingerprint_identifier(self, key, value):
     }
 
 
-@tomarc21.over('026', 'fingerprint_identifier')
+@tomarc21.over('026', '^fingerprint_identifier$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_fingerprint_identifier(self, key, value):
@@ -463,7 +465,7 @@ def standard_technical_report_number(self, key, value):
     }
 
 
-@tomarc21.over('027', 'standard_technical_report_number')
+@tomarc21.over('027', '^standard_technical_report_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_standard_technical_report_number(self, key, value):
@@ -501,7 +503,7 @@ def publisher_number(self, key, value):
     }
 
 
-@tomarc21.over('028', 'publisher_number')
+@tomarc21.over('028', '^publisher_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_publisher_number(self, key, value):
@@ -536,7 +538,7 @@ def coden_designation(self, key, value):
     }
 
 
-@tomarc21.over('030', 'coden_designation')
+@tomarc21.over('030', '^coden_designation$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_coden_designation(self, key, value):
@@ -596,7 +598,7 @@ def musical_incipits_information(self, key, value):
     }
 
 
-@tomarc21.over('031', 'musical_incipits_information')
+@tomarc21.over('031', '^musical_incipits_information$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_musical_incipits_information(self, key, value):
@@ -642,7 +644,7 @@ def postal_registration_number(self, key, value):
     }
 
 
-@tomarc21.over('032', 'postal_registration_number')
+@tomarc21.over('032', '^postal_registration_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_postal_registration_number(self, key, value):
@@ -693,7 +695,7 @@ def date_time_and_place_of_an_event(self, key, value):
     }
 
 
-@tomarc21.over('033', 'date_time_and_place_of_an_event')
+@tomarc21.over('033', '^date_time_and_place_of_an_event$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_date_time_and_place_of_an_event(self, key, value):
@@ -766,7 +768,7 @@ def coded_cartographic_mathematical_data(self, key, value):
     }
 
 
-@tomarc21.over('034', 'coded_cartographic_mathematical_data')
+@tomarc21.over('034', '^coded_cartographic_mathematical_data$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_coded_cartographic_mathematical_data(self, key, value):
@@ -820,7 +822,7 @@ def system_control_number(self, key, value):
     }
 
 
-@tomarc21.over('035', 'system_control_number')
+@tomarc21.over('035', '^system_control_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_system_control_number(self, key, value):
@@ -849,7 +851,7 @@ def original_study_number_for_computer_data_files(self, key, value):
     }
 
 
-@tomarc21.over('036', 'original_study_number_for_computer_data_files')
+@tomarc21.over('036', '^original_study_number_for_computer_data_files$')
 @utils.filter_values
 def reverse_original_study_number_for_computer_data_files(self, key, value):
     """Reverse - Original Study Number for Computer Data Files."""
@@ -890,7 +892,7 @@ def source_of_acquisition(self, key, value):
     }
 
 
-@tomarc21.over('037', 'source_of_acquisition')
+@tomarc21.over('037', '^source_of_acquisition$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_source_of_acquisition(self, key, value):
@@ -922,7 +924,7 @@ def record_content_licensor(self, key, value):
     }
 
 
-@tomarc21.over('038', 'record_content_licensor')
+@tomarc21.over('038', '^record_content_licensor$')
 @utils.filter_values
 def reverse_record_content_licensor(self, key, value):
     """Reverse - Record Content Licensor."""
@@ -956,7 +958,7 @@ def cataloging_source(self, key, value):
     }
 
 
-@tomarc21.over('040', 'cataloging_source')
+@tomarc21.over('040', '^cataloging_source$')
 @utils.filter_values
 def reverse_cataloging_source(self, key, value):
     """Reverse - Cataloging Source."""
@@ -1022,7 +1024,7 @@ def language_code(self, key, value):
     }
 
 
-@tomarc21.over('041', 'language_code')
+@tomarc21.over('041', '^language_code$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_language_code(self, key, value):
@@ -1059,7 +1061,7 @@ def authentication_code(self, key, value):
     }
 
 
-@tomarc21.over('042', 'authentication_code')
+@tomarc21.over('042', '^authentication_code$')
 @utils.filter_values
 def reverse_authentication_code(self, key, value):
     """Reverse - Authentication Code."""
@@ -1097,7 +1099,7 @@ def geographic_area_code(self, key, value):
     }
 
 
-@tomarc21.over('043', 'geographic_area_code')
+@tomarc21.over('043', '^geographic_area_code$')
 @utils.filter_values
 def reverse_geographic_area_code(self, key, value):
     """Reverse - Geographic Area Code."""
@@ -1138,7 +1140,7 @@ def country_of_publishing_producing_entity_code(self, key, value):
     }
 
 
-@tomarc21.over('044', 'country_of_publishing_producing_entity_code')
+@tomarc21.over('044', '^country_of_publishing_producing_entity_code$')
 @utils.filter_values
 def reverse_country_of_publishing_producing_entity_code(self, key, value):
     """Reverse - Country of Publishing/Producing Entity Code."""
@@ -1177,7 +1179,7 @@ def time_period_of_content(self, key, value):
     }
 
 
-@tomarc21.over('045', 'time_period_of_content')
+@tomarc21.over('045', '^time_period_of_content$')
 @utils.filter_values
 def reverse_time_period_of_content(self, key, value):
     """Reverse - Time Period of Content."""
@@ -1219,7 +1221,7 @@ def special_coded_dates(self, key, value):
     }
 
 
-@tomarc21.over('046', 'special_coded_dates')
+@tomarc21.over('046', '^special_coded_dates$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_special_coded_dates(self, key, value):
@@ -1261,7 +1263,7 @@ def form_of_musical_composition_code(self, key, value):
     }
 
 
-@tomarc21.over('047', 'form_of_musical_composition_code')
+@tomarc21.over('047', '^form_of_musical_composition_code$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_form_of_musical_composition_code(self, key, value):
@@ -1294,7 +1296,7 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
     }
 
 
-@tomarc21.over('048', 'number_of_musical_instruments_or_voices_code')
+@tomarc21.over('048', '^number_of_musical_instruments_or_voices_code$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_number_of_musical_instruments_or_voices_code(self, key, value):
@@ -1331,7 +1333,7 @@ def library_of_congress_call_number(self, key, value):
     }
 
 
-@tomarc21.over('050', 'library_of_congress_call_number')
+@tomarc21.over('050', '^library_of_congress_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_library_of_congress_call_number(self, key, value):
@@ -1364,7 +1366,7 @@ def library_of_congress_copy_issue_offprint_statement(self, key, value):
     }
 
 
-@tomarc21.over('051', 'library_of_congress_copy_issue_offprint_statement')
+@tomarc21.over('051', '^library_of_congress_copy_issue_offprint_statement$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_library_of_congress_copy_issue_offprint_statement(self, key, value):
@@ -1400,7 +1402,7 @@ def geographic_classification(self, key, value):
     }
 
 
-@tomarc21.over('052', 'geographic_classification')
+@tomarc21.over('052', '^geographic_classification$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_geographic_classification(self, key, value):
@@ -1437,7 +1439,7 @@ def classification_numbers_assigned_in_canada(self, key, value):
     }
 
 
-@tomarc21.over('055', 'classification_numbers_assigned_in_canada')
+@tomarc21.over('055', '^classification_numbers_assigned_in_canada$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_classification_numbers_assigned_in_canada(self, key, value):
@@ -1475,7 +1477,7 @@ def national_library_of_medicine_call_number(self, key, value):
     }
 
 
-@tomarc21.over('060', 'national_library_of_medicine_call_number')
+@tomarc21.over('060', '^national_library_of_medicine_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_library_of_medicine_call_number(self, key, value):
@@ -1508,7 +1510,7 @@ def national_library_of_medicine_copy_statement(self, key, value):
     }
 
 
-@tomarc21.over('061', 'national_library_of_medicine_copy_statement')
+@tomarc21.over('061', '^national_library_of_medicine_copy_statement$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_library_of_medicine_copy_statement(self, key, value):
@@ -1536,7 +1538,7 @@ def character_sets_present(self, key, value):
     }
 
 
-@tomarc21.over('066', 'character_sets_present')
+@tomarc21.over('066', '^character_sets_present$')
 @utils.filter_values
 def reverse_character_sets_present(self, key, value):
     """Reverse - Character Sets Present."""
@@ -1567,7 +1569,7 @@ def national_agricultural_library_call_number(self, key, value):
     }
 
 
-@tomarc21.over('070', 'national_agricultural_library_call_number')
+@tomarc21.over('070', '^national_agricultural_library_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_agricultural_library_call_number(self, key, value):
@@ -1601,7 +1603,7 @@ def national_agricultural_library_copy_statement(self, key, value):
     }
 
 
-@tomarc21.over('071', 'national_agricultural_library_copy_statement')
+@tomarc21.over('071', '^national_agricultural_library_copy_statement$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_agricultural_library_copy_statement(self, key, value):
@@ -1634,7 +1636,7 @@ def subject_category_code(self, key, value):
     }
 
 
-@tomarc21.over('072', 'subject_category_code')
+@tomarc21.over('072', '^subject_category_code$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_category_code(self, key, value):
@@ -1666,7 +1668,7 @@ def gpo_item_number(self, key, value):
     }
 
 
-@tomarc21.over('074', 'gpo_item_number')
+@tomarc21.over('074', '^gpo_item_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_gpo_item_number(self, key, value):
@@ -1701,7 +1703,7 @@ def universal_decimal_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('080', 'universal_decimal_classification_number')
+@tomarc21.over('080', '^universal_decimal_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_universal_decimal_classification_number(self, key, value):
@@ -1743,7 +1745,7 @@ def dewey_decimal_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('082', 'dewey_decimal_classification_number')
+@tomarc21.over('082', '^dewey_decimal_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dewey_decimal_classification_number(self, key, value):
@@ -1793,7 +1795,7 @@ def additional_dewey_decimal_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('083', 'additional_dewey_decimal_classification_number')
+@tomarc21.over('083', '^additional_dewey_decimal_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_additional_dewey_decimal_classification_number(self, key, value):
@@ -1833,7 +1835,7 @@ def other_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('084', 'other_classification_number')
+@tomarc21.over('084', '^other_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_classification_number(self, key, value):
@@ -1899,7 +1901,7 @@ def synthesized_classification_number_components(self, key, value):
     }
 
 
-@tomarc21.over('085', 'synthesized_classification_number_components')
+@tomarc21.over('085', '^synthesized_classification_number_components$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_synthesized_classification_number_components(self, key, value):
@@ -1942,7 +1944,7 @@ def government_document_classification_number(self, key, value):
     }
 
 
-@tomarc21.over('086', 'government_document_classification_number')
+@tomarc21.over('086', '^government_document_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_government_document_classification_number(self, key, value):
@@ -1975,7 +1977,7 @@ def report_number(self, key, value):
     }
 
 
-@tomarc21.over('088', 'report_number')
+@tomarc21.over('088', '^report_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_report_number(self, key, value):

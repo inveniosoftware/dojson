@@ -61,7 +61,7 @@ def main_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('100', 'main_entry_personal_name')
+@tomarc21.over('100', '^main_entry_personal_name$')
 @utils.filter_values
 def reverse_main_entry_personal_name(self, key, value):
     """Reverse - Main Entry-Personal Name."""
@@ -136,7 +136,7 @@ def main_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('110', 'main_entry_corporate_name')
+@tomarc21.over('110', '^main_entry_corporate_name$')
 @utils.filter_values
 def reverse_main_entry_corporate_name(self, key, value):
     """Reverse - Main Entry-Corporate Name."""
@@ -208,7 +208,7 @@ def main_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('111', 'main_entry_meeting_name')
+@tomarc21.over('111', '^main_entry_meeting_name$')
 @utils.filter_values
 def reverse_main_entry_meeting_name(self, key, value):
     """Reverse - Main Entry-Meeting Name."""
@@ -278,7 +278,7 @@ def main_entry_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('130', 'main_entry_uniform_title')
+@tomarc21.over('130', '^main_entry_uniform_title$')
 @utils.filter_values
 def reverse_main_entry_uniform_title(self, key, value):
     """Reverse - Main Entry-Uniform Title."""

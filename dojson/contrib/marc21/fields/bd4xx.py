@@ -59,7 +59,7 @@ def series_statement_added_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('400', 'series_statement_added_entry_personal_name')
+@tomarc21.over('400', '^series_statement_added_entry_personal_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_personal_name(self, key, value):
@@ -137,7 +137,7 @@ def series_statement_added_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('410', 'series_statement_added_entry_corporate_name')
+@tomarc21.over('410', '^series_statement_added_entry_corporate_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_corporate_name(self, key, value):
@@ -211,7 +211,7 @@ def series_statement_added_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('411', 'series_statement_added_entry_meeting_name')
+@tomarc21.over('411', '^series_statement_added_entry_meeting_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_meeting_name(self, key, value):
@@ -272,7 +272,7 @@ def series_statement_added_entry_title(self, key, value):
     }
 
 
-@tomarc21.over('440', 'series_statement_added_entry_title')
+@tomarc21.over('440', '^series_statement_added_entry_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement_added_entry_title(self, key, value):
@@ -319,7 +319,7 @@ def series_statement(self, key, value):
     }
 
 
-@tomarc21.over('490', 'series_statement')
+@tomarc21.over('490', '^series_statement$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_series_statement(self, key, value):

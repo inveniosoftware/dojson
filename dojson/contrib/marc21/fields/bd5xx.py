@@ -30,7 +30,7 @@ def general_note(self, key, value):
     }
 
 
-@tomarc21.over('500', 'general_note')
+@tomarc21.over('500', '^general_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_general_note(self, key, value):
@@ -61,7 +61,7 @@ def with_note(self, key, value):
     }
 
 
-@tomarc21.over('501', 'with_note')
+@tomarc21.over('501', '^with_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_with_note(self, key, value):
@@ -99,7 +99,7 @@ def dissertation_note(self, key, value):
     }
 
 
-@tomarc21.over('502', 'dissertation_note')
+@tomarc21.over('502', '^dissertation_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dissertation_note(self, key, value):
@@ -133,7 +133,7 @@ def bibliography_note(self, key, value):
     }
 
 
-@tomarc21.over('504', 'bibliography_note')
+@tomarc21.over('504', '^bibliography_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_bibliography_note(self, key, value):
@@ -178,7 +178,7 @@ def formatted_contents_note(self, key, value):
     }
 
 
-@tomarc21.over('505', 'formatted_contents_note')
+@tomarc21.over('505', '^formatted_contents_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_formatted_contents_note(self, key, value):
@@ -235,7 +235,7 @@ def restrictions_on_access_note(self, key, value):
     }
 
 
-@tomarc21.over('506', 'restrictions_on_access_note')
+@tomarc21.over('506', '^restrictions_on_access_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_restrictions_on_access_note(self, key, value):
@@ -273,7 +273,7 @@ def scale_note_for_graphic_material(self, key, value):
     }
 
 
-@tomarc21.over('507', 'scale_note_for_graphic_material')
+@tomarc21.over('507', '^scale_note_for_graphic_material$')
 @utils.filter_values
 def reverse_scale_note_for_graphic_material(self, key, value):
     """Reverse - Scale Note for Graphic Material."""
@@ -301,7 +301,7 @@ def creation_production_credits_note(self, key, value):
     }
 
 
-@tomarc21.over('508', 'creation_production_credits_note')
+@tomarc21.over('508', '^creation_production_credits_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_creation_production_credits_note(self, key, value):
@@ -338,7 +338,7 @@ def citation_references_note(self, key, value):
     }
 
 
-@tomarc21.over('510', 'citation_references_note')
+@tomarc21.over('510', '^citation_references_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_citation_references_note(self, key, value):
@@ -374,7 +374,7 @@ def participant_or_performer_note(self, key, value):
     }
 
 
-@tomarc21.over('511', 'participant_or_performer_note')
+@tomarc21.over('511', '^participant_or_performer_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_participant_or_performer_note(self, key, value):
@@ -404,7 +404,7 @@ def type_of_report_and_period_covered_note(self, key, value):
     }
 
 
-@tomarc21.over('513', 'type_of_report_and_period_covered_note')
+@tomarc21.over('513', '^type_of_report_and_period_covered_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_type_of_report_and_period_covered_note(self, key, value):
@@ -461,7 +461,7 @@ def data_quality_note(self, key, value):
     }
 
 
-@tomarc21.over('514', 'data_quality_note')
+@tomarc21.over('514', '^data_quality_note$')
 @utils.filter_values
 def reverse_data_quality_note(self, key, value):
     """Reverse - Data Quality Note."""
@@ -501,7 +501,7 @@ def numbering_peculiarities_note(self, key, value):
     }
 
 
-@tomarc21.over('515', 'numbering_peculiarities_note')
+@tomarc21.over('515', '^numbering_peculiarities_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_numbering_peculiarities_note(self, key, value):
@@ -531,7 +531,7 @@ def type_of_computer_file_or_data_note(self, key, value):
     }
 
 
-@tomarc21.over('516', 'type_of_computer_file_or_data_note')
+@tomarc21.over('516', '^type_of_computer_file_or_data_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_type_of_computer_file_or_data_note(self, key, value):
@@ -576,7 +576,7 @@ def date_time_and_place_of_an_event_note(self, key, value):
     }
 
 
-@tomarc21.over('518', 'date_time_and_place_of_an_event_note')
+@tomarc21.over('518', '^date_time_and_place_of_an_event_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_date_time_and_place_of_an_event_note(self, key, value):
@@ -611,7 +611,13 @@ def summary(self, key, value):
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
+        'username': utils.force_list(
+            value.get('w')
+        ),
         'linkage': value.get('6'),
+        'e_mail': utils.force_list(
+            value.get('9')
+        ),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -619,7 +625,7 @@ def summary(self, key, value):
     }
 
 
-@tomarc21.over('520', 'summary')
+@tomarc21.over('520', '^summary$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_summary(self, key, value):
@@ -632,7 +638,9 @@ def reverse_summary(self, key, value):
         '3': utils.reverse_force_list(value.get('materials_specified')),
         '2': utils.reverse_force_list(value.get('source')),
         'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
+        'w': utils.reverse_force_list(value.get('username')),
         '6': utils.reverse_force_list(value.get('linkage')),
+        '9': utils.reverse_force_list(value.get('e_mail')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '$ind1': indicator_map1.get(value.get('display_constant_controller')),
         '$ind2': '_',
@@ -659,7 +667,7 @@ def target_audience_note(self, key, value):
     }
 
 
-@tomarc21.over('521', 'target_audience_note')
+@tomarc21.over('521', '^target_audience_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_target_audience_note(self, key, value):
@@ -692,7 +700,7 @@ def geographic_coverage_note(self, key, value):
     }
 
 
-@tomarc21.over('522', 'geographic_coverage_note')
+@tomarc21.over('522', '^geographic_coverage_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_geographic_coverage_note(self, key, value):
@@ -725,7 +733,7 @@ def preferred_citation_of_described_materials_note(self, key, value):
     }
 
 
-@tomarc21.over('524', 'preferred_citation_of_described_materials_note')
+@tomarc21.over('524', '^preferred_citation_of_described_materials_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_preferred_citation_of_described_materials_note(self, key, value):
@@ -756,7 +764,7 @@ def supplement_note(self, key, value):
     }
 
 
-@tomarc21.over('525', 'supplement_note')
+@tomarc21.over('525', '^supplement_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_supplement_note(self, key, value):
@@ -797,7 +805,7 @@ def study_program_information_note(self, key, value):
     }
 
 
-@tomarc21.over('526', 'study_program_information_note')
+@tomarc21.over('526', '^study_program_information_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_study_program_information_note(self, key, value):
@@ -840,7 +848,7 @@ def additional_physical_form_available_note(self, key, value):
     }
 
 
-@tomarc21.over('530', 'additional_physical_form_available_note')
+@tomarc21.over('530', '^additional_physical_form_available_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_additional_physical_form_available_note(self, key, value):
@@ -893,7 +901,7 @@ def reproduction_note(self, key, value):
     }
 
 
-@tomarc21.over('533', 'reproduction_note')
+@tomarc21.over('533', '^reproduction_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_reproduction_note(self, key, value):
@@ -957,7 +965,7 @@ def original_version_note(self, key, value):
     }
 
 
-@tomarc21.over('534', 'original_version_note')
+@tomarc21.over('534', '^original_version_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_original_version_note(self, key, value):
@@ -1012,7 +1020,7 @@ def location_of_originals_duplicates_note(self, key, value):
     }
 
 
-@tomarc21.over('535', 'location_of_originals_duplicates_note')
+@tomarc21.over('535', '^location_of_originals_duplicates_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_location_of_originals_duplicates_note(self, key, value):
@@ -1067,7 +1075,7 @@ def funding_information_note(self, key, value):
     }
 
 
-@tomarc21.over('536', 'funding_information_note')
+@tomarc21.over('536', '^funding_information_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_funding_information_note(self, key, value):
@@ -1110,7 +1118,7 @@ def system_details_note(self, key, value):
     }
 
 
-@tomarc21.over('538', 'system_details_note')
+@tomarc21.over('538', '^system_details_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_system_details_note(self, key, value):
@@ -1150,7 +1158,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
     }
 
 
-@tomarc21.over('540', 'terms_governing_use_and_reproduction_note')
+@tomarc21.over('540', '^terms_governing_use_and_reproduction_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_terms_governing_use_and_reproduction_note(self, key, value):
@@ -1200,7 +1208,7 @@ def immediate_source_of_acquisition_note(self, key, value):
     }
 
 
-@tomarc21.over('541', 'immediate_source_of_acquisition_note')
+@tomarc21.over('541', '^immediate_source_of_acquisition_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_immediate_source_of_acquisition_note(self, key, value):
@@ -1277,7 +1285,7 @@ def information_relating_to_copyright_status(self, key, value):
     }
 
 
-@tomarc21.over('542', 'information_relating_to_copyright_status')
+@tomarc21.over('542', '^information_relating_to_copyright_status$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_information_relating_to_copyright_status(self, key, value):
@@ -1346,7 +1354,7 @@ def location_of_other_archival_materials_note(self, key, value):
     }
 
 
-@tomarc21.over('544', 'location_of_other_archival_materials_note')
+@tomarc21.over('544', '^location_of_other_archival_materials_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_location_of_other_archival_materials_note(self, key, value):
@@ -1387,7 +1395,7 @@ def biographical_or_historical_data(self, key, value):
     }
 
 
-@tomarc21.over('545', 'biographical_or_historical_data')
+@tomarc21.over('545', '^biographical_or_historical_data$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_biographical_or_historical_data(self, key, value):
@@ -1422,7 +1430,7 @@ def language_note(self, key, value):
     }
 
 
-@tomarc21.over('546', 'language_note')
+@tomarc21.over('546', '^language_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_language_note(self, key, value):
@@ -1452,7 +1460,7 @@ def former_title_complexity_note(self, key, value):
     }
 
 
-@tomarc21.over('547', 'former_title_complexity_note')
+@tomarc21.over('547', '^former_title_complexity_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_former_title_complexity_note(self, key, value):
@@ -1480,7 +1488,7 @@ def issuing_body_note(self, key, value):
     }
 
 
-@tomarc21.over('550', 'issuing_body_note')
+@tomarc21.over('550', '^issuing_body_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_issuing_body_note(self, key, value):
@@ -1537,7 +1545,7 @@ def entity_and_attribute_information_note(self, key, value):
     }
 
 
-@tomarc21.over('552', 'entity_and_attribute_information_note')
+@tomarc21.over('552', '^entity_and_attribute_information_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_entity_and_attribute_information_note(self, key, value):
@@ -1593,7 +1601,7 @@ def cumulative_index_finding_aids_note(self, key, value):
     }
 
 
-@tomarc21.over('555', 'cumulative_index_finding_aids_note')
+@tomarc21.over('555', '^cumulative_index_finding_aids_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_cumulative_index_finding_aids_note(self, key, value):
@@ -1632,7 +1640,7 @@ def information_about_documentation_note(self, key, value):
     }
 
 
-@tomarc21.over('556', 'information_about_documentation_note')
+@tomarc21.over('556', '^information_about_documentation_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_information_about_documentation_note(self, key, value):
@@ -1669,7 +1677,7 @@ def ownership_and_custodial_history(self, key, value):
     }
 
 
-@tomarc21.over('561', 'ownership_and_custodial_history')
+@tomarc21.over('561', '^ownership_and_custodial_history$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_ownership_and_custodial_history(self, key, value):
@@ -1717,7 +1725,7 @@ def copy_and_version_identification_note(self, key, value):
     }
 
 
-@tomarc21.over('562', 'copy_and_version_identification_note')
+@tomarc21.over('562', '^copy_and_version_identification_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_copy_and_version_identification_note(self, key, value):
@@ -1756,7 +1764,7 @@ def binding_information(self, key, value):
     }
 
 
-@tomarc21.over('563', 'binding_information')
+@tomarc21.over('563', '^binding_information$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_binding_information(self, key, value):
@@ -1802,7 +1810,7 @@ def case_file_characteristics_note(self, key, value):
     }
 
 
-@tomarc21.over('565', 'case_file_characteristics_note')
+@tomarc21.over('565', '^case_file_characteristics_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_case_file_characteristics_note(self, key, value):
@@ -1838,7 +1846,7 @@ def methodology_note(self, key, value):
     }
 
 
-@tomarc21.over('567', 'methodology_note')
+@tomarc21.over('567', '^methodology_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_methodology_note(self, key, value):
@@ -1867,7 +1875,7 @@ def linking_entry_complexity_note(self, key, value):
     }
 
 
-@tomarc21.over('580', 'linking_entry_complexity_note')
+@tomarc21.over('580', '^linking_entry_complexity_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_linking_entry_complexity_note(self, key, value):
@@ -1901,7 +1909,7 @@ def publications_about_described_materials_note(self, key, value):
     }
 
 
-@tomarc21.over('581', 'publications_about_described_materials_note')
+@tomarc21.over('581', '^publications_about_described_materials_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_publications_about_described_materials_note(self, key, value):
@@ -1982,7 +1990,7 @@ def action_note(self, key, value):
     }
 
 
-@tomarc21.over('583', 'action_note')
+@tomarc21.over('583', '^action_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_action_note(self, key, value):
@@ -2036,7 +2044,7 @@ def accumulation_and_frequency_of_use_note(self, key, value):
     }
 
 
-@tomarc21.over('584', 'accumulation_and_frequency_of_use_note')
+@tomarc21.over('584', '^accumulation_and_frequency_of_use_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_accumulation_and_frequency_of_use_note(self, key, value):
@@ -2069,7 +2077,7 @@ def exhibitions_note(self, key, value):
     }
 
 
-@tomarc21.over('585', 'exhibitions_note')
+@tomarc21.over('585', '^exhibitions_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_exhibitions_note(self, key, value):
@@ -2102,7 +2110,7 @@ def awards_note(self, key, value):
     }
 
 
-@tomarc21.over('586', 'awards_note')
+@tomarc21.over('586', '^awards_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_awards_note(self, key, value):
@@ -2133,7 +2141,7 @@ def source_of_description_note(self, key, value):
     }
 
 
-@tomarc21.over('588', 'source_of_description_note')
+@tomarc21.over('588', '^source_of_description_note$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_source_of_description_note(self, key, value):

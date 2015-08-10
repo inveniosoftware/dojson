@@ -36,7 +36,7 @@ def abbreviated_title(self, key, value):
     }
 
 
-@tomarc21.over('210', 'abbreviated_title')
+@tomarc21.over('210', '^abbreviated_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_abbreviated_title(self, key, value):
@@ -71,7 +71,7 @@ def key_title(self, key, value):
     }
 
 
-@tomarc21.over('222', 'key_title')
+@tomarc21.over('222', '^key_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_key_title(self, key, value):
@@ -129,7 +129,7 @@ def uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('240', 'uniform_title')
+@tomarc21.over('240', '^uniform_title$')
 @utils.filter_values
 def reverse_uniform_title(self, key, value):
     """Reverse - Uniform Title."""
@@ -185,7 +185,7 @@ def translation_of_title_by_cataloging_agency(self, key, value):
     }
 
 
-@tomarc21.over('242', 'translation_of_title_by_cataloging_agency')
+@tomarc21.over('242', '^translation_of_title_by_cataloging_agency$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_translation_of_title_by_cataloging_agency(self, key, value):
@@ -246,7 +246,7 @@ def collective_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('243', 'collective_uniform_title')
+@tomarc21.over('243', '^collective_uniform_title$')
 @utils.filter_values
 def reverse_collective_uniform_title(self, key, value):
     """Reverse - Collective Uniform Title."""
@@ -305,7 +305,7 @@ def title_statement(self, key, value):
     }
 
 
-@tomarc21.over('245', 'title_statement')
+@tomarc21.over('245', '^title_statement$')
 @utils.filter_values
 def reverse_title_statement(self, key, value):
     """Reverse - Title Statement."""
@@ -359,7 +359,7 @@ def varying_form_of_title(self, key, value):
     }
 
 
-@tomarc21.over('246', 'varying_form_of_title')
+@tomarc21.over('246', '^varying_form_of_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_varying_form_of_title(self, key, value):
@@ -412,7 +412,7 @@ def former_title(self, key, value):
     }
 
 
-@tomarc21.over('247', 'former_title')
+@tomarc21.over('247', '^former_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_former_title(self, key, value):

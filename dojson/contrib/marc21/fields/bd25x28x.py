@@ -30,7 +30,7 @@ def edition_statement(self, key, value):
     }
 
 
-@tomarc21.over('250', 'edition_statement')
+@tomarc21.over('250', '^edition_statement$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_edition_statement(self, key, value):
@@ -59,7 +59,7 @@ def musical_presentation_statement(self, key, value):
     }
 
 
-@tomarc21.over('254', 'musical_presentation_statement')
+@tomarc21.over('254', '^musical_presentation_statement$')
 @utils.filter_values
 def reverse_musical_presentation_statement(self, key, value):
     """Reverse - Musical Presentation Statement."""
@@ -92,7 +92,7 @@ def cartographic_mathematical_data(self, key, value):
     }
 
 
-@tomarc21.over('255', 'cartographic_mathematical_data')
+@tomarc21.over('255', '^cartographic_mathematical_data$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_cartographic_mathematical_data(self, key, value):
@@ -125,7 +125,7 @@ def computer_file_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('256', 'computer_file_characteristics')
+@tomarc21.over('256', '^computer_file_characteristics$')
 @utils.filter_values
 def reverse_computer_file_characteristics(self, key, value):
     """Reverse - Computer File Characteristics."""
@@ -155,7 +155,7 @@ def country_of_producing_entity(self, key, value):
     }
 
 
-@tomarc21.over('257', 'country_of_producing_entity')
+@tomarc21.over('257', '^country_of_producing_entity$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_country_of_producing_entity(self, key, value):
@@ -185,7 +185,7 @@ def philatelic_issue_data(self, key, value):
     }
 
 
-@tomarc21.over('258', 'philatelic_issue_data')
+@tomarc21.over('258', '^philatelic_issue_data$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_philatelic_issue_data(self, key, value):
@@ -234,7 +234,7 @@ def publication_distribution_imprint(self, key, value):
     }
 
 
-@tomarc21.over('260', 'publication_distribution_imprint')
+@tomarc21.over('260', '^publication_distribution_imprint$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_publication_distribution_imprint(self, key, value):
@@ -282,7 +282,7 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     }
 
 
-@tomarc21.over('261', 'imprint_statement_for_films_pre_aacr_1_revised')
+@tomarc21.over('261', '^imprint_statement_for_films_pre_aacr_1_revised$')
 @utils.filter_values
 def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     """Reverse - Imprint Statement for Films (Pre-AACR 1 Revised)."""
@@ -316,7 +316,7 @@ def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     }
 
 
-@tomarc21.over('262', 'imprint_statement_for_sound_recordings_pre_aacr_1')
+@tomarc21.over('262', '^imprint_statement_for_sound_recordings_pre_aacr_1$')
 @utils.filter_values
 def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     """Reverse - Imprint Statement for Sound Recordings (Pre-AACR 1)."""
@@ -346,7 +346,7 @@ def projected_publication_date(self, key, value):
     }
 
 
-@tomarc21.over('263', 'projected_publication_date')
+@tomarc21.over('263', '^projected_publication_date$')
 @utils.filter_values
 def reverse_projected_publication_date(self, key, value):
     """Reverse - Projected Publication Date."""
@@ -386,7 +386,7 @@ def production_publication_distribution_manufacture_and_copyright_notice(self, k
     }
 
 
-@tomarc21.over('264', 'production_publication_distribution_manufacture_and_copyright_notice')
+@tomarc21.over('264', '^production_publication_distribution_manufacture_and_copyright_notice$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_production_publication_distribution_manufacture_and_copyright_notice(self, key, value):
@@ -461,7 +461,7 @@ def address(self, key, value):
     }
 
 
-@tomarc21.over('270', 'address')
+@tomarc21.over('270', '^address$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_address(self, key, value):

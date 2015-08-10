@@ -42,7 +42,7 @@ def physical_description(self, key, value):
     }
 
 
-@tomarc21.over('300', 'physical_description')
+@tomarc21.over('300', '^physical_description$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_physical_description(self, key, value):
@@ -77,7 +77,7 @@ def playing_time(self, key, value):
     }
 
 
-@tomarc21.over('306', 'playing_time')
+@tomarc21.over('306', '^playing_time$')
 @utils.filter_values
 def reverse_playing_time(self, key, value):
     """Reverse - Playing Time."""
@@ -107,7 +107,7 @@ def hours(self, key, value):
     }
 
 
-@tomarc21.over('307', 'hours')
+@tomarc21.over('307', '^hours$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_hours(self, key, value):
@@ -137,7 +137,7 @@ def current_publication_frequency(self, key, value):
     }
 
 
-@tomarc21.over('310', 'current_publication_frequency')
+@tomarc21.over('310', '^current_publication_frequency$')
 @utils.filter_values
 def reverse_current_publication_frequency(self, key, value):
     """Reverse - Current Publication Frequency."""
@@ -166,7 +166,7 @@ def former_publication_frequency(self, key, value):
     }
 
 
-@tomarc21.over('321', 'former_publication_frequency')
+@tomarc21.over('321', '^former_publication_frequency$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_former_publication_frequency(self, key, value):
@@ -202,7 +202,7 @@ def content_type(self, key, value):
     }
 
 
-@tomarc21.over('336', 'content_type')
+@tomarc21.over('336', '^content_type$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_content_type(self, key, value):
@@ -240,7 +240,7 @@ def media_type(self, key, value):
     }
 
 
-@tomarc21.over('337', 'media_type')
+@tomarc21.over('337', '^media_type$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_media_type(self, key, value):
@@ -278,7 +278,7 @@ def carrier_type(self, key, value):
     }
 
 
-@tomarc21.over('338', 'carrier_type')
+@tomarc21.over('338', '^carrier_type$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_carrier_type(self, key, value):
@@ -352,7 +352,7 @@ def physical_medium(self, key, value):
     }
 
 
-@tomarc21.over('340', 'physical_medium')
+@tomarc21.over('340', '^physical_medium$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_physical_medium(self, key, value):
@@ -426,7 +426,7 @@ def geospatial_reference_data(self, key, value):
     }
 
 
-@tomarc21.over('342', 'geospatial_reference_data')
+@tomarc21.over('342', '^geospatial_reference_data$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_geospatial_reference_data(self, key, value):
@@ -487,7 +487,7 @@ def planar_coordinate_data(self, key, value):
     }
 
 
-@tomarc21.over('343', 'planar_coordinate_data')
+@tomarc21.over('343', '^planar_coordinate_data$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_planar_coordinate_data(self, key, value):
@@ -551,7 +551,7 @@ def sound_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('344', 'sound_characteristics')
+@tomarc21.over('344', '^sound_characteristics$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_sound_characteristics(self, key, value):
@@ -599,7 +599,7 @@ def projection_characteristics_of_moving_image(self, key, value):
     }
 
 
-@tomarc21.over('345', 'projection_characteristics_of_moving_image')
+@tomarc21.over('345', '^projection_characteristics_of_moving_image$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_projection_characteristics_of_moving_image(self, key, value):
@@ -641,7 +641,7 @@ def video_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('346', 'video_characteristics')
+@tomarc21.over('346', '^video_characteristics$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_video_characteristics(self, key, value):
@@ -695,7 +695,7 @@ def digital_file_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('347', 'digital_file_characteristics')
+@tomarc21.over('347', '^digital_file_characteristics$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_digital_file_characteristics(self, key, value):
@@ -738,7 +738,7 @@ def organization_and_arrangement_of_materials(self, key, value):
     }
 
 
-@tomarc21.over('351', 'organization_and_arrangement_of_materials')
+@tomarc21.over('351', '^organization_and_arrangement_of_materials$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_organization_and_arrangement_of_materials(self, key, value):
@@ -781,7 +781,7 @@ def digital_graphic_representation(self, key, value):
     }
 
 
-@tomarc21.over('352', 'digital_graphic_representation')
+@tomarc21.over('352', '^digital_graphic_representation$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_digital_graphic_representation(self, key, value):
@@ -833,7 +833,7 @@ def security_classification_control(self, key, value):
     }
 
 
-@tomarc21.over('355', 'security_classification_control')
+@tomarc21.over('355', '^security_classification_control$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_security_classification_control(self, key, value):
@@ -878,7 +878,7 @@ def originator_dissemination_control(self, key, value):
     }
 
 
-@tomarc21.over('357', 'originator_dissemination_control')
+@tomarc21.over('357', '^originator_dissemination_control$')
 @utils.filter_values
 def reverse_originator_dissemination_control(self, key, value):
     """Reverse - Originator Dissemination Control."""
@@ -911,7 +911,7 @@ def dates_of_publication_and_or_sequential_designation(self, key, value):
     }
 
 
-@tomarc21.over('362', 'dates_of_publication_and_or_sequential_designation')
+@tomarc21.over('362', '^dates_of_publication_and_or_sequential_designation$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dates_of_publication_and_or_sequential_designation(self, key, value):
@@ -963,7 +963,7 @@ def normalized_date_and_sequential_designation(self, key, value):
     }
 
 
-@tomarc21.over('363', 'normalized_date_and_sequential_designation')
+@tomarc21.over('363', '^normalized_date_and_sequential_designation$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_normalized_date_and_sequential_designation(self, key, value):
@@ -1021,7 +1021,7 @@ def trade_price(self, key, value):
     }
 
 
-@tomarc21.over('365', 'trade_price')
+@tomarc21.over('365', '^trade_price$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_trade_price(self, key, value):
@@ -1071,7 +1071,7 @@ def trade_availability_information(self, key, value):
     }
 
 
-@tomarc21.over('366', 'trade_availability_information')
+@tomarc21.over('366', '^trade_availability_information$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_trade_availability_information(self, key, value):
@@ -1115,7 +1115,7 @@ def associated_language(self, key, value):
     }
 
 
-@tomarc21.over('377', 'associated_language')
+@tomarc21.over('377', '^associated_language$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_associated_language(self, key, value):
@@ -1151,7 +1151,7 @@ def form_of_work(self, key, value):
     }
 
 
-@tomarc21.over('380', 'form_of_work')
+@tomarc21.over('380', '^form_of_work$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_form_of_work(self, key, value):
@@ -1193,7 +1193,7 @@ def other_distinguishing_characteristics_of_work_or_expression(self, key, value)
     }
 
 
-@tomarc21.over('381', 'other_distinguishing_characteristics_of_work_or_expression')
+@tomarc21.over('381', '^other_distinguishing_characteristics_of_work_or_expression$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_distinguishing_characteristics_of_work_or_expression(self, key, value):
@@ -1253,7 +1253,7 @@ def medium_of_performance(self, key, value):
     }
 
 
-@tomarc21.over('382', 'medium_of_performance')
+@tomarc21.over('382', '^medium_of_performance$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_medium_of_performance(self, key, value):
@@ -1302,7 +1302,7 @@ def numeric_designation_of_musical_work(self, key, value):
     }
 
 
-@tomarc21.over('383', 'numeric_designation_of_musical_work')
+@tomarc21.over('383', '^numeric_designation_of_musical_work$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_numeric_designation_of_musical_work(self, key, value):
@@ -1336,7 +1336,7 @@ def key(self, key, value):
     }
 
 
-@tomarc21.over('384', 'key')
+@tomarc21.over('384', '^key$')
 @utils.filter_values
 def reverse_key(self, key, value):
     """Reverse - Key."""
@@ -1376,7 +1376,7 @@ def audience_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('385', 'audience_characteristics')
+@tomarc21.over('385', '^audience_characteristics$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_audience_characteristics(self, key, value):
@@ -1422,7 +1422,7 @@ def creator_contributor_characteristics(self, key, value):
     }
 
 
-@tomarc21.over('386', 'creator_contributor_characteristics')
+@tomarc21.over('386', '^creator_contributor_characteristics$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_creator_contributor_characteristics(self, key, value):

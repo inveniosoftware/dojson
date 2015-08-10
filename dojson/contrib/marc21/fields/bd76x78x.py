@@ -60,7 +60,7 @@ def main_series_entry(self, key, value):
     }
 
 
-@tomarc21.over('760', 'main_series_entry')
+@tomarc21.over('760', '^main_series_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_main_series_entry(self, key, value):
@@ -138,7 +138,7 @@ def subseries_entry(self, key, value):
     }
 
 
-@tomarc21.over('762', 'subseries_entry')
+@tomarc21.over('762', '^subseries_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subseries_entry(self, key, value):
@@ -226,7 +226,7 @@ def original_language_entry(self, key, value):
     }
 
 
-@tomarc21.over('765', 'original_language_entry')
+@tomarc21.over('765', '^original_language_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_original_language_entry(self, key, value):
@@ -318,7 +318,7 @@ def translation_entry(self, key, value):
     }
 
 
-@tomarc21.over('767', 'translation_entry')
+@tomarc21.over('767', '^translation_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_translation_entry(self, key, value):
@@ -410,7 +410,7 @@ def supplement_special_issue_entry(self, key, value):
     }
 
 
-@tomarc21.over('770', 'supplement_special_issue_entry')
+@tomarc21.over('770', '^supplement_special_issue_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_supplement_special_issue_entry(self, key, value):
@@ -502,7 +502,7 @@ def supplement_parent_entry(self, key, value):
     }
 
 
-@tomarc21.over('772', 'supplement_parent_entry')
+@tomarc21.over('772', '^supplement_parent_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_supplement_parent_entry(self, key, value):
@@ -556,7 +556,9 @@ def host_item_entry(self, key, value):
             value.get('8')
         ),
         'main_entry_heading': value.get('a'),
+        'pagination': value.get('c'),
         'edition': value.get('b'),
+        'recid_of_linked_document_record': value.get('e'),
         'place_publisher_and_date_of_publication': value.get('d'),
         'related_parts': utils.force_list(
             value.get('g')
@@ -586,6 +588,7 @@ def host_item_entry(self, key, value):
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'volume': value.get('v'),
         'coden_designation': value.get('y'),
         'international_standard_serial_number': value.get('x'),
         'international_standard_book_number': utils.force_list(
@@ -596,7 +599,7 @@ def host_item_entry(self, key, value):
     }
 
 
-@tomarc21.over('773', 'host_item_entry')
+@tomarc21.over('773', '^host_item_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_host_item_entry(self, key, value):
@@ -610,7 +613,9 @@ def reverse_host_item_entry(self, key, value):
         '6': utils.reverse_force_list(value.get('linkage')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('pagination')),
         'b': utils.reverse_force_list(value.get('edition')),
+        'e': utils.reverse_force_list(value.get('recid_of_linked_document_record')),
         'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
         'g': utils.reverse_force_list(value.get('related_parts')),
         'i': utils.reverse_force_list(value.get('relationship_information')),
@@ -626,6 +631,7 @@ def reverse_host_item_entry(self, key, value):
         'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
         't': utils.reverse_force_list(value.get('title')),
         'w': utils.reverse_force_list(value.get('record_control_number')),
+        'v': utils.reverse_force_list(value.get('volume')),
         'y': utils.reverse_force_list(value.get('coden_designation')),
         'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
         'z': utils.reverse_force_list(value.get('international_standard_book_number')),
@@ -690,7 +696,7 @@ def constituent_unit_entry(self, key, value):
     }
 
 
-@tomarc21.over('774', 'constituent_unit_entry')
+@tomarc21.over('774', '^constituent_unit_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_constituent_unit_entry(self, key, value):
@@ -784,7 +790,7 @@ def other_edition_entry(self, key, value):
     }
 
 
-@tomarc21.over('775', 'other_edition_entry')
+@tomarc21.over('775', '^other_edition_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_edition_entry(self, key, value):
@@ -878,7 +884,7 @@ def additional_physical_form_entry(self, key, value):
     }
 
 
-@tomarc21.over('776', 'additional_physical_form_entry')
+@tomarc21.over('776', '^additional_physical_form_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_additional_physical_form_entry(self, key, value):
@@ -963,7 +969,7 @@ def issued_with_entry(self, key, value):
     }
 
 
-@tomarc21.over('777', 'issued_with_entry')
+@tomarc21.over('777', '^issued_with_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_issued_with_entry(self, key, value):
@@ -1052,7 +1058,7 @@ def preceding_entry(self, key, value):
     }
 
 
-@tomarc21.over('780', 'preceding_entry')
+@tomarc21.over('780', '^preceding_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_preceding_entry(self, key, value):
@@ -1144,7 +1150,7 @@ def succeeding_entry(self, key, value):
     }
 
 
-@tomarc21.over('785', 'succeeding_entry')
+@tomarc21.over('785', '^succeeding_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_succeeding_entry(self, key, value):
@@ -1239,7 +1245,7 @@ def data_source_entry(self, key, value):
     }
 
 
-@tomarc21.over('786', 'data_source_entry')
+@tomarc21.over('786', '^data_source_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_data_source_entry(self, key, value):
@@ -1334,7 +1340,7 @@ def other_relationship_entry(self, key, value):
     }
 
 
-@tomarc21.over('787', 'other_relationship_entry')
+@tomarc21.over('787', '^other_relationship_entry$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_relationship_entry(self, key, value):

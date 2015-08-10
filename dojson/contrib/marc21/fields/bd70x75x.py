@@ -77,7 +77,7 @@ def added_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('700', 'added_entry_personal_name')
+@tomarc21.over('700', '^added_entry_personal_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_personal_name(self, key, value):
@@ -179,7 +179,7 @@ def added_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('710', 'added_entry_corporate_name')
+@tomarc21.over('710', '^added_entry_corporate_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_corporate_name(self, key, value):
@@ -273,7 +273,7 @@ def added_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('711', 'added_entry_meeting_name')
+@tomarc21.over('711', '^added_entry_meeting_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_meeting_name(self, key, value):
@@ -332,7 +332,7 @@ def added_entry_uncontrolled_name(self, key, value):
     }
 
 
-@tomarc21.over('720', 'added_entry_uncontrolled_name')
+@tomarc21.over('720', '^added_entry_uncontrolled_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_uncontrolled_name(self, key, value):
@@ -399,7 +399,7 @@ def added_entry_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('730', 'added_entry_uniform_title')
+@tomarc21.over('730', '^added_entry_uniform_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_uniform_title(self, key, value):
@@ -459,7 +459,7 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
     }
 
 
-@tomarc21.over('740', 'added_entry_uncontrolled_related_analytical_title')
+@tomarc21.over('740', '^added_entry_uncontrolled_related_analytical_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_uncontrolled_related_analytical_title(self, key, value):
@@ -504,7 +504,7 @@ def added_entry_geographic_name(self, key, value):
     }
 
 
-@tomarc21.over('751', 'added_entry_geographic_name')
+@tomarc21.over('751', '^added_entry_geographic_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_geographic_name(self, key, value):
@@ -557,7 +557,7 @@ def added_entry_hierarchical_place_name(self, key, value):
     }
 
 
-@tomarc21.over('752', 'added_entry_hierarchical_place_name')
+@tomarc21.over('752', '^added_entry_hierarchical_place_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_hierarchical_place_name(self, key, value):
@@ -595,7 +595,7 @@ def system_details_access_to_computer_files(self, key, value):
     }
 
 
-@tomarc21.over('753', 'system_details_access_to_computer_files')
+@tomarc21.over('753', '^system_details_access_to_computer_files$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_system_details_access_to_computer_files(self, key, value):
@@ -643,7 +643,7 @@ def added_entry_taxonomic_identification(self, key, value):
     }
 
 
-@tomarc21.over('754', 'added_entry_taxonomic_identification')
+@tomarc21.over('754', '^added_entry_taxonomic_identification$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_added_entry_taxonomic_identification(self, key, value):

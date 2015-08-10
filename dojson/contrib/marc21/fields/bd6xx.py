@@ -85,7 +85,7 @@ def subject_added_entry_personal_name(self, key, value):
     }
 
 
-@tomarc21.over('600', 'subject_added_entry_personal_name')
+@tomarc21.over('600', '^subject_added_entry_personal_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_personal_name(self, key, value):
@@ -197,7 +197,7 @@ def subject_added_entry_corporate_name(self, key, value):
     }
 
 
-@tomarc21.over('610', 'subject_added_entry_corporate_name')
+@tomarc21.over('610', '^subject_added_entry_corporate_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_corporate_name(self, key, value):
@@ -301,7 +301,7 @@ def subject_added_entry_meeting_name(self, key, value):
     }
 
 
-@tomarc21.over('611', 'subject_added_entry_meeting_name')
+@tomarc21.over('611', '^subject_added_entry_meeting_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_meeting_name(self, key, value):
@@ -404,7 +404,7 @@ def subject_added_entry_uniform_title(self, key, value):
     }
 
 
-@tomarc21.over('630', 'subject_added_entry_uniform_title')
+@tomarc21.over('630', '^subject_added_entry_uniform_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_uniform_title(self, key, value):
@@ -477,7 +477,7 @@ def subject_added_entry_chronological_term(self, key, value):
     }
 
 
-@tomarc21.over('648', 'subject_added_entry_chronological_term')
+@tomarc21.over('648', '^subject_added_entry_chronological_term$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_chronological_term(self, key, value):
@@ -544,7 +544,7 @@ def subject_added_entry_topical_term(self, key, value):
     }
 
 
-@tomarc21.over('650', 'subject_added_entry_topical_term')
+@tomarc21.over('650', '^subject_added_entry_topical_term$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_topical_term(self, key, value):
@@ -611,7 +611,7 @@ def subject_added_entry_geographic_name(self, key, value):
     }
 
 
-@tomarc21.over('651', 'subject_added_entry_geographic_name')
+@tomarc21.over('651', '^subject_added_entry_geographic_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_geographic_name(self, key, value):
@@ -643,11 +643,12 @@ def index_term_uncontrolled(self, key, value):
     indicator_map1 = {"#": "No information provided", "0": "No level specified", "1": "Primary", "2": "Secondary"}
     indicator_map2 = {"#": "No information provided", "0": "Topical term", "1": "Personal name", "2": "Corporate name", "3": "Meeting name", "4": "Chronological term", "5": "Geographic name", "6": "Genre/form term"}
     return {
-        'uncontrolled_term': utils.force_list(
-            value.get('a')
-        ),
+        'institute_of_the_uncontrolled_term': value.get('9'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
+        ),
+        'uncontrolled_term': utils.force_list(
+            value.get('a')
         ),
         'linkage': value.get('6'),
         'level_of_index_term': indicator_map1.get(key[3]),
@@ -655,7 +656,7 @@ def index_term_uncontrolled(self, key, value):
     }
 
 
-@tomarc21.over('653', 'index_term_uncontrolled')
+@tomarc21.over('653', '^index_term_uncontrolled$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_uncontrolled(self, key, value):
@@ -663,8 +664,9 @@ def reverse_index_term_uncontrolled(self, key, value):
     indicator_map1 = {"No information provided": "_", "No level specified": "0", "Primary": "1", "Secondary": "2"}
     indicator_map2 = {"Chronological term": "4", "Corporate name": "2", "Genre/form term": "6", "Geographic name": "5", "Meeting name": "3", "No information provided": "_", "Personal name": "1", "Topical term": "0"}
     return {
-        'a': utils.reverse_force_list(value.get('uncontrolled_term')),
+        '9': utils.reverse_force_list(value.get('institute_of_the_uncontrolled_term')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('uncontrolled_term')),
         '6': utils.reverse_force_list(value.get('linkage')),
         '$ind1': indicator_map1.get(value.get('level_of_index_term')),
         '$ind2': indicator_map2.get(value.get('type_of_term_or_name')),
@@ -715,7 +717,7 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
     }
 
 
-@tomarc21.over('654', 'subject_added_entry_faceted_topical_terms')
+@tomarc21.over('654', '^subject_added_entry_faceted_topical_terms$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
@@ -782,7 +784,7 @@ def index_term_genre_form(self, key, value):
     }
 
 
-@tomarc21.over('655', 'index_term_genre_form')
+@tomarc21.over('655', '^index_term_genre_form$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_genre_form(self, key, value):
@@ -840,7 +842,7 @@ def index_term_occupation(self, key, value):
     }
 
 
-@tomarc21.over('656', 'index_term_occupation')
+@tomarc21.over('656', '^index_term_occupation$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_occupation(self, key, value):
@@ -893,7 +895,7 @@ def index_term_function(self, key, value):
     }
 
 
-@tomarc21.over('657', 'index_term_function')
+@tomarc21.over('657', '^index_term_function$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_function(self, key, value):
@@ -934,7 +936,7 @@ def index_term_curriculum_objective(self, key, value):
     }
 
 
-@tomarc21.over('658', 'index_term_curriculum_objective')
+@tomarc21.over('658', '^index_term_curriculum_objective$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_index_term_curriculum_objective(self, key, value):
@@ -992,7 +994,7 @@ def subject_added_entry_hierarchical_place_name(self, key, value):
     }
 
 
-@tomarc21.over('662', 'subject_added_entry_hierarchical_place_name')
+@tomarc21.over('662', '^subject_added_entry_hierarchical_place_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_added_entry_hierarchical_place_name(self, key, value):
