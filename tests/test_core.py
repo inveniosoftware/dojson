@@ -10,6 +10,7 @@
 """Test suite for DoJSON."""
 
 import dojson
+import pytest
 
 RECORD = """<record>
   <controlfield tag="001">17575</controlfield>
@@ -135,3 +136,31 @@ def test_simple_record_from_xml():
     expected = {'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}
 
     assert data == expected
+
+
+def test_none_value():
+    """Test none value."""
+    overdo = dojson.Overdo()
+    from dojson.utils import ignore_value
+
+    @overdo.over('024', '^024..')
+    @ignore_value
+    def match(self, key, value):
+        return None
+
+    data = overdo.do({'0247_': 'this should not be added'})
+    assert "024" not in data, "key with None value should not be added"
+
+
+def test_no_none_value():
+    """Test a valid value with the ignore_value decorator."""
+    overdo = dojson.Overdo()
+    from dojson.utils import ignore_value
+
+    @overdo.over('024', '^024..')
+    @ignore_value
+    def match(self, key, value):
+        return value
+
+    data = overdo.do({'0247_': 'valid value'})
+    assert data.get('024') == 'valid value'

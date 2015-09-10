@@ -13,6 +13,32 @@ import functools
 import six
 
 
+class IgnoreKey(Exception):
+
+    """The corresponding key has been ignored.
+
+    .. versionadded:: 0.2.0
+
+    """
+
+    pass
+
+
+def ignore_value(f):
+    """Remove key for None value.
+
+    .. versionadded:: 0.2.0
+
+    """
+    @functools.wraps(f)
+    def wrapper(self, key, value, **kwargs):
+        result = f(self, key, value, **kwargs)
+        if result is None:
+            raise IgnoreKey(key)
+        return result
+    return wrapper
+
+
 def filter_values(f):
     """Remove None values from dictionary."""
     @functools.wraps(f)

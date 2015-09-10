@@ -14,6 +14,7 @@ import re
 import esmre
 
 from six import iteritems
+from .utils import IgnoreKey
 
 
 class Overdo(object):
@@ -55,7 +56,10 @@ class Overdo(object):
 
         for key, value in iteritems(blob):
             for name, creator, field in self._query(key):
-                output[name] = creator(output, key, value)
+                try:
+                    output[name] = creator(output, key, value)
+                except IgnoreKey:
+                    pass
 
         return output
 
