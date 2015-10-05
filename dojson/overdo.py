@@ -10,8 +10,9 @@
 """Do JSON translation."""
 
 import re
-
 import esmre
+
+from pkg_resources import iter_entry_points
 
 from six import iteritems
 from .utils import IgnoreKey
@@ -21,13 +22,26 @@ class Overdo(object):
 
     """Translation index."""
 
-    def __init__(self):
+    def __init__(self, bases=None, entry_point_group=None):
         """Constructor."""
         self.rules = []
+        if bases:
+            for base in bases:
+                base._collect_entry_points()
+                self.rules.extend(base.rules)
+        self.entry_point_group = entry_point_group
         self.index = None
+
+    def _collect_entry_points(self):
+        """Collect entry points."""
+        if self.entry_point_group is not None:
+            for entry_point in iter_entry_points(
+                    group=self.entry_point_group, name=None):
+                entry_point.load()
 
     def build(self):
         """Build."""
+        self._collect_entry_points()
         self.index = esmre.Index()
         for rule in self.rules:
             self.index.enter(*rule)

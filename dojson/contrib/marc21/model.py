@@ -12,4 +12,4 @@
 from dojson import Overdo
 from dojson import utils
 
-marc21 = Overdo()
+marc21 = Overdo(entry_point_group='dojson.contrib.marc21')

@@ -104,4 +104,21 @@ setup(
     ],
     tests_require=tests_require,
     cmdclass={'test': PyTest},
+    entry_points={
+        'dojson.contrib.marc21': [
+            'bd00x = dojson.contrib.marc21.fields.bd00x',
+            'bd01x09x = dojson.contrib.marc21.fields.bd01x09x',
+            'bd1xx = dojson.contrib.marc21.fields.bd1xx',
+            'bd20x24x = dojson.contrib.marc21.fields.bd20x24x',
+            'bd25x28x = dojson.contrib.marc21.fields.bd25x28x',
+            'bd3xx = dojson.contrib.marc21.fields.bd3xx',
+            'bd4xx = dojson.contrib.marc21.fields.bd4xx',
+            'bd5xx = dojson.contrib.marc21.fields.bd5xx',
+            'bd6xx = dojson.contrib.marc21.fields.bd6xx',
+            'bd70x75x = dojson.contrib.marc21.fields.bd70x75x',
+            'bd76x78x = dojson.contrib.marc21.fields.bd76x78x',
+            'bd80x83x = dojson.contrib.marc21.fields.bd80x83x',
+            'bd84188x = dojson.contrib.marc21.fields.bd84188x',
+        ]
+    }
 )
