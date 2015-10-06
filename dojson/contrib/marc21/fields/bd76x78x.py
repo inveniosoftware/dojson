@@ -11,7 +11,7 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21, tomarc21
 
 
 @marc21.over('main_series_entry', '^760[10_][8_]')
@@ -60,15 +60,45 @@ def main_series_entry(self, key, value):
     }
 
 
+@tomarc21.over('760', '^main_series_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_main_series_entry(self, key, value):
+    """Reverse - Main Series Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Main series": "_", "No display constant generated": "8"}
+    return {
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
+    }
+
+
 @marc21.over('subseries_entry', '^762[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def subseries_entry(self, key, value):
     """Subseries Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Has subseries",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Has subseries", "8": "No display constant generated"}
     return {
         'main_entry_heading': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -105,6 +135,38 @@ def subseries_entry(self, key, value):
         'title': value.get('t'),
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
+    }
+
+
+@tomarc21.over('762', '^subseries_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_subseries_entry(self, key, value):
+    """Reverse - Subseries Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Has subseries": "_", "No display constant generated": "8"}
+    return {
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -114,9 +176,7 @@ def subseries_entry(self, key, value):
 def original_language_entry(self, key, value):
     """Original Language Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Translation of",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Translation of", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -163,6 +223,42 @@ def original_language_entry(self, key, value):
         ),
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
+    }
+
+
+@tomarc21.over('765', '^original_language_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_original_language_entry(self, key, value):
+    """Reverse - Original Language Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"No display constant generated": "8", "Translation of": "_"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -172,9 +268,7 @@ def original_language_entry(self, key, value):
 def translation_entry(self, key, value):
     """Translation Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Translated as",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Translated as", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -221,6 +315,42 @@ def translation_entry(self, key, value):
         ),
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
+    }
+
+
+@tomarc21.over('767', '^translation_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_translation_entry(self, key, value):
+    """Reverse - Translation Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"No display constant generated": "8", "Translated as": "_"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -230,9 +360,7 @@ def translation_entry(self, key, value):
 def supplement_special_issue_entry(self, key, value):
     """Supplement/Special Issue Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Has supplement",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Has supplement", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -282,16 +410,49 @@ def supplement_special_issue_entry(self, key, value):
     }
 
 
+@tomarc21.over('770', '^supplement_special_issue_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_supplement_special_issue_entry(self, key, value):
+    """Reverse - Supplement/Special Issue Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Has supplement": "_", "No display constant generated": "8"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
+    }
+
+
 @marc21.over('supplement_parent_entry', '^772[10_][0_8]')
 @utils.for_each_value
 @utils.filter_values
 def supplement_parent_entry(self, key, value):
     """Supplement Parent Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Supplement to",
-        "0": "Parent",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Supplement to", "0": "Parent", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -338,6 +499,42 @@ def supplement_parent_entry(self, key, value):
         ),
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
+    }
+
+
+@tomarc21.over('772', '^supplement_parent_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_supplement_parent_entry(self, key, value):
+    """Reverse - Supplement Parent Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"No display constant generated": "8", "Parent": "0", "Supplement to": "_"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -359,7 +556,9 @@ def host_item_entry(self, key, value):
             value.get('8')
         ),
         'main_entry_heading': value.get('a'),
+        'pagination': value.get('c'),
         'edition': value.get('b'),
+        'recid_of_linked_document_record': value.get('e'),
         'place_publisher_and_date_of_publication': value.get('d'),
         'related_parts': utils.force_list(
             value.get('g')
@@ -389,6 +588,7 @@ def host_item_entry(self, key, value):
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'volume': value.get('v'),
         'coden_designation': value.get('y'),
         'international_standard_serial_number': value.get('x'),
         'international_standard_book_number': utils.force_list(
@@ -399,15 +599,54 @@ def host_item_entry(self, key, value):
     }
 
 
+@tomarc21.over('773', '^host_item_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_host_item_entry(self, key, value):
+    """Reverse - Host Item Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"In": "_", "No display constant generated": "8"}
+    return {
+        '3': utils.reverse_force_list(value.get('materials_specified')),
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('pagination')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'e': utils.reverse_force_list(value.get('recid_of_linked_document_record')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        'q': utils.reverse_force_list(value.get('enumeration_and_first_page')),
+        'p': utils.reverse_force_list(value.get('abbreviated_title')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'v': utils.reverse_force_list(value.get('volume')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
+    }
+
+
 @marc21.over('constituent_unit_entry', '^774[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def constituent_unit_entry(self, key, value):
     """Constituent Unit Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Constituent unit",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Constituent unit", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -457,15 +696,49 @@ def constituent_unit_entry(self, key, value):
     }
 
 
+@tomarc21.over('774', '^constituent_unit_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_constituent_unit_entry(self, key, value):
+    """Reverse - Constituent Unit Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Constituent unit": "_", "No display constant generated": "8"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
+    }
+
+
 @marc21.over('other_edition_entry', '^775[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def other_edition_entry(self, key, value):
     """Other Edition Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Other edition available",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Other edition available", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -517,15 +790,51 @@ def other_edition_entry(self, key, value):
     }
 
 
+@tomarc21.over('775', '^other_edition_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_other_edition_entry(self, key, value):
+    """Reverse - Other Edition Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"No display constant generated": "8", "Other edition available": "_"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'e': utils.reverse_force_list(value.get('language_code')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'f': utils.reverse_force_list(value.get('country_code')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
+    }
+
+
 @marc21.over('additional_physical_form_entry', '^776[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def additional_physical_form_entry(self, key, value):
     """Additional Physical Form Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Available in another form",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Available in another form", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -572,6 +881,42 @@ def additional_physical_form_entry(self, key, value):
         ),
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
+    }
+
+
+@tomarc21.over('776', '^additional_physical_form_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_additional_physical_form_entry(self, key, value):
+    """Reverse - Additional Physical Form Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Available in another form": "_", "No display constant generated": "8"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }
 
 
@@ -624,21 +969,46 @@ def issued_with_entry(self, key, value):
     }
 
 
+@tomarc21.over('777', '^issued_with_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_issued_with_entry(self, key, value):
+    """Reverse - Issued With Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Issued with": "_", "No display constant generated": "8"}
+    return {
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
+    }
+
+
 @marc21.over('preceding_entry', '^780[10_][_10325476]')
 @utils.for_each_value
 @utils.filter_values
 def preceding_entry(self, key, value):
     """Preceding Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "0": "Continues",
-        "1": "Continues in part",
-        "2": "Supersedes",
-        "3": "Supersedes in part",
-        "4": "Formed by the union of ... and ...",
-        "5": "Absorbed",
-        "6": "Absorbed in part",
-        "7": "Separated from"}
+    indicator_map2 = {"0": "Continues", "1": "Continues in part", "2": "Supersedes", "3": "Supersedes in part", "4": "Formed by the union of ... and ...", "5": "Absorbed", "6": "Absorbed in part", "7": "Separated from"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -688,22 +1058,49 @@ def preceding_entry(self, key, value):
     }
 
 
+@tomarc21.over('780', '^preceding_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_preceding_entry(self, key, value):
+    """Reverse - Preceding Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Absorbed": "5", "Absorbed in part": "6", "Continues": "0", "Continues in part": "1", "Formed by the union of ... and ...": "4", "Separated from": "7", "Supersedes": "2", "Supersedes in part": "3"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('type_of_relationship')),
+    }
+
+
 @marc21.over('succeeding_entry', '^785[10_][_103254768]')
 @utils.for_each_value
 @utils.filter_values
 def succeeding_entry(self, key, value):
     """Succeeding Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "0": "Continued by",
-        "1": "Continued in part by",
-        "2": "Superseded by",
-        "3": "Superseded in part by",
-        "4": "Absorbed by",
-        "5": "Absorbed in part by",
-        "6": "Split into ... and ...",
-        "7": "Merged with ... to form ...",
-        "8": "Changed back to"}
+    indicator_map2 = {"0": "Continued by", "1": "Continued in part by", "2": "Superseded by", "3": "Superseded in part by", "4": "Absorbed by", "5": "Absorbed in part by", "6": "Split into ... and ...", "7": "Merged with ... to form ...", "8": "Changed back to"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -750,6 +1147,42 @@ def succeeding_entry(self, key, value):
         ),
         'note_controller': indicator_map1.get(key[3]),
         'type_of_relationship': indicator_map2.get(key[4]),
+    }
+
+
+@tomarc21.over('785', '^succeeding_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_succeeding_entry(self, key, value):
+    """Reverse - Succeeding Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Absorbed by": "4", "Absorbed in part by": "5", "Changed back to": "8", "Continued by": "0", "Continued in part by": "1", "Merged with ... to form ...": "7", "Split into ... and ...": "6", "Superseded by": "2", "Superseded in part by": "3"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('type_of_relationship')),
     }
 
 
@@ -812,15 +1245,52 @@ def data_source_entry(self, key, value):
     }
 
 
+@tomarc21.over('786', '^data_source_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_data_source_entry(self, key, value):
+    """Reverse - Data Source Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"Data source": "_", "No display constant generated": "8"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'j': utils.reverse_force_list(value.get('period_of_content')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        'p': utils.reverse_force_list(value.get('abbreviated_title')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'v': utils.reverse_force_list(value.get('source_contribution')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
+    }
+
+
 @marc21.over('other_relationship_entry', '^787[10_][8_]')
 @utils.for_each_value
 @utils.filter_values
 def other_relationship_entry(self, key, value):
     """Other Relationship Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
-    indicator_map2 = {
-        "#": "Related item",
-        "8": "No display constant generated"}
+    indicator_map2 = {"#": "Related item", "8": "No display constant generated"}
     return {
         'relationship_code': utils.force_list(
             value.get('4')
@@ -867,4 +1337,40 @@ def other_relationship_entry(self, key, value):
         ),
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
+    }
+
+
+@tomarc21.over('787', '^other_relationship_entry$')
+@utils.reverse_for_each_value
+@utils.filter_values
+def reverse_other_relationship_entry(self, key, value):
+    """Reverse - Other Relationship Entry."""
+    indicator_map1 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map2 = {"No display constant generated": "8", "Related item": "_"}
+    return {
+        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '7': utils.reverse_force_list(value.get('control_subfield')),
+        '6': utils.reverse_force_list(value.get('linkage')),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(value.get('main_entry_heading')),
+        'c': utils.reverse_force_list(value.get('qualifying_information')),
+        'b': utils.reverse_force_list(value.get('edition')),
+        'd': utils.reverse_force_list(value.get('place_publisher_and_date_of_publication')),
+        'g': utils.reverse_force_list(value.get('related_parts')),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'h': utils.reverse_force_list(value.get('physical_description')),
+        'k': utils.reverse_force_list(value.get('series_data_for_related_item')),
+        'm': utils.reverse_force_list(value.get('material_specific_details')),
+        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(value.get('note')),
+        's': utils.reverse_force_list(value.get('uniform_title')),
+        'r': utils.reverse_force_list(value.get('report_number')),
+        'u': utils.reverse_force_list(value.get('standard_technical_report_number')),
+        't': utils.reverse_force_list(value.get('title')),
+        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'y': utils.reverse_force_list(value.get('coden_designation')),
+        'x': utils.reverse_force_list(value.get('international_standard_serial_number')),
+        'z': utils.reverse_force_list(value.get('international_standard_book_number')),
+        '$ind1': indicator_map1.get(value.get('note_controller')),
+        '$ind2': indicator_map2.get(value.get('display_constant_controller')),
     }

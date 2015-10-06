@@ -58,8 +58,26 @@ def for_each_value(f):
     return wrapper
 
 
+def reverse_for_each_value(f):
+    @functools.wraps(f)
+    def wrapper(self, key, values, **kwargs):
+        if isinstance(values, list):
+            if len(values) == 1:
+                return f(self, key, values[0], **kwargs)
+            return [f(self, key, value, **kwargs) for value in values]
+
+    return wrapper
+
+
 def force_list(data):
     """Wrap data in list."""
     if data is not None and not isinstance(data, (list, set)):
         return [data]
+    return data
+
+
+def reverse_force_list(data):
+    """Unwrap data from list if its length is == 1"""
+    if isinstance(data, (list, set)) and len(data) == 1:
+        return data[0]
     return data

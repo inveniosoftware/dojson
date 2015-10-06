@@ -63,6 +63,18 @@ class Overdo(object):
 
         return output
 
+    def _change_name(self, name, indicator_1, indicator_2):
+        if name.startswith('^'):
+            name = name[1:]
+
+        key = name[:3]
+
+        if not indicator_1 and not indicator_2:
+            return key
+
+        return key + indicator_1 + indicator_2
+
+
     def missing(self, blob):
         """Return keys with missing rules."""
         if self.index is None:
