@@ -1,35 +1,43 @@
 ===========================
- DoJSON v0.1.1 is released
+ DoJSON v0.2.0 is released
 ===========================
 
-DoJSON v0.1.1 was released on July 27, 2015.
+DoJSON v0.2.0 was released on October 7, 2015.
 
 About
 -----
 
 DoJSON is a simple Pythonic JSON to JSON converter.
 
+New features
+------------
+
+- Adds the posibility to use base DoJSON model so the rules are
+  "inherited" from them.
+- Adds new decorator `ignore_value` that remove the key in the
+  resulting json for None value.
+
 Improved features
 -----------------
 
-- Sorts and removes duplicated enum values.
+- Uses entry points instead of plain imports to load the creator
+  rules.
 
 Bug fixes
 ---------
 
-- Swaps wrongly defined repeatable and non-repeatable subfields. (#23)
-- Addresses issue when allowed indicators where defined as a range.
-  (#22)
+- Removes calls to PluginManager consider_setuptools_entrypoints()
+  removed in PyTest 2.8.0.
 
 Installation
 ------------
 
-   $ pip install dojson==0.1.1
+   $ pip install dojson==0.2.0
 
 Documentation
 -------------
 
-   http://dojson.readthedocs.org/en/v0.1.1
+   http://dojson.readthedocs.org/en/v0.2.0
 
 Happy hacking and thanks for flying DoJSON.
 
