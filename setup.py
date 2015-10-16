@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -146,8 +146,15 @@ setup(
             'bd80x83x = dojson.contrib.to_marc21.fields.bd80x83x',
             'bd84188x = dojson.contrib.to_marc21.fields.bd84188x',
         ],
+        'dojson.contrib.marc21_holdings': [
+            'hd00x = dojson.contrib.marc21.fields.hd00x',
+            'hd0xx = dojson.contrib.marc21.fields.hd0xx',
+            'hd3xx5xx84x = dojson.contrib.marc21.fields.hd3xx5xx84x',
+            'hd85xhd88x = dojson.contrib.marc21.fields.hd85xhd88x',
+        ],
         'dojson.cli.rule': [
             'marc21 = dojson.contrib.marc21:marc21',
+            'marc21_holdings = dojson.contrib.marc21:marc21_holdings',
             'to_marc21 = dojson.contrib.to_marc21:to_marc21',
         ],
         'dojson.cli.load': [
