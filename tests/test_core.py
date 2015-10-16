@@ -164,3 +164,16 @@ def test_no_none_value():
 
     data = overdo.do({'0247_': 'valid value'})
     assert data.get('024') == 'valid value'
+
+
+def test_marc21_loader():
+    """Test MARC21 loader."""
+    from six import StringIO
+    from dojson.contrib.marc21.utils import load
+
+    COLLECTION = '<collection>{0}{1}</collection>'.format(
+        RECORD, RECORD_SIMPLE
+    )
+
+    records = list(load(StringIO(COLLECTION)))
+    assert len(records) == 2

@@ -14,7 +14,6 @@ import six
 
 
 class IgnoreKey(Exception):
-
     """The corresponding key has been ignored.
 
     .. versionadded:: 0.2.0

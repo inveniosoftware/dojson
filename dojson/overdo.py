@@ -19,7 +19,6 @@ from .utils import IgnoreKey
 
 
 class Overdo(object):
-
     """Translation index."""
 
     def __init__(self, bases=None, entry_point_group=None):

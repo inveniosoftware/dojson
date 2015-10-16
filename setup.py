@@ -18,7 +18,6 @@ from setuptools.command.test import test as TestCommand
 
 
 class PyTest(TestCommand):
-
     """PyTest test runner.
 
     See: http://pytest.org/latest/goodpractises.html?highlight=setuptools
@@ -80,6 +79,7 @@ setup(
     include_package_data=True,
     platforms='any',
     install_requires=[
+        'click',
         'esmre',
         'lxml',
         'six',
@@ -105,6 +105,9 @@ setup(
     tests_require=tests_require,
     cmdclass={'test': PyTest},
     entry_points={
+        'console_scripts': [
+            'dojson = dojson.cli:cli',
+        ],
         'dojson.contrib.marc21': [
             'bd00x = dojson.contrib.marc21.fields.bd00x',
             'bd01x09x = dojson.contrib.marc21.fields.bd01x09x',
@@ -119,6 +122,16 @@ setup(
             'bd76x78x = dojson.contrib.marc21.fields.bd76x78x',
             'bd80x83x = dojson.contrib.marc21.fields.bd80x83x',
             'bd84188x = dojson.contrib.marc21.fields.bd84188x',
-        ]
+        ],
+        'dojson.cli.rule': [
+            'marc21 = dojson.contrib.marc21:marc21',
+        ],
+        'dojson.cli.load': [
+            'json = json:load',
+            'marcxml = dojson.contrib.marc21.utils:load',
+        ],
+        'dojson.cli.dump': [
+            'json = json:dumps',
+        ],
     }
 )

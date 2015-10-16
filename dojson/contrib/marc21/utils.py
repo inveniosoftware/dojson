@@ -124,3 +124,9 @@ def split_blob(blob):
     for match in split_marc.finditer(blob):
         yield match.group()
     raise StopIteration()
+
+
+def load(source):
+    """Load MARC XML and return Python dict."""
+    for data in split_blob(source.read()):
+        yield create_record(data)

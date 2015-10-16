@@ -53,6 +53,15 @@ API
 .. automodule:: dojson
     :members:
 
+Command line interface
+----------------------
+
+.. automodule:: dojson.cli
+    :members:
+
+Contrib
+-------
+
 .. automodule:: dojson.contrib.marc21
     :members:
 
