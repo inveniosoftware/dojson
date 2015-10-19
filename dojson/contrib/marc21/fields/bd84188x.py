@@ -107,11 +107,19 @@ def location(self, key, value):
     }
 
 
-@marc21.over('electronic_location_and_access', '^856.[10_28]')
+@marc21.over('electronic_location_and_access', '^856[10_2473][10_28]')
 @utils.for_each_value
 @utils.filter_values
 def electronic_location_and_access(self, key, value):
     """Electronic Location and Access."""
+    indicator_map1 = {
+        "#": "No information provided",
+        "0": "Email",
+        "1": "FTP",
+        "2": "Remote login (Telnet)",
+        "3": "Dial-up",
+        "4": "HTTP",
+        "7": "Method specified in subfield $2"}
     indicator_map2 = {
         "#": "No information provided",
         "0": "Resource",
@@ -120,7 +128,8 @@ def electronic_location_and_access(self, key, value):
         "8": "No display constant generated"}
     return {
         'materials_specified': value.get('3'),
-        'access_method': value.get('2'),
+        'access_method':
+        value.get('2') if key[3] == '7' else indicator_map1.get(key[3]),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
