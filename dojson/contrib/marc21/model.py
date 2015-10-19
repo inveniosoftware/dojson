@@ -14,5 +14,8 @@ from dojson import Overdo, utils
 marc21 = Overdo(entry_point_group='dojson.contrib.marc21')
 """MARC 21 Format for Bibliographic Data."""
 
+marc21_authority = Overdo(entry_point_group='dojson.contrib.marc21_authority')
+"""MARC 21 Format for Authority Data."""
+
 marc21_holdings = Overdo(entry_point_group='dojson.contrib.marc21_holdings')
 """MARC 21 Format for Holdings Data."""

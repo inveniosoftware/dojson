@@ -1,0 +1,209 @@
+{
+    "type": "object",
+    "properties": {
+        "series_dates_of_publication_and_or_sequential_designation": {
+            "description": "Series Dates of Publication and/or Sequential Designation",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "dates_of_publication_and_or_sequential_designation": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_information": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "series_numbering_peculiarities": {
+            "description": "Series Numbering Peculiarities",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "numbering_peculiarities_note": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_information": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "series_numbering_example": {
+            "description": "Series Numbering Example",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "series_numbering_example": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "institution_copy_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "volumes_dates_to_which_series_numbering_example_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "series_place_and_publisher_issuing_body": {
+            "description": "Series Place and Publisher/Issuing Body",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "place": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "publisher_issuing_body": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "volumes_dates_to_which_place_and_publisher_issuing_body_apply": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "series_analysis_practice": {
+            "description": "Series Analysis Practice",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "series_analysis_practice": {
+                        "type": "string"
+                    },
+                    "exceptions_to_analysis_practice": {
+                        "type": "string"
+                    },
+                    "volumes_dates_to_which_analysis_practice_applies": {
+                        "type": "string"
+                    },
+                    "institution_copy_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "series_tracing_practice": {
+            "description": "Series Tracing Practice",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "series_tracing_practice": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "institution_copy_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "volumes_dates_to_which_tracing_practice_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "series_classification_practice": {
+            "description": "Series Classification Practice",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "series_classification_practice": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "volumes_dates_to_which_classification_practice_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
