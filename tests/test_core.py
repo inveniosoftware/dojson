@@ -33,9 +33,6 @@ RECORD = """<record>
   <datafield tag="245" ind1=" " ind2=" ">
     <subfield code="a">bphi: Initial release</subfield>
   </datafield>
-  <datafield tag="980" ind1=" " ind2=" ">
-    <subfield code="a">provisional-user-zenodo</subfield>
-  </datafield>
   <datafield tag="542" ind1=" " ind2=" ">
     <subfield code="l">open</subfield>
   </datafield>
@@ -44,14 +41,8 @@ RECORD = """<record>
     <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
     <subfield code="z">0</subfield>
   </datafield>
-  <datafield tag="980" ind1=" " ind2=" ">
-    <subfield code="a">software</subfield>
-  </datafield>
   <datafield tag="260" ind1=" " ind2=" ">
     <subfield code="c">2015-05-13</subfield>
-  </datafield>
-  <datafield tag="347" ind1=" " ind2=" ">
-    <subfield code="p">20</subfield>
   </datafield>
   <datafield tag="100" ind1=" " ind2=" ">
     <subfield code="a">Matthew Caldwell</subfield>
@@ -177,3 +168,85 @@ def test_marc21_loader():
 
     records = list(load(StringIO(COLLECTION)))
     assert len(records) == 2
+
+
+def test_simple_record_tomarc21():
+    """Test simple record marc21 - json - marc21."""
+    from dojson.contrib.marc21 import marc21
+    from dojson.contrib.marc21.utils import create_record
+    from dojson.contrib.to_marc21 import to_marc21
+
+    blob = create_record(RECORD_SIMPLE)
+    data = marc21.do(blob)
+
+    back_blob = to_marc21.do(data)
+
+    assert blob == back_blob
+
+
+def test_tomarc21_from_xml():
+    """Test MARC21 loading and recreating from XML."""
+    from dojson.contrib.marc21 import marc21
+    from dojson.contrib.marc21.utils import create_record
+    from dojson.contrib.to_marc21 import to_marc21
+
+    blob = create_record(RECORD)
+    data = marc21.do(blob)
+
+    back_blob = to_marc21.do(data)
+
+    assert blob == back_blob
+
+
+def test_marc21_856_indicators():
+    """Test MARC21 856 field special indicator values."""
+    from dojson.contrib.marc21 import marc21
+    from dojson.contrib.marc21.utils import create_record
+    from dojson.contrib.to_marc21 import to_marc21
+
+    RECORD_8564 = '''
+    <datafield tag="856" ind1="4" ind2=" ">
+        <subfield code="s">272681</subfield>
+        <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
+        <subfield code="z">0</subfield>
+    </datafield>
+    '''
+    RECORD_8567 = '''
+    <datafield tag="856" ind1="7" ind2=" ">
+        <subfield code="s">272681</subfield>
+        <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
+        <subfield code="z">0</subfield>
+        <subfield code="2">Awesome access method</subfield>
+    </datafield>
+    '''
+
+    expected_8564 = {
+        'electronic_location_and_access': [
+            {'public_note': ['0'],
+             'access_method': 'HTTP',
+             'uniform_resource_identifier': [
+                 'https://zenodo.org/record/17575/files/...'],
+             'file_size': ['272681']}
+        ]
+    }
+    expected_8567 = {
+        'electronic_location_and_access': [
+            {'public_note': ['0'],
+             'access_method': 'Awesome access method',
+             'uniform_resource_identifier': [
+                 'https://zenodo.org/record/17575/files/...'],
+             'file_size': ['272681']}
+        ]
+    }
+
+    blob = create_record(RECORD_8564)
+    data = marc21.do(blob)
+    assert data == expected_8564
+    back_blob = to_marc21.do(data)
+    assert blob == back_blob
+
+    blob = create_record(RECORD_8567)
+    data = marc21.do(blob)
+    assert data == expected_8567
+    back_blob = to_marc21.do(data)
+    assert blob == back_blob
