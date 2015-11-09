@@ -1,6 +1,22 @@
 Changes
 =======
 
+Version 0.3.0 (released 2015-11-09):
+------------------------------------
+
+New features
+~~~~~~~~~~~~
+
+- Adds **experimental** rules for converting human readable JSON into
+  a JSON representation of the MARC21 Format.
+- Adds `do` and `missing` commands for `dojson` command line interface
+  (see `dojson --help` for more information).
+
+Improved features
+~~~~~~~~~~~~~~~~~
+
+- Adds missing mapping for the first indicator of field 856.
+
 Version 0.2.0 (released 2015-10-07):
 ------------------------------------
 

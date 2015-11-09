@@ -1,8 +1,8 @@
-===========================
- DoJSON v0.2.0 is released
-===========================
+===============
+ DoJSON v0.3.0
+===============
 
-DoJSON v0.2.0 was released on October 7, 2015.
+DoJSON v0.3.0 was released on November 9, 2015.
 
 About
 -----
@@ -12,32 +12,25 @@ DoJSON is a simple Pythonic JSON to JSON converter.
 New features
 ------------
 
-- Adds the posibility to use base DoJSON model so the rules are
-  "inherited" from them.
-- Adds new decorator `ignore_value` that remove the key in the
-  resulting json for None value.
+- Adds **experimental** rules for converting human readable JSON into
+  a JSON representation of the MARC21 Format.
+- Adds `do` and `missing` commands for `dojson` command line interface
+  (see `dojson --help` for more information).
 
 Improved features
 -----------------
 
-- Uses entry points instead of plain imports to load the creator
-  rules.
-
-Bug fixes
----------
-
-- Removes calls to PluginManager consider_setuptools_entrypoints()
-  removed in PyTest 2.8.0.
+- Adds missing mapping for the first indicator of field 856.
 
 Installation
 ------------
 
-   $ pip install dojson==0.2.0
+   $ pip install dojson==0.3.0
 
 Documentation
 -------------
 
-   http://dojson.readthedocs.org/en/v0.2.0
+   http://dojson.readthedocs.org/en/v0.3.0
 
 Happy hacking and thanks for flying DoJSON.
 
