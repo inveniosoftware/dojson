@@ -19,8 +19,7 @@ from six import iteritems
 warnings.warn('MARC21 undo feature is experimental')
 
 
-class OverUndo(Overdo):
-
+class Underdo(Overdo):
     """Translation index specification for reverse marc21 translation."""
 
     def do(self, blob):
@@ -51,4 +50,4 @@ class OverUndo(Overdo):
         return output
 
 
-to_marc21 = OverUndo(entry_point_group='dojson.contrib.to_marc21')
+to_marc21 = Underdo(entry_point_group='dojson.contrib.to_marc21')
