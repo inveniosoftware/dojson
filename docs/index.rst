@@ -42,9 +42,9 @@ A simple example on how to convert MARCXML to JSON:
 
 .. code:: python
 
-    from dojson.contrib.marc21.utils import create_record, split_blob
+    from dojson.contrib.marc21.utils import create_record, split_stream
     from dojson.contrib.marc21 import marc21
-    [marc21.do(create_record(data)) for data in split_blob(open('/tmp/data.xml', 'r').read())]
+    [marc21.do(create_record(data)) for data in split_stream(open('/tmp/data.xml', 'r'))]
 
 
 API
