@@ -10,7 +10,13 @@
 """Test suite for DoJSON."""
 
 import dojson
+from lxml import etree
 import pytest
+
+try:
+    from html import escape  # python 3.x
+except ImportError:
+    from cgi import escape  # python 2.x
 
 RECORD = """<record>
   <controlfield tag="001">17575</controlfield>
@@ -20,7 +26,7 @@ RECORD = """<record>
     <subfield code="a">10.5281/zenodo.17575</subfield>
   </datafield>
   <datafield tag="520" ind1=" " ind2=" ">
-    <subfield code="a">&lt;p>Model definitions and data...&lt;/p></subfield>
+    <subfield code="a">&lt;p&gt;Model definitions and data...&lt;/p&gt;</subfield>
   </datafield>
   <datafield tag="540" ind1=" " ind2=" ">
     <subfield code="u"></subfield>
@@ -168,6 +174,32 @@ def test_marc21_loader():
 
     records = list(load(StringIO(COLLECTION)))
     assert len(records) == 2
+
+
+def test_marc21_split_stream():
+    """Test MARC21 split_stream()."""
+    from six import StringIO, u
+    from dojson.contrib.marc21.utils import split_stream
+
+    # Testing regular situation
+    COLLECTION = '<collection>{0}{1}</collection>'.format(
+        RECORD, RECORD_SIMPLE
+    )
+    generator = split_stream(StringIO(COLLECTION))
+    assert etree.tostring(generator.next(), method='html') == RECORD
+    assert etree.tostring(generator.next(), method='html') == RECORD_SIMPLE
+
+    # Testing records over single line
+    records = StringIO('<collection>'
+                       '<record>foo</record>'
+                       '<record>会意字</record>'
+                       '</collection>')
+
+    generator = split_stream(records)
+    assert etree.tostring(
+        generator.next(), method='html') == '<record>foo</record>'
+    assert etree.tostring(
+        generator.next(), method='html') == '<record>&#x4F1A;&#x610F;&#x5B57;</record>'
 
 
 def test_simple_record_tomarc21():

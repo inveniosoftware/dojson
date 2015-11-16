@@ -15,7 +15,7 @@ import pkg_resources
 import re
 
 from lxml import etree
-from six import StringIO, iteritems
+from six import StringIO, iteritems, text_type, string_types
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 
@@ -30,15 +30,18 @@ def create_record(marcxml, correct=False, keep_singletons=True):
     If correct == 1, then perform DTD validation
     If correct == 0, then do not perform DTD validation
     """
-    parser = etree.XMLParser(dtd_validation=correct, recover=True)
+    if isinstance(marcxml, string_types):
+        parser = etree.XMLParser(dtd_validation=correct, recover=True)
 
-    if correct:
-        marcxml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-                   '<!DOCTYPE collection SYSTEM "file://{0}">\n'
-                   '<collection>\n{1}\n</collection>'.format(
-                       MARC21_DTD, marcxml))
+        if correct:
+            marcxml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+                       '<!DOCTYPE collection SYSTEM "file://{0}">\n'
+                       '<collection>\n{1}\n</collection>'.format(
+                           MARC21_DTD, marcxml))
 
-    tree = etree.parse(StringIO(marcxml), parser)
+        tree = etree.parse(StringIO(marcxml), parser)
+    else:
+        tree = marcxml
     record = {}
     field_position_global = 0
 
@@ -126,7 +129,13 @@ def split_blob(blob):
     raise StopIteration()
 
 
+def split_stream(stream):
+    """Yield record elements from given stream."""
+    for _, element in etree.iterparse(stream, tag='{*}record'):
+        yield element
+
+
 def load(source):
     """Load MARC XML and return Python dict."""
-    for data in split_blob(source.read()):
+    for data in split_stream(source):
         yield create_record(data)
