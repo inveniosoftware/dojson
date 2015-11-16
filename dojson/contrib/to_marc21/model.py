@@ -11,10 +11,12 @@
 
 import warnings
 
+from collections import MutableMapping, MutableSequence
+from six import iteritems
+
 from dojson import Overdo
 from dojson import utils
 
-from six import iteritems
 
 warnings.warn('MARC21 undo feature is experimental')
 
@@ -37,13 +39,24 @@ class Underdo(Overdo):
             for name, creator, field in self._query(key):
                 try:
                     value = creator(output, key, value)
-                    try:
-                        name = '{0}{1}{2}'.format(name, value.pop('$ind1', ''),
-                                                  value.pop('$ind2', ''))
-                    except TypeError:
-                        # It is not a dictionary, there are indicators.
-                        name = name
-                    output[name] = value
+                    if isinstance(value, MutableMapping):
+                        output['{0}{1}{2}'.format(
+                            name, value.pop('$ind1', '_'),
+                            value.pop('$ind2', '_'))] = value
+                    elif isinstance(value, MutableSequence):
+                        for v in value:
+                            try:
+                                key = '{0}{1}{2}'.format(
+                                    name, v.pop('$ind1', '_'),
+                                    v.pop('$ind2', '_'))
+                            except AttributeError:
+                                key = name
+                            if key in output:
+                                output[key].append(v)
+                            else:
+                                output[key] = [v]
+                    else:
+                        output[name] = value
                 except utils.IgnoreKey:
                     pass
 
