@@ -1,6 +1,23 @@
 Changes
 =======
 
+Version 0.4.0 (released 2015-11-18):
+------------------------------------
+
+New features
+~~~~~~~~~~~~
+
+- Improves dojson.contrib.marc2.utils.load() to read the input by
+  iterating of the open stream, rather than loading it all in memory
+  in one go.  (#45) (#46)
+- Renames OverUndo to Underdo following same name convention as for
+  Overdo.
+
+Bug fixes
+~~~~~~~~~
+
+- Fixes indicator extraction from value in `Underdo` model.
+
 Version 0.3.0 (released 2015-11-09):
 ------------------------------------
 
