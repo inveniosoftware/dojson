@@ -15,7 +15,7 @@ import pkg_resources
 import re
 
 from lxml import etree
-from six import StringIO, iteritems
+from six import StringIO, iteritems, text_type
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 
@@ -126,7 +126,23 @@ def split_blob(blob):
     raise StopIteration()
 
 
+def split_stream(stream):
+    """Split the stream using <record.*?>.*?</record> as pattern."""
+    buf = []
+    for row in stream:
+        row = text_type(row, 'utf8')
+        index = row.rfind('</record>')
+        if index >= 0:
+            buf.append(row[:index + 9])
+            for blob in split_blob(''.join(buf)):
+                yield blob.encode('utf8')
+            buf = [row[index + 9:]]
+        else:
+            buf.append(row)
+    raise StopIteration()
+
+
 def load(source):
     """Load MARC XML and return Python dict."""
-    for data in split_blob(source.read()):
+    for data in split_stream(source):
         yield create_record(data)

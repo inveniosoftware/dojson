@@ -170,6 +170,27 @@ def test_marc21_loader():
     assert len(records) == 2
 
 
+def test_marc21_split_stream():
+    """Test MARC21 split_stream()."""
+    from six import StringIO, u
+    from dojson.contrib.marc21.utils import split_stream
+
+    # Testing regular situation
+    COLLECTION = '<collection>{0}{1}</collection>'.format(
+        RECORD, RECORD_SIMPLE
+    )
+    generator = split_stream(StringIO(COLLECTION))
+    assert generator.next() == RECORD
+    assert generator.next() == RECORD_SIMPLE
+
+    # Testing records over single line
+    records = StringIO(" <record>foo</record> <record>会意字</record> ")
+
+    generator = split_stream(records)
+    assert generator.next() == "<record>foo</record>"
+    assert generator.next() == "<record>会意字</record>"
+
+
 def test_simple_record_tomarc21():
     """Test simple record marc21 - json - marc21."""
     from dojson.contrib.marc21 import marc21
