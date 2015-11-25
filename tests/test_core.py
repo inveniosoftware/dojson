@@ -11,12 +11,7 @@
 
 import dojson
 from lxml import etree
-import pytest
 
-try:
-    from html import escape  # python 3.x
-except ImportError:
-    from cgi import escape  # python 2.x
 
 RECORD = """<record>
   <controlfield tag="001">17575</controlfield>
@@ -66,23 +61,67 @@ RECORD_SIMPLE = """<record>
   </datafield>
 </record>"""
 
+# http://www.loc.gov/marc/umb/um07to10.html
+RECORD_THEATER = """<record>
+  <datafield tag="650" ind1=" " ind2=" ">
+    <subfield code="a">Theater</subfield>
+    <subfield code="z">United States</subfield>
+    <subfield code="v">Biography</subfield>
+    <subfield code="v">Dictionaries.</subfield>
+  </datafield>
+</record>"""
+
+# Requires a liberal MARC
+RECORD_AUDUB = """<record>
+    <datafield tag="852" ind1="8" ind2=" ">
+        <subfield code="i">M 314</subfield>
+        <subfield code="h">339</subfield>
+        <subfield code="b">Library Reading Room</subfield>
+        <subfield code="9">10</subfield>
+    </datafield>
+</record>"""
+
+# http://www.loc.gov/marc/bibliographic/bd245.html
+#
+# 245 00 $a Deutsche Bibliographie.
+#        $p Wöchentliches Verzeichnis.
+#        $n Reihe B,
+#        $p Beilage, Erscheinungen ausserhalb des Verlagsbuchhandels :
+#        $b Amtsblatt der Deutschen Bibliothek.
+RECORD_DEUTSCHE_BIBLIO = """<record>
+    <datafield tag="245" ind1="0" ind2="0">
+        <subfield code="a">Deutsche Bibliographie.</subfield>
+        <subfield code="p">Wöchentliches Verzeichnis.</subfield>
+        <subfield code="n">Reihe B,</subfield>
+        <subfield code="p">Beilage, Erscheinungen ausserhalb des Verlagsbuchhandels :</subfield>
+        <subfield code="b">Amtsblatt der Deutschen Bibliothek.</subfield>
+    </datafield>
+</record>"""
+
+RECORDS = {
+    "base": RECORD,
+    "simple": RECORD_SIMPLE,
+    "theater": RECORD_THEATER,
+    "deutsche biblio": RECORD_DEUTSCHE_BIBLIO
+}
+
 
 def test_index_creation():
     """Test index creation."""
     overdo = dojson.Overdo()
 
     @overdo.over('247', '^247..')
-    def match(self, key, value):
-        return value
+    def match_247(self, key, value):
+        return key, value
 
     @overdo.over('024', '^024..')
-    def match(self, key, value):
-        return value
+    def match_024(self, key, value):
+        return key, value
 
     data = overdo.do({'0247_': '024', '247__': '247'})
 
-    assert data['024'] == '024'
-    assert data['247'] == '247'
+    assert ('0247_', '024') == data['024']
+    assert ('247__', '247') == data['247']
 
 
 def test_missing_fields():
@@ -165,55 +204,61 @@ def test_no_none_value():
 
 def test_marc21_loader():
     """Test MARC21 loader."""
-    from six import StringIO
+    from six import BytesIO
     from dojson.contrib.marc21.utils import load
 
     COLLECTION = '<collection>{0}{1}</collection>'.format(
         RECORD, RECORD_SIMPLE
     )
 
-    records = list(load(StringIO(COLLECTION)))
+    records = list(load(BytesIO(COLLECTION.encode('utf-8'))))
     assert len(records) == 2
 
 
 def test_marc21_split_stream():
     """Test MARC21 split_stream()."""
-    from six import StringIO, u
+    from six import StringIO
     from dojson.contrib.marc21.utils import split_stream
 
-    # Testing regular situation
     COLLECTION = '<collection>{0}{1}</collection>'.format(
         RECORD, RECORD_SIMPLE
     )
-    generator = split_stream(StringIO(COLLECTION))
+    generator = split_stream(StringIO(COLLECTION.encode('utf-8')))
     assert etree.tostring(generator.next(), method='html') == RECORD
     assert etree.tostring(generator.next(), method='html') == RECORD_SIMPLE
 
-    # Testing records over single line
-    records = StringIO('<collection>'
-                       '<record>foo</record>'
-                       '<record>会意字</record>'
-                       '</collection>')
 
-    generator = split_stream(records)
-    assert etree.tostring(
-        generator.next(), method='html') == '<record>foo</record>'
-    assert etree.tostring(
-        generator.next(), method='html') == '<record>&#x4F1A;&#x610F;&#x5B57;</record>'
+def test_marc21_records_over_single_line():
+    """Test records over single line."""
+    from six import StringIO, u
+    from dojson.contrib.marc21.utils import split_stream
+
+    records = (u('<record>foo</record>'),
+               u('<record>会意字</record>'),
+               u('<record>&gt;&amp;&lt;</record>'))
+    collection = u('<collection>{0}</collection>').format(u('').join(records))
+
+    generator = split_stream(StringIO(collection.encode('utf-8')))
+    for record in records:
+        result = etree.tostring(generator.next(),
+                                encoding='utf-8',
+                                method='xml')
+        assert record.encode('utf-8') == result
 
 
-def test_simple_record_tomarc21():
-    """Test simple record marc21 - json - marc21."""
+def test_records_marc21_tojson_tomarc21():
+    """Test records marc21 - json - marc21."""
     from dojson.contrib.marc21 import marc21
     from dojson.contrib.marc21.utils import create_record
     from dojson.contrib.to_marc21 import to_marc21
 
-    blob = create_record(RECORD_SIMPLE)
-    data = marc21.do(blob)
+    for name, record in RECORDS.items():
+        blob = create_record(record)
+        data = marc21.do(blob)
 
-    back_blob = to_marc21.do(data)
+        back_blob = to_marc21.do(data)
 
-    assert blob == back_blob
+        assert blob == back_blob, name
 
 
 def test_tomarc21_from_xml():
@@ -222,12 +267,13 @@ def test_tomarc21_from_xml():
     from dojson.contrib.marc21.utils import create_record
     from dojson.contrib.to_marc21 import to_marc21
 
-    blob = create_record(RECORD)
-    data = marc21.do(blob)
+    for name, record in RECORDS.items():
+        blob = create_record(record)
+        data = marc21.do(blob)
 
-    back_blob = to_marc21.do(data)
+        back_blob = to_marc21.do(data)
 
-    assert blob == back_blob
+        assert blob == back_blob, name
 
 
 def test_marc21_856_indicators():
