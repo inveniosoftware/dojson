@@ -9,6 +9,7 @@
 
 """Test suite for DoJSON."""
 
+
 import dojson
 from lxml import etree
 
@@ -274,6 +275,30 @@ def test_tomarc21_from_xml():
         back_blob = to_marc21.do(data)
 
         assert blob == back_blob, name
+
+
+def test_toxml_from_xml():
+    """Test MARC21 loading from XML and recreating to XML."""
+    from dojson.contrib.marc21.utils import create_record
+    from dojson.contrib.to_marc21.utils import dumps
+    from lxml import etree, objectify
+
+    for name, record in RECORDS.items():
+        blob = create_record(record)
+        xml = dumps(blob)
+
+        options = {'xml_declaration': True,
+                   'encoding': 'utf8',
+                   'pretty_print': True}
+
+        recordxml = ('<collection xmlns="http://www.loc.gov/MARC21/slim">' +
+                     record +
+                     '</collection>')
+
+        expected = etree.tostring(objectify.fromstring(recordxml), **options)
+        actual = etree.tostring(objectify.fromstring(xml), **options)
+
+        assert expected == actual
 
 
 def test_marc21_856_indicators():

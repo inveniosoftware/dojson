@@ -14,8 +14,9 @@ from __future__ import unicode_literals
 import pkg_resources
 import re
 
+from collections import MutableMapping, OrderedDict
 from lxml import etree
-from six import StringIO, iteritems, text_type, string_types
+from six import StringIO, string_types
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 
@@ -42,7 +43,7 @@ def create_record(marcxml, correct=False, keep_singletons=True):
         tree = etree.parse(StringIO(marcxml), parser)
     else:
         tree = marcxml
-    record = {}
+    record = OrderedDict()
     field_position_global = 0
 
     controlfield_iterator = tree.iter(tag='{*}controlfield')
@@ -88,36 +89,18 @@ def create_record(marcxml, correct=False, keep_singletons=True):
             record.setdefault(tag, []).append((subfields, ind1, ind2, text,
                                                field_position_global))
 
-    class SaveDict(dict):
-        __getitem__ = dict.get
+    rec_tree = OrderedDict()
 
-    def dict_extend_helper(d, key, value):
-        """Helper function.
-        If the key is present inside the dictionary it creates a list (if
-        not present) and extends it with the new value.
-        Almost as in `list.extend`
-        """
-        if key in d:
-            current_value = d.get(key)
-            if not isinstance(current_value, list):
-                current_value = [current_value]
-            current_value.append(value)
-            value = current_value
-        d[key] = value
-
-    rec_tree = SaveDict()
-
-    for key, values in iteritems(record):
+    for key, values in record.items():
         if key < '010' and key.isdigit():
             rec_tree[key] = [value[3] for value in values]
         else:
             for value in values:
-                field = SaveDict()
+                k = (key + value[1] + value[2]).replace(' ', '_')
+                fields = GroupableOrderedDict()
                 for subfield in value[0]:
-                    dict_extend_helper(field, subfield[0], subfield[1])
-                dict_extend_helper(
-                    rec_tree,
-                    (key + value[1] + value[2]).replace(' ', '_'), field)
+                    fields[subfield[0]] = subfield[1]
+                rec_tree[k] = fields
 
     return rec_tree
 
@@ -139,3 +122,77 @@ def load(source):
     """Load MARC XML and return Python dict."""
     for data in split_stream(source):
         yield create_record(data)
+
+
+class GroupableOrderedDict(MutableMapping):
+    """List that can group values pretending to be a dict."""
+
+    def __init__(self, values=None):
+        super(MutableMapping, self).__init__()
+
+        self._data = []
+        self._keys = []
+        if values:
+            for k, v in values:
+                self[k] = v
+
+    def get(self, key):
+        if key in self._keys:
+            return self.__getitem__(key)
+        else:
+            return None
+
+    def __getitem__(self, key):
+        if key in self._keys:
+            output = [v for k, v in self._data if k == key]
+            if len(output) == 1:
+                return output[0]
+            else:
+                return output
+        raise KeyError(key)
+
+    def __setitem__(self, key, value):
+        self._data.append((key, value))
+        if key not in self._keys:
+            self._keys.append(key)
+
+    def __delitem__(self, key):
+        self._data = [(k, v) for k, v in self._data if k != key]
+        self._keys.remove(key)
+
+    def __len__(self):
+        return len(self.keys)
+
+    def values(self, **kw):
+        r = []
+        if not kw.get('expand', False):
+            for key in self._keys:
+                r.append(self[key])
+        else:
+            for _, v in self._data:
+                r.append(v)
+        return r
+
+    def keys(self, **kw):
+        if not kw.get('repeated', False):
+            return list(self._keys)
+        else:
+            return [k for k, v in self._data]
+
+    def items(self, **kw):
+        return list(self.iteritems(**kw))
+
+    def iteritems(self, **kw):
+        if not kw.get('repeated', False):
+            for key in self._keys:
+                yield key, self[key]
+        else:
+            for item in self._data:
+                yield item
+
+    def __iter__(self, **kw):
+        for key in self._keys:
+            yield key
+
+    def __repr__(self):
+        return repr(dict(self.iteritems()))
