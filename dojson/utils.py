@@ -51,7 +51,7 @@ def for_each_value(f):
     """Apply function to each item."""
     @functools.wraps(f)
     def wrapper(self, key, values, **kwargs):
-        if isinstance(values, list):
+        if isinstance(values, (list, tuple, set)):
             return [f(self, key, value, **kwargs) for value in values]
         return [f(self, key, values, **kwargs)]
     return wrapper
@@ -61,7 +61,7 @@ def reverse_for_each_value(f):
     """Undo what `for_each_value` does."""
     @functools.wraps(f)
     def wrapper(self, key, values, **kwargs):
-        if isinstance(values, list):
+        if isinstance(values, (list, tuple, set)):
             if len(values) == 1:
                 return f(self, key, values[0], **kwargs)
             return [f(self, key, value, **kwargs) for value in values]
@@ -71,8 +71,8 @@ def reverse_for_each_value(f):
 
 def force_list(data):
     """Wrap data in list."""
-    if data is not None and not isinstance(data, (list, set)):
-        return [data]
+    if data is not None and not isinstance(data, (list, tuple, set)):
+        return (data,)
     return data
 
 

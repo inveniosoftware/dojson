@@ -28,7 +28,6 @@ New extensions with loaders, dumpers, or rules can be provided via entry points.
 - ``dojson.cli.rule`` instances of :class:`dojson.Overdo` with loaded rules.
 """
 
-import json
 import pkg_resources
 import sys
 
@@ -88,6 +87,8 @@ def missing_fields(source, load, rule):
     else:
         for item in data:
             missing |= set(rule.missing(item))
+
+    missing.discard('__order__')
 
     if missing:
         click.echo(', '.join(missing))

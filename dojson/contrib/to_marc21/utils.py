@@ -9,8 +9,6 @@
 
 """Utilities for converting to MARC21."""
 
-from __future__ import unicode_literals
-
 import pkg_resources
 
 from lxml import etree
@@ -32,26 +30,36 @@ def dumps(*records, **kwargs):
     for record in records:
         rec = E.record()
         for df, subfields in record.items():
-            if isinstance(subfields, list):
-                controlfield = E.controlfield(subfields[0])
-                print(df)
-                controlfield.attrib['tag'] = df[0:3]
-                rec.append(controlfield)
+            # Control fields
+            if len(df) == 3:
+                if isinstance(subfields, basestring):
+                    controlfield = E.controlfield(subfields)
+                    controlfield.attrib['tag'] = df[0:3]
+                    rec.append(controlfield)
+                elif isinstance(subfields, (list, tuple, set)):
+                    for subfield in subfields:
+                        controlfield = E.controlfield(subfield)
+                        controlfield.attrib['tag'] = df[0:3]
+                        rec.append(controlfield)
             else:
+                if not isinstance(subfields, (list, tuple, set)):
+                    subfields = (subfields,)
+
                 df = df.replace('_', ' ')
-                datafield = E.datafield()
-                datafield.attrib['tag'] = df[0:3]
-                datafield.attrib['ind1'] = df[3]
-                datafield.attrib['ind2'] = df[4]
+                for subfield in subfields:
+                    datafield = E.datafield()
+                    datafield.attrib['tag'] = df[0:3]
+                    datafield.attrib['ind1'] = df[3]
+                    datafield.attrib['ind2'] = df[4]
 
-                for code, value in subfields.items(repeated=True):
-                    if not isinstance(value, basestring):
-                        for v in value:
-                            datafield.append(E.subfield(v, code=code))
-                    else:
-                        datafield.append(E.subfield(value, code=code))
+                    for code, value in subfield.items(repeated=True):
+                        if not isinstance(value, basestring):
+                            for v in value:
+                                datafield.append(E.subfield(v, code=code))
+                        else:
+                            datafield.append(E.subfield(value, code=code))
 
-                rec.append(datafield)
+                    rec.append(datafield)
         root.append(rec)
 
     return etree.tostring(root, **kwargs)

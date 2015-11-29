@@ -9,12 +9,10 @@
 
 """Utilities for converting MARC21."""
 
-from __future__ import unicode_literals
-
 import pkg_resources
 import re
 
-from collections import MutableMapping, OrderedDict
+from collections import Counter
 from lxml import etree
 from six import StringIO, string_types
 
@@ -23,6 +21,175 @@ split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 MARC21_DTD = pkg_resources.resource_filename(
     'dojson.contrib.marc21', 'MARC21slim.dtd')
 """Location of the MARC21 DTD file"""
+
+
+class GroupableOrderedDict(dict):
+    """Immutable list that can group values pretending to be a dict."""
+
+    def __new__(cls, values=None):
+        new = dict.__new__(cls)
+        dict.__init__(new)
+
+        data = []
+        keys = []
+        ordering = []
+
+        if values:
+            if isinstance(values, GroupableOrderedDict):
+                values = values.items(repeated=True)
+            if isinstance(values, dict):
+                if "__order__" not in values:
+                    raise AttributeError("Can only be recreated from an "
+                                         "ordered dict.")
+
+                ordering = values["__order__"]
+                occurences = Counter(ordering)
+                counter = Counter()
+                for key in ordering:
+                    if key not in keys:
+                        keys.append(key)
+                    if occurences[key] > 1:
+                        value = values[key][counter[key]]
+                    else:
+                        value = values[key]
+                    data.append((key, value))
+                    counter[key] += 1
+            else:
+                for key, value in values:
+                    if key not in keys:
+                        keys.append(key)
+                    data.append((key, value))
+                    ordering.append(key)
+
+        # immutable, all the things
+        new.__data = tuple(data)
+        new.__keys = tuple(keys)
+        new.__order__ = tuple(ordering)
+        return new
+
+    def __init__(self, *args):
+        pass
+
+    def __copy__(self):
+        return GroupableOrderedDict(self.items(repeated=True))
+
+    def __deepcopy__(self):
+        return self.__copy__()
+
+    def __reduce__(self):
+        return GroupableOrderedDict, (dict(self.items()), )
+
+    def __eq__(self, other):
+        if len(other) != len(self.__keys):
+            return False
+
+        for k, v in self.iteritems(with_order=False):
+            if not isinstance(v, (list, tuple)):
+                if isinstance(other[k], (list, tuple)):
+                    if len(other[k]) != 1:
+                        return False
+                    if v != other[k][0]:
+                        return False
+                elif v != other[k]:
+                    return False
+            else:
+                if len(v) != len(other[k]):
+                    return False
+
+                for i, value in enumerate(v):
+                    if other[k][i] != value:
+                        return False
+        return True
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def get(self, key, default=None):
+        """D.get(k,[,d]) -> D[k] if k in D, else d. d defaults to None."""
+        try:
+            return self.__getitem__(key)
+        except KeyError:
+            return default
+
+    def __getitem__(self, key):
+        if key == "___keys__":
+            return self.___keys__
+        if key in self.__keys:
+            item = tuple([v for k, v in self.__data if k == key])
+            if len(item) == 1:
+                return item[0]
+            return item
+        raise KeyError(key)
+
+    def __setitem__(self, *args, **kwargs):
+        raise TypeError('{} object does not suppoert item assignment'
+                        .format(self.__class__.__name__))
+
+    def __delitem__(self, key):
+        self.__data = [(k, v) for k, v in self.__data if k != key]
+        self.__keys.remove(key)
+
+    def __len__(self):
+        return len(self.__keys)
+
+    def values(self, expand=False):
+        """
+        D.values() -> list of D's values grouped by key
+
+        expand=True will return the raw values in the initial order.
+        """
+        r = []
+        if not expand:
+            for key in self.__keys:
+                r.append(self[key])
+        else:
+            for _, v in self.__data:
+                r.append(v)
+        return r
+
+    def keys(self, repeated=False):
+        """
+        D.keys() -> list of D's keys
+
+        repeated=True will return the ordering of the values rather than the
+        keys. It may contain repeatitions.
+        """
+        if not repeated:
+            return self.__keys
+        else:
+            return tuple(k for k, v in self.__data)
+
+    def items(self, with_order=False, repeated=False):
+        """
+        D.items() -> list of D's (key, value) pairs, as 2-tuples
+
+        with_order=True will also return a (__order__, keys) tuples with the
+        ordering. Usefull to be able to reconstruct this structure later on.
+
+        repeated=True will not group by key and respect the initial ordering.
+        """
+        return tuple(self.iteritems(with_order, repeated))
+
+    def iteritems(self, with_order=True, repeated=False):
+        """Just like D.items() but as an iterator"""
+        if with_order:
+            yield "__order__", self.__order__
+        if not repeated:
+            for key in self.__keys:
+                yield key, self[key]
+        else:
+            for item in self.__data:
+                yield item
+
+    def __iter__(self):
+        for k in self.__keys:
+            yield k
+
+    def __repr__(self):
+        return repr(dict(self.iteritems()))
+
+    def __bool__(self):
+        return bool(self.__keys)
 
 
 def create_record(marcxml, correct=False, keep_singletons=True):
@@ -43,66 +210,40 @@ def create_record(marcxml, correct=False, keep_singletons=True):
         tree = etree.parse(StringIO(marcxml), parser)
     else:
         tree = marcxml
-    record = OrderedDict()
-    field_position_global = 0
+    record = []
 
     controlfield_iterator = tree.iter(tag='{*}controlfield')
     for controlfield in controlfield_iterator:
-        tag = controlfield.attrib.get('tag', '!')  # .encode("UTF-8")
-        ind1 = ' '
-        ind2 = ' '
-        text = controlfield.text
-        if text is None:
-            text = ''
-        else:
-            text = text  # .encode("UTF-8")
-        subfields = []
+        tag = controlfield.attrib.get('tag', '!')
+        text = controlfield.text or ''
         if text or keep_singletons:
-            field_position_global += 1
-            record.setdefault(tag, []).append((subfields, ind1, ind2, text,
-                                               field_position_global))
+            record.append((tag, text))
 
     datafield_iterator = tree.iter(tag='{*}datafield')
     for datafield in datafield_iterator:
-        tag = datafield.attrib.get('tag', '!')  # .encode("UTF-8")
-        ind1 = datafield.attrib.get('ind1', '!')  # .encode("UTF-8")
-        ind2 = datafield.attrib.get('ind2', '!')  # .encode("UTF-8")
-        # ind1, ind2 = _wash_indicators(ind1, ind2)
-        if ind1 in ('', '_'):
-            ind1 = ' '
-        if ind2 in ('', '_'):
-            ind2 = ' '
-        subfields = []
+        tag = datafield.attrib.get('tag', '!')
+        ind1 = datafield.attrib.get('ind1', '!')
+        ind2 = datafield.attrib.get('ind2', '!')
+        if ind1 in ('', ):
+            ind1 = '_'
+        if ind2 in ('', ):
+            ind2 = '_'
+        ind1 = ind1.replace(' ', '_')
+        ind2 = ind2.replace(' ', '_')
+
+        fields = []
         subfield_iterator = datafield.iter(tag='{*}subfield')
         for subfield in subfield_iterator:
             code = subfield.attrib.get('code', '!')  # .encode("UTF-8")
-            text = subfield.text
-            if text is None:
-                text = ''
-            else:
-                text = text  # .encode("UTF-8")
+            text = subfield.text or ''
             if text or keep_singletons:
-                subfields.append((code, text))
-        if subfields or keep_singletons:
-            text = ''
-            field_position_global += 1
-            record.setdefault(tag, []).append((subfields, ind1, ind2, text,
-                                               field_position_global))
+                fields.append((code, text))
 
-    rec_tree = OrderedDict()
+        if fields or keep_singletons:
+            key = '{0}{1}{2}'.format(tag, ind1, ind2)
+            record.append((key, GroupableOrderedDict(fields)))
 
-    for key, values in record.items():
-        if key < '010' and key.isdigit():
-            rec_tree[key] = [value[3] for value in values]
-        else:
-            for value in values:
-                k = (key + value[1] + value[2]).replace(' ', '_')
-                fields = GroupableOrderedDict()
-                for subfield in value[0]:
-                    fields[subfield[0]] = subfield[1]
-                rec_tree[k] = fields
-
-    return rec_tree
+    return GroupableOrderedDict(record)
 
 
 def split_blob(blob):
@@ -122,77 +263,3 @@ def load(source):
     """Load MARC XML and return Python dict."""
     for data in split_stream(source):
         yield create_record(data)
-
-
-class GroupableOrderedDict(MutableMapping):
-    """List that can group values pretending to be a dict."""
-
-    def __init__(self, values=None):
-        super(MutableMapping, self).__init__()
-
-        self._data = []
-        self._keys = []
-        if values:
-            for k, v in values:
-                self[k] = v
-
-    def get(self, key):
-        if key in self._keys:
-            return self.__getitem__(key)
-        else:
-            return None
-
-    def __getitem__(self, key):
-        if key in self._keys:
-            output = [v for k, v in self._data if k == key]
-            if len(output) == 1:
-                return output[0]
-            else:
-                return output
-        raise KeyError(key)
-
-    def __setitem__(self, key, value):
-        self._data.append((key, value))
-        if key not in self._keys:
-            self._keys.append(key)
-
-    def __delitem__(self, key):
-        self._data = [(k, v) for k, v in self._data if k != key]
-        self._keys.remove(key)
-
-    def __len__(self):
-        return len(self.keys)
-
-    def values(self, **kw):
-        r = []
-        if not kw.get('expand', False):
-            for key in self._keys:
-                r.append(self[key])
-        else:
-            for _, v in self._data:
-                r.append(v)
-        return r
-
-    def keys(self, **kw):
-        if not kw.get('repeated', False):
-            return list(self._keys)
-        else:
-            return [k for k, v in self._data]
-
-    def items(self, **kw):
-        return list(self.iteritems(**kw))
-
-    def iteritems(self, **kw):
-        if not kw.get('repeated', False):
-            for key in self._keys:
-                yield key, self[key]
-        else:
-            for item in self._data:
-                yield item
-
-    def __iter__(self, **kw):
-        for key in self._keys:
-            yield key
-
-    def __repr__(self):
-        return repr(dict(self.iteritems()))

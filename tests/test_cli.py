@@ -12,7 +12,6 @@
 from click.testing import CliRunner
 
 import json
-import pytest
 
 
 def test_cli_do_marc21_from_xml():
@@ -39,7 +38,7 @@ def test_cli_do_marc21_from_xml():
             ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
         )
         data = json.loads(result.output)
-        assert data == expected
+        assert expected == data
 
 
 def test_cli_do_marc21_from_json():
@@ -52,19 +51,20 @@ def test_cli_do_marc21_from_json():
     runner = CliRunner()
 
     with runner.isolated_filesystem():
-        with open('record.json', 'wb') as f:
-            f.write(json.dumps(create_record(RECORD_SIMPLE)))
+        with open('record.json', 'wb') as fp:
+            record = create_record(RECORD_SIMPLE)
+            json.dump(record, fp)
 
         result = runner.invoke(
             cli.missing_fields,
             ['-i', 'record.json', 'marc21']
         )
-        assert result.output == ''
-        assert result.exit_code == 0
+        assert '' == result.output
+        assert 0 == result.exit_code
 
         result = runner.invoke(
             cli.apply_rule,
             ['-i', 'record.json', 'marc21']
         )
         data = json.loads(result.output)
-        assert data == expected
+        assert expected == data

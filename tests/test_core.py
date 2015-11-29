@@ -9,7 +9,6 @@
 
 """Test suite for DoJSON."""
 
-
 import dojson
 from lxml import etree
 
@@ -325,31 +324,31 @@ def test_marc21_856_indicators():
 
     expected_8564 = {
         'electronic_location_and_access': [
-            {'public_note': ['0'],
+            {'public_note': ('0',),
              'access_method': 'HTTP',
-             'uniform_resource_identifier': [
-                 'https://zenodo.org/record/17575/files/...'],
-             'file_size': ['272681']}
+             'uniform_resource_identifier': (
+                 'https://zenodo.org/record/17575/files/...',),
+             'file_size': ('272681',)}
         ]
     }
     expected_8567 = {
         'electronic_location_and_access': [
-            {'public_note': ['0'],
+            {'public_note': ('0',),
              'access_method': 'Awesome access method',
-             'uniform_resource_identifier': [
-                 'https://zenodo.org/record/17575/files/...'],
-             'file_size': ['272681']}
+             'uniform_resource_identifier': (
+                 'https://zenodo.org/record/17575/files/...',),
+             'file_size': ('272681',)}
         ]
     }
 
     blob = create_record(RECORD_8564)
     data = marc21.do(blob)
-    assert data == expected_8564
+    assert expected_8564 == data
     back_blob = to_marc21.do(data)
     assert blob == back_blob
 
     blob = create_record(RECORD_8567)
     data = marc21.do(blob)
-    assert data == expected_8567
+    assert expected_8567 == data
     back_blob = to_marc21.do(data)
     assert blob == back_blob
