@@ -70,7 +70,13 @@ class Overdo(object):
         for key, value in iteritems(blob):
             for name, creator, field in self._query(key):
                 try:
-                    output[name] = creator(output, key, value)
+                    data = creator(output, key, value)
+                    if getattr(creator, '__extend__', False):
+                        existing = output.get(name, [])
+                        existing.extend(data)
+                        output[name] = existing
+                    else:
+                        output[name] = data
                 except IgnoreKey:
                     pass
 

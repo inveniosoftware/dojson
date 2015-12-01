@@ -49,6 +49,10 @@ def filter_values(f):
 
 def for_each_value(f):
     """Apply function to each item."""
+    # Extends values under same name in output.  This should be possible
+    # because we are alredy expecting list.
+    setattr(f, '__extend__', True)
+
     @functools.wraps(f)
     def wrapper(self, key, values, **kwargs):
         if isinstance(values, (list, tuple, set)):
