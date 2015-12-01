@@ -98,11 +98,32 @@ RECORD_DEUTSCHE_BIBLIO = """<record>
     </datafield>
 </record>"""
 
+RECORD_REPEATABLE_FIELDS = """<record>
+  <datafield tag="100" ind1=" " ind2=" ">
+    <subfield code="a">Donges, Jonathan F</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Jefferson, Thomas</subfield>
+    <subfield code="d">1743-1826</subfield>
+    <subfield code="e">former owner</subfield>
+    <subfield code="5">MH</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ford, John</subfield>
+    <subfield code="d">1894-1973</subfield>
+    <subfield code="e">direction</subfield>
+  </datafield>
+  <datafield tag="700" ind1="0" ind2=" ">
+    <subfield code="a">Father Divine</subfield>
+  </datafield>
+</record>"""
+
 RECORDS = {
     "base": RECORD,
     "simple": RECORD_SIMPLE,
     "theater": RECORD_THEATER,
-    "deutsche biblio": RECORD_DEUTSCHE_BIBLIO
+    "deutsche biblio": RECORD_DEUTSCHE_BIBLIO,
+    "repeatable fields": RECORD_REPEATABLE_FIELDS
 }
 
 
