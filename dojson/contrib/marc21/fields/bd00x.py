@@ -15,19 +15,19 @@ from ..model import marc21
 @marc21.over('control_number', '^001')
 def control_number(self, key, value):
     """Control Number."""
-    return value[0]
+    return value
 
 
 @marc21.over('control_number_identifier', '^003')
 def control_number_identifier(self, key, value):
     """Control Number Identifier."""
-    return value[0]
+    return value
 
 
 @marc21.over('date_and_time_of_latest_transaction', '^005')
 def date_and_time_of_latest_transaction(self, key, value):
     """Date and Time of Latest Transaction."""
-    return value[0]
+    return value
 
 
 @marc21.over(
@@ -35,10 +35,10 @@ def date_and_time_of_latest_transaction(self, key, value):
 def fixed_length_data_elements_additional_material_characteristics(
         self, key, value):
     """Fixed-Length Data Elements-Additional Material Characteristics."""
-    return value[0]
+    return value
 
 
 @marc21.over('fixed_length_data_elements', '^008')
 def fixed_length_data_elements(self, key, value):
     """Fixed-Length Data Elements."""
-    return value[0]
+    return value
