@@ -87,14 +87,13 @@ def test_groupable_ordered_dict_new(god):
 
 def test_groupable_ordered_dict_to_json(god):
     """Test that a GroupableOrderedDict can be serialized to JSON."""
-    expected = json.dumps({'__order__': ('a', 'b', 'c', 'a', 'b'),
-                           'a': ['dojson', 4],
-                           'b': [2, 5],
-                           'c': 'invenio'},
-                          sort_keys=True,
-                          indent=4)
+    d = {'__order__': ('a', 'b', 'c', 'a', 'b'),
+         'a': ['dojson', 4],
+         'b': [2, 5],
+         'c': 'invenio'}
 
-    assert expected == json.dumps(god, indent=4)
+    assert json.dumps(d, sort_keys=True, indent=4) == json.dumps(god, indent=4)
+    assert json.dumps(d, sort_keys=True) == json.dumps(god)
 
 
 def test_groupable_ordered_dict_iterable(god):
