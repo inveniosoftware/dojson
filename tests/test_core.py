@@ -307,13 +307,18 @@ def test_tomarc21_from_xml():
 
 def test_toxml_from_xml():
     """Test MARC21 loading from XML and recreating to XML."""
+    from dojson.contrib.marc21 import marc21
     from dojson.contrib.marc21.utils import create_record
+    from dojson.contrib.to_marc21 import to_marc21
     from dojson.contrib.to_marc21.utils import dumps
     from lxml import etree, objectify
 
     for name, record in RECORDS.items():
         blob = create_record(record)
-        xml = dumps(blob)
+        rec = marc21.do(blob)
+        back_blob = to_marc21.do(rec)
+
+        xml = dumps(back_blob)
 
         options = {'xml_declaration': True,
                    'encoding': 'utf8',
