@@ -12,7 +12,7 @@
 import pkg_resources
 import re
 
-from collections import Counter
+from collections import OrderedDict, Counter
 from lxml import etree
 from six import StringIO, string_types
 
@@ -23,55 +23,76 @@ MARC21_DTD = pkg_resources.resource_filename(
 """Location of the MARC21 DTD file"""
 
 
-class GroupableOrderedDict(dict):
+class GroupableOrderedDict(OrderedDict):
     """Immutable list that can group values pretending to be a dict."""
 
-    def __new__(cls, values=None):
-        new = dict.__new__(cls)
-        dict.__init__(new)
+    def __new__(cls, *args):
+        """Create a new immutable GroupableOrderedDict."""
+        new = OrderedDict.__new__(cls)
+        OrderedDict.__init__(new)
 
-        data = []
-        keys = []
+        if len(args) > 1:
+            raise TypeError('expected at most 1 arguments, got {}'
+                            .format(len(args)))
+
         ordering = []
+        values = args[0]
 
         if values:
             if isinstance(values, GroupableOrderedDict):
-                values = values.items(repeated=True)
-            if isinstance(values, dict):
-                if "__order__" not in values:
-                    raise AttributeError("Can only be recreated from an "
-                                         "ordered dict.")
+                values = values.iteritems(with_order=False, repeated=True)
+            elif isinstance(values, dict):
+                if '__order__' in values:
+                    order = values.pop('__order__')
 
-                ordering = values["__order__"]
-                occurences = Counter(ordering)
-                counter = Counter()
-                for key in ordering:
-                    if key not in keys:
-                        keys.append(key)
-                    if occurences[key] > 1:
-                        value = values[key][counter[key]]
-                    else:
-                        value = values[key]
-                    data.append((key, value))
-                    counter[key] += 1
-            else:
-                for key, value in values:
-                    if key not in keys:
-                        keys.append(key)
-                    data.append((key, value))
+                    tmp = []
+                    c = Counter()
+                    for key in order:
+                        v = values[key]
+                        if not isinstance(v, (tuple, list)):
+                            if c[key] == 0:
+                                tmp.append((key, v))
+                            else:
+                                raise Exception("Order and values don't match"
+                                                "on key {0} at position {1}"
+                                                .format(key, c[key]))
+                        else:
+                            tmp.append((key, v[c[key]]))
+                        c[key] += 1
+                    values = tmp
+                else:
+                    values = values.iteritems()
+
+            for key, value in values:
+                if key not in new:
+                    OrderedDict.__setitem__(new, key, [])
+                v = []
+                if isinstance(value, (tuple, list)):
+                    for item in value:
+                        v.append(item)
+                        ordering.append(key)
+                else:
+                    v.append(value)
                     ordering.append(key)
 
-        # immutable, all the things
-        new.__data = tuple(data)
-        new.__keys = tuple(keys)
-        new.__order__ = tuple(ordering)
+                OrderedDict.__getitem__(new, key).extend(v)
+
+        # Immutable...
+        for key, value in dict.iteritems(new):
+            OrderedDict.__setitem__(new, key, tuple(value))
+
+        OrderedDict.__setitem__(new, '__order__', tuple(ordering))
         return new
 
-    def __init__(self, *args):
-        pass
+    def __init__(self, *args, **kwargs):
+        """
+        Init the GroupableOrderedDict.
+
+        It's done in __new__ so the instance cannot be modified through it.
+        """
 
     def __copy__(self):
-        return GroupableOrderedDict(self.items(repeated=True))
+        return GroupableOrderedDict(self)
 
     def __deepcopy__(self):
         return self.__copy__()
@@ -80,46 +101,56 @@ class GroupableOrderedDict(dict):
         return GroupableOrderedDict, (dict(self.items()), )
 
     def __eq__(self, other):
-        if len(other) != len(self.__keys):
+        if (len(self.keys()) != len(other.keys()) and
+                '__order__' not in other and
+                len(self.keys) - 1 == len(other.keys())):
+
             return False
 
-        for k, v in self.iteritems(with_order=False):
-            if not isinstance(v, (list, tuple)):
-                if isinstance(other[k], (list, tuple)):
-                    if len(other[k]) != 1:
-                        return False
-                    if v != other[k][0]:
-                        return False
-                elif v != other[k]:
+        for k, vs in self.iteritems():
+            if k == '__order__':
+                if k in other and other[k] != vs:
                     return False
-            else:
-                if len(v) != len(other[k]):
+                else:
+                    continue
+
+            if k not in other:
+                return False
+
+            if isinstance(vs, (list, tuple, set)):
+                if len(vs) == 1 and vs[0] != other[k] and vs != other[k]:
                     return False
 
-                for i, value in enumerate(v):
-                    if other[k][i] != value:
+                for i, v in enumerate(vs):
+                    if v != other[k][i]:
                         return False
+            else:
+                # repeatable fields...
+                if isinstance(other[k], (list, tuple, set)):
+                    if len(other[k]) == 1 and vs != other[k][0]:
+                        return False
+                    else:
+                        continue
+
+                if vs != other[k] and (vs,) != other[k] and [vs] != other[k]:
+                    return False
         return True
 
     def __ne__(self, other):
         return not self.__eq__(other)
 
     def get(self, key, default=None):
-        """D.get(k,[,d]) -> D[k] if k in D, else d. d defaults to None."""
+        """D[k] if k in D, else d. d defaults to None."""
         try:
             return self.__getitem__(key)
         except KeyError:
             return default
 
     def __getitem__(self, key):
-        if key == "___keys__":
-            return self.___keys__
-        if key in self.__keys:
-            item = tuple([v for k, v in self.__data if k == key])
-            if len(item) == 1:
-                return item[0]
-            return item
-        raise KeyError(key)
+        item = OrderedDict.__getitem__(self, key)
+        if len(item) == 1 and key != '__order__':
+            return item[0]
+        return item
 
     def __setitem__(self, *args, **kwargs):
         raise TypeError('{} object does not suppoert item assignment'
@@ -129,39 +160,54 @@ class GroupableOrderedDict(dict):
         self.__data = [(k, v) for k, v in self.__data if k != key]
         self.__keys.remove(key)
 
-    def __len__(self):
-        return len(self.__keys)
+    def __iter__(self):
+        occurences = Counter()
+        order = self['__order__']
+        yield '__order__'
+        for o in order:
+            if occurences[o] == 0:
+                yield o
+            occurences[o] += 1
 
     def values(self, expand=False):
         """
-        D.values() -> list of D's values grouped by key
+        list of D's values grouped by key.
 
         expand=True will return the raw values in the initial order.
         """
-        r = []
-        if not expand:
-            for key in self.__keys:
-                r.append(self[key])
+        values = []
+        if expand:
+            occurences = Counter()
+            order = self['__order__']
+            for key in order:
+                values.append(dict.__getitem__(self, key)[occurences[key]])
+                occurences[key] += 1
         else:
-            for _, v in self.__data:
-                r.append(v)
-        return r
+            for key, value in OrderedDict.iteritems(self):
+                if key == '__order__':
+                    continue
+                if len(value) == 1:
+                    values.append(value[0])
+                values.append(value)
+        return values
 
     def keys(self, repeated=False):
         """
-        D.keys() -> list of D's keys
+        list of D's keys.
 
         repeated=True will return the ordering of the values rather than the
-        keys. It may contain repeatitions.
+        keys. It may contain repetitions.
         """
         if not repeated:
-            return self.__keys
+            keys = OrderedDict.keys(self)
+            keys.remove('__order__')
+            return keys
         else:
-            return tuple(k for k, v in self.__data)
+            return list(self['__order__'])
 
     def items(self, with_order=False, repeated=False):
         """
-        D.items() -> list of D's (key, value) pairs, as 2-tuples
+        list of D's (key, value) pairs, as 2-tuples.
 
         with_order=True will also return a (__order__, keys) tuples with the
         ordering. Usefull to be able to reconstruct this structure later on.
@@ -171,25 +217,24 @@ class GroupableOrderedDict(dict):
         return tuple(self.iteritems(with_order, repeated))
 
     def iteritems(self, with_order=True, repeated=False):
-        """Just like D.items() but as an iterator"""
-        if with_order:
-            yield "__order__", self.__order__
+        """Just like D.items() but as an iterator."""
         if not repeated:
-            for key in self.__keys:
-                yield key, self[key]
+            for key, value in OrderedDict.iteritems(self):
+                if key != '__order__':
+                    if len(value) == 1:
+                        yield key, value[0]
+                    else:
+                        yield key, value
+                elif with_order:
+                    yield key, value
         else:
-            for item in self.__data:
-                yield item
-
-    def __iter__(self):
-        for k in self.__keys:
-            yield k
-
-    def __repr__(self):
-        return repr(dict(self.iteritems()))
-
-    def __bool__(self):
-        return bool(self.__keys)
+            occurences = Counter()
+            order = self['__order__']
+            if with_order:
+                yield '__order__', order
+            for key in order:
+                yield key, OrderedDict.__getitem__(self, key)[occurences[key]]
+                occurences[key] += 1
 
 
 def create_record(marcxml, correct=False, keep_singletons=True):

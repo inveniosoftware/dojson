@@ -25,11 +25,11 @@ MARC21_NS = "http://www.loc.gov/MARC21/slim"
 
 def dumps(*records, **kwargs):
     """Dump records into a MarcXML file."""
-
     root = etree.Element('collection', nsmap={None: MARC21_NS})
+
     for record in records:
         rec = E.record()
-        for df, subfields in record.items():
+        for df, subfields in record.items(repeated=True):
             # Control fields
             if len(df) == 3:
                 if isinstance(subfields, basestring):

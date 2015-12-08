@@ -32,23 +32,36 @@ def test_groupable_ordered_dict_is_immutable(god):
         god['a'].append(1)
 
     god.values().append(('spam', 'ham'))
+
     with pytest.raises(KeyError):
         god['spam']
 
 
 def test_groupable_ordered_dict_keys(god):
     """Test that a GroupableOrderedDict has keys like a dict, but more."""
-    assert ('a', 'b', 'c') == god.keys()
-    assert ('a', 'b', 'c', 'a', 'b') == god.keys(repeated=True)
+    keys = god.keys()
+    keys.sort()
+    assert ['a', 'b', 'c'] == keys
+    assert ['a', 'b', 'c', 'a', 'b'] == god.keys(repeated=True)
 
 
 def test_groupable_ordered_dict_items(god):
     """Test that a GroupableOrderedDict has items like a dict, but more."""
-    assert (('a', ('dojson', 4)), ('b', (2, 5)), ('c', 'invenio')) == god.items()
+    assert (('a', ('dojson', 4)),
+            ('b', (2, 5)),
+            ('c', 'invenio')) == god.items()
+
     assert (('__order__', ('a', 'b', 'c', 'a', 'b')),
             ('a', ('dojson', 4)),
             ('b', (2, 5)),
             ('c', 'invenio')) == god.items(with_order=True)
+
+    assert (('__order__', ('a', 'b', 'c', 'a', 'b')),
+            ('a', 'dojson'),
+            ('b', 2),
+            ('c', 'invenio'),
+            ('a', 4),
+            ('b', 5)) == god.items(with_order=True, repeated=True)
 
 
 def test_groupable_ordered_dict_get(god):
@@ -60,6 +73,7 @@ def test_groupable_ordered_dict_get(god):
 def test_groupable_ordered_dict_values(god):
     """Test that a GroupableOrderedDict has values like a dict, but more."""
     assert ['dojson', 2, 'invenio', 4, 5] == god.values(expand=True)
+
     assert [('dojson', 4), (2, 5), 'invenio'] == god.values()
 
 
@@ -67,8 +81,9 @@ def test_groupable_ordered_dict_eq(god):
     """Test that a GroupableOrderedDict can be compared with ==."""
     expected = {'a': ('dojson', 4), 'b': (2, 5), 'c': 'invenio'}
 
-    assert expected == god
-    assert not(expected != god)
+    # switching the comparisons to use __eq__.
+    assert god == expected
+    assert not(god != expected)
 
 
 def test_groupable_ordered_dict_copy(god):
@@ -87,19 +102,20 @@ def test_groupable_ordered_dict_new(god):
 
 def test_groupable_ordered_dict_to_json(god):
     """Test that a GroupableOrderedDict can be serialized to JSON."""
-    d = {'__order__': ('a', 'b', 'c', 'a', 'b'),
-         'a': ['dojson', 4],
-         'b': [2, 5],
-         'c': 'invenio'}
+    assert '{"__order__": ["a", "b", "c", "a", "b"],' \
+           ' "a": ["dojson", 4],' \
+           ' "b": [2, 5],' \
+           ' "c": "invenio"}' == json.dumps(god)
 
-    assert json.dumps(d, sort_keys=True, indent=4) == json.dumps(god, indent=4)
-    assert json.dumps(d, sort_keys=True) == json.dumps(god)
+    expected = json.loads(json.dumps(god))
+    assert expected == json.loads(json.dumps(god, indent=4))
 
 
 def test_groupable_ordered_dict_iterable(god):
     """Test that a GroupableOrderedDict is iterable like a dict."""
     iterator = iter(god)
 
+    assert '__order__' == iterator.next()
     assert 'a' == iterator.next()
     assert 'b' == iterator.next()
     assert 'c' == iterator.next()
@@ -110,8 +126,8 @@ def test_groupable_ordered_dict_iterable(god):
 def test_groupable_ordered_dict_recreate(god):
     """Test that a GroupableOrderedDict can be recreated from a dict."""
     god2 = GroupableOrderedDict({'__order__': ('a', 'b', 'c', 'a', 'b'),
-                                 'a': ['dojson', 4],
-                                 'b': [2, 5],
+                                 'a': ('dojson', 4),
+                                 'b': (2, 5),
                                  'c': 'invenio'})
 
     assert god2 == god
