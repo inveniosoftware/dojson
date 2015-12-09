@@ -189,7 +189,14 @@ def reverse_title_statement(self, key, value):
         'version': 's',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
+        'title_added_entry': None,
+        'nonfiling_characters': None
     }
+
+    ind1 = indicator_map1.get(value.get('title_added_entry', '_'))
+    ind2 = indicator_map2.get(value.get('nonfiling_characters', '_'))
+    order = utils.map_order(field_map, value)
+
     return {
         'a': value.get('title'),
         'c': value.get('statement_of_responsibility'),
@@ -211,9 +218,9 @@ def reverse_title_statement(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
-        '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '$ind1': ind1,
+        '$ind2': ind2,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

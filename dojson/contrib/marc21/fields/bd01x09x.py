@@ -221,6 +221,13 @@ def other_standard_identifier(self, key, value):
         '8': 'field_link_and_sequence_number',
         'z': 'canceled_invalid_standard_number_or_code'
     }
+
+    order = utils.map_order(field_map, value)
+    if key[3] in indicator_map1:
+        order.append('type_of_standard_number_or_code')
+    if key[4] in indicator_map2:
+        order.append('difference_indicator')
+
     return {
         'standard_number_or_code': value.get('a'),
         'terms_of_availability': value.get('c'),
@@ -238,7 +245,7 @@ def other_standard_identifier(self, key, value):
         ),
         'type_of_standard_number_or_code': indicator_map1.get(key[3]),
         'difference_indicator': indicator_map2.get(key[4]),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '__order__': tuple(order) if len(order) else None,
     }
 
 

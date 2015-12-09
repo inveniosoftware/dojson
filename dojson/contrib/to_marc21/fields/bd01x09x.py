@@ -229,8 +229,15 @@ def reverse_other_standard_identifier(self, key, value):
         'source_of_number_or_code': '2',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'canceled_invalid_standard_number_or_code': 'z'
+        'canceled_invalid_standard_number_or_code': 'z',
+        'type_of_standard_number_or_code': None,
+        'difference_indicator': None
     }
+
+    ind1 = indicator_map1.get(value.get('type_of_standard_number_or_code', '_'))
+    ind2 = indicator_map2.get(value.get('difference_indicator', '_'))
+    order = utils.map_order(field_map, value)
+
     return {
         'a': value.get('standard_number_or_code'),
         'c': value.get('terms_of_availability'),
@@ -243,13 +250,9 @@ def reverse_other_standard_identifier(self, key, value):
             value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(
             value.get('canceled_invalid_standard_number_or_code')),
-        '$ind1': indicator_map1.get(
-            value.get('type_of_standard_number_or_code'),
-            '_'),
-        '$ind2': indicator_map2.get(
-            value.get('difference_indicator'),
-            '_'),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '$ind1': ind1,
+        '$ind2': ind2,
+        '__order__': tuple(order) if len(order) else None,
     }
 
 

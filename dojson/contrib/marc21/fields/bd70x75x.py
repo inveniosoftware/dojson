@@ -49,6 +49,13 @@ def added_entry_personal_name(self, key, value):
         't': 'title_of_a_work',
         'x': 'international_standard_serial_number',
     }
+
+    order = utils.map_order(field_map, value)
+    if key[3] in indicator_map1:
+        order.append('type_of_personal_name_entry_element')
+    if key[4] in indicator_map2:
+        order.append('type_of_added_entry')
+
     return {
         'authority_record_control_number': utils.force_list(
             value.get('0')
@@ -102,7 +109,7 @@ def added_entry_personal_name(self, key, value):
         'international_standard_serial_number': value.get('x'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'type_of_added_entry': indicator_map2.get(key[4]),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

@@ -155,8 +155,15 @@ def reverse_electronic_location_and_access(self, key, value):
         'hours_access_method_available': 'v',
         'record_control_number': 'w',
         'nonpublic_note': 'x',
-        'public_note': 'z'
+        'link_text': 'y',
+        'public_note': 'z',
+        'relationship': None,
     }
+
+    order = utils.map_order(field_map, value)
+    if indicator_map1.get(value.get('access_method'), '7') != '7':
+        order.remove('2')
+
     return {
         '3': value.get('materials_specified'),
         '2': value.get('access_method')
@@ -222,7 +229,7 @@ def reverse_electronic_location_and_access(self, key, value):
         ),
         '$ind1': indicator_map1.get(value.get('access_method'), '7'),
         '$ind2': indicator_map2.get(value.get('relationship'), '_'),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

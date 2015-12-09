@@ -153,8 +153,16 @@ def electronic_location_and_access(self, key, value):
         'v': 'hours_access_method_available',
         'w': 'record_control_number',
         'x': 'nonpublic_note',
+        'y': 'link_text',
         'z': 'public_note'
     }
+
+    order = utils.map_order(field_map, value)
+    if key[3] != '7' and key[3] in indicator_map1:
+        order.append('access_method')
+    if key[4] in indicator_map2:
+        order.append('relationship')
+
     return {
         'materials_specified': value.get('3'),
         'access_method':
@@ -218,7 +226,7 @@ def electronic_location_and_access(self, key, value):
             value.get('z')
         ),
         'relationship': indicator_map2.get(key[4]),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '__order__': tuple(order) if len(order) else None,
     }
 
 

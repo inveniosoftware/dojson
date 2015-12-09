@@ -724,6 +724,9 @@ def reverse_terms_governing_use_and_reproduction_note(self, key, value):
         'field_link_and_sequence_number': '8',
         'uniform_resource_identifier': 'u',
     }
+
+    order = utils.map_order(field_map, value)
+
     return {
         'a': value.get('terms_governing_use_and_reproduction'),
         'c': value.get('authorization'),
@@ -740,7 +743,7 @@ def reverse_terms_governing_use_and_reproduction_note(self, key, value):
         ),
         '$ind1': '_',
         '$ind2': '_',
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

@@ -679,6 +679,9 @@ def terms_governing_use_and_reproduction_note(self, key, value):
         '8': 'field_link_and_sequence_number',
         'u': 'uniform_resource_identifier',
     }
+
+    order = utils.map_order(field_map, value)
+
     return {
         'terms_governing_use_and_reproduction': value.get('a'),
         'authorization': value.get('c'),
@@ -693,7 +696,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

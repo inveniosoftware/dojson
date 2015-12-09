@@ -48,7 +48,14 @@ def reverse_added_entry_personal_name(self, key, value):
         'affiliation': 'u',
         'title_of_a_work': 't',
         'international_standard_serial_number': 'x',
+        'type_of_personal_name_entry_element': None,
+        'type_of_added_entry': None
     }
+
+    ind1 = indicator_map1.get(value.get('type_of_personal_name_entry_element', '_'))
+    ind2 = indicator_map2.get(value.get('type_of_added_entry', '_'))
+    order = utils.map_order(field_map, value)
+
     return {
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number')
@@ -100,9 +107,9 @@ def reverse_added_entry_personal_name(self, key, value):
         'u': value.get('affiliation'),
         't': value.get('title_of_a_work'),
         'x': value.get('international_standard_serial_number'),
-        '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element'), '_'),
-        '$ind2': indicator_map2.get(value.get('type_of_added_entry'), '_'),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '$ind1': ind1,
+        '$ind2': ind2,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

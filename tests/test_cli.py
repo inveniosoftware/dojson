@@ -9,20 +9,26 @@
 
 """Test suite for DoJSON."""
 
+import json
+
 from click.testing import CliRunner
 
-import json
+from dojson import cli
+from dojson.contrib.marc21.utils import create_record
+from test_core import RECORD_SIMPLE, RECORD_999_FIELD
 
 
 def test_cli_do_marc21_from_xml():
     """Test MARC21 loading from XML."""
-    from dojson import cli
-    from dojson.utils import GroupableOrderedDict
-    from test_core import RECORD_SIMPLE, RECORD_999_FIELD
+    expected = [{
+        '__order__': ['main_entry_personal_name'],
+        'main_entry_personal_name': {
+            '__order__': ['personal_name'],
+            'personal_name': 'Donges, Jonathan F'
+        }
+    }]
 
-    expected = {'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}
     runner = CliRunner()
-
     with runner.isolated_filesystem():
         with open('record.xml', 'wb') as f:
             f.write(RECORD_SIMPLE.encode('utf-8'))
@@ -48,8 +54,12 @@ def test_cli_do_marc21_from_xml():
             cli.apply_rule,
             ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
         )
-        data = json.loads(result.output)
-        assert GroupableOrderedDict(expected) == data[0]
+
+        try:
+            data = json.loads(result.output)
+            assert expected == data
+        except ValueError:
+            assert False, result.output
 
         result = runner.invoke(
             cli.apply_rule,
@@ -68,14 +78,15 @@ def test_cli_do_marc21_from_xml():
 
 def test_cli_do_marc21_from_json():
     """Test MARC21 loading from XML."""
-    from dojson import cli
-    from dojson.utils import GroupableOrderedDict
-    from dojson.contrib.marc21.utils import create_record
-    from test_core import RECORD_SIMPLE
+    expected = {
+        '__order__': ['main_entry_personal_name'],
+        'main_entry_personal_name': {
+            '__order__': ['personal_name'],
+            'personal_name': 'Donges, Jonathan F'
+        }
+    }
 
-    expected = {'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}
     runner = CliRunner()
-
     with runner.isolated_filesystem():
         with open('record.json', 'wb') as fp:
             record = create_record(RECORD_SIMPLE)
@@ -95,5 +106,8 @@ def test_cli_do_marc21_from_json():
 
         assert 0 == result.exit_code, result.exception
 
-        data = json.loads(result.output)
-        assert GroupableOrderedDict(expected) == data
+        try:
+            data = json.loads(result.output)
+            assert expected == data
+        except ValueError:
+            assert False, result.output

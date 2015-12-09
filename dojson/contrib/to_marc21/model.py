@@ -36,7 +36,10 @@ class Underdo(Overdo):
         if self.index is None:
             self.build()
 
-        if isinstance(blob, GroupableOrderedDict):
+        if '__order__' in blob and not isinstance(blob, GroupableOrderedDict):
+            blob = GroupableOrderedDict(blob)
+
+        if '__order__' in blob:
             items = blob.iteritems(repeated=True)
         else:
             items = iteritems(blob)
@@ -52,7 +55,7 @@ class Underdo(Overdo):
                         k = ''.join((name,
                                      value.pop('$ind1', '_'),
                                      value.pop('$ind2', '_')))
-                        if '__order__' in value:
+                        if '__order__' in value or isinstance(value, dict):
                             value = GroupableOrderedDict(value)
                         output.append((k, value))
                     elif isinstance(value, MutableSequence):
@@ -64,9 +67,14 @@ class Underdo(Overdo):
                             except AttributeError:
                                 k = name
 
+                            if '__order__' in v or isinstance(v, dict):
+                                v = GroupableOrderedDict(v)
                             output.append((k, v))
                     else:
-                        output.append((name, value))
+                        k = ''.join((name,
+                                     value.pop('$ind1', '_'),
+                                     value.pop('$ind2', '_')))
+                        output.append((k, value))
                 except IgnoreKey:
                     warnings.warn('{} was ignored in to_marc21.do'.format(key))
 

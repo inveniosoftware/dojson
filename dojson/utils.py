@@ -66,6 +66,8 @@ def reverse_for_each_value(f):
                 return f(self, key, values[0], **kwargs)
             return [f(self, key, value, **kwargs) for value in values]
 
+        return [f(self, key, values, **kwargs)]
+
     return wrapper
 
 
@@ -87,6 +89,23 @@ def load(stream):
     """Load JSON from bytestream."""
     reader = codecs.getreader("utf-8")
     return json.load(reader(stream))
+
+
+def map_order(field_map, value):
+    """Ordered list of fields to be able to pass the order along.
+
+    .. note:: it returns a tuple as you may want to alter it based on the
+    indicators. The final structure should use a tuple for immutability.
+
+    Returns an empty list if no `__order__' is found in the value.
+    """
+    if '__order__'in value:
+        order = value['__order__']
+    else:
+        order = value.keys()
+
+    order = [field_map[k] for k in order]
+    return [x for x in order if x is not None]
 
 
 class GroupableOrderedDict(OrderedDict):
@@ -158,15 +177,19 @@ class GroupableOrderedDict(OrderedDict):
         """
 
     def __copy__(self):
+        """A copy of D."""
         return GroupableOrderedDict(self)
 
     def __deepcopy__(self):
+        """A copy of D."""
         return self.__copy__()
 
     def __reduce__(self):
+        """Helper for pickle."""
         return GroupableOrderedDict, (dict(self.items()), )
 
     def __eq__(self, other):
+        """Comparison help."""
         if (len(self.keys()) != len(other.keys()) and
                 '__order__' not in other and
                 len(self.keys()) - 1 == len(other.keys())):
@@ -209,6 +232,7 @@ class GroupableOrderedDict(OrderedDict):
         return True
 
     def __ne__(self, other):
+        """Not equals."""
         return not self.__eq__(other)
 
     def get(self, key, default=None):
@@ -219,20 +243,27 @@ class GroupableOrderedDict(OrderedDict):
             return default
 
     def __getitem__(self, key):
+        """D[key].
+
+        It will return a list or an element depending on the quantity present.
+        """
         item = OrderedDict.__getitem__(self, key)
         if len(item) == 1 and key != '__order__':
             return item[0]
         return item
 
     def __setitem__(self, *args, **kwargs):
-        raise TypeError('{} object does not suppoert item assignment'
+        """Item assigment is not supported."""
+        raise TypeError('{} object does not support item assignment'
                         .format(self.__class__.__name__))
 
-    def __delitem__(self, key):
-        self.__data = [(k, v) for k, v in self.__data if k != key]
-        self.__keys.remove(key)
+    def __delitem__(self, *args, **kwargs):
+        """Item deletion is not supported."""
+        raise TypeError('{} object does not support item deletion'
+                        .format(self.__class__.__name__))
 
     def __iter__(self):
+        """Iterator."""
         occurences = Counter()
         order = self['__order__']
         yield '__order__'
@@ -277,7 +308,7 @@ class GroupableOrderedDict(OrderedDict):
         else:
             return list(self['__order__'])
 
-    def items(self, with_order=False, repeated=False):
+    def items(self, with_order=True, repeated=False):
         """
         list of D's (key, value) pairs, as 2-tuples.
 
@@ -292,13 +323,9 @@ class GroupableOrderedDict(OrderedDict):
         """Just like D.items() but as an iterator."""
         if not repeated:
             for key, value in OrderedDict.items(self):
-                if key != '__order__':
-                    if len(value) == 1:
-                        yield key, value[0]
-                    else:
-                        yield key, value
-                elif with_order:
-                    yield key, value
+                if key == '__order__' and not with_order:
+                    continue
+                yield key, value
         else:
             occurences = Counter()
             order = self['__order__']

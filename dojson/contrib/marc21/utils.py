@@ -62,9 +62,9 @@ def create_record(marcxml, correct=False, keep_singletons=True):
         tag = datafield.attrib.get('tag', '!')
         ind1 = datafield.attrib.get('ind1', '!')
         ind2 = datafield.attrib.get('ind2', '!')
-        if ind1 in ('', ):
+        if ind1 in ('', '#'):
             ind1 = '_'
-        if ind2 in ('', ):
+        if ind2 in ('', '#'):
             ind2 = '_'
         ind1 = ind1.replace(' ', '_')
         ind2 = ind2.replace(' ', '_')

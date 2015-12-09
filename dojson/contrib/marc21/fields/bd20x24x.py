@@ -239,6 +239,13 @@ def title_statement(self, key, value):
         'p': 'name_of_part_section_of_a_work',
         's': 'version'
     }
+
+    order = utils.map_order(field_map, value)
+    if key[3] in indicator_map1:
+        order.append('title_added_entry')
+    if key[4] in indicator_map2:
+        order.append('nonfiling_characters')
+
     return {
         'title': value.get('a'),
         'statement_of_responsibility': value.get('c'),
@@ -262,7 +269,7 @@ def title_statement(self, key, value):
         ),
         'title_added_entry': indicator_map1.get(key[3]),
         'nonfiling_characters': indicator_map2.get(key[4]),
-        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
+        '__order__': tuple(order) if len(order) else None,
     }
 
 

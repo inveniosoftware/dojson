@@ -65,9 +65,9 @@ def dumps(*records, **kwargs):
                         datafield.attrib['ind2'] = df[4]
 
                         if isinstance(s, GroupableOrderedDict):
-                            items = s.items(repeated=True)
+                            items = s.iteritems(with_order=False, repeated=True)
                         elif isinstance(s, dict):
-                            items = s.items()
+                            items = iteritems(s)
                         else:
                             datafield.append(E.subfield(s))
 

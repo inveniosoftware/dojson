@@ -61,7 +61,7 @@ def test_groupable_ordered_dict_items(god):
             ('b', 2),
             ('c', 'invenio'),
             ('a', 4),
-            ('b', 5)) == god.items(with_order=True, repeated=True)
+            ('b', 5)) == god.items(repeated=True)
 
 
 def test_groupable_ordered_dict_get(god):
