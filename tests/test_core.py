@@ -277,6 +277,7 @@ def test_marc21_records_over_single_line():
 
 def test_records_marc21_tojson_tomarc21():
     """Test records marc21 - json - marc21."""
+    import json
     from dojson.contrib.marc21 import marc21
     from dojson.contrib.marc21.utils import create_record
     from dojson.contrib.to_marc21 import to_marc21
@@ -284,9 +285,9 @@ def test_records_marc21_tojson_tomarc21():
     for name, record in RECORDS.items():
         blob = create_record(record)
         data = marc21.do(blob)
+        text = json.dumps(data)
 
-        back_blob = to_marc21.do(data)
-
+        back_blob = to_marc21.do(json.loads(text))
         assert blob == back_blob, name
 
 
