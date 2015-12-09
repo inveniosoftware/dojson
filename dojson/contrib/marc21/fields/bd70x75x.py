@@ -21,6 +21,34 @@ def added_entry_personal_name(self, key, value):
     """Added Entry-Personal Name."""
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
+    field_map = {
+        '0': 'authority_record_control_number',
+        '3': 'materials_specified',
+        '4': 'relator_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+        'a': 'personal_name',
+        'b': 'numeration',
+        'c': 'titles_and_other_words_associated_with_a_name',
+        'd': 'dates_associated_with_a_name',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'j': 'attribution_qualifier',
+        'k': 'form_subheading',
+        'l': 'language_or_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        's': 'version',
+        'r': 'key_for_music',
+        'u': 'affiliation',
+        't': 'title_of_a_work',
+        'x': 'international_standard_serial_number',
+    }
     return {
         'authority_record_control_number': utils.force_list(
             value.get('0')
@@ -74,6 +102,7 @@ def added_entry_personal_name(self, key, value):
         'international_standard_serial_number': value.get('x'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'type_of_added_entry': indicator_map2.get(key[4]),
+        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
     }
 
 

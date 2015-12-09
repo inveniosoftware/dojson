@@ -14,7 +14,7 @@ from lxml import etree
 from lxml.builder import E
 from six import iteritems, string_types
 
-from ..marc21.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict
 
 
 MARC21_DTD = pkg_resources.resource_filename(

@@ -17,9 +17,10 @@ import json
 def test_cli_do_marc21_from_xml():
     """Test MARC21 loading from XML."""
     from dojson import cli
+    from dojson.utils import GroupableOrderedDict
     from test_core import RECORD_SIMPLE, RECORD_999_FIELD
 
-    expected = [{'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}]
+    expected = {'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}
     runner = CliRunner()
 
     with runner.isolated_filesystem():
@@ -48,7 +49,7 @@ def test_cli_do_marc21_from_xml():
             ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
         )
         data = json.loads(result.output)
-        assert expected == data
+        assert GroupableOrderedDict(expected) == data[0]
 
         result = runner.invoke(
             cli.apply_rule,
@@ -68,6 +69,7 @@ def test_cli_do_marc21_from_xml():
 def test_cli_do_marc21_from_json():
     """Test MARC21 loading from XML."""
     from dojson import cli
+    from dojson.utils import GroupableOrderedDict
     from dojson.contrib.marc21.utils import create_record
     from test_core import RECORD_SIMPLE
 
@@ -83,12 +85,15 @@ def test_cli_do_marc21_from_json():
             cli.missing_fields,
             ['-i', 'record.json', 'marc21']
         )
-        assert '' == result.output
+        assert '' == result.output, result.exception
         assert 0 == result.exit_code
 
         result = runner.invoke(
             cli.apply_rule,
             ['-i', 'record.json', 'marc21']
         )
+
+        assert 0 == result.exit_code, result.exception
+
         data = json.loads(result.output)
-        assert expected == data
+        assert GroupableOrderedDict(expected) == data

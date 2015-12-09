@@ -668,6 +668,17 @@ def system_details_note(self, key, value):
 @utils.filter_values
 def terms_governing_use_and_reproduction_note(self, key, value):
     """Terms Governing Use and Reproduction Note."""
+    field_map = {
+        'a': 'terms_governing_use_and_reproduction',
+        'c': 'authorization',
+        'b': 'jurisdiction',
+        'd': 'authorized_users',
+        '3': 'materials_specified',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+        'u': 'uniform_resource_identifier',
+    }
     return {
         'terms_governing_use_and_reproduction': value.get('a'),
         'authorization': value.get('c'),
@@ -682,6 +693,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
+        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
     }
 
 

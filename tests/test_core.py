@@ -147,8 +147,8 @@ def test_index_creation():
 
     data = overdo.do({'0247_': '024', '247__': '247'})
 
-    assert ('0247_', '024') == data['024']
-    assert ('247__', '247') == data['247']
+    assert ['0247_', '024'] == data['024']
+    assert ['247__', '247'] == data['247']
 
 
 def test_missing_fields():
@@ -174,7 +174,7 @@ def test_marc21_field_247_matching():
     assert data['other_standard_identifier'][0]['standard_number_or_code'] \
         == 'A'
     assert data['former_title'][0]['title'] == 'B'
-    assert len(data) == 2
+    assert 3 == len(data)
 
 
 def test_marc21_from_xml():
@@ -318,6 +318,7 @@ def test_toxml_from_xml():
         rec = marc21.do(blob)
         back_blob = to_marc21.do(rec)
 
+        assert blob == back_blob
         xml = dumps(back_blob)
 
         options = {'xml_declaration': True,
@@ -339,50 +340,56 @@ def test_marc21_856_indicators():
     from dojson.contrib.marc21 import marc21
     from dojson.contrib.marc21.utils import create_record
     from dojson.contrib.to_marc21 import to_marc21
+    from dojson.utils import GroupableOrderedDict
 
-    RECORD_8564 = '''
-    <datafield tag="856" ind1="4" ind2=" ">
-        <subfield code="s">272681</subfield>
-        <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
-        <subfield code="z">0</subfield>
-    </datafield>
-    '''
-    RECORD_8567 = '''
-    <datafield tag="856" ind1="7" ind2=" ">
-        <subfield code="s">272681</subfield>
-        <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
-        <subfield code="z">0</subfield>
-        <subfield code="2">Awesome access method</subfield>
-    </datafield>
-    '''
-
-    expected_8564 = {
-        'electronic_location_and_access': [
-            {'public_note': ('0',),
-             'access_method': 'HTTP',
-             'uniform_resource_identifier': (
-                 'https://zenodo.org/record/17575/files/...',),
-             'file_size': ('272681',)}
+    records = {
+        8564: [
+            '''
+            <datafield tag="856" ind1="4" ind2=" ">
+                <subfield code="s">272681</subfield>
+                <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
+                <subfield code="z">0</subfield>
+            </datafield>
+            ''',
+            {
+                'electronic_location_and_access': [
+                    {
+                        'public_note': ('0',),
+                        'access_method': 'HTTP',
+                        'uniform_resource_identifier': (
+                            'https://zenodo.org/record/17575/files/...',),
+                        'file_size': ('272681',)
+                    }
+                ]
+            }
+        ],
+        8567: [
+            '''
+            <datafield tag="856" ind1="7" ind2=" ">
+                <subfield code="s">272681</subfield>
+                <subfield code="u">https://zenodo.org/record/17575/files/...</subfield>
+                <subfield code="z">0</subfield>
+                <subfield code="2">Awesome access method</subfield>
+            </datafield>
+            ''',
+            {
+                'electronic_location_and_access': [
+                    {
+                        'public_note': ('0',),
+                        'access_method': 'Awesome access method',
+                        'uniform_resource_identifier': (
+                            'https://zenodo.org/record/17575/files/...',),
+                        'file_size': ('272681',)
+                    }
+                ]
+            }
         ]
     }
-    expected_8567 = {
-        'electronic_location_and_access': [
-            {'public_note': ('0',),
-             'access_method': 'Awesome access method',
-             'uniform_resource_identifier': (
-                 'https://zenodo.org/record/17575/files/...',),
-             'file_size': ('272681',)}
-        ]
-    }
 
-    blob = create_record(RECORD_8564)
-    data = marc21.do(blob)
-    assert expected_8564 == data
-    back_blob = to_marc21.do(data)
-    assert blob == back_blob
-
-    blob = create_record(RECORD_8567)
-    data = marc21.do(blob)
-    assert expected_8567 == data
-    back_blob = to_marc21.do(data)
-    assert blob == back_blob
+    for name, (record, expected) in records.items():
+        blob = create_record(record)
+        data = marc21.do(blob)
+        # this ordering is required to use __eq__ from GroupableOrderedDict
+        assert data == expected, name
+        back_blob = to_marc21.do(data)
+        assert blob == back_blob, name

@@ -176,6 +176,20 @@ def reverse_title_statement(self, key, value):
     indicator_map2 = {
         "No nonfiling characters": "0",
         "Number of nonfiling characters": "8"}
+    field_map = {
+        'title': 'a',
+        'remainder_of_title': 'b',
+        'statement_of_responsibility': 'c',
+        'inclusive_dates': 'f',
+        'bulk_dates': 'g',
+        'medium': 'h',
+        'form': 'k',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'version': 's',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
     return {
         'a': value.get('title'),
         'c': value.get('statement_of_responsibility'),
@@ -199,6 +213,7 @@ def reverse_title_statement(self, key, value):
         ),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
+        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
     }
 
 

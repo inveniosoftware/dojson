@@ -221,6 +221,16 @@ def reverse_other_standard_identifier(self, key, value):
         "Difference": "1",
         "No difference": "0",
         "No information provided": "_"}
+    field_map = {
+        'standard_number_or_code': 'a',
+        'terms_of_availability': 'c',
+        'additional_codes_following_the_standard_number_or_code': 'd',
+        'qualifying_information': 'q',
+        'source_of_number_or_code': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+        'canceled_invalid_standard_number_or_code': 'z'
+    }
     return {
         'a': value.get('standard_number_or_code'),
         'c': value.get('terms_of_availability'),
@@ -239,6 +249,7 @@ def reverse_other_standard_identifier(self, key, value):
         '$ind2': indicator_map2.get(
             value.get('difference_indicator'),
             '_'),
+        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
     }
 
 

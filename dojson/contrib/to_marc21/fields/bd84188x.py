@@ -128,6 +128,35 @@ def reverse_electronic_location_and_access(self, key, value):
         "Related resource": "2",
         "Resource": "0",
         "Version of resource": "1"}
+    field_map = {
+        'materials_specified': '3',
+        'access_method': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+        'host_name': 'a',
+        'compression_information': 'c',
+        'access_number': 'b',
+        'path': 'd',
+        'electronic_name': 'f',
+        'instruction': 'i',
+        'processor_of_request': 'h',
+        'password': 'k',
+        'bits_per_second': 'j',
+        'contact_for_access_assistance': 'm',
+        'logon': 'l',
+        'operating_system': 'o',
+        'name_of_location_of_host': 'n',
+        'port': 'p',
+        'electronic_format_type': 'q',
+        'file_size': 's',
+        'settings': 'r',
+        'uniform_resource_identifier': 'u',
+        'terminal_emulation': 't',
+        'hours_access_method_available': 'v',
+        'record_control_number': 'w',
+        'nonpublic_note': 'x',
+        'public_note': 'z'
+    }
     return {
         '3': value.get('materials_specified'),
         '2': value.get('access_method')
@@ -193,6 +222,7 @@ def reverse_electronic_location_and_access(self, key, value):
         ),
         '$ind1': indicator_map1.get(value.get('access_method'), '7'),
         '$ind2': indicator_map2.get(value.get('relationship'), '_'),
+        '__order__': tuple([field_map[k] for k in value['__order__']]) if '__order__' in value else None,
     }
 
 

@@ -13,7 +13,7 @@ import copy
 import json
 import pytest
 
-from dojson.contrib.marc21.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict
 
 
 @pytest.fixture
