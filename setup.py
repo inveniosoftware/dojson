@@ -80,7 +80,6 @@ setup(
     platforms='any',
     install_requires=[
         'click',
-        'esmre',
         'lxml',
         'six',
     ],
@@ -100,7 +99,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
-        'Development Status :: 5 - Production/Stable',
+        'Development Status :: 1 - Planning',
     ],
     tests_require=tests_require,
     cmdclass={'test': PyTest},

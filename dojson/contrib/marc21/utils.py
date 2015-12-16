@@ -78,7 +78,7 @@ class GroupableOrderedDict(OrderedDict):
                 OrderedDict.__getitem__(new, key).extend(v)
 
         # Immutable...
-        for key, value in dict.iteritems(new):
+        for key, value in dict.items(new):
             OrderedDict.__setitem__(new, key, tuple(value))
 
         OrderedDict.__setitem__(new, '__order__', tuple(ordering))

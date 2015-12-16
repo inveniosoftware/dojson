@@ -36,7 +36,9 @@ class Underdo(Overdo):
             self.build()
 
         for key, value in iteritems(blob):
-            for name, creator, field in self._query(key):
+            result = self.index.query(key)
+            if result:
+                name, creator = result
                 try:
                     value = creator(output, key, value)
                     if isinstance(value, MutableMapping):

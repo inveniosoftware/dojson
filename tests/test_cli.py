@@ -23,7 +23,7 @@ def test_cli_do_marc21_from_xml():
     runner = CliRunner()
 
     with runner.isolated_filesystem():
-        with open('record.xml', 'wb') as f:
+        with open('record.xml', 'w') as f:
             f.write(RECORD_SIMPLE)
 
         result = runner.invoke(
@@ -51,7 +51,7 @@ def test_cli_do_marc21_from_json():
     runner = CliRunner()
 
     with runner.isolated_filesystem():
-        with open('record.json', 'wb') as fp:
+        with open('record.json', 'w') as fp:
             record = create_record(RECORD_SIMPLE)
             json.dump(record, fp)
 

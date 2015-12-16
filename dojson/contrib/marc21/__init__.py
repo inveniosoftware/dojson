@@ -7,6 +7,8 @@
 # modify it under the terms of the Revised BSD License; see LICENSE
 # file for more details.
 
-from model import marc21
+"""Define model for transforming MARC21."""
 
-__all__ = ('marc21',)
+from .model import marc21
+
+__all__ = ('marc21', )
