@@ -11,6 +11,8 @@
 
 import pkg_resources
 
+from six import string_types
+
 from lxml import etree
 from lxml.builder import E
 
@@ -29,10 +31,10 @@ def dumps(*records, **kwargs):
 
     for record in records:
         rec = E.record()
-        for df, subfields in record.items(repeated=True):
+        for df, subfields in record.items(with_order=False, repeated=True):
             # Control fields
             if len(df) == 3:
-                if isinstance(subfields, basestring):
+                if isinstance(subfields, string_types):
                     controlfield = E.controlfield(subfields)
                     controlfield.attrib['tag'] = df[0:3]
                     rec.append(controlfield)
@@ -52,8 +54,8 @@ def dumps(*records, **kwargs):
                     datafield.attrib['ind1'] = df[3]
                     datafield.attrib['ind2'] = df[4]
 
-                    for code, value in subfield.items(repeated=True):
-                        if not isinstance(value, basestring):
+                    for code, value in subfield.items(with_order=False, repeated=True):
+                        if not isinstance(value, string_types):
                             for v in value:
                                 datafield.append(E.subfield(v, code=code))
                         else:

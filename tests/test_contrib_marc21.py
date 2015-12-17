@@ -49,12 +49,12 @@ def test_groupable_ordered_dict_items(god):
     """Test that a GroupableOrderedDict has items like a dict, but more."""
     assert (('a', ('dojson', 4)),
             ('b', (2, 5)),
-            ('c', 'invenio')) == god.items()
+            ('c', 'invenio')) == god.items(with_order=False)
 
     assert (('__order__', ('a', 'b', 'c', 'a', 'b')),
             ('a', ('dojson', 4)),
             ('b', (2, 5)),
-            ('c', 'invenio')) == god.items(with_order=True)
+            ('c', 'invenio')) == god.items()
 
     assert (('__order__', ('a', 'b', 'c', 'a', 'b')),
             ('a', 'dojson'),
@@ -115,12 +115,12 @@ def test_groupable_ordered_dict_iterable(god):
     """Test that a GroupableOrderedDict is iterable like a dict."""
     iterator = iter(god)
 
-    assert '__order__' == iterator.next()
-    assert 'a' == iterator.next()
-    assert 'b' == iterator.next()
-    assert 'c' == iterator.next()
+    assert '__order__' == next(iterator)
+    assert 'a' == next(iterator)
+    assert 'b' == next(iterator)
+    assert 'c' == next(iterator)
     with pytest.raises(StopIteration):
-        iterator.next()
+        next(iterator)
 
 
 def test_groupable_ordered_dict_recreate(god):

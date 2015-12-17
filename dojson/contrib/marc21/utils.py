@@ -14,7 +14,7 @@ import re
 
 from collections import OrderedDict, Counter
 from lxml import etree
-from six import StringIO, string_types
+from six import StringIO, string_types, iteritems
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 
@@ -61,7 +61,7 @@ class GroupableOrderedDict(OrderedDict):
                         c[key] += 1
                     values = tmp
                 else:
-                    values = values.iteritems()
+                    values = iteritems(values)
 
             for key, value in values:
                 if key not in new:
@@ -183,12 +183,13 @@ class GroupableOrderedDict(OrderedDict):
                 values.append(dict.__getitem__(self, key)[occurences[key]])
                 occurences[key] += 1
         else:
-            for key, value in OrderedDict.iteritems(self):
+            for key, value in OrderedDict.items(self):
                 if key == '__order__':
                     continue
                 if len(value) == 1:
                     values.append(value[0])
-                values.append(value)
+                else:
+                    values.append(value)
         return values
 
     def keys(self, repeated=False):
@@ -199,13 +200,13 @@ class GroupableOrderedDict(OrderedDict):
         keys. It may contain repetitions.
         """
         if not repeated:
-            keys = OrderedDict.keys(self)
+            keys = list(OrderedDict.keys(self))
             keys.remove('__order__')
             return keys
         else:
             return list(self['__order__'])
 
-    def items(self, with_order=False, repeated=False):
+    def items(self, with_order=True, repeated=False):
         """
         list of D's (key, value) pairs, as 2-tuples.
 
@@ -219,14 +220,14 @@ class GroupableOrderedDict(OrderedDict):
     def iteritems(self, with_order=True, repeated=False):
         """Just like D.items() but as an iterator."""
         if not repeated:
-            for key, value in OrderedDict.iteritems(self):
+            if with_order:
+                yield '__order__', self['__order__']
+            for key, value in OrderedDict.items(self):
                 if key != '__order__':
                     if len(value) == 1:
                         yield key, value[0]
                     else:
                         yield key, value
-                elif with_order:
-                    yield key, value
         else:
             occurences = Counter()
             order = self['__order__']
