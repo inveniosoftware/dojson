@@ -61,6 +61,12 @@ RECORD_SIMPLE = """<record>
   </datafield>
 </record>"""
 
+RECORD_999_FIELD = """<record>
+  <datafield tag="999" ind1=" " ind2=" ">
+    <subfield code="a">I'm crazy field!</subfield>
+  </datafield>
+</record>"""
+
 # http://www.loc.gov/marc/umb/um07to10.html
 RECORD_THEATER = """<record>
   <datafield tag="650" ind1=" " ind2=" ">

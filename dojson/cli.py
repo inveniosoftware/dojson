@@ -59,15 +59,17 @@ def open_entry_point(group_name):
 @click.option('-d', '--dump', callback=open_entry_point('dojson.cli.dump'),
               default='json')
 @click.argument('rule', callback=open_entry_point('dojson.cli.rule'))
-def apply_rule(source, load, dump, rule):
+@click.option('--strict', is_flag=True, default=False,
+              help='Raise when there is not matching rule for a key.')
+def apply_rule(source, load, dump, rule, strict):
     """Create JSON using given rule."""
     data = load(source)
 
     if isinstance(data, dict):
-        click.echo(dump(rule.do(data)))
+        click.echo(dump(rule.do(data, ignore_missing=not strict)))
     else:
         click.echo(dump([
-            rule.do(item) for item in data
+            rule.do(item, ignore_missing=not strict) for item in data
         ]))
 
 

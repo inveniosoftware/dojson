@@ -18,7 +18,7 @@ from six import iteritems
 
 from six.moves import zip_longest
 
-from .utils import IgnoreKey
+from .errors import IgnoreKey, MissingRule
 
 
 class Index(object):
@@ -54,7 +54,7 @@ class Index(object):
             ]))
 
     def query(self, key):
-        """Yield data matching the key."""
+        """Return data matching the key."""
         for section, pattern in enumerate(self._patterns):
             match = pattern.match(key)
             if match:
@@ -97,8 +97,24 @@ class Overdo(object):
             return creator
         return decorator
 
-    def do(self, blob):
-        """Translate blob values and instantiate new model instance."""
+    def do(self, blob, ignore_missing=True):
+        """Translate blob values and instantiate new model instance.
+
+        Raises ``MissingRule`` when no rule matched and ``ignore_missing``
+        is ``False``.
+
+        :param blob: ``dict``-like object on which the matching rules are
+                     going to be applied.
+        :param ignore_missing: Set to ``False`` if you prefer to raise
+                               an exception ``MissingRule`` for the first
+                               key that it is not matching any rule.
+
+        .. versionadded:: 1.0.0
+
+           ``ignore_missing`` allows to specify if the function should raise
+           an exception.
+
+        """
         output = {}
 
         if self.index is None:
@@ -118,6 +134,8 @@ class Overdo(object):
                         output[name] = data
                 except IgnoreKey:
                     pass
+            elif not ignore_missing:
+                    raise MissingRule(key)
 
         return output
 
