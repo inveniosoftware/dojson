@@ -238,30 +238,32 @@ def test_marc21_loader():
 
 def test_marc21_split_stream():
     """Test MARC21 split_stream()."""
-    from six import StringIO
+    from six import BytesIO
     from dojson.contrib.marc21.utils import split_stream
 
-    COLLECTION = '<collection>{0}{1}</collection>'.format(
+    COLLECTION = u'<collection>{0}{1}</collection>'.format(
         RECORD, RECORD_SIMPLE
     )
-    generator = split_stream(StringIO(COLLECTION.encode('utf-8')))
-    assert etree.tostring(generator.next(), method='html') == RECORD
-    assert etree.tostring(generator.next(), method='html') == RECORD_SIMPLE
+    generator = split_stream(BytesIO(COLLECTION.encode('utf-8')))
+    assert etree.tostring(
+        next(generator), method='html').decode('utf-8') == RECORD
+    assert etree.tostring(
+        next(generator), method='html').decode('utf-8') == RECORD_SIMPLE
 
 
 def test_marc21_records_over_single_line():
     """Test records over single line."""
-    from six import StringIO, u
+    from six import BytesIO
     from dojson.contrib.marc21.utils import split_stream
 
-    records = (u('<record>foo</record>'),
-               u('<record>会意字</record>'),
-               u('<record>&gt;&amp;&lt;</record>'))
-    collection = u('<collection>{0}</collection>').format(u('').join(records))
+    records = (u'<record>foo</record>',
+               u'<record>会意字</record>',
+               u'<record>&gt;&amp;&lt;</record>')
+    collection = u'<collection>{0}</collection>'.format(u''.join(records))
 
-    generator = split_stream(StringIO(collection.encode('utf-8')))
+    generator = split_stream(BytesIO(collection.encode('utf-8')))
     for record in records:
-        result = etree.tostring(generator.next(),
+        result = etree.tostring(next(generator),
                                 encoding='utf-8',
                                 method='xml')
         assert record.encode('utf-8') == result

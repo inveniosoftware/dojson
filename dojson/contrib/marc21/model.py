@@ -9,7 +9,6 @@
 
 """MARC 21 model definition."""
 
-from dojson import Overdo
-from dojson import utils
+from dojson import Overdo, utils
 
 marc21 = Overdo(entry_point_group='dojson.contrib.marc21')

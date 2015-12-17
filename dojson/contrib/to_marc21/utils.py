@@ -10,12 +10,9 @@
 """Utilities for converting to MARC21."""
 
 import pkg_resources
-
-from six import string_types
-
 from lxml import etree
 from lxml.builder import E
-
+from six import string_types
 
 MARC21_DTD = pkg_resources.resource_filename(
     'dojson.contrib.marc21', 'MARC21slim.dtd')

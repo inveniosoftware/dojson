@@ -142,7 +142,7 @@ setup(
             'to_marc21 = dojson.contrib.to_marc21:to_marc21',
         ],
         'dojson.cli.load': [
-            'json = json:load',
+            'json = dojson.utils:load',
             'marcxml = dojson.contrib.marc21.utils:load',
         ],
         'dojson.cli.dump': [

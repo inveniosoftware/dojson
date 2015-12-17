@@ -10,13 +10,11 @@
 """To MARC 21 model definition."""
 
 import warnings
-
 from collections import MutableMapping, MutableSequence
+
 from six import iteritems
 
-from dojson import Overdo
-from dojson import utils
-
+from dojson import Overdo, utils
 
 warnings.warn('MARC21 undo feature is experimental')
 

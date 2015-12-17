@@ -9,12 +9,12 @@
 
 """Utilities for converting MARC21."""
 
-import pkg_resources
 import re
+from collections import Counter, OrderedDict
 
-from collections import OrderedDict, Counter
+import pkg_resources
 from lxml import etree
-from six import StringIO, string_types, iteritems
+from six import StringIO, binary_type, iteritems, text_type
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 
@@ -103,7 +103,7 @@ class GroupableOrderedDict(OrderedDict):
     def __eq__(self, other):
         if (len(self.keys()) != len(other.keys()) and
                 '__order__' not in other and
-                len(self.keys) - 1 == len(other.keys())):
+                len(self.keys()) - 1 == len(other.keys())):
 
             return False
 
@@ -244,13 +244,16 @@ def create_record(marcxml, correct=False, keep_singletons=True):
     If correct == 1, then perform DTD validation
     If correct == 0, then do not perform DTD validation
     """
-    if isinstance(marcxml, string_types):
+    if isinstance(marcxml, binary_type):
+        marcxml = marcxml.decode('utf-8')
+
+    if isinstance(marcxml, text_type):
         parser = etree.XMLParser(dtd_validation=correct, recover=True)
 
         if correct:
-            marcxml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-                       '<!DOCTYPE collection SYSTEM "file://{0}">\n'
-                       '<collection>\n{1}\n</collection>'.format(
+            marcxml = (u'<?xml version="1.0" encoding="UTF-8"?>\n'
+                       u'<!DOCTYPE collection SYSTEM "file://{0}">\n'
+                       u'<collection>\n{1}\n</collection>'.format(
                            MARC21_DTD, marcxml))
 
         tree = etree.parse(StringIO(marcxml), parser)

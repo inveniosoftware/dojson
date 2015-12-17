@@ -28,10 +28,10 @@ New extensions with loaders, dumpers, or rules can be provided via entry points.
 - ``dojson.cli.rule`` instances of :class:`dojson.Overdo` with loaded rules.
 """
 
-import pkg_resources
 import sys
 
 import click
+import pkg_resources
 
 
 @click.group()

@@ -9,7 +9,10 @@
 
 """Utility functions."""
 
+import codecs
 import functools
+import json
+
 import six
 
 
@@ -85,3 +88,9 @@ def reverse_force_list(data):
     if isinstance(data, (list, set)) and len(data) == 1:
         return data[0]
     return data
+
+
+def load(stream):
+    """Load JSON from bytestream."""
+    reader = codecs.getreader("utf-8")
+    return json.load(reader(stream))
