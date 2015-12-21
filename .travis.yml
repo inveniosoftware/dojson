@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -16,6 +16,7 @@ python:
   - "3.3"
   - "3.4"
   - "3.5"
+  - "3.5-dev"
 
 install:
   - pip install --upgrade pip
