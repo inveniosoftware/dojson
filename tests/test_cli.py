@@ -33,22 +33,12 @@ def test_cli_do_marc21_from_xml():
         with open('record.xml', 'wb') as f:
             f.write(RECORD_SIMPLE.encode('utf-8'))
 
-        with open('record_999.xml', 'wb') as f:
-            f.write(RECORD_999_FIELD.encode('utf-8'))
-
         result = runner.invoke(
             cli.missing_fields,
             ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
         )
-        assert result.output == ''
-        assert result.exit_code == 0
-
-        result = runner.invoke(
-            cli.missing_fields,
-            ['-i', 'record_999.xml', '-l', 'marcxml', 'marc21']
-        )
-        assert result.output == '999__\n'
-        assert result.exit_code == 1
+        assert '' == result.output
+        assert 0 == result.exit_code
 
         result = runner.invoke(
             cli.apply_rule,
@@ -63,17 +53,32 @@ def test_cli_do_marc21_from_xml():
 
         result = runner.invoke(
             cli.apply_rule,
+            ['-i', 'record.xml', '-l', 'marcxml', '--strict', 'marc21']
+        )
+        assert -1 == result.exit_code
+
+
+def test_cli_do_marc21_from_xml_unknown_fieds():
+    """Test MARC21 loading from XML containing unknown fields."""
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        with open('record_999.xml', 'wb') as f:
+            f.write(RECORD_999_FIELD.encode('utf-8'))
+
+        result = runner.invoke(
+            cli.missing_fields,
             ['-i', 'record_999.xml', '-l', 'marcxml', 'marc21']
         )
-        data = json.loads(result.output)
-        assert {} == data[0]
-        assert result.exit_code == 0
+        assert "999__" == result.output.strip()
+        assert 1 == result.exit_code
 
         result = runner.invoke(
             cli.apply_rule,
-            ['-i', 'record.xml', '-l', 'marcxml', '--strict', 'marc21']
+            ['-i', 'record_999.xml', '-l', 'marcxml', 'marc21']
         )
-        assert result.exit_code == -1
+        data = json.loads(result.output)
+        assert {'__order__': []} == data[0]
+        assert 0 == result.exit_code
 
 
 def test_cli_do_marc21_from_json():

@@ -156,6 +156,11 @@ class GroupableOrderedDict(OrderedDict):
                     for item in value:
                         v.append(item)
                         ordering.append(key)
+                elif isinstance(value, dict):
+                    if '__order__' in value:
+                        value = GroupableOrderedDict(value)
+                    v.append(value)
+                    ordering.append(key)
                 else:
                     v.append(value)
                     ordering.append(key)
@@ -190,6 +195,11 @@ class GroupableOrderedDict(OrderedDict):
 
     def __eq__(self, other):
         """Comparison help."""
+        if other is None:
+            return False
+        if isinstance(other, tuple):
+            return False
+
         if (len(self.keys()) != len(other.keys()) and
                 '__order__' not in other and
                 len(self.keys()) - 1 == len(other.keys())):
@@ -291,7 +301,8 @@ class GroupableOrderedDict(OrderedDict):
                     continue
                 if len(value) == 1:
                     values.append(value[0])
-                values.append(value)
+                else:
+                    values.append(value)
         return values
 
     def keys(self, repeated=False):
@@ -322,10 +333,15 @@ class GroupableOrderedDict(OrderedDict):
     def iteritems(self, with_order=True, repeated=False):
         """Just like D.items() but as an iterator."""
         if not repeated:
+            if with_order:
+                yield '__order__', dict.__getitem__(self, '__order__')
             for key, value in OrderedDict.items(self):
-                if key == '__order__' and not with_order:
+                if key == '__order__':
                     continue
-                yield key, value
+                if len(value) == 1:
+                    yield key, value[0]
+                else:
+                    yield key, value
         else:
             occurences = Counter()
             order = self['__order__']
