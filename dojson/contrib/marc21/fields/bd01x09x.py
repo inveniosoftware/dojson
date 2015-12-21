@@ -599,7 +599,7 @@ def language_code(self, key, value):
     """Language Code."""
     indicator_map1 = {
         "#": "No information provided",
-        "0": "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation",
+        "0": "Item not a translation/does not include a translation",
         "1": "Item is or includes a translation"}
     return {
         'language_code_of_text_sound_track_or_separate_title': utils.force_list(

@@ -631,7 +631,7 @@ def reverse_language_code(self, key, value):
     """Reverse - Language Code."""
     indicator_map1 = {
         "Item is or includes a translation": "1",
-        "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation": "0",
+        "Item not a translation/does not include a translation": "0",
         "No information provided": "_"}
     return {
         'a': utils.reverse_force_list(

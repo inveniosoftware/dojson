@@ -942,7 +942,7 @@
                 "type": "object",
                 "properties": {
                     "translation_indication": {
-                        "enum": ["Item is or includes a translation", "Item not a translation/does not include a\n                  \t\t\t\t\t\ttranslation", "No information provided"]
+                        "enum": ["Item is or includes a translation", "Item not a translation/does not include a translation", "No information provided"]
                     },
                     "language_code_of_text_sound_track_or_separate_title": {
                         "type": "array",
