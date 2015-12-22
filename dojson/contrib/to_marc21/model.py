@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -14,7 +14,8 @@ from collections import MutableMapping, MutableSequence
 
 from six import iteritems
 
-from dojson import Overdo, utils
+from dojson import Overdo
+from dojson.errors import IgnoreKey, MissingRule
 
 warnings.warn('MARC21 undo feature is experimental')
 
@@ -22,43 +23,75 @@ warnings.warn('MARC21 undo feature is experimental')
 class Underdo(Overdo):
     """Translation index specification for reverse marc21 translation."""
 
-    def do(self, blob):
+    def do(self, blob, ignore_missing=True, exception_handlers=None):
         """Translate blob values and instantiate new model instance.
 
         Takes out the indicators, if any, from the returned dictionary and puts
         them into the key.
+
+        :param blob: ``dict``-like object on which the matching rules are
+                     going to be applied.
+        :param ignore_missing: Set to ``False`` if you prefer to raise
+                               an exception ``MissingRule`` for the first
+                               key that it is not matching any rule.
+        :param exception_handlers: Give custom exception handlers to take care
+                                   of non-standard names that are installation
+                                   specific.
+
+        .. versionadded:: 1.0.0
+
+           ``ignore_missing`` allows to specify if the function should raise
+           an exception.
+
+        .. versionadded:: 1.1.0
+
+           ``exception_handlers`` allows unknown keys to treated in a custom
+           fashion.
         """
+        handlers = {IgnoreKey: None}
+        handlers.update(exception_handlers or {})
+
+        if ignore_missing:
+            handlers.setdefault(MissingRule, None)
+
         output = {}
 
         if self.index is None:
             self.build()
 
         for key, value in iteritems(blob):
-            result = self.index.query(key)
-            if result:
+            try:
+                result = self.index.query(key)
+                if not result:
+                    raise MissingRule(key)
+
                 name, creator = result
-                try:
-                    value = creator(output, key, value)
-                    if isinstance(value, MutableMapping):
-                        output['{0}{1}{2}'.format(
-                            name, value.pop('$ind1', '_'),
-                            value.pop('$ind2', '_'))] = value
-                    elif isinstance(value, MutableSequence):
-                        for v in value:
-                            try:
-                                key = '{0}{1}{2}'.format(
-                                    name, v.pop('$ind1', '_'),
-                                    v.pop('$ind2', '_'))
-                            except AttributeError:
-                                key = name
-                            if key in output:
-                                output[key].append(v)
-                            else:
-                                output[key] = [v]
-                    else:
-                        output[name] = value
-                except utils.IgnoreKey:
-                    pass
+                value = creator(output, key, value)
+                if isinstance(value, MutableMapping):
+                    output['{0}{1}{2}'.format(
+                        name, value.pop('$ind1', '_'),
+                        value.pop('$ind2', '_'))] = value
+                elif isinstance(value, MutableSequence):
+                    for v in value:
+                        try:
+                            key = '{0}{1}{2}'.format(
+                                name, v.pop('$ind1', '_'),
+                                v.pop('$ind2', '_'))
+                        except AttributeError:
+                            key = name
+                        if key in output:
+                            output[key].append(v)
+                        else:
+                            output[key] = [v]
+                else:
+                    output[name] = value
+            except Exception as exc:
+                if exc.__class__ in handlers:
+                    handler = handlers[exc.__class__]
+                    if handler is not None:
+                        handler(exc, output, key, value)
+                else:
+                    raise
 
         return output
 

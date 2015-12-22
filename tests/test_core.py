@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -130,6 +130,10 @@ RECORDS = {
     "theater": RECORD_THEATER,
     "deutsche biblio": RECORD_DEUTSCHE_BIBLIO,
     "repeatable fields": RECORD_REPEATABLE_FIELDS
+}
+
+LIBERAL_RECORDS = {
+    "record 999 field": RECORD_999_FIELD
 }
 
 
@@ -301,6 +305,29 @@ def test_tomarc21_from_xml():
         data = marc21.do(blob)
 
         back_blob = to_marc21.do(data)
+
+        assert blob == back_blob, name
+
+
+def test_tomarc21_from_liberal_xml():
+    """Test MARC21 loading and recreating from XML."""
+    from dojson.contrib.marc21 import marc21
+    from dojson.contrib.marc21.utils import create_record
+    from dojson.contrib.to_marc21 import to_marc21
+    from dojson.errors import MissingRule
+
+    def liberal(exc, output, key, value):
+        """When a key cannot be translated, simply use the number instead."""
+        if exc.__class__ is MissingRule:
+            output[key] = value
+        else:
+            raise exc
+
+    for name, record in LIBERAL_RECORDS.items():
+        blob = create_record(record)
+        data = marc21.do(blob, False, {MissingRule: liberal})
+
+        back_blob = to_marc21.do(data, False, {MissingRule: liberal})
 
         assert blob == back_blob, name
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -97,7 +97,7 @@ class Overdo(object):
             return creator
         return decorator
 
-    def do(self, blob, ignore_missing=True):
+    def do(self, blob, ignore_missing=True, exception_handlers=None):
         """Translate blob values and instantiate new model instance.
 
         Raises ``MissingRule`` when no rule matched and ``ignore_missing``
@@ -108,34 +108,53 @@ class Overdo(object):
         :param ignore_missing: Set to ``False`` if you prefer to raise
                                an exception ``MissingRule`` for the first
                                key that it is not matching any rule.
+        :param exception_handlers: Give custom exception handlers to take care
+                                   of non-standard codes that are installation
+                                   specific.
 
         .. versionadded:: 1.0.0
 
            ``ignore_missing`` allows to specify if the function should raise
            an exception.
 
+        .. versionadded:: 1.1.0
+
+           ``exception_handlers`` allows to set custom handlers for
+           non-standard MARC codes.
+
         """
+        handlers = {IgnoreKey: None}
+        handlers.update(exception_handlers or {})
+
+        if ignore_missing:
+            handlers.setdefault(MissingRule, None)
+
         output = {}
 
         if self.index is None:
             self.build()
 
         for key, value in iteritems(blob):
-            result = self.index.query(key)
-            if result:
-                name, creator = result
-                try:
-                    data = creator(output, key, value)
-                    if getattr(creator, '__extend__', False):
-                        existing = output.get(name, [])
-                        existing.extend(data)
-                        output[name] = existing
-                    else:
-                        output[name] = data
-                except IgnoreKey:
-                    pass
-            elif not ignore_missing:
+            try:
+                result = self.index.query(key)
+                if not result:
                     raise MissingRule(key)
+
+                name, creator = result
+                data = creator(output, key, value)
+                if getattr(creator, '__extend__', False):
+                    existing = output.get(name, [])
+                    existing.extend(data)
+                    output[name] = existing
+                else:
+                    output[name] = data
+            except Exception as exc:
+                if exc.__class__ in handlers:
+                    handler = handlers[exc.__class__]
+                    if handler is not None:
+                        handler(exc, output, key, value)
+                else:
+                    raise
 
         return output
 
