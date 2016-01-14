@@ -1,6 +1,42 @@
 Changes
 =======
 
+Version 1.0.0 (released 2016-01-14):
+------------------------------------
+
+Incompatible changes
+~~~~~~~~~~~~~~~~~~~~
+
+- Removes support for single key matching multiple rules. Please make
+  your rules mutually exclusive!
+- controlfields 00x are expected to be the element or a list of
+  multiple elements.
+
+New features
+~~~~~~~~~~~~
+
+- Adds new keyword argument `ignore_missing` to `Overdo.do` method to
+  specify if method should raise `MissingRule` exception when there is
+  no matching rule for a key.
+- Adds new CLI option `--strict` to the `do` command that sets the
+  `ignore_missing` argument to `False`.  (#51)
+- MARC XML serialization from to_marc21.
+
+Improved features
+~~~~~~~~~~~~~~~~~
+
+- Adds support for Python 3+.
+- Uses an OrderedDict to let the external tools working on `dict`
+  (like json) behave correctly.
+- All results from rules using `for_each_value` decorator are being
+  automatically extended. This is useful for repeatable MARC21 fields
+  with different indicators.  (#53)
+- Record are stored in an immutable sorted structure which enables to
+  keep the intended order while offering easy ways to access, index
+  and manipulate.
+- Adds two records to be tested.
+- Reorders some of the assertion: `expected == actual`.
+
 Version 0.4.0 (released 2015-11-18):
 ------------------------------------
 
