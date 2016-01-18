@@ -12,7 +12,10 @@
 import pkg_resources
 from lxml import etree
 from lxml.builder import E
-from six import string_types
+from six import iteritems, string_types
+
+from dojson.utils import GroupableOrderedDict
+
 
 MARC21_DTD = pkg_resources.resource_filename(
     'dojson.contrib.marc21', 'MARC21slim.dtd')
@@ -28,7 +31,13 @@ def dumps(*records, **kwargs):
 
     for record in records:
         rec = E.record()
-        for df, subfields in record.items(with_order=False, repeated=True):
+
+        if isinstance(record, GroupableOrderedDict):
+            items = record.iteritems(with_order=False, repeated=True)
+        else:
+            items = iteritems(record)
+
+        for df, subfields in items:
             # Control fields
             if len(df) == 3:
                 if isinstance(subfields, string_types):
@@ -46,19 +55,32 @@ def dumps(*records, **kwargs):
 
                 df = df.replace('_', ' ')
                 for subfield in subfields:
-                    datafield = E.datafield()
-                    datafield.attrib['tag'] = df[0:3]
-                    datafield.attrib['ind1'] = df[3]
-                    datafield.attrib['ind2'] = df[4]
+                    if not isinstance(subfield, (list, tuple, set)):
+                        subfield = [subfield]
 
-                    for code, value in subfield.items(with_order=False, repeated=True):
-                        if not isinstance(value, string_types):
-                            for v in value:
-                                datafield.append(E.subfield(v, code=code))
+                    for s in subfield:
+                        datafield = E.datafield()
+                        datafield.attrib['tag'] = df[0:3]
+                        datafield.attrib['ind1'] = df[3]
+                        datafield.attrib['ind2'] = df[4]
+
+                        if isinstance(s, GroupableOrderedDict):
+                            items = s.iteritems(with_order=False, repeated=True)
+                        elif isinstance(s, dict):
+                            items = iteritems(s)
                         else:
-                            datafield.append(E.subfield(value, code=code))
+                            datafield.append(E.subfield(s))
 
-                    rec.append(datafield)
+                            items = tuple()
+
+                        for code, value in items:
+                            if not isinstance(value, string_types):
+                                for v in value:
+                                    datafield.append(E.subfield(v, code=code))
+                            else:
+                                datafield.append(E.subfield(value, code=code))
+
+                        rec.append(datafield)
         root.append(rec)
 
     return etree.tostring(root, **kwargs)

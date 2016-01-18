@@ -21,6 +21,41 @@ def reverse_added_entry_personal_name(self, key, value):
     """Reverse - Added Entry-Personal Name."""
     indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
     indicator_map2 = {"Analytical entry": "2", "No information provided": "_"}
+    field_map = {
+        'authority_record_control_number': '0',
+        'materials_specified': '3',
+        'relator_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+        'personal_name': 'a',
+        'numeration': 'b',
+        'titles_and_other_words_associated_with_a_name': 'c',
+        'dates_associated_with_a_name': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'attribution_qualifier': 'j',
+        'form_subheading': 'k',
+        'language_or_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'version': 's',
+        'key_for_music': 'r',
+        'affiliation': 'u',
+        'title_of_a_work': 't',
+        'international_standard_serial_number': 'x',
+        'type_of_personal_name_entry_element': None,
+        'type_of_added_entry': None
+    }
+
+    ind1 = indicator_map1.get(value.get('type_of_personal_name_entry_element', '_'))
+    ind2 = indicator_map2.get(value.get('type_of_added_entry', '_'))
+    order = utils.map_order(field_map, value)
+
     return {
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number')
@@ -72,8 +107,9 @@ def reverse_added_entry_personal_name(self, key, value):
         'u': value.get('affiliation'),
         't': value.get('title_of_a_work'),
         'x': value.get('international_standard_serial_number'),
-        '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element'), '_'),
-        '$ind2': indicator_map2.get(value.get('type_of_added_entry'), '_'),
+        '$ind1': ind1,
+        '$ind2': ind2,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

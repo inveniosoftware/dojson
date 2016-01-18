@@ -14,7 +14,10 @@ from collections import MutableMapping, MutableSequence
 
 from six import iteritems
 
-from dojson import Overdo, utils
+from dojson import Overdo
+from dojson.errors import IgnoreKey
+from dojson.utils import GroupableOrderedDict
+
 
 warnings.warn('MARC21 undo feature is experimental')
 
@@ -28,39 +31,54 @@ class Underdo(Overdo):
         Takes out the indicators, if any, from the returned dictionary and puts
         them into the key.
         """
-        output = {}
+        output = []
 
         if self.index is None:
             self.build()
 
-        for key, value in iteritems(blob):
+        if '__order__' in blob and not isinstance(blob, GroupableOrderedDict):
+            blob = GroupableOrderedDict(blob)
+
+        if '__order__' in blob:
+            items = blob.iteritems(repeated=True)
+        else:
+            items = iteritems(blob)
+
+        for key, item in items:
             result = self.index.query(key)
             if result:
                 name, creator = result
                 try:
-                    value = creator(output, key, value)
+                    value = creator(output, key, item)
+
                     if isinstance(value, MutableMapping):
-                        output['{0}{1}{2}'.format(
-                            name, value.pop('$ind1', '_'),
-                            value.pop('$ind2', '_'))] = value
+                        k = ''.join((name,
+                                     value.pop('$ind1', '_'),
+                                     value.pop('$ind2', '_')))
+                        if '__order__' in value or isinstance(value, dict):
+                            value = GroupableOrderedDict(value)
+                        output.append((k, value))
                     elif isinstance(value, MutableSequence):
                         for v in value:
                             try:
-                                key = '{0}{1}{2}'.format(
-                                    name, v.pop('$ind1', '_'),
-                                    v.pop('$ind2', '_'))
+                                k = ''.join((name,
+                                             v.pop('$ind1', '_'),
+                                             v.pop('$ind2', '_')))
                             except AttributeError:
-                                key = name
-                            if key in output:
-                                output[key].append(v)
-                            else:
-                                output[key] = [v]
-                    else:
-                        output[name] = value
-                except utils.IgnoreKey:
-                    pass
+                                k = name
 
-        return output
+                            if '__order__' in v or isinstance(v, dict):
+                                v = GroupableOrderedDict(v)
+                            output.append((k, v))
+                    else:
+                        k = ''.join((name,
+                                     value.pop('$ind1', '_'),
+                                     value.pop('$ind2', '_')))
+                        output.append((k, value))
+                except IgnoreKey:
+                    warnings.warn('{} was ignored in to_marc21.do'.format(key))
+
+        return GroupableOrderedDict(output)
 
 
 to_marc21 = Underdo(entry_point_group='dojson.contrib.to_marc21')

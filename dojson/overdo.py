@@ -19,6 +19,7 @@ from six import iteritems
 from six.moves import zip_longest
 
 from .errors import IgnoreKey, MissingRule
+from .utils import GroupableOrderedDict
 
 
 class Index(object):
@@ -115,29 +116,33 @@ class Overdo(object):
            an exception.
 
         """
-        output = {}
+        output = []
 
         if self.index is None:
             self.build()
 
-        for key, value in iteritems(blob):
+        if isinstance(blob, GroupableOrderedDict):
+            items = blob.iteritems(repeated=True)
+        else:
+            items = iteritems(blob)
+
+        for key, value in items:
             result = self.index.query(key)
             if result:
                 name, creator = result
                 try:
                     data = creator(output, key, value)
-                    if getattr(creator, '__extend__', False):
-                        existing = output.get(name, [])
-                        existing.extend(data)
-                        output[name] = existing
-                    else:
-                        output[name] = data
+                    if isinstance(data, (list, tuple)):
+                        data = [GroupableOrderedDict(d) if isinstance(d, dict) else d for d in data]
+                    elif isinstance(data, (dict)):
+                        data = GroupableOrderedDict(data)
+                    output.append((name, data))
                 except IgnoreKey:
                     pass
             elif not ignore_missing:
                     raise MissingRule(key)
 
-        return output
+        return GroupableOrderedDict(output)
 
     def missing(self, blob):
         """Return keys with missing rules."""

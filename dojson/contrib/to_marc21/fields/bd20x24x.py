@@ -176,6 +176,27 @@ def reverse_title_statement(self, key, value):
     indicator_map2 = {
         "No nonfiling characters": "0",
         "Number of nonfiling characters": "8"}
+    field_map = {
+        'title': 'a',
+        'remainder_of_title': 'b',
+        'statement_of_responsibility': 'c',
+        'inclusive_dates': 'f',
+        'bulk_dates': 'g',
+        'medium': 'h',
+        'form': 'k',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'version': 's',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+        'title_added_entry': None,
+        'nonfiling_characters': None
+    }
+
+    ind1 = indicator_map1.get(value.get('title_added_entry', '_'))
+    ind2 = indicator_map2.get(value.get('nonfiling_characters', '_'))
+    order = utils.map_order(field_map, value)
+
     return {
         'a': value.get('title'),
         'c': value.get('statement_of_responsibility'),
@@ -197,8 +218,9 @@ def reverse_title_statement(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
-        '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
+        '$ind1': ind1,
+        '$ind2': ind2,
+        '__order__': tuple(order) if len(order) else None
     }
 
 

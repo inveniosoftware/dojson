@@ -13,7 +13,7 @@ import copy
 import json
 import pytest
 
-from dojson.contrib.marc21.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict
 
 
 @pytest.fixture
@@ -61,7 +61,7 @@ def test_groupable_ordered_dict_items(god):
             ('b', 2),
             ('c', 'invenio'),
             ('a', 4),
-            ('b', 5)) == god.items(with_order=True, repeated=True)
+            ('b', 5)) == god.items(repeated=True)
 
 
 def test_groupable_ordered_dict_get(god):
