@@ -1,6 +1,14 @@
 Changes
 =======
 
+Version 1.0.1 (released 2016-01-19):
+------------------------------------
+
+Bug fixes
+~~~~~~~~~
+
+- Fixes support for Python 3.5.1.
+
 Version 1.0.0 (released 2016-01-14):
 ------------------------------------
 
