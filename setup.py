@@ -57,6 +57,7 @@ with open(os.path.join('dojson', 'version.py'), 'rt') as f:
     ).group('version')
 
 tests_require = [
+    'pep257>=0.7.0',
     'pytest-cache>=1.0',
     'pytest-cov>=2.1.0',
     'pytest-pep8>=1.0.6',
@@ -64,6 +65,21 @@ tests_require = [
     'coverage>=4.0.0',
     'mock',
 ]
+
+extras_require = {
+    'docs': [
+        'Sphinx>=1.3',
+    ],
+    'tests': tests_require,
+}
+
+extras_require['all'] = []
+for name, reqs in extras_require.items():
+    if name[0] == ':':
+        continue
+    if name in ('mysql', 'postgresql', 'sqlite'):
+        continue
+    extras_require['all'].extend(reqs)
 
 setup(
     name='dojson',
@@ -83,10 +99,7 @@ setup(
         'lxml',
         'six',
     ],
-    extras_require={
-        'docs': ['sphinx_rtd_theme'],
-        'tests': tests_require,
-    },
+    extras_require=extras_require,
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
