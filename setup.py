@@ -75,10 +75,6 @@ extras_require = {
 
 extras_require['all'] = []
 for name, reqs in extras_require.items():
-    if name[0] == ':':
-        continue
-    if name in ('mysql', 'postgresql', 'sqlite'):
-        continue
     extras_require['all'].extend(reqs)
 
 setup(
@@ -160,6 +156,7 @@ setup(
         ],
         'dojson.cli.dump': [
             'json = json:dumps',
+            'marcxml = dojson.contrib.to_marc21.utils:dumps',
         ],
     }
 )

@@ -22,9 +22,11 @@ MARC21_NS = "http://www.loc.gov/MARC21/slim"
 """MARCXML XML Schema"""
 
 
-def dumps(*records, **kwargs):
-    """Dump records into a MarcXML file."""
+def dumps_etree(records, xslt_filename=None):
+    """Dump records into a etree."""
     root = etree.Element('collection', nsmap={None: MARC21_NS})
+
+    records = records if isinstance(records, list) else [records]
 
     for record in records:
         rec = E.record()
@@ -51,7 +53,8 @@ def dumps(*records, **kwargs):
                     datafield.attrib['ind1'] = df[3]
                     datafield.attrib['ind2'] = df[4]
 
-                    for code, value in subfield.items(with_order=False, repeated=True):
+                    for code, value in subfield.items(with_order=False,
+                                                      repeated=True):
                         if not isinstance(value, string_types):
                             for v in value:
                                 datafield.append(E.subfield(v, code=code))
@@ -61,4 +64,15 @@ def dumps(*records, **kwargs):
                     rec.append(datafield)
         root.append(rec)
 
+    if xslt_filename is not None:
+        xslt_root = etree.parse(open(xslt_filename))
+        transform = etree.XSLT(xslt_root)
+        root = transform(root)
+
+    return root
+
+
+def dumps(records, xslt_filename=None, **kwargs):
+    """Dump records into a MarcXML file."""
+    root = dumps_etree(records=records, xslt_filename=xslt_filename)
     return etree.tostring(root, **kwargs)
