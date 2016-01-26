@@ -261,6 +261,11 @@ def create_record(marcxml, correct=False, keep_singletons=True):
         tree = marcxml
     record = []
 
+    leader_iterator = tree.iter(tag='{*}leader')
+    for leader in leader_iterator:
+        text = leader.text or ''
+        record.append(('leader', text))
+
     controlfield_iterator = tree.iter(tag='{*}controlfield')
     for controlfield in controlfield_iterator:
         tag = controlfield.attrib.get('tag', '!')

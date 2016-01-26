@@ -124,6 +124,11 @@ RECORD_REPEATABLE_FIELDS = """<record>
   </datafield>
 </record>"""
 
+RECORD_LEADER = """<record>
+  <leader>00749nz  a2200205n  4500</leader>
+  <controlfield tag="001">1</controlfield>
+</record>"""
+
 RECORDS = {
     "base": RECORD,
     "simple": RECORD_SIMPLE,
@@ -408,3 +413,11 @@ def test_marc21_856_indicators():
     assert expected_8567 == data
     back_blob = to_marc21.do(data)
     assert blob == back_blob
+
+
+def test_leader():
+    """Test XML parser for <leader/>."""
+    from dojson.contrib.marc21.utils import create_record
+    blob = create_record(RECORD_LEADER)
+    assert 'leader' in blob
+    assert '00749nz  a2200205n  4500' == blob['leader']
