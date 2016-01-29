@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -239,10 +239,12 @@ def reverse_production_publication_distribution_manufacture_and_copyright_notice
         "Publication": "1"}
     return {
         'a': utils.reverse_force_list(
-            value.get('place_of_production_publication_distribution_manufacture')
+            value.get(
+                'place_of_production_publication_distribution_manufacture')
         ),
         'c': utils.reverse_force_list(
-            value.get('date_of_production_publication_distribution_manufacture_or_copyright_notice')
+            value.get(
+                'date_of_production_publication_distribution_manufacture_or_copyright_notice')
         ),
         'b': utils.reverse_force_list(
             value.get('name_of_producer_publisher_distributor_manufacturer')

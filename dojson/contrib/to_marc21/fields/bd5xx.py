@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -560,7 +560,8 @@ def reverse_reproduction_note(self, key, value):
             value.get('series_statement_of_reproduction')
         ),
         'm': utils.reverse_force_list(
-            value.get('dates_and_or_sequential_designation_of_issues_reproduced')
+            value.get(
+                'dates_and_or_sequential_designation_of_issues_reproduced')
         ),
         'n': utils.reverse_force_list(
             value.get('note_about_reproduction')
@@ -713,6 +714,20 @@ def reverse_system_details_note(self, key, value):
 @utils.filter_values
 def reverse_terms_governing_use_and_reproduction_note(self, key, value):
     """Reverse - Terms Governing Use and Reproduction Note."""
+    field_map = {
+        'terms_governing_use_and_reproduction': 'a',
+        'authorization': 'c',
+        'jurisdiction': 'b',
+        'authorized_users': 'd',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+        'uniform_resource_identifier': 'u',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
         'a': value.get('terms_governing_use_and_reproduction'),
         'c': value.get('authorization'),
@@ -729,6 +744,7 @@ def reverse_terms_governing_use_and_reproduction_note(self, key, value):
         ),
         '$ind1': '_',
         '$ind2': '_',
+        '__order__': tuple(order) if len(order) else None
     }
 
 

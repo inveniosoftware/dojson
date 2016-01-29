@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -668,6 +668,20 @@ def system_details_note(self, key, value):
 @utils.filter_values
 def terms_governing_use_and_reproduction_note(self, key, value):
     """Terms Governing Use and Reproduction Note."""
+    field_map = {
+        'a': 'terms_governing_use_and_reproduction',
+        'c': 'authorization',
+        'b': 'jurisdiction',
+        'd': 'authorized_users',
+        '3': 'materials_specified',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+        'u': 'uniform_resource_identifier',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
         'terms_governing_use_and_reproduction': value.get('a'),
         'authorization': value.get('c'),
@@ -682,6 +696,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
+        '__order__': tuple(order) if len(order) else None
     }
 
 

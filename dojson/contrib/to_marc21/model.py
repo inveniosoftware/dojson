@@ -11,6 +11,7 @@
 
 import warnings
 from collections import MutableMapping, MutableSequence
+from operator import itemgetter
 
 from six import iteritems
 
@@ -66,25 +67,25 @@ class Underdo(Overdo):
                     raise MissingRule(key)
 
                 name, creator = result
-                value = creator(output, key, value)
-                if isinstance(value, MutableMapping):
-                    output['{0}{1}{2}'.format(
-                        name, value.pop('$ind1', '_'),
-                        value.pop('$ind2', '_'))] = value
-                elif isinstance(value, MutableSequence):
-                    for v in value:
+                item = creator(output, key, value)
+                if isinstance(item, MutableMapping):
+                    field = '{0}{1}{2}'.format(
+                        name, item.pop('$ind1', '_'),
+                        item.pop('$ind2', '_'))
+                    if '__order__' in item:
+                        item = GroupableOrderedDict(item)
+                    output.append((field, item))
+                elif isinstance(item, MutableSequence):
+                    for v in item:
                         try:
-                            key = '{0}{1}{2}'.format(
+                            field = '{0}{1}{2}'.format(
                                 name, v.pop('$ind1', '_'),
                                 v.pop('$ind2', '_'))
                         except AttributeError:
-                            key = name
-                        if key in output:
-                            output[key].append(v)
-                        else:
-                            output[key] = [v]
+                            field = name
+                        output.append((field, v))
                 else:
-                    output[name] = value
+                    output.append((name, item))
             except Exception as exc:
                 if exc.__class__ in handlers:
                     handler = handlers[exc.__class__]
@@ -93,7 +94,7 @@ class Underdo(Overdo):
                 else:
                     raise
 
-        return output
+        return GroupableOrderedDict(sorted(output, key=lambda i: i[0][:3]))
 
 
 to_marc21 = Underdo(entry_point_group='dojson.contrib.to_marc21')

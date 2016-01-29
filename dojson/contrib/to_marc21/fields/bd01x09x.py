@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -221,6 +221,26 @@ def reverse_other_standard_identifier(self, key, value):
         "Difference": "1",
         "No difference": "0",
         "No information provided": "_"}
+    field_map = {
+        'standard_number_or_code': 'a',
+        'terms_of_availability': 'c',
+        'additional_codes_following_the_standard_number_or_code': 'd',
+        'qualifying_information': 'q',
+        'source_of_number_or_code': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+        'canceled_invalid_standard_number_or_code': 'z',
+        'type_of_standard_number_or_code': None,
+        'difference_indicator': None
+    }
+
+    ind1 = indicator_map1.get(
+        value.get(
+            'type_of_standard_number_or_code',
+            '_'))
+    ind2 = indicator_map2.get(value.get('difference_indicator', '_'))
+    order = utils.map_order(field_map, value)
+
     return {
         'a': value.get('standard_number_or_code'),
         'c': value.get('terms_of_availability'),
@@ -233,12 +253,9 @@ def reverse_other_standard_identifier(self, key, value):
             value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(
             value.get('canceled_invalid_standard_number_or_code')),
-        '$ind1': indicator_map1.get(
-            value.get('type_of_standard_number_or_code'),
-            '_'),
-        '$ind2': indicator_map2.get(
-            value.get('difference_indicator'),
-            '_'),
+        '$ind1': ind1,
+        '$ind2': ind2,
+        '__order__': tuple(order) if len(order) else None,
     }
 
 
@@ -647,7 +664,8 @@ def reverse_language_code(self, key, value):
             value.get('language_code_of_sung_or_spoken_text')
         ),
         'g': utils.reverse_force_list(
-            value.get('language_code_of_accompanying_material_other_than_librettos')
+            value.get(
+                'language_code_of_accompanying_material_other_than_librettos')
         ),
         'f': utils.reverse_force_list(
             value.get('language_code_of_table_of_contents')
@@ -662,7 +680,8 @@ def reverse_language_code(self, key, value):
             value.get('language_code_of_subtitles_or_captions')
         ),
         'm': utils.reverse_force_list(
-            value.get('language_code_of_original_accompanying_materials_other_than_librettos')
+            value.get(
+                'language_code_of_original_accompanying_materials_other_than_librettos')
         ),
         'n': utils.reverse_force_list(
             value.get('language_code_of_original_libretto')
@@ -1161,7 +1180,8 @@ def reverse_additional_dewey_decimal_classification_number(self, key, value):
         '2': value.get('edition_number'),
         '6': value.get('linkage'),
         'y': utils.reverse_force_list(
-            value.get('table_sequence_number_for_internal_subarrangement_or_add_table')
+            value.get(
+                'table_sequence_number_for_internal_subarrangement_or_add_table')
         ),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -1202,7 +1222,8 @@ def reverse_synthesized_classification_number_components(self, key, value):
     """Reverse - Synthesized Classification Number Components."""
     return {
         'a': utils.reverse_force_list(
-            value.get('number_where_instructions_are_found_single_number_or_beginning_number_of_span')
+            value.get(
+                'number_where_instructions_are_found_single_number_or_beginning_number_of_span')
         ),
         'c': utils.reverse_force_list(
             value.get('classification_number_ending_number_of_span')
@@ -1214,10 +1235,12 @@ def reverse_synthesized_classification_number_components(self, key, value):
             value.get('facet_designator')
         ),
         'v': utils.reverse_force_list(
-            value.get('number_in_internal_subarrangement_or_add_table_where_instructions_are_found')
+            value.get(
+                'number_in_internal_subarrangement_or_add_table_where_instructions_are_found')
         ),
         's': utils.reverse_force_list(
-            value.get('digits_added_from_classification_number_in_schedule_or_external_table')
+            value.get(
+                'digits_added_from_classification_number_in_schedule_or_external_table')
         ),
         'r': utils.reverse_force_list(
             value.get('root_number')
@@ -1229,11 +1252,13 @@ def reverse_synthesized_classification_number_components(self, key, value):
             value.get('digits_added_from_internal_subarrangement_or_add_table')
         ),
         'w': utils.reverse_force_list(
-            value.get('table_identification_internal_subarrangement_or_add_table')
+            value.get(
+                'table_identification_internal_subarrangement_or_add_table')
         ),
         '6': value.get('linkage'),
         'y': utils.reverse_force_list(
-            value.get('table_sequence_number_for_internal_subarrangement_or_add_table')
+            value.get(
+                'table_sequence_number_for_internal_subarrangement_or_add_table')
         ),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')

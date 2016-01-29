@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -126,6 +126,43 @@ def electronic_location_and_access(self, key, value):
         "1": "Version of resource",
         "2": "Related resource",
         "8": "No display constant generated"}
+    field_map = {
+        '3': 'materials_specified',
+        '2': 'access_method',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+        'a': 'host_name',
+        'c': 'compression_information',
+        'b': 'access_number',
+        'd': 'path',
+        'f': 'electronic_name',
+        'i': 'instruction',
+        'h': 'processor_of_request',
+        'k': 'password',
+        'j': 'bits_per_second',
+        'm': 'contact_for_access_assistance',
+        'l': 'logon',
+        'o': 'operating_system',
+        'n': 'name_of_location_of_host',
+        'p': 'port',
+        'q': 'electronic_format_type',
+        's': 'file_size',
+        'r': 'settings',
+        'u': 'uniform_resource_identifier',
+        't': 'terminal_emulation',
+        'v': 'hours_access_method_available',
+        'w': 'record_control_number',
+        'x': 'nonpublic_note',
+        'y': 'link_text',
+        'z': 'public_note'
+    }
+
+    order = utils.map_order(field_map, value)
+    if key[3] != '7' and key[3] in indicator_map1:
+        order.append('access_method')
+    if key[4] in indicator_map2:
+        order.append('relationship')
+
     return {
         'materials_specified': value.get('3'),
         'access_method':
@@ -189,6 +226,7 @@ def electronic_location_and_access(self, key, value):
             value.get('z')
         ),
         'relationship': indicator_map2.get(key[4]),
+        '__order__': tuple(order) if len(order) else None,
     }
 
 

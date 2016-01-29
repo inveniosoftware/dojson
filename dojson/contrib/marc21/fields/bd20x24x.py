@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -215,16 +215,38 @@ def title_statement(self, key, value):
     """Title Statement."""
     indicator_map1 = {"0": "No added entry", "1": "Added entry"}
     indicator_map2 = {
-        "0": "No nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+    }
+    field_map = {
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+        'a': 'title',
+        'b': 'remainder_of_title',
+        'c': 'statement_of_responsibility',
+        'f': 'inclusive_dates',
+        'g': 'bulk_dates',
+        'h': 'medium',
+        'k': 'form',
+        'n': 'number_of_part_section_of_a_work',
+        'p': 'name_of_part_section_of_a_work',
+        's': 'version'
+    }
+
+    order = utils.map_order(field_map, value)
+    if key[3] in indicator_map1:
+        order.append('title_added_entry')
+    if key[4] in indicator_map2:
+        order.append('nonfiling_characters')
+
     return {
         'title': value.get('a'),
         'statement_of_responsibility': value.get('c'),
@@ -248,6 +270,7 @@ def title_statement(self, key, value):
         ),
         'title_added_entry': indicator_map1.get(key[3]),
         'nonfiling_characters': indicator_map2.get(key[4]),
+        '__order__': tuple(order) if len(order) else None,
     }
 
 
