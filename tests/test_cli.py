@@ -9,46 +9,66 @@
 
 """Test suite for DoJSON."""
 
+import json
+
 from click.testing import CliRunner
 
-import json
+from dojson import cli
+from dojson.contrib.marc21.utils import create_record
+from test_core import RECORD_SIMPLE, RECORD_999_FIELD
 
 
 def test_cli_do_marc21_from_xml():
     """Test MARC21 loading from XML."""
-    from dojson import cli
-    from test_core import RECORD_SIMPLE, RECORD_999_FIELD
+    expected = [{
+        'main_entry_personal_name': {
+            'personal_name': 'Donges, Jonathan F'
+        }
+    }]
 
-    expected = [{'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}]
     runner = CliRunner()
-
     with runner.isolated_filesystem():
         with open('record.xml', 'wb') as f:
             f.write(RECORD_SIMPLE.encode('utf-8'))
-
-        with open('record_999.xml', 'wb') as f:
-            f.write(RECORD_999_FIELD.encode('utf-8'))
 
         result = runner.invoke(
             cli.missing_fields,
             ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
         )
-        assert result.output == ''
-        assert result.exit_code == 0
-
-        result = runner.invoke(
-            cli.missing_fields,
-            ['-i', 'record_999.xml', '-l', 'marcxml', 'marc21']
-        )
-        assert result.output == '999__\n'
-        assert result.exit_code == 1
+        assert '' == result.output
+        assert 0 == result.exit_code
 
         result = runner.invoke(
             cli.apply_rule,
             ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
         )
-        data = json.loads(result.output)
-        assert expected == data
+
+        try:
+            data = json.loads(result.output)
+            assert expected == data
+        except ValueError:
+            assert False, result.output
+
+        result = runner.invoke(
+            cli.apply_rule,
+            ['-i', 'record.xml', '-l', 'marcxml', '--strict', 'marc21']
+        )
+        assert -1 == result.exit_code
+
+
+def test_cli_do_marc21_from_xml_unknown_fieds():
+    """Test MARC21 loading from XML containing unknown fields."""
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        with open('record_999.xml', 'wb') as f:
+            f.write(RECORD_999_FIELD.encode('utf-8'))
+
+        result = runner.invoke(
+            cli.missing_fields,
+            ['-i', 'record_999.xml', '-l', 'marcxml', 'marc21']
+        )
+        assert "999__" == result.output.strip()
+        assert 1 == result.exit_code
 
         result = runner.invoke(
             cli.apply_rule,
@@ -56,24 +76,18 @@ def test_cli_do_marc21_from_xml():
         )
         data = json.loads(result.output)
         assert {} == data[0]
-        assert result.exit_code == 0
-
-        result = runner.invoke(
-            cli.apply_rule,
-            ['-i', 'record.xml', '-l', 'marcxml', '--strict', 'marc21']
-        )
-        assert result.exit_code == -1
+        assert 0 == result.exit_code
 
 
 def test_cli_do_marc21_from_json():
     """Test MARC21 loading from XML."""
-    from dojson import cli
-    from dojson.contrib.marc21.utils import create_record
-    from test_core import RECORD_SIMPLE
+    expected = {
+        'main_entry_personal_name': {
+            'personal_name': 'Donges, Jonathan F'
+        }
+    }
 
-    expected = {'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}
     runner = CliRunner()
-
     with runner.isolated_filesystem():
         with open('record.json', 'wb') as fp:
             record = create_record(RECORD_SIMPLE)
@@ -83,12 +97,18 @@ def test_cli_do_marc21_from_json():
             cli.missing_fields,
             ['-i', 'record.json', 'marc21']
         )
-        assert '' == result.output
+        assert '' == result.output, result.exception
         assert 0 == result.exit_code
 
         result = runner.invoke(
             cli.apply_rule,
             ['-i', 'record.json', 'marc21']
         )
-        data = json.loads(result.output)
-        assert expected == data
+
+        assert 0 == result.exit_code, result.exception
+
+        try:
+            data = json.loads(result.output)
+            assert expected == data
+        except ValueError:
+            assert False, result.output

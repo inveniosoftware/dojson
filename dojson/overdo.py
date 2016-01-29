@@ -20,6 +20,7 @@ from six import iteritems
 from six.moves import zip_longest
 
 from .errors import IgnoreKey, MissingRule
+from .utils import GroupableOrderedDict
 
 
 class Index(object):

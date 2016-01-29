@@ -17,6 +17,8 @@ from six import iteritems
 
 from dojson import Overdo
 from dojson.errors import IgnoreKey, MissingRule
+from dojson.utils import GroupableOrderedDict
+
 
 warnings.warn('MARC21 undo feature is experimental')
 
@@ -55,12 +57,20 @@ class Underdo(Overdo):
         if ignore_missing:
             handlers.setdefault(MissingRule, None)
 
-        output = {}
+        output = []
 
         if self.index is None:
             self.build()
 
-        for key, value in iteritems(blob):
+        if '__order__' in blob and not isinstance(blob, GroupableOrderedDict):
+            blob = GroupableOrderedDict(blob)
+
+        if '__order__' in blob:
+            items = blob.iteritems(repeated=True)
+        else:
+            items = iteritems(blob)
+
+        for key, value in items:
             try:
                 result = self.index.query(key)
                 if not result:
