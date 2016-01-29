@@ -12,11 +12,13 @@
 import os
 
 import pkg_resources
+from lxml import etree
+from lxml.etree import _Element
 
 import pytest
 from click.testing import CliRunner
 from dojson.contrib.marc21.utils import load
-from dojson.contrib.to_marc21.utils import dumps
+from dojson.contrib.to_marc21.utils import dumps, dumps_etree
 from test_core import RECORD_SIMPLE
 
 
@@ -55,3 +57,19 @@ def test_entry_points():
     output = dump(data,
                   xslt_filename='{0}/demo_marc21_to_dc.xslt'.format(path))
     assert output.decode('utf-8') == expect
+
+
+def test_output_type_from_dumps_etree():
+    """Test output type from dumps_etree."""
+    path = os.path.dirname(__file__)
+    data = list(load('{0}/demo_marc21_to_dc.xml'.format(path)))
+    # test without arguments
+    output1 = dumps_etree(data)
+    # test with xslt_filename argument
+    output2 = dumps_etree(
+        data,
+        xslt_filename='{0}/demo_marc21_to_dc.xslt'.format(path)
+    )
+    # it should not generate a TypeError exception
+    assert isinstance(output1, _Element)
+    assert isinstance(output2, _Element)

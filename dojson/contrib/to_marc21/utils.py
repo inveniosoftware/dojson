@@ -88,7 +88,7 @@ def dumps_etree(records, xslt_filename=None):
     if xslt_filename is not None:
         xslt_root = etree.parse(open(xslt_filename))
         transform = etree.XSLT(xslt_root)
-        root = transform(root)
+        root = transform(root).getroot()
 
     return root
 
