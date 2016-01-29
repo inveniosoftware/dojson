@@ -11,43 +11,9 @@
 
 import os
 import re
-import sys
 
 from setuptools import setup
-from setuptools.command.test import test as TestCommand
 
-
-class PyTest(TestCommand):
-    """PyTest test runner.
-
-    See: http://pytest.org/latest/goodpractises.html?highlight=setuptools
-    """
-
-    user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
-
-    def initialize_options(self):
-        """Initialise test options."""
-        TestCommand.initialize_options(self)
-        try:
-            from ConfigParser import ConfigParser
-        except ImportError:
-            from configparser import ConfigParser
-        config = ConfigParser()
-        config.read("pytest.ini")
-        self.pytest_args = config.get("pytest", "addopts").split(" ")
-
-    def finalize_options(self):
-        """Finalise test options."""
-        TestCommand.finalize_options(self)
-        self.test_args = []
-        self.test_suite = True
-
-    def run_tests(self):
-        """Rest tests."""
-        # import here, cause outside the eggs aren't loaded
-        import pytest
-        errno = pytest.main(self.pytest_args)
-        sys.exit(errno)
 
 # Get the version string.  Cannot be done with import!
 with open(os.path.join('dojson', 'version.py'), 'rt') as f:
@@ -90,6 +56,10 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
+    setup_requires=[
+        'pytest-runner>=2.6.2',
+        'setuptools>=17.1',
+    ],
     install_requires=[
         'click',
         'lxml',
@@ -111,7 +81,6 @@ setup(
         'Development Status :: 1 - Planning',
     ],
     tests_require=tests_require,
-    cmdclass={'test': PyTest},
     entry_points={
         'console_scripts': [
             'dojson = dojson.cli:cli',
