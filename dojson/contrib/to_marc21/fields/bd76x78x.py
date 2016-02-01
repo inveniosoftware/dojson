@@ -342,7 +342,14 @@ def reverse_host_item_entry(self, key, value):
     """Reverse - Host Item Entry."""
     indicator_map1 = {"Display note": "0", "Do not display note": "1"}
     indicator_map2 = {"In": "_", "No display constant generated": "8"}
+    field_map = {
+        'main_entry_heading': 'a',
+        'relationship_information': 'i',
+        'note': 'n',
+    }
+    order = utils.map_order(field_map, value)
     return {
+        '__order__': tuple(order) if len(order) else None,
         '3': value.get('materials_specified'),
         '4': utils.reverse_force_list(
             value.get('relationship_code')

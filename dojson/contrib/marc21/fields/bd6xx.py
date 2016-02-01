@@ -395,7 +395,15 @@ def subject_added_entry_topical_term(self, key, value):
         "5": "Canadian Subject Headings",
         "6": "R\u00e9pertoire de vedettes-mati\u00e8re",
         "7": "Source specified in subfield $2"}
+    field_map = {
+        '2': 'source_of_heading_or_term',
+        'a': 'topical_term_or_geographic_name_entry_element',
+        'v': 'form_subdivision',
+        'z': 'geographic_subdivision',
+    }
+    order = utils.map_order(field_map, value)
     return {
+        '__order__': tuple(order) if len(order) else None,
         'topical_term_or_geographic_name_entry_element': value.get('a'),
         'general_subdivision': utils.force_list(
             value.get('x')

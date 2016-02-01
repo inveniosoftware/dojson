@@ -382,7 +382,15 @@ def reverse_subject_added_entry_topical_term(self, key, value):
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
         "Source specified in subfield $2": "7"}
+    field_map = {
+        'source_of_heading_or_term': '2',
+        'topical_term_or_geographic_name_entry_element': 'a',
+        'form_subdivision': 'v',
+        'geographic_subdivision': 'z',
+    }
+    order = utils.map_order(field_map, value)
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('topical_term_or_geographic_name_entry_element'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')

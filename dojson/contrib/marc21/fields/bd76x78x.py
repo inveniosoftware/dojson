@@ -348,7 +348,14 @@ def host_item_entry(self, key, value):
     """Host Item Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"#": "In", "8": "No display constant generated"}
+    field_map = {
+        'a': 'main_entry_heading',
+        'i': 'relationship_information',
+        'n': 'note',
+    }
+    order = utils.map_order(field_map, value)
     return {
+        '__order__': tuple(order) if len(order) else None,
         'materials_specified': value.get('3'),
         'relationship_code': utils.force_list(
             value.get('4')
@@ -466,7 +473,14 @@ def other_edition_entry(self, key, value):
     indicator_map2 = {
         "#": "Other edition available",
         "8": "No display constant generated"}
+    field_map = {
+        's': 'uniform_title',
+        'u': 'standard_technical_report_number',
+        'z': 'international_standard_book_number',
+    }
+    order = utils.map_order(field_map, value)
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
