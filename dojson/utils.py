@@ -91,6 +91,11 @@ def load(stream):
     return json.load(reader(stream))
 
 
+def dump(iterator):
+    """Dump JSON from iteraror."""
+    return json.dumps(list(iterator))
+
+
 def map_order(field_map, value):
     """Ordered list of fields to be able to pass the order along.
 

@@ -32,15 +32,15 @@ def test_cli_do_marc21_from_xml():
             f.write(RECORD_SIMPLE.encode('utf-8'))
 
         result = runner.invoke(
-            cli.missing_fields,
-            ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
+            cli.cli,
+            ['-i', 'record.xml', '-l', 'marcxml', 'missing', 'marc21']
         )
         assert '' == result.output
         assert 0 == result.exit_code
 
         result = runner.invoke(
-            cli.apply_rule,
-            ['-i', 'record.xml', '-l', 'marcxml', 'marc21']
+            cli.cli,
+            ['-i', 'record.xml', '-l', 'marcxml', 'do', 'marc21']
         )
 
         try:
@@ -50,8 +50,8 @@ def test_cli_do_marc21_from_xml():
             assert False, result.output
 
         result = runner.invoke(
-            cli.apply_rule,
-            ['-i', 'record.xml', '-l', 'marcxml', '--strict', 'marc21']
+            cli.cli,
+            ['-i', 'record.xml', '-l', 'marcxml', 'do', '--strict', 'marc21']
         )
         assert -1 == result.exit_code
 
@@ -64,15 +64,15 @@ def test_cli_do_marc21_from_xml_unknown_fieds():
             f.write(RECORD_999_FIELD.encode('utf-8'))
 
         result = runner.invoke(
-            cli.missing_fields,
-            ['-i', 'record_999.xml', '-l', 'marcxml', 'marc21']
+            cli.cli,
+            ['-i', 'record_999.xml', '-l', 'marcxml', 'missing', 'marc21']
         )
         assert "999__" == result.output.strip()
         assert 1 == result.exit_code
 
         result = runner.invoke(
-            cli.apply_rule,
-            ['-i', 'record_999.xml', '-l', 'marcxml', 'marc21']
+            cli.cli,
+            ['-i', 'record_999.xml', '-l', 'marcxml', 'do', 'marc21']
         )
         data = json.loads(result.output)
         assert {} == data[0]
@@ -81,11 +81,12 @@ def test_cli_do_marc21_from_xml_unknown_fieds():
 
 def test_cli_do_marc21_from_json():
     """Test MARC21 loading from XML."""
-    expected = {
+    expected = [{
+        '$schema': '/schema.json',
         'main_entry_personal_name': {
             'personal_name': 'Donges, Jonathan F'
         }
-    }
+    }]
 
     runner = CliRunner()
     with runner.isolated_filesystem():
@@ -94,15 +95,15 @@ def test_cli_do_marc21_from_json():
             fp.write(json.dumps(record).encode('utf-8'))
 
         result = runner.invoke(
-            cli.missing_fields,
-            ['-i', 'record.json', 'marc21']
+            cli.cli,
+            ['-i', 'record.json', 'missing', 'marc21']
         )
         assert '' == result.output, result.exception
         assert 0 == result.exit_code
 
         result = runner.invoke(
-            cli.apply_rule,
-            ['-i', 'record.json', 'marc21']
+            cli.cli,
+            ['-i', 'record.json', 'do', 'marc21', 'schema', '/schema.json']
         )
 
         assert 0 == result.exit_code, result.exception

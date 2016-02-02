@@ -29,7 +29,7 @@ def dumps_etree(records, xslt_filename=None):
     """Dump records into a etree."""
     root = etree.Element('collection', nsmap={None: MARC21_NS})
 
-    records = records if isinstance(records, list) else [records]
+    records = [records] if isinstance(records, dict) else records
 
     for record in records:
         rec = E.record()

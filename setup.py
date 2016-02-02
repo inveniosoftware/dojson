@@ -134,6 +134,11 @@ setup(
             'hd3xx5xx84x = dojson.contrib.marc21.fields.hd3xx5xx84x',
             'hd85xhd88x = dojson.contrib.marc21.fields.hd85xhd88x',
         ],
+        'dojson.cli': [
+            'do = dojson.cli.command:process_do',
+            'missing = dojson.cli.command:process_missing',
+            'schema = dojson.cli.command:process_schema',
+        ],
         'dojson.cli.rule': [
             'marc21 = dojson.contrib.marc21:marc21',
             'marc21_authority = dojson.contrib.marc21:marc21_authority',
@@ -145,7 +150,7 @@ setup(
             'marcxml = dojson.contrib.marc21.utils:load',
         ],
         'dojson.cli.dump': [
-            'json = json:dumps',
+            'json = dojson.utils:dump',
             'marcxml = dojson.contrib.to_marc21.utils:dumps',
         ],
     }
