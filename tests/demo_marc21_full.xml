@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="760" ind1="0" ind2="8">
+      <subfield code="i">This work also included as part of</subfield>
+      <subfield code="a">
+        Complete dictionary of scientific biography [electronic resource]
+      </subfield>
+    </datafield>
+    <datafield tag="760" ind1="0" ind2="8">
+      <subfield code="a">Hartfuss, Hans-Jurgen.</subfield>
+      <subfield code="t">Fusion plasma diagnostics with mm-waves.</subfield>
+      <subfield code="d">Weiheim : Wiley-Vch, 2013</subfield>
+      <subfield code="w">(OCoLC)828140540</subfield>
+    </datafield>
+    <datafield tag="760" ind1="0" ind2=" ">
+      <subfield code="t">
+        Bibliothe&#x300;que des Ecoles franc&#x327;aises d'Athe&#x300;nes et de Rome. 3e se&#x301;rie : Registres et lettres des papes du XIVe sie&#x300;cle
+      </subfield>
+      <subfield code="g">4</subfield>
+    </datafield>
+    <datafield tag="760" ind1="0" ind2=" ">
+      <subfield code="t">Publication (Field Columbian Museum)</subfield>
+      <subfield code="x">0097-5745</subfield>
+      <subfield code="w">(OCoLC)3506292</subfield>
+    </datafield>
+    <datafield tag="760" ind1="1" ind2=" ">
+      <subfield code="t">Special publication</subfield>
+      <subfield code="c">(California. Division of Mines and Geology)</subfield>
+      <subfield code="x">0147-6211</subfield>
+      <subfield code="w">(OCoLC)2828679</subfield>
+    </datafield>
+    <datafield tag="762" ind1="0" ind2=" ">
+      <subfield code="t">
+        Commentationes physico-mathematicae. Dissertationes
+      </subfield>
+      <subfield code="x">0358-9307</subfield>
+      <subfield code="g">1980-</subfield>
+      <subfield code="w">(OCoLC)8191871</subfield>
+    </datafield>
+    <datafield tag="762" ind1="0" ind2=" ">
+      <subfield code="t">Oil division paper.</subfield>
+      <subfield code="c">no. 1- 1957- (irregular)</subfield>
+    </datafield>
+    <datafield tag="765" ind1="0" ind2=" ">
+      <subfield code="t">Astrofizika</subfield>
+      <subfield code="l">English</subfield>
+      <subfield code="w">(OCoLC)1829309</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="0">
+      <subfield code="a">Electronic books.</subfield>
+    </datafield>
+    <datafield tag="765" ind1="1" ind2=" ">
+      <subfield code="t">Doklady Akademii nauk SSSR</subfield>
+      <subfield code="x">0002-3264</subfield>
+      <subfield code="w">(OCoLC)1478791</subfield>
+    </datafield>
+    <datafield tag="767" ind1="0" ind2=" ">
+      <subfield code="a">Chinese journal of geophysics</subfield>
+      <subfield code="x">0898-9591</subfield>
+    </datafield>
+    <datafield tag="767" ind1="0" ind2=" ">
+      <subfield code="t">Instruments and experimental techniques</subfield>
+      <subfield code="c">(New York)</subfield>
+      <subfield code="x">0020-4412</subfield>
+    </datafield>
+    <datafield tag="767" ind1="0" ind2=" ">
+      <subfield code="t">Mathematics of the USSR. Sbornik</subfield>
+      <subfield code="g">1967-1993</subfield>
+      <subfield code="x">0025-5734</subfield>
+      <subfield code="w">(DLC) 93646066</subfield>
+      <subfield code="w">(OCoLC)1681277</subfield>
+    </datafield>
+    <datafield tag="767" ind1="0" ind2=" ">
+      <subfield code="t">Soviet astronomy</subfield>
+      <subfield code="h">(Russian)</subfield>
+    </datafield>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="a">National Society for the Study of Communication.</subfield>
+      <subfield code="t">
+        Directory of the National Society for the Study of Communication
+      </subfield>
+      <subfield code="g">1966</subfield>
+    </datafield>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="t">Clinical science. Supplement</subfield>
+      <subfield code="c">(1979)</subfield>
+      <subfield code="x">0144-9664</subfield>
+    </datafield>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="t">Health information for international travel</subfield>
+      <subfield code="g">1974-1980</subfield>
+      <subfield code="x">0095-3539</subfield>
+      <subfield code="w">(DLC) 77649068</subfield>
+      <subfield code="w">(OCoLC)2905736</subfield>
+    </datafield>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="t">Computer techniques and optimization,</subfield>
+      <subfield code="x">0378-4304;</subfield>
+      <subfield code="n">
+        Issued as a special section of Analytica chimica acta,v. 1-5 called also v. 95, 103, 112, 122, 133 of Analytica chimica acta.
+      </subfield>
+    </datafield>
+    <datafield tag="772" ind1="0" ind2="0">
+      <subfield code="a">$tEarthquake engineering and structural dynamics ;</subfield>
+      <subfield code="v">v. 14, no. 5</subfield>
+    </datafield>
+    <datafield tag="772" ind1="0" ind2="0">
+      <subfield code="t">Earthquake engineering and structural dynamics</subfield>
+      <subfield code="g">Vol. 14 (1986), p. 297-315</subfield>
+      <subfield code="w">(OCoLC) 1785750</subfield>
+    </datafield>
+    <datafield tag="772" ind1="0" ind2="0">
+      <subfield code="t">Bollettino di geodesia e scienze affini</subfield>
+      <subfield code="x">0006-6710</subfield>
+      <subfield code="w">(OCoLC)8691758</subfield>
+    </datafield>
+    <datafield tag="772" ind1="0" ind2="8">
+      <subfield code="i">augmentation of (expression) :</subfield>
+      <subfield code="a">Loudon, G. Marc.</subfield>
+      <subfield code="t">Organic chemistry,</subfield>
+      <subfield code="b">sixth edition.</subfield>
+      <subfield code="w">(OCoLC)907161629</subfield>
+    </datafield>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="a">
+        International Geological Congress (8th : 1900 : Paris)
+      </subfield>
+      <subfield code="t">Comptes rendus ...</subfield>
+      <subfield code="d">Paris, 1901.</subfield>
+      <subfield code="g">v. 2, p. 1003-1302.</subfield>
+      <subfield code="w">(OCoLC)6578829</subfield>
+    </datafield>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="t">ACLS Humanities E-Book.</subfield>
+      <subfield code="n">URL: http://www.humanitiesebook.org/</subfield>
+    </datafield>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="t">Chemistry Central journal</subfield>
+      <subfield code="g">Vol. 3, suppl. 1</subfield>
+      <subfield code="x">1752-153X</subfield>
+      <subfield code="w">(OCoLC)85809995</subfield>
+    </datafield>
+    <datafield tag="774" ind1="1" ind2=" ">
+      <subfield code="t">Atmospheric chemistry and physics discussions</subfield>
+      <subfield code="x">1680-7367</subfield>
+    </datafield>
+    <datafield tag="775" ind1="1" ind2=" ">
+      <subfield code="a">United States. Supreme Court.</subfield>
+      <subfield code="t">
+        Report of cases argued and decided in the United States.
+      </subfield>
+      <subfield code="b">Complete edition</subfield>
+      <subfield code="g">book 15-44; 1854-99</subfield>
+    </datafield>
+    <datafield tag="775" ind1="0" ind2="8">
+      <subfield code="i">Digest ed.:</subfield>
+      <subfield code="t">Space weather quarterly</subfield>
+      <subfield code="x">1539-4964</subfield>
+      <subfield code="w">(DLC) 2002214124</subfield>
+      <subfield code="w">(OCoLC)49520121</subfield>
+    </datafield>
+    <datafield tag="775" ind1="0" ind2=" ">
+      <subfield code="t">Observateur de l'OCDE</subfield>
+      <subfield code="f">fre</subfield>
+      <subfield code="w">(OCoLC)4110819</subfield>
+    </datafield>
+    <datafield tag="775" ind1="0" ind2=" ">
+      <subfield code="t">
+        La Chine est-elle un "grand pays"? : son influence sur les marche&#x301;s mondiaux
+      </subfield>
+      <subfield code="z">9264256091</subfield>
+    </datafield>
+    <datafield tag="776" ind1="0" ind2="8">
+      <subfield code="i">Original:</subfield>
+      <subfield code="a">Pratchett, Terry.</subfield>
+      <subfield code="t">Snuff.</subfield>
+      <subfield code="b">1st ed.</subfield>
+      <subfield code="d">New York : Harper, c2011</subfield>
+      <subfield code="z">9780062011848</subfield>
+      <subfield code="w">(DLC) 2011033117</subfield>
+      <subfield code="w">(OCoLC)703206404</subfield>
+    </datafield>
+    <datafield tag="776" ind1="0" ind2="8">
+      <subfield code="i">Print version:</subfield>
+      <subfield code="t">
+        Journal of inorganic and organometallic polymers and materials
+      </subfield>
+      <subfield code="c">(print)</subfield>
+      <subfield code="x">1574-1443</subfield>
+      <subfield code="w">(DLC) 2005242077</subfield>
+      <subfield code="w">(OCoLC)59821324</subfield>
+    </datafield>
+    <datafield tag="776" ind1="0" ind2="8">
+      <subfield code="i">Also issued in print:</subfield>
+      <subfield code="t">Protein engineering</subfield>
+      <subfield code="g">print version</subfield>
+      <subfield code="x">0269-2139</subfield>
+      <subfield code="w">(DLC) 87654079</subfield>
+      <subfield code="w">(OCoLC)15234798</subfield>
+    </datafield>
+    <datafield tag="776" ind1="0" ind2="8">
+      <subfield code="i">Print version:</subfield>
+      <subfield code="t">
+        From C-H to C-C bonds : cross-dehydrogenative-coupling.
+      </subfield>
+      <subfield code="d">
+        Cambridge, England : The Royal Society of Chemistry, c2014
+      </subfield>
+      <subfield code="h">xiv, 316 pages</subfield>
+      <subfield code="k">RSC green chemistry series ; 26.</subfield>
+      <subfield code="x">1757-7039</subfield>
+      <subfield code="z">9781849737975</subfield>
+    </datafield>
+    <datafield tag="776" ind1="0" ind2="8">
+      <subfield code="i">Online version:</subfield>
+      <subfield code="a">Pynchon, Thomas.</subfield>
+      <subfield code="s">Gravity's rainbow. Italian.</subfield>
+      <subfield code="d">Roma : Pynchon, 1997, c1996</subfield>
+      <subfield code="w">(OCoLC)664314138</subfield>
+    </datafield>
+    <datafield tag="776" ind1="0" ind2="8">
+      <subfield code="i">Print version:</subfield>
+      <subfield code="t">Wnt signaling in devel&gt;856 40</subfield>
+      <subfield code="u">http://alltitles.ebrary.com/Doc?id=10842275</subfield>
+      <subfield code="z">
+        An electronic book accessible through the Wopment and disease.
+      </subfield>
+      <subfield code="d">Hoboken, New Jersey : John Wiley  &amp; Sons, [2014]</subfield>
+      <subfield code="z">9781118444160</subfield>
+      <subfield code="w">(DLC) 2013042745</subfield>
+      <subfield code="w">(OCoLC)861895302</subfield>
+    </datafield>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="t">Astrophysical journal. Supplement series</subfield>
+      <subfield code="x">0067-0049</subfield>
+      <subfield code="w">(DLC) 56037588</subfield>
+      <subfield code="w">(OCoLC)2413276</subfield>
+    </datafield>
+    <datafield tag="777" ind1="0" ind2=" ">
+      <subfield code="a">
+        International Conference on Medicine and biological Engineering
+      </subfield>
+      <subfield code="t">Proceedings</subfield>
+      <subfield code="g">8th, 1969</subfield>
+    </datafield>
+    <datafield tag="777" ind1="0" ind2=" ">
+      <subfield code="t">Rights</subfield>
+      <subfield code="c">(New York, N.Y. 1953)</subfield>
+      <subfield code="x">0035-5283</subfield>
+      <subfield code="w">(OCoLC)1764346</subfield>
+      <subfield code="w">(DLC) 60046015</subfield>
+    </datafield>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="a">Institution of Electrical Engineers.</subfield>
+      <subfield code="t">Journal of the Institution of Electrical Engineers</subfield>
+    </datafield>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="a">South Australia.</subfield>
+      <subfield code="b">Department of Mines.</subfield>
+      <subfield code="t">Annual report</subfield>
+      <subfield code="x">0810-6215</subfield>
+      <subfield code="w">(DLC)sn 83003173</subfield>
+      <subfield code="w">(OCoLC)8012939</subfield>
+    </datafield>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="t">Automatic control</subfield>
+      <subfield code="c">(New York. 1969)</subfield>
+    </datafield>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="t">Korean journal of crop science</subfield>
+      <subfield code="g">1998-</subfield>
+    </datafield>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="s">
+        Quarterly review (Utah Geological and Mineralogical Survey)
+      </subfield>
+      <subfield code="x">0275-1666</subfield>
+    </datafield>
+    <datafield tag="785" ind1="1" ind2="1">
+      <subfield code="a">Transactions of the Metallurgical Society of AIME</subfield>
+      <subfield code="g">1958-69</subfield>
+      <subfield code="x">0543-5722</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="0">
+      <subfield code="t">JOM</subfield>
+      <subfield code="g">v. 26, no. 12-v. 28, no. 12;</subfield>
+      <subfield code="x">0098-4558</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="0">
+      <subfield code="t">Journal of the Air  &amp; Waste management Association</subfield>
+      <subfield code="h">[1995+]</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="0">
+      <subfield code="t">Metallurgical and materials transactions.</subfield>
+      <subfield code="n">B,</subfield>
+      <subfield code="p">
+        Process metallurgy and materials processing science
+      </subfield>
+      <subfield code="x">1073-5615</subfield>
+      <subfield code="w">(DLC)xn93004155</subfield>
+      <subfield code="w">(OCoLC)29464178</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="0">
+      <subfield code="s">Survey notes (Utah Geological and Mineral Survey)</subfield>
+      <subfield code="x">0362-6288</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="0">
+      <subfield code="t">Journal of physics D. Applied physics</subfield>
+      <subfield code="x">0022-3727</subfield>
+      <subfield code="z">(OCoLC) 1772505</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="6">
+      <subfield code="t">
+        IEEE transactions on components, packaging, and manufacturing technology. Part C, Manufacturing
+      </subfield>
+      <subfield code="c">x1083-4400</subfield>
+    </datafield>
+    <datafield tag="787" ind1="0" ind2="8">
+      <subfield code="a">Kaufman, Matthew H.</subfield>
+      <subfield code="t">Atlas of mouse development.</subfield>
+      <subfield code="b">Rev.ed.</subfield>
+      <subfield code="d">London ; San Diego : Academic Press, 1994</subfield>
+      <subfield code="z">0124020356</subfield>
+      <subfield code="w">(OCoLC)36433001</subfield>
+    </datafield>
+    <datafield tag="787" ind1="0" ind2="8">
+      <subfield code="a">Theiler, Karl.</subfield>
+      <subfield code="t">House mouse.</subfield>
+      <subfield code="d">New York : Springer-Verlag, c1989</subfield>
+      <subfield code="z">0387059407</subfield>
+      <subfield code="w">(DLC) 88024888</subfield>
+      <subfield code="w">(OCoLC)18412018</subfield>
+    </datafield>
+    <datafield tag="787" ind1="0" ind2="8">
+      <subfield code="i">Electronic access:</subfield>
+      <subfield code="t">Dictionnaire historique et critique</subfield>
+      <subfield code="c">(1740 Amsterdam edition)</subfield>
+      <subfield code="w">(OCoLC)40279884</subfield>
+    </datafield>
+    <datafield tag="787" ind1="0" ind2=" ">
+      <subfield code="t">Journal of antibiotics. Series B</subfield>
+      <subfield code="g">1953-67</subfield>
+      <subfield code="w">(OCoLC)1778527</subfield>
+    </datafield>
+    <datafield tag="787" ind1="0" ind2="8">
+      <subfield code="i">California building standard in print:</subfield>
+      <subfield code="t">California code of regulations.</subfield>
+      <subfield code="n">Title 24</subfield>
+    </datafield>
+  </record>
+</collection>
