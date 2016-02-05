@@ -10,17 +10,19 @@
 """Do JSON translation."""
 
 import re
-try:
-    from _sre import MAXGROUPS
-except ImportError:
-    MAXGROUPS = 100
 
 from pkg_resources import iter_entry_points
 from six import iteritems
+
 from six.moves import zip_longest
 
 from .errors import IgnoreKey, MissingRule
 from .utils import GroupableOrderedDict
+
+try:
+    from _sre import MAXGROUPS
+except ImportError:
+    MAXGROUPS = 100
 
 
 class Index(object):

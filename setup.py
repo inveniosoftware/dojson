@@ -14,7 +14,6 @@ import re
 
 from setuptools import setup
 
-
 # Get the version string.  Cannot be done with import!
 with open(os.path.join('dojson', 'version.py'), 'rt') as f:
     version = re.search(
@@ -23,13 +22,16 @@ with open(os.path.join('dojson', 'version.py'), 'rt') as f:
     ).group('version')
 
 tests_require = [
+    'check-manifest>=0.25',
+    'coverage>=4.0',
+    'coverage>=4.0.0',
+    'isort>=4.2.2',
+    'mock>=1.0.0',
     'pydocstyle>=1.0.0',
     'pytest-cache>=1.0',
     'pytest-cov>=2.1.0',
     'pytest-pep8>=1.0.6',
     'pytest>=2.8.0',
-    'coverage>=4.0.0',
-    'mock',
 ]
 
 extras_require = {
@@ -61,9 +63,9 @@ setup(
         'setuptools>=17.1',
     ],
     install_requires=[
-        'click',
-        'lxml',
-        'six',
+        'click>=5.0.0',
+        'lxml>=3.4',
+        'six>=1.7.2',
     ],
     extras_require=extras_require,
     classifiers=[
@@ -153,5 +155,5 @@ setup(
             'json = dojson.utils:dump',
             'marcxml = dojson.contrib.to_marc21.utils:dumps',
         ],
-    }
+    },
 )

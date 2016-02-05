@@ -11,6 +11,7 @@
 
 import json
 
+from lxml import etree, objectify
 from six import BytesIO
 
 import dojson
@@ -19,7 +20,6 @@ from dojson.contrib.marc21.utils import create_record, load, split_stream
 from dojson.contrib.to_marc21 import to_marc21
 from dojson.contrib.to_marc21.utils import dumps
 from dojson.utils import ignore_value
-from lxml import etree, objectify
 
 RECORD = """<record>
   <controlfield tag="001">17575</controlfield>

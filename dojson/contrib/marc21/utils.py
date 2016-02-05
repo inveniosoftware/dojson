@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -13,12 +13,10 @@ import re
 from collections import Counter, OrderedDict
 
 import pkg_resources
-
 from lxml import etree
 from six import StringIO, binary_type, iteritems, text_type
 
 from dojson.utils import GroupableOrderedDict
-
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 

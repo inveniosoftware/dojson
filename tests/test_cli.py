@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or modify
 # it under the terms of the Revised BSD License; see LICENSE file for
@@ -15,7 +15,7 @@ from click.testing import CliRunner
 
 from dojson import cli
 from dojson.contrib.marc21.utils import create_record
-from test_core import RECORD_SIMPLE, RECORD_999_FIELD
+from test_core import RECORD_999_FIELD, RECORD_SIMPLE
 
 
 def test_cli_do_marc21_from_xml():

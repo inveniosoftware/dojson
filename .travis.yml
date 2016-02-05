@@ -11,23 +11,28 @@ sudo: false
 
 language: python
 
+env:
+  - REQUIREMENTS=lowest
+  - REQUIREMENTS=release
+
 python:
   - "2.7"
-  - "3.3"
   - "3.4"
   - "3.5"
   - "3.5-dev"
 
+before_install:
+  - "travis_retry pip install --upgrade pip setuptools"
+  - "travis_retry pip install twine wheel coveralls requirements-builder"
+  - "requirements-builder -e all --level=min setup.py > .travis-lowest-requirements.txt"
+  - "requirements-builder -e all --level=pypi setup.py > .travis-release-requirements.txt"
+
 install:
-  - pip install --upgrade pip
-  - pip install coveralls pep257
-  - pip install pytest pytest-pep8 pytest-cov pytest-cache
-  - pip install -e .[docs,tests]
+  - "travis_retry pip install -r .travis-${REQUIREMENTS}-requirements.txt"
+  - "travis_retry pip install -e .[docs,tests]"
 
 script:
-  - pep257 --match-dir='dojson'
-  - "sphinx-build -qnNW docs docs/_build/html"
-  - python setup.py test
+  - "./run-tests.sh"
 
 after_success:
   - coveralls

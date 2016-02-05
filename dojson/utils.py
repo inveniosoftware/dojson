@@ -12,9 +12,9 @@
 import codecs
 import functools
 import json
-import six
-
 from collections import Counter, OrderedDict
+
+import six
 
 from .errors import IgnoreKey
 

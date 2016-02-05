@@ -9,9 +9,10 @@
 
 """Utility function to manage CLI entry points"""
 
+import traceback
+
 import click
 import pkg_resources
-import traceback
 
 
 def open_entry_point(group_name):

@@ -12,11 +12,11 @@
 import os
 
 import pkg_resources
+import pytest
+from click.testing import CliRunner
 from lxml import etree
 from lxml.etree import _Element
 
-import pytest
-from click.testing import CliRunner
 from dojson.contrib.marc21.utils import load
 from dojson.contrib.to_marc21.utils import dumps, dumps_etree
 from test_core import RECORD_SIMPLE
