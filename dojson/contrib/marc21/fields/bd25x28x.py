@@ -116,8 +116,28 @@ def publication_distribution_imprint(self, key, value):
     indicator_map1 = {
         "#": "Not applicable/No information provided/Earliest available publisher",
         "2": "Intervening publisher",
-        "3": "Current/latest publisher"}
+        "3": "Current/latest publisher",
+    }
+
+    field_map = {
+        'a': 'place_of_publication_distribution',
+        'b': 'name_of_publisher_distributor',
+        'c': 'date_of_publication_distribution',
+        'e': 'place_of_manufacture',
+        'f': 'manufacturer',
+        'g': 'date_of_manufacture',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('sequence_of_publishing_statements')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'place_of_publication_distribution': utils.force_list(
             value.get('a')
         ),

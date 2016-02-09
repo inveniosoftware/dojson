@@ -10,9 +10,9 @@
 """Test suite for DoJSON contrib MARC21 module."""
 
 import copy
-import json
 
 import pytest
+import simplejson as json
 
 from dojson.utils import GroupableOrderedDict
 
@@ -22,6 +22,20 @@ def god():
     """Create a GroupableOrderedDict for testing."""
     return GroupableOrderedDict([('a', 'dojson'), ('b', 2), ('c', 'invenio'),
                                  ('a', 4), ('b', 5)])
+
+
+def test_single_element_not_dumped_as_list():
+    """Ensure list with a single element is not dumped as a list."""
+    god = GroupableOrderedDict([('c', 'invenio')])
+    god_dump = json.dumps(god)
+    fields = [
+        '"c": "invenio"',
+        '"__order__": ["c"]',
+        '{',
+        '}',
+    ]
+    for field in fields:
+        assert field in god_dump
 
 
 def test_groupable_ordered_dict_is_immutable(god):
@@ -103,10 +117,19 @@ def test_groupable_ordered_dict_new(god):
 
 def test_groupable_ordered_dict_to_json(god):
     """Test that a GroupableOrderedDict can be serialized to JSON."""
-    assert '{"__order__": ["a", "b", "c", "a", "b"],' \
-           ' "a": ["dojson", 4],' \
-           ' "b": [2, 5],' \
-           ' "c": "invenio"}' == json.dumps(god)
+    # JSON output order not deterministic, compare piece by piece
+    fields = [
+        '"a": ["dojson", 4]',
+        '"c": "invenio"',
+        '"b": [2, 5]',
+        '"__order__": ["a", "b", "c", "a", "b"]',
+        '{',
+        '}',
+    ]
+
+    god_dump = json.dumps(god)
+    for field in fields:
+        assert field in god_dump
 
     expected = json.loads(json.dumps(god))
     assert expected == json.loads(json.dumps(god, indent=4))

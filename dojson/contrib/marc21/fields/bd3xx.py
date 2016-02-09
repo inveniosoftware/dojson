@@ -19,7 +19,22 @@ from ..model import marc21
 @utils.filter_values
 def physical_description(self, key, value):
     """Physical Description."""
+    field_map = {
+        'a': 'extent',
+        'b': 'other_physical_details',
+        'c': 'dimensions',
+        'e': 'accompanying_material',
+        'f': 'type_of_unit',
+        'g': 'size_of_unit',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'extent': utils.force_list(
             value.get('a')
         ),
@@ -93,7 +108,17 @@ def current_publication_frequency(self, key, value):
 @utils.filter_values
 def former_publication_frequency(self, key, value):
     """Former Publication Frequency."""
+    field_map = {
+        'a': 'former_publication_frequency',
+        'b': 'dates_of_former_publication_frequency',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'former_publication_frequency': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -129,7 +154,20 @@ def content_type(self, key, value):
 @utils.filter_values
 def media_type(self, key, value):
     """Media Type."""
+    field_map = {
+        'a': 'media_type_term',
+        'b': 'media_type_code',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'media_type_term': utils.force_list(
             value.get('a')
         ),
@@ -150,7 +188,20 @@ def media_type(self, key, value):
 @utils.filter_values
 def carrier_type(self, key, value):
     """Carrier Type."""
+    field_map = {
+        'a': 'carrier_type_term',
+        'b': 'carrier_type_code',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'carrier_type_term': utils.force_list(
             value.get('a')
         ),
@@ -306,7 +357,26 @@ def planar_coordinate_data(self, key, value):
 @utils.filter_values
 def sound_characteristics(self, key, value):
     """Sound Characteristics."""
+    field_map = {
+        'a': 'type_of_recording',
+        'b': 'recording_medium',
+        'c': 'playing_speed',
+        'd': 'groove_characteristic',
+        'e': 'track_configuration',
+        'f': 'tape_configuration',
+        'g': 'configuration_of_playback_channels',
+        'h': 'special_playback_characteristics',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'type_of_recording': utils.force_list(
             value.get('a')
         ),
@@ -432,7 +502,19 @@ def digital_file_characteristics(self, key, value):
 @utils.filter_values
 def organization_and_arrangement_of_materials(self, key, value):
     """Organization and Arrangement of Materials."""
+    field_map = {
+        'a': 'organization',
+        'b': 'arrangement',
+        'c': 'hierarchical_level',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'organization': utils.force_list(
             value.get('a')
         ),
@@ -665,7 +747,18 @@ def associated_language(self, key, value):
 @utils.filter_values
 def form_of_work(self, key, value):
     """Form of Work."""
+    field_map = {
+        'a': 'form_of_work',
+        '0': 'record_control_number',
+        '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'form_of_work': utils.force_list(
             value.get('a')
         ),

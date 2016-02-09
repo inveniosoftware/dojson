@@ -38,6 +38,12 @@ def fixed_length_data_elements_additional_material_characteristics(
     return value
 
 
+@marc21.over('physical_description_fixed_field', '^007')
+def reverse_physical_description_fixed_field(self, key, value):
+    """Physical Description Fixed Field."""
+    return value
+
+
 @marc21.over('fixed_length_data_elements', '^008')
 def fixed_length_data_elements(self, key, value):
     """Fixed-Length Data Elements."""

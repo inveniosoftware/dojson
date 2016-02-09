@@ -13,7 +13,7 @@
                     "type_of_added_entry": {
                         "enum": ["No information provided", "Analytical entry"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -145,7 +145,7 @@
                     "type_of_added_entry": {
                         "enum": ["No information provided", "Analytical entry"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -271,7 +271,7 @@
                     "type_of_added_entry": {
                         "enum": ["No information provided", "Analytical entry"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -478,7 +478,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -571,7 +571,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -643,7 +643,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -721,7 +721,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"

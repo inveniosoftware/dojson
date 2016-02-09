@@ -45,6 +45,13 @@ extras_require['all'] = []
 for name, reqs in extras_require.items():
     extras_require['all'].extend(reqs)
 
+install_requires = [
+    'click>=5.0.0',
+    'lxml>=3.4',
+    'simplejson>=3.8.1',
+    'six>=1.7.2',
+]
+
 setup(
     name='dojson',
     version=version,
@@ -62,11 +69,6 @@ setup(
         'pytest-runner>=2.6.2',
         'setuptools>=17.1',
     ],
-    install_requires=[
-        'click>=5.0.0',
-        'lxml>=3.4',
-        'six>=1.7.2',
-    ],
     extras_require=extras_require,
     classifiers=[
         'Intended Audience :: Developers',
@@ -82,6 +84,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Development Status :: 1 - Planning',
     ],
+    install_requires=install_requires,
     tests_require=tests_require,
     entry_points={
         'console_scripts': [

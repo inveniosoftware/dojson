@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Juvenal.</subfield>
+      <subfield code="t">Works.</subfield>
+      <subfield code="f">1980</subfield>
+      <subfield code="x">Criticism and interpretation</subfield>
+    </datafield>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Chrétien,</subfield>
+      <subfield code="c">de Troyes,</subfield>
+      <subfield code="d">active 12th century.</subfield>
+      <subfield code="t">Chevalier au lyon.</subfield>
+      <subfield code="l">English &amp; French</subfield>
+    </datafield>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Henry</subfield>
+      <subfield code="b">IV,</subfield>
+      <subfield code="c">King of England,</subfield>
+      <subfield code="d">1367-1413,</subfield>
+      <subfield code="k">in fiction, drama, poetry, etc</subfield>
+    </datafield>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Huai-nan tzu,</subfield>
+      <subfield code="d">d. 122 B.C.</subfield>
+      <subfield code="t">Huai-nan tzu.</subfield>
+      <subfield code="n">9.</subfield>
+      <subfield code="p">Chu shu hsün</subfield>
+    </datafield>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">LM</subfield>
+      <subfield code="q">(Leslie Moore),</subfield>
+      <subfield code="d">b. 1888</subfield>
+    </datafield>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Martinus,</subfield>
+      <subfield code="c">Saint, Abp. of Braga,</subfield>
+      <subfield code="d">d. 580.</subfield>
+      <subfield code="t">Formula vitae honestae</subfield>
+    </datafield>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Mary Magdalene,</subfield>
+      <subfield code="c">Saint</subfield>
+      <subfield code="x">Cult</subfield>
+      <subfield code="z">France</subfield>
+      <subfield code="z">Provence</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Middle Ages, 600-1500</subfield>
+    </datafield>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Mata Hari,</subfield>
+      <subfield code="d">1876-1917</subfield>
+      <subfield code="v">Fiction</subfield>
+    </datafield>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Schumann, Robert,</subfield>
+      <subfield code="d">1810-1856.</subfield>
+      <subfield code="t">Fantasien,</subfield>
+      <subfield code="m">piano,</subfield>
+      <subfield code="n">op. 17,</subfield>
+      <subfield code="r">C major</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">United States.</subfield>
+      <subfield code="t">Earthquake Hazards Reduction Act of 1977.</subfield>
+      <subfield code="f">1978</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Cooke, W. Ernest</subfield>
+      <subfield code="d">b. 1963</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Catholic Church</subfield>
+      <subfield code="x">Foreign relations</subfield>
+      <subfield code="z">France</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Congress.</subfield>
+      <subfield code="b">Commission on Security and Cooperation in Europe</subfield>
+      <subfield code="v">Periodicals</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">United States.</subfield>
+      <subfield code="t">Declaration of Independence</subfield>
+      <subfield code="x">Juvenile literature</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Cooke, W. Ernest</subfield>
+      <subfield code="d">b. 1963</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Progressive Party (1912).</subfield>
+      <subfield code="b">National Convention</subfield>
+      <subfield code="n">(1st :</subfield>
+      <subfield code="d">1912 :</subfield>
+      <subfield code="c">Chicago)</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Germany.</subfield>
+      <subfield code="t">Treaties, etc.</subfield>
+      <subfield code="g">Soviet Union,</subfield>
+      <subfield code="d">1939 August 23</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Biblioteca Nacional (Spain).</subfield>
+      <subfield code="k">Manuscript.</subfield>
+      <subfield code="n">8936-8937</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">United States.</subfield>
+      <subfield code="t">Education Amendments of 1972.</subfield>
+      <subfield code="p">Title IX</subfield>
+      <subfield code="x">History</subfield>
+    </datafield>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Supreme Court</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">20th century</subfield>
+    </datafield>
+    <datafield tag="610" ind1="2" ind2="7">
+      <subfield code="a">States' Rights Democratic Party.</subfield>
+      <subfield code="2">fast</subfield>
+      <subfield code="0">(OCoLC)fst00713109</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="7">
+      <subfield code="a">Microsoft Windows (Computer file)</subfield>
+      <subfield code="2">fast</subfield>
+      <subfield code="0">(OCoLC)fst01367862</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Passion de Jeanne d'Arc.</subfield>
+      <subfield code="h">[Motion picture]</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">
+Vienna Convention for the Protection of the Ozone Layer
+</subfield>
+      <subfield code="d">(1985).</subfield>
+      <subfield code="k">Protocols, etc.,</subfield>
+      <subfield code="d">1987. Sept. 15</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">O.T.</subfield>
+      <subfield code="p">Deuteronomy.</subfield>
+      <subfield code="l">Greek.</subfield>
+      <subfield code="s">Freer Gallery of Art, Washington, D.C.</subfield>
+      <subfield code="g">Mss. (Greek)</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="l">Greek.</subfield>
+      <subfield code="p">N.T.</subfield>
+      <subfield code="f">1886</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">International tables for crystallography.</subfield>
+      <subfield code="n">Volume A</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">Manuscripts.</subfield>
+      <subfield code="l">Latin.</subfield>
+      <subfield code="p">N.T.</subfield>
+      <subfield code="p">Gospels.</subfield>
+      <subfield code="t">Book of Kells</subfield>
+      <subfield code="x">Illustrations</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible</subfield>
+      <subfield code="x">Criticism, interpretation, etc.</subfield>
+      <subfield code="z">England</subfield>
+      <subfield code="x">History</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="l">English</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">17th century.</subfield>
+    </datafield>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">MATLAB</subfield>
+      <subfield code="v">Textbooks.</subfield>
+    </datafield>
+    <datafield tag="648" ind1=" " ind2="7">
+      <subfield code="a">1900 - 2099</subfield>
+      <subfield code="2">fast</subfield>
+    </datafield>
+    <datafield tag="651" ind1=" " ind2="7">
+      <subfield code="a">Europe.</subfield>
+      <subfield code="2">fast</subfield>
+      <subfield code="0">(OCoLC)fst01245064</subfield>
+    </datafield>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Venus (Planet)</subfield>
+      <subfield code="x">Geology</subfield>
+      <subfield code="v">Maps</subfield>
+    </datafield>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Ireland</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Easter Rising, 1916</subfield>
+    </datafield>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">United States</subfield>
+      <subfield code="x">Relations</subfield>
+      <subfield code="z">Japan</subfield>
+    </datafield>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="a">Electrical engineering communications</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Textbooks.</subfield>
+      <subfield code="2">fast</subfield>
+      <subfield code="0">(OCoLC)fst01423863</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="0">
+      <subfield code="a">Detective and mystery stories</subfield>
+      <subfield code="v">Fiction</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="0">
+      <subfield code="a">Foreign language films</subfield>
+      <subfield code="x">Arabic</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="0">
+      <subfield code="a">German fiction</subfield>
+      <subfield code="y">20th century</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="0">
+      <subfield code="a">Foreign films</subfield>
+      <subfield code="z">Switzerland</subfield>
+    </datafield>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">[1st] (1959)-</subfield>
+    </datafield>
+  </record>
+</collection>

@@ -64,7 +64,7 @@
                 "fuller_form_of_name": {
                     "type": "string"
                 },
-                "authority_record_control_number": {
+                "authority_record_control_number_or_standard_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -150,7 +150,7 @@
                         "type": "string"
                     }
                 },
-                "authority_record_control_number": {
+                "authority_record_control_number_or_standard_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -236,7 +236,7 @@
                 "name_of_meeting_following_jurisdiction_name_entry_element": {
                     "type": "string"
                 },
-                "authority_record_control_number": {
+                "authority_record_control_number_or_standard_number": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -319,7 +319,7 @@
                         "type": "string"
                     }
                 },
-                "authority_record_control_number": {
+                "authority_record_control_number_or_standard_number": {
                     "type": "array",
                     "items": {
                         "type": "string"

@@ -21,7 +21,38 @@ def main_series_entry(self, key, value):
     """Main Series Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"#": "Main series", "8": "No display constant generated"}
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        's': 'uniform_title',
+        't': 'title',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'international_standard_serial_number': value.get('x'),
         'qualifying_information': value.get('c'),
@@ -68,8 +99,40 @@ def subseries_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
         "#": "Has subseries",
-        "8": "No display constant generated"}
+        "8": "No display constant generated"
+    }
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        's': 'uniform_title',
+        't': 'title',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'international_standard_serial_number': value.get('x'),
         'qualifying_information': value.get('c'),
@@ -116,8 +179,44 @@ def original_language_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
         "#": "Translation of",
-        "8": "No display constant generated"}
+        "8": "No display constant generated"
+    }
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -174,8 +273,44 @@ def translation_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
         "#": "Translated as",
-        "8": "No display constant generated"}
+        "8": "No display constant generated"
+    }
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -232,8 +367,44 @@ def supplement_special_issue_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
         "#": "Has supplement",
-        "8": "No display constant generated"}
+        "8": "No display constant generated"
+    }
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -291,8 +462,44 @@ def supplement_parent_entry(self, key, value):
     indicator_map2 = {
         "#": "Supplement to",
         "0": "Parent",
-        "8": "No display constant generated"}
+        "8": "No display constant generated"
+    }
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -348,12 +555,42 @@ def host_item_entry(self, key, value):
     """Host Item Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"#": "In", "8": "No display constant generated"}
+
     field_map = {
         'a': 'main_entry_heading',
+        'b': 'edition',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
         'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
         'n': 'note',
+        'o': 'other_item_identifier',
+        'p': 'abbreviated_title',
+        'q': 'enumeration_and_first_page',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '3': 'materials_specified',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
     }
+
     order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
         '__order__': tuple(order) if len(order) else None,
         'materials_specified': value.get('3'),
@@ -414,8 +651,44 @@ def constituent_unit_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
         "#": "Constituent unit",
-        "8": "No display constant generated"}
+        "8": "No display constant generated"
+    }
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -473,12 +746,43 @@ def other_edition_entry(self, key, value):
     indicator_map2 = {
         "#": "Other edition available",
         "8": "No display constant generated"}
+
     field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'e': 'language_code',
+        'f': 'country_code',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
         's': 'uniform_title',
+        't': 'title',
         'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
         'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
     }
+
     order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
         '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
@@ -540,7 +844,42 @@ def additional_physical_form_entry(self, key, value):
     indicator_map2 = {
         "#": "Available in another form",
         "8": "No display constant generated"}
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -596,7 +935,39 @@ def issued_with_entry(self, key, value):
     """Issued With Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"#": "Issued with", "8": "No display constant generated"}
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        's': 'uniform_title',
+        't': 'title',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'international_standard_serial_number': value.get('x'),
         'qualifying_information': value.get('c'),
@@ -652,8 +1023,44 @@ def preceding_entry(self, key, value):
         "4": "Formed by the union of ... and ...",
         "5": "Absorbed",
         "6": "Absorbed in part",
-        "7": "Separated from"}
+        "7": "Separated from"
+    }
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('type_of_relationship')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -718,7 +1125,42 @@ def succeeding_entry(self, key, value):
         "6": "Split into ... and ...",
         "7": "Merged with ... to form ...",
         "8": "Changed back to"}
+
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number'
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('type_of_relationship')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -774,7 +1216,45 @@ def data_source_entry(self, key, value):
     """Data Source Entry."""
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"#": "Data source", "8": "No display constant generated"}
+
+    field_map = {
+        'a': 'main_entry_heading_(nr)',
+        'b': 'edition_(nr)',
+        'c': 'qualifying_information_(nr)',
+        'd': 'place_publisher_and_date_of_publication_(nr)',
+        'g': 'related_parts_(r)',
+        'h': 'physical_description_(nr)',
+        'i': 'relationship_information_(r)',
+        'j': 'period_of_content_(nr)',
+        'k': 'series_data_for_related_item_(r)',
+        'm': 'material_specific_details_(nr)',
+        'n': 'note_(r)',
+        'o': 'other_item_identifier_(r)',
+        'p': 'abbreviated_title_(nr)',
+        'r': 'report_number_(r)',
+        's': 'uniform_title_(nr)',
+        't': 'title_(nr)',
+        'u': 'standard_technical_report_number_(nr)',
+        'v': 'source_contribution_(nr)',
+        'w': 'record_control_number_(r)',
+        'x': 'international_standard_serial_number_(nr)',
+        'y': 'coden_designation_(nr)',
+        'z': 'international_standard_book_number_(r)',
+        '4': 'relationship_code_(r)',
+        '6': 'linkage_(nr)',
+        '7': 'control_subfield_(nr)',
+        '8': 'field_link_and_sequence_number_(r)',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),
@@ -834,8 +1314,43 @@ def other_relationship_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {
         "#": "Related item",
-        "8": "No display constant generated"}
+        "8": "No display constant generated",
+    }
+    field_map = {
+        'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_controller')
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'relationship_code': utils.force_list(
             value.get('4')
         ),

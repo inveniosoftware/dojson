@@ -9,8 +9,9 @@
 
 """Test suite for DoJSON."""
 
-import json
+import os
 
+import simplejson as json
 from lxml import etree, objectify
 from six import BytesIO
 
@@ -214,7 +215,15 @@ def test_simple_record_from_xml():
 
     blob = create_record(RECORD_SIMPLE)
     data = marc21.do(blob)
-    expected = {'main_entry_personal_name': {'personal_name': 'Donges, Jonathan F'}}
+    expected = {
+        '__order__': ['main_entry_personal_name'],
+        'main_entry_personal_name': [
+            {
+                '__order__': ('personal_name',),
+                'personal_name': 'Donges, Jonathan F',
+            }
+        ],
+    }
 
     assert data == expected
 
@@ -374,6 +383,7 @@ def test_marc21_856_indicators():
             </datafield>
             ''',
             {
+                '__order__': ['electronic_location_and_access'],
                 'electronic_location_and_access': [
                     {
                         '__order__': ('file_size', 'uniform_resource_identifier', 'public_note', 'access_method'),
@@ -396,6 +406,7 @@ def test_marc21_856_indicators():
             </datafield>
             ''',
             {
+                '__order__': ['electronic_location_and_access'],
                 'electronic_location_and_access': [
                     {
                         '__order__': ('file_size', 'uniform_resource_identifier', 'public_note', 'access_method'),

@@ -19,7 +19,22 @@ from ..model import to_marc21
 @utils.filter_values
 def reverse_physical_description(self, key, value):
     """Reverse - Physical Description."""
+    field_map = {
+        'extent': 'a',
+        'other_physical_details': 'b',
+        'dimensions': 'c',
+        'accompanying_material': 'e',
+        'type_of_unit': 'f',
+        'size_of_unit': 'g',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('extent')),
         'c': utils.reverse_force_list(value.get('dimensions')),
         'b': utils.reverse_force_list(value.get('other_physical_details')),
@@ -82,7 +97,17 @@ def reverse_current_publication_frequency(self, key, value):
 @utils.filter_values
 def reverse_former_publication_frequency(self, key, value):
     """Reverse - Former Publication Frequency."""
+    field_map = {
+        'former_publication_frequency': 'a',
+        'dates_of_former_publication_frequency': 'b',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('former_publication_frequency')),
         '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         'b': utils.reverse_force_list(value.get('dates_of_former_publication_frequency')),
@@ -114,7 +139,20 @@ def reverse_content_type(self, key, value):
 @utils.filter_values
 def reverse_media_type(self, key, value):
     """Reverse - Media Type."""
+    field_map = {
+        'media_type_term': 'a',
+        'media_type_code': 'b',
+        'authority_record_control_number_or_standard_number': '0',
+        'source': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('media_type_term')),
         'b': utils.reverse_force_list(value.get('media_type_code')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -131,7 +169,20 @@ def reverse_media_type(self, key, value):
 @utils.filter_values
 def reverse_carrier_type(self, key, value):
     """Reverse - Carrier Type."""
+    field_map = {
+        'carrier_type_term': 'a',
+        'carrier_type_code': 'b',
+        'authority_record_control_number_or_standard_number': '0',
+        'source': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('carrier_type_term')),
         'b': utils.reverse_force_list(value.get('carrier_type_code')),
         '3': utils.reverse_force_list(value.get('materials_specified')),
@@ -249,7 +300,26 @@ def reverse_planar_coordinate_data(self, key, value):
 @utils.filter_values
 def reverse_sound_characteristics(self, key, value):
     """Reverse - Sound Characteristics."""
+    field_map = {
+        'type_of_recording': 'a',
+        'recording_medium': 'b',
+        'playing_speed': 'c',
+        'groove_characteristic': 'd',
+        'track_configuration': 'e',
+        'tape_configuration': 'f',
+        'configuration_of_playback_channels': 'g',
+        'special_playback_characteristics': 'h',
+        'authority_record_control_number_or_standard_number': '0',
+        'source': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('type_of_recording')),
         'c': utils.reverse_force_list(value.get('playing_speed')),
         'b': utils.reverse_force_list(value.get('recording_medium')),
@@ -331,7 +401,19 @@ def reverse_digital_file_characteristics(self, key, value):
 @utils.filter_values
 def reverse_organization_and_arrangement_of_materials(self, key, value):
     """Reverse - Organization and Arrangement of Materials."""
+    field_map = {
+        'organization': 'a',
+        'arrangement': 'b',
+        'hierarchical_level': 'c',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('organization')),
         'c': utils.reverse_force_list(value.get('hierarchical_level')),
         'b': utils.reverse_force_list(value.get('arrangement')),
@@ -542,7 +624,18 @@ def reverse_associated_language(self, key, value):
 @utils.filter_values
 def reverse_form_of_work(self, key, value):
     """Reverse - Form of Work."""
+    field_map = {
+        'form_of_work': 'a',
+        'record_control_number': '0',
+        'source_of_term': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('form_of_work')),
         '0': utils.reverse_force_list(value.get('record_control_number')),
         '2': utils.reverse_force_list(value.get('source_of_term')),

@@ -229,7 +229,17 @@ def coded_cartographic_mathematical_data(self, key, value):
 @utils.filter_values
 def system_control_number(self, key, value):
     """System Control Number."""
+    field_map = {
+        'a': 'system_control_number',
+        'z': 'canceled_invalid_control_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'system_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')

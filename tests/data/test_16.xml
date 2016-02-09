@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="800" ind1="0" ind2=" ">
+      <subfield code="a">Gilbert,</subfield>
+      <subfield code="c">of Hoyland.</subfield>
+      <subfield code="t">Works.</subfield>
+      <subfield code="l">English ;</subfield>
+      <subfield code="v">v. 1-3</subfield>
+    </datafield>
+    <datafield tag="800" ind1="0" ind2=" ">
+      <subfield code="a">Ṭabarī,</subfield>
+      <subfield code="d">838?-923.</subfield>
+      <subfield code="t">Taʼrīkh al-rusul wa-al-mulūk.</subfield>
+      <subfield code="l">English ;</subfield>
+      <subfield code="v">v. 35</subfield>
+    </datafield>
+    <datafield tag="800" ind1="0" ind2=" ">
+      <subfield code="a">Aristophanes.</subfield>
+      <subfield code="t">Works.</subfield>
+      <subfield code="l">English &amp; Greek.</subfield>
+      <subfield code="f">1980 ;</subfield>
+      <subfield code="v">v. 4</subfield>
+    </datafield>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Liszt, Franz,</subfield>
+      <subfield code="d">1811-1886.</subfield>
+      <subfield code="t">Piano music.</subfield>
+      <subfield code="k">Selections (Bolet) ;</subfield>
+      <subfield code="v">v. 5</subfield>
+    </datafield>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Wagner, Richard,</subfield>
+      <subfield code="d">1813-1883.</subfield>
+      <subfield code="t">Ring des Nibelungen.</subfield>
+      <subfield code="p">Walküre</subfield>
+    </datafield>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Clark, C. H. Douglas</subfield>
+      <subfield code="q">(Cecil Henry Douglas),</subfield>
+      <subfield code="d">1890-</subfield>
+      <subfield code="t">
+Comprehensive treatise of atomic and molecular structure.
+</subfield>
+      <subfield code="v">v. 2</subfield>
+    </datafield>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Shakespeare, William,</subfield>
+      <subfield code="d">1564-1616.</subfield>
+      <subfield code="t">Works.</subfield>
+      <subfield code="f">1984.</subfield>
+      <subfield code="s">Cambridge University Press</subfield>
+    </datafield>
+    <datafield tag="810" ind1="1" ind2=" ">
+      <subfield code="a">University of California.</subfield>
+      <subfield code="t">University of California publications.</subfield>
+      <subfield code="p">English studies ;</subfield>
+      <subfield code="v">8</subfield>
+    </datafield>
+    <datafield tag="810" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Congress</subfield>
+      <subfield code="n">(82d, 1st session :</subfield>
+      <subfield code="d">1951).</subfield>
+      <subfield code="b">Senate.</subfield>
+      <subfield code="t">Report</subfield>
+      <subfield code="v">82d Congress ; no. 1039</subfield>
+    </datafield>
+    <datafield tag="810" ind1="2" ind2=" ">
+      <subfield code="a">International Primatological Society.</subfield>
+      <subfield code="b">Congress</subfield>
+      <subfield code="n">(10th :</subfield>
+      <subfield code="d">1984 :</subfield>
+      <subfield code="c">Nairobi, Kenya)</subfield>
+      <subfield code="t">
+Selected proceedings of the Tenth Congress of the International Primatological Society ;
+</subfield>
+      <subfield code="v">v. 3</subfield>
+    </datafield>
+    <datafield tag="811" ind1="2" ind2=" ">
+      <subfield code="a">Eastern Analytical Symposium</subfield>
+      <subfield code="n">(17th :</subfield>
+      <subfield code="d">1977 :</subfield>
+      <subfield code="c">New York).</subfield>
+      <subfield code="t">1977 Eastern Analytical Symposium series</subfield>
+    </datafield>
+    <datafield tag="811" ind1="2" ind2=" ">
+      <subfield code="a">International Geological Congress.</subfield>
+      <subfield code="e">
+International Subcommission on Stratigraphic Classification.
+</subfield>
+      <subfield code="t">Report ;</subfield>
+      <subfield code="v">no. 5</subfield>
+    </datafield>
+  </record>
+</collection>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Chemistry of functional groups.</subfield>
+      <subfield code="p">Supplement ;</subfield>
+      <subfield code="v">A</subfield>
+    </datafield>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Electrophoresis ;</subfield>
+    </datafield>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Neues Jahrbuch für Mineralogie.</subfield>
+      <subfield code="v">v. 166, no. 1</subfield>
+    </datafield>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Journal de physique.</subfield>
+      <subfield code="p">Colloque ;</subfield>
+      <subfield code="v">C3</subfield>
+    </datafield>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">IEEE transactions on circuits and systems.</subfield>
+      <subfield code="n">I,</subfield>
+      <subfield code="p">Regular papers ;</subfield>
+      <subfield code="v">v. 55, special issue</subfield>
+    </datafield>
+  </record>
+</collection>

@@ -10,7 +10,7 @@
                     "type_of_personal_name_entry_element": {
                         "enum": ["Family name", "Surname", "Forename"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -148,7 +148,7 @@
                     "type_of_corporate_name_entry_element": {
                         "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -280,7 +280,7 @@
                     "type_of_meeting_name_entry_element": {
                         "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -400,7 +400,7 @@
                     "nonfiling_characters": {
                         "enum": ["No nonfiling characters", "Number of nonfiling characters"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <controlfield tag="001">413092</controlfield>
+    <controlfield tag="005">20150923221003.0</controlfield>
+    <controlfield tag="008">750804s1931\\\\nyu\\\\\\\\\\\00010\eng\\</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">31034955</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">.b10472952</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(OCoLC)1507739</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC</subfield>
+      <subfield code="c">FQG</subfield>
+      <subfield code="d">FDA</subfield>
+      <subfield code="d">OCL</subfield>
+      <subfield code="d">CIT</subfield>
+    </datafield>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Winchell, Alexander Newton,</subfield>
+      <subfield code="d">1874-1958</subfield>
+    </datafield>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The microscopic characters of artificial inorganic solid substances or artificial minerals,</subfield>
+      <subfield code="c">by Alexander Newton Winchell, with a chapter on the universal stage by Richard Conrad Emmons.</subfield>
+    </datafield>
+    <datafield tag="250" ind1=" " ind2=" ">
+      <subfield code="a">2d ed</subfield>
+    </datafield>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">New York</subfield>
+      <subfield code="b">J. Wiley &amp; sons, inc.</subfield>
+      <subfield code="a">London</subfield>
+      <subfield code="b">Chapman &amp; Hall, ltd.</subfield>
+      <subfield code="c">[c1931]</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">xvii, 403 p.</subfield>
+      <subfield code="b">incl. illus., tables. diagrs.</subfield>
+      <subfield code="c">24 cm</subfield>
+    </datafield>
+    <datafield tag="500" ind1=" " ind2=" ">
+      <subfield code="a">"First edition...published in 1927 as Bo. 4 of the University of Wisconsin studies in science [under title "The optic and microscopic characters of artifical minerals"]. Part I on ʻPrinciples and methods, ̓which did not appear in the first edition of this work, consists in large part of revised selections from the author's ʻElements of optical mineralogy, ̓part I, 3d edition."--Pref</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Mineralogy, Determinative</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Emmons, Richard Conrad,</subfield>
+      <subfield code="d">1893-</subfield>
+    </datafield>
+  </record>
+</collection>

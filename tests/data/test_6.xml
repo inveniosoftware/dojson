@@ -1,6 +1,9 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <collection xmlns="http://www.loc.gov/MARC21/slim">
   <record>
+    <datafield tag="655" ind1=" " ind2="0">
+      <subfield code="a">Electronic books.</subfield>
+    </datafield>
     <datafield tag="760" ind1="0" ind2="8">
       <subfield code="i">This work also included as part of</subfield>
       <subfield code="a">
@@ -15,7 +18,7 @@
     </datafield>
     <datafield tag="760" ind1="0" ind2=" ">
       <subfield code="t">
-        Bibliothe&#x300;que des Ecoles franc&#x327;aises d'Athe&#x300;nes et de Rome. 3e se&#x301;rie : Registres et lettres des papes du XIVe sie&#x300;cle
+        Bibliothèque des Ecoles françaises d'Athènes et de Rome. 3e série : Registres et lettres des papes du XIVe siècle
       </subfield>
       <subfield code="g">4</subfield>
     </datafield>
@@ -44,11 +47,7 @@
     </datafield>
     <datafield tag="765" ind1="0" ind2=" ">
       <subfield code="t">Astrofizika</subfield>
-      <subfield code="l">English</subfield>
       <subfield code="w">(OCoLC)1829309</subfield>
-    </datafield>
-    <datafield tag="655" ind1=" " ind2="0">
-      <subfield code="a">Electronic books.</subfield>
     </datafield>
     <datafield tag="765" ind1="1" ind2=" ">
       <subfield code="t">Doklady Akademii nauk SSSR</subfield>
@@ -101,9 +100,14 @@
         Issued as a special section of Analytica chimica acta,v. 1-5 called also v. 95, 103, 112, 122, 133 of Analytica chimica acta.
       </subfield>
     </datafield>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="t">Astrophysical journal. Supplement series</subfield>
+      <subfield code="x">0067-0049</subfield>
+      <subfield code="w">(DLC) 56037588</subfield>
+      <subfield code="w">(OCoLC)2413276</subfield>
+    </datafield>
     <datafield tag="772" ind1="0" ind2="0">
       <subfield code="a">$tEarthquake engineering and structural dynamics ;</subfield>
-      <subfield code="v">v. 14, no. 5</subfield>
     </datafield>
     <datafield tag="772" ind1="0" ind2="0">
       <subfield code="t">Earthquake engineering and structural dynamics</subfield>
@@ -167,7 +171,7 @@
     </datafield>
     <datafield tag="775" ind1="0" ind2=" ">
       <subfield code="t">
-        La Chine est-elle un "grand pays"? : son influence sur les marche&#x301;s mondiaux
+        La Chine est-elle un "grand pays"? : son influence sur les marchés mondiaux
       </subfield>
       <subfield code="z">9264256091</subfield>
     </datafield>
@@ -231,12 +235,6 @@
       <subfield code="w">(DLC) 2013042745</subfield>
       <subfield code="w">(OCoLC)861895302</subfield>
     </datafield>
-    <datafield tag="770" ind1="0" ind2=" ">
-      <subfield code="t">Astrophysical journal. Supplement series</subfield>
-      <subfield code="x">0067-0049</subfield>
-      <subfield code="w">(DLC) 56037588</subfield>
-      <subfield code="w">(OCoLC)2413276</subfield>
-    </datafield>
     <datafield tag="777" ind1="0" ind2=" ">
       <subfield code="a">
         International Conference on Medicine and biological Engineering
@@ -294,9 +292,6 @@
     <datafield tag="785" ind1="0" ind2="0">
       <subfield code="t">Metallurgical and materials transactions.</subfield>
       <subfield code="n">B,</subfield>
-      <subfield code="p">
-        Process metallurgy and materials processing science
-      </subfield>
       <subfield code="x">1073-5615</subfield>
       <subfield code="w">(DLC)xn93004155</subfield>
       <subfield code="w">(OCoLC)29464178</subfield>

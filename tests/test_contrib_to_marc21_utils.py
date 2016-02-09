@@ -35,8 +35,8 @@ def test_xslt_not_found():
 def test_xslt_dump():
     """Test xslt dump."""
     path = os.path.dirname(__file__)
-    with open("{0}/demo_marc21_to_dc.converted.xml".format(path)) as myfile:
-        expect = myfile.read().replace('\n', '')
+    with open('{0}/demo_marc21_to_dc.converted.xml'.format(path)) as myfile:
+        expect = myfile.read()
     data = list(load('{0}/demo_marc21_to_dc.xml'.format(path)))
     output = dumps(
         data,
@@ -52,7 +52,7 @@ def test_entry_points():
     ))[0].load()
     path = os.path.dirname(__file__)
     with open("{0}/demo_marc21_to_dc.converted.xml".format(path)) as myfile:
-        expect = myfile.read().replace('\n', '')
+        expect = myfile.read()
     data = list(load('{0}/demo_marc21_to_dc.xml'.format(path)))
     output = dump(data,
                   xslt_filename='{0}/demo_marc21_to_dc.xslt'.format(path))

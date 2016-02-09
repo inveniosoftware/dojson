@@ -84,7 +84,7 @@ def reverse_uniform_title(self, key, value):
         'n': utils.reverse_force_list(
             value.get('number_of_part_section_of_a_work')),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')),
+            value.get('authority_record_control_number_or_standard_number')),
         's': value.get('version'),
         'r': value.get('key_for_music'),
         '6': value.get('linkage'),
@@ -135,9 +135,35 @@ def reverse_collective_uniform_title(self, key, value):
     """Reverse - Collective Uniform Title."""
     indicator_map1 = {
         "Not printed or displayed": "0",
-        "Printed or displayed": "1"}
-    indicator_map2 = {"Number of nonfiling characters": "8"}
+        "Printed or displayed": "1",
+    }
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    field_map = {
+        'uniform_title': 'a',
+        'date_of_treaty_signing': 'd',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('uniform_title_printed_or_displayed')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('uniform_title'),
         'd': utils.reverse_force_list(
             value.get('date_of_treaty_signing')),
@@ -162,9 +188,7 @@ def reverse_collective_uniform_title(self, key, value):
         '$ind1': indicator_map1.get(
             value.get('uniform_title_printed_or_displayed'),
             '_'),
-        '$ind2': indicator_map2.get(
-            value.get('nonfiling_characters'),
-            '_'),
+        '$ind2': value.get('nonfiling_characters', '_'),
     }
 
 
@@ -283,9 +307,37 @@ def reverse_varying_form_of_title(self, key, value):
 @utils.filter_values
 def reverse_former_title(self, key, value):
     """Reverse - Former Title."""
-    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
-    indicator_map2 = {"Display note": "0", "Do not display note": "1"}
+    indicator_map1 = {
+        'Added entry': '1',
+        'No added entry': '0',
+    }
+    indicator_map2 = {
+        'Display note': '0',
+        'Do not display note': '1',
+    }
+
+    field_map = {
+        'title': 'a',
+        'remainder_of_title': 'b',
+        'date_or_sequential_designation': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'international_standard_serial_number': 'x',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('title_added_entry')
+    if key[4] in indicator_map2:
+        order.append('note_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('title'),
         'x': value.get('international_standard_serial_number'),
         'b': value.get('remainder_of_title'),

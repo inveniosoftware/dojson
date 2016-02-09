@@ -51,8 +51,46 @@ def reverse_location(self, key, value):
         "Alternative enumeration": "2",
         "No information provided": "_",
         "Not enumeration": "0",
-        "Primary enumeration": "1"}
+        "Primary enumeration": "1",
+    }
+
+    field_map = {
+        'location': 'a',
+        'sublocation_or_collection': 'b',
+        'shelving_location': 'c',
+        'former_shelving_location': 'd',
+        'address': 'e',
+        'coded_location_qualifier': 'f',
+        'non_coded_location_qualifier': 'g',
+        'classification_part': 'h',
+        'item_part': 'i',
+        'shelving_control_number': 'j',
+        'call_number_prefix': 'k',
+        'shelving_form_of_title': 'l',
+        'call_number_suffix': 'm',
+        'country_code': 'n',
+        'piece_designation': 'p',
+        'piece_physical_condition': 'q',
+        'copyright_article_fee_code': 's',
+        'copy_number': 't',
+        'uniform_resource_identifier': 'u',
+        'nonpublic_note': 'x',
+        'public_note': 'z',
+        'source_of_classification_or_shelving_scheme': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('shelving_scheme')
+    if key[4] in indicator_map2:
+        order.append('shelving_order')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         '3': value.get('materials_specified'),
         '2': value.get('source_of_classification_or_shelving_scheme'),
         '6': value.get('linkage'),
@@ -165,6 +203,7 @@ def reverse_electronic_location_and_access(self, key, value):
         order.remove('2')
 
     return {
+        '__order__': tuple(order) if len(order) else None,
         '3': value.get('materials_specified'),
         '2': value.get('access_method')
         if indicator_map1.get(value.get('access_method'), '7') == '7'
@@ -229,7 +268,6 @@ def reverse_electronic_location_and_access(self, key, value):
         ),
         '$ind1': indicator_map1.get(value.get('access_method'), '7'),
         '$ind2': indicator_map2.get(value.get('relationship'), '_'),
-        '__order__': tuple(order) if len(order) else None
     }
 
 

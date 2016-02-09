@@ -105,7 +105,7 @@ def uniform_title(self, key, value):
         'number_of_part_section_of_a_work': utils.force_list(
             value.get('n')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'version': value.get('s'),
@@ -164,19 +164,41 @@ def collective_uniform_title(self, key, value):
     """Collective Uniform Title."""
     indicator_map1 = {
         "0": "Not printed or displayed",
-        "1": "Printed or displayed"}
-    indicator_map2 = {
-        "0": "Number of nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+        "1": "Printed or displayed",
+    }
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    field_map = {
+        'a': 'uniform_title',
+        'd': 'date_of_treaty_signing',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('uniform_title_printed_or_displayed')
+
+    order.append('nonfiling_characters')
+    if key[4] in valid_nonfiling_characters:
+        nonfiling_characters = key[4]
+    else:
+        nonfiling_characters = '_'
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'date_of_treaty_signing': utils.force_list(
             value.get('d')
@@ -205,7 +227,7 @@ def collective_uniform_title(self, key, value):
             value.get('8')
         ),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
-        'nonfiling_characters': indicator_map2.get(key[4]),
+        'nonfiling_characters': nonfiling_characters,
     }
 
 
@@ -323,9 +345,37 @@ def varying_form_of_title(self, key, value):
 @utils.filter_values
 def former_title(self, key, value):
     """Former Title."""
-    indicator_map1 = {"0": "No added entry", "1": "Added entry"}
-    indicator_map2 = {"0": "Display note", "1": "Do not display note"}
+    indicator_map1 = {
+        '0': 'No added entry',
+        '1': 'Added entry',
+    }
+    indicator_map2 = {
+        '0': 'Display note',
+        '1': 'Do not display note',
+    }
+
+    field_map = {
+        'a': 'title',
+        'b': 'remainder_of_title',
+        'f': 'date_or_sequential_designation',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'n': 'number_of_part_section_of_a_work',
+        'p': 'name_of_part_section_of_a_work',
+        'x': 'international_standard_serial_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('title_added_entry')
+    if key[4] in indicator_map2:
+        order.append('note_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'international_standard_serial_number': value.get('x'),
         'remainder_of_title': value.get('b'),

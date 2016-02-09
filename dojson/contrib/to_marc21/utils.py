@@ -95,4 +95,10 @@ def dumps_etree(records, xslt_filename=None):
 def dumps(records, xslt_filename=None, **kwargs):
     """Dump records into a MarcXML file."""
     root = dumps_etree(records=records, xslt_filename=xslt_filename)
-    return etree.tostring(root, **kwargs)
+    return etree.tostring(
+        root,
+        pretty_print=True,
+        xml_declaration=True,
+        encoding='UTF-8',
+        **kwargs
+    )

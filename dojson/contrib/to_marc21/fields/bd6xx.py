@@ -28,10 +28,53 @@ def reverse_subject_added_entry_personal_name(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7"
+    }
+
+    field_map = {
+        'personal_name': 'a',
+        'numeration': 'b',
+        'titles_and_other_words_associated_with_a_name': 'c',
+        'dates_associated_with_a_name': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'attribution_qualifier': 'j',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'fuller_form_of_name': 'q',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'affiliation': 'u',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_personal_name_entry_element')
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
@@ -110,10 +153,51 @@ def reverse_subject_added_entry_corporate_name(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7"
+    }
+
+    field_map = {
+        'corporate_name_or_jurisdiction_name_as_entry_element': 'a',
+        'subordinate_unit': 'b',
+        'location_of_meeting': 'c',
+        'date_of_meeting_or_treaty_signing': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_meeting': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'affiliation': 'u',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_corporate_name_entry_element')
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
@@ -190,10 +274,49 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7"
+    }
+
+    field_map = {
+        'meeting_name_or_jurisdiction_name_as_entry_element': 'a',
+        'location_of_meeting': 'c',
+        'date_of_meeting': 'd',
+        'subordinate_unit': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relator_term': 'j',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'number_of_part_section_meeting': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'name_of_meeting_following_jurisdiction_name_entry_element': 'q',
+        'version': 's',
+        'title_of_a_work': 't',
+        'affiliation': 'u',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_meeting_name_entry_element')
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
@@ -252,7 +375,7 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_uniform_title(self, key, value):
     """Reverse - Subject Added Entry-Uniform Title."""
-    indicator_map1 = {"Number of nonfiling characters": "8"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
     indicator_map2 = {
         "Canadian Subject Headings": "5",
         "LC subject headings for children\u0027s literature": "1",
@@ -261,10 +384,49 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7"
+    }
+
+    field_map = {
+        'uniform_title': 'a',
+        'date_of_treaty_signing': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
@@ -314,7 +476,7 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        '$ind1': indicator_map1.get(value.get('nonfiling_characters'), '_'),
+        '$ind1': value.get('nonfiling_characters', '_'),
         '$ind2': indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
@@ -336,8 +498,25 @@ def reverse_subject_added_entry_chronological_term(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00c3\u00a9pertoire de vedettes-mati\u00c3\u00a8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7"
+    }
+
+    field_map = {
+        'chronological_term': 'a',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('chronological_term'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')),
@@ -381,14 +560,35 @@ def reverse_subject_added_entry_topical_term(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7",
+    }
+
     field_map = {
-        'source_of_heading_or_term': '2',
         'topical_term_or_geographic_name_entry_element': 'a',
+        'topical_term_following_geographic_name_entry_element': 'b',
+        'location_of_event': 'c',
+        'active_dates': 'd',
+        'relator_term': 'e',
+        'miscellaneous_information': 'g',
+        'relator_code': '4',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
         'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
     }
+
     order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('level_of_subject')
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('topical_term_or_geographic_name_entry_element'),
@@ -405,7 +605,7 @@ def reverse_subject_added_entry_topical_term(self, key, value):
             value.get('form_subdivision')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
@@ -440,8 +640,32 @@ def reverse_subject_added_entry_geographic_name(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7"
+    }
+
+    field_map = {
+        'geographic_name': 'a',
+        'relator_term': 'e',
+        'miscellaneous_information': 'g',
+        'relator_code': '4',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('geographic_name'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -453,7 +677,7 @@ def reverse_subject_added_entry_geographic_name(self, key, value):
             value.get('form_subdivision')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
@@ -493,8 +717,24 @@ def reverse_index_term_uncontrolled(self, key, value):
         "Meeting name": "3",
         "No information provided": "_",
         "Personal name": "1",
-        "Topical term": "0"}
+        "Topical term": "0"
+    }
+
+    field_map = {
+        'uncontrolled_term': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('level_of_index_term')
+    if key[4] in indicator_map2:
+        order.append('type_of_term_or_name')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('uncontrolled_term')
         ),
@@ -516,8 +756,32 @@ def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
         "No information provided": "_",
         "No level specified": "0",
         "Primary": "1",
-        "Secondary": "2"}
+        "Secondary": "2"
+    }
+
+    field_map = {
+        'focus_term': 'a',
+        'non_focus_term': 'b',
+        'facet_hierarchy_designation': 'c',
+        'relator_term': 'e',
+        'form_subdivision': 'v',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'materials_specified': '3',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('level_of_subject')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('focus_term')
         ),
@@ -534,7 +798,7 @@ def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
             value.get('form_subdivision')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
@@ -570,8 +834,34 @@ def reverse_index_term_genre_form(self, key, value):
         "National Agricultural Library subject authority file": "3",
         "R\u00e9pertoire de vedettes-mati\u00e8re": "6",
         "Source not specified": "4",
-        "Source specified in subfield $2": "7"}
+        "Source specified in subfield $2": "7"
+    }
+
+    field_map = {
+        'genre_form_data_or_focus_term': 'a',
+        'non_focus_term': 'b',
+        'facet_hierarchy_designation': 'c',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_term': '2',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_heading')
+    if key[4] in indicator_map2:
+        order.append('thesaurus')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('genre_form_data_or_focus_term'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -586,7 +876,7 @@ def reverse_index_term_genre_form(self, key, value):
             value.get('form_subdivision')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_term'),
@@ -611,7 +901,24 @@ def reverse_index_term_genre_form(self, key, value):
 @utils.filter_values
 def reverse_index_term_occupation(self, key, value):
     """Reverse - Index Term-Occupation."""
+    field_map = {
+        'occupation': 'a',
+        'form': 'k',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_term': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('occupation'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -621,7 +928,7 @@ def reverse_index_term_occupation(self, key, value):
             value.get('form_subdivision')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_term'),
@@ -645,7 +952,23 @@ def reverse_index_term_occupation(self, key, value):
 @utils.filter_values
 def reverse_index_term_function(self, key, value):
     """Reverse - Index Term-Function."""
+    field_map = {
+        'function': 'a',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_term': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('function'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -654,7 +977,7 @@ def reverse_index_term_function(self, key, value):
             value.get('form_subdivision')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
         '2': value.get('source_of_term'),
@@ -678,7 +1001,20 @@ def reverse_index_term_function(self, key, value):
 @utils.filter_values
 def reverse_index_term_curriculum_objective(self, key, value):
     """Reverse - Index Term-Curriculum Objective."""
+    field_map = {
+        'main_curriculum_objective': 'a',
+        'subordinate_curriculum_objective': 'b',
+        'curriculum_code': 'c',
+        'correlation_factor': 'd',
+        'source_of_term_or_code': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('main_curriculum_objective'),
         'c': value.get('curriculum_code'),
         'b': utils.reverse_force_list(
@@ -700,7 +1036,26 @@ def reverse_index_term_curriculum_objective(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_hierarchical_place_name(self, key, value):
     """Reverse - Subject Added Entry-Hierarchical Place Name."""
+    field_map = {
+        'country_or_larger_entity': 'a',
+        'first_order_political_jurisdiction': 'b',
+        'intermediate_political_jurisdiction': 'c',
+        'city': 'd',
+        'relator_term': 'e',
+        'city_subsection': 'f',
+        'other_nonjurisdictional_geographic_region_and_feature': 'g',
+        'extraterrestrial_area': 'h',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('country_or_larger_entity')
         ),
@@ -722,7 +1077,7 @@ def reverse_subject_added_entry_hierarchical_place_name(self, key, value):
             value.get('extraterrestrial_area')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         '2': value.get('source_of_heading_or_term'),
         '4': utils.reverse_force_list(

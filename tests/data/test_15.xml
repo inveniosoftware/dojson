@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">
+Convention for the Protection of Human Rights and Fundamental Freedoms and Protocol
+</subfield>
+      <subfield code="d">(1950)</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">American Mathematical Society translations.</subfield>
+      <subfield code="g">(Indexes)</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">O.T.</subfield>
+      <subfield code="p">Nehemiah.</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="f">1965.</subfield>
+      <subfield code="s">Myers</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Blaue Engel</subfield>
+      <subfield code="h">(motion picture)</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Vedas.</subfield>
+      <subfield code="p">Yajurveda.</subfield>
+      <subfield code="p">Vājasaneyisaṃhitā.</subfield>
+      <subfield code="k">Selections.</subfield>
+      <subfield code="l">French</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Erlanger Forschungen.</subfield>
+      <subfield code="n">Reihe B.</subfield>
+      <subfield code="p">Naturwissenschaften</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">I/EC.</subfield>
+      <subfield code="t">Industrial and engineering chemistry</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">God save the King;</subfield>
+      <subfield code="o">arr</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">BioOne (Organization)</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">SpringerLink online journal archive.</subfield>
+      <subfield code="p">Mathematics and statistics</subfield>
+      <subfield code="5">CIT</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="6">880-07</subfield>
+      <subfield code="a">Wen hai.</subfield>
+      <subfield code="l">Tangut</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="i">translation of (work)</subfield>
+      <subfield code="a">Modellbildung und Simulation.</subfield>
+      <subfield code="l">English</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Carleton College (Northfield, Minn.).</subfield>
+      <subfield code="t">Publications ;</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Atmospheric chemistry and physics</subfield>
+      <subfield code="x">1680-7316</subfield>
+    </datafield>
+    <datafield tag="740" ind1="0" ind2=" ">
+      <subfield code="6">880-05</subfield>
+      <subfield code="a">
+Erh pai chung Chung-kuo tʻung su hsiao shuo shu yao
+</subfield>
+    </datafield>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Martini Buceri Opera omnia.</subfield>
+      <subfield code="n">Series III,</subfield>
+      <subfield code="p">Correspondance</subfield>
+    </datafield>
+    <datafield tag="740" ind1="0" ind2=" ">
+      <subfield code="a">Boris Godunov [original version]</subfield>
+      <subfield code="h">Sound recording</subfield>
+    </datafield>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">New York</subfield>
+      <subfield code="c">New York</subfield>
+      <subfield code="d">New York</subfield>
+    </datafield>
+    <datafield tag="753" ind1=" " ind2=" ">
+      <subfield code="a">CD-ROM drive</subfield>
+      <subfield code="b">ISO 9660-formatted standard CD-ROM</subfield>
+    </datafield>
+    <datafield tag="753" ind1=" " ind2=" ">
+      <subfield code="a">PC</subfield>
+      <subfield code="c">MS-DOS with Microsoft extensions</subfield>
+    </datafield>
+  </record>
+</collection>

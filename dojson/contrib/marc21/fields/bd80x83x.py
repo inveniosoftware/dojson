@@ -19,9 +19,53 @@ from ..model import marc21
 @utils.filter_values
 def series_added_entry_personal_name(self, key, value):
     """Series Added Entry-Personal Name."""
-    indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
+    indicator_map1 = {
+        '0': 'Forename',
+        '1': 'Surname',
+        '3': 'Family name',
+    }
+
+    field_map = {
+        'a': 'personal_name',
+        'b': 'numeration',
+        'c': 'titles_and_other_words_associated_with_a_name',
+        'd': 'dates_associated_with_a_name',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'j': 'attribution_qualifier',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'q': 'fuller_form_of_name',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'v': 'volume_sequential_designation',
+        'w': 'bibliographic_record_control_number',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number_or_standard_number',
+        '3': 'materials_specified',
+        '4': 'relator_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_personal_name_entry_element')
+
     return {
-        'authority_record_control_number': utils.force_list(
+        '__order__': tuple(order) if len(order) else None,
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -85,11 +129,50 @@ def series_added_entry_personal_name(self, key, value):
 def series_added_entry_corporate_name(self, key, value):
     """Series Added Entry-Corporate Name."""
     indicator_map1 = {
-        "0": "Inverted name",
-        "1": "Jurisdiction name",
-        "2": "Name in direct order"}
+        '0': 'Inverted name',
+        '1': 'Jurisdiction name',
+        '2': 'Name in direct order',
+    }
+
+    field_map = {
+        'a': 'corporate_name_or_jurisdiction_name_as_entry_element',
+        'b': 'subordinate_unit',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting_or_treaty_signing',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_meeting',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'v': 'volume_sequential_designation',
+        'w': 'bibliographic_record_control_number',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number_or_standard_number',
+        '3': 'materials_specified',
+        '4': 'relator_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_corporate_name_entry_element')
+
     return {
-        'authority_record_control_number': utils.force_list(
+        '__order__': tuple(order) if len(order) else None,
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -151,11 +234,48 @@ def series_added_entry_corporate_name(self, key, value):
 def series_added_entry_meeting_name(self, key, value):
     """Series Added Entry-Meeting Name."""
     indicator_map1 = {
-        "0": "Inverted name",
-        "1": "Jurisdiction name",
-        "2": "Name in direct order"}
+        '0': 'Inverted name',
+        '1': 'Jurisdiction name',
+        '2': 'Name in direct order',
+    }
+
+    field_map = {
+        'a': 'meeting_name_or_jurisdiction_name_as_entry_element',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting',
+        'e': 'subordinate_unit',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'j': 'relator_term',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_meeting',
+        'p': 'name_of_part_section_of_a_work',
+        'q': 'name_of_meeting_following_jurisdiction_name',
+        's': 'version',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'v': 'volume_sequential_designation',
+        'w': 'bibliographic_record_control_number',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number_or_standard_number',
+        '3': 'materials_specified',
+        '4': 'relator_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '7': 'control_subfield',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_meeting_name_entry_element')
+
     return {
-        'authority_record_control_number': utils.force_list(
+        '__order__': tuple(order) if len(order) else None,
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -222,7 +342,7 @@ def series_added_entry_uniform_title(self, key, value):
         "8": "Number of nonfiling characters",
         "9": "Number of nonfiling characters"}
     return {
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),

@@ -11,9 +11,9 @@
 
 import codecs
 import functools
-import json
 from collections import Counter, OrderedDict
 
+import simplejson as json
 import six
 
 from .errors import IgnoreKey
@@ -99,7 +99,7 @@ def dump(iterator):
 def map_order(field_map, value):
     """Ordered list of fields to be able to pass the order along.
 
-    .. note:: It returns a tuple as you may want to alter it based on the
+    .. note:: It returns a list as you may want to alter it based on the
        indicators. The final structure should use a tuple for immutability.
 
     Returns an empty list if no `__order__' is found in the value.
@@ -144,7 +144,7 @@ class GroupableOrderedDict(OrderedDict):
                             if c[key] == 0:
                                 tmp.append((key, v))
                             else:
-                                raise Exception("Order and values don't match"
+                                raise Exception("Order and values don't match "
                                                 "on key {0} at position {1}"
                                                 .format(key, c[key]))
                         else:

@@ -653,7 +653,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"

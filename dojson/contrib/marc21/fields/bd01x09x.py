@@ -62,7 +62,19 @@ def patent_control_information(self, key, value):
 @utils.filter_values
 def national_bibliography_number(self, key, value):
     """National Bibliography Number."""
+    field_map = {
+        'a': 'national_bibliography_number',
+        'q': 'qualifying_information',
+        'z': 'canceled_invalid_national_bibliography_number',
+        '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'national_bibliography_number': utils.force_list(
             value.get('a')
         ),
@@ -86,9 +98,24 @@ def national_bibliography_number(self, key, value):
 def national_bibliographic_agency_control_number(self, key, value):
     """National Bibliographic Agency Control Number."""
     indicator_map1 = {
-        "#": "Library and Archives Canada",
-        "7": "Source specified in subfield $2"}
+        '#': 'Library and Archives Canada',
+        '7': 'Source specified in subfield $2',
+    }
+
+    field_map = {
+        'a': 'record_control_number',
+        'z': 'canceled_invalid_control_number',
+        '2': 'source',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('national_bibliographic_agency')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'record_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -108,8 +135,27 @@ def copyright_or_legal_deposit_number(self, key, value):
     """Copyright or Legal Deposit Number."""
     indicator_map2 = {
         "#": "Copyright or legal deposit number",
-        "8": "No display constant generated"}
+        "8": "No display constant generated",
+    }
+
+    field_map = {
+        'a': 'copyright_or_legal_deposit_number',
+        'b': 'assigning_agency',
+        'd': 'date',
+        'i': 'display_text',
+        'z': 'canceled_invalid_copyright_or_legal',
+        '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in indicator_map2:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'copyright_or_legal_deposit_number': utils.force_list(
             value.get('a')
         ),
@@ -319,13 +365,32 @@ def publisher_number(self, key, value):
         "2": "Plate number",
         "3": "Other music number",
         "4": "Videorecording number",
-        "5": "Other publisher number"}
+        "5": "Other publisher number",
+    }
     indicator_map2 = {
         "0": "No note, no added entry",
         "1": "Note, added entry",
         "2": "Note, no added entry",
-        "3": "No note, added entry"}
+        "3": "No note, added entry",
+    }
+
+    field_map = {
+        'a': 'publisher_number',
+        'b': 'source',
+        'q': 'qualifying_information',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_publisher_number')
+    if key[4] in indicator_map2:
+        order.append('note_added_entry_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'publisher_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -426,13 +491,36 @@ def date_time_and_place_of_an_event(self, key, value):
         "#": "No date information ",
         "0": "Single date ",
         "1": "Multiple single dates ",
-        "2": "Range of dates "}
+        "2": "Range of dates ",
+    }
     indicator_map2 = {
         "#": "No information provided ",
         "0": "Capture ",
         "1": "Broadcast ",
-        "2": "Finding "}
+        "2": "Finding ",
+    }
+
+    field_map = {
+        'a': 'formatted_date_time',
+        'b': 'geographic_classification_area_code',
+        'c': 'geographic_classification_subarea_code',
+        'p': 'place_of_event',
+        '0': 'authority_record_control_number',
+        '2': 'source_of_term',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_date_in_subfield_a')
+    if key[4] in indicator_map2:
+        order.append('type_of_event')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'formatted_date_time': utils.force_list(
             value.get('a')
         ),
@@ -445,7 +533,7 @@ def date_time_and_place_of_an_event(self, key, value):
         'place_of_event': utils.force_list(
             value.get('p')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -469,12 +557,50 @@ def coded_cartographic_mathematical_data(self, key, value):
     indicator_map1 = {
         "0": "Scale indeterminable/No scale recorded",
         "1": "Single scale",
-        "3": "Range of scales"}
+        "3": "Range of scales",
+    }
     indicator_map2 = {
         "#": "Not applicable",
         "0": "Outer ring",
-        "1": "Exclusion ring"}
+        "1": "Exclusion ring",
+    }
+
+    field_map = {
+        'a': 'category_of_scale',
+        'b': 'constant_ratio_linear_horizontal_scale',
+        'c': 'constant_ratio_linear_vertical_scale',
+        'd': 'coordinates_westernmost_longitude',
+        'e': 'coordinates_easternmost_longitude',
+        'f': 'coordinates_northernmost_latitude',
+        'g': 'coordinates_southernmost_latitude',
+        'h': 'angular_scale',
+        'j': 'declination_northern_limit',
+        'k': 'declination_southern_limit',
+        'm': 'right_ascension_eastern_limit',
+        'n': 'right_ascension_western_limit',
+        'p': 'equinox',
+        'r': 'distance_from_earth',
+        's': 'g_ring_latitude',
+        't': 'g_ring_longitude',
+        'x': 'beginning_date',
+        'y': 'ending_date',
+        'z': 'name_of_extraterrestrial_body',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_scale')
+    if key[4] in indicator_map2:
+        order.append('type_of_ring')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
@@ -523,7 +649,17 @@ def coded_cartographic_mathematical_data(self, key, value):
 @utils.filter_values
 def system_control_number(self, key, value):
     """System Control Number."""
+    field_map = {
+        'a': 'system_control_number',
+        'z': 'canceled_invalid_control_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'system_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -554,7 +690,32 @@ def original_study_number_for_computer_data_files(self, key, value):
 @utils.filter_values
 def source_of_acquisition(self, key, value):
     """Source of Acquisition."""
+    indicator_map1 = {
+        'Not applicable/No information provided/Earliest': '#',
+        'Intervening': '2',
+        'Current/Latest': '3',
+    }
+
+    field_map = {
+        'a': 'stock_number',
+        'b': 'source_of_stock_number_acquisition',
+        'c': 'terms_of_availability',
+        'f': 'form_of_issue',
+        'g': 'additional_format_characteristics',
+        'n': 'note',
+        '3': 'materials_specified',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('source_of_acquisition_sequence')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'stock_number': value.get('a'),
         'terms_of_availability': utils.force_list(
             value.get('c')
@@ -573,6 +734,7 @@ def source_of_acquisition(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
+        'source_of_acquisition_sequence': indicator_map1.get(key[3], '_'),
     }
 
 
@@ -593,7 +755,19 @@ def record_content_licensor(self, key, value):
 @utils.filter_values
 def cataloging_source(self, key, value):
     """Cataloging Source."""
+    field_map = {
+        'a': 'original_cataloging_agency',
+        'b': 'language_of_cataloging',
+        'c': 'transcribing_agency',
+        'd': 'modifying_agency',
+        'e': 'description_conventions',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
     return {
+        '__order__': tuple(order) if len(order) else None,
         'original_cataloging_agency': value.get('a'),
         'transcribing_agency': value.get('c'),
         'language_of_cataloging': value.get('b'),
@@ -701,10 +875,23 @@ def geographic_area_code(self, key, value):
 
 
 @marc21.over('country_of_publishing_producing_entity_code', '^044..')
+@utils.for_each_value
 @utils.filter_values
 def country_of_publishing_producing_entity_code(self, key, value):
     """Country of Publishing/Producing Entity Code."""
+    field_map = {
+        'a': 'marc_country_code',
+        'b': 'local_subentity_code',
+        'c': 'iso_country_code',
+        '2': 'source_of_local_subentity_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'marc_country_code': utils.force_list(
             value.get('a')
         ),
@@ -756,7 +943,28 @@ def time_period_of_content(self, key, value):
 @utils.filter_values
 def special_coded_dates(self, key, value):
     """Special Coded Dates."""
+    field_map = {
+        'a': 'type_of_date_code',
+        'b': 'date_1_b.c._date',
+        'c': 'date_1_c.e._date',
+        'd': 'date_2_b.c._date',
+        'e': 'date_2_c.e._date',
+        'j': 'date_resource_modified',
+        'k': 'beginning_or_single_date_created',
+        'l': 'ending_date_created',
+        'm': 'beginning_of_date_valid',
+        'n': 'end_of_date_valid',
+        'o': 'single_or_starting_date_for_aggregated_content',
+        'p': 'ending_date_for_aggregated_content',
+        '2': 'source_of_date',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'type_of_date_code': value.get('a'),
         'date_1_ce_date': value.get('c'),
         'date_1_bc_date': value.get('b'),
@@ -782,7 +990,24 @@ def special_coded_dates(self, key, value):
 @utils.filter_values
 def form_of_musical_composition_code(self, key, value):
     """Form of Musical Composition Code."""
+    indicator_map2 = {
+        '#': 'MARC musical composition code',
+        '7': 'Source specified in subfield $2',
+    }
+
+    field_map = {
+        'form_of_musical_composition_code': 'a',
+        'source_of_code': '2',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] != '#' and key[4] in indicator_map2:
+        order.append('source_of_code')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'form_of_musical_composition_code': utils.force_list(
             value.get('a')
         ),
@@ -818,13 +1043,32 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
 def library_of_congress_call_number(self, key, value):
     """Library of Congress Call Number."""
     indicator_map1 = {
-        "#": "No information provided",
-        "0": "Item is in LC",
-        "1": "Item is not in LC"}
+        '#': 'No information provided',
+        '0': 'Item is in LC',
+        '1': 'Item is not in LC',
+    }
     indicator_map2 = {
-        "0": "Assigned by LC",
-        "4": "Assigned by agency other than LC"}
+        '0': 'Assigned by LC',
+        '4': 'Assigned by agency other than LC',
+    }
+
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('existence_in_lc_collection')
+    if key[4] in indicator_map2:
+        order.append('source_of_call_number')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')
         ),
@@ -859,7 +1103,28 @@ def library_of_congress_copy_issue_offprint_statement(self, key, value):
 @utils.filter_values
 def geographic_classification(self, key, value):
     """Geographic Classification."""
+    indicator_map1 = {
+        '#': 'Library of Congress Classification',
+        '1': 'U.S. Dept. of Defense Classification',
+        '7': 'Source specified in subfield $2',
+    }
+
+    field_map = {
+        'a': 'geographic_classification_area_code',
+        'b': 'geographic_classification_subarea_code',
+        'd': 'populated_place_name',
+        '2': 'code_source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('code_source')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'geographic_classification_area_code': value.get('a'),
         'geographic_classification_subarea_code': utils.force_list(
             value.get('b')
@@ -917,11 +1182,28 @@ def national_library_of_medicine_call_number(self, key, value):
     indicator_map1 = {
         "#": "No information provided",
         "0": "Item is in NLM",
-        "1": "Item is not in NLM"}
+        "1": "Item is not in NLM",
+    }
     indicator_map2 = {
         "0": "Assigned by NLM",
-        "4": "Assigned by agency other than NLM"}
+        "4": "Assigned by agency other than NLM",
+    }
+
+    field_map = {
+        'a': 'classification_number_r',
+        'b': 'item_number',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('existence_in_nlm_collection')
+    if key[4] in indicator_map2:
+        order.append('source_of_call_number')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number_r': utils.force_list(
             value.get('a')
         ),
@@ -970,7 +1252,19 @@ def character_sets_present(self, key, value):
 def national_agricultural_library_call_number(self, key, value):
     """National Agricultural Library Call Number."""
     indicator_map1 = {"0": "Item is in NAL", "1": "Item is not in NAL"}
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        '8': 'field_link_and_sequence_number_r',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('existence_in_nal_collection')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')
         ),
@@ -1195,16 +1489,36 @@ def synthesized_classification_number_components(self, key, value):
 @utils.filter_values
 def government_document_classification_number(self, key, value):
     """Government Document Classification Number."""
+    indicator_map1 = {
+        '#': 'Source specified in subfield $2',
+        '0': 'Superintendent of Documents Classification System',
+        '1': 'Government of Canada Publications: Outline of Classification',
+    }
+
+    field_map = {
+        'a': 'classification_number',
+        'z': 'canceled_invalid_classification_number',
+        '2': 'number_source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] != '#' and key[3] in indicator_map1:
+        order.append('number_source')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'number_source': value.get('2'),
         'canceled_invalid_classification_number': utils.force_list(
             value.get('z')
         ),
         'linkage': value.get('6'),
+        'number_source': value.get('2') if key[3] == '#' else indicator_map1.get(key[3]),
     }
 
 

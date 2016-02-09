@@ -496,8 +496,29 @@ def reverse_study_program_information_note(self, key, value):
     """Reverse - Study Program Information Note."""
     indicator_map1 = {
         "No display constant generated": "8",
-        "Reading program": "0"}
+        "Reading program": "0",
+    }
+
+    field_map = {
+        'program_name': 'a',
+        'interest_level': 'b',
+        'reading_level': 'c',
+        'title_point_value': 'd',
+        'display_text': 'i',
+        'nonpublic_note': 'x',
+        'public_note': 'z',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('program_name'),
         'x': utils.reverse_force_list(
             value.get('nonpublic_note')),
@@ -523,7 +544,21 @@ def reverse_study_program_information_note(self, key, value):
 @utils.filter_values
 def reverse_additional_physical_form_available_note(self, key, value):
     """Reverse - Additional Physical Form Available Note."""
+    field_map = {
+        'additional_physical_form_available_note': 'a',
+        'availability_source': 'b',
+        'availability_conditions': 'c',
+        'order_number': 'd',
+        'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('additional_physical_form_available_note'),
         'c': value.get('availability_conditions'),
         'b': value.get('availability_source'),
@@ -546,7 +581,26 @@ def reverse_additional_physical_form_available_note(self, key, value):
 @utils.filter_values
 def reverse_reproduction_note(self, key, value):
     """Reverse - Reproduction Note."""
+    field_map = {
+        'type_of_reproduction': 'a',
+        'place_of_reproduction': 'b',
+        'agency_responsible_for_reproduction': 'c',
+        'date_of_reproduction': 'd',
+        'physical_description_of_reproduction': 'e',
+        'series_statement_of_reproduction': 'f',
+        'dates_and_or_sequential_designation_of_issues_reproduced': 'm',
+        'note_about_reproduction': 'n',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'fixed_length_data_elements_of_reproduction': '7',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('type_of_reproduction'),
         'c': utils.reverse_force_list(
             value.get('agency_responsible_for_reproduction')
@@ -583,7 +637,30 @@ def reverse_reproduction_note(self, key, value):
 @utils.filter_values
 def reverse_original_version_note(self, key, value):
     """Reverse - Original Version Note."""
+    field_map = {
+        'main_entry_of_original': 'a',
+        'edition_statement_of_original': 'b',
+        'publication_distribution_of_original': 'c',
+        'physical_description_of_original': 'e',
+        'series_statement_of_original': 'f',
+        'key_title_of_original': 'k',
+        'location_of_original': 'l',
+        'material_specific_details': 'm',
+        'note_about_original': 'n',
+        'other_resource_identifier': 'o',
+        'introductory_phrase': 'p',
+        'title_statement_of_original': 't',
+        'international_standard_serial_number': 'x',
+        'international_standard_book_number': 'z',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('main_entry_of_original'),
         'x': utils.reverse_force_list(
             value.get('international_standard_serial_number')
@@ -653,7 +730,23 @@ def reverse_location_of_originals_duplicates_note(self, key, value):
 @utils.filter_values
 def reverse_funding_information_note(self, key, value):
     """Reverse - Funding Information Note."""
+    field_map = {
+        'text_of_note': 'a',
+        'contract_number': 'b',
+        'grant_number': 'c',
+        'undifferentiated_number': 'd',
+        'program_element_number': 'e',
+        'project_number': 'f',
+        'task_number': 'g',
+        'work_unit_number': 'h',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('text_of_note'),
         'c': utils.reverse_force_list(
             value.get('grant_number')
@@ -941,7 +1034,16 @@ def reverse_former_title_complexity_note(self, key, value):
 @utils.filter_values
 def reverse_issuing_body_note(self, key, value):
     """Reverse - Issuing Body Note."""
+    field_map = {
+        'issuing_body_note': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('issuing_body_note'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -1345,13 +1447,32 @@ def reverse_awards_note(self, key, value):
 @utils.filter_values
 def reverse_source_of_description_note(self, key, value):
     """Reverse - Source of Description Note."""
+    indicator_map1 = {
+        'No information provided': '#',
+        'Source of description': '0',
+        'Latest issue consulted': '1',
+    }
+
+    field_map = {
+        'source_of_description_note': 'a',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('source_of_description_note'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
         '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
-        '$ind1': '_',
+        '$ind1': indicator_map1.get(value.get('display_constant_controller'), '_'),
         '$ind2': '_',
     }

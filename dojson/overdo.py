@@ -126,15 +126,24 @@ class Overdo(object):
         handlers = {IgnoreKey: None}
         handlers.update(exception_handlers or {})
 
+        def clean_missing(exc, output, key, value):
+            order = output['__order__']
+            del order[order.index(key)]
+
         if ignore_missing:
-            handlers.setdefault(MissingRule, None)
+            handlers.setdefault(MissingRule, clean_missing)
 
         output = {}
 
         if self.index is None:
             self.build()
 
-        for key, value in iteritems(blob):
+        if isinstance(blob, GroupableOrderedDict):
+            items = blob.iteritems(repeated=True)
+        else:
+            items = iteritems(blob)
+
+        for key, value in items:
             try:
                 result = self.index.query(key)
                 if not result:

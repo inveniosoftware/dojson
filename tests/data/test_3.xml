@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <controlfield tag="001">404855</controlfield>
+    <controlfield tag="005">20151017082215.0</controlfield>
+    <controlfield tag="008">750228c19509999dcuar1\\\\\\\f0\\\\0eng\\</controlfield>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">47032975 //r512</subfield>
+    </datafield>
+    <datafield tag="022" ind1="0" ind2=" ">
+      <subfield code="a">0193-1180</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">.b10375697</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(OCoLC)1193149</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC</subfield>
+      <subfield code="c">UDI</subfield>
+      <subfield code="d">COO</subfield>
+      <subfield code="d">DLC</subfield>
+      <subfield code="d">NSD</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">m.c.</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">NST</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">OCL</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">AIP</subfield>
+      <subfield code="d">HUL</subfield>
+      <subfield code="d">NSD</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">m/c</subfield>
+      <subfield code="d">OCL</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">NST</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">AGL</subfield>
+      <subfield code="d">GPO</subfield>
+      <subfield code="d">NST</subfield>
+    </datafield>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">n-us---</subfield>
+    </datafield>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">HC106.5</subfield>
+      <subfield code="b">.A272</subfield>
+    </datafield>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">Pr 40.9:</subfield>
+    </datafield>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">Pr 41.9:</subfield>
+    </datafield>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">President</subfield>
+    </datafield>
+    <datafield tag="210" ind1="0" ind2=" ">
+      <subfield code="a">Econ. rep. Pres. transm. Congr</subfield>
+    </datafield>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Economic report of the President transmitted to the Congress</subfield>
+    </datafield>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Economic report of the President transmitted to the Congress</subfield>
+    </datafield>
+    <datafield tag="250" ind1=" " ind2=" ">
+      <subfield code="a">[Dept. ed.]</subfield>
+    </datafield>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">Washington :</subfield>
+      <subfield code="b">G.P.O. :</subfield>
+      <subfield code="b">For sale by Supt. of Docs., U.S. G.P.O.,</subfield>
+      <subfield code="c">1950-</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">v. :</subfield>
+      <subfield code="b">ill ;</subfield>
+      <subfield code="c">24 cm</subfield>
+    </datafield>
+    <datafield tag="310" ind1=" " ind2=" ">
+      <subfield code="a">Annual</subfield>
+    </datafield>
+    <datafield tag="362" ind1="0" ind2=" ">
+      <subfield code="a">Jan. 6, 1950-</subfield>
+    </datafield>
+    <datafield tag="500" ind1=" " ind2=" ">
+      <subfield code="a">Reports for 1950-1953 include: The annual economic review by the Council of Economic Advisers (July issue has title: The economic situation at midyear); 1954-   include: The annual report of the Council of Economic Advisers (title varies slightly)</subfield>
+    </datafield>
+    <datafield tag="510" ind1="0" ind2=" ">
+      <subfield code="a">Predicasts</subfield>
+    </datafield>
+    <datafield tag="525" ind1=" " ind2=" ">
+      <subfield code="a">Vols. for 1950-&lt;1952&gt; accompanied by a supplementary report, dated July, with title: The midyear economic report</subfield>
+    </datafield>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">United States</subfield>
+      <subfield code="x">Economic policy</subfield>
+      <subfield code="x">Periodicals</subfield>
+    </datafield>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">United States</subfield>
+      <subfield code="x">Economic conditions</subfield>
+      <subfield code="y">1945-</subfield>
+      <subfield code="x">Periodicals</subfield>
+    </datafield>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Council of Economic Advisers (U.S.).</subfield>
+      <subfield code="t">Annual economic review</subfield>
+    </datafield>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Council of Economic Advisers (U.S.).</subfield>
+      <subfield code="t">Midyear economic report</subfield>
+    </datafield>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Council of Economic Advisers (U.S.).</subfield>
+      <subfield code="t">Annual report of the Council of Economic Advisers</subfield>
+    </datafield>
+    <datafield tag="775" ind1="1" ind2=" ">
+      <subfield code="a">United States.  President.</subfield>
+      <subfield code="t">Economic report of the President transmitted to the Congress (Doc. ed.)</subfield>
+      <subfield code="w">(DLC)sn 87042042</subfield>
+      <subfield code="w">(OCoLC)8198980</subfield>
+    </datafield>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="a">United States.  President.</subfield>
+      <subfield code="t">Economic report of the President to the Congress</subfield>
+    </datafield>
+  </record>
+</collection>

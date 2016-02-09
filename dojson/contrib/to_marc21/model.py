@@ -103,7 +103,7 @@ class Underdo(Overdo):
                 else:
                     raise
 
-        return GroupableOrderedDict(sorted(output, key=lambda i: i[0][:3]))
+        return GroupableOrderedDict(output)
 
 
 to_marc21 = Underdo(entry_point_group='dojson.contrib.to_marc21')

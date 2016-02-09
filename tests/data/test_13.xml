@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="501" ind1=" " ind2=" ">
+      <subfield code="a">
+With: On the action of gases and vapours on radiant heat / J. Tyndall -- On Bunsen and Kirchhoff's spectrum observations / H.E. Roscoe -- On the telescopic appearance of the Planet Mars / J. Phillips -- Address delivered at the anniversary meeting of the Geological Society of London on the 18th of February, 1859 / J. Phillips -- Anniversary address delivered before the Anthropological Society of London, January 5th, 1864 / J. Hunt
+</subfield>
+    </datafield>
+    <datafield tag="507" ind1=" " ind2=" ">
+      <subfield code="a">Scale ca. 1:80,000</subfield>
+    </datafield>
+    <datafield tag="511" ind1=" " ind2=" ">
+      <subfield code="a">
+Roumiana Bareva, soprano ; Pavel Kourchoumov, tenor ; Stoyan Popov, baritone ; Choir "Morski Zvuci", Varna ; Bulgarian National Radio Symphony Orchestra ; Vasil Stefanov, conductor
+</subfield>
+    </datafield>
+    <datafield tag="513" ind1=" " ind2=" ">
+      <subfield code="a">Annual directory-almanac for trade and industry</subfield>
+    </datafield>
+    <datafield tag="515" ind1=" " ind2=" ">
+      <subfield code="a">
+Vol. 2, no. 4, spring 1975, incorrectly numbered v. 2, no. 3, repeating the numbering of the MARHO newsletter
+</subfield>
+    </datafield>
+    <datafield tag="516" ind1="8" ind2=" ">
+      <subfield code="a">Electronic serial in ASCII and HTML formats</subfield>
+    </datafield>
+    <datafield tag="521" ind1=" " ind2=" ">
+      <subfield code="a">High school and college physics students</subfield>
+    </datafield>
+    <datafield tag="522" ind1=" " ind2=" ">
+      <subfield code="a">
+Covers the National Petroleum Reserve and areas adjacent, including marine areas northwest in the Arctic Ocean
+</subfield>
+    </datafield>
+    <datafield tag="524" ind1=" " ind2=" ">
+      <subfield code="a">
+Preferred Citation: [Identification of item], Robert W. Oliver Papers, 10109-MS, Caltech Archives, California Institute of Technology
+</subfield>
+    </datafield>
+    <datafield tag="526" ind1="0" ind2=" ">
+      <subfield code="a">Accelerated Reader/Renaissance Learning</subfield>
+      <subfield code="b">MG</subfield>
+      <subfield code="c">4.1</subfield>
+      <subfield code="d">12</subfield>
+    </datafield>
+    <datafield tag="530" ind1=" " ind2=" ">
+      <subfield code="a">
+Video lectures from 1999 and thereafter are available online at
+</subfield>
+      <subfield code="u">
+http://nobelprize.org/nobel_prizes/medicine/video_lectures.html
+</subfield>
+    </datafield>
+    <datafield tag="530" ind1=" " ind2=" ">
+      <subfield code="a">
+Also available via World Wide Web through the Kluwer web site;
+</subfield>
+      <subfield code="b">
+and from OCLC FirstSearch Electronic Collections Online;
+</subfield>
+      <subfield code="c">
+Subscription required for access to abstracts and full text
+</subfield>
+    </datafield>
+    <datafield tag="533" ind1=" " ind2=" ">
+      <subfield code="a">Electronic text and image data.</subfield>
+      <subfield code="b">Ann Arbor, Mich. :</subfield>
+      <subfield code="c">
+University of Michigan, Scholarly Publishing Office,
+</subfield>
+      <subfield code="d">2003.</subfield>
+      <subfield code="e">
+Includes both TIFF files and keyword searchable text.
+</subfield>
+      <subfield code="f">([ACLS Humanities E-Book])</subfield>
+      <subfield code="n">Mode of access: Intranet.</subfield>
+      <subfield code="n">
+This volume is made possible by a grant from the Andrew W. Mellon Foundation
+</subfield>
+    </datafield>
+    <datafield tag="534" ind1=" " ind2=" ">
+      <subfield code="p">Electronic reproduction of:</subfield>
+      <subfield code="t">
+Kinetische Konstanten von Radikalreaktionen in Flüssigkeiten.
+</subfield>
+      <subfield code="c">Berlin : Springer, 1983-1985.</subfield>
+      <subfield code="e">5 v. :</subfield>
+      <subfield code="b">ill. ; 28 cm.</subfield>
+      <subfield code="n">
+Contents: Teilband a. Kohlenstoffe-Radikale 1 -- Teilband b. Kohlenstoffzentrierte-Radikale 2 -- Teilband c. Radikale mit N, S, P, und anderen Heteroatomen als Zentralatom : Nitroxyradikale -- Teilband d. Oxyl-, Peroxyl- und verwandte Radikale -- Teilband e. Protonen- und Elektronenaustauschreaktionen : Biradikale.
+</subfield>
+    </datafield>
+    <datafield tag="534" ind1=" " ind2=" ">
+      <subfield code="c">Berkeley : University of California Press, c2003.</subfield>
+      <subfield code="f">(California world history library ; 1)</subfield>
+    </datafield>
+    <datafield tag="534" ind1=" " ind2=" ">
+      <subfield code="p">Reprint. Originally published:</subfield>
+      <subfield code="c">New York : Springer-Verlag, c1982,</subfield>
+      <subfield code="z">9781468493290</subfield>
+    </datafield>
+    <datafield tag="534" ind1=" " ind2=" ">
+      <subfield code="a">Rich, Adrienne,</subfield>
+      <subfield code="c">New York: W. W. Norton &amp; Company, 1995</subfield>
+    </datafield>
+    <datafield tag="535" ind1="1" ind2=" ">
+      <subfield code="a">Original papers in the Library of Congress</subfield>
+    </datafield>
+    <datafield tag="538" ind1=" " ind2=" ">
+      <subfield code="a">Mode of access: World Wide Web</subfield>
+    </datafield>
+    <datafield tag="544" ind1=" " ind2=" ">
+      <subfield code="a">
+Related Collections: Papers of Robert A. Millikan; Papers of Theodore von Karman; Caltech Historical Files (GALCIT); Wind Tunnel Records
+</subfield>
+    </datafield>
+    <datafield tag="545" ind1=" " ind2=" ">
+      <subfield code="a">
+Includes material pertaining to fictional work written under pseudonym John Taine.
+</subfield>
+    </datafield>
+    <datafield tag="546" ind1=" " ind2=" ">
+      <subfield code="a">Contributions in English, French or German</subfield>
+    </datafield>
+    <datafield tag="547" ind1=" " ind2=" ">
+      <subfield code="a">
+Ser. 1 issued under title: The observation of variable stars
+</subfield>
+    </datafield>
+    <datafield tag="550" ind1=" " ind2=" ">
+      <subfield code="a">
+Vols. [1]- prepared by the editors of: Chemical engineering progress
+</subfield>
+    </datafield>
+    <datafield tag="556" ind1="8" ind2=" ">
+      <subfield code="a">Accompanied by a user's manual</subfield>
+    </datafield>
+    <datafield tag="561" ind1="1" ind2=" ">
+      <subfield code="a">From the collection of Allen Acosta.</subfield>
+    </datafield>
+    <datafield tag="567" ind1=" " ind2=" ">
+      <subfield code="a">
+Samples from 104 1⁰ x 2⁰ or 1⁰ x 3⁰ quadrangles in Alaska and 319 1⁰ x 2⁰ quadrangles in the conterminous United States
+</subfield>
+    </datafield>
+    <datafield tag="580" ind1=" " ind2=" ">
+      <subfield code="a">
+Issued as a supplement to: Australian journal of zoology
+</subfield>
+    </datafield>
+    <datafield tag="585" ind1=" " ind2=" ">
+      <subfield code="a">National Book Award Winner</subfield>
+    </datafield>
+    <datafield tag="586" ind1=" " ind2=" ">
+      <subfield code="a">
+Society of American Historians Francis Parkman Prize, 1977
+        </subfield>
+    </datafield>
+    <datafield tag="588" ind1=" " ind2=" ">
+      <subfield code="a">
+To be issued in Hoboken, New Jersey by John Wiley &amp; Sons beginning with volume 94, number 1 2013.
+        </subfield>
+      <subfield code="5">DLC</subfield>
+    </datafield>
+  </record>
+</collection>

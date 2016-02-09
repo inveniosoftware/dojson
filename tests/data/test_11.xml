@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="321" ind1=" " ind2=" ">
+      <subfield code="a">Monthly,</subfield>
+    </datafield>
+    <datafield tag="321" ind1=" " ind2=" ">
+      <subfield code="a">Bimonthly,</subfield>
+      <subfield code="b">2003-</subfield>
+    </datafield>
+    <datafield tag="337" ind1=" " ind2=" ">
+      <subfield code="3">book</subfield>
+      <subfield code="a">unmediated</subfield>
+      <subfield code="b">n</subfield>
+      <subfield code="2">rdamedia</subfield>
+    </datafield>
+    <datafield tag="338" ind1=" " ind2=" ">
+      <subfield code="a">volume</subfield>
+      <subfield code="b">nc</subfield>
+      <subfield code="2">rdacarrier</subfield>
+      <subfield code="3">book</subfield>
+    </datafield>
+    <datafield tag="344" ind1=" " ind2=" ">
+      <subfield code="a">digital</subfield>
+      <subfield code="b">optical</subfield>
+      <subfield code="h">Dolby digital 5.1</subfield>
+      <subfield code="2">rda</subfield>
+    </datafield>
+    <datafield tag="344" ind1=" " ind2=" ">
+      <subfield code="a">digital</subfield>
+      <subfield code="g">stereo</subfield>
+      <subfield code="2">rda</subfield>
+    </datafield>
+    <datafield tag="351" ind1=" " ind2=" ">
+      <subfield code="3">abstracts ;</subfield>
+      <subfield code="a">organized by topic on program ;</subfield>
+      <subfield code="b">arranged alphabetically by author</subfield>
+    </datafield>
+    <datafield tag="363" ind1=" " ind2=" ">
+      <subfield code="a">Vol. 17, no. 1(1968)- .</subfield>
+    </datafield>
+    <datafield tag="380" ind1=" " ind2=" ">
+      <subfield code="a">Textbooks</subfield>
+      <subfield code="2">lcsh</subfield>
+    </datafield>
+  </record>
+</collection>

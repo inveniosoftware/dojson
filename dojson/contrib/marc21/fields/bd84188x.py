@@ -49,8 +49,46 @@ def location(self, key, value):
         "#": "No information provided",
         "0": "Not enumeration",
         "1": "Primary enumeration",
-        "2": "Alternative enumeration"}
+        "2": "Alternative enumeration"
+    }
+
+    field_map = {
+        'a': 'location',
+        'b': 'sublocation_or_collection',
+        'c': 'shelving_location',
+        'd': 'former_shelving_location',
+        'e': 'address',
+        'f': 'coded_location_qualifier',
+        'g': 'non_coded_location_qualifier',
+        'h': 'classification_part',
+        'i': 'item_part',
+        'j': 'shelving_control_number',
+        'k': 'call_number_prefix',
+        'l': 'shelving_form_of_title',
+        'm': 'call_number_suffix',
+        'n': 'country_code',
+        'p': 'piece_designation',
+        'q': 'piece_physical_condition',
+        's': 'copyright_article_fee_code',
+        't': 'copy_number',
+        'u': 'uniform_resource_identifier',
+        'x': 'nonpublic_note',
+        'z': 'public_note',
+        '2': 'source_of_classification_or_shelving_scheme',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('shelving_scheme')
+    if key[4] in indicator_map2:
+        order.append('shelving_order')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'materials_specified': value.get('3'),
         'source_of_classification_or_shelving_scheme': value.get('2'),
         'linkage': value.get('6'),
@@ -164,6 +202,7 @@ def electronic_location_and_access(self, key, value):
         order.append('relationship')
 
     return {
+        '__order__': tuple(order) if len(order) else None,
         'materials_specified': value.get('3'),
         'access_method':
         value.get('2') if key[3] == '7' else indicator_map1.get(key[3]),
@@ -226,7 +265,6 @@ def electronic_location_and_access(self, key, value):
             value.get('z')
         ),
         'relationship': indicator_map2.get(key[4]),
-        '__order__': tuple(order) if len(order) else None,
     }
 
 

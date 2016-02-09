@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <controlfield tag="001">748306</controlfield>
+    <controlfield tag="005">20150923234828.0</controlfield>
+    <controlfield tag="006">m\\\\\o\\d\\\\\\\\</controlfield>
+    <controlfield tag="007">cr\cn|</controlfield>
+    <controlfield tag="008">110809s2011\\\\enk\\\\\ob\\\\001\0\eng\d</controlfield>
+    <datafield tag="016" ind1="7" ind2=" ">
+      <subfield code="a">015799976</subfield>
+      <subfield code="2">Uk</subfield>
+    </datafield>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">9781849733472 (electronic bk.)</subfield>
+    </datafield>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">1849733473 (electronic bk.)</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(OCoLC)746035477</subfield>
+    </datafield>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">T3517</subfield>
+      <subfield code="b">Royal Society of Chemistry</subfield>
+      <subfield code="n">http://www.rsc.org/spr</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">UKRSC</subfield>
+      <subfield code="b">eng</subfield>
+      <subfield code="c">UKRSC</subfield>
+      <subfield code="d">UKMGB</subfield>
+      <subfield code="d">OCLCQ</subfield>
+      <subfield code="d">N$T</subfield>
+      <subfield code="d">OCLCF</subfield>
+    </datafield>
+    <datafield tag="050" ind1=" " ind2="4">
+      <subfield code="a">TP248.25.M46</subfield>
+      <subfield code="b">M46 2011</subfield>
+    </datafield>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Membrane engineering for the treatment of gases.</subfield>
+      <subfield code="n">Volume 1,</subfield>
+      <subfield code="p">Gas-separation problems with membranes</subfield>
+      <subfield code="h">[electronic resource] /</subfield>
+      <subfield code="c">editors: Enrico Drioli, Giuseppe Barbieri</subfield>
+    </datafield>
+    <datafield tag="246" ind1="3" ind2="0">
+      <subfield code="a">Gas-separation problems with membranes</subfield>
+    </datafield>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">Cambridge :</subfield>
+      <subfield code="b">Royal Society of Chemistry,</subfield>
+      <subfield code="c">2011</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">1 online resource (xix, 297 p.)</subfield>
+    </datafield>
+    <datafield tag="504" ind1=" " ind2=" ">
+      <subfield code="a">Includes bibliographical references and index</subfield>
+    </datafield>
+    <datafield tag="520" ind1=" " ind2=" ">
+      <subfield code="a">Membranes already have important applications in artificial organs, the processing of biotechnological products, food manufacture, waste water treatment, and seawater desalination. Their uses in gaseous mixture separations are, however, far from achieving their full potential. Separation of air components, natural gas dehumidification and sweeting, separation and recovery of CO2 from biogas, and H2 from refinery gases are all examples of current industrial applications. The use of membranes for reducing the greenhouse effect and improving energy efficiency has also been suggested. New process intensification strategies in the petrochemical industry have opened up another growth area for gas separation membrane systems and membrane reactors. This two volume set presents the state-of-the-art in membrane engineering for the separation of gases. It addresses future developments in carbon capture and utilization, H2 production and purification, and O2/N2 separation. Topics covered include the: applications of membrane gas separation in the petrochemical industry; implementation of membrane processes for post-combustion capture; commercial applications of membranes in gas separations; simulation of membrane systems for CO2 capture; design and development of membrane reactors for industrial applications; Pd-based membranes in hydrogen production; modelling and simulation of membrane reactors for hydrogen production and purification; novel hybrid membrane/pressure swing adsorption process for gas separation; molecular dynamics as a new tool for membrane design, and physical aging of membranes for gas separations.Volume 1 focuses predominantly on problems relating to membranes</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Gas separation membranes</subfield>
+    </datafield>
+    <datafield tag="655" ind1=" " ind2="0">
+      <subfield code="a">Electronic books</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Drioli, E</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Barbieri, Giuseppe</subfield>
+    </datafield>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Royal Society of Chemistry eBooks</subfield>
+    </datafield>
+    <datafield tag="856" ind1="4" ind2="0">
+      <subfield code="u">https://clsproxy.library.caltech.edu/login?url=http://dx.doi.org/10.1039/9781849733472</subfield>
+      <subfield code="z">&lt;a href="https://clsproxy.library.caltech.edu/login?url=http://dx.doi.org/10.1039/9781849733472" TARGET="_blank"&gt;&lt;img src="http://sfx.caltech.edu:8088/images/sfx.gif" alt="Caltech Connect"&gt;&lt;/a&gt;</subfield>
+    </datafield>
+  </record>
+</collection>

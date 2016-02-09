@@ -159,10 +159,27 @@ def reverse_series_statement_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_series_statement_added_entry_title(self, key, value):
     """Reverse - Series Statement/Added Entry-Title."""
-    indicator_map2 = {
-        "No nonfiling characters": "0",
-        "Number of nonfiling characters": "8"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    field_map = {
+        'title': 'a',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'volume_sequential_designation': 'v',
+        'bibliographic_record_control_number': 'w',
+        'international_standard_serial_number': 'x',
+        'authority_record_control_number': '0',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('title'),
         'x': value.get('international_standard_serial_number'),
         'p': utils.reverse_force_list(
@@ -173,7 +190,7 @@ def reverse_series_statement_added_entry_title(self, key, value):
             value.get('number_of_part_section_of_a_work')
         ),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
+            value.get('authority_record_control_number_or_standard_number')
         ),
         'w': utils.reverse_force_list(
             value.get('bibliographic_record_control_number')
@@ -183,7 +200,7 @@ def reverse_series_statement_added_entry_title(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
-        '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
+        '$ind2': value.get('nonfiling_characters', '_'),
     }
 
 

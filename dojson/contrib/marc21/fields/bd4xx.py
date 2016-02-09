@@ -166,18 +166,27 @@ def series_statement_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def series_statement_added_entry_title(self, key, value):
     """Series Statement/Added Entry-Title."""
-    indicator_map2 = {
-        "0": "No nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    field_map = {
+        'a': 'title',
+        'n': 'number_of_part_section_of_a_work',
+        'p': 'name_of_part_section_of_a_work',
+        'v': 'volume_sequential_designation',
+        'w': 'bibliographic_record_control_number',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'international_standard_serial_number': value.get('x'),
         'name_of_part_section_of_a_work': utils.force_list(
@@ -187,7 +196,7 @@ def series_statement_added_entry_title(self, key, value):
         'number_of_part_section_of_a_work': utils.force_list(
             value.get('n')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'bibliographic_record_control_number': utils.force_list(
@@ -197,7 +206,7 @@ def series_statement_added_entry_title(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'nonfiling_characters': indicator_map2.get(key[4]),
+        'nonfiling_characters': key[4],
     }
 
 

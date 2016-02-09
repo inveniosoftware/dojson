@@ -22,7 +22,7 @@ def added_entry_personal_name(self, key, value):
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
     field_map = {
-        '0': 'authority_record_control_number',
+        '0': 'authority_record_control_number_or_standard_number',
         '3': 'materials_specified',
         '4': 'relator_code',
         '5': 'institution_to_which_field_applies',
@@ -57,7 +57,7 @@ def added_entry_personal_name(self, key, value):
         order.append('type_of_added_entry')
 
     return {
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -123,8 +123,46 @@ def added_entry_corporate_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
+
+    field_map = {
+        'a': 'corporate_name_or_jurisdiction_name_as_entry_element',
+        'b': 'subordinate_unit',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting_or_treaty_signing',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_meeting',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number_or_standard_number',
+        '3': 'materials_specified',
+        '4': 'relator_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_corporate_name_entry_element')
+    if key[4] in indicator_map2:
+        order.append('type_of_added_entry')
+
     return {
-        'authority_record_control_number': utils.force_list(
+        '__order__': tuple(order) if len(order) else None,
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -187,8 +225,44 @@ def added_entry_meeting_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
+
+    field_map = {
+        'a': 'meeting_name_or_jurisdiction_name_as_entry_element',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting',
+        'e': 'subordinate_unit',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'j': 'relator_term',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_meeting',
+        'p': 'name_of_part_section_of_a_work',
+        'q': 'name_of_meeting_following_jurisdiction_name_entry_element',
+        's': 'version',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number_or_standard_number',
+        '3': 'materials_specified',
+        '4': 'relator_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_meeting_name_entry_element')
+    if key[4] in indicator_map2:
+        order.append('type_of_added_entry')
+
     return {
-        'authority_record_control_number': utils.force_list(
+        '__order__': tuple(order) if len(order) else None,
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -241,7 +315,22 @@ def added_entry_meeting_name(self, key, value):
 def added_entry_uncontrolled_name(self, key, value):
     """Added Entry-Uncontrolled Name."""
     indicator_map1 = {"#": "Not specified", "1": "Personal", "2": "Other"}
+
+    field_map = {
+        'a': 'name',
+        'e': 'relator_term',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_name')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'name': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -262,19 +351,45 @@ def added_entry_uncontrolled_name(self, key, value):
 @utils.filter_values
 def added_entry_uniform_title(self, key, value):
     """Added Entry-Uniform Title."""
-    indicator_map1 = {
-        "0": "Number of nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
-    indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+    indicator_map2 = {
+        '#': 'No information provided',
+        '2': 'Analytical entry',
+    }
+
+    field_map = {
+        'a': 'uniform_title',
+        'd': 'date_of_treaty_signing',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number_or_standard_number',
+        '3': 'materials_specified',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+    if key[4] in indicator_map2:
+        order.append('type_of_added_entry')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'international_standard_serial_number': value.get('x'),
         'name_of_part_section_of_a_work': utils.force_list(
@@ -300,7 +415,7 @@ def added_entry_uniform_title(self, key, value):
         'number_of_part_section_of_a_work': utils.force_list(
             value.get('n')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -312,30 +427,40 @@ def added_entry_uniform_title(self, key, value):
             value.get('8')
         ),
         'version': value.get('s'),
-        'nonfiling_characters': indicator_map1.get(key[3]),
+        'nonfiling_characters': key[3],
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
 
 @marc21.over(
-    'added_entry_uncontrolled_related_analytical_title', '^740[_1032547698][_2]')
+    'added_entry_uncontrolled_related_analytical_title',
+    '^740[_1032547698][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uncontrolled_related_analytical_title(self, key, value):
     """Added Entry-Uncontrolled Related/Analytical Title."""
-    indicator_map1 = {
-        "0": "No nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
     indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
+
+    field_map = {
+        'a': 'uncontrolled_related_analytical_title',
+        'h': 'medium',
+        'n': 'number_of_part_section_of_a_work',
+        'p': 'name_of_part_section_of_a_work',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+    if key[4] in indicator_map2:
+        order.append('type_of_added_entry')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'uncontrolled_related_analytical_title': value.get('a'),
         'medium': value.get('h'),
         'number_of_part_section_of_a_work': utils.force_list(
@@ -349,7 +474,7 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'nonfiling_characters': indicator_map1.get(key[3]),
+        'nonfiling_characters': key[3],
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
@@ -359,12 +484,26 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
 @utils.filter_values
 def added_entry_geographic_name(self, key, value):
     """Added Entry-Geographic Name."""
+    field_map = {
+        'a': 'geographic_name',
+        'e': 'relator_term',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '3': 'materials_specified',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'geographic_name': value.get('a'),
         'relator_term': utils.force_list(
             value.get('e')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'materials_specified': value.get('3'),
@@ -384,7 +523,24 @@ def added_entry_geographic_name(self, key, value):
 @utils.filter_values
 def added_entry_hierarchical_place_name(self, key, value):
     """Added Entry-Hierarchical Place Name."""
+    field_map = {
+        'a': 'country_or_larger_entity',
+        'b': 'first_order_political_jurisdiction',
+        'c': 'intermediate_political_jurisdiction',
+        'd': 'city',
+        'f': 'city_subsection',
+        'g': 'other_nonjurisdictional_geographic_region_and_feature',
+        'h': 'extraterrestrial_area',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'country_or_larger_entity': utils.force_list(
             value.get('a')
         ),
@@ -402,7 +558,7 @@ def added_entry_hierarchical_place_name(self, key, value):
         'extraterrestrial_area': utils.force_list(
             value.get('h')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'source_of_heading_or_term': value.get('2'),
@@ -418,7 +574,18 @@ def added_entry_hierarchical_place_name(self, key, value):
 @utils.filter_values
 def system_details_access_to_computer_files(self, key, value):
     """System Details Access to Computer Files."""
+    field_map = {
+        'a': 'make_and_model_of_machine',
+        'b': 'programming_language',
+        'c': 'operating_system',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'make_and_model_of_machine': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -434,7 +601,22 @@ def system_details_access_to_computer_files(self, key, value):
 @utils.filter_values
 def added_entry_taxonomic_identification(self, key, value):
     """Added Entry-Taxonomic Identification."""
+    field_map = {
+        'a': 'taxonomic_name',
+        'c': 'taxonomic_category',
+        'd': 'common_or_alternative_name',
+        'x': 'non_public_note',
+        'z': 'public_note',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_taxonomic_identification',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'taxonomic_name': utils.force_list(
             value.get('a')
         ),
@@ -447,7 +629,7 @@ def added_entry_taxonomic_identification(self, key, value):
         'common_or_alternative_name': utils.force_list(
             value.get('d')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'source_of_taxonomic_identification': value.get('2'),

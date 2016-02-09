@@ -128,8 +128,28 @@ def reverse_publication_distribution_imprint(self, key, value):
     indicator_map1 = {
         "Current/latest publisher": "3",
         "Intervening publisher": "2",
-        "Not applicable/No information provided/Earliest available publisher": "_"}
+        "Not applicable/No information provided/Earliest available publisher": "_",
+    }
+
+    field_map = {
+        'place_of_publication_distribution': 'a',
+        'name_of_publisher_distributor': 'b',
+        'date_of_publication_distribution': 'c',
+        'place_of_manufacture': 'e',
+        'manufacturer': 'f',
+        'date_of_manufacture': 'g',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('sequence_of_publishing_statements')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('place_of_publication_distribution')),
         'c': utils.reverse_force_list(

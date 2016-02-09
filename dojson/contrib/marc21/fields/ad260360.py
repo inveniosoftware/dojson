@@ -23,7 +23,7 @@ def complex_see_reference_subject(self, key, value):
         'heading_referred_to': utils.force_list(
             value.get('a')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'explanatory_text': utils.force_list(
@@ -45,7 +45,7 @@ def complex_see_also_reference_subject(self, key, value):
         'heading_referred_to': utils.force_list(
             value.get('a')
         ),
-        'authority_record_control_number': utils.force_list(
+        'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
         'explanatory_text': utils.force_list(

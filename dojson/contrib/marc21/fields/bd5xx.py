@@ -462,8 +462,29 @@ def study_program_information_note(self, key, value):
     """Study Program Information Note."""
     indicator_map1 = {
         "0": "Reading program",
-        "8": "No display constant generated"}
+        "8": "No display constant generated",
+    }
+
+    field_map = {
+        'a': 'program_name',
+        'b': 'interest_level',
+        'c': 'reading_level',
+        'd': 'title_point_value',
+        'i': 'display_text',
+        'x': 'nonpublic_note',
+        'z': 'public_note',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'program_name': value.get('a'),
         'nonpublic_note': utils.force_list(
             value.get('x')
@@ -489,7 +510,21 @@ def study_program_information_note(self, key, value):
 @utils.filter_values
 def additional_physical_form_available_note(self, key, value):
     """Additional Physical Form Available Note."""
+    field_map = {
+        'a': 'additional_physical_form_available_note',
+        'b': 'availability_source',
+        'c': 'availability_conditions',
+        'd': 'order_number',
+        'u': 'uniform_resource_identifier',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'additional_physical_form_available_note': value.get('a'),
         'availability_conditions': value.get('c'),
         'availability_source': value.get('b'),
@@ -510,7 +545,26 @@ def additional_physical_form_available_note(self, key, value):
 @utils.filter_values
 def reproduction_note(self, key, value):
     """Reproduction Note."""
+    field_map = {
+        'a': 'type_of_reproduction',
+        'b': 'place_of_reproduction',
+        'c': 'agency_responsible_for_reproduction',
+        'd': 'date_of_reproduction',
+        'e': 'physical_description_of_reproduction',
+        'f': 'series_statement_of_reproduction',
+        'm': 'dates_and_or_sequential_designation_of_issues_reproduced',
+        'n': 'note_about_reproduction',
+        '3': 'materials_specified',
+        '5': 'institution_to_which_field_applies',
+        '7': 'fixed_length_data_elements_of_reproduction',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'type_of_reproduction': value.get('a'),
         'agency_responsible_for_reproduction': utils.force_list(
             value.get('c')
@@ -544,7 +598,30 @@ def reproduction_note(self, key, value):
 @utils.filter_values
 def original_version_note(self, key, value):
     """Original Version Note."""
+    field_map = {
+        'a': 'main_entry_of_original',
+        'b': 'edition_statement_of_original',
+        'c': 'publication_distribution_of_original',
+        'e': 'physical_description_of_original',
+        'f': 'series_statement_of_original',
+        'k': 'key_title_of_original',
+        'l': 'location_of_original',
+        'm': 'material_specific_details',
+        'n': 'note_about_original',
+        'o': 'other_resource_identifier',
+        'p': 'introductory_phrase',
+        't': 'title_statement_of_original',
+        'x': 'international_standard_serial_number',
+        'z': 'international_standard_book_number',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'main_entry_of_original': value.get('a'),
         'international_standard_serial_number': utils.force_list(
             value.get('x')
@@ -611,7 +688,23 @@ def location_of_originals_duplicates_note(self, key, value):
 @utils.filter_values
 def funding_information_note(self, key, value):
     """Funding Information Note."""
+    field_map = {
+        'a': 'text_of_note',
+        'b': 'contract_number',
+        'c': 'grant_number',
+        'd': 'undifferentiated_number',
+        'e': 'program_element_number',
+        'f': 'project_number',
+        'g': 'task_number',
+        'h': 'work_unit_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'text_of_note': value.get('a'),
         'grant_number': utils.force_list(
             value.get('c')
@@ -885,7 +978,16 @@ def former_title_complexity_note(self, key, value):
 @utils.filter_values
 def issuing_body_note(self, key, value):
     """Issuing Body Note."""
+    field_map = {
+        'a': 'issuing_body_note',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'issuing_body_note': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -1269,11 +1371,31 @@ def awards_note(self, key, value):
 @utils.filter_values
 def source_of_description_note(self, key, value):
     """Source of Description Note."""
+    indicator_map1 = {
+        '#': 'No information provided',
+        '0': 'Source of description',
+        '1': 'Latest issue consulted',
+    }
+
+    field_map = {
+        'a': 'source_of_description_note',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('display_constant_controller')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'source_of_description_note': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
         'institution_to_which_field_applies': value.get('5'),
         'linkage': value.get('6'),
+        'display_constant_controller': indicator_map1.get(key[3], '_')
     }

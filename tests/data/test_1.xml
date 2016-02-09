@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <controlfield tag="001">136</controlfield>
+    <controlfield tag="005">20160203181958.0</controlfield>
+    <controlfield tag="008">030529s1993\\\\ne\a\\\\\b\\\\101\0\eng\d</controlfield>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0444899251</subfield>
+    </datafield>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">IFIP International Workshop on Protocols for High Speed Networks</subfield>
+      <subfield code="n">(3rd :</subfield>
+      <subfield code="d">1992 :</subfield>
+      <subfield code="c">Stockholm, Sweden)</subfield>
+    </datafield>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Protocols for high-speed networks III.:</subfield>
+      <subfield code="b">proceedings of the IFIP WG 6.1 / WG 6.4  Third International Workshop on Protocols for High Speed Networks, Stockholm, Sweden,  13-15 May, 1992 /</subfield>
+      <subfield code="c">edited by B. Pehrson, P. Gunningberg and S. Pink.</subfield>
+    </datafield>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">Amsterdam :</subfield>
+      <subfield code="b">North-Holland,</subfield>
+      <subfield code="c">c.1993.</subfield>
+    </datafield>
+    <datafield tag="300" ind1=" " ind2=" ">
+      <subfield code="a">267 p.</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="4">
+      <subfield code="a">Telecommunications - Networks</subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="4">
+      <subfield code="a">Transmission quality </subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="4">
+      <subfield code="a">Transmission protocols </subfield>
+    </datafield>
+    <datafield tag="650" ind1=" " ind2="4">
+      <subfield code="a">Communications protocols</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Pehrson, Björn</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Gunningberg, Per</subfield>
+    </datafield>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Pink, Stephen</subfield>
+    </datafield>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">IFIP</subfield>
+    </datafield>
+    <datafield tag="852" ind1="8" ind2=" ">
+      <subfield code="b">Library Reading Room</subfield>
+      <subfield code="h">621.39.B6210L</subfield>
+      <subfield code="i">I23</subfield>
+    </datafield>
+  </record>
+</collection>

@@ -13,7 +13,7 @@
                     "thesaurus": {
                         "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -160,7 +160,7 @@
                     "thesaurus": {
                         "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -301,7 +301,7 @@
                     "thesaurus": {
                         "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -430,7 +430,7 @@
                     "thesaurus": {
                         "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -652,7 +652,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -724,7 +724,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -835,7 +835,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -916,7 +916,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -979,7 +979,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -1036,7 +1036,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
@@ -1156,7 +1156,7 @@
                             "type": "string"
                         }
                     },
-                    "authority_record_control_number": {
+                    "authority_record_control_number_or_standard_number": {
                         "type": "array",
                         "items": {
                             "type": "string"
