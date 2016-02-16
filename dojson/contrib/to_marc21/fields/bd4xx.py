@@ -23,7 +23,37 @@ def reverse_series_statement_added_entry_personal_name(self, key, value):
     indicator_map2 = {
         "Main entry not represented by pronoun": "0",
         "Main entry represented by pronoun": "1"}
+    field_map = {
+        'personal_name': 'a',
+        'numeration': 'b',
+        'titles_and_other_words_associated_with_a_name': 'c',
+        'dates_associated_with_a_name': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'title_of_a_work': 't',
+        'affiliation': 'u',
+        'volume_sequential_designation': 'v',
+        'international_standard_serial_number': 'x',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_personal_name_entry_element')
+
+    if key[4] in indicator_map2:
+        order.append('pronoun_represents_main_entry')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('personal_name'),
         'x': value.get('international_standard_serial_number'),
         'c': utils.reverse_force_list(

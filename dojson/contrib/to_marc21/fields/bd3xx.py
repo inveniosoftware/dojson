@@ -704,7 +704,21 @@ def reverse_medium_of_performance(self, key, value):
 @utils.filter_values
 def reverse_numeric_designation_of_musical_work(self, key, value):
     """Reverse - Numeric Designation of Musical Work."""
+    field_map = {
+        'serial_number': 'a',
+        'opus_number': 'b',
+        'thematic_index_number': 'c',
+        'thematic_index_code': 'd',
+        'publisher_associated_with_opus_number': 'e',
+        'source': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(value.get('serial_number')),
         'c': utils.reverse_force_list(value.get('thematic_index_number')),
         'b': utils.reverse_force_list(value.get('opus_number')),

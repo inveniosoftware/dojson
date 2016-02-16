@@ -50,7 +50,21 @@ def with_note(self, key, value):
 @utils.filter_values
 def dissertation_note(self, key, value):
     """Dissertation Note."""
+    field_map = {
+        'a': 'dissertation_note',
+        'b': 'degree_type',
+        'c': 'name_of_granting_institution',
+        'd': 'year_degree_granted',
+        'g': 'miscellaneous',
+        'o': 'dissertation_identifier',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'dissertation_note': value.get('a'),
         'name_of_granting_institution': value.get('c'),
         'degree_type': value.get('b'),
@@ -123,10 +137,32 @@ def formatted_contents_note(self, key, value):
 def restrictions_on_access_note(self, key, value):
     """Restrictions on Access Note."""
     indicator_map1 = {
-        "#": "No information provided",
+        "_": "No information provided",
         "0": "No restrictions",
         "1": "Restrictions apply"}
+
+    field_map = {
+        'a': 'terms_governing_access',
+        'b': 'jurisdiction',
+        'c': 'physical_access_provisions',
+        'd': 'authorized_users',
+        'e': 'authorization',
+        'f': 'standardized_terminology_for_access_restriction',
+        'u': 'uniform_resource_identifier',
+        '2': 'source_of_term',
+        '3': 'materials_specified',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number'
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('restriction')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'terms_governing_access': value.get('a'),
         'physical_access_provisions': utils.force_list(
             value.get('c')
@@ -153,7 +189,7 @@ def restrictions_on_access_note(self, key, value):
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
-        'restriction': indicator_map1.get(key[3]),
+        'restriction': indicator_map1.get(key[3], '_'),
     }
 
 

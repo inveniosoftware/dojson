@@ -23,7 +23,38 @@ def series_statement_added_entry_personal_name(self, key, value):
     indicator_map2 = {
         "0": "Main entry not represented by pronoun",
         "1": "Main entry represented by pronoun"}
+
+    field_map = {
+        'a': 'personal_name',
+        'b': 'numeration',
+        'c': 'titles_and_other_words_associated_with_a_name',
+        'd': 'dates_associated_with_a_name',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_of_a_work',
+        'p': 'name_of_part_section_of_a_work',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'v': 'volume_sequential_designation',
+        'x': 'international_standard_serial_number',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_personal_name_entry_element')
+
+    if key[4] in indicator_map2:
+        order.append('pronoun_represents_main_entry')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'personal_name': value.get('a'),
         'international_standard_serial_number': value.get('x'),
         'titles_and_other_words_associated_with_a_name': utils.force_list(

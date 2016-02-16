@@ -288,41 +288,84 @@ def reverse_address(self, key, value):
         "No level specified": "_",
         "Primary": "1",
         "Secondary": "2"}
+
+    indicator_map2 = {
+        "Mailing": "0",
+        "Type specified in subfield $i": "7"}
+
+    field_map = {
+        'address': 'a',
+        'city': 'b',
+        'state_or_province': 'c',
+        'country': 'd',
+        'postal_code': 'e',
+        'terms_preceding_attention_name': 'f',
+        'attention_name': 'g',
+        'attention_position': 'h',
+        'type_of_address': 'i',
+        'specialized_telephone_number': 'j',
+        'telephone_number': 'k',
+        'fax_number': 'l',
+        'electronic_mail_address': 'm',
+        'tdd_or_tty_number': 'n',
+        'contact_person': 'p',
+        'title_of_contact_person': 'q',
+        'hours': 'r',
+        'public_note': 'z',
+        'relator_code': '4',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('level')
+
+    if key[4] in indicator_map2:
+        order.append('type_of_address')
+
+    if indicator_map2.get(value.get('type_of_address'), '7') != '7':
+        order.remove('i')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('address')
         ),
-        'c': value.get('state_or_province'),
         'b': value.get('city'),
-        'e': value.get('postal_code'),
+        'c': value.get('state_or_province'),
         'd': value.get('country'),
-        'g': value.get('attention_name'),
+        'e': value.get('postal_code'),
         'f': value.get('terms_preceding_attention_name'),
-        'i': value.get('type_of_address'),
+        'g': value.get('attention_name'),
         'h': value.get('attention_position'),
-        'k': utils.reverse_force_list(
-            value.get('telephone_number')
-        ),
         'j': utils.reverse_force_list(
             value.get('specialized_telephone_number')
         ),
-        'm': utils.reverse_force_list(
-            value.get('electronic_mail_address')
+        'k': utils.reverse_force_list(
+            value.get('telephone_number')
         ),
         'l': utils.reverse_force_list(
             value.get('fax_number')
         ),
+        'm': utils.reverse_force_list(
+            value.get('electronic_mail_address')
+        ),
         'n': utils.reverse_force_list(
             value.get('tdd_or_tty_number')
-        ),
-        'q': utils.reverse_force_list(
-            value.get('title_of_contact_person')
         ),
         'p': utils.reverse_force_list(
             value.get('contact_person')
         ),
+        'q': utils.reverse_force_list(
+            value.get('title_of_contact_person')
+        ),
         'r': utils.reverse_force_list(
             value.get('hours')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('public_note')
         ),
         '4': utils.reverse_force_list(
             value.get('relator_code')
@@ -331,9 +374,9 @@ def reverse_address(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'z': utils.reverse_force_list(
-            value.get('public_note')
-        ),
         '$ind1': indicator_map1.get(value.get('level'), '_'),
-        '$ind2': '_',
+        '$ind2': indicator_map2.get(value.get('type_of_address')),
+        'i': value.get('type_of_address')
+        if indicator_map2.get(value.get('access_method'), '7') == '7'
+        else None,
     }

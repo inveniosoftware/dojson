@@ -300,7 +300,15 @@ def other_standard_identifier(self, key, value):
 @utils.filter_values
 def overseas_acquisition_number(self, key, value):
     """Overseas Acquisition Number."""
+    field_map = {
+        'a': 'overseas_acquisition_number',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'overseas_acquisition_number': utils.force_list(
             value.get('a')
         ),
@@ -675,7 +683,17 @@ def system_control_number(self, key, value):
 @utils.filter_values
 def original_study_number_for_computer_data_files(self, key, value):
     """Original Study Number for Computer Data Files."""
+    field_map = {
+        'a': 'original_study_number',
+        'b': 'source_agency_assigning_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'original_study_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -985,25 +1003,25 @@ def special_coded_dates(self, key, value):
     }
 
 
-@marc21.over('form_of_musical_composition_code', '^047..')
+@marc21.over('form_of_musical_composition_code', '^047.[_7]')
 @utils.for_each_value
 @utils.filter_values
 def form_of_musical_composition_code(self, key, value):
     """Form of Musical Composition Code."""
     indicator_map2 = {
-        '#': 'MARC musical composition code',
+        '_': 'MARC musical composition code',
         '7': 'Source specified in subfield $2',
     }
 
     field_map = {
-        'form_of_musical_composition_code': 'a',
-        'source_of_code': '2',
-        'field_link_and_sequence_number': '8',
+        'a': 'form_of_musical_composition_code',
+        '2': 'source_of_code',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
-    if key[4] != '#' and key[4] in indicator_map2:
+    if key[4] != '7' and key[4] in indicator_map2:
         order.append('source_of_code')
 
     return {
@@ -1014,7 +1032,8 @@ def form_of_musical_composition_code(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'source_of_code': value.get('2'),
+        'source_of_code': value.get('2')
+        if key[4] == '7' else indicator_map2.get(key[4], '_'),
     }
 
 
@@ -1300,7 +1319,27 @@ def national_agricultural_library_copy_statement(self, key, value):
 @utils.filter_values
 def subject_category_code(self, key, value):
     """Subject Category Code."""
+
+    indicator_map2 = {
+        "0": "NAL subject category code list ",
+        "7": "Source specified in subfield $2",
+    }
+
+    field_map = {
+        'a': 'subject_category_code',
+        'x': 'subject_category_code_subdivision',
+        '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in indicator_map2:
+        order.append('code_source')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'subject_category_code': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -1310,6 +1349,7 @@ def subject_category_code(self, key, value):
             value.get('x')
         ),
         'linkage': value.get('6'),
+        'code_source': indicator_map2.get(key[4], '_'),
     }
 
 
@@ -1366,7 +1406,27 @@ def dewey_decimal_classification_number(self, key, value):
         "#": "No information provided",
         "0": "Assigned by LC",
         "4": "Assigned by agency other than LC"}
+
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'm': 'standard_or_optional_designation',
+        'q': 'assigning_agency',
+        '2': 'edition_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_edition')
+
+    if key[4] in indicator_map2:
+        order.append('source_of_classification_number')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')
         ),
@@ -1421,7 +1481,19 @@ def additional_dewey_decimal_classification_number(self, key, value):
 @utils.filter_values
 def other_classification_number(self, key, value):
     """Other Classification Number."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'q': 'assigning_agency',
+        '2': 'number_source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')
         ),
@@ -1527,7 +1599,17 @@ def government_document_classification_number(self, key, value):
 @utils.filter_values
 def report_number(self, key, value):
     """Report Number."""
+    field_map = {
+        'a': 'report_number',
+        'z': 'canceled_invalid_report_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'report_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')

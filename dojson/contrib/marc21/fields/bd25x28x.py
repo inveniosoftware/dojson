@@ -265,10 +265,48 @@ def production_publication_distribution_manufacture_and_copyright_notice(
 def address(self, key, value):
     """Address."""
     indicator_map1 = {
-        "#": "No level specified",
+        "_": "No level specified",
         "1": "Primary",
         "2": "Secondary"}
+
+    indicator_map2 = {
+        "0": "Mailing",
+        "7": "Type specified in subfield $i"}
+
+    field_map = {
+        'a': 'address',
+        'b': 'city',
+        'c': 'state_or_province',
+        'd': 'country',
+        'e': 'postal_code',
+        'f': 'terms_preceding_attention_name',
+        'g': 'attention_name',
+        'h': 'attention_position',
+        'i': 'type_of_address',
+        'j': 'specialized_telephone_number',
+        'k': 'telephone_number',
+        'l': 'fax_number',
+        'm': 'electronic_mail_address',
+        'n': 'tdd_or_tty_number',
+        'p': 'contact_person',
+        'q': 'title_of_contact_person',
+        'r': 'hours',
+        'z': 'public_note',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('level')
+
+    if key[4] in indicator_map2:
+        order.append('type_of_address')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'address': utils.force_list(
             value.get('a')
         ),
@@ -278,7 +316,6 @@ def address(self, key, value):
         'country': value.get('d'),
         'attention_name': value.get('g'),
         'terms_preceding_attention_name': value.get('f'),
-        'type_of_address': value.get('i'),
         'attention_position': value.get('h'),
         'telephone_number': utils.force_list(
             value.get('k')
@@ -315,4 +352,5 @@ def address(self, key, value):
             value.get('z')
         ),
         'level': indicator_map1.get(key[3]),
+        'type_of_address': value.get('i') if key[4] == '7' else indicator_map1.get(key[4]),
     }

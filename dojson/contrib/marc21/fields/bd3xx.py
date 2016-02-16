@@ -854,7 +854,21 @@ def medium_of_performance(self, key, value):
 @utils.filter_values
 def numeric_designation_of_musical_work(self, key, value):
     """Numeric Designation of Musical Work."""
+    field_map = {
+        'a': 'serial_number',
+        'b': 'opus_number',
+        'c': 'thematic_index_number',
+        'd': 'thematic_index_code',
+        'e': 'publisher_associated_with_opus_number',
+        '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'serial_number': utils.force_list(
             value.get('a')
         ),

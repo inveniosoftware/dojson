@@ -310,7 +310,15 @@ def reverse_other_standard_identifier(self, key, value):
 @utils.filter_values
 def reverse_overseas_acquisition_number(self, key, value):
     """Reverse - Overseas Acquisition Number."""
+    field_map = {
+        'overseas_acquisition_number': 'a',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('overseas_acquisition_number')
         ),
@@ -698,7 +706,17 @@ def reverse_system_control_number(self, key, value):
 @utils.filter_values
 def reverse_original_study_number_for_computer_data_files(self, key, value):
     """Reverse - Original Study Number for Computer Data Files."""
+    field_map = {
+        'original_study_number': 'a',
+        'source_agency_assigning_number': 'b',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('original_study_number'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -1031,7 +1049,7 @@ def reverse_special_coded_dates(self, key, value):
 def reverse_form_of_musical_composition_code(self, key, value):
     """Reverse - Form of Musical Composition Code."""
     indicator_map2 = {
-        'MARC musical composition code': '#',
+        'MARC musical composition code': '_',
         'Source specified in subfield $2': '7',
     }
 
@@ -1043,8 +1061,8 @@ def reverse_form_of_musical_composition_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[4] != '#' and key[4] in indicator_map2:
-        order.append('source_of_code')
+    if indicator_map2.get(value.get('source_of_code'), '7') != '7':
+        order.remove('2')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -1054,9 +1072,11 @@ def reverse_form_of_musical_composition_code(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '2': value.get('source_of_code'),
+        '2': value.get('source_of_code')
+        if indicator_map2.get(value.get('source_of_code'), '7') == '7'
+        else None,
         '$ind1': '_',
-        '$ind2': value.get(indicator_map2.get('source_of_code'), '#'),
+        '$ind2': value.get(indicator_map2.get('source_of_code'), '_'),
     }
 
 
@@ -1364,7 +1384,30 @@ def reverse_national_agricultural_library_copy_statement(self, key, value):
 @utils.filter_values
 def reverse_subject_category_code(self, key, value):
     """Reverse - Subject Category Code."""
+
+    indicator_map2 = {
+        "Source specified in subfield $2": "7",
+        "NAL subject category code list ": "0"
+    }
+
+    field_map = {
+        'subject_category_code': 'a',
+        'subject_category_code_subdivision': 'x',
+        'source': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in indicator_map2:
+        order.append('code_source')
+
+    if indicator_map2.get(value.get('code_source'), '7') != '7':
+        order.remove('2')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('subject_category_code'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -1375,7 +1418,7 @@ def reverse_subject_category_code(self, key, value):
         ),
         '6': value.get('linkage'),
         '$ind1': '_',
-        '$ind2': '_',
+        '$ind2': indicator_map2.get(value.get('code_source'), '_'),
     }
 
 
@@ -1435,7 +1478,30 @@ def reverse_dewey_decimal_classification_number(self, key, value):
         "Assigned by LC": "0",
         "Assigned by agency other than LC": "4",
         "No information provided": "_"}
+
+    field_map = {
+        'classification_number': 'a',
+        'item_number': 'b',
+        'standard_or_optional_designation': 'm',
+        'assigning_agency': 'q',
+        'edition_number': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_edition')
+
+    if indicator_map1.get(value.get('source_of_classification_number'), '7') != '7':
+        order.remove('2')
+
+    if key[4] in indicator_map2:
+        order.append('source_of_classification_number')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('classification_number')),
         'b': value.get('item_number'),
@@ -1494,7 +1560,19 @@ def reverse_additional_dewey_decimal_classification_number(self, key, value):
 @utils.filter_values
 def reverse_other_classification_number(self, key, value):
     """Reverse - Other Classification Number."""
+    field_map = {
+        'classification_number': 'a',
+        'item_number': 'b',
+        'assigning_agency': 'q',
+        'number_source': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('classification_number')
         ),
@@ -1611,7 +1689,17 @@ def reverse_government_document_classification_number(self, key, value):
 @utils.filter_values
 def reverse_report_number(self, key, value):
     """Reverse - Report Number."""
+    field_map = {
+        'report_number': 'a',
+        'canceled_invalid_report_number': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('report_number'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')

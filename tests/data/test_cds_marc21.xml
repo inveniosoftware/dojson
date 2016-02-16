@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <controlfield tag="001">123456</controlfield>
+    <controlfield tag="003">SzGeCERN</controlfield>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">1267774</subfield>
+    </datafield>
+    <datafield tag="030" ind1=" " ind2=" ">
+      <subfield code="a">ITASE9</subfield>
+    </datafield>
+    <datafield tag="036" ind1=" " ind2=" ">
+      <subfield code="a">ocn878852575</subfield>
+    </datafield>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">astro-ph/0510816</subfield>
+    </datafield>
+    <datafield tag="041" ind1=" " ind2=" ">
+      <subfield code="a">eng</subfield>
+    </datafield>
+    <datafield tag="041" ind1=" " ind2=" ">
+      <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">fre</subfield>
+    </datafield>
+    <datafield tag="050" ind1=" " ind2="4">
+      <subfield code="a">QC450-467</subfield>
+    </datafield>
+    <datafield tag="050" ind1=" " ind2="4">
+      <subfield code="a">QC718.5.S6</subfield>
+    </datafield>
+    <datafield tag="072" ind1=" " ind2="7">
+      <subfield code="2">bisacsh</subfield>
+      <subfield code="a">COM</subfield>
+      <subfield code="x">013000</subfield>
+    </datafield>
+    <datafield tag="072" ind1=" " ind2="7">
+      <subfield code="2">bisacsh</subfield>
+      <subfield code="a">COM</subfield>
+      <subfield code="x">014000</subfield>
+    </datafield>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">539.172.1</subfield>
+    </datafield>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">621.039.6</subfield>
+    </datafield>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="2">23</subfield>
+      <subfield code="a">621.36</subfield>
+    </datafield>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="2">CERN Library</subfield>
+      <subfield code="a">PH-EP-2011-200</subfield>
+    </datafield>
+    <datafield tag="110" ind1=" " ind2=" ">
+      <subfield code="a">CERN. Geneva. Electronic Experiments Committee</subfield>
+    </datafield>
+    <datafield tag="111" ind1=" " ind2=" ">
+      <subfield code="a">14th Vienna Conference on Instrumentation</subfield>
+      <subfield code="c">Vienna, Austria</subfield>
+      <subfield code="d">15 - 19 Feb 2016</subfield>
+      <subfield code="f">2016</subfield>
+      <subfield code="g">vienna20160215</subfield>
+      <subfield code="n">14</subfield>
+    </datafield>
+    <datafield tag="240" ind1=" " ind2=" ">
+      <subfield code="a">Streaming video</subfield>
+    </datafield>
+    <datafield tag="242" ind1=" " ind2=" ">
+      <subfield code="a">System of Construction Automated by Archives of Installation</subfield>
+    </datafield>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">Geneva</subfield>
+      <subfield code="b">CERN</subfield>
+      <subfield code="c">2001</subfield>
+    </datafield>
+    <datafield tag="270" ind1=" " ind2=" ">
+      <subfield code="a">Example University</subfield>
+      <subfield code="k">+48 11 111 11 11</subfield>
+      <subfield code="l">+48 22 222 22 22</subfield>
+      <subfield code="m">example@example.com</subfield>
+      <subfield code="p">Example, FirstName</subfield>
+    </datafield>
+    <datafield tag="336" ind1=" " ind2=" ">
+      <subfield code="a">SLIDES</subfield>
+    </datafield>
+    <datafield tag="340" ind1=" " ind2=" ">
+      <subfield code="a">paper</subfield>
+    </datafield>
+    <datafield tag="383" ind1=" " ind2=" ">
+      <subfield code="a">CERN ISOLDE</subfield>
+      <subfield code="e">IS596</subfield>
+    </datafield>
+    <datafield tag="384" ind1=" " ind2=" ">
+      <subfield code="a">CERN ISOLDE</subfield>
+    </datafield>
+    <datafield tag="400" ind1=" " ind2=" ">
+      <subfield code="a">yes</subfield>
+      <subfield code="b">yes</subfield>
+    </datafield>
+    <datafield tag="490" ind1=" " ind2=" ">
+      <subfield code="a">Encyclopédie juridique Dalloz</subfield>
+    </datafield>
+    <datafield tag="502" ind1=" " ind2=" ">
+      <subfield code="a">PhD</subfield>
+      <subfield code="b">Vienna U.</subfield>
+      <subfield code="c">2012-06-22</subfield>
+    </datafield>
+    <datafield tag="502" ind1=" " ind2=" ">
+      <subfield code="a">Master</subfield>
+      <subfield code="c">1969</subfield>
+    </datafield>
+    <datafield tag="505" ind1=" " ind2=" ">
+      <subfield code="t">Why CUDA why now -- Getting started -- Introduction to CUDA C</subfield>
+    </datafield>
+    <datafield tag="505" ind1="0" ind2=" ">
+      <subfield code="a">Prefazione -- Introduzione -- Parte I Premesse introduttive: concetti e convenzioni.</subfield>
+    </datafield>
+    <datafield tag="506" ind1="1" ind2=" ">
+      <subfield code="2">CDS Invenio</subfield>
+      <subfield code="5">SzGeCERN</subfield>
+      <subfield code="a">Restricted</subfield>
+      <subfield code="d">example1@example.com</subfield>
+      <subfield code="d">example2@example.com</subfield>
+      <subfield code="d">example3@example.com</subfield>
+      <subfield code="f">email</subfield>
+    </datafield>
+    <datafield tag="506" ind1="1" ind2=" ">
+      <subfield code="2">CDS Invenio</subfield>
+      <subfield code="5">SzGeCERN</subfield>
+      <subfield code="a">Restricted</subfield>
+      <subfield code="d">egroupname [CERN]</subfield>
+      <subfield code="f">group</subfield>
+    </datafield>
+    <datafield tag="508" ind1=" " ind2=" ">
+      <subfield code="a">John Smith</subfield>
+    </datafield>
+    <datafield tag="518" ind1=" " ind2=" ">
+      <subfield code="d">2010-09-15T10:25:00Z</subfield>
+    </datafield>
+    <datafield tag="541" ind1=" " ind2=" ">
+      <subfield code="a">Firstname Lastname</subfield>
+    </datafield>
+    <datafield tag="555" ind1=" " ind2=" ">
+      <subfield code="a">Cumulative author index v 1 - 10 (1976-85)</subfield>
+    </datafield>
+    <datafield tag="562" ind1=" " ind2=" ">
+      <subfield code="c">Public comments</subfield>
+    </datafield>
+    <datafield tag="562" ind1=" " ind2=" ">
+      <subfield code="c">Comments submitted after 18-05-2012 09:26</subfield>
+    </datafield>
+    <datafield tag="583" ind1=" " ind2=" ">
+      <subfield code="a">No</subfield>
+    </datafield>
+    <datafield tag="583" ind1=" " ind2=" ">
+      <subfield code="c">18-Jun-07</subfield>
+    </datafield>
+    <datafield tag="611" ind1="2" ind2="4">
+      <subfield code="a">Finance Committee - Three-hundred-and-thirty-second Meeting</subfield>
+    </datafield>
+    <datafield tag="650" ind1="1" ind2="7">
+      <subfield code="2">SzGeCERN</subfield>
+      <subfield code="a">Accelerators and Storage Rings</subfield>
+    </datafield>
+    <datafield tag="650" ind1="1" ind2="7">
+      <subfield code="2">EuCARD</subfield>
+      <subfield code="a">4: AccNet: Accelerator Science Networks and Storage Rings</subfield>
+    </datafield>
+    <datafield tag="650" ind1="1" ind2="7">
+      <subfield code="2">EuCARD</subfield>
+      <subfield code="a">4.2: EuroLumi</subfield>
+    </datafield>
+    <datafield tag="653" ind1="1" ind2=" ">
+      <subfield code="a">Minimum Bias</subfield>
+    </datafield>
+    <datafield tag="653" ind1="1" ind2=" ">
+      <subfield code="a">QCD</subfield>
+    </datafield>
+    <datafield tag="653" ind1="1" ind2=" ">
+      <subfield code="a">feedback</subfield>
+    </datafield>
+    <datafield tag="710" ind1=" " ind2=" ">
+      <subfield code="5">HR</subfield>
+    </datafield>
+    <datafield tag="710" ind1=" " ind2=" ">
+      <subfield code="b">RPM</subfield>
+    </datafield>
+    <datafield tag="710" ind1=" " ind2=" ">
+      <subfield code="a">CERN. Geneva. HR Department</subfield>
+    </datafield>
+    <datafield tag="711" ind1=" " ind2=" ">
+      <subfield code="a">LHCb LHCRRB Meeting</subfield>
+      <subfield code="c">Geneva</subfield>
+      <subfield code="d">April 2013</subfield>
+      <subfield code="f">2012</subfield>
+      <subfield code="g">RB20121128</subfield>
+      <subfield code="n">202</subfield>
+    </datafield>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">User1, Example</subfield>
+    </datafield>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">User2, Example</subfield>
+    </datafield>
+    <datafield tag="770" ind1=" " ind2=" ">
+      <subfield code="i">Has the supplement</subfield>
+      <subfield code="t">Vie académique</subfield>
+      <subfield code="w">000223435</subfield>
+    </datafield>
+    <datafield tag="770" ind1=" " ind2=" ">
+      <subfield code="i">Has the supplement</subfield>
+      <subfield code="t">Vie académique</subfield>
+      <subfield code="w">000144270</subfield>
+    </datafield>
+    <datafield tag="772" ind1=" " ind2=" ">
+      <subfield code="i">Supplement to</subfield>
+      <subfield code="t">Acta physica polonica B</subfield>
+      <subfield code="w">000143369</subfield>
+    </datafield>
+    <datafield tag="773" ind1=" " ind2=" ">
+      <subfield code="n">1</subfield>
+      <subfield code="p">Courrier CERN</subfield>
+      <subfield code="p">Courrier CERN</subfield>
+      <subfield code="t">CERN Bulletin</subfield>
+      <subfield code="y">1997</subfield>
+    </datafield>
+    <datafield tag="775" ind1=" " ind2=" ">
+      <subfield code="b">Original CERN Report</subfield>
+      <subfield code="c">1971</subfield>
+      <subfield code="w">186421</subfield>
+    </datafield>
+    <datafield tag="775" ind1=" " ind2=" ">
+      <subfield code="b">1st updated version</subfield>
+      <subfield code="c">2008</subfield>
+      <subfield code="w">1102240</subfield>
+    </datafield>
+    <datafield tag="780" ind1="0" ind2="2">
+      <subfield code="i">supersedes</subfield>
+      <subfield code="r">CMS-PAS-TOP-12-035</subfield>
+      <subfield code="w">123456</subfield>
+    </datafield>
+    <datafield tag="780" ind1=" " ind2=" ">
+      <subfield code="i">Continues</subfield>
+      <subfield code="t">CERN. SPS Division : Annual report</subfield>
+      <subfield code="w">123456</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="2">
+      <subfield code="i">superseded by</subfield>
+      <subfield code="r">CERN-PH-EP-2014-265</subfield>
+      <subfield code="w">123456</subfield>
+    </datafield>
+    <datafield tag="785" ind1="0" ind2="2">
+      <subfield code="i">superseded by</subfield>
+      <subfield code="r">CERN-PH-EP-2014-117</subfield>
+      <subfield code="w">123456</subfield>
+    </datafield>
+    <datafield tag="785" ind1=" " ind2=" ">
+      <subfield code="i">Continued by</subfield>
+      <subfield code="t">CERN report. AB Division. Annual report</subfield>
+      <subfield code="w">123456</subfield>
+    </datafield>
+    <datafield tag="787" ind1=" " ind2=" ">
+      <subfield code="i">Letter of Intent</subfield>
+      <subfield code="r">LHCC-I-025</subfield>
+    </datafield>
+    <datafield tag="787" ind1="0" ind2=" ">
+      <subfield code="i">Conference paper</subfield>
+      <subfield code="r">LHCb-PROC-2013-035</subfield>
+      <subfield code="w">123456</subfield>
+    </datafield>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Springer Series in Synergetics</subfield>
+    </datafield>
+    <datafield tag="852" ind1=" " ind2=" ">
+      <subfield code="a">143</subfield>
+    </datafield>
+  </record>
+</collection>

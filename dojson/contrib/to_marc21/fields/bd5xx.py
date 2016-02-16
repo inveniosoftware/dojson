@@ -54,7 +54,21 @@ def reverse_with_note(self, key, value):
 @utils.filter_values
 def reverse_dissertation_note(self, key, value):
     """Reverse - Dissertation Note."""
+    field_map = {
+        'dissertation_note': 'a',
+        'degree_type': 'b',
+        'name_of_granting_institution': 'c',
+        'year_degree_granted': 'd',
+        'miscellaneous': 'g',
+        'dissertation_identifier': 'o',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('dissertation_note'),
         'c': value.get('name_of_granting_institution'),
         'b': value.get('degree_type'),
@@ -134,7 +148,29 @@ def reverse_restrictions_on_access_note(self, key, value):
         "No information provided": "_",
         "No restrictions": "0",
         "Restrictions apply": "1"}
+
+    field_map = {
+        'terms_governing_access': 'a',
+        'jurisdiction': 'b',
+        'physical_access_provisions': 'c',
+        'authorized_users': 'd',
+        'authorization': 'e',
+        'standardized_terminology_for_access_restriction': 'f',
+        'uniform_resource_identifier': 'u',
+        'source_of_term': '2',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('restriction')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('terms_governing_access'),
         'c': utils.reverse_force_list(
             value.get('physical_access_provisions')
@@ -162,7 +198,6 @@ def reverse_restrictions_on_access_note(self, key, value):
             value.get('uniform_resource_identifier')
         ),
         '$ind1': indicator_map1.get(value.get('restriction'), '_'),
-        '$ind2': '_',
     }
 
 
