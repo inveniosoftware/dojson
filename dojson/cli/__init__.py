@@ -18,9 +18,13 @@ console one can run:
     $ dojson --help
 
 Commands are loaded from entry point ``dojson.cli`` and they are chainable.
-This makes JSON manipulation even easier. For first example see ``schema``
-command that accept string argument containing URL of JSON-Schema that
-should be added to ``$schema`` field.
+This makes JSON manipulation even easier.
+
+Usage
+~~~~~
+
+For first example see ``schema``command that accept string argument containing
+URL of JSON-Schema that should be added to ``$schema`` field.
 
 .. code-block:: console
 
@@ -30,8 +34,17 @@ Second example shows easy verification that rules produce an identity function.
 
 .. code-block:: console
 
-    $ dojson -l marcxml -d marcxml do marc21 do to_marc21 < in.xml > out.xml
-    $ diff in.xml out.xml
+    $ dojson -l marcxml -d marcxml do marc21 do to_marc21 < tests/data/test_1.xml > output.xml
+    $ xmllint --format output.xml | diff - tests/data/test_1.xml
+
+To get a list of fields that are missing mappings use the ``missing`` command:
+
+.. code:: console
+
+    $ dojson -i tests/data/handcrafted/text_incorrect_marc21.xml -l marcxml \
+      missing marc21
+    049__, 2452_, 999__
+
 
 Entry Points
 ~~~~~~~~~~~~
