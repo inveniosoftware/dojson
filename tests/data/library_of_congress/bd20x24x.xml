@@ -1,0 +1,2078 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="210" ind1="0" ind2=" ">
+      <subfield code="a">Annu. rep. - Dep. Public Welfare</subfield>
+      <subfield code="b">(Chic.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="210" ind1="0" ind2=" ">
+      <subfield code="a">JAMA j. Am. Med. Assoc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="210" ind1="0" ind2=" ">
+      <subfield code="a">Manage. improv. cost reduct. goals</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="210" ind1="0" ind2=" ">
+      <subfield code="a">Plant prot. bull.</subfield>
+      <subfield code="b">(Faridabad)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="210" ind1="0" ind2=" ">
+      <subfield code="a">Surg. clin. North Am.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="210" ind1="0" ind2="0">
+      <subfield code="a">JAMA</subfield>
+      <subfield code="2">dnlm</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">101 gardening and outdoor ideas</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Annual report - Department of Public Welfare</subfield>
+      <subfield code="b">(Chicago)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Causes of death</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Economic education bulletin</subfield>
+      <subfield code="b">(Great Barrington)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Journal of polymer science. Part B. Polymer letters</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Management improvement and cost reduction goals</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Plant protection bulletin</subfield>
+      <subfield code="b">(Faridabad)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Russian history</subfield>
+      <subfield code="b">(Pittsburgh)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Viva</subfield>
+      <subfield code="b">(New York)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="0">
+      <subfield code="a">Österreich in Geschichte und Literatur</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="4">
+      <subfield code="a">Der Öffentliche Dienst</subfield>
+      <subfield code="b">(Köln)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="4">
+      <subfield code="a">The Sourdough</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="4">
+      <subfield code="a">The Surgical clinics of North America</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="222" ind1=" " ind2="4">
+      <subfield code="a">The Worldwide art catalogue bulletin. American library edition</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="0" ind2="0">
+      <subfield code="a">Here comes everybody</subfield>
+      <subfield code="l">German</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Annual report (1977)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Chansons de Bilitis (Songs).</subfield>
+      <subfield code="p">Chevelure;</subfield>
+      <subfield code="o">arranged</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Duoi fratelli rivali.</subfield>
+      <subfield code="l">English &amp; Italian</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Etude macabre</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Fidelio</subfield>
+      <subfield code="n">(1814).</subfield>
+      <subfield code="s">Libretto.</subfield>
+      <subfield code="l">English &amp; German</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Flute music, flutes (2).</subfield>
+      <subfield code="k">Selections</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">History of the decline and fall of the Roman Empire.</subfield>
+      <subfield code="k">Selections</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Iliad</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Informe sobre la situaciÃ³n de los derechos humanos en Paraguay.</subfield>
+      <subfield code="l">English</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Institutiones.</subfield>
+      <subfield code="n">Liber 2.</subfield>
+      <subfield code="n">Capitulum 5.</subfield>
+      <subfield code="l">English</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Intermezzo (Sketches)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Laws, etc. (1969-1970)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Lieder, unacc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Missal (Dominican)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Poems.</subfield>
+      <subfield code="k">Selections</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Sonatas,</subfield>
+      <subfield code="m">piano,</subfield>
+      <subfield code="n">no. 14, op. 27, no. 2,</subfield>
+      <subfield code="r">C# minor</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Sonatas,</subfield>
+      <subfield code="m">piano,</subfield>
+      <subfield code="n">no. 14, op. 27, no. 2,</subfield>
+      <subfield code="r">C# minor</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Sonatas,</subfield>
+      <subfield code="m">violin, piano,</subfield>
+      <subfield code="n">K.8,</subfield>
+      <subfield code="r">Bâ­major</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Symphonie de Psaumes</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Treaties, etc.</subfield>
+      <subfield code="g">Poland,</subfield>
+      <subfield code="d">1948 Mar. 2.</subfield>
+      <subfield code="k">Protocols, etc.,</subfield>
+      <subfield code="d">1951 Mar. 6</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Variations,</subfield>
+      <subfield code="m">piano, 4 hands,</subfield>
+      <subfield code="n">K. 501,</subfield>
+      <subfield code="r">G major</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Vishnevyi sad.</subfield>
+      <subfield code="l">English</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="a">Werke, Org</subfield>
+      <subfield code="0">(DE-101c)300847858</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="b">Kaffee-Kantate</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="0">
+      <subfield code="t">Our town</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="240" ind1="1" ind2="4">
+      <subfield code="a">The Pickwick papers.</subfield>
+      <subfield code="l">French</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="242" ind1="0" ind2="0">
+      <subfield code="a">Annals of chemistry</subfield>
+      <subfield code="n">Series C,</subfield>
+      <subfield code="p">Organic chemistry and biochemistry.</subfield>
+      <subfield code="y">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="242" ind1="0" ind2="0">
+      <subfield code="a">Land surveying and agriculture equipment.</subfield>
+      <subfield code="y">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="242" ind1="0" ind2="0">
+      <subfield code="a">Woman.</subfield>
+      <subfield code="y">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="242" ind1="0" ind2="4">
+      <subfield code="a">The Arab East.</subfield>
+      <subfield code="y">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="242" ind1="1" ind2="0">
+      <subfield code="a">World of art.</subfield>
+      <subfield code="y">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="242" ind1="1" ind2="4">
+      <subfield code="a">The Mirror.</subfield>
+      <subfield code="y">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="243" ind1="0" ind2="0">
+      <subfield code="a">Laws, etc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="243" ind1="1" ind2="0">
+      <subfield code="a">Orchestra music.</subfield>
+      <subfield code="k">Selections</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="243" ind1="1" ind2="0">
+      <subfield code="a">Speeches</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="243" ind1="1" ind2="0">
+      <subfield code="a">Works.</subfield>
+      <subfield code="f">1983</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Agricultural situation.</subfield>
+      <subfield code="p">Africa and the Middle East.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Annales geophysicae.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Annales scientifiques de l'UniversitÃ© de BesanÃ§on.</subfield>
+      <subfield code="p">MathÃ©matiques.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Astrofizicheskie issledovaniÃ­Ã .</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Bulletin of the Vancouver Medical Association.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Communist.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">HespÃ©ris tamuda.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Hospital practice.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">International flight information manual.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Preliminary seismological bulletin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Volkszeitung</subfield>
+      <subfield code="b">sozialdemokratisches Organ fÃ¼r die Provinz Rheinhessen und die Mainspitze</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="2">
+      <subfield code="a">L'Elevage porcin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">Mythlore.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Annual report /</subfield>
+      <subfield code="c">Department of City Planning, City of Los Angeles.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Correctional services in Canada.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Two-year review.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">4 corners power review.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">&lt;title of the original issue&gt;</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">ALA bulletin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Acht festliche OrgelstÃ¼cke</subfield>
+      <subfield code="h">Musikdruck</subfield>
+      <subfield code="c">William Faulkes. Hrsg. von Tobias Zuleger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Addendum to the Proceedings of the 1988 International Aerospace and Ground Conference on Lightning and Static Electricity :</subfield>
+      <subfield code="b">April 19-22, 1988, Oklahoma City, Oklahoma, USA.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">African semminar</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">American Council on Education studies.</subfield>
+      <subfield code="n">Series III,</subfield>
+      <subfield code="p">Financial advisory services</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">American quarterly.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Anales de química.</subfield>
+      <subfield code="n">Serie C,</subfield>
+      <subfield code="p">Química orgánica y bioquímica :</subfield>
+      <subfield code="b">publicación de la Real Sociedad Espanola de Química.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Analyzing qualitative data /</subfield>
+      <subfield code="c">edited by Alan Bryman and Robert G. Burgess</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Annual report /</subfield>
+      <subfield code="c">Economic Development Administration.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Annual report of the Director.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Annual report of the Minister of Supply and Service Canada under the Corporations and Labour Unions Returns Act.</subfield>
+      <subfield code="n">Part II,</subfield>
+      <subfield code="p">Labour unions =</subfield>
+      <subfield code="b">Rapport annuel du ministre des Approvisionnements et services Canada présenté sous l'empire et des syndicates ouvriers.</subfield>
+      <subfield code="n">Partie II,</subfield>
+      <subfield code="p">Syndicats ouvriers.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Assembly file analysis</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">BTL.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Bangladesh Education Extension Centre bulletin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Beowulf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Broken laughter :</subfield>
+      <subfield code="b">select fragments of Greek comedy.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Buddhist reader for young Buddhists.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Buddhists talk about Jesus, Christians talk about Buddha.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Bulletin of atomic scientists.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Bétail et volaille /</subfield>
+      <subfield code="c">Bureau des statistiques de Québec = Livestock and poultry / Quebec Bureau of Statistics.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Carbohydrate chemistry.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Chemical pricing patterns :</subfield>
+      <subfield code="b">comparisons of annual high and low prices for 1,250 key chemicals and related process materials for the years of 1952...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Client characteristic &amp; population movement report for calendar year ...</subfield>
+      <subfield code="p">Probation subsidy / State of Washington, Department of Social and Health Services, Bureau of Juvenile Rehabilitation.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">College English</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">College English.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Colorado heritage :</subfield>
+      <subfield code="b">the journal of the Colorado Historical Society.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Commodity year book.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Concerto for piano, with chamber music ensemble, op. 26 (1961).</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Concerto per piano n. 21, K 467</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">County business patterns, United States.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">County business patterns, United States.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Creative color for the oil painter.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Creative color for the oil painter.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Current drug handbook.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Daily report.</subfield>
+      <subfield code="p">People's Republic of China</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Deutsche Bibliographie.</subfield>
+      <subfield code="p">Wöchentliches Verzeichnis.</subfield>
+      <subfield code="n">Reihe B,</subfield>
+      <subfield code="p">Beilage, Erscheinungen ausserhalb des Verlagsbuchhandels :</subfield>
+      <subfield code="b">Amtsblatt der Deutschen Bibliothek.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Diamonds are forever :</subfield>
+      <subfield code="b">artists and writers on baseball.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Dissertation abstracts.</subfield>
+      <subfield code="n">A,</subfield>
+      <subfield code="p">The humanities and social sciences.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">DonnÃ©es statistiques pour la Haute-Normandie.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">ETZ :</subfield>
+      <subfield code="b">...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Economic education bulletin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Educational &amp; industrial television.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Empire State report weekly.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Family circle.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Finance &amp; development.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Florida bird songs</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Focus on grammar</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Folk songs of S.E. Tennessee</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Foreign affairs bibliography.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Fresenius' Zeitschrift fÃ¼r analytische Chemie.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Geodezja i urzadzenia roline.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Hamlet ;</subfield>
+      <subfield code="b">Romeo and Juliette ; Othello ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Health care and HIV :</subfield>
+      <subfield code="b">nutritional guide for providers and clients</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Heritage Books archives.</subfield>
+      <subfield code="p">Underwood biographical dictionary.</subfield>
+      <subfield code="n">Volumes 1 &amp; 2 revised</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Historical statistics.</subfield>
+      <subfield code="p">Supplement /</subfield>
+      <subfield code="c">...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">International bilateral dialogues :</subfield>
+      <subfield code="b">1965-1991 : list of commissions, meetings, themes, and reports /</subfield>
+      <subfield code="c">compiled by GÃ¼nther Gassman. Report / Fifth Forum on Bilateral Conversations.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">JAMA :</subfield>
+      <subfield code="b">the journal of the American Medical Association.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Janet Suzeman on acting in Shakespearian comedy.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Japan report =</subfield>
+      <subfield code="b">Nihon.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">John Eager Howard.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Journal for general philosophy of science =</subfield>
+      <subfield code="b">Zeitschrift fÃ¼r allgemeine Wissenschaftstheorie</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Journal of cellular biochemistry.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Journal of polymer science</subfield>
+      <subfield code="n">B, Polymer physics</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Journal of polymer science.</subfield>
+      <subfield code="n">Part B,</subfield>
+      <subfield code="p">Polymer letters.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">LektÃ¼re Magazin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Library resources market place :</subfield>
+      <subfield code="b">LRMP.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Life on earth.</subfield>
+      <subfield code="p">The swarming hordes</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Lord Macaulay's essays ;</subfield>
+      <subfield code="b">and, Lays of ancient Rome.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Lorser Feitelson and Helen Lundeberg:</subfield>
+      <subfield code="b">a retrospective exhibition.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Love from Joy :</subfield>
+      <subfield code="b">letters from a farmer’s wife.</subfield>
+      <subfield code="n">Part III,</subfield>
+      <subfield code="p">1987-1995, At the bungalow.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">MARC 21: Harmonized USMARC and CAN/MARC</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Management report.</subfield>
+      <subfield code="n">Part I /</subfield>
+      <subfield code="c">U.S. Navy's Military Sealift Command.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Map of Nelson, Richmond, Motueka :</subfield>
+      <subfield code="b">scale 1:20000.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Marcel Marceau, ou, L'art du mime.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Modern maturity :</subfield>
+      <subfield code="b">publication of the American Association of Retired Persons.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Modern problems of pharmacopsychiatry =</subfield>
+      <subfield code="b">Moderne Probleme der Pharmakopsychiatrie = ProblÃ¨mes actuels de pharmacopsychiatrie.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Monthly checklist of state publications /</subfield>
+      <subfield code="c">the Library of Congress, Processing Department, Exchange and Gift Division.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">More!</subfield>
+      <subfield code="n">3 /</subfield>
+      <subfield code="c">Herbert Puchta ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">My first book of limericks.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Neoplasm and gnosticism /</subfield>
+      <subfield code="c">Richard T. Wallis, editor, Jay Bregman, associate editor.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">News of the Cooperative Health Statistics System.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Nineteenth century English drama</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Oklahoma</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">PL 17 Hearing Files</subfield>
+      <subfield code="k">Case Files</subfield>
+      <subfield code="f">1974</subfield>
+      <subfield code="p">District 6</subfield>
+      <subfield code="h">microfilm (jacketted in fiche).</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Portals to the world.</subfield>
+      <subfield code="p">Selected Internet resources.</subfield>
+      <subfield code="p">Maldives</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Printing trades blue book.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Proceedings /</subfield>
+      <subfield code="c">...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Register zu den Verhandlungen des Landtags / Landtag Nordrhein-Westfalen</subfield>
+      <subfield code="b">in der ... Wahlperiode</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Report and financial accounts for the fifteen months ended 31st March ... /</subfield>
+      <subfield code="c">Qantas Empire Airways Limited.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Rubber world</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Russian history.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Short story masterpieces by American women writers.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Short story masterpieces by American women writers.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Short-Harrison-Symmes family papers,</subfield>
+      <subfield code="f">1760-1878.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Sudan guide.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Swallowing clouds :</subfield>
+      <subfield code="b">an anthology of Chinese-Canadian poetry.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">UN monthly chronicle</subfield>
+      <subfield code="c">United Nations Office of Public Information</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Who is it?</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Who’s inventing what? :</subfield>
+      <subfield code="b">patents granted in the United States as reported in the Official gazette of the United States Patent and Trademark Office.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="a">Woman's day 101 gardening and outdoor ideas.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="k">Letter,</subfield>
+      <subfield code="f">1901 March 6,</subfield>
+      <subfield code="b">Dublin, to Henrik Ibsen, Kristiana</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="k">Papers,</subfield>
+      <subfield code="f">1932-1970</subfield>
+      <subfield code="g">(bulk 1932-1965)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="0">
+      <subfield code="k">Records,</subfield>
+      <subfield code="f">1939-1973</subfield>
+      <subfield code="g">1965-1972.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="3">
+      <subfield code="a">An abstract of the remarkable passages in the life of a private gentleman.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="3">
+      <subfield code="a">La mer</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="3">
+      <subfield code="a">Le Bureau</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">Der Spiegel.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The American journal of international law.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Americas.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Annalist :</subfield>
+      <subfield code="b">a magazine of finance, commerce, and economics.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Berkley book of modern writing.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Green bag</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Metal worker, plumber, and steam fitter.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The People speak newsletter.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Post boy.</subfield>
+      <subfield code="n">Numb. 2436, from Thursday December 21 to Saturday December 23, 1710.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Southeastern college art review and newsletter.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Worldwide art catalogue bulletin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The Year book of medicine.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The drug, the nurse, the patient.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The plays of Oscar Wilde /</subfield>
+      <subfield code="c">Alan Bird.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="4">
+      <subfield code="a">The toolbox :</subfield>
+      <subfield code="b">buyer's directory.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="0" ind2="5">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="6">880-02</subfield>
+      <subfield code="a">Hung Jen-kan /</subfield>
+      <subfield code="c">cShen Wei-pin chu.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">--as others see us.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Advanced calculus.</subfield>
+      <subfield code="p">Student handbook.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Ahab’s wife, or, The star-gazer :</subfield>
+      <subfield code="b">a novel /</subfield>
+      <subfield code="c">by Sena Jeter Naslund ; illustrations by Christopher Wormell.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Annual report /</subfield>
+      <subfield code="c">Australian National Parks and Wildlife Service.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Annual report for fiscal year ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Azul ... y poemas /</subfield>
+      <subfield code="c">Rubén Darío.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Bridge to Terabithia /</subfield>
+      <subfield code="c">Katherine Paterson ; illustrated by Donna Diamond.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Bulletin of the Special Astrophysical Observatory-North Caucasus.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Bundesjagdgesetz :</subfield>
+      <subfield code="b">mit Landesrecht, Verordnung über die Jagdzeiten und Bundeswildschutzverordnung Fischereischeinrecht Seefischereirecht /</subfield>
+      <subfield code="c">von Albert Lorz.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Cancer research :</subfield>
+      <subfield code="b">official organ of the American Association for Cancer Research, Inc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Ceramic forum international :</subfield>
+      <subfield code="b">CFI : Berichte der DKG.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Chartbook of federal programs on aging /</subfield>
+      <subfield code="c">Irma Schechter.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Computerized engineering index.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Conference on Industrial Development in the Arab Countries :</subfield>
+      <subfield code="b"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Cosmic search.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Cuba noticias econÃ³micas.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Development of laser velocimeter system for flame studies.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Die grossen Opern.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Director's report of the Association of Insurance Adjusters.</subfield>
+      <subfield code="s">Member release.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Discours du prÃ©sident SÃ©kou.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Distribution of the principal kinds of soil :</subfield>
+      <subfield code="b">orders, suborders, and great groups : National Soil Survey Classification of 1967.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Essential Spanish for policemen, lawyers, and judges.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Essential math, science, and computer terms for college freshmen.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Faust.</subfield>
+      <subfield code="n">Part one.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Fidelio /</subfield>
+      <subfield code="c">Ludwig van Beethoven.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Four years at Yale :</subfield>
+      <subfield code="k">diaries,</subfield>
+      <subfield code="f">1903 Sept. 16-1907 Oct. 5.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Gentlemen's quarterly</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Geological Survey water-supply paper.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">George Orwell's Animal farm /</subfield>
+      <subfield code="c">adapted by Ian Woolridge.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Gesetz und Freiheit</subfield>
+      <subfield code="b">eine Philosophie der Kunst</subfield>
+      <subfield code="c">Harald Fricke</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">H.G. Wells and the world state.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Harvard project manager.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">He who hunted birds in his father's village :</subfield>
+      <subfield code="b">the dimensions of a Haida myth /</subfield>
+      <subfield code="c">Gary Snyder ; preface by Nathaniel Tarn ; edited by Donald Allen.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Hearne Brothers official polyconic projection map of Greater Knoxville with all of Knox County /</subfield>
+      <subfield code="c">Hearne Brothers, cartographers ; production staff, G. Lee Graham ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">How to play chess /</subfield>
+      <subfield code="c">Kevin Wicker ; with a foreword by David Pritchard ; illustrated by Karel Feuerstein.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">IngleÌs para ninÌos.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Institutiones.</subfield>
+      <subfield code="n">Book II.</subfield>
+      <subfield code="n">Chapter V /</subfield>
+      <subfield code="c">Cassiodorus. Etymologies. Books III. Chapters 15-23 / Isidore of Seville ; translated by Helen Dill Goode and Gertrude C. Drake.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">International review of applied psychology :</subfield>
+      <subfield code="b">the journal of the International Association of Applied Psychology = Revue internationale de psychologie appliquée.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Internationale Strassenkarte.</subfield>
+      <subfield code="p">Europe 1:2.5 Mio. :</subfield>
+      <subfield code="b">mit Register = International road map.</subfield>
+      <subfield code="p">Europe, 1:2.5 mio : with index /</subfield>
+      <subfield code="c">RV Reise- und Verkehrsverlag.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Island series.</subfield>
+      <subfield code="p">Penrhyn, bethymetry /</subfield>
+      <subfield code="c">compilation by K.B. Lewis, P. Larkin, and T.T. Rongo ; bathymetric compilation and contouring by K.B. Lewis, T.T. Rongo and A.T. Utanga ; drawn by S.C. Glover.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Journeyman's guide to the National Electrical Code /</subfield>
+      <subfield code="c">Furman Marco Gotshaw.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Law and the family, New York /</subfield>
+      <subfield code="c"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Map of Amish farmland, Lancaster County, Pennsylvania.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Marcus Iunius Nypsus :</subfield>
+      <subfield code="b">Fluminis varatio, Limitis repositio : introduction, text, translation, and commentary /</subfield>
+      <subfield code="c">Jelle Bouma.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Mercer County, Virginia (W. Va.) 1850 census.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Moby-Dick, or, The whale /</subfield>
+      <subfield code="c">by Herman Melville.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">NBA in action.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Newspaper geog. list</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Nineteenth-century bird prints.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Number the stars /</subfield>
+      <subfield code="c">Lois Lowry.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Ordinances &amp; statutory rules &amp; orders of the Virgin Islands.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Poems /</subfield>
+      <subfield code="c">by Gerald Bullett.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Primer on labor law, 1982-92/</subfield>
+      <subfield code="c">by Perfecto V. Fernandez.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Private eyeballs :</subfield>
+      <subfield code="b">a golden treasury of bad taste.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Proceedings of the Seminar on Cataloging Digital Documents, October 12-14, 1994</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Project directory /</subfield>
+      <subfield code="c">TDC = Répertoire des projets / CDT.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Quality of surface waters of the United States.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">RecopilaciÃ³n de leyes, decretos y resoluciones ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Report on the situation of human rights in Paraguay.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Rock mechanics :</subfield>
+      <subfield code="b">journal of the International Society for Rock Mechanics = Felsmechanik.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Rosen aus dem SÃ¼den.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Soviet ideologies in the period of glasnot :</subfield>
+      <subfield code="b">responses to Brezhnev's stagnation /</subfield>
+      <subfield code="c">Vladimir Shlapentokh with the participation of Dmitry Shlapentokh.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Statistics :</subfield>
+      <subfield code="b">facts or fiction.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Talks to teeners; </subfield>
+      <subfield code="b">chapel talks delivered during morning devotions at the Christian High School, Grand Rapids, Michigan.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Technology transfer :</subfield>
+      <subfield code="b">India's iron &amp; steel: an ICRIER research study with experts' comments /</subfield>
+      <subfield code="c">K. Krishna Moorthy.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Trade Union Fellowship Program :</subfield>
+      <subfield code="b"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Under the hill, or, The story of Venus and Tannhauser.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Vier letzte Lieder</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">War of the worlds.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Welcome aboard! :</subfield>
+      <subfield code="b">your career as a flight attendant /</subfield>
+      <subfield code="c">Becky S. Bock, Cheryl A. Cage.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Welcome! :</subfield>
+      <subfield code="b">a biblical and practical guide to receiving new members /</subfield>
+      <subfield code="c">Ervin R. Stutzman ; foreword by Marlene Kropf.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="a">Zentralblatt für Bakteriologie, Parasitenkunde, Infektionskrankheiten und Hygiene.</subfield>
+      <subfield code="n">1. Abt. Originale.</subfield>
+      <subfield code="n">Reihe B,</subfield>
+      <subfield code="p">Hygiene, Krankenhaushygiene, Betriebshygiene, präventive Medizin.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="0">
+      <subfield code="k">Employment applications</subfield>
+      <subfield code="g">Jan.-Dec. 1985.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="2">
+      <subfield code="a">A report to the legislature for the year ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="2">
+      <subfield code="a">L'enfant criminal.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="2">
+      <subfield code="a">L'été.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="3">
+      <subfield code="a">An interpretation of Zarahemla ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="3">
+      <subfield code="a">Judas der Ertz-Schelm, fÃ¼r ehrliche Leuth, ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="3">
+      <subfield code="a">al-Sharq al-`Arabi.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">Ein Mann in Dublin namens Joyce</subfield>
+      <subfield code="c">Anthony Burgess.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">Gli duoi fratelli rivali =</subfield>
+      <subfield code="b">The two rival brothers /</subfield>
+      <subfield code="c">Giambattista della Porta ; edited and translated by Louise George Clubb.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">Hē Monē tou Horous Sina.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The Bookman.</subfield>
+      <subfield code="n">Part B.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The Boston driver's handbook :</subfield>
+      <subfield code="b">the big dig edition /</subfield>
+      <subfield code="c">Ira Gershkoff and Richard Trachtman.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The Foundling hospital for wit :</subfield>
+      <subfield code="b">intended for the reception and preservation of such ...</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The Globe illustrated Shakespeare.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The New Lost City Ramblers with Cousin Emmy</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The advocate</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The advocate :</subfield>
+      <subfield code="b">the official Law Society of Kenya magazine.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The analysis of the law /</subfield>
+      <subfield code="c">Sir Matthew Hale. The students companion / Giles Jacob.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The charity ball :</subfield>
+      <subfield code="b">a comedy in four acts :</subfield>
+      <subfield code="k">typescript,</subfield>
+      <subfield code="f">1889 /</subfield>
+      <subfield code="c">by David Belasco and Henry C. DeMille.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The cherry orchard ;</subfield>
+      <subfield code="b">Uncle Vanya /</subfield>
+      <subfield code="c">Anton Chekhov.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The language of first-order logic :</subfield>
+      <subfield code="b">including the Macintosh program Tarski'a world 4.0 /</subfield>
+      <subfield code="c">Jon Barwise and John Etchemendy.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The language of first-order logic :</subfield>
+      <subfield code="b">including the Macintosh program Tarski's world 4.0 /</subfield>
+      <subfield code="c">Jon Barwise and John Etchemendy.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The printer's manual</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="4">
+      <subfield code="a">The royal gazette</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="5">
+      <subfield code="a">The “winter mind” :</subfield>
+      <subfield code="b">William Bronk and American letters /</subfield>
+      <subfield code="c">Burt Kimmelman.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="5">
+      <subfield code="a">Tōn Diōnos Rōmaikōn historiōn eikositria biblia =</subfield>
+      <subfield code="b">Dionis Romanarum historiarum libri XXIII, à XXXVI ad LVIII vsque.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="5">
+      <subfield code="a">Tōn meionotētōn eunoia :</subfield>
+      <subfield code="b">mythistorēma /</subfield>
+      <subfield code="c">Spyrou Gkrintzou.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="6">
+      <subfield code="a">--the serpent--snapping eye.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="245" ind1="1" ind2="8">
+      <subfield code="a">The ... annual report to the Governor.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="0" ind2=" ">
+      <subfield code="i">Added title page title on some issues:</subfield>
+      <subfield code="a">Annual report</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="0" ind2="4">
+      <subfield code="a">&lt;variant title&gt;</subfield>
+      <subfield code="g">(varies slightly)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="0" ind2="5">
+      <subfield code="a">Liste de publication</subfield>
+      <subfield code="f">-Oct. 1977</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2=" ">
+      <subfield code="a">Four corners power review</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2=" ">
+      <subfield code="i">Also known as:</subfield>
+      <subfield code="a">COMPENDEX</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2=" ">
+      <subfield code="i">Alternate issues published with title:</subfield>
+      <subfield code="a">Chicago daily telegraph</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2=" ">
+      <subfield code="i">At head of title:</subfield>
+      <subfield code="a">Science and public affairs</subfield>
+      <subfield code="f">Jan. 1970-Apr. 1974</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2=" ">
+      <subfield code="i">Augmented title:</subfield>
+      <subfield code="a">Development of electro-optical laser velocimeter system for flame studies</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2=" ">
+      <subfield code="i">Panel title:</subfield>
+      <subfield code="a">Welcome to big Wyoming</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2=" ">
+      <subfield code="i">Title on container:</subfield>
+      <subfield code="a">New Brunswick royal gazette</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="0">
+      <subfield code="a">LRMP</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="0">
+      <subfield code="a">Los Angeles Police Department crime report</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="1">
+      <subfield code="a">Nihon</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="1">
+      <subfield code="a">Revue internationale de psychologie appliquée</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="2">
+      <subfield code="a">Commodities in industry</subfield>
+      <subfield code="f">1940</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="2">
+      <subfield code="a">Commodity statistics</subfield>
+      <subfield code="f">1942</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="2">
+      <subfield code="a">Creating jobs</subfield>
+      <subfield code="f">1980</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="3">
+      <subfield code="a">California Legislature State Assembly analysis</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="3">
+      <subfield code="a">California State Assembly file analysis</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="3">
+      <subfield code="a">California State Assembly file analysis</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="3">
+      <subfield code="a">E-ITV</subfield>
+      <subfield code="f">Jan. 1981-May 1983</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="4">
+      <subfield code="a">Qantas annual report</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="4">
+      <subfield code="a">Rentabilidad</subfield>
+      <subfield code="f">19 -1976</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="4">
+      <subfield code="a">State publications monthly checklist</subfield>
+      <subfield code="f">July 1976-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="4">
+      <subfield code="a">State publications monthly checklist</subfield>
+      <subfield code="f">July 1976-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="4">
+      <subfield code="a">Weather bureau technical paper</subfield>
+      <subfield code="f">no. 3-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="5">
+      <subfield code="a">Murshid al-Sudan</subfield>
+      <subfield code="f">1982-1983</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="6">
+      <subfield code="a">Newspaper index</subfield>
+      <subfield code="f">Jan. 1982-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="7">
+      <subfield code="a">B.E.E.C. bulletin</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="7">
+      <subfield code="a">E&amp;ITV</subfield>
+      <subfield code="f">Jan. 1980-Apr. 1981</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="1" ind2="8">
+      <subfield code="a">Chartbook on aging</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="2" ind2=" ">
+      <subfield code="a">American Library Association bulletin</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2=" ">
+      <subfield code="a">4 letzte Lieder</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2=" ">
+      <subfield code="a">&lt;title of reissue&gt;;</subfield>
+      <subfield code="5">DLC</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2=" ">
+      <subfield code="a">African seminar series</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2=" ">
+      <subfield code="a">BEEC bulletin</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2=" ">
+      <subfield code="a">EITV</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2=" ">
+      <subfield code="a">Educational and industrial television</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="0">
+      <subfield code="a">Financial advisory services</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="0">
+      <subfield code="a">Letzte Lieder</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="0">
+      <subfield code="a">Modern writing</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="0">
+      <subfield code="a">Zeitschrift fÃ¼r analytische Chemie</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="1">
+      <subfield code="a">Archives for meteorology, geophysics, and bioclimatology.</subfield>
+      <subfield code="n">Serie A,</subfield>
+      <subfield code="p">Meteorology and geophysics</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="1">
+      <subfield code="a">Moderne Probleme der Pharmakopsychiatrie</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="1">
+      <subfield code="a">ProblÃ¨mes actuels de pharmacopsychiatrie</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="246" ind1="3" ind2="1">
+      <subfield code="a">Zeitschrift fÃ¼r allgemeine Wissenschaftstheorie</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="247" ind1="0" ind2="1">
+      <subfield code="a">&lt;former title&gt;</subfield>
+      <subfield code="g">(varies slightly)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="247" ind1="1" ind2="0">
+      <subfield code="a">Everywoman's magazine</subfield>
+      <subfield code="f">v. 1-24, Jan. 1948-57.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="247" ind1="1" ind2="0">
+      <subfield code="a">Journalism bulletin</subfield>
+      <subfield code="f">Mar. 1924-Nov. 1927</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="247" ind1="1" ind2="1">
+      <subfield code="a">Annuario pontificio</subfield>
+      <subfield code="f">1860-71, 1912-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="247" ind1="1" ind2="1">
+      <subfield code="a">Gerarchia cattolica</subfield>
+      <subfield code="f">1872-1911</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="247" ind1="1" ind2="1">
+      <subfield code="a">Notizie del mundo</subfield>
+      <subfield code="f">1716?-1858</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="247" ind1="1" ind2="1">
+      <subfield code="a">Printing trades blue book.</subfield>
+      <subfield code="p">New York edition</subfield>
+      <subfield code="f">1916</subfield>
+    </datafield>
+  </record>
+</collection>

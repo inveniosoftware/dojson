@@ -18,6 +18,15 @@ from ..model import to_marc21
 @utils.filter_values
 def reverse_library_of_congress_control_number(self, key, value):
     """Reverse - Library of Congress Control Number."""
+    field_map = {
+        'lc_control_number': 'a',
+        'nucmc_control_number': 'b',
+        'canceled_invalid_lc_control_number': 'z',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
         'a': value.get('lc_control_number'),
         '8': utils.reverse_force_list(
@@ -39,7 +48,21 @@ def reverse_library_of_congress_control_number(self, key, value):
 @utils.filter_values
 def reverse_patent_control_information(self, key, value):
     """Reverse - Patent Control Information."""
+    field_map = {
+        'number': 'a',
+        'country': 'b',
+        'type_of_number': 'c',
+        'date': 'd',
+        'status': 'e',
+        'party_to_document': 'f',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('number'),
         'c': value.get('type_of_number'),
         'b': value.get('country'),
@@ -117,9 +140,6 @@ def reverse_national_bibliographic_agency_control_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('national_bibliographic_agency')
-
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('record_control_number'),
@@ -150,16 +170,13 @@ def reverse_copyright_or_legal_deposit_number(self, key, value):
         'assigning_agency': 'b',
         'date': 'd',
         'display_text': 'i',
-        'canceled_invalid_copyright_or_legal': 'z',
+        'canceled_invalid_copyright_or_legal_deposit_number': 'z',
         'source': '2',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[4] in indicator_map2:
-        order.append('display_constant_controller')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -185,9 +202,18 @@ def reverse_copyright_or_legal_deposit_number(self, key, value):
 @utils.filter_values
 def reverse_copyright_article_fee_code(self, key, value):
     """Reverse - Copyright Article-Fee Code."""
+    field_map = {
+        'copyright_article_fee_code': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
-            value.get('copyright_article_fee_code_nr')
+            value.get('copyright_article_fee_code')
         ),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -203,7 +229,19 @@ def reverse_copyright_article_fee_code(self, key, value):
 @utils.filter_values
 def reverse_international_standard_book_number(self, key, value):
     """Reverse - International Standard Book Number."""
+    field_map = {
+        'international_standard_book_number': 'a',
+        'terms_of_availability': 'c',
+        'qualifying_information': 'q',
+        'canceled_invalid_isbn': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('international_standard_book_number'),
         'c': value.get('terms_of_availability'),
         'q': utils.reverse_force_list(
@@ -229,8 +267,24 @@ def reverse_international_standard_serial_number(self, key, value):
     indicator_map1 = {
         "Continuing resource not of international interest": "1",
         "Continuing resource of international interest": "0",
-        "No level specified": "_"}
+        "No level specified": "_",
+    }
+
+    field_map = {
+        'international_standard_serial_number': 'a',
+        'issn_l': 'l',
+        'canceled_issn_l': 'm',
+        'incorrect_issn': 'y',
+        'canceled_issn': 'z',
+        'source': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('international_standard_serial_number'),
         'm': utils.reverse_force_list(
             value.get('canceled_issn_l')),
@@ -256,17 +310,19 @@ def reverse_international_standard_serial_number(self, key, value):
 def reverse_other_standard_identifier(self, key, value):
     """Reverse - Other Standard Identifier."""
     indicator_map1 = {
-        "International Article Number": "3",
-        "International Standard Music Number": "2",
-        "International Standard Recording Code": "0",
-        "Serial Item and Contribution Identifier": "4",
-        "Source specified in subfield $2": "7",
-        "Universal Product Code": "1",
-        "Unspecified type of standard number or code": "8"}
+        'International Article Number': '3',
+        'International Standard Music Number': '2',
+        'International Standard Recording Code': '0',
+        'Serial Item and Contribution Identifier': '4',
+        'Source specified in subfield $2': '7',
+        'Universal Product Code': '1',
+        'Unspecified type of standard number or code': '8',
+    }
     indicator_map2 = {
-        "Difference": "1",
-        "No difference": "0",
-        "No information provided": "_"}
+        'Difference': '1',
+        'No difference': '0',
+        'No information provided': '_',
+    }
     field_map = {
         'standard_number_or_code': 'a',
         'terms_of_availability': 'c',
@@ -276,18 +332,15 @@ def reverse_other_standard_identifier(self, key, value):
         'linkage': '6',
         'field_link_and_sequence_number': '8',
         'canceled_invalid_standard_number_or_code': 'z',
-        'type_of_standard_number_or_code': None,
-        'difference_indicator': None
     }
 
-    ind1 = indicator_map1.get(
-        value.get(
-            'type_of_standard_number_or_code',
-            '_'))
-    ind2 = indicator_map2.get(value.get('difference_indicator', '_'))
     order = utils.map_order(field_map, value)
 
+    if '2' in order and indicator_map1.get(value.get('type_of_standard_number_or_code'), '7') != '7':
+        order.remove('2')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('standard_number_or_code'),
         'c': value.get('terms_of_availability'),
         'd': value.get('additional_codes_following_the_standard_number_or_code'),
@@ -299,9 +352,8 @@ def reverse_other_standard_identifier(self, key, value):
             value.get('field_link_and_sequence_number')),
         'z': utils.reverse_force_list(
             value.get('canceled_invalid_standard_number_or_code')),
-        '$ind1': ind1,
-        '$ind2': ind2,
-        '__order__': tuple(order) if len(order) else None,
+        '$ind1': indicator_map1.get(value.get('type_of_standard_number_or_code'), '_'),
+        '$ind2': indicator_map2.get(value.get('difference_indicator', '_')),
     }
 
 
@@ -335,7 +387,22 @@ def reverse_overseas_acquisition_number(self, key, value):
 @utils.filter_values
 def reverse_fingerprint_identifier(self, key, value):
     """Reverse - Fingerprint Identifier."""
+    field_map = {
+        'first_and_second_groups_of_characters': 'a',
+        'third_and_fourth_groups_of_characters': 'b',
+        'date': 'c',
+        'number_of_volume_or_part': 'd',
+        'unparsed_fingerprint': 'e',
+        'source': '2',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('first_and_second_groups_of_characters'),
         'c': value.get('date'),
         'b': value.get('third_and_fourth_groups_of_characters'),
@@ -361,7 +428,18 @@ def reverse_fingerprint_identifier(self, key, value):
 @utils.filter_values
 def reverse_standard_technical_report_number(self, key, value):
     """Reverse - Standard Technical Report Number."""
+    field_map = {
+        'standard_technical_report_number': 'a',
+        'qualifying_information': 'q',
+        'canceled_invalid_number': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('standard_technical_report_number'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -384,18 +462,18 @@ def reverse_standard_technical_report_number(self, key, value):
 def reverse_publisher_number(self, key, value):
     """Reverse - Publisher Number."""
     indicator_map1 = {
-        "Issue number": "0",
-        "Matrix number": "1",
-        "Other music number": "3",
-        "Other publisher number": "5",
-        "Plate number": "2",
-        "Videorecording number": "4",
+        'Issue number': '0',
+        'Matrix number': '1',
+        'Other music number': '3',
+        'Other publisher number': '5',
+        'Plate number': '2',
+        'Videorecording number': '4',
     }
     indicator_map2 = {
-        "No note, added entry": "3",
-        "No note, no added entry": "0",
-        "Note, added entry": "1",
-        "Note, no added entry": "2",
+        'No note, added entry': '3',
+        'No note, no added entry': '0',
+        'Note, added entry': '1',
+        'Note, no added entry': '2',
     }
 
     field_map = {
@@ -436,7 +514,17 @@ def reverse_publisher_number(self, key, value):
 @utils.filter_values
 def reverse_coden_designation(self, key, value):
     """Reverse - CODEN Designation."""
+    field_map = {
+        'coden': 'a',
+        'canceled_invalid_coden': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('coden'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -455,7 +543,33 @@ def reverse_coden_designation(self, key, value):
 @utils.filter_values
 def reverse_musical_incipits_information(self, key, value):
     """Reverse - Musical Incipits Information."""
+    field_map = {
+        'number_of_work': 'a',
+        'number_of_movement': 'b',
+        'number_of_excerpt': 'c',
+        'caption_or_heading': 'd',
+        'role': 'e',
+        'clef': 'g',
+        'voice_instrument': 'm',
+        'key_signature': 'n',
+        'time_signature': 'o',
+        'musical_notation': 'p',
+        'general_note': 'q',
+        'key_or_mode': 'r',
+        'coded_validity_note': 's',
+        'text_incipit': 't',
+        'uniform_resource_identifier': 'u',
+        'link_text': 'y',
+        'public_note': 'z',
+        'system_code': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('number_of_work'),
         'c': value.get('number_of_excerpt'),
         'b': value.get('number_of_movement'),
@@ -502,7 +616,17 @@ def reverse_musical_incipits_information(self, key, value):
 @utils.filter_values
 def reverse_postal_registration_number(self, key, value):
     """Reverse - Postal Registration Number."""
+    field_map = {
+        'postal_registration_number': 'a',
+        'source_agency_assigning_number': 'b',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('postal_registration_number'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -520,16 +644,16 @@ def reverse_postal_registration_number(self, key, value):
 def reverse_date_time_and_place_of_an_event(self, key, value):
     """Reverse - Date/Time and Place of an Event."""
     indicator_map1 = {
-        "Multiple single dates ": "1",
-        "No date information ": "_",
-        "Range of dates ": "2",
-        "Single date ": "0",
+        'No date information': '_',
+        'Single date': '0',
+        'Multiple single dates': '1',
+        'Range of dates': '2',
     }
     indicator_map2 = {
-        "Broadcast ": "1",
-        "Capture ": "0",
-        "Finding ": "2",
-        "No information provided ": "_",
+        'No information provided': '_',
+        'Capture': '0',
+        'Broadcast': '1',
+        'Finding': '2',
     }
 
     field_map = {
@@ -537,7 +661,7 @@ def reverse_date_time_and_place_of_an_event(self, key, value):
         'geographic_classification_area_code': 'b',
         'geographic_classification_subarea_code': 'c',
         'place_of_event': 'p',
-        'authority_record_control_number': '0',
+        'authority_record_control_number_or_standard_number': '0',
         'source_of_term': '2',
         'materials_specified': '3',
         'linkage': '6',
@@ -545,11 +669,6 @@ def reverse_date_time_and_place_of_an_event(self, key, value):
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[3] in indicator_map1:
-        order.append('type_of_date_in_subfield_a')
-    if key[4] in indicator_map2:
-        order.append('type_of_event')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -584,14 +703,15 @@ def reverse_date_time_and_place_of_an_event(self, key, value):
 def reverse_coded_cartographic_mathematical_data(self, key, value):
     """Reverse - Coded Cartographic Mathematical Data."""
     indicator_map1 = {
-        "Range of scales": "3",
-        "Scale indeterminable/No scale recorded": "0",
-        "Single scale": "1",
+        'Scale indeterminable/No scale recorded': '0',
+        'Single scale': '1',
+        'Range of scales': '3',
+
     }
     indicator_map2 = {
-        "Exclusion ring": "1",
-        "Not applicable": "_",
-        "Outer ring": "0",
+        'Not applicable': '_',
+        'Outer ring': '0',
+        'Exclusion ring': '1',
     }
 
     field_map = {
@@ -622,11 +742,6 @@ def reverse_coded_cartographic_mathematical_data(self, key, value):
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[3] in indicator_map1:
-        order.append('type_of_scale')
-    if key[4] in indicator_map2:
-        order.append('type_of_ring')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -734,9 +849,9 @@ def reverse_original_study_number_for_computer_data_files(self, key, value):
 def reverse_source_of_acquisition(self, key, value):
     """Reverse - Source of Acquisition."""
     indicator_map1 = {
-        '#': 'Not applicable/No information provided/Earliest',
-        '2': 'Intervening',
-        '3': 'Current/Latest',
+        'Not applicable/No information provided/Earliest': '_',
+        'Intervening': '2',
+        'Current/Latest': '3',
     }
 
     field_map = {
@@ -754,9 +869,6 @@ def reverse_source_of_acquisition(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('source_of_acquisition_sequence')
-
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('stock_number'),
@@ -773,11 +885,13 @@ def reverse_source_of_acquisition(self, key, value):
         'n': utils.reverse_force_list(
             value.get('note')
         ),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': indicator_map1.get(key[3], '_'),
+        '$ind1': indicator_map1.get(value.get('source_of_acquisition_sequence'), '_'),
         '$ind2': '_',
     }
 
@@ -786,7 +900,16 @@ def reverse_source_of_acquisition(self, key, value):
 @utils.filter_values
 def reverse_record_content_licensor(self, key, value):
     """Reverse - Record Content Licensor."""
+    field_map = {
+        'record_content_licensor': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('record_content_licensor'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -839,10 +962,40 @@ def reverse_cataloging_source(self, key, value):
 def reverse_language_code(self, key, value):
     """Reverse - Language Code."""
     indicator_map1 = {
-        "Item is or includes a translation": "1",
-        "Item not a translation/does not include a translation": "0",
-        "No information provided": "_"}
+        'No information provided': '_',
+        'Item not a translation/does not include a translation': '0',
+        'Item is or includes a translation': '1',
+    }
+
+    indicator_map2 = {
+        'MARC language code': '_',
+        'Source specified in subfield $2': '7',
+    }
+
+    field_map = {
+        'language_code_of_text_sound_track_or_separate_title': 'a',
+        'language_code_of_summary_or_abstract': 'b',
+        'language_code_of_sung_or_spoken_text': 'd',
+        'language_code_of_librettos': 'e',
+        'language_code_of_table_of_contents': 'f',
+        'language_code_of_accompanying_material_other_than_librettos': 'g',
+        'language_code_of_original': 'h',
+        'language_code_of_subtitles_or_captions': 'j',
+        'language_code_of_intermediate_translations': 'k',
+        'language_code_of_original_accompanying_materials_other_than_librettos': 'm',
+        'language_code_of_original_libretto': 'n',
+        'source_of_code': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if '2' in order and indicator_map2.get(value.get('source_of_code'), '7') != '7':
+        order.remove('2')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('language_code_of_text_sound_track_or_separate_title')
         ),
@@ -884,7 +1037,7 @@ def reverse_language_code(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('translation_indication'), '_'),
-        '$ind2': '_',
+        '$ind2': indicator_map2.get(value.get('source_of_code'), '7'),
     }
 
 
@@ -1001,10 +1154,10 @@ def reverse_special_coded_dates(self, key, value):
     """Reverse - Special Coded Dates."""
     field_map = {
         'type_of_date_code': 'a',
-        'date_1_b.c._date': 'b',
-        'date_1_c.e._date': 'c',
-        'date_2_b.c._date': 'd',
-        'date_2_c.e._date': 'e',
+        'date_1_bc_date': 'b',
+        'date_1_ce_date': 'c',
+        'date_2_bc_date': 'd',
+        'date_2_ce_date': 'e',
         'date_resource_modified': 'j',
         'beginning_or_single_date_created': 'k',
         'ending_date_created': 'l',
@@ -1076,7 +1229,7 @@ def reverse_form_of_musical_composition_code(self, key, value):
         if indicator_map2.get(value.get('source_of_code'), '7') == '7'
         else None,
         '$ind1': '_',
-        '$ind2': value.get(indicator_map2.get('source_of_code'), '_'),
+        '$ind2': value.get(indicator_map2.get(value.get('source_of_code')), '_'),
     }
 
 
@@ -1175,7 +1328,7 @@ def reverse_library_of_congress_copy_issue_offprint_statement(
 def reverse_geographic_classification(self, key, value):
     """Reverse - Geographic Classification."""
     indicator_map1 = {
-        'Library of Congress Classification': '#',
+        'Library of Congress Classification': '_',
         'U.S. Dept. of Defense Classification': '1',
         'Source specified in subfield $2': '7',
     }
@@ -1191,8 +1344,8 @@ def reverse_geographic_classification(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('code_source')
+    if '2' in order and indicator_map1.get(value.get('code_source'), '7') != '7':
+        order.remove('2')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -1208,7 +1361,7 @@ def reverse_geographic_classification(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': indicator_map1.get(value.get('code_source'), '_'),
+        '$ind1': indicator_map1.get(value.get('code_source'), '7'),
         '$ind2': '_',
     }
 
@@ -1403,7 +1556,7 @@ def reverse_subject_category_code(self, key, value):
     if key[4] in indicator_map2:
         order.append('code_source')
 
-    if indicator_map2.get(value.get('code_source'), '7') != '7':
+    if '2' in order and indicator_map2.get(value.get('code_source'), '7') != '7':
         order.remove('2')
 
     return {
@@ -1650,7 +1803,7 @@ def reverse_synthesized_classification_number_components(self, key, value):
 def reverse_government_document_classification_number(self, key, value):
     """Reverse - Government Document Classification Number."""
     indicator_map1 = {
-        'Source specified in subfield $2': '#',
+        'Source specified in subfield $2': '_',
         'Superintendent of Documents Classification System': '0',
         'Government of Canada Publications: Outline of Classification': '1',
     }
@@ -1665,7 +1818,7 @@ def reverse_government_document_classification_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map1.get(value.get('number_source'), '#') != '7':
+    if '2' in order and indicator_map1.get(value.get('number_source'), '_') != '_':
         order.remove('2')
 
     return {
@@ -1679,7 +1832,7 @@ def reverse_government_document_classification_number(self, key, value):
             value.get('canceled_invalid_classification_number')
         ),
         '6': value.get('linkage'),
-        '$ind1': indicator_map1.get(value.get('number_source'), '#'),
+        '$ind1': indicator_map1.get(value.get('number_source'), '_'),
         '$ind2': '_',
     }
 

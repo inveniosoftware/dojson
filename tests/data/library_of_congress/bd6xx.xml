@@ -1,0 +1,1555 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Elijah,</subfield>
+      <subfield code="c">(Biblical prophet)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Gautama Buddha</subfield>
+      <subfield code="v">Early works to 1800.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Jesus Christ</subfield>
+      <subfield code="x">History of doctrines</subfield>
+      <subfield code="y">Early church, ca. 30-600.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="0" ind2="0">
+      <subfield code="a">Zacchaeus</subfield>
+      <subfield code="c">(Biblical character)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Brunhoff, Jean de,</subfield>
+      <subfield code="d">1899-1937</subfield>
+      <subfield code="x">Characters</subfield>
+      <subfield code="x">Babar.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Clovio, Giulio,</subfield>
+      <subfield code="d">1498-1578,</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Kennedy, John F.</subfield>
+      <subfield code="q">(John Fitzgerald),</subfield>
+      <subfield code="d">1917-1963</subfield>
+      <subfield code="x">Assassination.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Monroe, Marilyn,</subfield>
+      <subfield code="d">1926-1962,</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Nixon, Richard M.</subfield>
+      <subfield code="q">(Richard Milhouse),</subfield>
+      <subfield code="d">1913-</subfield>
+      <subfield code="x">Psychology.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Peretz, Isaac Leib</subfield>
+      <subfield code="d">1851 or 1852-1915</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="0">
+      <subfield code="a">Pushkin, Aleksandr Sergeevich,</subfield>
+      <subfield code="d">1799-1837</subfield>
+      <subfield code="x">Museums</subfield>
+      <subfield code="z">Russia (Federation)</subfield>
+      <subfield code="z">Moscow</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="1">
+      <subfield code="a">Magellan, Ferdinand,</subfield>
+      <subfield code="d">d 1521.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="1" ind2="7">
+      <subfield code="8">1\p</subfield>
+      <subfield code="0">(DE-588)119010046</subfield>
+      <subfield code="a">Perec, Icchok Leib</subfield>
+      <subfield code="d">1852-1915</subfield>
+      <subfield code="2">gnd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="600" ind1="3" ind2="0">
+      <subfield code="a">Clark family</subfield>
+      <subfield code="v">Fiction.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Augusta (Ga.).</subfield>
+      <subfield code="b">Board of Health.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Bamberg (Ecclesiastical principality)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">Canada.</subfield>
+      <subfield code="b">Agriculture Canada</subfield>
+      <subfield code="x">Officials and employees.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">France.</subfield>
+      <subfield code="t">Bulletin officiel du rÃ©gistre du commerce et du rÃ©gistre des mÃ©tiers.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Army.</subfield>
+      <subfield code="b">Cavalry, 7th.</subfield>
+      <subfield code="b">Company E,</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="1" ind2="0">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Supreme Court,</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">Ark Royal (Ship)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">Catholic Church.</subfield>
+      <subfield code="b">Province of Baltimore (Md.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">Lutheran Church</subfield>
+      <subfield code="x">Doctrines</subfield>
+      <subfield code="v">Early works to 1800.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">Orthodox Eastern Church.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">Radio Vaticana.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">Titanic (Steamship)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">United Nations</subfield>
+      <subfield code="x">Economic assistance</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">United Nations</subfield>
+      <subfield code="z">Africa.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="0">
+      <subfield code="a">Yale University</subfield>
+      <subfield code="x">Faculty.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="610" ind1="2" ind2="6">
+      <subfield code="a">Ãglise catholique</subfield>
+      <subfield code="x">Histoire</subfield>
+      <subfield code="y">20e siÃ¨cle.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="611" ind1="2" ind2="0">
+      <subfield code="a">Derby (Horse race)</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">20th century</subfield>
+      <subfield code="j">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="611" ind1="2" ind2="0">
+      <subfield code="a">International Congress of Writers for the Defense of Culture</subfield>
+      <subfield code="n">(1st :</subfield>
+      <subfield code="d">1935 :</subfield>
+      <subfield code="c">Paris, France)</subfield>
+      <subfield code="v">Fiction.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="611" ind1="2" ind2="0">
+      <subfield code="a">Olympic Games</subfield>
+      <subfield code="n">(23rd :</subfield>
+      <subfield code="d">1984 :</subfield>
+      <subfield code="c">Los Angeles, Calif.)</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="611" ind1="2" ind2="0">
+      <subfield code="a">Purdue Pest Control Conference</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="611" ind1="2" ind2="0">
+      <subfield code="a">Tour de France (Bicycle race)</subfield>
+      <subfield code="x">History.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="611" ind1="2" ind2="0">
+      <subfield code="a">Vatican Council</subfield>
+      <subfield code="n">(2nd :</subfield>
+      <subfield code="d">1962-1965).</subfield>
+      <subfield code="t">Decretum de presbyterorum ministerio et vita.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="611" ind1="2" ind2="0">
+      <subfield code="a">World Series (Baseball)</subfield>
+      <subfield code="x">History.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Beowulf</subfield>
+      <subfield code="x">Language</subfield>
+      <subfield code="v">Glossaries, etc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Berliner revue</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">20th century.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="k">Manuscripts.</subfield>
+      <subfield code="l">Latin.</subfield>
+      <subfield code="p">N.T.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="l">English</subfield>
+      <subfield code="x">Versions.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">N.T.</subfield>
+      <subfield code="p">Romans</subfield>
+      <subfield code="x">Geography</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Domesday book,</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Farnese Hours,</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Four seasons (Motion picture : 1981)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">MS-DOS (Computer file)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Talmud</subfield>
+      <subfield code="x">Theology.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="0">
+      <subfield code="a">Ukrainian weekly</subfield>
+      <subfield code="v">Indexes</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="630" ind1="0" ind2="5">
+      <subfield code="a">Studio magazine.</subfield>
+      <subfield code="p">Contemporary paintings</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="648" ind1=" " ind2="7">
+      <subfield code="a">1800-1899</subfield>
+      <subfield code="2">fast</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="648" ind1=" " ind2="7">
+      <subfield code="a">1800-1899</subfield>
+      <subfield code="2">fast</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="648" ind1=" " ind2="7">
+      <subfield code="a">1862</subfield>
+      <subfield code="2">fast</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="648" ind1=" " ind2="7">
+      <subfield code="a">1862</subfield>
+      <subfield code="2">fast</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="648" ind1=" " ind2="7">
+      <subfield code="a">1900-1999</subfield>
+      <subfield code="2">fast</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="648" ind1=" " ind2="7">
+      <subfield code="a">1900-1999</subfield>
+      <subfield code="2">fast</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Amish.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Astronauts.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Aurignacian culture.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">BASIC (Computer program language)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Ballads, English</subfield>
+      <subfield code="z">Hudson River Valley (N.Y. and N.J.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Bhopal Union Carbide Plant Disaster, Bhopal, India, 1984.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Bronze age.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Bull Run, 2d Battle, 1862.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">C.O.D. shipments.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Caracas.</subfield>
+      <subfield code="b">Bolivar Statue.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Catalan literature</subfield>
+      <subfield code="y">16th-18th centuries.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Civilization, Modern</subfield>
+      <subfield code="y">20th century.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Concertos (String orchestra)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Dentistry</subfield>
+      <subfield code="v">Juvenile films.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Egypt in the Bible.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Geology, Stratigraphic</subfield>
+      <subfield code="y">Mesozoic.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Kalmyk cattle.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Lunar petrology.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">MARC formats.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Music</subfield>
+      <subfield code="y">500-1400.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Nuclear energy</subfield>
+      <subfield code="x">History.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Numismatics</subfield>
+      <subfield code="x">Collectors and collecting.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Racetracks (Horse-racing)</subfield>
+      <subfield code="z">United States</subfield>
+      <subfield code="x">History.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Rain and rainfall</subfield>
+      <subfield code="z">Washington (State)</subfield>
+      <subfield code="z">Seattle</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Real property</subfield>
+      <subfield code="z">Mississippi</subfield>
+      <subfield code="z">Tippah County</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Scuba diving</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Seabiscuit (Race horse),</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Shenandoah Valley Campaign, 1864 (May-August)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Twenty-first century</subfield>
+      <subfield code="x">Forecasts.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Unicorns,</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Vocal music</subfield>
+      <subfield code="z">France</subfield>
+      <subfield code="y">18th century.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">Vomiting</subfield>
+      <subfield code="x">Treatment</subfield>
+      <subfield code="v">Handbooks, manuals, etc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="0">
+      <subfield code="a">World War, 1939-1945</subfield>
+      <subfield code="x">Campaigns</subfield>
+      <subfield code="z">Tunisia.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="5">
+      <subfield code="a">Canadian wit and humor (English)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="7">
+      <subfield code="8">2\p</subfield>
+      <subfield code="a">ANTIQUES &amp; COLLECTIBLES</subfield>
+      <subfield code="x">Bottles</subfield>
+      <subfield code="2">bisacsh</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="7">
+      <subfield code="a">Career Exploration.</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1=" " ind2="7">
+      <subfield code="a">Educational buildings</subfield>
+      <subfield code="z">Washington (D.C.)</subfield>
+      <subfield code="y">1890-1910.</subfield>
+      <subfield code="2">lctgm</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="0" ind2="0">
+      <subfield code="a">Flour industry</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="1" ind2="7">
+      <subfield code="a">Acoustic measurement.</subfield>
+      <subfield code="2">test</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="1" ind2="7">
+      <subfield code="a">Career Exploration.</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="1" ind2="7">
+      <subfield code="a">Career Exploration.</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="1" ind2="7">
+      <subfield code="a">Cooks.</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="2" ind2="7">
+      <subfield code="a">Food Service.</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="2" ind2="7">
+      <subfield code="a">Junior High Schools.</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="650" ind1="2" ind2="7">
+      <subfield code="a">Simulation.</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Aix-en-Provence (France)</subfield>
+      <subfield code="x">Social life and customs</subfield>
+      <subfield code="v">Early works to 1800.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Altamira Cave (Spain)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Amazon River.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Antietam National Battlefield (Md.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Bonneville Salt Flats (Utah),</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Bosnia and Hercegovina</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Chelsea (London, England)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">China</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">221 B.C.-960 A.D.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Clear Lake (Iowa : Lake)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Egypt</subfield>
+      <subfield code="x">Economic conditions</subfield>
+      <subfield code="y">To 332 B.C.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Egypt</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Eighteenth dynasty, ca. 1570-1320 B.C.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Fort Bend County (Tex.)</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">France</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Revolution, 1791-1797.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Great Britain</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Medieval period, 1066-1485.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Greece</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">146 B.C.-323 A.D.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Greece</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Geometric period, ca. 900-700 B.C.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Japan</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">February Incident, 1936 (February 26)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Kenwood (Chicago, Ill.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">King Ranch (Tex.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Louisiana</subfield>
+      <subfield code="x">Politics and government</subfield>
+      <subfield code="v">Anecdotes.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Ming Tombs (China)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Mostar (Bosnia and Hercegovina)</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">New Jersey</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">New York (State)</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Niagara Falls (N.Y. and Ont.),</subfield>
+      <subfield code="e">depicted.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Pompeii (Extinct city)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Richmond (Tex.)</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Rome</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Republic, 265-30 B.C.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Rosenberg (Tex.)</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Russia</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="v">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Salem (Mass.)</subfield>
+      <subfield code="v">Fiction.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Texas</subfield>
+      <subfield code="x">Officials and employees</subfield>
+      <subfield code="x">Accidents.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">United States</subfield>
+      <subfield code="x">Boundaries</subfield>
+      <subfield code="z">Canada.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">United States</subfield>
+      <subfield code="x">Census, 2nd, 1800.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">United States</subfield>
+      <subfield code="x">Economic policy</subfield>
+      <subfield code="y">1993-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">United States</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">1849-1877.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Uruguay</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="y">Great War, 1843-1852.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Vienna (W. Va.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Virginia</subfield>
+      <subfield code="x">Maps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Washington (D.C.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="0">
+      <subfield code="a">Washington (D.C.)</subfield>
+      <subfield code="x">History</subfield>
+      <subfield code="v">Periodicals.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="7">
+      <subfield code="3">Psychiatric admission records</subfield>
+      <subfield code="a">Pennsylvania</subfield>
+      <subfield code="x">Nuclear reactor safety</subfield>
+      <subfield code="y">1975-1985</subfield>
+      <subfield code="z">United States.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="651" ind1=" " ind2="7">
+      <subfield code="a">New York (N.Y.)</subfield>
+      <subfield code="2">ericd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Imprints 18th century 1788</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Imprints not after 21 Aug. 1492</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Imprints not before 1479</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Imprints&lt;century&gt; &lt;date as found in 260</subfield>
+      <subfield code="c">&gt;</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Imprints&lt;not after date as found in 260</subfield>
+      <subfield code="c">&gt;</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Imprints&lt;not before date as found in 260</subfield>
+      <subfield code="c">&gt;</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Man</subfield>
+      <subfield code="a">Eyes</subfield>
+      <subfield code="a">Diseases</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">S.C.U.B.A.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2=" ">
+      <subfield code="a">Stamp collecting (United States)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="0">
+      <subfield code="a">Freiheit</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="0">
+      <subfield code="a">Gesetz</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="0">
+      <subfield code="a">Mann</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="1">
+      <subfield code="a">Joyce</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="1">
+      <subfield code="a">Plath</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="2">
+      <subfield code="a">UNICEF</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="5">
+      <subfield code="a">Dublin</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1=" " ind2="5">
+      <subfield code="a">Hamburg</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1="1" ind2=" ">
+      <subfield code="a">Ice, Sculpture, moulds, etc.</subfield>
+      <subfield code="a">Children's games</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="653" ind1="1" ind2=" ">
+      <subfield code="a">fuel cells</subfield>
+      <subfield code="a">molten carbonate</subfield>
+      <subfield code="a">power generation</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="3">business letters</subfield>
+      <subfield code="c">r</subfield>
+      <subfield code="a">housing</subfield>
+      <subfield code="c">z</subfield>
+      <subfield code="b">United States.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">d</subfield>
+      <subfield code="b">blue</subfield>
+      <subfield code="c">f</subfield>
+      <subfield code="b">Baroque</subfield>
+      <subfield code="c">t</subfield>
+      <subfield code="a">pitchers</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">f</subfield>
+      <subfield code="b">French colonial</subfield>
+      <subfield code="c">v</subfield>
+      <subfield code="a">portraits</subfield>
+      <subfield code="c">z</subfield>
+      <subfield code="b">United States</subfield>
+      <subfield code="c">z</subfield>
+      <subfield code="b">New Jersey.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">f</subfield>
+      <subfield code="b">Romanesque</subfield>
+      <subfield code="c">m</subfield>
+      <subfield code="b">stone</subfield>
+      <subfield code="c">r</subfield>
+      <subfield code="a">churches</subfield>
+      <subfield code="c">k</subfield>
+      <subfield code="a">renovation.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">m</subfield>
+      <subfield code="a">limestone.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">m</subfield>
+      <subfield code="b">charcoal</subfield>
+      <subfield code="c">v</subfield>
+      <subfield code="a">drawings</subfield>
+      <subfield code="c">z</subfield>
+      <subfield code="b">Great Britain</subfield>
+      <subfield code="c">y</subfield>
+      <subfield code="b">18th century.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">r</subfield>
+      <subfield code="a">country houses</subfield>
+      <subfield code="c">z</subfield>
+      <subfield code="b">Great Britain</subfield>
+      <subfield code="c">y</subfield>
+      <subfield code="b">18th century.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">r</subfield>
+      <subfield code="a">housing</subfield>
+      <subfield code="c">z</subfield>
+      <subfield code="b">United States.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">v</subfield>
+      <subfield code="a">bibliographies.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1=" " ind2=" ">
+      <subfield code="c">v</subfield>
+      <subfield code="a">guidebooks.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1="0" ind2=" ">
+      <subfield code="c">r</subfield>
+      <subfield code="a">landscape gardens</subfield>
+      <subfield code="c">y</subfield>
+      <subfield code="b">18th century</subfield>
+      <subfield code="c">z</subfield>
+      <subfield code="b">England.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1="0" ind2=" ">
+      <subfield code="c">r</subfield>
+      <subfield code="a">landscape</subfield>
+      <subfield code="y">18th century</subfield>
+      <subfield code="z">England.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1="0" ind2=" ">
+      <subfield code="c">r</subfield>
+      <subfield code="a">landscape</subfield>
+      <subfield code="y">18th century</subfield>
+      <subfield code="z">England.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1="1" ind2=" ">
+      <subfield code="c">k</subfield>
+      <subfield code="a">interior design.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="654" ind1="2" ind2=" ">
+      <subfield code="c">r</subfield>
+      <subfield code="a">housing.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="2">
+      <subfield code="a">Diaries.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="2">
+      <subfield code="a">Festschrift.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="3">Municipal Fire Station records</subfield>
+      <subfield code="a">Fire reports</subfield>
+      <subfield code="z">Atlanta, Georgia</subfield>
+      <subfield code="y">1978.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Addresses</subfield>
+      <subfield code="z">Massachusetts</subfield>
+      <subfield code="z">Boston</subfield>
+      <subfield code="y">1885.</subfield>
+      <subfield code="2">rbgenr</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Agenda</subfield>
+      <subfield code="x">Weekly</subfield>
+      <subfield code="y">1980-1985.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Annotations (Provenance)</subfield>
+      <subfield code="z">Sweden</subfield>
+      <subfield code="y">18th century.</subfield>
+      <subfield code="2">rbprov</subfield>
+      <subfield code="5">MH-H</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Bird's-eye views</subfield>
+      <subfield code="y">1874.</subfield>
+      <subfield code="2">gmgpc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Cartoons</subfield>
+      <subfield code="y">1952.</subfield>
+      <subfield code="2">gmgpc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Competition drawings</subfield>
+      <subfield code="y">1984.</subfield>
+      <subfield code="2">gmgpc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Diaries</subfield>
+      <subfield code="z">Belgium.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Dictionaries</subfield>
+      <subfield code="x">French</subfield>
+      <subfield code="y">18th century.</subfield>
+      <subfield code="2">rbgenr</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Emblem books</subfield>
+      <subfield code="z">Germany</subfield>
+      <subfield code="y">17th century.</subfield>
+      <subfield code="2">rbgenr</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Gampi fibers (Paper)</subfield>
+      <subfield code="z">Japan</subfield>
+      <subfield code="y">1955</subfield>
+      <subfield code="2">rbpap</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Hymnals</subfield>
+      <subfield code="z">Massachusetts</subfield>
+      <subfield code="y">18th century.</subfield>
+      <subfield code="2">rbgenr</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Lithographs</subfield>
+      <subfield code="z">Germany</subfield>
+      <subfield code="y">1902.</subfield>
+      <subfield code="2">gmgpc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Photoprints</subfield>
+      <subfield code="x">Color</subfield>
+      <subfield code="z">Panama Canal Zone</subfield>
+      <subfield code="y">1900-1950.</subfield>
+      <subfield code="2">gmgpc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Prayer books</subfield>
+      <subfield code="z">Rhode Island</subfield>
+      <subfield code="y">18th century.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1=" " ind2="7">
+      <subfield code="a">Signing patterns (Printing)</subfield>
+      <subfield code="z">Germany</subfield>
+      <subfield code="y">18th century.</subfield>
+      <subfield code="2">rbpri</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1="0" ind2="7">
+      <subfield code="c">d</subfield>
+      <subfield code="b">Black</subfield>
+      <subfield code="c">f</subfield>
+      <subfield code="b">Hmong</subfield>
+      <subfield code="c">m</subfield>
+      <subfield code="b">cotton</subfield>
+      <subfield code="c">k</subfield>
+      <subfield code="b">courtship</subfield>
+      <subfield code="c">t</subfield>
+      <subfield code="a">balls.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="655" ind1="0" ind2="7">
+      <subfield code="c">k</subfield>
+      <subfield code="b">Laminated</subfield>
+      <subfield code="c">m</subfield>
+      <subfield code="b">marblewood</subfield>
+      <subfield code="c">v</subfield>
+      <subfield code="a">bust.</subfield>
+      <subfield code="2">aat</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="656" ind1=" " ind2="7">
+      <subfield code="a">Anthropologists.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="656" ind1=" " ind2="7">
+      <subfield code="a">Chauffeurs</subfield>
+      <subfield code="z">France.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="656" ind1=" " ind2="7">
+      <subfield code="a">Dentists.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="656" ind1=" " ind2="7">
+      <subfield code="a">Educators.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="656" ind1=" " ind2="7">
+      <subfield code="a">Migrant laborers.</subfield>
+      <subfield code="k">School district case files.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="656" ind1=" " ind2="7">
+      <subfield code="a">Plastic surgeons</subfield>
+      <subfield code="z">Los Angeles (Calif.)</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="657" ind1=" " ind2="7">
+      <subfield code="a">Annual inventory</subfield>
+      <subfield code="x">Ladies' apparel.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="657" ind1=" " ind2="7">
+      <subfield code="a">Personnel benefits management</subfield>
+      <subfield code="x">Industrial accidents</subfield>
+      <subfield code="x">Morbidity</subfield>
+      <subfield code="x">Vital statistics</subfield>
+      <subfield code="z">Love Canal, New York.</subfield>
+      <subfield code="2">New York State Management Functions Index</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Drug abuse awareness</subfield>
+      <subfield code="b">peer pressure</subfield>
+      <subfield code="b">understanding the law.</subfield>
+      <subfield code="2">local</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Health objective 1</subfield>
+      <subfield code="b">handicapped awareness</subfield>
+      <subfield code="c">NHP01-1991</subfield>
+      <subfield code="d">highly correlated.</subfield>
+      <subfield code="2">ohco</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Health objective 1</subfield>
+      <subfield code="b">handicapped awareness</subfield>
+      <subfield code="c">NHP01-1991</subfield>
+      <subfield code="d">highly correlated.</subfield>
+      <subfield code="2">ohco</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Health objective 4</subfield>
+      <subfield code="b">handicapped impaired education</subfield>
+      <subfield code="d">highly correlated</subfield>
+      <subfield code="c">NHPO4-1991.</subfield>
+      <subfield code="2">ohco</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Math manipulatives</subfield>
+      <subfield code="d">highly correlated.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Math objective 2</subfield>
+      <subfield code="b">fractions, decimals, percents, whole numbers, integers</subfield>
+      <subfield code="c">NRPO2-1991</subfield>
+      <subfield code="d">slightly correlated.</subfield>
+      <subfield code="2">ohco</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Reading objective 1 (fictional)</subfield>
+      <subfield code="b">understanding language, elements of plots, themes, motives, characters, setting by responding to the multiple-meaning word</subfield>
+      <subfield code="c">NRPO2-1991</subfield>
+      <subfield code="d">highly correlated.</subfield>
+      <subfield code="2">ohco</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="658" ind1=" " ind2=" ">
+      <subfield code="a">Reading objective 1</subfield>
+      <subfield code="b">identify, locate, and use information</subfield>
+      <subfield code="c">NRP01-1991.</subfield>
+      <subfield code="2">accssd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">Africa</subfield>
+      <subfield code="g">Nile River</subfield>
+      <subfield code="g">Sixth Cataract.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">Antarctica.</subfield>
+      <subfield code="2">lcsh/naf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">Canada</subfield>
+      <subfield code="b">Ontario (Province)</subfield>
+      <subfield code="g">Niagara Falls.</subfield>
+      <subfield code="2">lcsh/naf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">Japan (nation)</subfield>
+      <subfield code="g">Kanto (region)</subfield>
+      <subfield code="c">Tokyo (metropolis)</subfield>
+      <subfield code="d">Tokyo (inhabited place)</subfield>
+      <subfield code="f">Shibuya.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">Japan</subfield>
+      <subfield code="c">Hokkaido</subfield>
+      <subfield code="g">Asahi-dake.</subfield>
+      <subfield code="2">pemracs</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">California</subfield>
+      <subfield code="c">Los Angeles (County)</subfield>
+      <subfield code="d">Los Angeles</subfield>
+      <subfield code="f">Little Tokyo.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">New York (State)</subfield>
+      <subfield code="g">Niagara Falls.</subfield>
+      <subfield code="2">lcsh/naf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">World</subfield>
+      <subfield code="a">Asia</subfield>
+      <subfield code="b">Japan</subfield>
+      <subfield code="g">Hokkaido (island)</subfield>
+      <subfield code="g">Hokkaido (region)</subfield>
+      <subfield code="c">Hokkaido (prefecture)</subfield>
+      <subfield code="g">Asahi-Dake.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">World</subfield>
+      <subfield code="a">North and Central America</subfield>
+      <subfield code="a">Canada</subfield>
+      <subfield code="c">Ontario</subfield>
+      <subfield code="d">Windsor.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="a">World</subfield>
+      <subfield code="a">North and Central America</subfield>
+      <subfield code="a">United States</subfield>
+      <subfield code="b">Maryland</subfield>
+      <subfield code="c">Montgomery</subfield>
+      <subfield code="d">Silver Spring.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="b">Maryland</subfield>
+      <subfield code="c">Montgomery</subfield>
+      <subfield code="d">Silver Spring.</subfield>
+      <subfield code="2">gnis</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="b">Ontario</subfield>
+      <subfield code="c">Essex</subfield>
+      <subfield code="d">Windsor.</subfield>
+      <subfield code="2">cgnbd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="662" ind1=" " ind2=" ">
+      <subfield code="h">Mars</subfield>
+      <subfield code="h">Valles Marineris.</subfield>
+      <subfield code="2">MARC code for Gazetteer of Planetary Nomenclature</subfield>
+    </datafield>
+  </record>
+</collection>

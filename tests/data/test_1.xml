@@ -7,6 +7,12 @@
     <datafield tag="020" ind1=" " ind2=" ">
       <subfield code="a">0444899251</subfield>
     </datafield>
+    <datafield tag="041" ind1="0" ind2="7">
+      <subfield code="a">en</subfield>
+      <subfield code="a">fr</subfield>
+      <subfield code="a">it</subfield>
+      <subfield code="2">iso639-1</subfield>
+    </datafield>
     <datafield tag="111" ind1="2" ind2=" ">
       <subfield code="a">IFIP International Workshop on Protocols for High Speed Networks</subfield>
       <subfield code="n">(3rd :</subfield>

@@ -59,7 +59,7 @@ def reverse_dissertation_note(self, key, value):
         'degree_type': 'b',
         'name_of_granting_institution': 'c',
         'year_degree_granted': 'd',
-        'miscellaneous': 'g',
+        'miscellaneous_information': 'g',
         'dissertation_identifier': 'o',
         'linkage': '6',
         'field_link_and_sequence_number': '8',

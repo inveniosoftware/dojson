@@ -1,0 +1,1105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="700" ind1="0" ind2=" ">
+      <subfield code="a">Charles Edward,</subfield>
+      <subfield code="c">Prince, grandson of James II, King of England,</subfield>
+      <subfield code="d">1720-1788.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="0" ind2=" ">
+      <subfield code="a">Father Divine.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="0" ind2=" ">
+      <subfield code="a">R. M. B.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="0" ind2=" ">
+      <subfield code="a">Spagna</subfield>
+      <subfield code="c">(Artist),</subfield>
+      <subfield code="d">ca. 1450-1528.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Beethoven, Ludwig van,</subfield>
+      <subfield code="d">1770-1827.</subfield>
+      <subfield code="t">Sonatas,</subfield>
+      <subfield code="m">piano.</subfield>
+      <subfield code="k">Selections.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Bizet, Georges,</subfield>
+      <subfield code="d">1869-1951.</subfield>
+      <subfield code="t">Carmen.</subfield>
+      <subfield code="k">Selections.</subfield>
+      <subfield code="f">1983.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">E., Sheila</subfield>
+      <subfield code="q">(Escovedo),</subfield>
+      <subfield code="d">1959-</subfield>
+      <subfield code="t">Dawn, the beginning.</subfield>
+      <subfield code="h">Sound recording.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Feitelson, Lorser,</subfield>
+      <subfield code="d">1898-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Ford, John,</subfield>
+      <subfield code="d">1894-1973,</subfield>
+      <subfield code="e">direction.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Galway, James.</subfield>
+      <subfield code="4">prf</subfield>
+      <subfield code="4">cnd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Gershkoff, Ira.</subfield>
+      <subfield code="t">Wild in the streets.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Harrison, Tinsley Randolph,</subfield>
+      <subfield code="d">1900-</subfield>
+      <subfield code="t">Principles of internal medicine.</subfield>
+      <subfield code="s">9th ed.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Hecht, Ben,</subfield>
+      <subfield code="d">1893-1964,</subfield>
+      <subfield code="e">writing,</subfield>
+      <subfield code="e">direction,</subfield>
+      <subfield code="e">production.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Herrman, Egbert.</subfield>
+      <subfield code="4">org</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Ibn al-Mu`tazz, `Abd Allah,</subfield>
+      <subfield code="d">861-908.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Jefferson, Thomas,</subfield>
+      <subfield code="d">1743-1826,</subfield>
+      <subfield code="e">former owner.</subfield>
+      <subfield code="5">MH</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Jung, C. G.</subfield>
+      <subfield code="q">(Carl Gustav),</subfield>
+      <subfield code="d">1875-1961.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Lundeberg, Helen,</subfield>
+      <subfield code="d">1908-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Orwell, George,</subfield>
+      <subfield code="d">1903-1950.</subfield>
+      <subfield code="t">Animal farm.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Ries, Ferdinand,</subfield>
+      <subfield code="d">1784-1838.</subfield>
+      <subfield code="t">Octets,</subfield>
+      <subfield code="m">piano, winds, strings,</subfield>
+      <subfield code="n">op. 128,</subfield>
+      <subfield code="r">A â­ major.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Salamin C., Marcel A.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Shlapentokh, Dmitry.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Verez Peraza, Elena,</subfield>
+      <subfield code="d">1919-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Walter, Johannes.</subfield>
+      <subfield code="4">prf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Weber, Lucas.</subfield>
+      <subfield code="4">egr</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2=" ">
+      <subfield code="a">Zuleger, Tobias</subfield>
+      <subfield code="e">Hrsg.</subfield>
+      <subfield code="4">edt</subfield>
+      <subfield code="0">(DE-101c)31113999X</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="1">
+      <subfield code="a">Franklin, Benjamin,</subfield>
+      <subfield code="d">1706-1790,</subfield>
+      <subfield code="e">printer.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Chekhov, Anton Pavlovich,</subfield>
+      <subfield code="d">1860-1904.</subfield>
+      <subfield code="t">Díàíà Vaníà</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="f">1969.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Debussy, Claude,</subfield>
+      <subfield code="d">1862-1918.</subfield>
+      <subfield code="t">Sonatas,</subfield>
+      <subfield code="m">flute, viola, harp.</subfield>
+      <subfield code="f">1986.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Hills, John,</subfield>
+      <subfield code="c">surveyor.</subfield>
+      <subfield code="t">Sketch of Allens town, June 1778.</subfield>
+      <subfield code="f">1976.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Mendelssohn-Bartholdy, Felix,</subfield>
+      <subfield code="d">1809-1847.</subfield>
+      <subfield code="t">Lieder ohne Worte,</subfield>
+      <subfield code="m">piano,</subfield>
+      <subfield code="n">op.62.</subfield>
+      <subfield code="n">No. 6.</subfield>
+      <subfield code="p">FrÃ¼hlingslied.</subfield>
+      <subfield code="f">1970.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Nypsus, Marcus Iunius.</subfield>
+      <subfield code="t">Fluminis varatio.</subfield>
+      <subfield code="f">1993.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Nypsus, Marcus Iunius.</subfield>
+      <subfield code="t">Limitis repositio.</subfield>
+      <subfield code="f">1993.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Rossini, Gioacchino,</subfield>
+      <subfield code="d">1792-1868.</subfield>
+      <subfield code="t">MosÃ¨ in Egitto.</subfield>
+      <subfield code="p">Dal tuo stellato soglio.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="700" ind1="1" ind2="2">
+      <subfield code="a">Shakespeare, William,</subfield>
+      <subfield code="d">1564-1616.</subfield>
+      <subfield code="t">Selections.</subfield>
+      <subfield code="l">German.</subfield>
+      <subfield code="f">1982.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">Algeria.</subfield>
+      <subfield code="t">Treaties, etc.</subfield>
+      <subfield code="g">England and Wales,</subfield>
+      <subfield code="d">1682 Apr. 20.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">Canada.</subfield>
+      <subfield code="k">Treaties, etc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">Ecuador.</subfield>
+      <subfield code="t">Plan Nacional de Desarrollo, 1980-1984.</subfield>
+      <subfield code="n">Parte 1,</subfield>
+      <subfield code="p">Grandes objetivos nacionales.</subfield>
+      <subfield code="l">English.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">France.</subfield>
+      <subfield code="b">Bureau de recherches géologiques et minières.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">France.</subfield>
+      <subfield code="t">Treaties, etc.</subfield>
+      <subfield code="g">Poland,</subfield>
+      <subfield code="d">1948 Mar. 2.</subfield>
+      <subfield code="k">Protocols, etc.,</subfield>
+      <subfield code="d">1951 Mar. 6.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">Kansas.</subfield>
+      <subfield code="b">State Board of Agriculture.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">Minnesota.</subfield>
+      <subfield code="b">Constitutional Convention</subfield>
+      <subfield code="d">(1857 :</subfield>
+      <subfield code="g">Republican)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Army Map Service.</subfield>
+      <subfield code="t">Eastern United States 1:250,000.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Bureau of Foreign and Domestic Commerce.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Bureau of the Census.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Dept. of Commerce and Labor.</subfield>
+      <subfield code="b">Bureau of Statistics.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Dept. of the Treasury.</subfield>
+      <subfield code="b">Bureau of Statistics.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="t">Constitution.</subfield>
+      <subfield code="p">13th Amendment.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="1" ind2="2">
+      <subfield code="a">Philippines.</subfield>
+      <subfield code="t">Labor code of the Philippines.</subfield>
+      <subfield code="n">Book 5,</subfield>
+      <subfield code="p">Labor relations.</subfield>
+      <subfield code="f">1981.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Bridgewater Library,</subfield>
+      <subfield code="e">former owner.</subfield>
+      <subfield code="5">NjP</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">British Institute of International Affairs.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Centre national de la recherche scientifique (France).</subfield>
+      <subfield code="b">Centre de documentation.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Chemical Society (Great Britain)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Hallmark Collection (Library of Congress)</subfield>
+      <subfield code="5">DLC</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Herbert E. Budek Films and Slides (Firm)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Indian Council for Research on International Economic Relations.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">National Fire Protection Association.</subfield>
+      <subfield code="t">National electrical code (1993)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">New Orleans Blue Serenaders.</subfield>
+      <subfield code="4">prf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">Potomac-side Naturalists' Club.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2=" ">
+      <subfield code="a">WGBH (Television station : Boston, Mass.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2="2">
+      <subfield code="a">Catholic Church.</subfield>
+      <subfield code="b">Pope (1958-1963 : John XXIII).</subfield>
+      <subfield code="t">Mater et magistra.</subfield>
+      <subfield code="l">French.</subfield>
+      <subfield code="k">Selections.</subfield>
+      <subfield code="f">1963.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="710" ind1="2" ind2="2">
+      <subfield code="a">Catholic Church.</subfield>
+      <subfield code="t">Mass, 33rd Sunday of ordinary time (Chant).</subfield>
+      <subfield code="f">1979.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="0" ind2=" ">
+      <subfield code="a">Smith (David Nichol) Memorial Seminar.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Asian Games</subfield>
+      <subfield code="n">(9th :</subfield>
+      <subfield code="d">1982 :</subfield>
+      <subfield code="c">Delhi, India)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Conference on Philosophy and Its History</subfield>
+      <subfield code="d">(1983 :</subfield>
+      <subfield code="c">University of Lancaster)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">International Aerospace and Ground Conference on Lightning and Static Electricity</subfield>
+      <subfield code="d">(1988 :</subfield>
+      <subfield code="c">Oklahoma, City, Okla.).</subfield>
+      <subfield code="t">Proceedings of the 1988 International Aerospace and Ground Conference on Lightning and Static Electricity.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">International Conference on Neoplatonism and Gnosticism</subfield>
+      <subfield code="d">(1984 :</subfield>
+      <subfield code="c">University of Oklahoma</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Mostly Mozart Festival.</subfield>
+      <subfield code="e">Orchestra.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Olympic Games</subfield>
+      <subfield code="n">(21st :</subfield>
+      <subfield code="d">1976 :</subfield>
+      <subfield code="c">Montreal, Quebec).</subfield>
+      <subfield code="e">Organizing Committee.</subfield>
+      <subfield code="e">Arts and Culture Program.</subfield>
+      <subfield code="e">Visual Arts Section.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Pan American Games</subfield>
+      <subfield code="n">(6th :</subfield>
+      <subfield code="d">1971 :</subfield>
+      <subfield code="c">Cali, Colombia)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Theatertreffen Berlin (Festival)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Van Cliburn International Piano Competition.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2=" ">
+      <subfield code="a">Women and National Health Insurance Meeting</subfield>
+      <subfield code="d">(1980 :</subfield>
+      <subfield code="c">Washington, D.C.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2="2">
+      <subfield code="a">Council of Trent</subfield>
+      <subfield code="d">(1545-1563).</subfield>
+      <subfield code="t">Canones et decreta.</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="k">Selections.</subfield>
+      <subfield code="f">1912.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2="2">
+      <subfield code="a">Forum on Bilateral Conversations</subfield>
+      <subfield code="n">(5th :</subfield>
+      <subfield code="d">1990 :</subfield>
+      <subfield code="c">Budapest, Hungary).</subfield>
+      <subfield code="t">Report.</subfield>
+      <subfield code="f">1991.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="711" ind1="2" ind2="2">
+      <subfield code="a">United Nations Conference on the Law of the Sea</subfield>
+      <subfield code="n">(1st :</subfield>
+      <subfield code="d">1958 :</subfield>
+      <subfield code="c">Geneva, Switzerland).</subfield>
+      <subfield code="t">Proceedings.</subfield>
+      <subfield code="k">Selections.</subfield>
+      <subfield code="f">1960.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">Alza Corporation</subfield>
+      <subfield code="e">assignee</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">Houghton Mifflin Company</subfield>
+      <subfield code="4">pbl</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">Maddox, James W.</subfield>
+      <subfield code="4">sec</subfield>
+      <subfield code="4">mon</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">Morris, Andrea Crawford</subfield>
+      <subfield code="e">ill.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">U.S. Energy Information Administration, Coal Statistics Division</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1=" " ind2=" ">
+      <subfield code="a">Vonderrohe, Robert, 1934-</subfield>
+      <subfield code="e">editor</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1="1" ind2=" ">
+      <subfield code="a">Blacklock, Joseph</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1="1" ind2=" ">
+      <subfield code="a">Theodore K. Hepburn</subfield>
+      <subfield code="e">inventor</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="720" ind1="2" ind2=" ">
+      <subfield code="a">CAPCON Library Network</subfield>
+      <subfield code="e">author</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">Mythprint.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">20/20 (Television program)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">60 minutes (Television program)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">ActualitÃ©s-Service.</subfield>
+      <subfield code="n">No 306 (Supplement 1)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Baubedarf Manager.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">O.T.</subfield>
+      <subfield code="p">Judges V.</subfield>
+      <subfield code="l">German</subfield>
+      <subfield code="s">Grether.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">BÃ¼cherkommentare.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Cancionero musical de Segovia.</subfield>
+      <subfield code="k">Selections.</subfield>
+      <subfield code="f">1980.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Client characteristic &amp; population movement report for quarter ...</subfield>
+      <subfield code="p">Probation subsidy.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Economics library selections.</subfield>
+      <subfield code="n">Series I,</subfield>
+      <subfield code="p">New books in economics.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Fabrication of biteplane.</subfield>
+      <subfield code="n">Part 1,</subfield>
+      <subfield code="p">Waxing on mounted cards.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">FarbenfachgeschÃ¤ft.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Foreign affairs (Council on Foreign Relations)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Frankfurt heute.</subfield>
+      <subfield code="h">Motion picture.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">GetrÃ¤nke Revue.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Gone with the wind (Motion picture)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Index librorum prohibitorum.</subfield>
+      <subfield code="f">1570.</subfield>
+      <subfield code="5"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Oil, paint and drug reporter.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">People speak (Radio program)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Weinwirtschaft.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Weinwirtschaft.</subfield>
+      <subfield code="p">Markt.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2=" ">
+      <subfield code="a">Weinwirtschaft.</subfield>
+      <subfield code="p">Technik.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">Automatic heat and air conditioning.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">Bonn Convention</subfield>
+      <subfield code="d">(1952).</subfield>
+      <subfield code="f">1980.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">Current drug handbook.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">God save the king;</subfield>
+      <subfield code="o">arr.</subfield>
+      <subfield code="f">1982.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">Tarski's world.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="730" ind1="0" ind2="2">
+      <subfield code="a">Tarski's world.</subfield>
+      <subfield code="f">1993</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2=" ">
+      <subfield code="a">Healing our culture, healing ourselves.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2=" ">
+      <subfield code="a">Manual del adivino.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Capriccio</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Dissolution of the family unit.</subfield>
+      <subfield code="p">Divorce, separation, and annulment.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Dissolution of the family unit.</subfield>
+      <subfield code="p">Economic aspects, custody, taxes.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Heiligen drei KÃ¶nige aus Morgenland</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Joint Legislative Committee on Matrimonial and Family Laws, proposed statute.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Mondscheinmusik</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Monolog der GrÃ¤fin</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">South Pacific</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="740" ind1="0" ind2="2">
+      <subfield code="a">Uncle Vanya.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="751" ind1=" " ind2=" ">
+      <subfield code="a">Frankfurt &lt;Main&gt;</subfield>
+      <subfield code="0">(DE-101b)2028282-5</subfield>
+      <subfield code="2">gkd</subfield>
+      <subfield code="4">uvp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="751" ind1=" " ind2=" ">
+      <subfield code="a">Nürnberg</subfield>
+      <subfield code="0">(DE-101b)2003349-7</subfield>
+      <subfield code="2">gkd</subfield>
+      <subfield code="4">pup</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="751" ind1=" " ind2=" ">
+      <subfield code="a">Roma</subfield>
+      <subfield code="0">(DE-101b)1030696-1</subfield>
+      <subfield code="2">gkd</subfield>
+      <subfield code="4">dbp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="751" ind1=" " ind2=" ">
+      <subfield code="a">Senftenberg &lt;Schwarze Elster&gt;</subfield>
+      <subfield code="0">(DE-101b)115478-3</subfield>
+      <subfield code="2">gkd</subfield>
+      <subfield code="4">evp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">Africa</subfield>
+      <subfield code="g">Nile River</subfield>
+      <subfield code="g">Sixth Cataract.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">Canada</subfield>
+      <subfield code="b">British Columbia</subfield>
+      <subfield code="d">Vancouver.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">Canada</subfield>
+      <subfield code="b">Ontario (Province)</subfield>
+      <subfield code="g">Niagara Falls.</subfield>
+      <subfield code="2">lcsh/naf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">England</subfield>
+      <subfield code="c">Greater Manchester</subfield>
+      <subfield code="d">Manchester.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">France</subfield>
+      <subfield code="b">Doubs.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">Spain</subfield>
+      <subfield code="d">Madrid.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">Alabama</subfield>
+      <subfield code="d">Montgomery.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">California</subfield>
+      <subfield code="c">Los Angeles (County)</subfield>
+      <subfield code="d">Los Angeles</subfield>
+      <subfield code="f">Little Tokyo.</subfield>
+      <subfield code="2">tgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">Kansas</subfield>
+      <subfield code="c">Butler</subfield>
+      <subfield code="d">Augusta.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">Maryland</subfield>
+      <subfield code="c">Montgomery County.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">New York (State)</subfield>
+      <subfield code="g">Niagara Falls.</subfield>
+      <subfield code="2">lcsh/naf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="a">United States</subfield>
+      <subfield code="b">Pennsylvania</subfield>
+      <subfield code="d">Philadelphia.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="752" ind1=" " ind2=" ">
+      <subfield code="h">Mars</subfield>
+      <subfield code="h">Valles Marineris.</subfield>
+      <subfield code="2">MARC code for Gazetteer of Planetary Nomenclature</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="753" ind1=" " ind2=" ">
+      <subfield code="a">Apple II</subfield>
+      <subfield code="c">DOS 3.3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="753" ind1=" " ind2=" ">
+      <subfield code="a">Compaq</subfield>
+      <subfield code="b">Basic</subfield>
+      <subfield code="c">DOS 3.2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="753" ind1=" " ind2=" ">
+      <subfield code="a">IBM PC</subfield>
+      <subfield code="b">Pascal</subfield>
+      <subfield code="c">DOS 1.1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="753" ind1=" " ind2=" ">
+      <subfield code="a">IBM PC</subfield>
+      <subfield code="c">OS/2 Warp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="753" ind1=" " ind2=" ">
+      <subfield code="a">IBM PC</subfield>
+      <subfield code="c">Windows 98</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">family</subfield>
+      <subfield code="a">Gekkonidae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Hemidactylus</subfield>
+      <subfield code="c">species</subfield>
+      <subfield code="a">Turcicus</subfield>
+      <subfield code="d">Mediterranean gecko</subfield>
+      <subfield code="d">Mediterranean gekko</subfield>
+      <subfield code="x">Hemidactylus turcicus.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">family</subfield>
+      <subfield code="a">Gekkonidae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Hemidactylus</subfield>
+      <subfield code="c">species</subfield>
+      <subfield code="a">Turcicus</subfield>
+      <subfield code="d">Mediterranean gecko</subfield>
+      <subfield code="d">Mediterranean gekko.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">family</subfield>
+      <subfield code="a">Gekkonidae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Hemidactylus</subfield>
+      <subfield code="c">species</subfield>
+      <subfield code="a">Turcicus.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">family</subfield>
+      <subfield code="a">Poaceae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Andropogon</subfield>
+      <subfield code="c">species</subfield>
+      <subfield code="a">glomeratus</subfield>
+      <subfield code="c">variety</subfield>
+      <subfield code="a">pumilus</subfield>
+      <subfield code="d">Bushy Broom Grass</subfield>
+      <subfield code="x">Andropogon glomeratus</subfield>
+      <subfield code="z">Species authority: (Walt.) BSP</subfield>
+      <subfield code="z">Variety authority: Vasey turcicus.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">family</subfield>
+      <subfield code="a">Pottiaceae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Barbula</subfield>
+      <subfield code="c">species</subfield>
+      <subfield code="a">agraria</subfield>
+      <subfield code="x">Barbula agraria.</subfield>
+      <subfield code="z">Species authority: Hedw.turcicus.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">family</subfield>
+      <subfield code="a">Viperidae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Crotalus</subfield>
+      <subfield code="a">species</subfield>
+      <subfield code="a">adamanteus</subfield>
+      <subfield code="d">Diamondback</subfield>
+      <subfield code="d">Diamondback rattlesnake</subfield>
+      <subfield code="d">Eastern diamondback</subfield>
+      <subfield code="d">Eastern diamondback rattlesnake</subfield>
+      <subfield code="d">Rattler</subfield>
+      <subfield code="d">Rattlesnake.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">family</subfield>
+      <subfield code="a">Viperidae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Sistrurus</subfield>
+      <subfield code="c">species</subfield>
+      <subfield code="a">miliarius</subfield>
+      <subfield code="d">Dusky pigmy rattlesnake</subfield>
+      <subfield code="d">Ground rattler</subfield>
+      <subfield code="d">Pigmy rattler</subfield>
+      <subfield code="d">Pigmy rattlesnake</subfield>
+      <subfield code="d">Rattler</subfield>
+      <subfield code="d">Rattlesnake.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="754" ind1=" " ind2=" ">
+      <subfield code="c">kingdom</subfield>
+      <subfield code="a">Plantae</subfield>
+      <subfield code="c">phylum</subfield>
+      <subfield code="a">Spermatophyta</subfield>
+      <subfield code="c">class</subfield>
+      <subfield code="a">Angiospermae</subfield>
+      <subfield code="c">subclass</subfield>
+      <subfield code="a">Dicotyledoneae</subfield>
+      <subfield code="c">order</subfield>
+      <subfield code="a">Rosales</subfield>
+      <subfield code="c">family</subfield>
+      <subfield code="a">Rosaceae</subfield>
+      <subfield code="c">genus</subfield>
+      <subfield code="a">Rosa</subfield>
+      <subfield code="c">species</subfield>
+      <subfield code="a">setigera</subfield>
+      <subfield code="c">variety</subfield>
+      <subfield code="a">tomentosa.</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+</collection>

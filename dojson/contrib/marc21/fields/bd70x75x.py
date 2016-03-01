@@ -19,8 +19,15 @@ from ..model import marc21
 @utils.filter_values
 def added_entry_personal_name(self, key, value):
     """Added Entry-Personal Name."""
-    indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
-    indicator_map2 = {"#": "No information provided", "2": "Analytical entry"}
+    indicator_map1 = {
+        '0': 'Forename',
+        '1': 'Surname',
+        '3': 'Family name',
+    }
+    indicator_map2 = {
+        '_': 'No information provided',
+        '2': 'Analytical entry',
+    }
     field_map = {
         '0': 'authority_record_control_number_or_standard_number',
         '3': 'materials_specified',
@@ -38,7 +45,7 @@ def added_entry_personal_name(self, key, value):
         'i': 'relationship_information',
         'j': 'attribution_qualifier',
         'k': 'form_subheading',
-        'l': 'language_or_a_work',
+        'l': 'language_of_a_work',
         'm': 'medium_of_performance_for_music',
         'n': 'number_of_part_section_of_a_work',
         'o': 'arranged_statement_for_music',

@@ -55,7 +55,7 @@ def dissertation_note(self, key, value):
         'b': 'degree_type',
         'c': 'name_of_granting_institution',
         'd': 'year_degree_granted',
-        'g': 'miscellaneous',
+        'g': 'miscellaneous_information',
         'o': 'dissertation_identifier',
         '6': 'linkage',
         '8': 'field_link_and_sequence_number',

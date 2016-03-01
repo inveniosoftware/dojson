@@ -206,7 +206,7 @@ def series_statement_added_entry_title(self, key, value):
         'v': 'volume_sequential_designation',
         'w': 'bibliographic_record_control_number',
         'x': 'international_standard_serial_number',
-        '0': 'authority_record_control_number',
+        '0': 'authority_record_control_number_or_standard_number',
         '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }

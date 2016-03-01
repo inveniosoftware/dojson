@@ -1,0 +1,708 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="760" ind1="0" ind2=" ">
+      <subfield code="7">c1as</subfield>
+      <subfield code="a">United States. Geological Survey.</subfield>
+      <subfield code="t">Water supply papers</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="760" ind1="0" ind2=" ">
+      <subfield code="a">United States. Geological Survey.</subfield>
+      <subfield code="t">Water supply papers</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="762" ind1="0" ind2=" ">
+      <subfield code="t">Evaporation control research</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="762" ind1="0" ind2=" ">
+      <subfield code="t">Quality of surface waters of the United States</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="765" ind1="0" ind2=" ">
+      <subfield code="t">Astrofizicheskie issledovaniÃ­Ã </subfield>
+      <subfield code="w">(DLC)###78648457#</subfield>
+      <subfield code="w">(OCoLC)4798581</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="765" ind1="1" ind2=" ">
+      <subfield code="t">Mashinovedenie </subfield>
+      <subfield code="w">(DLC)###90646274#</subfield>
+      <subfield code="w">(OCoLC)6258868</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="767" ind1="0" ind2=" ">
+      <subfield code="t">Astrofizicheskie issledovaniÃ­Ã . English. Bulletin of the Special Astrophysical Observatory (North Caucasus)</subfield>
+      <subfield code="x">0190-2709</subfield>
+      <subfield code="w">(DLC)###86649325# </subfield>
+      <subfield code="w">(OCoLC)4698159</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="767" ind1="1" ind2=" ">
+      <subfield code="t">Finance &amp; development. Arabic. TamwÄ«l wa-al-tanmiyah</subfield>
+      <subfield code="x">0250-7455</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="767" ind1="1" ind2=" ">
+      <subfield code="t">Finance &amp; development. French. Finances et dÃ©veloppement</subfield>
+      <subfield code="x">0430-473X</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="767" ind1="1" ind2=" ">
+      <subfield code="t">Finance &amp; development. German. Finanzierung &amp; Entwicklung</subfield>
+      <subfield code="x">0250-7439</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="767" ind1="1" ind2=" ">
+      <subfield code="t">Finance &amp; development. Portuguese. FinanÃ§as &amp; desenvolvimento</subfield>
+      <subfield code="x">0250-7404</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="767" ind1="1" ind2=" ">
+      <subfield code="t">Finance &amp; development. Spanish. Finanzas y desarrollo</subfield>
+      <subfield code="x">0250-7447</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="t">Directory: United States, territories, and Canada</subfield>
+      <subfield code="w">(DLC)###78646712#</subfield>
+      <subfield code="w">(OCoLC)4579783</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="770" ind1="0" ind2=" ">
+      <subfield code="t">Journal of cellular biochemistry. Supplement</subfield>
+      <subfield code="x">0733-1959</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="0" ind2=" ">
+      <subfield code="a">Baubedarf Manager</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="0" ind2=" ">
+      <subfield code="t">Lubricants world (2000)</subfield>
+      <subfield code="w">(OCoLC)43290151</subfield>
+      <subfield code="w">(DLC)##2001203221</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="0" ind2=" ">
+      <subfield code="t">World agricultural situation (Washington, D.C. : 1970)</subfield>
+      <subfield code="x">0084-1358</subfield>
+      <subfield code="w">(DLC)sf#81008035#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="7">p1as</subfield>
+      <subfield code="a">Silence, Timothy.</subfield>
+      <subfield code="t">Foundling hospital for wit</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="7">unas</subfield>
+      <subfield code="t">Post boy (London, England)</subfield>
+      <subfield code="w">(OCoLC)1234567</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="a">GetrÃ¤nke Revue</subfield>
+      <subfield code="w">(DLC)sn#91020150</subfield>
+      <subfield code="w">(OCoLC)9345710</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="a">Weinwirtschaft. Markt</subfield>
+      <subfield code="w">(DLC)###83644950</subfield>
+      <subfield code="w">(OCoLC)9345548</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="t">Aval</subfield>
+      <subfield code="g">&lt;1982-&gt;</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="t">FarbenfachgeschÃ¤ft</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="t">Statistiques pour l'Ã©conomie normande</subfield>
+      <subfield code="g">1979-</subfield>
+      <subfield code="w">(OCoLC)6260766</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="t">Weinwirtschaft</subfield>
+      <subfield code="w">(DLC)###83644948</subfield>
+      <subfield code="w">(OCoLC)9345710</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="772" ind1="1" ind2=" ">
+      <subfield code="t">Weinwirtschaft. Technik</subfield>
+      <subfield code="x">0723-1369</subfield>
+      <subfield code="w">(DLC)###83644949</subfield>
+      <subfield code="w">(OCoLC)9345574</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="7">c2tc</subfield>
+      <subfield code="a">Massachusetts. Commission on Consumer Affairs</subfield>
+      <subfield code="t">Records</subfield>
+      <subfield code="w">(MaRG)170</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="7">nnas</subfield>
+      <subfield code="t">California journal.</subfield>
+      <subfield code="g">Vol. 24, pt. B no. 9 (Sept. 1993), p. 235-48</subfield>
+      <subfield code="q">24:B:9&lt;235</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="7">nnas</subfield>
+      <subfield code="t">Metro. </subfield>
+      <subfield code="g">Vol. 96, no. 4 (May 2000), p. 23-24, 27</subfield>
+      <subfield code="q">96:4&lt;23</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="7">p1am</subfield>
+      <subfield code="a">Desio, Ardito, 1897-</subfield>
+      <subfield code="t">Geographical features of the Karakorum.</subfield>
+      <subfield code="d">Milano : ISMEO, 1991</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="7">p1am</subfield>
+      <subfield code="a">Hamilton, Milton W. (Milton Wheaton), 1901-</subfield>
+      <subfield code="t">Sir William Johnson and the Indians of New York.</subfield>
+      <subfield code="d"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="g">Vol. 2, no. 2 (Feb. 1976), p. 195-230</subfield>
+      <subfield code="w">(DLC)###75001234#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="t">Entomologists' monthly magazine</subfield>
+      <subfield code="p">ENTOMOL MON MAG</subfield>
+      <subfield code="d">Wallingford : Gem Publishing Company</subfield>
+      <subfield code="x">0013-8908</subfield>
+      <subfield code="y">FNMMA</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="t">Gilbert H. Grosvenor Collection of Photographs of the Alexander Graham Bell family</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="t">Horizon</subfield>
+      <subfield code="g">Vol. 17, no. 98 (Feb. 1948), p. 78-159</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="t">Networks for networkers : critical issues in cooperative library development</subfield>
+      <subfield code="w">(DLC)###79024054#</subfield>
+      <subfield code="w">(Uk)8040016</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="0" ind2=" ">
+      <subfield code="t">Pacific rail news.</subfield>
+      <subfield code="q">279&lt;GM5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="773" ind1="1" ind2=" ">
+      <subfield code="t">Frances Benjamin Johnston Collection</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="8">1\c</subfield>
+      <subfield code="o">NYDA.1993.010.00130. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="8">2\c</subfield>
+      <subfield code="o">NYDA.1993.010.00131. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="8">3\c</subfield>
+      <subfield code="o">NYDA.1993.010.00132. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="8">4\c</subfield>
+      <subfield code="o">NYDA.1993.010.00133. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="8">5\c</subfield>
+      <subfield code="o">NYDA.1993.010.00134. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="o">NYDA.1993.010.00130. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="o">NYDA.1993.010.00131. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="o">NYDA.1993.010.00132. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="o">NYDA.1993.010.00133. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="774" ind1="0" ind2=" ">
+      <subfield code="o">NYDA.1993.010.00134. </subfield>
+      <subfield code="n"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="0" ind2=" ">
+      <subfield code="t">Communist</subfield>
+      <subfield code="f">ilu</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="0" ind2=" ">
+      <subfield code="t">Cuba economic news</subfield>
+      <subfield code="x">0590-2932</subfield>
+      <subfield code="e">eng </subfield>
+      <subfield code="w">(OCoLC)2259984</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="0" ind2=" ">
+      <subfield code="t">Hospital practice (Office ed.)</subfield>
+      <subfield code="x">8750-2836</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="0" ind2=" ">
+      <subfield code="t">Modern maturity</subfield>
+      <subfield code="b">NRTA edition</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="0" ind2=" ">
+      <subfield code="t">Modern maturity</subfield>
+      <subfield code="x">0026-8046</subfield>
+      <subfield code="w">(DLC)###63047860# </subfield>
+      <subfield code="w">(OCoLC)1758471</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="1" ind2=" ">
+      <subfield code="t">Client characteristic &amp; population movement report for quarter ... Probation subsidy</subfield>
+      <subfield code="w">(OCoLC)1258055</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="1" ind2=" ">
+      <subfield code="t">Communist</subfield>
+      <subfield code="f">ilu</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="1" ind2=" ">
+      <subfield code="t">Cuba economic news</subfield>
+      <subfield code="x">0590-2932</subfield>
+      <subfield code="e">eng </subfield>
+      <subfield code="w">(OCoLC)2259984</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="1" ind2=" ">
+      <subfield code="t">Modern maturity</subfield>
+      <subfield code="b">NRTA edition</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="775" ind1="1" ind2=" ">
+      <subfield code="t">Modern maturity</subfield>
+      <subfield code="x">0026-8046</subfield>
+      <subfield code="w">(DLC)###63047860# </subfield>
+      <subfield code="w">(OCoLC)1758471</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="0" ind2=" ">
+      <subfield code="c">Original</subfield>
+      <subfield code="w">(DLC)###24020326#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="0" ind2=" ">
+      <subfield code="t">Americas</subfield>
+      <subfield code="x">0003-1615 </subfield>
+      <subfield code="w">(OCoLC)8370205</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="0" ind2=" ">
+      <subfield code="t">College English</subfield>
+      <subfield code="x">0010-0994</subfield>
+      <subfield code="w">(DLC)###41006180# </subfield>
+      <subfield code="w">(OCoLC)1564053</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="0" ind2=" ">
+      <subfield code="t">College English</subfield>
+      <subfield code="x">0010-0994</subfield>
+      <subfield code="w">(DLC)sc#84007753# </subfield>
+      <subfield code="w">(OCoLC)3546316</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="1" ind2=" ">
+      <subfield code="c">Original</subfield>
+      <subfield code="w">(DLC)###24020326#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="1" ind2=" ">
+      <subfield code="t">Americas</subfield>
+      <subfield code="x">0003-1615 </subfield>
+      <subfield code="w">(OCoLC)8370205</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="1" ind2=" ">
+      <subfield code="t">College English</subfield>
+      <subfield code="x">0010-0994</subfield>
+      <subfield code="w">(DLC)###41006180# </subfield>
+      <subfield code="w">(OCoLC)1564053</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="776" ind1="1" ind2=" ">
+      <subfield code="t">College English</subfield>
+      <subfield code="x">0010-0994</subfield>
+      <subfield code="w">(DLC)sc#84007753# </subfield>
+      <subfield code="w">(OCoLC)3546316</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="0" ind2=" ">
+      <subfield code="t">Current drug handbook</subfield>
+      <subfield code="g">1962-</subfield>
+      <subfield code="x">0070-1939 </subfield>
+      <subfield code="w">(DLC)###58006390#</subfield>
+      <subfield code="w">(OCoLC)1565622</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="0" ind2=" ">
+      <subfield code="t">Drug, the nurse, the patient</subfield>
+      <subfield code="w">(DLC)###66015620#</subfield>
+      <subfield code="w">(OCoLC)3995456</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="0" ind2=" ">
+      <subfield code="t">Mythprint</subfield>
+      <subfield code="x">0146-9347</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="1" ind2=" ">
+      <subfield code="t">Automatic heat and air conditioning</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="1" ind2=" ">
+      <subfield code="t">BÃ¼cherkommentare</subfield>
+      <subfield code="g">Jan. 1981-June 1981</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="1" ind2=" ">
+      <subfield code="t">Current drug handbook</subfield>
+      <subfield code="g">1962-</subfield>
+      <subfield code="x">0070-1939 </subfield>
+      <subfield code="w">(DLC)###58006390#</subfield>
+      <subfield code="w">(OCoLC)1565622</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="1" ind2=" ">
+      <subfield code="t">Drug, the nurse, the patient</subfield>
+      <subfield code="w">(DLC)###66015620#</subfield>
+      <subfield code="w">(OCoLC)3995456</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="777" ind1="1" ind2=" ">
+      <subfield code="t">Mythprint</subfield>
+      <subfield code="x">0146-9347</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="a">American Hospital Association.</subfield>
+      <subfield code="t">Bulletin of the American Hospital Association</subfield>
+      <subfield code="w">(OCoLC)1777831</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="0">
+      <subfield code="t">Journal of polymer science / Polymer physics edition</subfield>
+      <subfield code="w">(DE-600)220649-3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="1">
+      <subfield code="t">Annales scientifiques de l'UniversitÃ© de BesanÃ§on</subfield>
+      <subfield code="w">(OCoLC)6179013</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="2">
+      <subfield code="t">HespÃ©ris </subfield>
+      <subfield code="w">(OCoLC)1752037#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="3">
+      <subfield code="t">Elevage</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="5">
+      <subfield code="a">American Society of International Law.</subfield>
+      <subfield code="t">Proceedings</subfield>
+      <subfield code="g">1971</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="6">
+      <subfield code="t">Graphic notices and supplemental data</subfield>
+      <subfield code="w">(OCoLC)4276671</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="0" ind2="7">
+      <subfield code="a">British Columbia. Ministry of Provincial Secretary and Government Services.</subfield>
+      <subfield code="t">Annual report</subfield>
+      <subfield code="x">0226-0883</subfield>
+      <subfield code="w">(OCoLC)6270433 </subfield>
+      <subfield code="w">(DLC)###80649039#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="1" ind2="4">
+      <subfield code="t">Annales de gÃ©ophysique</subfield>
+      <subfield code="x">0003-4029</subfield>
+      <subfield code="w">(OCoLC)1481255 </subfield>
+      <subfield code="w">(DLC)###52016346#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="780" ind1="1" ind2="4">
+      <subfield code="t">Annali de geofisica</subfield>
+      <subfield code="w">(OCoLC)1847060 </subfield>
+      <subfield code="w">(DLC)gs#49000041#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="0" ind2="0">
+      <subfield code="t">TEIC quarterly seismological bulletin</subfield>
+      <subfield code="x">0741-1898</subfield>
+      <subfield code="w">(DLC)sc#83007721#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="0" ind2="1">
+      <subfield code="a">Southeastern College Art Conference.</subfield>
+      <subfield code="t">SECAC newsletter</subfield>
+      <subfield code="w">(OCoLC)4973820</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="0" ind2="2">
+      <subfield code="t">British Columbia medical journal.</subfield>
+      <subfield code="x">0007-0556</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="0" ind2="4">
+      <subfield code="t">Business week</subfield>
+      <subfield code="g">Oct. 1940</subfield>
+      <subfield code="x">0007-7135</subfield>
+      <subfield code="w">(DLC)###31006225#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="0" ind2="5">
+      <subfield code="t">Sheet metal worker</subfield>
+      <subfield code="x">0096-9249</subfield>
+      <subfield code="w">(OCoLC)2054610</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="0" ind2="8">
+      <subfield code="a">Los Angeles (Calif.). Dept. of City Planning.</subfield>
+      <subfield code="t">Annual report of the Department of City Planning (1966)</subfield>
+      <subfield code="w">(DLC)sn#86032686#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="0">
+      <subfield code="a">Institute for Telecommunication Sciences and Aeronomy.</subfield>
+      <subfield code="t">Ionospheric predictions</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="0">
+      <subfield code="t">Learning in New York (University of the State of New York)</subfield>
+      <subfield code="g">1983</subfield>
+      <subfield code="w">(OCoLC)10120612</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="0">
+      <subfield code="t">U.S. exports. Schedule E commodity groupings by world area and country</subfield>
+      <subfield code="w">(DLC)###84641135</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="6">
+      <subfield code="t">Hospital practice (Hospital ed.)</subfield>
+      <subfield code="x">8755-4542</subfield>
+      <subfield code="w">(DLC)sn#84001694#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="6">
+      <subfield code="t">Hospital practice (Office ed.)</subfield>
+      <subfield code="x">8750-2836</subfield>
+      <subfield code="w">(OCoLC)10716242</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="7">
+      <subfield code="t">Adult correctional services in Canada.</subfield>
+      <subfield code="x">0715-2973</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="7">
+      <subfield code="t">Current abstracts of chemistry and index chemicus (Philadelphia, Pa : 1978)</subfield>
+      <subfield code="x">0161-455X</subfield>
+      <subfield code="w">(DLC)###83642299</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="7">
+      <subfield code="t">Index chemicus (Philadelphia, Pa. : 1977)</subfield>
+      <subfield code="x">0160-1482</subfield>
+      <subfield code="w">(DLC)###83642297</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="785" ind1="1" ind2="7">
+      <subfield code="t">Services correctionnels au Canada.</subfield>
+      <subfield code="x">0711-6810</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="786" ind1="0" ind2=" ">
+      <subfield code="a">United States. Defense Mapping Agency.</subfield>
+      <subfield code="t">Reno, NV-CA west digital terrain elevation data</subfield>
+      <subfield code="v">Data for reformatting to DEM format</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="787" ind1="1" ind2=" ">
+      <subfield code="t">Deutsche Bibliographie. Wöchentliches Verzeichnis</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="787" ind1="1" ind2=" ">
+      <subfield code="t">Empire State report (1982)</subfield>
+      <subfield code="x">0747-0711</subfield>
+      <subfield code="w">(DLC)###84647292#</subfield>
+      <subfield code="w">(OCoLC)8541622</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="787" ind1="1" ind2=" ">
+      <subfield code="t">Empire State report weekly</subfield>
+      <subfield code="x">0745-8622</subfield>
+      <subfield code="w">(DLC)###84647299#</subfield>
+      <subfield code="w">(OCoLC)9403759</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="787" ind1="1" ind2=" ">
+      <subfield code="t">Foreign affairs (Council on Foreign Relations)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="787" ind1="1" ind2="8">
+      <subfield code="i">Related source work</subfield>
+      <subfield code="o">(istc)0A3200912B4A1057</subfield>
+    </datafield>
+  </record>
+</collection>

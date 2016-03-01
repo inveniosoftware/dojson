@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Armstrong, Louis,</subfield>
+      <subfield code="d">1900-1971.</subfield>
+      <subfield code="4">prf</subfield>
+      <subfield code="t">Louie Armstrong (Universal City Studios) ;</subfield>
+      <subfield code="v">6.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Berenholtz, Jim,</subfield>
+      <subfield code="d">1957-</subfield>
+      <subfield code="t">Teachings of the feathered serpent ;</subfield>
+      <subfield code="v">bk. 1.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Darnell, Jack.</subfield>
+      <subfield code="t">Edible wild plants of the planet earth.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Gellerman, Saul W.</subfield>
+      <subfield code="t">Gellerman effective supervision series.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Joyce, James,</subfield>
+      <subfield code="d">1882-1941.</subfield>
+      <subfield code="t">James Joyce archive.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Negt, Oskar</subfield>
+      <subfield code="t">Schriften.</subfield>
+      <subfield code="v">Bd. 2</subfield>
+      <subfield code="w">(DE-101b)967682460</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="800" ind1="1" ind2=" ">
+      <subfield code="a">Poe, Edgar Allan,</subfield>
+      <subfield code="d">1809-1849.</subfield>
+      <subfield code="t">Works.</subfield>
+      <subfield code="l">German.</subfield>
+      <subfield code="f">1922.</subfield>
+      <subfield code="s">Rosl ;</subfield>
+      <subfield code="v">1. Bd.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="810" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Army Map Service.</subfield>
+      <subfield code="t">A.M.S.,</subfield>
+      <subfield code="v">Z201.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="810" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Army Map Service.</subfield>
+      <subfield code="t">Special Africa series,</subfield>
+      <subfield code="v">no. 12.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="810" ind1="2" ind2=" ">
+      <subfield code="a">American Academy in Rome.</subfield>
+      <subfield code="t">Memoirs.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="810" ind1="2" ind2=" ">
+      <subfield code="a">Central Institute of Indian Languages.</subfield>
+      <subfield code="t">CIIL linguistic atlas series ;</subfield>
+      <subfield code="v">1.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="810" ind1="2" ind2=" ">
+      <subfield code="a">Deutsches Institut fÃ¼r Normung</subfield>
+      <subfield code="4">aut</subfield>
+      <subfield code="t">DIN-Taschenbuch</subfield>
+      <subfield code="v">193</subfield>
+      <subfield code="w">(DE-101)016034287</subfield>
+      <subfield code="w">(DE-600)1072284-1</subfield>
+      <subfield code="7">as</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="810" ind1="2" ind2=" ">
+      <subfield code="a">European Court of Human Rights.</subfield>
+      <subfield code="t">Publications de la Cour europÃ©enne des droits de l'homme.</subfield>
+      <subfield code="n">SÃ©rie A,</subfield>
+      <subfield code="p">ArrÃªts et dÃ©cisions ;</subfield>
+      <subfield code="v">vol. 48.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="810" ind1="2" ind2=" ">
+      <subfield code="a">John Bartholomew and Son.</subfield>
+      <subfield code="t">Bartholomew world travel series ;</subfield>
+      <subfield code="v">10.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="811" ind1="2" ind2=" ">
+      <subfield code="a">Delaware Symposium on Language Studies.</subfield>
+      <subfield code="t">Delaware symposia on language studies ;</subfield>
+      <subfield code="v">4.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="811" ind1="2" ind2=" ">
+      <subfield code="a">International Congress of Nutrition</subfield>
+      <subfield code="n">(11th :</subfield>
+      <subfield code="d">1978 :</subfield>
+      <subfield code="c">Rio de Janeiro, Brazil).</subfield>
+      <subfield code="t">Nutrition and food science ;</subfield>
+      <subfield code="v">v. 1.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="811" ind1="2" ind2=" ">
+      <subfield code="a">International Congress of Romance Linguistics and Philology</subfield>
+      <subfield code="n">(17th :</subfield>
+      <subfield code="d">1983 :</subfield>
+      <subfield code="c">Aix-en-Provence, France).</subfield>
+      <subfield code="t">Actes du XVIIÃ¨me CongrÃ¨s international de linguistique et philologie romanes ;</subfield>
+      <subfield code="v">vol. no. 5.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Department of State publication ;</subfield>
+      <subfield code="v">7846.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Department of State publication.</subfield>
+      <subfield code="p">Department and Foreign Service series ;</subfield>
+      <subfield code="v">128.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Pediatric clinics of North America ;</subfield>
+      <subfield code="v">v. 2, no. 4.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Reference works.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Uniform crime reports (Washington, D.C.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="3">1980:</subfield>
+      <subfield code="a">DHEW publication.</subfield>
+      <subfield code="x">0090-0206</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="3">1982-</subfield>
+      <subfield code="a">DHHS publication.</subfield>
+      <subfield code="x">0276-4733</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="3">&lt;May 1986-&gt;</subfield>
+      <subfield code="a">Tourism research series.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="3">v. 1-8</subfield>
+      <subfield code="a">Collection Byzantine.</subfield>
+      <subfield code="x">0223-3738</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="3">v. 9</subfield>
+      <subfield code="a">Collection des universitÃ©s de France.</subfield>
+      <subfield code="x">0184-7155</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Basic nursing skills (Robert J. Brady Company) ;</subfield>
+      <subfield code="v">tape 14.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Bibliographies of modern authors (San Bernardino, Calif.) ;</subfield>
+      <subfield code="v">no. 27.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Bulletin (United States. Bureau of Labor Statistics)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Cornell University Library historical math monographs.</subfield>
+      <subfield code="5">COO</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">DA pam ;</subfield>
+      <subfield code="v">27-50.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Digital dictionaries of South Asia.</subfield>
+      <subfield code="5">ICU</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Document (Susitna Hydroelectric Project) ;</subfield>
+      <subfield code="v">no. 3009-3011.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Fasteners</subfield>
+      <subfield code="v">5</subfield>
+      <subfield code="w">(DE-101)550955267</subfield>
+      <subfield code="7">am</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Gerritsen collection of women's history.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Lund studies in geography,</subfield>
+      <subfield code="n">Ser. B.</subfield>
+      <subfield code="p">Human geography,</subfield>
+      <subfield code="x">0076-1478 ;</subfield>
+      <subfield code="v">5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Lund studies in geography,</subfield>
+      <subfield code="x">1400-1144 ;</subfield>
+      <subfield code="v">101</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Monograph (University of California, Los Angeles. Dept. of Continuing Education in Health Sciences)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Musica da camera (Oxford University Press) ;</subfield>
+      <subfield code="v">72.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Reference works.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Sport (International Union of Students. Physical Education and Sports Dept.) ;</subfield>
+      <subfield code="v">v. 10.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Teenage years.</subfield>
+      <subfield code="h"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="830" ind1=" " ind2="0">
+      <subfield code="a">Wonders of man series.</subfield>
+    </datafield>
+  </record>
+</collection>

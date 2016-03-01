@@ -1,0 +1,1105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">110908.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Abraham a Sancta Clara,</subfield>
+      <subfield code="d">1644-1709.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Author of The diary of a physician,</subfield>
+      <subfield code="d">1807-1877.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Black Foot,</subfield>
+      <subfield code="c">Chief,</subfield>
+      <subfield code="d">d. 1877</subfield>
+      <subfield code="c">(Spirit)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Cassiodorus,</subfield>
+      <subfield code="c">Senator,</subfield>
+      <subfield code="d">ca. 487-ca. 580.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Claude,</subfield>
+      <subfield code="c">d'Abbeville, pere,</subfield>
+      <subfield code="d">d. 1632.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Dr. X.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">E.S.,</subfield>
+      <subfield code="c">Meister,</subfield>
+      <subfield code="d">15th cent.,</subfield>
+      <subfield code="j">Follower of</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">H. D.</subfield>
+      <subfield code="q">(Hilda Doolittle),</subfield>
+      <subfield code="d">1886-1961.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Homer.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Howard.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">John Paul</subfield>
+      <subfield code="b">II,</subfield>
+      <subfield code="c">Pope,</subfield>
+      <subfield code="d">1920-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">John</subfield>
+      <subfield code="b">II Comnenus,</subfield>
+      <subfield code="c">Emperor of the East,</subfield>
+      <subfield code="d">1088-1143.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">John,</subfield>
+      <subfield code="c">the Baptist, Saint.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">Thomas,</subfield>
+      <subfield code="c">Aquinas, Saint,</subfield>
+      <subfield code="d">1225?-1274.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Adams, Henry,</subfield>
+      <subfield code="d">1838-1918.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Bach, Johann Sebastian,</subfield>
+      <subfield code="d">1685-1750.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Bach, Johann Sebastian.</subfield>
+      <subfield code="4">aut</subfield>
+      <subfield code="0">(DE-101c)310008891</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Barwise, Jon.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Barwise, Jon.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Beethoven, Ludwig van,</subfield>
+      <subfield code="d">1770-1827.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Beethoven, Ludwig van,</subfield>
+      <subfield code="d">1770-1827.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Beethoven, Ludwig van,</subfield>
+      <subfield code="d">1770-1827.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Beeton,</subfield>
+      <subfield code="c">Mrs.</subfield>
+      <subfield code="q">(Isabella Mary),</subfield>
+      <subfield code="d">1836-1865.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Blackbeard, Author of,</subfield>
+      <subfield code="d">1777-1852.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Bouma, Jelle.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Brown, B. F.</subfield>
+      <subfield code="u">Chemistry Dept., American University.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Bullett, Gerald William,</subfield>
+      <subfield code="d">1894-1958.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Chekhov, Anton Pavlovich,</subfield>
+      <subfield code="d">1860-1904.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Chiang, Kai-shek,</subfield>
+      <subfield code="d">1887-1975.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Churchill, Winston,</subfield>
+      <subfield code="c">Sir,</subfield>
+      <subfield code="d">1874-1965.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Colton, George Woolworth,</subfield>
+      <subfield code="d">1827-1901.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Debussy, Claude,</subfield>
+      <subfield code="d">1862-1918.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">El-Abiad, Ahmed H.,</subfield>
+      <subfield code="d">1926-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Faulkes, William</subfield>
+      <subfield code="4">aut</subfield>
+      <subfield code="0">(DE-101c)311140009</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Fernandex, Perfecto V.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Fitzgerald, David.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Fitzgerald-Jones, Sandra,</subfield>
+      <subfield code="d">1938-</subfield>
+      <subfield code="e">interviewer.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Fowler, T. M.</subfield>
+      <subfield code="q">(Thaddeus Mortimer),</subfield>
+      <subfield code="d">1842-1922.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Gibbon, Edward,</subfield>
+      <subfield code="d">1737-1794.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Godowsky, Leopold,</subfield>
+      <subfield code="d">1870-1938.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Gotshaw, F. Marco.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Gresham, G. A.</subfield>
+      <subfield code="q">(Geoffrey Austin)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Gyrowetz, Adalbert,</subfield>
+      <subfield code="d">1763-1850.</subfield>
+      <subfield code="t">Serenades,</subfield>
+      <subfield code="m">clarinets (2), horns (2), bassoon,</subfield>
+      <subfield code="n">op. 3 (AndrÃ©)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Joannes Aegidius, Zamorensis,</subfield>
+      <subfield code="d">1240 or 41-ca. 1316.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Le Conte, John Eatton,</subfield>
+      <subfield code="d">1784-1860.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Levi, James,</subfield>
+      <subfield code="d">fl. 1706-1739.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Lowry, Lois.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">McIntosh, Paula.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Morgan, John Pierpont,</subfield>
+      <subfield code="d">1837-1913,</subfield>
+      <subfield code="e">collector.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Mozart, Wolfgang Amadeus,</subfield>
+      <subfield code="d">1756-1791.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Mozart, Wolfgang Amadeus,</subfield>
+      <subfield code="d">1756-1791.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Paterson, Katherine.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Porta, Giambattista della,</subfield>
+      <subfield code="d">1535?-1615.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Q., Mike.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Reynolds, Joshua,</subfield>
+      <subfield code="c">Sir,</subfield>
+      <subfield code="d">1723-1792,</subfield>
+      <subfield code="j">Pupil of</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">RiaÃ±o, Juan Facundo,</subfield>
+      <subfield code="d">1828-1901.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Seuss,</subfield>
+      <subfield code="c">Dr.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Shakespeare, William,</subfield>
+      <subfield code="d">1564-1616.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Shlapentokh, Vladimir.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Smith, Elizabeth</subfield>
+      <subfield code="q">(Ann Elizabeth)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Strauss, Johann,</subfield>
+      <subfield code="d">1804-1849.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Stravinsky, Igor,</subfield>
+      <subfield code="d">1882-1971.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Strong, Anna Louise,</subfield>
+      <subfield code="d">1885-1970.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">TourÃ©, Ahmed SÃ©kou,</subfield>
+      <subfield code="d">1922-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Vivaldi, Antonio,</subfield>
+      <subfield code="d">1678-1741.</subfield>
+      <subfield code="t">Cimento dell'armonia e dell'inventione.</subfield>
+      <subfield code="n">N. 1-4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">VÃ©rez-Peraza, Elena,</subfield>
+      <subfield code="d">1919-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Walle-Lissnijder,</subfield>
+      <subfield code="c">vande.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Ward, Humphrey,</subfield>
+      <subfield code="c">Mrs.,</subfield>
+      <subfield code="d">1851-1920.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Watson,</subfield>
+      <subfield code="c">Rev.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Wilder, Thornton,</subfield>
+      <subfield code="d">1897-1975.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">Woolridge, Ian.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2=" ">
+      <subfield code="a">`Atthawimonbandit (To),</subfield>
+      <subfield code="c">Phra,</subfield>
+      <subfield code="d">1883-1973.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="1" ind2="0">
+      <subfield code="a">Gershkoff, Ira.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="2" ind2=" ">
+      <subfield code="a">Krishna Moorthy, K.</subfield>
+      <subfield code="q">(Krishma),</subfield>
+      <subfield code="d">1927-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="100" ind1="3" ind2=" ">
+      <subfield code="a">Farquhar family.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">British Columbia Provincial Museum.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Nordrhein-Westfalen</subfield>
+      <subfield code="b">Landtag</subfield>
+      <subfield code="0">(DE-101b)2029522-4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="0" ind2=" ">
+      <subfield code="a">Newman (Jean and Dorothy) Industrial Relations Library.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Argentina.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Birmingham (Ala.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">British Virgin Islands.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Cyprus (Archdiocese)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">France.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Germany.</subfield>
+      <subfield code="b">Nationalversammlung (1919-1920)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Jalisco (Mexico).</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Jalisco (Mexico).</subfield>
+      <subfield code="t">Ley que aprueba el plan regional urbano de Guadalajara, 1979-1983.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Minnesota.</subfield>
+      <subfield code="b">Constitutional Convention</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Minnesota.</subfield>
+      <subfield code="b">Constitutional Convention</subfield>
+      <subfield code="d">(1857 :</subfield>
+      <subfield code="g">Republican)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Paris.</subfield>
+      <subfield code="b">Montmartre.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Pennsylvania.</subfield>
+      <subfield code="b">State Board of Examiners of Nursing Home Administrators.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Army Map Service.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Congress</subfield>
+      <subfield code="n">(97th, 2nd session :</subfield>
+      <subfield code="d">1982).</subfield>
+      <subfield code="b">House.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Congress.</subfield>
+      <subfield code="b">Joint Committee on the Library.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Court of Appeals (2nd Circuit)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Geological Survey.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">Geological Survey.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">National Technical Information Service.</subfield>
+      <subfield code="u">5205 Port Royal Road, Springfield, VA 22161.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">United States.</subfield>
+      <subfield code="b">President (1981-1989 : Reagan)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="1" ind2=" ">
+      <subfield code="a">Wisconsin.</subfield>
+      <subfield code="b">Legislature.</subfield>
+      <subfield code="b">Legislative Reference Bureau.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Australian National Parks and Wildlife Service.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Catholic Church.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Catholic Church.</subfield>
+      <subfield code="b">Concilium Plenarium Americae Latinae</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Catholic Church.</subfield>
+      <subfield code="b">Concilium Plenarium Americae Latinae</subfield>
+      <subfield code="d">(1899 :</subfield>
+      <subfield code="c">Rome, Italy)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Catholic Church.</subfield>
+      <subfield code="b">Province of Baltimore (Md.).</subfield>
+      <subfield code="b">Provincial Council</subfield>
+      <subfield code="n">(10th :</subfield>
+      <subfield code="d">1869)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Eastman Kodak Company,</subfield>
+      <subfield code="e">defendant-appellant.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Inter-American Commission on Human Rights.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">International Labour Organisation.</subfield>
+      <subfield code="b">European Regional Conference</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">International Labour Organisation.</subfield>
+      <subfield code="b">European Regional Conference</subfield>
+      <subfield code="n">(2nd :</subfield>
+      <subfield code="d">1968 :</subfield>
+      <subfield code="c">Geneva, Switzerland)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">J.C. Penney Co.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">J.H. Bufford &amp; Co.</subfield>
+      <subfield code="4">pop</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">New York Public Library.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">New York Public Library.</subfield>
+      <subfield code="k">Manuscript</subfield>
+      <subfield code="p">Aulendorf Codex.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">PRONAPADE (Firm)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Scientific Society of San Antonio (1904- )</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Seminar Naturschutz und Landwirtschaft.</subfield>
+      <subfield code="0">(DE-101b)200568-2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">St. James Church (Bronx, New York, N.Y.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">United Nations</subfield>
+      <subfield code="0">(DE-101b)333-5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="110" ind1="2" ind2=" ">
+      <subfield code="a">Watt Committee on Energy.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="1" ind2=" ">
+      <subfield code="a">Chicago.</subfield>
+      <subfield code="q">Cartography Conference.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="1" ind2=" ">
+      <subfield code="a">Paris.</subfield>
+      <subfield code="q">Peace Conference,</subfield>
+      <subfield code="d">1919.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Congress on Machinability</subfield>
+      <subfield code="d">(1965 :</subfield>
+      <subfield code="c">Royal Commonwealth Society)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Esto '84</subfield>
+      <subfield code="d">(1984 :</subfield>
+      <subfield code="c">Toronto, Ont).</subfield>
+      <subfield code="e">Raamatunaituse Komitee.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Expo '70</subfield>
+      <subfield code="c">(Osaka, Japan)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Festival of Britain</subfield>
+      <subfield code="d">(1951 :</subfield>
+      <subfield code="c">London, England)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Governor's Conference on Aging (N.Y.)</subfield>
+      <subfield code="d">(1982 :</subfield>
+      <subfield code="c">Albany, N.Y.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">International Aerospace and Ground Conference on Lightning and Static Electricity</subfield>
+      <subfield code="d">(1988 :</subfield>
+      <subfield code="c">Oklahoma City, Okla.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">International American Conference</subfield>
+      <subfield code="n">(8th :</subfield>
+      <subfield code="d">1938 :</subfield>
+      <subfield code="c">Lima, Peru).</subfield>
+      <subfield code="e">Delegation from Mexico.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">International Colloquium in the Philosophy of Science,</subfield>
+      <subfield code="c">Bedford College,</subfield>
+      <subfield code="d">1965.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">International Symposium on Quality Control (1974- )</subfield>
+      <subfield code="n">(3rd :</subfield>
+      <subfield code="d">1978 :</subfield>
+      <subfield code="c">Tokyo, Japan)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">National Conference on Physical Measurement of the Disabled,</subfield>
+      <subfield code="n">2nd,</subfield>
+      <subfield code="c">Mayo Clinic,</subfield>
+      <subfield code="d">1981,</subfield>
+      <subfield code="g">Projected, not held.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Oxford University Expedition to Spitsbergen</subfield>
+      <subfield code="n">(1st :</subfield>
+      <subfield code="d">1921)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Paris Peace Conference</subfield>
+      <subfield code="d">(1919-1920)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Regional Conference on Mental Measurements of the Blind</subfield>
+      <subfield code="n">(1st :</subfield>
+      <subfield code="d">1951 :</subfield>
+      <subfield code="c">Perkins Institution)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Symposium Internacional "Manuel Pedroso" In Memoriam</subfield>
+      <subfield code="d">(1976 :</subfield>
+      <subfield code="c">Guanajuato, Mexico)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Symposium on the Underground Disposal of Radioactive Wastes</subfield>
+      <subfield code="d">(1979 :</subfield>
+      <subfield code="c">Otaniemi, Finland)</subfield>
+      <subfield code="4">fnd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">Vatican Council</subfield>
+      <subfield code="n">(1st :</subfield>
+      <subfield code="d">1869-1870)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">White House Conference on Library and Information Services</subfield>
+      <subfield code="d">(1979 :</subfield>
+      <subfield code="c">Washington, D.C.).</subfield>
+      <subfield code="e">Ohio Conference Delegation.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="111" ind1="2" ind2=" ">
+      <subfield code="a">World Peace Conference</subfield>
+      <subfield code="n">(1st :</subfield>
+      <subfield code="d">1949 :</subfield>
+      <subfield code="c">Paris, France; </subfield>
+      <subfield code="c">Prague, Czechoslovakia)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Astrofizicheskie issledovaniÃ­Ã .</subfield>
+      <subfield code="l">English.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Hospitals (Chicago, Ill. : 1936)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Inside education (Albany, N.Y.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Mashinovedenie.</subfield>
+      <subfield code="l">English.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1=" " ind2=" ">
+      <subfield code="a">Journal of polymer science / B</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">1 + 1 = 3 (Choreographic work : D'Amboise)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Annale Universiteit van Stellenbosch.</subfield>
+      <subfield code="n">Serie A2,</subfield>
+      <subfield code="p">SÃ¶ologie.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Beowulf.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="s">Authorized.</subfield>
+      <subfield code="f">2004</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="s">Authorized.</subfield>
+      <subfield code="k">Selections.</subfield>
+      <subfield code="f">1970.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">N.T.</subfield>
+      <subfield code="p">Philippians.</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="s">Revised Standard.</subfield>
+      <subfield code="f">1980.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">N.T.</subfield>
+      <subfield code="p">Romans.</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="s">Revised standard.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Bible.</subfield>
+      <subfield code="p">O.T.</subfield>
+      <subfield code="p">Five Scrolls.</subfield>
+      <subfield code="l">Hebrew.</subfield>
+      <subfield code="s">Biblioteca apostolica vaticana.</subfield>
+      <subfield code="k">Manuscript.</subfield>
+      <subfield code="n">Urbiniti Hebraicus 1.</subfield>
+      <subfield code="f">1980.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Chanson de Roland.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Cinderella (Choreographic work)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Concertos,</subfield>
+      <subfield code="m">violin,string orchestra,</subfield>
+      <subfield code="r">D major.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Convention for the Protection of Human Rights and Fundamental Freedoms</subfield>
+      <subfield code="d">(1950).</subfield>
+      <subfield code="k">Protocols, etc.,</subfield>
+      <subfield code="d">1963 Sept. 16.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Cuba economic news.</subfield>
+      <subfield code="l">Spanish.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Dialogue (Montreal, Quebec : 1962).</subfield>
+      <subfield code="l">English.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Domestic engineering (1889)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Elektroshlakovyi pereplav.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Empire State report (1982)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Gone with the wind (Motion picture).</subfield>
+      <subfield code="h">Sound recording.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Harlow (Motion picture : 1965 : Douglas)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Kathy (Motion picture : 1981)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">King Kong (1933)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Modern maturity (NRTA ed.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Portrait and biographical album of Isabella County, Mich.</subfield>
+      <subfield code="k">Selections.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Research paper (South African Law Commission)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">San Francisco journal (1980)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">SiÃ¨ge d'OrlÃ©ans (Mystery play)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Songs, unacc.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Three little pigs.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Tosefta.</subfield>
+      <subfield code="l">English.</subfield>
+      <subfield code="f">1977.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Transactions of the Anarchists.</subfield>
+      <subfield code="p">Initial part.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">Vedas.</subfield>
+      <subfield code="p">Rgveda.</subfield>
+      <subfield code="l">Italian &amp; Sanskrit.</subfield>
+      <subfield code="k">Selections.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="130" ind1="0" ind2=" ">
+      <subfield code="a">War of the worlds (Television program)</subfield>
+    </datafield>
+  </record>
+</collection>

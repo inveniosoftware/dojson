@@ -1,0 +1,3734 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###58062665#/L/r58</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###65077628#/MN</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###68004897#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###73002284#//r752</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###75425165#//r75</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###76647633#</subfield>
+      <subfield code="z">sc#76000587#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###79139101#/AC/MN</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###81691938#</subfield>
+      <subfield code="z">###82692384#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###85153773#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###86104385#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">###89798632#</subfield>
+      <subfield code="b">ms#89001579#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">##2001045944</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">##2001336783</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">##2001627090</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">nuc76039265#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">67-SC41534</subfield>
+      <subfield code="b">gw#</subfield>
+      <subfield code="c">C1</subfield>
+      <subfield code="d">19671108</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">67-SC41534</subfield>
+      <subfield code="b">gw#</subfield>
+      <subfield code="c">C1</subfield>
+      <subfield code="d">19671108</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">70-121204</subfield>
+      <subfield code="b">xxu</subfield>
+      <subfield code="c">patent</subfield>
+      <subfield code="d">19700822</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">70-123456</subfield>
+      <subfield code="b">xxu</subfield>
+      <subfield code="c">statutory invention registration</subfield>
+      <subfield code="d">19700414</subfield>
+      <subfield code="e">granted</subfield>
+      <subfield code="d">19710419</subfield>
+      <subfield code="e">effective</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">73-19001</subfield>
+      <subfield code="b">it</subfield>
+      <subfield code="c">B</subfield>
+      <subfield code="d">19730102</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">74-2202467</subfield>
+      <subfield code="b">xxu</subfield>
+      <subfield code="c">patent</subfield>
+      <subfield code="d">19740305</subfield>
+      <subfield code="e">published</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">82-365442</subfield>
+      <subfield code="b">xxu</subfield>
+      <subfield code="c">patent</subfield>
+      <subfield code="d">19820405</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">82-57623</subfield>
+      <subfield code="c">priority application</subfield>
+      <subfield code="d">19820213</subfield>
+      <subfield code="f">CmYaOAPI</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">82-US1336</subfield>
+      <subfield code="c">A</subfield>
+      <subfield code="d">19820928</subfield>
+      <subfield code="f">SzGeWIPO</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">84-948</subfield>
+      <subfield code="b">nl#</subfield>
+      <subfield code="c">oktrooi</subfield>
+      <subfield code="d">19840326</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">91-13005</subfield>
+      <subfield code="b">xxu</subfield>
+      <subfield code="c">patent</subfield>
+      <subfield code="d">19920217</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="013" ind1=" " ind2=" ">
+      <subfield code="a">93-10077</subfield>
+      <subfield code="b">xxu</subfield>
+      <subfield code="c">patent</subfield>
+      <subfield code="d">19930322</subfield>
+      <subfield code="e">continuation</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">06,A29,0382</subfield>
+      <subfield code="z">05,A21,0597</subfield>
+      <subfield code="z">04,N48,0463</subfield>
+      <subfield code="2">dnb</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">06,A29,1122</subfield>
+      <subfield code="z">05,N51,1204</subfield>
+      <subfield code="2">dnb</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">67-A14-54</subfield>
+      <subfield code="2">dnb</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">84-3117</subfield>
+      <subfield code="2">bnf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">Au67-6</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">B67-20987</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">B67-20988</subfield>
+      <subfield code="q">pbk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">B67-25185</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">F67-835</subfield>
+      <subfield code="q">v. 1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">F67-9455</subfield>
+      <subfield code="q">v. 2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">F84-1004</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">F84-3117</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="015" ind1=" " ind2=" ">
+      <subfield code="a">GFR67-A14-54</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1=" " ind2=" ">
+      <subfield code="a">#721234569##</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1=" " ind2=" ">
+      <subfield code="a">#730032015##rev</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1=" " ind2=" ">
+      <subfield code="a">#84074272XE#</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1=" " ind2=" ">
+      <subfield code="a">#880524405##</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1=" " ind2=" ">
+      <subfield code="a">#890000298##rev</subfield>
+      <subfield code="z">#89000298##</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1="7" ind2=" ">
+      <subfield code="a">94.763966.7</subfield>
+      <subfield code="2">GyFmDB</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1="7" ind2=" ">
+      <subfield code="a">PTBN000004618</subfield>
+      <subfield code="2">PoLiBN</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="016" ind1="7" ind2=" ">
+      <subfield code="a">b9117951</subfield>
+      <subfield code="z">E000214460</subfield>
+      <subfield code="2">Uk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2="8">
+      <subfield code="a">PA 1-030-023</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">99-263</subfield>
+      <subfield code="b">BwMiBKP </subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">99-7356</subfield>
+      <subfield code="b">RuMoRKP </subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">A68778</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">DL 80-0-1524</subfield>
+      <subfield code="b">BibliothÃ¨que nationale du QuÃ©bec</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">DL1377-1984 </subfield>
+      <subfield code="b">BibliothÃ¨que nationale de France</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">EU781596</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">F31401</subfield>
+      <subfield code="a">F31405 </subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">M44120-2006 </subfield>
+      <subfield code="z">M444120-2006</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">PA 1-060-815</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">PA1116341</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+      <subfield code="d">20020703</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">PA111636</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+      <subfield code="d">19990828</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">PA52-758 (English subtitled version)</subfield>
+      <subfield code="a">PA52-759 (English language dubbed version)</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">VA26037</subfield>
+      <subfield code="a">VA26038 </subfield>
+      <subfield code="a">VA26039</subfield>
+      <subfield code="a">VA26040</subfield>
+      <subfield code="a">VA26041 </subfield>
+      <subfield code="a">VA26042</subfield>
+      <subfield code="a">VA26043</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2=" ">
+      <subfield code="a">VA65-843</subfield>
+      <subfield code="a">VA65-845 </subfield>
+      <subfield code="a">VA65-849</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2="8">
+      <subfield code="i">Orig. reg.</subfield>
+      <subfield code="a">JP732</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+      <subfield code="d">19510504</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="017" ind1=" " ind2="8">
+      <subfield code="i">Suppl. reg.:</subfield>
+      <subfield code="a">PA001116455</subfield>
+      <subfield code="b">U.S. Copyright Office</subfield>
+      <subfield code="d">20020725</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="018" ind1=" " ind2=" ">
+      <subfield code="a">03043923/78/050243-03$00.95/0$0</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="018" ind1=" " ind2=" ">
+      <subfield code="a">0844021842/78/010032-08$01.25/1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0394170660</subfield>
+      <subfield code="q">Random House</subfield>
+      <subfield code="q">paperback</subfield>
+      <subfield code="c">$4.95</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0394502884</subfield>
+      <subfield code="q">Random House</subfield>
+      <subfield code="c">$12.50</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0456789012</subfield>
+      <subfield code="q">reel 1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0460044524</subfield>
+      <subfield code="c">Rental material</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0491001304</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0717941728</subfield>
+      <subfield code="q">folded</subfield>
+      <subfield code="c">$0.45</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0802142176</subfield>
+      <subfield code="q">pbk.</subfield>
+      <subfield code="c">$1.95</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0835200019</subfield>
+      <subfield code="q">pbk.</subfield>
+      <subfield code="c">$2.95</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0870686933</subfield>
+      <subfield code="q">v. 1</subfield>
+      <subfield code="z">087064302</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0877790019</subfield>
+      <subfield code="q">black leather</subfield>
+      <subfield code="z">0877780116 :</subfield>
+      <subfield code="c">$14.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0877790086 :</subfield>
+      <subfield code="c">$10.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0877790124</subfield>
+      <subfield code="q">blue pigskin</subfield>
+      <subfield code="c">$15.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0914378260</subfield>
+      <subfield code="q">pbk.</subfield>
+      <subfield code="q">v. 1</subfield>
+      <subfield code="c">$5.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">9780060723804</subfield>
+      <subfield code="q">acid-free paper</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">9780060799748</subfield>
+      <subfield code="q">trade</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="c"></subfield>
+      <subfield code="8">.95</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="c">For sale ($200.00 for 3/4 in.;$150.00 for 1/2 in.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="c">For sale ($450.00) or rent($45.00)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="c">Rs15.76 ($5.60 U.S.)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="z">0567890123</subfield>
+      <subfield code="q">reel 2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="z">0835200028 :</subfield>
+      <subfield code="c">$10.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="z">0877790105</subfield>
+      <subfield code="q">Fabrikoid</subfield>
+      <subfield code="c">$12.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="z">0877790159</subfield>
+      <subfield code="q">easel binding</subfield>
+      <subfield code="c">$16.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="022" ind1=" " ind2=" ">
+      <subfield code="a">0376-4583</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="022" ind1="0" ind2=" ">
+      <subfield code="a">0018-5817</subfield>
+      <subfield code="y">0018-5811</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="022" ind1="0" ind2=" ">
+      <subfield code="a">0046-225X</subfield>
+      <subfield code="y">0046-2254</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="022" ind1="0" ind2=" ">
+      <subfield code="a">0145-0808</subfield>
+      <subfield code="z">0361-7106</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="022" ind1="0" ind2=" ">
+      <subfield code="a">1234-1231</subfield>
+      <subfield code="l">1234-1231</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="022" ind1="0" ind2=" ">
+      <subfield code="a">1560-1560</subfield>
+      <subfield code="l">1234-1231</subfield>
+      <subfield code="m">1560-1560</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="022" ind1="0" ind2=" ">
+      <subfield code="z">0027-3473</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="0" ind2=" ">
+      <subfield code="a">NLC018413261</subfield>
+      <subfield code="z">NLC018403261</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="1" ind2=" ">
+      <subfield code="a">2777802000</subfield>
+      <subfield code="d">90620</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="1" ind2=" ">
+      <subfield code="a">6428759268</subfield>
+      <subfield code="d">093</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="1" ind2=" ">
+      <subfield code="a">7822183031</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="1" ind2=" ">
+      <subfield code="z">5539143515</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="1" ind2="0">
+      <subfield code="a">070993005955</subfield>
+      <subfield code="d">35740</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="2" ind2=" ">
+      <subfield code="a">9790692006282</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="2" ind2=" ">
+      <subfield code="a">M011234564</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="2" ind2=" ">
+      <subfield code="a">M570406203</subfield>
+      <subfield code="q">score</subfield>
+      <subfield code="q">sewn</subfield>
+      <subfield code="c">EUR28.50</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="2" ind2=" ">
+      <subfield code="a">M570406210</subfield>
+      <subfield code="q">parts</subfield>
+      <subfield code="q">sewn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="2" ind2=" ">
+      <subfield code="a">M571100511</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="2" ind2=" ">
+      <subfield code="a">M571100511</subfield>
+      <subfield code="c">$20.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="2" ind2=" ">
+      <subfield code="a">M692006282</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="3" ind2=" ">
+      <subfield code="a">9780449906200</subfield>
+      <subfield code="d">51000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="3" ind2=" ">
+      <subfield code="a">9780838934326</subfield>
+      <subfield code="d">90000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="4" ind2=" ">
+      <subfield code="a">8756-2324(198603/04)65:2L.4:QTP:1-P</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="4" ind2="1">
+      <subfield code="a">8756-2324(198603/04)65:21.4QTP;1-E</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="4" ind2="1">
+      <subfield code="a">875623247541986340134QTP1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="7" ind2=" ">
+      <subfield code="a">0A3200912B4A1057</subfield>
+      <subfield code="2">istc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="024" ind1="7" ind2=" ">
+      <subfield code="a">0A42010111177788</subfield>
+      <subfield code="2">istc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">Ae-F-355</subfield>
+      <subfield code="a">Ae-F-562</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">Et-E-123</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">I-E-E-96-912211; 79-92</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">I-H-96-903245; 23</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">I-Map-268</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">LACAP67-3676</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">LACAP72-1719</subfield>
+      <subfield code="a">LACAP72-1720</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="025" ind1=" " ind2=" ">
+      <subfield code="a">PL480:I-E-8421</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="026" ind1=" " ind2=" ">
+      <subfield code="a">56gs ofto</subfield>
+      <subfield code="b">ld." yoar 3</subfield>
+      <subfield code="c">1797.</subfield>
+      <subfield code="d">v.4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="026" ind1=" " ind2=" ">
+      <subfield code="a">a-he mIc-</subfield>
+      <subfield code="b">n-he desi 3</subfield>
+      <subfield code="c">1797.</subfield>
+      <subfield code="d">v.2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="026" ind1=" " ind2=" ">
+      <subfield code="a">dete nkck</subfield>
+      <subfield code="b">vess lodo 3</subfield>
+      <subfield code="c">Anno Domini MDCXXXVI</subfield>
+      <subfield code="d">3</subfield>
+      <subfield code="2">fei</subfield>
+      <subfield code="5">UkCU</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="026" ind1=" " ind2=" ">
+      <subfield code="a">e-s- 11as</subfield>
+      <subfield code="b">s,me crth 3</subfield>
+      <subfield code="c">1797.</subfield>
+      <subfield code="d">v.1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="026" ind1=" " ind2=" ">
+      <subfield code="a">va64 dyet</subfield>
+      <subfield code="b">."re yono 3</subfield>
+      <subfield code="c">1797.</subfield>
+      <subfield code="d">v.3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="026" ind1=" " ind2=" ">
+      <subfield code="e">dete nkck vess lodo 3 Anno Domini MDCXXXVI 3</subfield>
+      <subfield code="2">fei</subfield>
+      <subfield code="5">UkCU</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="027" ind1=" " ind2=" ">
+      <subfield code="a">FOA--89-40265/C--SE</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="027" ind1=" " ind2=" ">
+      <subfield code="a">FYHU/PF/2--80/12+MAGN</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="027" ind1=" " ind2=" ">
+      <subfield code="a">METPRO/CB/TR--74/216+PR.ENVR.WI</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="027" ind1=" " ind2=" ">
+      <subfield code="a">METPRO/ED/SR-77/035</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="027" ind1=" " ind2=" ">
+      <subfield code="a">MPC-387</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="027" ind1=" " ind2=" ">
+      <subfield code="a">WBK-MTT--89/64--DE</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="0">
+      <subfield code="a">GV-201A</subfield>
+      <subfield code="b">Good Vibrations Records</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="0">
+      <subfield code="a">M4X-31427</subfield>
+      <subfield code="b">Columbia</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="0">
+      <subfield code="a">RF 202</subfield>
+      <subfield code="b">RBF</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="1">
+      <subfield code="a">STMA 8007</subfield>
+      <subfield code="b">Tamla Motown</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="2">
+      <subfield code="a">438 953-2</subfield>
+      <subfield code="b">Philips Classics</subfield>
+      <subfield code="q">set</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="2">
+      <subfield code="a">438 954-2</subfield>
+      <subfield code="b">Philips Classics</subfield>
+      <subfield code="q">disc 1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="2">
+      <subfield code="a">438 955-2</subfield>
+      <subfield code="b">Philips Classics</subfield>
+      <subfield code="q">disc 2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="2">
+      <subfield code="a">7234 8 31158</subfield>
+      <subfield code="b">EMI Music Canada</subfield>
+      <subfield code="q">on container spine</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="0" ind2="2">
+      <subfield code="a">K2 31158</subfield>
+      <subfield code="b">EMI Music Canada</subfield>
+      <subfield code="q">on label</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="1" ind2="0">
+      <subfield code="a">J-18961M-A</subfield>
+      <subfield code="b">Country Line</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="1" ind2="1">
+      <subfield code="a">256A090</subfield>
+      <subfield code="b">Deutsche Grammophon Gesellschaft</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="1" ind2="1">
+      <subfield code="a">L27410X</subfield>
+      <subfield code="b">Chaparral</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="2" ind2="0">
+      <subfield code="a">B. &amp; H. 8798</subfield>
+      <subfield code="b">Breitkopf &amp; Hartel</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="2" ind2="0">
+      <subfield code="a">B. &amp; H. 8799</subfield>
+      <subfield code="b">Breitkopf &amp; Hartel</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="2" ind2="0">
+      <subfield code="a">B. &amp; H. 8800</subfield>
+      <subfield code="b">Breitkopf &amp; Hartel</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="2" ind2="0">
+      <subfield code="a">B. &amp; H. 8801</subfield>
+      <subfield code="b">Breitkopf &amp; Hartel</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="2" ind2="2">
+      <subfield code="a">B. &amp; H. 8797</subfield>
+      <subfield code="b">Breitkopf &amp; Hartel</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="4" ind2="0">
+      <subfield code="a">MV600167</subfield>
+      <subfield code="b">MGM/UA</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="4" ind2="0">
+      <subfield code="a">VA5386</subfield>
+      <subfield code="b">Vestron Video</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="4" ind2="2">
+      <subfield code="a">440 073 032-9</subfield>
+      <subfield code="b">Deutsche Grammophon</subfield>
+      <subfield code="q">set and guide</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="4" ind2="2">
+      <subfield code="a">440 073 033-9</subfield>
+      <subfield code="b">Deutsche Grammophon</subfield>
+      <subfield code="q">disc 1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="4" ind2="2">
+      <subfield code="a">440 073 034-9</subfield>
+      <subfield code="b">Deutsche Grammophon</subfield>
+      <subfield code="q">disc 2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="4" ind2="2">
+      <subfield code="a">MV600167</subfield>
+      <subfield code="b">MGM/UA</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="028" ind1="4" ind2="2">
+      <subfield code="a">VM5108</subfield>
+      <subfield code="b">Vidmark Entertainment</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="030" ind1=" " ind2=" ">
+      <subfield code="a">ASIRAF</subfield>
+      <subfield code="z">ASITAF</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="030" ind1=" " ind2=" ">
+      <subfield code="a">JACSAT</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">01</subfield>
+      <subfield code="b">01</subfield>
+      <subfield code="c">01</subfield>
+      <subfield code="m">Ob. 1</subfield>
+      <subfield code="g">G-2</subfield>
+      <subfield code="n">bB</subfield>
+      <subfield code="o">c</subfield>
+      <subfield code="p">RE 9S(( 8)) 9(( 8 9 8)) 9E( 6) 7( 6S( 5)) / 4S(( 3 2 3))/</subfield>
+      <subfield code="u">http://www.classicalarchives.com/cgi-bin/n.cgi/prep/6/jsbbrc11.mid</subfield>
+      <subfield code="2">da</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">01</subfield>
+      <subfield code="b">01</subfield>
+      <subfield code="c">01</subfield>
+      <subfield code="m">S</subfield>
+      <subfield code="d">Aria</subfield>
+      <subfield code="t">Rei d’impuniti eccessi</subfield>
+      <subfield code="r">e</subfield>
+      <subfield code="g">C-1</subfield>
+      <subfield code="o">c</subfield>
+      <subfield code="p">'2B4B8BB/4G8GxF4FF/4xA8AA4.At8B/4B</subfield>
+      <subfield code="2">pe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">01</subfield>
+      <subfield code="b">01</subfield>
+      <subfield code="c">01</subfield>
+      <subfield code="m">vl1</subfield>
+      <subfield code="d">Scena. Largo</subfield>
+      <subfield code="n">bBEA</subfield>
+      <subfield code="o">c</subfield>
+      <subfield code="p">'C+8(3{CDEFG};5)}8{GC}{,nB'G}4(-)/''2G+6{GnB'''C''E}6{DCAG}</subfield>
+      <subfield code="2">pe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">01</subfield>
+      <subfield code="b">02</subfield>
+      <subfield code="c">01</subfield>
+      <subfield code="m">S</subfield>
+      <subfield code="d">Sara</subfield>
+      <subfield code="d">Aria. Allegro</subfield>
+      <subfield code="g">C-1</subfield>
+      <subfield code="n">bBEA</subfield>
+      <subfield code="o">c</subfield>
+      <subfield code="t">Deh parlate che forse tacendo</subfield>
+      <subfield code="p">2-/2-''4.F8D/gC'8BB4-2(-)/=2/''2E'G/''4.C'8A4F-/-Fq8B4A8GF/</subfield>
+      <subfield code="2">pe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">01</subfield>
+      <subfield code="b">02</subfield>
+      <subfield code="c">01</subfield>
+      <subfield code="m">vl1</subfield>
+      <subfield code="d">Aria. Allegro</subfield>
+      <subfield code="g">G-2</subfield>
+      <subfield code="n">bBEA</subfield>
+      <subfield code="o">c</subfield>
+      <subfield code="p">6{'EDEF}{GABG}{EDEF}{GABG}/{''C'BAG}{FEDC},4B-/</subfield>
+      <subfield code="2">pe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">01</subfield>
+      <subfield code="c">02</subfield>
+      <subfield code="m">S</subfield>
+      <subfield code="e">Sara</subfield>
+      <subfield code="d">Scena. Largo</subfield>
+      <subfield code="g">C-1</subfield>
+      <subfield code="n">bBEA</subfield>
+      <subfield code="o">c</subfield>
+      <subfield code="t">Chi per pietà mi dice il figlio mio che fà</subfield>
+      <subfield code="p">=5/4-''6C3CC6DEgF6CC8-6ED/q8D4C8C'nB''4D-/2-/</subfield>
+      <subfield code="2">pe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="b">3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="c">1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="c">2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="d">Aria. Allegro</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="e">Sara</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="g">F-4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="m">S</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="n">xFCG</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="o">c</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="p">'2B4B8BB/4G8GxF4FF/4xA8AA4.At8B/4B</subfield>
+      <subfield code="2">pe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="p">'2B4B8BB/4G8GxF4FF/4xA8AA4.At8B/4B</subfield>
+      <subfield code="2">pe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="r">e</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="s">?</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="u">http://www.classicalarchives.com/cgi-bin/n.cgi/prep/6/jsbbrc11.mid</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="032" ind1=" " ind2=" ">
+      <subfield code="a">063480</subfield>
+      <subfield code="b">USPS</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="032" ind1=" " ind2=" ">
+      <subfield code="a">686310</subfield>
+      <subfield code="b">USPS</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="032" ind1=" " ind2=" ">
+      <subfield code="a">686310</subfield>
+      <subfield code="b">USPS</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="032" ind1=" " ind2=" ">
+      <subfield code="a">9545</subfield>
+      <subfield code="b">CP</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1=" " ind2="0">
+      <subfield code="b">3804</subfield>
+      <subfield code="c">N4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1=" " ind2="0">
+      <subfield code="b">3960</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1=" " ind2="0">
+      <subfield code="b">3960</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1=" " ind2="0">
+      <subfield code="b">6000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1=" " ind2="0">
+      <subfield code="b">6080</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="3">Horse</subfield>
+      <subfield code="a">1925----</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="a">1858----</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="a">1963----</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="a">19780916</subfield>
+      <subfield code="b">3964</subfield>
+      <subfield code="c">N2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="a">197910--</subfield>
+      <subfield code="b">6044</subfield>
+      <subfield code="c">Z8</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="a">197910--</subfield>
+      <subfield code="b">6299</subfield>
+      <subfield code="c">M8</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="a">19870705</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="0">
+      <subfield code="a">200008--</subfield>
+      <subfield code="b">5754</subfield>
+      <subfield code="c">L7</subfield>
+      <subfield code="p">Abbey Road Studio 1, London</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="1">
+      <subfield code="a">195410171930-0700</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="1">
+      <subfield code="a">195410171930-0700</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="1">
+      <subfield code="a">1962----2130</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="1">
+      <subfield code="a">198707281409+0530</subfield>
+      <subfield code="b">7654</subfield>
+      <subfield code="c">C2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="1">
+      <subfield code="a">198709272000-0400</subfield>
+      <subfield code="a">198712292200-0500</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="0" ind2="2">
+      <subfield code="a">19750305</subfield>
+      <subfield code="b">4034</subfield>
+      <subfield code="c">R4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="1" ind2="0">
+      <subfield code="a">19750409</subfield>
+      <subfield code="a">19750410</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="1" ind2="0">
+      <subfield code="a">19770115</subfield>
+      <subfield code="a">19770210</subfield>
+      <subfield code="b">3824</subfield>
+      <subfield code="c">P5</subfield>
+      <subfield code="b">3804</subfield>
+      <subfield code="c">N4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="1" ind2="0">
+      <subfield code="a">19770115</subfield>
+      <subfield code="a">19770210</subfield>
+      <subfield code="b">3824</subfield>
+      <subfield code="c">P5</subfield>
+      <subfield code="b">3804</subfield>
+      <subfield code="c">N4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="1" ind2="0">
+      <subfield code="a">19790801</subfield>
+      <subfield code="a">19790802</subfield>
+      <subfield code="b">5754</subfield>
+      <subfield code="c">L7</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="1" ind2="0">
+      <subfield code="a">19791128</subfield>
+      <subfield code="a">19791129</subfield>
+      <subfield code="b">5754</subfield>
+      <subfield code="c">L7</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="1" ind2="1">
+      <subfield code="a">198709071900-0400</subfield>
+      <subfield code="a">198710012030-0400</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="0">
+      <subfield code="a">19661121</subfield>
+      <subfield code="a">19661123</subfield>
+      <subfield code="b">6514</subfield>
+      <subfield code="c">B8</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="0">
+      <subfield code="a">197007-</subfield>
+      <subfield code="a">197101-</subfield>
+      <subfield code="b">4364</subfield>
+      <subfield code="c">S7</subfield>
+      <subfield code="b">4364</subfield>
+      <subfield code="c">L8</subfield>
+      <subfield code="b">3804</subfield>
+      <subfield code="c">N4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="0">
+      <subfield code="a">19710607</subfield>
+      <subfield code="a">19710614</subfield>
+      <subfield code="b">3804</subfield>
+      <subfield code="c">N4:2C3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="0">
+      <subfield code="a">1976----</subfield>
+      <subfield code="a">1978----</subfield>
+      <subfield code="b">5754</subfield>
+      <subfield code="c">L7</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="0">
+      <subfield code="a">197601--</subfield>
+      <subfield code="a">197606--</subfield>
+      <subfield code="b">6714</subfield>
+      <subfield code="c">R7</subfield>
+      <subfield code="b">6714</subfield>
+      <subfield code="c">V4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="0">
+      <subfield code="a">19770829</subfield>
+      <subfield code="a">19770831</subfield>
+      <subfield code="b">6514</subfield>
+      <subfield code="c">P7</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="0">
+      <subfield code="a">19790319</subfield>
+      <subfield code="a">19791118</subfield>
+      <subfield code="b">6299</subfield>
+      <subfield code="c">L6</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="033" ind1="2" ind2="1">
+      <subfield code="a">197809102000-0400</subfield>
+      <subfield code="a">197809142000-0400</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1=" " ind2=" ">
+      <subfield code="d">E0110000</subfield>
+      <subfield code="e">E0240000</subfield>
+      <subfield code="f">N0690000</subfield>
+      <subfield code="g">N0550000</subfield>
+      <subfield code="x">19171200</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1=" " ind2=" ">
+      <subfield code="d">E0110000</subfield>
+      <subfield code="e">E0320000</subfield>
+      <subfield code="f">N0690000</subfield>
+      <subfield code="g">N0550000</subfield>
+      <subfield code="x">17210000</subfield>
+      <subfield code="y">19171200</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1=" " ind2=" ">
+      <subfield code="d">W2450000</subfield>
+      <subfield code="e">E2570000</subfield>
+      <subfield code="f">N0160000</subfield>
+      <subfield code="g">N0190000</subfield>
+      <subfield code="z">Mars</subfield>
+      <subfield code="2">gpn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="0" ind2=" ">
+      <subfield code="a">a</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="0" ind2=" ">
+      <subfield code="a">b</subfield>
+      <subfield code="j">N0300000</subfield>
+      <subfield code="k">N0300000</subfield>
+      <subfield code="m">021800</subfield>
+      <subfield code="n">021800</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="0" ind2=" ">
+      <subfield code="a">b</subfield>
+      <subfield code="p">1950</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">100000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">1000000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">22000000</subfield>
+      <subfield code="d">W1800000</subfield>
+      <subfield code="e">E1800000</subfield>
+      <subfield code="f">N0840000</subfield>
+      <subfield code="g">S0700000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">253440</subfield>
+      <subfield code="d">E0790000</subfield>
+      <subfield code="e">E0860000</subfield>
+      <subfield code="f">N0200000</subfield>
+      <subfield code="g">N0120000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">744000</subfield>
+      <subfield code="c">96000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">75000</subfield>
+      <subfield code="d">W0950500</subfield>
+      <subfield code="e">W0950500</subfield>
+      <subfield code="f">N0303000</subfield>
+      <subfield code="g">N0303000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">+079.533265</subfield>
+      <subfield code="e">+086.216635</subfield>
+      <subfield code="f">-012.583377</subfield>
+      <subfield code="g">-020.419532</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">-119.697222</subfield>
+      <subfield code="e">-119.697222</subfield>
+      <subfield code="f">+034.420833</subfield>
+      <subfield code="g">+034.420833</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">079.533265</subfield>
+      <subfield code="e">086.216635</subfield>
+      <subfield code="f">-012.583377</subfield>
+      <subfield code="g">-020.419532</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">E079.533265</subfield>
+      <subfield code="e">E086.216635</subfield>
+      <subfield code="f">S012.583377</subfield>
+      <subfield code="g">S020.419532</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">E07932.5332</subfield>
+      <subfield code="e">E08607.4478</subfield>
+      <subfield code="f">S01235.5421</subfield>
+      <subfield code="g">S02028.9704</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">E0793235.575</subfield>
+      <subfield code="e">E0860727.350</subfield>
+      <subfield code="f">S0123536.895</subfield>
+      <subfield code="g">S0202858.125</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">W119.697222</subfield>
+      <subfield code="e">W119.697222</subfield>
+      <subfield code="f">N034.420833</subfield>
+      <subfield code="g">N034.420833</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="1" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="d">W11941.833333</subfield>
+      <subfield code="e">W11941.833333</subfield>
+      <subfield code="f">N03425.250000</subfield>
+      <subfield code="g">N03425.250000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="034" ind1="3" ind2=" ">
+      <subfield code="a">a</subfield>
+      <subfield code="b">18000</subfield>
+      <subfield code="b">28000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(CaOTULAS)41063988</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(DNLM)S30545600(s)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(OCoLC)814782</subfield>
+      <subfield code="z">(OCoLC)7374506</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">(WaOLN)wln7986864</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="036" ind1=" " ind2=" ">
+      <subfield code="a">CNRS 84115</subfield>
+      <subfield code="b">Centre national de la recherche scientifique.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="036" ind1=" " ind2=" ">
+      <subfield code="a">CPS 495441</subfield>
+      <subfield code="b">Center for Political Studies, University of Michigan, Ann Arbor.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="3">-2013</subfield>
+      <subfield code="a">ISSN_13693786_98</subfield>
+      <subfield code="b">Portico</subfield>
+      <subfield code="n">Informa Healthcare</subfield>
+      <subfield code="5">Uk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">001689 E</subfield>
+      <subfield code="b">Vienna Tourist Board</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">1351129</subfield>
+      <subfield code="b">QBI</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">149866</subfield>
+      <subfield code="b">GAO (202) 512-6000 (Voice); (301) 258-4066 (Fax)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">240-951/147</subfield>
+      <subfield code="b">GPO</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">BL_12860042</subfield>
+      <subfield code="b">Portico</subfield>
+      <subfield code="n">Cambridge University Press</subfield>
+      <subfield code="5">Uk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">C CPS 68 003</subfield>
+      <subfield code="b">U.S. Bureau of the Census</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">FSWEC-77/0420</subfield>
+      <subfield code="b">National Technical Information Service, Springfield, VA 22161</subfield>
+      <subfield code="f">Magnetic tape</subfield>
+      <subfield code="c">$175.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">ISSN_23264624</subfield>
+      <subfield code="b">Portico</subfield>
+      <subfield code="n">Wiley</subfield>
+      <subfield code="5">Uk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">IUCPSR 7559</subfield>
+      <subfield code="b">Inter-University Consortium for Political and Social Research, Ann Arbor, Mich.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">LC-USZ62-94085</subfield>
+      <subfield code="b">DLC</subfield>
+      <subfield code="c">(b&amp;w film copy neg., after preservation)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">LC-USZC2-1362</subfield>
+      <subfield code="b">DLC</subfield>
+      <subfield code="c">(color film copy slide, after preservation)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">LC-USZC4-1097</subfield>
+      <subfield code="b">DLC</subfield>
+      <subfield code="c">(color film copy transparency)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="a">PB-363547</subfield>
+      <subfield code="b">NTIS</subfield>
+      <subfield code="f">paper copy</subfield>
+      <subfield code="c">$4.00</subfield>
+      <subfield code="f">microfiche</subfield>
+      <subfield code="c">$3.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="b">American Institute of Physics, 335 E. 45th St., New York, N.Y. 10017</subfield>
+      <subfield code="c">$24.00 (institution, U.S.)</subfield>
+      <subfield code="c">$26.00 (institution, foreign)</subfield>
+      <subfield code="c">$14.00 (individual, U.S.)</subfield>
+      <subfield code="c">$16.00 (individual, foreign)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="b">EROS Data Center</subfield>
+      <subfield code="f">9-track tape;</subfield>
+      <subfield code="g">DEM;</subfield>
+      <subfield code="c">$40 (per file)</subfield>
+      <subfield code="c">$20 (per file in groups of 2 to 6)</subfield>
+      <subfield code="c">$90 base fee plus $7 per file (in groups of 7 or more).</subfield>
+      <subfield code="g">ASCII recording mode; available with no internal labels or with ANSI standard labels; logical record length is 1024 bytes; block size is a multiple of 1024 up to 31744 bytes; 1600 or 6250 characters per inch.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="b">Gordon and Breach Science Publishers Ltd., 42 William IV St., London, W.C.2, England</subfield>
+      <subfield code="f">hard bound</subfield>
+      <subfield code="c">$25.00</subfield>
+      <subfield code="f">paperbound</subfield>
+      <subfield code="c">$12.50</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="b">Ruth Duarte, P.O. Box 74, Napa, CA</subfield>
+      <subfield code="c">$25.00</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="b">U.S. Geological Survey, Denver, Colo. 80255</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="b">U.S. Geological Survey, Reston, Va. 22091</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="b">University Microfilms</subfield>
+      <subfield code="f">microfiche</subfield>
+      <subfield code="c">$15.95</subfield>
+      <subfield code="n">Available only without color</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1=" " ind2=" ">
+      <subfield code="g">ARCE</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1="3" ind2=" ">
+      <subfield code="3">2014</subfield>
+      <subfield code="a">mmy</subfield>
+      <subfield code="b">Oxford University Press</subfield>
+      <subfield code="5">Uk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="037" ind1="3" ind2=" ">
+      <subfield code="a">ISSN_12860042</subfield>
+      <subfield code="b">Portico</subfield>
+      <subfield code="n">Cambridge University Press</subfield>
+      <subfield code="5">Uk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="038" ind1=" " ind2=" ">
+      <subfield code="a">Uk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">Brown Univ Lib</subfield>
+      <subfield code="c">CtY</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">CSt-H</subfield>
+      <subfield code="c">CSt-H</subfield>
+      <subfield code="e">appm</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">CaNSHD</subfield>
+      <subfield code="b">eng</subfield>
+      <subfield code="c">CaOONL</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">CaOONL</subfield>
+      <subfield code="b">eng</subfield>
+      <subfield code="c">CaOONL</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">CaOTY</subfield>
+      <subfield code="b">eng</subfield>
+      <subfield code="c">CaOTY</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">CaQQLA</subfield>
+      <subfield code="b">fre</subfield>
+      <subfield code="c">CaOONL</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">CtY</subfield>
+      <subfield code="c">CtY</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">CtY</subfield>
+      <subfield code="c">MH</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DCE-C</subfield>
+      <subfield code="c">DNTIS</subfield>
+      <subfield code="d">WU-D</subfield>
+      <subfield code="d">MiAnI</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC</subfield>
+      <subfield code="c">CtY</subfield>
+      <subfield code="d">CtY</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC</subfield>
+      <subfield code="c">CtY</subfield>
+      <subfield code="d">MH</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC</subfield>
+      <subfield code="c">DLC</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC</subfield>
+      <subfield code="c">DLC</subfield>
+      <subfield code="d">CtY</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC</subfield>
+      <subfield code="c">DLC</subfield>
+      <subfield code="e">rda</subfield>
+      <subfield code="e">dcrmb</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DLC/ICU</subfield>
+      <subfield code="c">ICU</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DNA</subfield>
+      <subfield code="c">CtY</subfield>
+      <subfield code="d">CtY</subfield>
+      <subfield code="e">NARS Staff Bulletin No. 16</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DNAL</subfield>
+      <subfield code="c">DLC</subfield>
+      <subfield code="d">MH</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">DNLM</subfield>
+      <subfield code="c">DLC</subfield>
+      <subfield code="d">MH</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">MH</subfield>
+      <subfield code="c">MH</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">Mt</subfield>
+      <subfield code="c">Mt</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1=" " ind2=" ">
+      <subfield code="a">dut</subfield>
+      <subfield code="a">fre</subfield>
+      <subfield code="a">ger</subfield>
+      <subfield code="a">ita</subfield>
+      <subfield code="a">spa</subfield>
+      <subfield code="b">engThe item includes text in Dutch, French, German, Italian and Spanish. Its summary is in English.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1=" " ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">fre</subfield>
+      <subfield code="a">sweThe item includes text in English, French and Swedish.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1=" " ind2=" ">
+      <subfield code="a">ger</subfield>
+      <subfield code="g">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1=" " ind2=" ">
+      <subfield code="g">fre</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">cze</subfield>
+      <subfield code="a">eng</subfield>
+      <subfield code="a">ger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">fre</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">fre</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">fre</subfield>
+      <subfield code="a">ger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">fre</subfield>
+      <subfield code="a">ger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">fre</subfield>
+      <subfield code="a">ger</subfield>
+      <subfield code="a">hun</subfield>
+      <subfield code="a">por</subfield>
+      <subfield code="a">rus</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">fre</subfield>
+      <subfield code="a">ger</subfield>
+      <subfield code="a">ita</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">sgn</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="b">fre</subfield>
+      <subfield code="b">ger</subfield>
+      <subfield code="b">spa</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">fre</subfield>
+      <subfield code="e">fre</subfield>
+      <subfield code="e">ger</subfield>
+      <subfield code="e">ita</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">hun</subfield>
+      <subfield code="b">fre</subfield>
+      <subfield code="b">ger</subfield>
+      <subfield code="b">rus</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">mul</subfield>
+      <subfield code="a">rus</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">rum</subfield>
+      <subfield code="f">fre</subfield>
+      <subfield code="f">ger</subfield>
+      <subfield code="f">rus</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">rus</subfield>
+      <subfield code="a">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="a">sgn</subfield>
+      <subfield code="a">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="d">eng</subfield>
+      <subfield code="e">eng</subfield>
+      <subfield code="e">fre</subfield>
+      <subfield code="e">ger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2=" ">
+      <subfield code="g">eng</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2="7">
+      <subfield code="a">en</subfield>
+      <subfield code="a">fr</subfield>
+      <subfield code="2">iso639-1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2="7">
+      <subfield code="a">en</subfield>
+      <subfield code="a">fr</subfield>
+      <subfield code="a">it</subfield>
+      <subfield code="2">iso639-1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="0" ind2="7">
+      <subfield code="a">en</subfield>
+      <subfield code="a">fr</subfield>
+      <subfield code="a">it</subfield>
+      <subfield code="2">iso639-1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="a">grc</subfield>
+      <subfield code="h">grc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="b">ger</subfield>
+      <subfield code="j">ger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="h">fre</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="h">ger</subfield>
+      <subfield code="h">swe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="h">mul</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="h">rus</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="h">und</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="k">chi</subfield>
+      <subfield code="h">san</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">eng</subfield>
+      <subfield code="k">ger</subfield>
+      <subfield code="h">swe</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">fre</subfield>
+      <subfield code="e">fre</subfield>
+      <subfield code="e">ger</subfield>
+      <subfield code="h">fre</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="a">fre</subfield>
+      <subfield code="h">ger</subfield>
+      <subfield code="h">rus</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="d">eng</subfield>
+      <subfield code="h">fre</subfield>
+      <subfield code="h">ger</subfield>
+      <subfield code="h">ita</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="d">eng</subfield>
+      <subfield code="h">rus</subfield>
+      <subfield code="e">eng</subfield>
+      <subfield code="n">rus</subfield>
+      <subfield code="g">eng</subfield>
+      <subfield code="g">fre</subfield>
+      <subfield code="g">ger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="041" ind1="1" ind2=" ">
+      <subfield code="d">fre</subfield>
+      <subfield code="h">ita</subfield>
+      <subfield code="e">eng</subfield>
+      <subfield code="e">fre</subfield>
+      <subfield code="e">ger</subfield>
+      <subfield code="e">ita</subfield>
+      <subfield code="g">eng</subfield>
+      <subfield code="g">fre</subfield>
+      <subfield code="g">ger</subfield>
+      <subfield code="g">ita</subfield>
+      <subfield code="m">ger</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="042" ind1=" " ind2=" ">
+      <subfield code="a">issnuk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="042" ind1=" " ind2=" ">
+      <subfield code="a">lc</subfield>
+      <subfield code="a">nsdp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="042" ind1=" " ind2=" ">
+      <subfield code="a">lcnuc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="042" ind1=" " ind2=" ">
+      <subfield code="a">nlc</subfield>
+      <subfield code="a">isds/c</subfield>
+      <subfield code="a">nsdp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="042" ind1=" " ind2=" ">
+      <subfield code="a">nsdp</subfield>
+      <subfield code="a">lcd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="042" ind1=" " ind2=" ">
+      <subfield code="a">nsdp</subfield>
+      <subfield code="a">xlc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">a-np---</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">fw-----</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">n-us---</subfield>
+      <subfield code="a">e-fr---</subfield>
+      <subfield code="a">a-ja---</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">n-us-md</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">n-uso--</subfield>
+      <subfield code="a">n-usm--</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">nl-----</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">s-bl---</subfield>
+      <subfield code="b">s-bl-ba</subfield>
+      <subfield code="2">BlRjBN</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="c">us</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="044" ind1=" " ind2=" ">
+      <subfield code="a">at</subfield>
+      <subfield code="b">qea</subfield>
+      <subfield code="2">ausmarc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="044" ind1=" " ind2=" ">
+      <subfield code="a">at</subfield>
+      <subfield code="b">xna</subfield>
+      <subfield code="2">ausmarc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="044" ind1=" " ind2=" ">
+      <subfield code="a">it</subfield>
+      <subfield code="a">fr</subfield>
+      <subfield code="a">sp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="044" ind1=" " ind2=" ">
+      <subfield code="a">it</subfield>
+      <subfield code="c">it</subfield>
+      <subfield code="a">fr</subfield>
+      <subfield code="c">fr</subfield>
+      <subfield code="a">sp</subfield>
+      <subfield code="c">es</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="044" ind1=" " ind2=" ">
+      <subfield code="a">sz</subfield>
+      <subfield code="c">ch-zh</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="044" ind1=" " ind2=" ">
+      <subfield code="a">xxk</subfield>
+      <subfield code="a">xxu</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="044" ind1=" " ind2=" ">
+      <subfield code="c">gb</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">a-c-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">a0d6</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">c4c6</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">d7d9</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">d8h2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">o6s8</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">t-v-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">x-x-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">x8x8</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1=" " ind2=" ">
+      <subfield code="a">y-y-</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="0" ind2=" ">
+      <subfield code="b">d19360226</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="0" ind2=" ">
+      <subfield code="c">2500000000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="1" ind2=" ">
+      <subfield code="b">d1972</subfield>
+      <subfield code="b">d1975</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="2" ind2=" ">
+      <subfield code="a">d7n6</subfield>
+      <subfield code="b">c0221</subfield>
+      <subfield code="b">d0960</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="2" ind2=" ">
+      <subfield code="b">d1791</subfield>
+      <subfield code="b">d1797</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="2" ind2=" ">
+      <subfield code="b">d186405</subfield>
+      <subfield code="b">d186408</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="2" ind2=" ">
+      <subfield code="c">225000000</subfield>
+      <subfield code="c">70000000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="045" ind1="2" ind2=" ">
+      <subfield code="c">25000</subfield>
+      <subfield code="c">15000</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">i</subfield>
+      <subfield code="b">99</subfield>
+      <subfield code="e">99</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">k</subfield>
+      <subfield code="b">1000</subfield>
+      <subfield code="d">500</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">q</subfield>
+      <subfield code="b">250</subfield>
+      <subfield code="e">100</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">q</subfield>
+      <subfield code="b">299</subfield>
+      <subfield code="d">200</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">r</subfield>
+      <subfield code="c">1936</subfield>
+      <subfield code="d">210</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">s</subfield>
+      <subfield code="b">245</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">x</subfield>
+      <subfield code="c">1693</subfield>
+      <subfield code="e">1639</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">x</subfield>
+      <subfield code="c">1703</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="a">x</subfield>
+      <subfield code="e">1939</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="j">2001-07-12</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="j">20010712</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="k">07uu/1100</subfield>
+      <subfield code="2">edtf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="k">1965</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="k">1980</subfield>
+      <subfield code="o">1781</subfield>
+      <subfield code="p">1791</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="k">1985</subfield>
+      <subfield code="l">9999</subfield>
+      <subfield code="o">1801</subfield>
+      <subfield code="p">1899</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="k">19981022</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="k">2004</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="m">20011008</subfield>
+      <subfield code="n">20011027</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="o">-07uu/-05uu</subfield>
+      <subfield code="p">06uu</subfield>
+      <subfield code="2">edtf</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="o">1800</subfield>
+      <subfield code="p">1899</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="o">1932</subfield>
+      <subfield code="p">1940</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="047" ind1=" " ind2=" ">
+      <subfield code="a">or</subfield>
+      <subfield code="a">ct</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="047" ind1=" " ind2=" ">
+      <subfield code="a">rg</subfield>
+      <subfield code="a">pp</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="047" ind1=" " ind2="7">
+      <subfield code="a">hum</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="047" ind1=" " ind2="7">
+      <subfield code="a">rgg</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2=" ">
+      <subfield code="a">ka01</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2=" ">
+      <subfield code="a">ka01</subfield>
+      <subfield code="a">sa01</subfield>
+      <subfield code="a">sc01</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2=" ">
+      <subfield code="a">kb01</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2=" ">
+      <subfield code="b">oe01</subfield>
+      <subfield code="a">oa</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2=" ">
+      <subfield code="b">va02</subfield>
+      <subfield code="b">vc01</subfield>
+      <subfield code="b">vd01</subfield>
+      <subfield code="b">vf02</subfield>
+      <subfield code="a">ca04</subfield>
+      <subfield code="a">oc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2=" ">
+      <subfield code="b">vi01</subfield>
+      <subfield code="a">ka01</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2="7">
+      <subfield code="a">pcg01</subfield>
+      <subfield code="a">pct01</subfield>
+      <subfield code="a">pxy02</subfield>
+      <subfield code="a">pta01</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="048" ind1=" " ind2="7">
+      <subfield code="b">vso01</subfield>
+      <subfield code="a">tth01</subfield>
+      <subfield code="a">tch01</subfield>
+      <subfield code="a">kor01</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1=" " ind2="4">
+      <subfield code="a">NB933.F44</subfield>
+      <subfield code="b">T6</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="8">1\p</subfield>
+      <subfield code="a">PR6054.I26</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">CS71.C323</subfield>
+      <subfield code="b">1977</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">CS71.C323</subfield>
+      <subfield code="b">1977</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">DK274.3 1968</subfield>
+      <subfield code="b">.K39</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">E457.92</subfield>
+      <subfield code="b">1967</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">E506.5 6th</subfield>
+      <subfield code="b">G</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">E514.6 10th</subfield>
+      <subfield code="b">.T76 1905</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">E525.5 123d</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">HA1501</subfield>
+      <subfield code="b">A, Nr. 615</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">HD28</subfield>
+      <subfield code="b">.Y555 vol. 55 Suppl.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">HF5549.5.R44</subfield>
+      <subfield code="b">M35</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">JK609</subfield>
+      <subfield code="b">.M2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">JX1974.7</subfield>
+      <subfield code="b">.M5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">JX1977</subfield>
+      <subfield code="b">.A2 St/ESA/35</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">QA37</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">QC861.2</subfield>
+      <subfield code="b">.B36</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">QE75</subfield>
+      <subfield code="b">.P9 subser.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">RC951</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">VM341</subfield>
+      <subfield code="b">.M9 vol. 48</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">Z673.L7</subfield>
+      <subfield code="b">Y</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">Z695.7</subfield>
+      <subfield code="b">.B37 1980</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">Z695.7</subfield>
+      <subfield code="b">.B37 1980</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">Z696.U5E3</subfield>
+      <subfield code="b">1958</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">Z696.U5H-HJ</subfield>
+      <subfield code="b">1981</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="0" ind2="0">
+      <subfield code="a">Z7164.N3</subfield>
+      <subfield code="b">L34 no. 9</subfield>
+      <subfield code="a">Z7165.R42</subfield>
+      <subfield code="a">HC517.R42</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="1" ind2="0">
+      <subfield code="a">BJ1533.C4</subfield>
+      <subfield code="b">L49</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="1" ind2="0">
+      <subfield code="a">HF5726</subfield>
+      <subfield code="b">.B27 1980</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="050" ind1="1" ind2="0">
+      <subfield code="a">HF5726</subfield>
+      <subfield code="b">.B27 1980</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="051" ind1=" " ind2=" ">
+      <subfield code="a">Microfilm</subfield>
+      <subfield code="b">3741 HV</subfield>
+      <subfield code="c">Microfilm.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="051" ind1=" " ind2=" ">
+      <subfield code="a">PR6045.I5498</subfield>
+      <subfield code="b">G65 1933b</subfield>
+      <subfield code="c">Another impression.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="051" ind1=" " ind2=" ">
+      <subfield code="a">QE75</subfield>
+      <subfield code="b">.G4</subfield>
+      <subfield code="c">2d set.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="051" ind1=" " ind2=" ">
+      <subfield code="a">RC310</subfield>
+      <subfield code="b">.W59</subfield>
+      <subfield code="c">Offprint. Cover dated 1947.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="052" ind1=" " ind2=" ">
+      <subfield code="a">3800</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="052" ind1=" " ind2=" ">
+      <subfield code="a">3810</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="052" ind1=" " ind2=" ">
+      <subfield code="a">4033</subfield>
+      <subfield code="b">F65</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="052" ind1=" " ind2=" ">
+      <subfield code="a">4034</subfield>
+      <subfield code="b">R4</subfield>
+      <subfield code="b">R8</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="052" ind1="1" ind2=" ">
+      <subfield code="a">BK</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="052" ind1="1" ind2=" ">
+      <subfield code="a">BK</subfield>
+      <subfield code="d">Mostar</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="052" ind1="1" ind2=" ">
+      <subfield code="a">US</subfield>
+      <subfield code="b">51</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1=" " ind2="5">
+      <subfield code="a">HT154</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1=" " ind2="5">
+      <subfield code="a">HT154G*</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="0">
+      <subfield code="a">F5050 .2</subfield>
+      <subfield code="b">T5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="0">
+      <subfield code="a">F5449 W4</subfield>
+      <subfield code="b">A28fol. Ref.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="0">
+      <subfield code="a">HB31</subfield>
+      <subfield code="b">S54fol.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="1">
+      <subfield code="a">FC3099</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="1">
+      <subfield code="a">HB31</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="2">
+      <subfield code="a">FC2949*</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="2">
+      <subfield code="a">FC2949*</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="0" ind2="6">
+      <subfield code="a">K347.9444</subfield>
+      <subfield code="b">C5164</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="1" ind2="2">
+      <subfield code="a">PS8575*</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="1" ind2="8">
+      <subfield code="a">KF385 ZA2</subfield>
+      <subfield code="b">.T34 1989</subfield>
+      <subfield code="2">kfmod</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="055" ind1="1" ind2="8">
+      <subfield code="a">KF385 ZB5</subfield>
+      <subfield code="b">C6</subfield>
+      <subfield code="2">kfmod</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1=" " ind2="4">
+      <subfield code="a">W1</subfield>
+      <subfield code="b">DE111AL v.4 pt.A 1990</subfield>
+      <subfield code="a">TP 248.2 D293b 1990</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1=" " ind2="4">
+      <subfield code="a">W1</subfield>
+      <subfield code="b">JO706M</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">1993 A0148</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">EE7766</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">KK1110</subfield>
+      <subfield code="a">WD 320</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">W 22 DC2.1</subfield>
+      <subfield code="b">B8M</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">W1</subfield>
+      <subfield code="b">BE 357 Bd. 1 1973</subfield>
+      <subfield code="a">WW 166 M43k 1973</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">W1</subfield>
+      <subfield code="b">BE357 Bd. 1 1978</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">W1</subfield>
+      <subfield code="b">RI217</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">W3</subfield>
+      <subfield code="b">NU36 no. 28 1993</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="0" ind2="0">
+      <subfield code="a">Z 675.M4</subfield>
+      <subfield code="b">H477</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="1" ind2="0">
+      <subfield code="a">QV 350</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="1" ind2="0">
+      <subfield code="a">TP 248.65.P76</subfield>
+      <subfield code="b">M618a 1993</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="1" ind2="0">
+      <subfield code="a">W 84 AA1</subfield>
+      <subfield code="b">I4827a 1993</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="1" ind2="0">
+      <subfield code="a">WA 540 AA1</subfield>
+      <subfield code="b">B8p 1972</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="1" ind2="0">
+      <subfield code="a">WW 166</subfield>
+      <subfield code="b">M43k 1973</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="060" ind1="1" ind2="4">
+      <subfield code="a">WF 102</subfield>
+      <subfield code="b">N972a 1969</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="066" ind1=" " ind2=" ">
+      <subfield code="a">$1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="066" ind1=" " ind2=" ">
+      <subfield code="a">(N</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="066" ind1=" " ind2=" ">
+      <subfield code="b"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="066" ind1=" " ind2=" ">
+      <subfield code="b">)Q</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="066" ind1=" " ind2=" ">
+      <subfield code="c">)2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="070" ind1="0" ind2=" ">
+      <subfield code="a">281.9</subfield>
+      <subfield code="b">C81A</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="070" ind1="0" ind2=" ">
+      <subfield code="a">HD3492.H8</subfield>
+      <subfield code="b">L3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="070" ind1="0" ind2=" ">
+      <subfield code="a">QH301.A5 </subfield>
+      <subfield code="b">1981</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="070" ind1="0" ind2=" ">
+      <subfield code="a">TRANSL</subfield>
+      <subfield code="b">17828</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="072" ind1=" " ind2="0">
+      <subfield code="a">F821</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="072" ind1=" " ind2="0">
+      <subfield code="a">J500</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="072" ind1=" " ind2="0">
+      <subfield code="a">K800</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="072" ind1=" " ind2="7">
+      <subfield code="8">1\p</subfield>
+      <subfield code="a">ANT</subfield>
+      <subfield code="2">bisacsh</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="072" ind1=" " ind2="7">
+      <subfield code="a">17</subfield>
+      <subfield code="x">02.1</subfield>
+      <subfield code="2">cosatisc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="072" ind1=" " ind2="7">
+      <subfield code="a">B</subfield>
+      <subfield code="2">lcmd</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="072" ind1=" " ind2="7">
+      <subfield code="a">Z1</subfield>
+      <subfield code="x">.630</subfield>
+      <subfield code="2">mesh</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">0455 (MF)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">0466-A-03 (MF)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">0621 (V.1)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">0629 (V.2)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">0956</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">0956-F</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">1002-A</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">1002-A</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">1002-B (MF)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">1002-B (MF)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">1022-A</subfield>
+      <subfield code="z">1012-A</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">1033</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">1033-A (MF)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">277-A-2 (MF)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="074" ind1=" " ind2=" ">
+      <subfield code="a">334-C-1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">001.81</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">631.321:631.411.3 </subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">821.113.1</subfield>
+      <subfield code="x">(494) </subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">821.113.4-14 </subfield>
+      <subfield code="2">1998</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">82:111.852 </subfield>
+      <subfield code="2">1993</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">94</subfield>
+      <subfield code="x">(474) </subfield>
+      <subfield code="x">"19"</subfield>
+      <subfield code="x">(075)</subfield>
+      <subfield code="2"></subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="080" ind1=" " ind2=" ">
+      <subfield code="a">971.1/.2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="8">1</subfield>
+      <subfield code="a">346.0469516</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="8">1</subfield>
+      <subfield code="a">599.0994$c22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2=" ">
+      <subfield code="a">C848</subfield>
+      <subfield code="2">20</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2=" ">
+      <subfield code="a">C848/.5407/05</subfield>
+      <subfield code="2">20</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2=" ">
+      <subfield code="a">j574</subfield>
+      <subfield code="2">20</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2=" ">
+      <subfield code="a">jC813</subfield>
+      <subfield code="2">20</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="8">1\p</subfield>
+      <subfield code="a">829/.3</subfield>
+      <subfield code="2">23</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="a">345.73/0772</subfield>
+      <subfield code="2">20</subfield>
+      <subfield code="m">a</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="a">347.305772</subfield>
+      <subfield code="2">20</subfield>
+      <subfield code="m">b</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="a">355.02/17</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="a">659.1 s</subfield>
+      <subfield code="a">659.1/57</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="a">888/.0108</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="a">920.073 s</subfield>
+      <subfield code="a">973.3/092</subfield>
+      <subfield code="a">B</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="0">
+      <subfield code="a">975.5/4252/00222</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="8">1\p</subfield>
+      <subfield code="a">004</subfield>
+      <subfield code="2">22/ger</subfield>
+      <subfield code="q">DE-101</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="8">1\p</subfield>
+      <subfield code="a">004</subfield>
+      <subfield code="2">22/ger</subfield>
+      <subfield code="q">NO-OsNB</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="8">1\p</subfield>
+      <subfield code="a">394.12</subfield>
+      <subfield code="2">22</subfield>
+      <subfield code="q">OCoLC-D</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="a">004</subfield>
+      <subfield code="2">22/ger</subfield>
+      <subfield code="q">DE-101b</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="a">220.47</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="a">343.7306/8</subfield>
+      <subfield code="a">347.30368</subfield>
+      <subfield code="2">20</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="a">388.13</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="a">388/.0919</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="0" ind2="4">
+      <subfield code="a">599.0994</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="1" ind2="4">
+      <subfield code="a">914.3</subfield>
+      <subfield code="2">13</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="082" ind1="7" ind2="4">
+      <subfield code="a">839.82</subfield>
+      <subfield code="2">5/nor</subfield>
+      <subfield code="q">NO-OsNB</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="083" ind1="0" ind2=" ">
+      <subfield code="8">2</subfield>
+      <subfield code="a"> 598.0994</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="083" ind1="0" ind2=" ">
+      <subfield code="a">598.0994</subfield>
+      <subfield code="2">22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="083" ind1="0" ind2=" ">
+      <subfield code="z">2</subfield>
+      <subfield code="a">4947</subfield>
+      <subfield code="2">22For a book on tunnels in the Swiss Alps. The Dewey number 388.13 is used for interdisciplinary works on tunnels, but the number itself is broader, covering a variety of special road features. Consequently, geographic area notation cannot be added to the primary number in field 082. Field 083 contains the geographic area notation from Table 2 for the Swiss Alps.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="083" ind1="0" ind2=" ">
+      <subfield code="z">2</subfield>
+      <subfield code="a">94</subfield>
+      <subfield code="2">22For a book on Australian birds and mammals. The Dewey number 599 is used for works on mammals and for comprehensive works on birds and mammals. The rest of the primary number in field 082 consists of 09 Geographic treatment from Table 1 and 94 Australia from Table 2. There is no way to tell from this number whether the book contains information about birds or not. The Dewey number 598 in the first 083 field means birds, and the full number means birds in Australia. The second 083 field has the Table 2 area number for Australia; it is intended to help users seeking everything about Australia.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">000</subfield>
+      <subfield code="a">330</subfield>
+      <subfield code="q">DE-600</subfield>
+      <subfield code="2">sdnb</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">014</subfield>
+      <subfield code="2">frbnpnav</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">016</subfield>
+      <subfield code="a">014</subfield>
+      <subfield code="a">018</subfield>
+      <subfield code="a">122</subfield>
+      <subfield code="2">frbnpnav</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">125</subfield>
+      <subfield code="a">631</subfield>
+      <subfield code="q">DE-600</subfield>
+      <subfield code="2">zdbs</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">330</subfield>
+      <subfield code="a">380</subfield>
+      <subfield code="a">650</subfield>
+      <subfield code="a">670</subfield>
+      <subfield code="q">DE-101</subfield>
+      <subfield code="2">sdnb</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">84.7</subfield>
+      <subfield code="b">SShA</subfield>
+      <subfield code="2">rubbk</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">8501(043)</subfield>
+      <subfield code="2">rueskl</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">CA2 PQ C07 81P52</subfield>
+      <subfield code="2">cacodoc</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="084" ind1=" " ind2=" ">
+      <subfield code="a">KB112.554</subfield>
+      <subfield code="b">U62 1980</subfield>
+      <subfield code="2">laclaw</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="085" ind1=" " ind2=" ">
+      <subfield code="8">1.1</subfield>
+      <subfield code="b">346.046 </subfield>
+      <subfield code="a">346.046</subfield>
+      <subfield code="r">333</subfield>
+      <subfield code="s">95</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="085" ind1=" " ind2=" ">
+      <subfield code="8">1.1</subfield>
+      <subfield code="b">346.046 </subfield>
+      <subfield code="a">346.046</subfield>
+      <subfield code="r">333</subfield>
+      <subfield code="s">95The Dewey number in the 082 field--346.0469516--means law providing for government control and regulation of biological resources for the sake of conserving them. The first 085 field shows that the number 346.04695 was built with 346.046 Law of government control and regulation of specific kinds of natural resources plus 95 from 333.95 Biological resources, following the instructions at 346.046. The second 085 field shows that the number 346.0469516 was built with 346.04695 plus 16 Conservation from the first add table under 333.7-333.9, as instructed under 333.7-333.9.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="085" ind1=" " ind2=" ">
+      <subfield code="8">1.1</subfield>
+      <subfield code="b">599 </subfield>
+      <subfield code="z">1</subfield>
+      <subfield code="s">09</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="085" ind1=" " ind2=" ">
+      <subfield code="8">1.2</subfield>
+      <subfield code="b">599.09 </subfield>
+      <subfield code="z">1</subfield>
+      <subfield code="a">093</subfield>
+      <subfield code="c">099 </subfield>
+      <subfield code="z">2</subfield>
+      <subfield code="s">94</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="085" ind1=" " ind2=" ">
+      <subfield code="8">2.1</subfield>
+      <subfield code="b">598 </subfield>
+      <subfield code="z">1</subfield>
+      <subfield code="s">09</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="085" ind1=" " ind2=" ">
+      <subfield code="8">2.2</subfield>
+      <subfield code="b">598.09 </subfield>
+      <subfield code="z">1</subfield>
+      <subfield code="a">093</subfield>
+      <subfield code="c">099 </subfield>
+      <subfield code="z">2</subfield>
+      <subfield code="s">94The first two 085 fields show how the Dewey number in the 082 field - 599.0994 - was built. The first 085 field shows that 599.09 was built with 599 Mammals plus 09 Geographic treatment from Table 1 Standard subdivisions. The second 085 field shows that 599.0994 was built with 599.09 plus 94 Australia from Table 2 Areas, following instructions at 093-099 in Table 1. The second t wo 085 fields show how the Dewey number in the 083 field - 598.0994 - was built.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1=" " ind2=" ">
+      <subfield code="a">HEU/G74.3C49</subfield>
+      <subfield code="2">ordocs</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1=" " ind2=" ">
+      <subfield code="a">HEU/G74.3C49</subfield>
+      <subfield code="2">ordocs</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">A 1.1:</subfield>
+      <subfield code="z">A 1.1/3:984</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">A 13.28:F 61/2/981 Glacier</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">ED 1.1.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">ED 1.310/2:</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">HE 20.6209:13/45</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">I 19.2:W 68/</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">I 19.3:1620</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">ITC 1.12:TA-503 (A)-18 AND 332-279</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">LC 3.12:</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">T 22.2:T 19/20/</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">T 22.57</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="0" ind2=" ">
+      <subfield code="a">TD 1.1:</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="086" ind1="1" ind2=" ">
+      <subfield code="a">CS13-211</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="088" ind1=" " ind2=" ">
+      <subfield code="a">APA 3009</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="088" ind1=" " ind2=" ">
+      <subfield code="a">APA 3010</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="088" ind1=" " ind2=" ">
+      <subfield code="a">APA 3011</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="088" ind1=" " ind2=" ">
+      <subfield code="a">EPA-6001/2-76-224</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="088" ind1=" " ind2=" ">
+      <subfield code="a">NASA-RP-1124-REV-3 </subfield>
+      <subfield code="z">NASA-RP-1124-REV-2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="088" ind1=" " ind2=" ">
+      <subfield code="a">STRATLAB-71-98</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="088" ind1=" " ind2=" ">
+      <subfield code="z">NASA-TN-D-8008</subfield>
+    </datafield>
+  </record>
+</collection>

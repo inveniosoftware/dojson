@@ -198,7 +198,7 @@ def reverse_series_statement_added_entry_title(self, key, value):
         'volume_sequential_designation': 'v',
         'bibliographic_record_control_number': 'w',
         'international_standard_serial_number': 'x',
-        'authority_record_control_number': '0',
+        'authority_record_control_number_or_standard_number': '0',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
     }

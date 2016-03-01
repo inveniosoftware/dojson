@@ -174,6 +174,9 @@ def media_type(self, key, value):
         'media_type_code': utils.force_list(
             value.get('b')
         ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
         'materials_specified': value.get('3'),
         'source': value.get('2'),
         'linkage': value.get('6'),
@@ -207,6 +210,9 @@ def carrier_type(self, key, value):
         ),
         'carrier_type_code': utils.force_list(
             value.get('b')
+        ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
         ),
         'materials_specified': value.get('3'),
         'source': value.get('2'),

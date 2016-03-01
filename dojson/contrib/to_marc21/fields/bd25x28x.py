@@ -285,13 +285,16 @@ def reverse_production_publication_distribution_manufacture_and_copyright_notice
 def reverse_address(self, key, value):
     """Reverse - Address."""
     indicator_map1 = {
-        "No level specified": "_",
-        "Primary": "1",
-        "Secondary": "2"}
+        'No level specified': '_',
+        'Primary': '1',
+        'Secondary': '2',
+    }
 
     indicator_map2 = {
-        "Mailing": "0",
-        "Type specified in subfield $i": "7"}
+        'No type specified': '_',
+        'Mailing': '0',
+        'Type specified in subfield $i': '7',
+    }
 
     field_map = {
         'address': 'a',
@@ -319,12 +322,6 @@ def reverse_address(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('level')
-
-    if key[4] in indicator_map2:
-        order.append('type_of_address')
-
     if indicator_map2.get(value.get('type_of_address'), '7') != '7':
         order.remove('i')
 
@@ -340,6 +337,7 @@ def reverse_address(self, key, value):
         'f': value.get('terms_preceding_attention_name'),
         'g': value.get('attention_name'),
         'h': value.get('attention_position'),
+        'i': value.get('type_of_address'),
         'j': utils.reverse_force_list(
             value.get('specialized_telephone_number')
         ),
@@ -375,8 +373,5 @@ def reverse_address(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('level'), '_'),
-        '$ind2': indicator_map2.get(value.get('type_of_address')),
-        'i': value.get('type_of_address')
-        if indicator_map2.get(value.get('access_method'), '7') == '7'
-        else None,
+        '$ind2': indicator_map2.get(value.get('type_of_address'), '7'),
     }

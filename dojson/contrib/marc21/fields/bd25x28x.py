@@ -265,13 +265,16 @@ def production_publication_distribution_manufacture_and_copyright_notice(
 def address(self, key, value):
     """Address."""
     indicator_map1 = {
-        "_": "No level specified",
-        "1": "Primary",
-        "2": "Secondary"}
+        '_': 'No level specified',
+        '1': 'Primary',
+        '2': 'Secondary',
+    }
 
     indicator_map2 = {
-        "0": "Mailing",
-        "7": "Type specified in subfield $i"}
+        '_': 'No type specified',
+        '0': 'Mailing',
+        '7': 'Type specified in subfield $i',
+    }
 
     field_map = {
         'a': 'address',
@@ -302,7 +305,7 @@ def address(self, key, value):
     if key[3] in indicator_map1:
         order.append('level')
 
-    if key[4] in indicator_map2:
+    if 'type_of_address' not in order and key[4] in indicator_map2:
         order.append('type_of_address')
 
     return {
@@ -352,5 +355,5 @@ def address(self, key, value):
             value.get('z')
         ),
         'level': indicator_map1.get(key[3]),
-        'type_of_address': value.get('i') if key[4] == '7' else indicator_map1.get(key[4]),
+        'type_of_address': value.get('i') if key[4] == '7' else indicator_map2.get(key[4]),
     }

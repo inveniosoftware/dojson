@@ -19,8 +19,15 @@ from ..model import to_marc21
 @utils.filter_values
 def reverse_added_entry_personal_name(self, key, value):
     """Reverse - Added Entry-Personal Name."""
-    indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
-    indicator_map2 = {"Analytical entry": "2", "No information provided": "_"}
+    indicator_map1 = {
+        'Forename': '0',
+        'Surname': '1',
+        'Family name': '3',
+    }
+    indicator_map2 = {
+        'No information provided': '_',
+        'Analytical entry': '2',
+    }
     field_map = {
         'authority_record_control_number_or_standard_number': '0',
         'materials_specified': '3',
@@ -38,7 +45,7 @@ def reverse_added_entry_personal_name(self, key, value):
         'relationship_information': 'i',
         'attribution_qualifier': 'j',
         'form_subheading': 'k',
-        'language_or_a_work': 'l',
+        'language_of_a_work': 'l',
         'medium_of_performance_for_music': 'm',
         'number_of_part_section_of_a_work': 'n',
         'arranged_statement_for_music': 'o',

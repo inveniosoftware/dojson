@@ -1,0 +1,498 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="400" ind1="1" ind2=" ">
+      <subfield code="a">Gyrowetz, Adalbert,</subfield>
+      <subfield code="d">1763-1850.</subfield>
+      <subfield code="t">Serenades,</subfield>
+      <subfield code="m">clarinets (2), horns (2), bassoon,</subfield>
+      <subfield code="n">op. 5 (Hummel)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="400" ind1="1" ind2="0">
+      <subfield code="a">Shakespeare, William,</subfield>
+      <subfield code="d">1564-1616.</subfield>
+      <subfield code="t">Plays</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="400" ind1="1" ind2="0">
+      <subfield code="a">Stieler, Kaspar von,</subfield>
+      <subfield code="d">1632-1701.</subfield>
+      <subfield code="t">Gesammelte Schriften in Einzelausgaben</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="400" ind1="1" ind2="1">
+      <subfield code="a">Her</subfield>
+      <subfield code="t">Letters from China,</subfield>
+      <subfield code="v">v. 2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="400" ind1="1" ind2="1">
+      <subfield code="a">His</subfield>
+      <subfield code="t">Series of railroad maps,</subfield>
+      <subfield code="v">no. 4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="410" ind1="1" ind2="0">
+      <subfield code="a">Mexico (City).</subfield>
+      <subfield code="b">Universidad Nacional.</subfield>
+      <subfield code="b">Instituto de Investigaciones Históricas.</subfield>
+      <subfield code="t">Serie de historia general,</subfield>
+      <subfield code="v">v. 3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="410" ind1="1" ind2="1">
+      <subfield code="a">Its</subfield>
+      <subfield code="t">Research bulletin,</subfield>
+      <subfield code="v">78-RB-3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="410" ind1="2" ind2="1">
+      <subfield code="a">Its</subfield>
+      <subfield code="t">Report ;</subfield>
+      <subfield code="v">no. 1</subfield>
+      <subfield code="x">0141-9676</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="411" ind1="1" ind2="0">
+      <subfield code="a">Chicago.</subfield>
+      <subfield code="q">Cartography Conference,</subfield>
+      <subfield code="d">1974.</subfield>
+      <subfield code="t">Map</subfield>
+      <subfield code="v">no. 10</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="411" ind1="1" ind2="0">
+      <subfield code="a">International Labor Conference.</subfield>
+      <subfield code="t">Bulletin</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="411" ind1="2" ind2="1">
+      <subfield code="a">Its</subfield>
+      <subfield code="t">Proceedings,</subfield>
+      <subfield code="v">v. 2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Acta Universitatis Stockholmiensis.</subfield>
+      <subfield code="p">Stockholm economic studies ;</subfield>
+      <subfield code="v">new ser., 7</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Bahrain surface materials resources survey 1:50,000 ;</subfield>
+      <subfield code="v">map 5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Centre of Asian Studies occasional papers and monographs,</subfield>
+      <subfield code="x">0378-2689 ;</subfield>
+      <subfield code="v">no. 57</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Collection africaine</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Environmental science research ;</subfield>
+      <subfield code="v">v. 4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Folger Shakespeare Library slide set ;</subfield>
+      <subfield code="v">no. 2</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Gems of American life</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Janua linguarum.</subfield>
+      <subfield code="p">Series maior,</subfield>
+      <subfield code="x">0075-3114 ;</subfield>
+      <subfield code="v">100</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Journal of polymer science.</subfield>
+      <subfield code="n">Part C,</subfield>
+      <subfield code="p">Polymer symposia ;</subfield>
+      <subfield code="v">no. 39</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">NATO advanced study institutes series.</subfield>
+      <subfield code="n">Series E,</subfield>
+      <subfield code="p">Applied sciences ;</subfield>
+      <subfield code="v">v. 66</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Pollution monitoring series ;</subfield>
+      <subfield code="v">&lt;3&gt;-5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Romanica Gothoburgensia,</subfield>
+      <subfield code="x">0080-3863 ;</subfield>
+      <subfield code="v">12, 16</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Russian titles for the specialist,</subfield>
+      <subfield code="x">0305-3741 ;</subfield>
+      <subfield code="v">no. 78</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Western Canada series report,</subfield>
+      <subfield code="x">0317-3127</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="0">
+      <subfield code="a">Ãkonomische Studien ;</subfield>
+      <subfield code="v">Bd. 22</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="4">
+      <subfield code="a">The Pediatric clinics of North America ;</subfield>
+      <subfield code="v">v. 2, no. 4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="4">
+      <subfield code="a">The Rare book tapes.</subfield>
+      <subfield code="n">Series 1 ;</subfield>
+      <subfield code="v">5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="440" ind1=" " ind2="4">
+      <subfield code="a">The Rare book tapes.</subfield>
+      <subfield code="n">Series 1 ;</subfield>
+      <subfield code="v">5</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="0" ind2=" ">
+      <subfield code="a">Education U.S.A. special report</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="0" ind2=" ">
+      <subfield code="a">Forschungen zur Geschichte Vorarlbergs ;</subfield>
+      <subfield code="v">6. Bd. = der ganzen Reihe 13 Bd.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="0" ind2=" ">
+      <subfield code="a">Life series </subfield>
+      <subfield code="x">0023-6721</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="0" ind2=" ">
+      <subfield code="a">Pelican books</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="3">1972/73-1975-76: </subfield>
+      <subfield code="a">Research report / National Education Association Research</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="3">1973- :</subfield>
+      <subfield code="a">NEA research memo</subfield>
+      <subfield code="l">(LB2842.N18)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="3">&lt;1981-&gt;: </subfield>
+      <subfield code="a">Reference works</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="3">&lt;1981-&gt;: </subfield>
+      <subfield code="a">Reference works</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="3">&lt;1984-&gt;: </subfield>
+      <subfield code="a">Miscellaneous publication / United States Department of Agriculture</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="3">v. 9-&lt;10&gt;:</subfield>
+      <subfield code="a">MPCHT art and anthropological monographs ;</subfield>
+      <subfield code="v">no. 35</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Annual census of manufactures =</subfield>
+      <subfield code="a">Recensement des manufactures,</subfield>
+      <subfield code="x">0315-5587</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Basic nursing skills ;</subfield>
+      <subfield code="v">tape 14</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Bibliographies of modern authors,</subfield>
+      <subfield code="x">0749-470X ;</subfield>
+      <subfield code="v">no. 27</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Bibliographies of modern authors,</subfield>
+      <subfield code="x">0749-470X ;</subfield>
+      <subfield code="v">no. 27</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Bulletin / Engineering Experiment Station ;</subfield>
+      <subfield code="v">no. 50</subfield>
+      <subfield code="l">(TA7.O74)</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Bulletin / U.S. Department of Labor, Bureau of Labor Statistics</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">CIIL linguistic atlas series ;</subfield>
+      <subfield code="v">1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Collection analyses ;</subfield>
+      <subfield code="v">vol. 1, &lt;3, 5-7&gt;</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Delaware symposia on language studies ;</subfield>
+      <subfield code="v">4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Department of State publication ;</subfield>
+      <subfield code="v">7846.</subfield>
+      <subfield code="a">Department and Foreign Service series ;</subfield>
+      <subfield code="v">128</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Department of State publication ;</subfield>
+      <subfield code="v">7846.</subfield>
+      <subfield code="a">Department and Foreign Service series ;</subfield>
+      <subfield code="v">128</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Department of the Army pamphlet ;</subfield>
+      <subfield code="v">27-50</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Detroit area study, 1971 : social problems and social change in Detroit ;</subfield>
+      <subfield code="v">no. 19</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Document ;</subfield>
+      <subfield code="v">no. 3009-3011</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Edible wild plants of the planet earth</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Gellerman effective supervision series</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Gesammelte Werke / Edgar Allan Poe ;</subfield>
+      <subfield code="v">1. Bd.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Louie Armstrong ;</subfield>
+      <subfield code="v">6.</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Lund studies in geography,</subfield>
+      <subfield code="x">1400-1144 ;</subfield>
+      <subfield code="v">101</subfield>
+      <subfield code="a">Ser. B, Human geography,</subfield>
+      <subfield code="x">0076-1478 ;</subfield>
+      <subfield code="v">48</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Map / Geological Survey of Alabama ;</subfield>
+      <subfield code="v">158, plate 3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Monograph / University Extension, UCLA, Department of Continuing Education in Health Sciences, UCLA School of Medicine and UCLA School of Public Health</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Musica da camera ;</subfield>
+      <subfield code="v">72</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">MÃ©moire du BRGM,</subfield>
+      <subfield code="x">0071-8246 ;</subfield>
+      <subfield code="v">no 123</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">MÃ©moire du BRGM,</subfield>
+      <subfield code="x">0071-8246 ;</subfield>
+      <subfield code="v">no 123</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Nutrition and food science ;</subfield>
+      <subfield code="v">v. 1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Papers and documents of the I.C.I. Series C, Bibliographies ;</subfield>
+      <subfield code="v">no. 3 =</subfield>
+      <subfield code="a">Travaux et documents de l'I.C.I. SÃ©rie C, Bibliographies ;</subfield>
+      <subfield code="v">no 3</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Pediatric clinics of North America ;</subfield>
+      <subfield code="v">v. 2, no. 4</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Policy series / CES ;</subfield>
+      <subfield code="v">1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Publications de la Cour europÃ©enne des droits de l'homme. SÃ©rie A, ArrÃªts et dÃ©cisions</subfield>
+      <subfield code="a">Publications of the European Court of Human Rights. Series A, Judgments and decisions ;</subfield>
+      <subfield code="v">vol. 48</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Series Z201. Special Africa series,</subfield>
+      <subfield code="v">no. 12</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Sport : bulletin of the Physical Education and Sports Department of the International Union of Students ;</subfield>
+      <subfield code="v">v. 10</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Teachings of the feathered serpent ;</subfield>
+      <subfield code="v">bk. 1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Teachings of the feathered serpent ;</subfield>
+      <subfield code="v">bk. 1</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">The James Joyce archive</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">The Teenage years</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">Uniform crime reports</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="490" ind1="1" ind2=" ">
+      <subfield code="a">West Virginia University bulletin ;</subfield>
+      <subfield code="v">ser. 74, no. 11-3.</subfield>
+      <subfield code="a">Bulletin / Experiment Station, West Virginia University ;</subfield>
+      <subfield code="v">111</subfield>
+    </datafield>
+  </record>
+</collection>
