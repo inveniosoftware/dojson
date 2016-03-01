@@ -386,9 +386,10 @@ def test_marc21_856_indicators():
                 '__order__': ['electronic_location_and_access'],
                 'electronic_location_and_access': [
                     {
-                        '__order__': ('file_size', 'uniform_resource_identifier', 'public_note', 'access_method'),
+                        '__order__': ('file_size', 'uniform_resource_identifier', 'public_note', 'access_method', 'relationship'),
                         'public_note': ('0',),
                         'access_method': 'HTTP',
+                        'relationship': 'No information provided',
                         'uniform_resource_identifier': (
                             'https://zenodo.org/record/17575/files/...',),
                         'file_size': ('272681',)
@@ -409,9 +410,10 @@ def test_marc21_856_indicators():
                 '__order__': ['electronic_location_and_access'],
                 'electronic_location_and_access': [
                     {
-                        '__order__': ('file_size', 'uniform_resource_identifier', 'public_note', 'access_method'),
+                        '__order__': ('file_size', 'uniform_resource_identifier', 'public_note', 'access_method', 'relationship'),
                         'public_note': ('0',),
                         'access_method': 'Awesome access method',
+                        'relationship': 'No information provided',
                         'uniform_resource_identifier': (
                             'https://zenodo.org/record/17575/files/...',),
                         'file_size': ('272681',)
