@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="061" ind1=" " ind2=" ">
+      <subfield code="a">class_num#1</subfield>
+      <subfield code="a">class_num#2</subfield>
+      <subfield code="a">class_num#3</subfield>
+      <subfield code="b">5158208052</subfield>
+      <subfield code="c">copy info blah</subfield>
+      <subfield code="8">55521.5151\616</subfield>
+      <subfield code="8">55521.5151\617</subfield>
+      <subfield code="8">55521.5151\618</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="071" ind1=" " ind2=" ">
+      <subfield code="a">class_num#1</subfield>
+      <subfield code="a">class_num#2</subfield>
+      <subfield code="a">class_num#3</subfield>
+      <subfield code="b">5158208052</subfield>
+      <subfield code="c">copy info blah#1</subfield>
+      <subfield code="c">copy info blah#2</subfield>
+      <subfield code="c">copy info blah#3</subfield>
+      <subfield code="8">55521.5151\616</subfield>
+      <subfield code="8">55521.5151\617</subfield>
+      <subfield code="8">55521.5151\618</subfield>
+    </datafield>
+  </record>
+</collection>

@@ -28,6 +28,7 @@ def library_of_congress_control_number(self, key, value):
     order = utils.map_order(field_map, value)
 
     return {
+        '__order__': tuple(order) if len(order) else None,
         'lc_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -1050,7 +1051,20 @@ def authentication_code(self, key, value):
 @utils.filter_values
 def geographic_area_code(self, key, value):
     """Geographic Area Code."""
+    field_map = {
+        'a': 'geographic_area_code',
+        'b': 'local_gac_code',
+        'c': 'iso_code',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_local_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'geographic_area_code': utils.force_list(
             value.get('a')
         ),
@@ -1115,11 +1129,27 @@ def country_of_publishing_producing_entity_code(self, key, value):
 def time_period_of_content(self, key, value):
     """Time Period of Content."""
     indicator_map1 = {
-        "#": "Subfield $b or $c not present",
-        "0": "Single date/time",
-        "1": "Multiple single dates/times",
-        "2": "Range of dates/times"}
+        '_': 'Subfield $b or $c not present',
+        '0': 'Single date/time',
+        '1': 'Multiple single dates/times',
+        '2': 'Range of dates/times',
+    }
+
+    field_map = {
+        'a': 'time_period_code',
+        'b': 'formatted_9999_bc_through_ce_time_period',
+        'c': 'formatted_pre_9999_bc_time_period',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_time_period_in_subfield_b_or_c')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'time_period_code': utils.force_list(
             value.get('a')
         ),
@@ -1202,7 +1232,7 @@ def form_of_musical_composition_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[4] != '7' and key[4] in indicator_map2:
+    if 'source_of_code' not in order and key[4] in indicator_map2:
         order.append('source_of_code')
 
     return {
@@ -1222,17 +1252,35 @@ def form_of_musical_composition_code(self, key, value):
 @utils.filter_values
 def number_of_musical_instruments_or_voices_code(self, key, value):
     """Number of Musical Instruments or Voices Code."""
+    indicator_map2 = {
+        '_': 'MARC musical composition code',
+        '7': 'Source specified in subfield $2',
+    }
+
+    field_map = {
+        'a': 'performer_or_ensemble',
+        'b': 'soloist',
+        '2': 'source_of_code',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if 'source_of_code' not in order and key[4] in indicator_map2:
+        order.append('source_of_code')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'performer_or_ensemble': utils.force_list(
             value.get('a')
         ),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'source_of_code': value.get('2'),
         'soloist': utils.force_list(
             value.get('b')
         ),
+        'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4], '_'),
     }
 
 
@@ -1242,7 +1290,7 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
 def library_of_congress_call_number(self, key, value):
     """Library of Congress Call Number."""
     indicator_map1 = {
-        '#': 'No information provided',
+        '_': 'No information provided',
         '0': 'Item is in LC',
         '1': 'Item is not in LC',
     }
@@ -1287,7 +1335,17 @@ def library_of_congress_call_number(self, key, value):
 @utils.filter_values
 def library_of_congress_copy_issue_offprint_statement(self, key, value):
     """Library of Congress Copy, Issue, Offprint Statement."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'c': 'copy_information',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -1346,21 +1404,41 @@ def geographic_classification(self, key, value):
 def classification_numbers_assigned_in_canada(self, key, value):
     """Classification Numbers Assigned in Canada."""
     indicator_map1 = {
-        "#": "Information not provided",
-        "0": "Work held by LAC",
-        "1": "Work not held by LAC"}
+        '_': 'Information not provided',
+        '0': 'Work held by LAC',
+        '1': 'Work not held by LAC',
+    }
+
     indicator_map2 = {
-        "0": "LC-based call number assigned by LAC",
-        "1": "Complete LC class number assigned by LAC",
-        "2": "Incomplete LC class number assigned by LAC",
-        "3": "LC-based call number assigned by the contributing library",
-        "4": "Complete LC class number assigned by the contributing library",
-        "5": "Incomplete LC class number assigned by the contributing library",
-        "6": "Other call number assigned by LAC",
-        "7": "Other class number assigned by LAC",
-        "8": "Other call number assigned by the contributing library",
-        "9": "Other class number assigned by the contributing library"}
+        '0': 'LC-based call number assigned by LAC',
+        '1': 'Complete LC class number assigned by LAC',
+        '2': 'Incomplete LC class number assigned by LAC',
+        '3': 'LC-based call number assigned by the contributing library',
+        '4': 'Complete LC class number assigned by the contributing library',
+        '5': 'Incomplete LC class number assigned by the contributing library',
+        '6': 'Other call number assigned by LAC',
+        '7': 'Other class number assigned by LAC',
+        '8': 'Other call number assigned by the contributing library',
+        '9': 'Other class number assigned by the contributing library',
+    }
+
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        '2': 'source_of_call_class_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('existence_in_lac_collection')
+    if key[4] in indicator_map2:
+        order.append('type_completeness_source_of_class_call_number')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -1420,7 +1498,17 @@ def national_library_of_medicine_call_number(self, key, value):
 @utils.filter_values
 def national_library_of_medicine_copy_statement(self, key, value):
     """National Library of Medicine Copy Statement."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'c': 'copy_information',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')
         ),
@@ -1436,7 +1524,16 @@ def national_library_of_medicine_copy_statement(self, key, value):
 @utils.filter_values
 def character_sets_present(self, key, value):
     """Character Sets Present."""
+    field_map = {
+        'a': 'primary_g0_character_set',
+        'b': 'primary_g1_character_set',
+        'c': 'alternate_g0_or_g1_character_set',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'primary_g0_character_set': value.get('a'),
         'alternate_g0_or_g1_character_set': utils.force_list(
             value.get('c')
@@ -1480,7 +1577,17 @@ def national_agricultural_library_call_number(self, key, value):
 @utils.filter_values
 def national_agricultural_library_copy_statement(self, key, value):
     """National Agricultural Library Copy Statement."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'c': 'copy_information',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')
         ),
@@ -1538,7 +1645,16 @@ def subject_category_code(self, key, value):
 @utils.filter_values
 def gpo_item_number(self, key, value):
     """GPO Item Number."""
+    field_map = {
+        'a': 'gpo_item_number',
+        'z': 'canceled_invalid_gpo_item_number',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'gpo_item_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -1555,10 +1671,27 @@ def gpo_item_number(self, key, value):
 def universal_decimal_classification_number(self, key, value):
     """Universal Decimal Classification Number."""
     indicator_map1 = {
-        "#": "No information provided",
-        "0": "Full",
-        "1": "Abridged"}
+        '_': 'No information provided',
+        '0': 'Full',
+        '1': 'Abridged',
+    }
+
+    field_map = {
+        'a': 'universal_decimal_classification_number',
+        'b': 'item_number',
+        'x': 'common_auxiliary_subdivision',
+        '2': 'edition_identifier',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_edition')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'universal_decimal_classification_number': value.get('a'),
         'item_number': value.get('b'),
         'linkage': value.get('6'),
@@ -1579,13 +1712,15 @@ def universal_decimal_classification_number(self, key, value):
 def dewey_decimal_classification_number(self, key, value):
     """Dewey Decimal Classification Number."""
     indicator_map1 = {
-        "0": "Full edition",
-        "1": "Abridged edition",
-        "7": "Other edition specified in subfield $2"}
+        '0': 'Full edition',
+        '1': 'Abridged edition',
+        '7': 'Other edition specified in subfield $2',
+    }
     indicator_map2 = {
-        "#": "No information provided",
-        "0": "Assigned by LC",
-        "4": "Assigned by agency other than LC"}
+        '_': 'No information provided',
+        '0': 'Assigned by LC',
+        '4': 'Assigned by agency other than LC',
+    }
 
     field_map = {
         'a': 'classification_number',
@@ -1629,10 +1764,30 @@ def dewey_decimal_classification_number(self, key, value):
 def additional_dewey_decimal_classification_number(self, key, value):
     """Additional Dewey Decimal Classification Number."""
     indicator_map1 = {
-        "0": "Full edition",
-        "1": "Abridged edition",
-        "7": "Other edition specified in subfield $2"}
+        '0': 'Full edition',
+        '1': 'Abridged edition',
+        '7': 'Other edition specified in subfield $2',
+    }
+
+    field_map = {
+        'a': 'classification_number',
+        'c': 'classification_number__ending_number_of_span',
+        'm': 'standard_or_optional_designation',
+        'q': 'assigning_agency',
+        'y': 'table_sequence_number_for_internal',
+        'z': 'table_identification',
+        '2': 'edition_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('type_of_edition')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')
         ),
@@ -1692,7 +1847,27 @@ def other_classification_number(self, key, value):
 @utils.filter_values
 def synthesized_classification_number_components(self, key, value):
     """Synthesized Classification Number Components."""
+    field_map = {
+        'a': 'number_where_instructions_are_found_single_number_or_beginning_number_of_span',
+        'b': 'base_number',
+        'c': 'classification_number_ending_number_of_span',
+        'f': 'facet_designator',
+        'r': 'root_number',
+        's': 'digits_added_from_classification_number_in_schedule_or_external_table',
+        't': 'digits_added_from_internal_subarrangement_or_add_table',
+        'u': 'number_being_analyzed',
+        'v': 'number_in_internal_subarrangement_or_add_table_where',
+        'w': 'table_identification_internal_subarrangement_or_add',
+        'y': 'table_sequence_number_for_internal_subarrangement_or',
+        'z': 'table_identification',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'number_where_instructions_are_found_single_number_or_beginning_number_of_span': utils.force_list(
             value.get('a')
         ),
