@@ -272,7 +272,6 @@
       <subfield code="a">Gyrowetz, Adalbert,</subfield>
       <subfield code="d">1763-1850.</subfield>
       <subfield code="t">Serenades,</subfield>
-      <subfield code="m">clarinets (2), horns (2), bassoon,</subfield>
       <subfield code="n">op. 3 (AndrÃ©)</subfield>
     </datafield>
   </record>
@@ -452,12 +451,12 @@
     </datafield>
   </record>
   <record>
-    <datafield tag="100" ind1="1" ind2="0">
+    <datafield tag="100" ind1="1" ind2=" ">
       <subfield code="a">Gershkoff, Ira.</subfield>
     </datafield>
   </record>
   <record>
-    <datafield tag="100" ind1="2" ind2=" ">
+    <datafield tag="100" ind1=" " ind2=" ">
       <subfield code="a">Krishna Moorthy, K.</subfield>
       <subfield code="q">(Krishma),</subfield>
       <subfield code="d">1927-</subfield>

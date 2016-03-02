@@ -49,9 +49,6 @@ def reverse_main_entry_personal_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('type_of_personal_name_entry_element')
-
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('personal_name'),
@@ -128,9 +125,6 @@ def reverse_main_entry_corporate_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('type_of_corporate_name_entry_element')
-
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
@@ -206,9 +200,6 @@ def reverse_main_entry_meeting_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('type_of_meeting_name_entry_element')
-
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
@@ -278,9 +269,6 @@ def reverse_main_entry_uniform_title(self, key, value):
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[3] in nonfiling_characters:
-        order.append('nonfiling_characters')
 
     return {
         '__order__': tuple(order) if len(order) else None,
