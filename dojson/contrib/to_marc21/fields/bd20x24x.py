@@ -19,11 +19,28 @@ from ..model import to_marc21
 @utils.filter_values
 def reverse_abbreviated_title(self, key, value):
     """Reverse - Abbreviated Title."""
-    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
+    indicator_map1 = {
+        'No added entry': '0',
+        'Added entry': '1',
+    }
+
     indicator_map2 = {
-        "Abbreviated key title": "_",
-        "Other abbreviated title": "0"}
+        'Abbreviated key title': '_',
+        'Other abbreviated title': '0',
+    }
+
+    field_map = {
+        'abbreviated_title': 'a',
+        'qualifying_information': 'b',
+        'source': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('abbreviated_title'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -43,10 +60,19 @@ def reverse_abbreviated_title(self, key, value):
 @utils.filter_values
 def reverse_key_title(self, key, value):
     """Reverse - Key Title."""
-    indicator_map2 = {
-        "No nonfiling characters": "0",
-        "Number of nonfiling characters": "8"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    field_map = {
+        'key_title': 'a',
+        'qualifying_information': 'b',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('key_title'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -54,7 +80,7 @@ def reverse_key_title(self, key, value):
         'b': value.get('qualifying_information'),
         '6': value.get('linkage'),
         '$ind1': '_',
-        '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
+        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
     }
 
 
@@ -62,11 +88,36 @@ def reverse_key_title(self, key, value):
 @utils.filter_values
 def reverse_uniform_title(self, key, value):
     """Reverse - Uniform Title."""
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
     indicator_map1 = {
-        "Not printed or displayed": "0",
-        "Printed or displayed": "1"}
-    indicator_map2 = {"Number of nonfiling characters": "8"}
+        'Not printed or displayed': '0',
+        'Printed or displayed': '1',
+    }
+
+    field_map = {
+        'uniform_title': 'a',
+        'date_of_treaty_signing': 'd',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'authority_record_control_number_or_standard_number': '0',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('uniform_title'),
         'p': utils.reverse_force_list(
             value.get('name_of_part_section_of_a_work')),
@@ -93,9 +144,7 @@ def reverse_uniform_title(self, key, value):
         '$ind1': indicator_map1.get(
             value.get('uniform_title_printed_or_displayed'),
             '_'),
-        '$ind2': indicator_map2.get(
-            value.get('nonfiling_characters'),
-            '_'),
+        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
     }
 
 
@@ -104,11 +153,29 @@ def reverse_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_translation_of_title_by_cataloging_agency(self, key, value):
     """Reverse - Translation of Title by Cataloging Agency."""
-    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
-    indicator_map2 = {
-        "No nonfiling characters": "0",
-        "Number of nonfiling characters": "8"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    indicator_map1 = {
+        'No added entry': '0',
+        'Added entry': '1',
+    }
+
+    field_map = {
+        'title': 'a',
+        'remainder_of_title': 'b',
+        'statement_of_responsibility_etc.': 'c',
+        'medium': 'h',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'language_code_of_translated_title': 'y',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('title'),
         'c': value.get('statement_of_responsibility'),
         'b': value.get('remainder_of_title'),
@@ -125,7 +192,7 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
-        '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
+        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
     }
 
 
@@ -133,11 +200,12 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
 @utils.filter_values
 def reverse_collective_uniform_title(self, key, value):
     """Reverse - Collective Uniform Title."""
-    indicator_map1 = {
-        "Not printed or displayed": "0",
-        "Printed or displayed": "1",
-    }
     valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    indicator_map1 = {
+        'Not printed or displayed': '0',
+        'Printed or displayed': '1',
+    }
 
     field_map = {
         'uniform_title': 'a',
@@ -158,9 +226,6 @@ def reverse_collective_uniform_title(self, key, value):
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[3] in indicator_map1:
-        order.append('uniform_title_printed_or_displayed')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -188,7 +253,7 @@ def reverse_collective_uniform_title(self, key, value):
         '$ind1': indicator_map1.get(
             value.get('uniform_title_printed_or_displayed'),
             '_'),
-        '$ind2': value.get('nonfiling_characters', '_'),
+        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
     }
 
 
@@ -196,19 +261,13 @@ def reverse_collective_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_title_statement(self, key, value):
     """Reverse - Title Statement."""
-    indicator_map1 = {"Added entry": "1", "No added entry": "0"}
-    indicator_map2 = {
-        "0": "0",
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5",
-        "6": "6",
-        "7": "7",
-        "8": "8",
-        "9": "9",
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    indicator_map1 = {
+        'No added entry': '0',
+        'Added entry': '1',
     }
+
     field_map = {
         'title': 'a',
         'remainder_of_title': 'b',
@@ -222,15 +281,12 @@ def reverse_title_statement(self, key, value):
         'version': 's',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'title_added_entry': None,
-        'nonfiling_characters': None
     }
 
-    ind1 = indicator_map1.get(value.get('title_added_entry'), '_')
-    ind2 = indicator_map2.get(value.get('nonfiling_characters'), '_')
     order = utils.map_order(field_map, value)
 
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('title'),
         'c': value.get('statement_of_responsibility'),
         'b': value.get('remainder_of_title'),
@@ -251,9 +307,8 @@ def reverse_title_statement(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': ind1,
-        '$ind2': ind2,
-        '__order__': tuple(order) if len(order) else None
+        '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
+        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
     }
 
 
@@ -263,22 +318,43 @@ def reverse_title_statement(self, key, value):
 def reverse_varying_form_of_title(self, key, value):
     """Reverse - Varying Form of Title."""
     indicator_map1 = {
-        "No note, added entry": "3",
-        "No note, no added entry": "2",
-        "Note, added entry": "1",
-        "Note, no added entry": "0"}
+        'Note, no added entry': '0',
+        'Note, added entry': '1',
+        'No note, no added entry': '2',
+        'No note, added entry': '3',
+    }
+
     indicator_map2 = {
-        "Added title page title": "5",
-        "Caption title": "6",
-        "Cover title": "4",
-        "Distinctive title": "2",
-        "No type specified": "_",
-        "Other title": "3",
-        "Parallel title": "1",
-        "Portion of title": "0",
-        "Running title": "7",
-        "Spine title": "8"}
+        'No type specified': '_',
+        'Portion of title': '0',
+        'Parallel title': '1',
+        'Distinctive title': '2',
+        'Other title': '3',
+        'Cover title': '4',
+        'Added title page title': '5',
+        'Caption title': '6',
+        'Running title': '7',
+        'Spine title': '8',
+    }
+
+    field_map = {
+        'title_proper_short_title': 'a',
+        'remainder_of_title': 'b',
+        'date_or_sequential_designation': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'display_text': 'i',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('title_proper_short_title'),
         'b': value.get('remainder_of_title'),
         'g': value.get('miscellaneous_information'),
@@ -330,11 +406,6 @@ def reverse_former_title(self, key, value):
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[3] in indicator_map1:
-        order.append('title_added_entry')
-    if key[4] in indicator_map2:
-        order.append('note_controller')
 
     return {
         '__order__': tuple(order) if len(order) else None,

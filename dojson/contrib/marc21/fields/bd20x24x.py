@@ -19,11 +19,33 @@ from ..model import marc21
 @utils.filter_values
 def abbreviated_title(self, key, value):
     """Abbreviated Title."""
-    indicator_map1 = {"0": "No added entry", "1": "Added entry"}
+    indicator_map1 = {
+        '0': 'No added entry',
+        '1': 'Added entry',
+    }
+
     indicator_map2 = {
-        "#": "Abbreviated key title",
-        "0": "Other abbreviated title"}
+        '_': 'Abbreviated key title',
+        '0': 'Other abbreviated title',
+    }
+
+    field_map = {
+        'a': 'abbreviated_title',
+        'b': 'qualifying_information',
+        '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('title_added_entry')
+    if key[4] in indicator_map2:
+        order.append('type')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'abbreviated_title': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -43,25 +65,29 @@ def abbreviated_title(self, key, value):
 @utils.filter_values
 def key_title(self, key, value):
     """Key Title."""
-    indicator_map2 = {
-        "0": "No nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    field_map = {
+        'a': 'key_title',
+        'b': 'qualifying_information',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[4] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'key_title': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
         'qualifying_information': value.get('b'),
         'linkage': value.get('6'),
-        'nonfiling_characters': indicator_map2.get(key[4]),
+        'nonfiling_characters': key[4],
     }
 
 
@@ -69,21 +95,41 @@ def key_title(self, key, value):
 @utils.filter_values
 def uniform_title(self, key, value):
     """Uniform Title."""
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
     indicator_map1 = {
-        "0": "Not printed or displayed",
-        "1": "Printed or displayed"}
-    indicator_map2 = {
-        "0": "Number of nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+        '0': 'Not printed or displayed',
+        '1': 'Printed or displayed',
+    }
+
+    field_map = {
+        'a': 'uniform_title',
+        'd': 'date_of_treaty_signing',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        '0': 'authority_record_control_number_or_standard_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('uniform_title_printed_or_displayed')
+    if key[4] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
@@ -115,29 +161,44 @@ def uniform_title(self, key, value):
             value.get('8')
         ),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
-        'nonfiling_characters': indicator_map2.get(key[4]),
+        'nonfiling_characters': key[4],
     }
 
 
 @marc21.over(
-    'translation_of_title_by_cataloging_agency', '^242[10_][_1032547698]')
+    'translation_of_title_by_cataloging_agency', '^242[10_][_0123456789]')
 @utils.for_each_value
 @utils.filter_values
 def translation_of_title_by_cataloging_agency(self, key, value):
     """Translation of Title by Cataloging Agency."""
-    indicator_map1 = {"0": "No added entry", "1": "Added entry"}
-    indicator_map2 = {
-        "0": "No nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    indicator_map1 = {
+        '0': 'No added entry',
+        '1': 'Added entry',
+    }
+
+    field_map = {
+        'a': 'title',
+        'b': 'remainder_of_title',
+        'c': 'statement_of_responsibility_etc.',
+        'h': 'medium',
+        'n': 'number_of_part_section_of_a_work',
+        'p': 'name_of_part_section_of_a_work',
+        'y': 'language_code_of_translated_title',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('title_added_entry')
+    if key[4] in valid_nonfiling_characters:
+        order.append('nonfiling_characters')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'statement_of_responsibility': value.get('c'),
         'remainder_of_title': value.get('b'),
@@ -154,7 +215,7 @@ def translation_of_title_by_cataloging_agency(self, key, value):
             value.get('8')
         ),
         'title_added_entry': indicator_map1.get(key[3]),
-        'nonfiling_characters': indicator_map2.get(key[4]),
+        'nonfiling_characters': key[4],
     }
 
 
@@ -162,11 +223,12 @@ def translation_of_title_by_cataloging_agency(self, key, value):
 @utils.filter_values
 def collective_uniform_title(self, key, value):
     """Collective Uniform Title."""
-    indicator_map1 = {
-        "0": "Not printed or displayed",
-        "1": "Printed or displayed",
-    }
     valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    indicator_map1 = {
+        '0': 'Not printed or displayed',
+        '1': 'Printed or displayed',
+    }
 
     field_map = {
         'a': 'uniform_title',
@@ -190,12 +252,8 @@ def collective_uniform_title(self, key, value):
 
     if key[3] in indicator_map1:
         order.append('uniform_title_printed_or_displayed')
-
-    order.append('nonfiling_characters')
     if key[4] in valid_nonfiling_characters:
-        nonfiling_characters = key[4]
-    else:
-        nonfiling_characters = '_'
+        order.append('nonfiling_characters')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -227,7 +285,7 @@ def collective_uniform_title(self, key, value):
             value.get('8')
         ),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
-        'nonfiling_characters': nonfiling_characters,
+        'nonfiling_characters': key[4],
     }
 
 
@@ -235,19 +293,13 @@ def collective_uniform_title(self, key, value):
 @utils.filter_values
 def title_statement(self, key, value):
     """Title Statement."""
-    indicator_map1 = {"0": "No added entry", "1": "Added entry"}
-    indicator_map2 = {
-        "0": "0",
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5",
-        "6": "6",
-        "7": "7",
-        "8": "8",
-        "9": "9",
+    valid_nonfiling_characters = [str(x) for x in range(10)]
+
+    indicator_map1 = {
+        '0': 'No added entry',
+        '1': 'Added entry',
     }
+
     field_map = {
         '6': 'linkage',
         '8': 'field_link_and_sequence_number',
@@ -266,10 +318,11 @@ def title_statement(self, key, value):
     order = utils.map_order(field_map, value)
     if key[3] in indicator_map1:
         order.append('title_added_entry')
-    if key[4] in indicator_map2:
+    if key[4] in valid_nonfiling_characters:
         order.append('nonfiling_characters')
 
     return {
+        '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'statement_of_responsibility': value.get('c'),
         'remainder_of_title': value.get('b'),
@@ -291,8 +344,7 @@ def title_statement(self, key, value):
             value.get('8')
         ),
         'title_added_entry': indicator_map1.get(key[3]),
-        'nonfiling_characters': indicator_map2.get(key[4]),
-        '__order__': tuple(order) if len(order) else None,
+        'nonfiling_characters': key[4],
     }
 
 
@@ -302,22 +354,49 @@ def title_statement(self, key, value):
 def varying_form_of_title(self, key, value):
     """Varying Form of Title."""
     indicator_map1 = {
-        "0": "Note, no added entry",
-        "1": "Note, added entry",
-        "2": "No note, no added entry",
-        "3": "No note, added entry"}
+        '0': 'Note, no added entry',
+        '1': 'Note, added entry',
+        '2': 'No note, no added entry',
+        '3': 'No note, added entry',
+    }
+
     indicator_map2 = {
-        "#": "No type specified",
-        "0": "Portion of title",
-        "1": "Parallel title",
-        "2": "Distinctive title",
-        "3": "Other title",
-        "4": "Cover title",
-        "5": "Added title page title",
-        "6": "Caption title",
-        "7": "Running title",
-        "8": "Spine title"}
+        '_': 'No type specified',
+        '0': 'Portion of title',
+        '1': 'Parallel title',
+        '2': 'Distinctive title',
+        '3': 'Other title',
+        '4': 'Cover title',
+        '5': 'Added title page title',
+        '6': 'Caption title',
+        '7': 'Running title',
+        '8': 'Spine title',
+    }
+
+    field_map = {
+        'a': 'title_proper_short_title',
+        'b': 'remainder_of_title',
+        'f': 'date_or_sequential_designation',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'display_text',
+        'n': 'number_of_part_section_of_a_work',
+        'p': 'name_of_part_section_of_a_work',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('note_added_entry_controller')
+
+    if key[4] in indicator_map2:
+        order.append('type_of_title')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'title_proper_short_title': value.get('a'),
         'remainder_of_title': value.get('b'),
         'miscellaneous_information': value.get('g'),

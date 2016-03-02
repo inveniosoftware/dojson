@@ -262,14 +262,7 @@
     </datafield>
   </record>
   <record>
-    <datafield tag="240" ind1="1" ind2="0">
-      <subfield code="b">Kaffee-Kantate</subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="240" ind1="1" ind2="0">
-      <subfield code="t">Our town</subfield>
-    </datafield>
+    <datafield tag="240" ind1="1" ind2="0"/>
   </record>
   <record>
     <datafield tag="240" ind1="1" ind2="4">
