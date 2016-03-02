@@ -19,7 +19,18 @@ from ..model import to_marc21
 @utils.filter_values
 def reverse_edition_statement(self, key, value):
     """Reverse - Edition Statement."""
+    field_map = {
+        'edition_statement': 'a',
+        'remainder_of_edition_statement': 'b',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('edition_statement'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -36,7 +47,16 @@ def reverse_edition_statement(self, key, value):
 @utils.filter_values
 def reverse_musical_presentation_statement(self, key, value):
     """Reverse - Musical Presentation Statement."""
+    field_map = {
+        'musical_presentation_statement': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('musical_presentation_statement'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -52,7 +72,22 @@ def reverse_musical_presentation_statement(self, key, value):
 @utils.filter_values
 def reverse_cartographic_mathematical_data(self, key, value):
     """Reverse - Cartographic Mathematical Data."""
+    field_map = {
+        'statement_of_scale': 'a',
+        'statement_of_projection': 'b',
+        'statement_of_coordinates': 'c',
+        'statement_of_zone': 'd',
+        'statement_of_equinox': 'e',
+        'outer_g_ring_coordinate_pairs': 'f',
+        'exclusion_g_ring_coordinate_pairs': 'g',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('statement_of_scale'),
         'c': value.get('statement_of_coordinates'),
         'b': value.get('statement_of_projection'),
@@ -73,7 +108,16 @@ def reverse_cartographic_mathematical_data(self, key, value):
 @utils.filter_values
 def reverse_computer_file_characteristics(self, key, value):
     """Reverse - Computer File Characteristics."""
+    field_map = {
+        'computer_file_characteristics': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('computer_file_characteristics'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -89,7 +133,17 @@ def reverse_computer_file_characteristics(self, key, value):
 @utils.filter_values
 def reverse_country_of_producing_entity(self, key, value):
     """Reverse - Country of Producing Entity."""
+    field_map = {
+        'country_of_producing_entity': 'a',
+        'source': '2',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('country_of_producing_entity')
         ),
@@ -108,7 +162,17 @@ def reverse_country_of_producing_entity(self, key, value):
 @utils.filter_values
 def reverse_philatelic_issue_data(self, key, value):
     """Reverse - Philatelic Issue Data."""
+    field_map = {
+        'issuing_jurisdiction': 'a',
+        'denomination': 'b',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('issuing_jurisdiction'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -126,9 +190,9 @@ def reverse_philatelic_issue_data(self, key, value):
 def reverse_publication_distribution_imprint(self, key, value):
     """Reverse - Publication, Distribution, etc. (Imprint)."""
     indicator_map1 = {
-        "Current/latest publisher": "3",
-        "Intervening publisher": "2",
-        "Not applicable/No information provided/Earliest available publisher": "_",
+        'Not applicable/No information provided/Earliest available publisher': '_',
+        'Intervening publisher': '2',
+        'Current/latest publisher': '3',
     }
 
     field_map = {
@@ -144,9 +208,6 @@ def reverse_publication_distribution_imprint(self, key, value):
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[3] in indicator_map1:
-        order.append('sequence_of_publishing_statements')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -177,7 +238,20 @@ def reverse_publication_distribution_imprint(self, key, value):
 @utils.filter_values
 def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     """Reverse - Imprint Statement for Films (Pre-AACR 1 Revised)."""
+    field_map = {
+        'producing_company': 'a',
+        'releasing_company': 'b',
+        'date_of_production_release': 'd',
+        'contractual_producer': 'e',
+        'place_of_production_release': 'f',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('producing_company')
         ),
@@ -204,12 +278,22 @@ def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
 
 @to_marc21.over('262', '^imprint_statement_for_sound_recordings_pre_aacr_1$')
 @utils.filter_values
-def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(
-        self,
-        key,
-        value):
+def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     """Reverse - Imprint Statement for Sound Recordings (Pre-AACR 1)."""
+    field_map = {
+        'place_of_production_release': 'a',
+        'publisher_or_trade_name': 'b',
+        'date_of_production_release': 'c',
+        'serial_identification': 'k',
+        'matrix_and_or_take_number': 'l',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('place_of_production_release'),
         'c': value.get('date_of_production_release'),
         'b': value.get('publisher_or_trade_name'),
@@ -228,7 +312,16 @@ def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(
 @utils.filter_values
 def reverse_projected_publication_date(self, key, value):
     """Reverse - Projected Publication Date."""
+    field_map = {
+        'projected_publication_date': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': value.get('projected_publication_date'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
@@ -249,15 +342,32 @@ def reverse_production_publication_distribution_manufacture_and_copyright_notice
         key,
         value):
     """Reverse - Production, Publication, Distribution, Manufacture, and Copyright Notice."""
-    indicator_map1 = {"Current/latest": "3", "Intervening": "2",
-                      "Not applicable/No information provided/Earliest": "_"}
+    indicator_map1 = {
+        'Not applicable/No information provided/Earliest': '_',
+        'Intervening': '2',
+        'Current/latest': '3',
+    }
     indicator_map2 = {
-        "Copyright notice date": "4",
-        "Distribution": "2",
-        "Manufacture": "3",
-        "Production": "0",
-        "Publication": "1"}
+        'Production': '0',
+        'Publication': '1',
+        'Distribution': '2',
+        'Manufacture': '3',
+        'Copyright notice date': '4',
+    }
+
+    field_map = {
+        'place_of_production_publication_distribution_manufacture': 'a',
+        'name_of_producer_publisher_distributor_manufacturer': 'b',
+        'date_of_production_publication_distribution_manufacture_or_copyright_notice': 'c',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get(
                 'place_of_production_publication_distribution_manufacture')

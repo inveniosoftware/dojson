@@ -19,7 +19,18 @@ from ..model import marc21
 @utils.filter_values
 def edition_statement(self, key, value):
     """Edition Statement."""
+    field_map = {
+        'a': 'edition_statement',
+        'b': 'remainder_of_edition_statement',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'edition_statement': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -34,7 +45,16 @@ def edition_statement(self, key, value):
 @utils.filter_values
 def musical_presentation_statement(self, key, value):
     """Musical Presentation Statement."""
+    field_map = {
+        'a': 'musical_presentation_statement',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'musical_presentation_statement': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -48,7 +68,22 @@ def musical_presentation_statement(self, key, value):
 @utils.filter_values
 def cartographic_mathematical_data(self, key, value):
     """Cartographic Mathematical Data."""
+    field_map = {
+        'a': 'statement_of_scale',
+        'b': 'statement_of_projection',
+        'c': 'statement_of_coordinates',
+        'd': 'statement_of_zone',
+        'e': 'statement_of_equinox',
+        'f': 'outer_g_ring_coordinate_pairs',
+        'g': 'exclusion_g_ring_coordinate_pairs',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'statement_of_scale': value.get('a'),
         'statement_of_coordinates': value.get('c'),
         'statement_of_projection': value.get('b'),
@@ -67,7 +102,16 @@ def cartographic_mathematical_data(self, key, value):
 @utils.filter_values
 def computer_file_characteristics(self, key, value):
     """Computer File Characteristics."""
+    field_map = {
+        'a': 'computer_file_characteristics',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'computer_file_characteristics': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -81,7 +125,17 @@ def computer_file_characteristics(self, key, value):
 @utils.filter_values
 def country_of_producing_entity(self, key, value):
     """Country of Producing Entity."""
+    field_map = {
+        'a': 'country_of_producing_entity',
+        '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'country_of_producing_entity': utils.force_list(
             value.get('a')
         ),
@@ -98,7 +152,17 @@ def country_of_producing_entity(self, key, value):
 @utils.filter_values
 def philatelic_issue_data(self, key, value):
     """Philatelic Issue Data."""
+    field_map = {
+        'a': 'issuing_jurisdiction',
+        'b': 'denomination',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'issuing_jurisdiction': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -114,9 +178,9 @@ def philatelic_issue_data(self, key, value):
 def publication_distribution_imprint(self, key, value):
     """Publication, Distribution, etc. (Imprint)."""
     indicator_map1 = {
-        "#": "Not applicable/No information provided/Earliest available publisher",
-        "2": "Intervening publisher",
-        "3": "Current/latest publisher",
+        '_': 'Not applicable/No information provided/Earliest available publisher',
+        '2': 'Intervening publisher',
+        '3': 'Current/latest publisher',
     }
 
     field_map = {
@@ -169,7 +233,20 @@ def publication_distribution_imprint(self, key, value):
 @utils.filter_values
 def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     """Imprint Statement for Films (Pre-AACR 1 Revised)."""
+    field_map = {
+        'a': 'producing_company',
+        'b': 'releasing_company',
+        'd': 'date_of_production_release',
+        'e': 'contractual_producer',
+        'f': 'place_of_production_release',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'producing_company': utils.force_list(
             value.get('a')
         ),
@@ -196,7 +273,20 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
 @utils.filter_values
 def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     """Imprint Statement for Sound Recordings (Pre-AACR 1)."""
+    field_map = {
+        'a': 'place_of_production_release',
+        'b': 'publisher_or_trade_name',
+        'c': 'date_of_production_release',
+        'k': 'serial_identification',
+        'l': 'matrix_and_or_take_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'place_of_production_release': value.get('a'),
         'date_of_production_release': value.get('c'),
         'publisher_or_trade_name': value.get('b'),
@@ -213,7 +303,16 @@ def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
 @utils.filter_values
 def projected_publication_date(self, key, value):
     """Projected Publication Date."""
+    field_map = {
+        'a': 'projected_publication_date',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'projected_publication_date': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -230,16 +329,37 @@ def production_publication_distribution_manufacture_and_copyright_notice(
         self, key, value):
     """Production, Publication, Distribution, Manufacture, and Copyright Notice."""
     indicator_map1 = {
-        "#": "Not applicable/No information provided/Earliest",
-        "2": "Intervening",
-        "3": "Current/latest"}
+        '_': 'Not applicable/No information provided/Earliest',
+        '2': 'Intervening',
+        '3': 'Current/latest',
+    }
+
     indicator_map2 = {
-        "0": "Production",
-        "1": "Publication",
-        "2": "Distribution",
-        "3": "Manufacture",
-        "4": "Copyright notice date"}
+        '0': 'Production',
+        '1': 'Publication',
+        '2': 'Distribution',
+        '3': 'Manufacture',
+        '4': 'Copyright notice date',
+    }
+
+    field_map = {
+        'a': 'place_of_production_publication_distribution_manufacture',
+        'b': 'name_of_producer_publisher_distributor_manufacturer',
+        'c': 'date_of_production_publication_distribution_manufacture_or_copyright_notice',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+
+    order = utils.map_order(field_map, value)
+
+    if key[3] in indicator_map1:
+        order.append('sequence_of_statements')
+    if key[4] in indicator_map2:
+        order.append('function_of_entity')
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'place_of_production_publication_distribution_manufacture': utils.force_list(
             value.get('a')
         ),
