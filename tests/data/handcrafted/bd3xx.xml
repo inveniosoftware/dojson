@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="384" ind1="1" ind2=" ">
+      <subfield code="a">Master key 42</subfield>
+      <subfield code="6">880-01$a</subfield>
+      <subfield code="8">12421.45552\52144</subfield>
+      <subfield code="8">22421.45552\52145</subfield>
+      <subfield code="8">32421.45552\52146</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="377" ind1=" " ind2=" ">
+      <subfield code="a">en</subfield>
+      <subfield code="a">de</subfield>
+      <subfield code="a">fi</subfield>
+      <subfield code="a">it</subfield>
+      <subfield code="l">en</subfield>
+      <subfield code="l">de</subfield>
+      <subfield code="l">fi</subfield>
+      <subfield code="l">it</subfield>
+      <subfield code="6">880-01$a</subfield>
+      <subfield code="6">880-01$a</subfield>
+      <subfield code="8">5161254241.2421414124\5251</subfield>
+    </datafield>
+  </record>
+  <record>
+    <datafield tag="377" ind1=" " ind2="7">
+      <subfield code="a">en</subfield>
+      <subfield code="a">de</subfield>
+      <subfield code="a">fi</subfield>
+      <subfield code="a">it</subfield>
+      <subfield code="l">en</subfield>
+      <subfield code="l">de</subfield>
+      <subfield code="l">fi</subfield>
+      <subfield code="l">it</subfield>
+      <subfield code="2">library of lala</subfield>
+      <subfield code="6">880-01$a</subfield>
+      <subfield code="6">880-01$a</subfield>
+      <subfield code="8">5161254241.2421414124\5251</subfield>
+    </datafield>
+  </record>
+</collection>

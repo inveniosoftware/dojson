@@ -1665,7 +1665,7 @@
     </datafield>
   </record>
   <record>
-    <datafield tag="357" ind1=" " ind2="0">
+    <datafield tag="357" ind1=" " ind2=" ">
       <subfield code="a">ORCON</subfield>
       <subfield code="b">CIA</subfield>
       <subfield code="c">DIA</subfield>
