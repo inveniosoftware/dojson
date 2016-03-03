@@ -45,6 +45,7 @@ from test_core import RECORD_999_FIELD, RECORD_SIMPLE
     'library_of_congress/bd20x24x.xml',
     'library_of_congress/bd25x28x.xml',
     'library_of_congress/bd3xx.xml',
+    'library_of_congress/bd4xx.xml',
 ])
 def test_xml_to_marc21_to_xml(file_name):
     """Test xslt dump."""
