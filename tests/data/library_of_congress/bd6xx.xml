@@ -920,20 +920,17 @@
   </record>
   <record>
     <datafield tag="653" ind1=" " ind2=" ">
-      <subfield code="a">Imprints&lt;century&gt; &lt;date as found in 260</subfield>
-      <subfield code="c">&gt;</subfield>
+      <subfield code="a">Imprints&lt;century&gt; &lt;date as found in 260$c&gt;</subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="653" ind1=" " ind2=" ">
-      <subfield code="a">Imprints&lt;not after date as found in 260</subfield>
-      <subfield code="c">&gt;</subfield>
+      <subfield code="a">Imprints&lt;not after date as found in 260$c&gt;</subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="653" ind1=" " ind2=" ">
-      <subfield code="a">Imprints&lt;not before date as found in 260</subfield>
-      <subfield code="c">&gt;</subfield>
+      <subfield code="a">Imprints&lt;not before date as found in 260$c&gt;</subfield>
     </datafield>
   </record>
   <record>
