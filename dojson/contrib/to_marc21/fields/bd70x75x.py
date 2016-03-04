@@ -24,23 +24,20 @@ def reverse_added_entry_personal_name(self, key, value):
         'Surname': '1',
         'Family name': '3',
     }
+
     indicator_map2 = {
         'No information provided': '_',
         'Analytical entry': '2',
     }
+
     field_map = {
-        'authority_record_control_number_or_standard_number': '0',
-        'materials_specified': '3',
-        'relator_code': '4',
-        'institution_to_which_field_applies': '5',
-        'linkage': '6',
-        'field_link_and_sequence_number': '8',
         'personal_name': 'a',
         'numeration': 'b',
         'titles_and_other_words_associated_with_a_name': 'c',
         'dates_associated_with_a_name': 'd',
         'relator_term': 'e',
         'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
         'medium': 'h',
         'relationship_information': 'i',
         'attribution_qualifier': 'j',
@@ -50,76 +47,66 @@ def reverse_added_entry_personal_name(self, key, value):
         'number_of_part_section_of_a_work': 'n',
         'arranged_statement_for_music': 'o',
         'name_of_part_section_of_a_work': 'p',
-        'version': 's',
+        'fuller_form_of_name': 'q',
         'key_for_music': 'r',
-        'affiliation': 'u',
+        'version': 's',
         'title_of_a_work': 't',
+        'affiliation': 'u',
         'international_standard_serial_number': 'x',
-        'type_of_personal_name_entry_element': None,
-        'type_of_added_entry': None
+        'authority_record_control_number_or_standard_number': '0',
+        'materials_specified': '3',
+        'relator_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
-    ind1 = indicator_map1.get(
-        value.get(
-            'type_of_personal_name_entry_element',
-            '_'))
-    ind2 = indicator_map2.get(value.get('type_of_added_entry', '_'))
     order = utils.map_order(field_map, value)
 
     return {
+        '__order__': tuple(order) if len(order) else None,
+        'a': value.get('personal_name'),
+        'b': value.get('numeration'),
+        'c': utils.reverse_force_list(
+            value.get('titles_and_other_words_associated_with_a_name')
+        ),
+        'd': value.get('dates_associated_with_a_name'),
+        'e': utils.reverse_force_list(
+            value.get('relator_term')
+        ),
+        'f': value.get('date_of_a_work'),
+        'g': value.get('miscellaneous_information'),
+        'h': value.get('medium'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'j': utils.reverse_force_list(value.get('attribution_qualifier')),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
+        ),
+        'n': utils.reverse_force_list(value.get('number_of_part_section_of_a_work')),
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(value.get('name_of_part_section_of_a_work')),
+        'q': value.get('fuller_form_of_name'),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'u': value.get('affiliation'),
+        'x': value.get('international_standard_serial_number'),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
+        '4': utils.reverse_force_list(value.get('relator_code')),
         '5': value.get('institution_to_which_field_applies'),
-        '4': utils.reverse_force_list(
-            value.get('relator_code')
-        ),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'a': value.get('personal_name'),
-        'c': utils.reverse_force_list(
-            value.get('titles_and_other_words_associated_with_a_name')
-        ),
-        'b': value.get('numeration'),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        'd': value.get('dates_associated_with_a_name'),
-        'g': value.get('miscellaneous_information'),
-        'f': value.get('date_of_a_work'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'h': value.get('medium'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'j': utils.reverse_force_list(
-            value.get('attribution_qualifier')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        'l': value.get('language_of_a_work'),
-        'o': value.get('arranged_statement_for_music'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
-        'q': value.get('fuller_form_of_name'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        's': value.get('version'),
-        'r': value.get('key_for_music'),
-        'u': value.get('affiliation'),
-        't': value.get('title_of_a_work'),
-        'x': value.get('international_standard_serial_number'),
-        '$ind1': ind1,
-        '$ind2': ind2,
-        '__order__': tuple(order) if len(order) else None
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element', '_')),
+        '$ind2': indicator_map2.get(value.get('type_of_added_entry', '_')),
     }
 
 
@@ -129,10 +116,15 @@ def reverse_added_entry_personal_name(self, key, value):
 def reverse_added_entry_corporate_name(self, key, value):
     """Reverse - Added Entry-Corporate Name."""
     indicator_map1 = {
-        "Inverted name": "0",
-        "Jurisdiction name": "1",
-        "Name in direct order": "2"}
-    indicator_map2 = {"Analytical entry": "2", "No information provided": "_"}
+        'Inverted name': '0',
+        'Jurisdiction name': '1',
+        'Name in direct order': '2',
+    }
+
+    indicator_map2 = {
+        'No information provided': '_',
+        'Analytical entry': '2',
+    }
 
     field_map = {
         'corporate_name_or_jurisdiction_name_as_entry_element': 'a',
@@ -165,61 +157,40 @@ def reverse_added_entry_corporate_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('type_of_corporate_name_entry_element')
-    if key[4] in indicator_map2:
-        order.append('type_of_added_entry')
-
     return {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
+        'b': utils.reverse_force_list(value.get('subordinate_unit')),
+        'c': value.get('location_of_meeting'),
+        'd': utils.reverse_force_list(value.get('date_of_meeting_or_treaty_signing')),
+        'e': utils.reverse_force_list(value.get('relator_term')),
+        'f': value.get('date_of_a_work'),
+        'g': value.get('miscellaneous_information'),
+        'h': value.get('medium'),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(value.get('medium_of_performance_for_music')),
+        'n': utils.reverse_force_list(value.get('number_of_part_section_meeting')),
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'u': value.get('affiliation'),
+        'x': value.get('international_standard_serial_number'),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
+        '4': utils.reverse_force_list(value.get('relator_code')),
         '5': value.get('institution_to_which_field_applies'),
-        '4': utils.reverse_force_list(
-            value.get('relator_code')
-        ),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
-        'c': value.get('location_of_meeting'),
-        'b': utils.reverse_force_list(
-            value.get('subordinate_unit')
-        ),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        'd': utils.reverse_force_list(
-            value.get('date_of_meeting_or_treaty_signing')
-        ),
-        'g': value.get('miscellaneous_information'),
-        'f': value.get('date_of_a_work'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'h': value.get('medium'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        'l': value.get('language_of_a_work'),
-        'o': value.get('arranged_statement_for_music'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        's': value.get('version'),
-        'r': value.get('key_for_music'),
-        'u': value.get('affiliation'),
-        't': value.get('title_of_a_work'),
-        'x': value.get('international_standard_serial_number'),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element'), '_'),
         '$ind2': indicator_map2.get(value.get('type_of_added_entry'), '_'),
     }
@@ -231,10 +202,15 @@ def reverse_added_entry_corporate_name(self, key, value):
 def reverse_added_entry_meeting_name(self, key, value):
     """Reverse - Added Entry-Meeting Name."""
     indicator_map1 = {
-        "Inverted name": "0",
-        "Jurisdiction name": "1",
-        "Name in direct order": "2"}
-    indicator_map2 = {"Analytical entry": "2", "No information provided": "_"}
+        'Inverted name': '0',
+        'Jurisdiction name': '1',
+        'Name in direct order': '2',
+    }
+
+    indicator_map2 = {
+        'No information provided': '_',
+        'Analytical entry': '2',
+    }
 
     field_map = {
         'meeting_name_or_jurisdiction_name_as_entry_element': 'a',
@@ -265,55 +241,34 @@ def reverse_added_entry_meeting_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('type_of_meeting_name_entry_element')
-    if key[4] in indicator_map2:
-        order.append('type_of_added_entry')
-
     return {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
+        'c': value.get('location_of_meeting'),
+        'd': value.get('date_of_meeting'),
+        'e': utils.reverse_force_list(value.get('subordinate_unit')),
+        'f': value.get('date_of_a_work'),
+        'g': value.get('miscellaneous_information'),
+        'h': value.get('medium'),
+        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'j': utils.reverse_force_list(value.get('relator_term')),
+        'k': utils.reverse_force_list(value.get('form_subheading')),
+        'l': value.get('language_of_a_work'),
+        'n': utils.reverse_force_list(value.get('number_of_part_section_meeting')),
+        'p': utils.reverse_force_list(value.get('name_of_part_section_of_a_work')),
+        'q': value.get('name_of_meeting_following_jurisdiction_name_entry_element'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'u': value.get('affiliation'),
+        'x': value.get('international_standard_serial_number'),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
+        '4': utils.reverse_force_list(value.get('relator_code')),
         '5': value.get('institution_to_which_field_applies'),
-        '4': utils.reverse_force_list(
-            value.get('relator_code')
-        ),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
-        'c': value.get('location_of_meeting'),
-        'e': utils.reverse_force_list(
-            value.get('subordinate_unit')
-        ),
-        'd': value.get('date_of_meeting'),
-        'g': value.get('miscellaneous_information'),
-        'f': value.get('date_of_a_work'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'h': value.get('medium'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'j': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        'l': value.get('language_of_a_work'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
-        'q': value.get('name_of_meeting_following_jurisdiction_name_entry_element'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        's': value.get('version'),
-        'u': value.get('affiliation'),
-        't': value.get('title_of_a_work'),
-        'x': value.get('international_standard_serial_number'),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element'), '_'),
         '$ind2': indicator_map2.get(value.get('type_of_added_entry'), '_'),
     }
@@ -324,7 +279,11 @@ def reverse_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_added_entry_uncontrolled_name(self, key, value):
     """Reverse - Added Entry-Uncontrolled Name."""
-    indicator_map1 = {"Not specified": "_", "Other": "2", "Personal": "1"}
+    indicator_map1 = {
+        'Not specified': '_',
+        'Other': '2',
+        'Personal': '1',
+    }
 
     field_map = {
         'name': 'a',
@@ -336,22 +295,13 @@ def reverse_added_entry_uncontrolled_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in indicator_map1:
-        order.append('type_of_name')
-
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('name'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relator_code')
-        ),
+        'e': utils.reverse_force_list(value.get('relator_term')),
+        '4': utils.reverse_force_list(value.get('relator_code')),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '$ind1': indicator_map1.get(value.get('type_of_name'), '_'),
         '$ind2': '_',
     }
@@ -363,7 +313,11 @@ def reverse_added_entry_uncontrolled_name(self, key, value):
 def reverse_added_entry_uniform_title(self, key, value):
     """Reverse - Added Entry-Uniform Title."""
     valid_nonfiling_characters = [str(x) for x in range(10)]
-    indicator_map2 = {"Analytical entry": "2", "No information provided": "_"}
+
+    indicator_map2 = {
+        'No information provided': '_',
+        'Analytical entry': '2',
+    }
 
     field_map = {
         'uniform_title': 'a',
@@ -391,50 +345,35 @@ def reverse_added_entry_uniform_title(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if key[3] in valid_nonfiling_characters:
-        order.append('nonfiling_characters')
-    if key[4] in indicator_map2:
-        order.append('type_of_added_entry')
-
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('uniform_title'),
-        'x': value.get('international_standard_serial_number'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        'd': utils.reverse_force_list(
-            value.get('date_of_treaty_signing')
-        ),
-        'g': value.get('miscellaneous_information'),
+        'd': utils.reverse_force_list(value.get('date_of_treaty_signing')),
         'f': value.get('date_of_a_work'),
+        'g': value.get('miscellaneous_information'),
+        'h': value.get('medium'),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
         ),
-        'h': value.get('medium'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
+        'k': utils.reverse_force_list(value.get('form_subheading')),
         'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(value.get('medium_of_performance_for_music')),
+        'n': utils.reverse_force_list(value.get('number_of_part_section_of_a_work')),
         'o': value.get('arranged_statement_for_music'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
+        'p': utils.reverse_force_list(value.get('name_of_part_section_of_a_work')),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'x': value.get('international_standard_serial_number'),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
         '3': value.get('materials_specified'),
-        'r': value.get('key_for_music'),
         '5': value.get('institution_to_which_field_applies'),
-        't': value.get('title_of_a_work'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        's': value.get('version'),
         '$ind1': value.get('nonfiling_characters', '_'),
         '$ind2': indicator_map2.get(value.get('type_of_added_entry'), '_'),
     }
@@ -449,7 +388,11 @@ def reverse_added_entry_uncontrolled_related_analytical_title(
         value):
     """Reverse - Added Entry-Uncontrolled Related/Analytical Title."""
     valid_nonfiling_characters = [str(x) for x in range(10)]
-    indicator_map2 = {"Analytical entry": "2", "No information provided": "_"}
+
+    indicator_map2 = {
+        'No information provided': '_',
+        'Analytical entry': '2',
+    }
 
     field_map = {
         'uncontrolled_related_analytical_title': 'a',
@@ -462,11 +405,6 @@ def reverse_added_entry_uncontrolled_related_analytical_title(
     }
 
     order = utils.map_order(field_map, value)
-
-    if key[3] in valid_nonfiling_characters:
-        order.append('nonfiling_characters')
-    if key[4] in indicator_map2:
-        order.append('type_of_added_entry')
 
     return {
         '__order__': tuple(order) if len(order) else None,
@@ -509,21 +447,15 @@ def reverse_added_entry_geographic_name(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('geographic_name'),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
+        'e': utils.reverse_force_list(value.get('relator_term')),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        '3': value.get('materials_specified'),
         '2': value.get('source_of_heading_or_term'),
-        '4': utils.reverse_force_list(
-            value.get('relator_code')
-        ),
+        '3': value.get('materials_specified'),
+        '4': utils.reverse_force_list(value.get('relator_code')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -552,26 +484,14 @@ def reverse_added_entry_hierarchical_place_name(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(
-            value.get('country_or_larger_entity')
-        ),
-        'c': utils.reverse_force_list(
-            value.get('intermediate_political_jurisdiction')
-        ),
+        'a': utils.reverse_force_list(value.get('country_or_larger_entity')),
         'b': value.get('first_order_political_jurisdiction'),
+        'c': utils.reverse_force_list(value.get('intermediate_political_jurisdiction')),
         'd': value.get('city'),
-        'g': utils.reverse_force_list(
-            value.get('other_nonjurisdictional_geographic_region_and_feature')
-        ),
-        'f': utils.reverse_force_list(
-            value.get('city_subsection')
-        ),
-        'h': utils.reverse_force_list(
-            value.get('extraterrestrial_area')
-        ),
-        '0': utils.reverse_force_list(
-            value.get('authority_record_control_number_or_standard_number')
-        ),
+        'f': utils.reverse_force_list(value.get('city_subsection')),
+        'g': utils.reverse_force_list(value.get('other_nonjurisdictional_geographic_region_and_feature')),
+        'h': utils.reverse_force_list(value.get('extraterrestrial_area')),
+        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_heading_or_term'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
@@ -600,12 +520,10 @@ def reverse_system_details_access_to_computer_files(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('make_and_model_of_machine'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'c': value.get('operating_system'),
         'b': value.get('programming_language'),
+        'c': value.get('operating_system'),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -632,29 +550,15 @@ def reverse_added_entry_taxonomic_identification(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(
-            value.get('taxonomic_name')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('non_public_note')
-        ),
-        'c': utils.reverse_force_list(
-            value.get('taxonomic_category')
-        ),
-        'd': utils.reverse_force_list(
-            value.get('common_or_alternative_name')
-        ),
-        '0': utils.reverse_force_list(
-            value.get('authority_record_control_number_or_standard_number')
-        ),
+        'a': utils.reverse_force_list(value.get('taxonomic_name')),
+        'c': utils.reverse_force_list(value.get('taxonomic_category')),
+        'd': utils.reverse_force_list(value.get('common_or_alternative_name')),
+        'x': utils.reverse_force_list(value.get('non_public_note')),
+        'z': utils.reverse_force_list(value.get('public_note')),
+        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_taxonomic_identification'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'z': utils.reverse_force_list(
-            value.get('public_note')
-        ),
+        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }

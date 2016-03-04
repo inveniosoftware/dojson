@@ -181,7 +181,7 @@
     </datafield>
   </record>
   <record>
-    <datafield tag="700" ind1="1" ind2="1">
+    <datafield tag="700" ind1="1" ind2=" ">
       <subfield code="a">Franklin, Benjamin,</subfield>
       <subfield code="d">1706-1790,</subfield>
       <subfield code="e">printer.</subfield>
