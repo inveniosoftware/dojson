@@ -127,8 +127,9 @@ class Overdo(object):
         handlers.update(exception_handlers or {})
 
         def clean_missing(exc, output, key, value):
-            order = output['__order__']
-            del order[order.index(key)]
+            order = output.get('__order__')
+            if order:
+                order.remove(key)
 
         if ignore_missing:
             handlers.setdefault(MissingRule, clean_missing)
