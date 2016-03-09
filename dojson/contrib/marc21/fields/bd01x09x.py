@@ -14,7 +14,7 @@ from dojson import utils
 from ..model import marc21
 
 
-@marc21.over('library_of_congress_control_number', '^010..')
+@marc21.over('library_of_congress_control_number', '^010__')
 @utils.filter_values
 def library_of_congress_control_number(self, key, value):
     """Library of Congress Control Number."""
@@ -30,19 +30,13 @@ def library_of_congress_control_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'lc_control_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'nucmc_control_number': utils.force_list(
-            value.get('b')
-        ),
-        'canceled_invalid_lc_control_number': utils.force_list(
-            value.get('z')
-        ),
+        'nucmc_control_number': utils.force_list(value.get('b')),
+        'canceled_invalid_lc_control_number': utils.force_list(value.get('z')),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('patent_control_information', '^013..')
+@marc21.over('patent_control_information', '^013__')
 @utils.for_each_value
 @utils.filter_values
 def patent_control_information(self, key, value):
@@ -63,25 +57,17 @@ def patent_control_information(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'number': value.get('a'),
-        'type_of_number': value.get('c'),
         'country': value.get('b'),
-        'status': utils.force_list(
-            value.get('e')
-        ),
-        'date': utils.force_list(
-            value.get('d')
-        ),
-        'party_to_document': utils.force_list(
-            value.get('f')
-        ),
+        'type_of_number': value.get('c'),
+        'date': utils.force_list(value.get('d')),
+        'status': utils.force_list(value.get('e')),
+        'party_to_document': utils.force_list(value.get('f')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('national_bibliography_number', '^015..')
+@marc21.over('national_bibliography_number', '^015__')
 @utils.for_each_value
 @utils.filter_values
 def national_bibliography_number(self, key, value):
@@ -99,24 +85,16 @@ def national_bibliography_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'national_bibliography_number': utils.force_list(
-            value.get('a')
-        ),
-        'qualifying_information': utils.force_list(
-            value.get('q')
-        ),
+        'national_bibliography_number': utils.force_list(value.get('a')),
+        'qualifying_information': utils.force_list(value.get('q')),
+        'canceled_invalid_national_bibliography_number': utils.force_list(value.get('z')),
         'source': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_national_bibliography_number': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('national_bibliographic_agency_control_number', '^016[_7].')
+@marc21.over('national_bibliographic_agency_control_number', '^016[_7]_')
 @utils.for_each_value
 @utils.filter_values
 def national_bibliographic_agency_control_number(self, key, value):
@@ -141,18 +119,14 @@ def national_bibliographic_agency_control_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'record_control_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'canceled_invalid_control_number': utils.force_list(value.get('z')),
         'source': value.get('2'),
-        'canceled_invalid_control_number': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'national_bibliographic_agency': indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('copyright_or_legal_deposit_number', '^017.[8_]')
+@marc21.over('copyright_or_legal_deposit_number', '^017_[_8]')
 @utils.for_each_value
 @utils.filter_values
 def copyright_or_legal_deposit_number(self, key, value):
@@ -180,25 +154,19 @@ def copyright_or_legal_deposit_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'copyright_or_legal_deposit_number': utils.force_list(
-            value.get('a')
-        ),
+        'copyright_or_legal_deposit_number': utils.force_list(value.get('a')),
         'assigning_agency': value.get('b'),
         'date': value.get('d'),
         'display_text': value.get('i'),
+        'canceled_invalid_copyright_or_legal_deposit_number': utils.force_list(value.get('z')),
         'source': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_copyright_or_legal_deposit_number': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('copyright_article_fee_code', '^018..')
+@marc21.over('copyright_article_fee_code', '^018__')
 @utils.filter_values
 def copyright_article_fee_code(self, key, value):
     """Copyright Article-Fee Code."""
@@ -212,17 +180,13 @@ def copyright_article_fee_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'copyright_article_fee_code': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'copyright_article_fee_code': utils.force_list(value.get('a')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('international_standard_book_number', '^020..')
+@marc21.over('international_standard_book_number', '^020__')
 @utils.for_each_value
 @utils.filter_values
 def international_standard_book_number(self, key, value):
@@ -242,28 +206,22 @@ def international_standard_book_number(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'international_standard_book_number': value.get('a'),
         'terms_of_availability': value.get('c'),
-        'qualifying_information': utils.force_list(
-            value.get('q')
-        ),
+        'qualifying_information': utils.force_list(value.get('q')),
+        'canceled_invalid_isbn': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_isbn': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('international_standard_serial_number', '^022[10_].')
+@marc21.over('international_standard_serial_number', '^022[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def international_standard_serial_number(self, key, value):
     """International Standard Serial Number."""
     indicator_map1 = {
-        "_": "No level specified",
-        "0": "Continuing resource of international interest",
-        "1": "Continuing resource not of international interest",
+        '_': 'No level specified',
+        '0': 'Continuing resource of international interest',
+        '1': 'Continuing resource not of international interest',
     }
 
     field_map = {
@@ -285,26 +243,18 @@ def international_standard_serial_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'international_standard_serial_number': value.get('a'),
-        'canceled_issn_l': utils.force_list(
-            value.get('m')
-        ),
         'issn_l': value.get('l'),
+        'canceled_issn_l': utils.force_list(value.get('m')),
+        'canceled_issn': utils.force_list(value.get('z')),
+        'incorrect_issn': utils.force_list(value.get('y')),
         'source': value.get('2'),
         'linkage': value.get('6'),
-        'incorrect_issn': utils.force_list(
-            value.get('y')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_issn': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'level_of_international_interest': indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('other_standard_identifier', '^024[1032478_][10_]')
+@marc21.over('other_standard_identifier', '^024[_0123478][_01]')
 @utils.for_each_value
 @utils.filter_values
 def other_standard_identifier(self, key, value):
@@ -335,6 +285,7 @@ def other_standard_identifier(self, key, value):
     }
 
     order = utils.map_order(field_map, value)
+
     if key[3] in indicator_map1:
         order.append('type_of_standard_number_or_code')
     if key[4] in indicator_map2:
@@ -345,23 +296,17 @@ def other_standard_identifier(self, key, value):
         'standard_number_or_code': value.get('a'),
         'terms_of_availability': value.get('c'),
         'additional_codes_following_the_standard_number_or_code': value.get('d'),
-        'qualifying_information': utils.force_list(
-            value.get('q')
-        ),
+        'qualifying_information': utils.force_list(value.get('q')),
+        'canceled_invalid_standard_number_or_code': utils.force_list(value.get('z')),
         'source_of_number_or_code': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_standard_number_or_code': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_standard_number_or_code': indicator_map1.get(key[3]),
         'difference_indicator': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('overseas_acquisition_number', '^025..')
+@marc21.over('overseas_acquisition_number', '^025__')
 @utils.for_each_value
 @utils.filter_values
 def overseas_acquisition_number(self, key, value):
@@ -375,16 +320,12 @@ def overseas_acquisition_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'overseas_acquisition_number': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'overseas_acquisition_number': utils.force_list(value.get('a')),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('fingerprint_identifier', '^026..')
+@marc21.over('fingerprint_identifier', '^026__')
 @utils.for_each_value
 @utils.filter_values
 def fingerprint_identifier(self, key, value):
@@ -406,24 +347,18 @@ def fingerprint_identifier(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'first_and_second_groups_of_characters': value.get('a'),
-        'date': value.get('c'),
         'third_and_fourth_groups_of_characters': value.get('b'),
+        'date': value.get('c'),
+        'number_of_volume_or_part': utils.force_list(value.get('d')),
         'unparsed_fingerprint': value.get('e'),
-        'number_of_volume_or_part': utils.force_list(
-            value.get('d')
-        ),
         'source': value.get('2'),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
-        ),
+        'institution_to_which_field_applies': utils.force_list(value.get('5')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('standard_technical_report_number', '^027..')
+@marc21.over('standard_technical_report_number', '^027__')
 @utils.for_each_value
 @utils.filter_values
 def standard_technical_report_number(self, key, value):
@@ -441,20 +376,14 @@ def standard_technical_report_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'standard_technical_report_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_number': utils.force_list(
-            value.get('z')
-        ),
-        'qualifying_information': utils.force_list(
-            value.get('q')
-        ),
+        'qualifying_information': utils.force_list(value.get('q')),
+        'canceled_invalid_number': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('publisher_number', '^028[103254_][1032_]')
+@marc21.over('publisher_number', '^028[_0-5][_0-4]')
 @utils.for_each_value
 @utils.filter_values
 def publisher_number(self, key, value):
@@ -467,6 +396,7 @@ def publisher_number(self, key, value):
         '4': 'Videorecording number',
         '5': 'Other publisher number',
     }
+
     indicator_map2 = {
         '0': 'No note, no added entry',
         '1': 'Note, added entry',
@@ -492,20 +422,16 @@ def publisher_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'publisher_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
         'source': value.get('b'),
-        'qualifying_information': utils.force_list(
-            value.get('q')
-        ),
+        'qualifying_information': utils.force_list(value.get('q')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_publisher_number': indicator_map1.get(key[3]),
         'note_added_entry_controller': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('coden_designation', '^030..')
+@marc21.over('coden_designation', '^030__')
 @utils.for_each_value
 @utils.filter_values
 def coden_designation(self, key, value):
@@ -522,17 +448,13 @@ def coden_designation(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'coden': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_coden': utils.force_list(
-            value.get('z')
-        ),
+        'canceled_invalid_coden': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('musical_incipits_information', '^031..')
+@marc21.over('musical_incipits_information', '^031__')
 @utils.for_each_value
 @utils.filter_values
 def musical_incipits_information(self, key, value):
@@ -565,45 +487,29 @@ def musical_incipits_information(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'number_of_work': value.get('a'),
-        'number_of_excerpt': value.get('c'),
         'number_of_movement': value.get('b'),
+        'number_of_excerpt': value.get('c'),
+        'caption_or_heading': utils.force_list(value.get('d')),
         'role': value.get('e'),
-        'caption_or_heading': utils.force_list(
-            value.get('d')
-        ),
         'clef': value.get('g'),
-        'public_note': utils.force_list(
-            value.get('z')
-        ),
         'voice_instrument': value.get('m'),
-        'time_signature': value.get('o'),
         'key_signature': value.get('n'),
-        'general_note': utils.force_list(
-            value.get('q')
-        ),
+        'time_signature': value.get('o'),
         'musical_notation': value.get('p'),
-        'coded_validity_note': utils.force_list(
-            value.get('s')
-        ),
-        'system_code': value.get('2'),
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
-        'text_incipit': utils.force_list(
-            value.get('t')
-        ),
-        'linkage': value.get('6'),
-        'link_text': utils.force_list(
-            value.get('y')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'general_note': utils.force_list(value.get('q')),
         'key_or_mode': value.get('r'),
+        'coded_validity_note': utils.force_list(value.get('s')),
+        'text_incipit': utils.force_list(value.get('t')),
+        'uniform_resource_identifier': utils.force_list(value.get('u')),
+        'link_text': utils.force_list(value.get('y')),
+        'public_note': utils.force_list(value.get('z')),
+        'system_code': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('postal_registration_number', '^032..')
+@marc21.over('postal_registration_number', '^032__')
 @utils.for_each_value
 @utils.filter_values
 def postal_registration_number(self, key, value):
@@ -620,15 +526,13 @@ def postal_registration_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'postal_registration_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
         'source_agency_assigning_number': value.get('b'),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('date_time_and_place_of_an_event', '^033[10_2][10_2]')
+@marc21.over('date_time_and_place_of_an_event', '^033[_0-2][_0-2]')
 @utils.for_each_value
 @utils.filter_values
 def date_time_and_place_of_an_event(self, key, value):
@@ -639,6 +543,7 @@ def date_time_and_place_of_an_event(self, key, value):
         '1': 'Multiple single dates',
         '2': 'Range of dates',
     }
+
     indicator_map2 = {
         '_': 'No information provided',
         '0': 'Capture',
@@ -667,35 +572,21 @@ def date_time_and_place_of_an_event(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'formatted_date_time': utils.force_list(
-            value.get('a')
-        ),
-        'geographic_classification_subarea_code': utils.force_list(
-            value.get('c')
-        ),
-        'geographic_classification_area_code': utils.force_list(
-            value.get('b')
-        ),
-        'place_of_event': utils.force_list(
-            value.get('p')
-        ),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
+        'formatted_date_time': utils.force_list(value.get('a')),
+        'geographic_classification_area_code': utils.force_list(value.get('b')),
+        'geographic_classification_subarea_code': utils.force_list(value.get('c')),
+        'place_of_event': utils.force_list(value.get('p')),
+        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
+        'source_of_term': utils.force_list(value.get('2')),
         'materials_specified': value.get('3'),
-        'source_of_term': utils.force_list(
-            value.get('2')
-        ),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_date_in_subfield_a': indicator_map1.get(key[3]),
         'type_of_event': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('coded_cartographic_mathematical_data', '^034[103_][10_]')
+@marc21.over('coded_cartographic_mathematical_data', '^034[_013][_01]')
 @utils.for_each_value
 @utils.filter_values
 def coded_cartographic_mathematical_data(self, key, value):
@@ -747,50 +638,36 @@ def coded_cartographic_mathematical_data(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
-        'materials_specified': value.get('3'),
+        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
         'source': value.get('2'),
+        'materials_specified': value.get('3'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'category_of_scale': value.get('a'),
-        'constant_ratio_linear_vertical_scale': utils.force_list(
-            value.get('c')
-        ),
-        'constant_ratio_linear_horizontal_scale': utils.force_list(
-            value.get('b')
-        ),
-        'coordinates_easternmost_longitude': value.get('e'),
+        'constant_ratio_linear_horizontal_scale': utils.force_list(value.get('b')),
+        'constant_ratio_linear_vertical_scale': utils.force_list(value.get('c')),
         'coordinates_westernmost_longitude': value.get('d'),
-        'coordinates_southernmost_latitude': value.get('g'),
+        'coordinates_easternmost_longitude': value.get('e'),
         'coordinates_northernmost_latitude': value.get('f'),
-        'angular_scale': utils.force_list(
-            value.get('h')
-        ),
-        'declination_southern_limit': value.get('k'),
+        'coordinates_southernmost_latitude': value.get('g'),
+        'angular_scale': utils.force_list(value.get('h')),
         'declination_northern_limit': value.get('j'),
+        'declination_southern_limit': value.get('k'),
         'right_ascension_eastern_limit': value.get('m'),
         'right_ascension_western_limit': value.get('n'),
         'equinox': value.get('p'),
-        'g_ring_latitude': utils.force_list(
-            value.get('s')
-        ),
         'distance_from_earth': value.get('r'),
-        'g_ring_longitude': utils.force_list(
-            value.get('t')
-        ),
-        'ending_date': value.get('y'),
+        'g_ring_latitude': utils.force_list(value.get('s')),
+        'g_ring_longitude': utils.force_list(value.get('t')),
         'beginning_date': value.get('x'),
+        'ending_date': value.get('y'),
         'name_of_extraterrestrial_body': value.get('z'),
         'type_of_scale': indicator_map1.get(key[3]),
         'type_of_ring': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('system_control_number', '^035..')
+@marc21.over('system_control_number', '^035__')
 @utils.for_each_value
 @utils.filter_values
 def system_control_number(self, key, value):
@@ -807,17 +684,13 @@ def system_control_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'system_control_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_control_number': utils.force_list(
-            value.get('z')
-        ),
+        'canceled_invalid_control_number': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('original_study_number_for_computer_data_files', '^036..')
+@marc21.over('original_study_number_for_computer_data_files', '^036__')
 @utils.filter_values
 def original_study_number_for_computer_data_files(self, key, value):
     """Original Study Number for Computer Data Files."""
@@ -833,15 +706,13 @@ def original_study_number_for_computer_data_files(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'original_study_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
         'source_agency_assigning_number': value.get('b'),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('source_of_acquisition', '^037..')
+@marc21.over('source_of_acquisition', '^037[_23]_')
 @utils.for_each_value
 @utils.filter_values
 def source_of_acquisition(self, key, value):
@@ -873,30 +744,20 @@ def source_of_acquisition(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'stock_number': value.get('a'),
-        'terms_of_availability': utils.force_list(
-            value.get('c')
-        ),
         'source_of_stock_number_acquisition': value.get('b'),
-        'additional_format_characteristics': utils.force_list(
-            value.get('g')
-        ),
-        'form_of_issue': utils.force_list(
-            value.get('f')
-        ),
-        'note': utils.force_list(
-            value.get('n')
-        ),
+        'terms_of_availability': utils.force_list(value.get('c')),
+        'form_of_issue': utils.force_list(value.get('f')),
+        'additional_format_characteristics': utils.force_list(value.get('g')),
+        'note': utils.force_list(value.get('n')),
         'materials_specified': value.get('3'),
         'institution_to_which_field_applies': value.get('5'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'source_of_acquisition_sequence': indicator_map1.get(key[3], '_'),
     }
 
 
-@marc21.over('record_content_licensor', '^038..')
+@marc21.over('record_content_licensor', '^038__')
 @utils.filter_values
 def record_content_licensor(self, key, value):
     """Record Content Licensor."""
@@ -911,14 +772,12 @@ def record_content_licensor(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'record_content_licensor': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('cataloging_source', '^040..')
+@marc21.over('cataloging_source', '^040__')
 @utils.filter_values
 def cataloging_source(self, key, value):
     """Cataloging Source."""
@@ -937,22 +796,16 @@ def cataloging_source(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'original_cataloging_agency': value.get('a'),
-        'transcribing_agency': value.get('c'),
         'language_of_cataloging': value.get('b'),
-        'description_conventions': utils.force_list(
-            value.get('e')
-        ),
-        'modifying_agency': utils.force_list(
-            value.get('d')
-        ),
+        'transcribing_agency': value.get('c'),
+        'modifying_agency': utils.force_list(value.get('d')),
+        'description_conventions': utils.force_list(value.get('e')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('language_code', '^041[10_].')
+@marc21.over('language_code', '^041[_01][_7]')
 @utils.for_each_value
 @utils.filter_values
 def language_code(self, key, value):
@@ -994,60 +847,34 @@ def language_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'language_code_of_text_sound_track_or_separate_title': utils.force_list(
-            value.get('a')
-        ),
-        'language_code_of_summary_or_abstract': utils.force_list(
-            value.get('b')
-        ),
-        'language_code_of_librettos': utils.force_list(
-            value.get('e')
-        ),
-        'language_code_of_sung_or_spoken_text': utils.force_list(
-            value.get('d')
-        ),
-        'language_code_of_accompanying_material_other_than_librettos': utils.force_list(
-            value.get('g')
-        ),
-        'language_code_of_table_of_contents': utils.force_list(
-            value.get('f')
-        ),
-        'language_code_of_original': utils.force_list(
-            value.get('h')
-        ),
-        'language_code_of_intermediate_translations': utils.force_list(
-            value.get('k')
-        ),
-        'language_code_of_subtitles_or_captions': utils.force_list(
-            value.get('j')
-        ),
-        'language_code_of_original_accompanying_materials_other_than_librettos': utils.force_list(
-            value.get('m')
-        ),
-        'language_code_of_original_libretto': utils.force_list(
-            value.get('n')
-        ),
+        'language_code_of_text_sound_track_or_separate_title': utils.force_list(value.get('a')),
+        'language_code_of_summary_or_abstract': utils.force_list(value.get('b')),
+        'language_code_of_sung_or_spoken_text': utils.force_list(value.get('d')),
+        'language_code_of_librettos': utils.force_list(value.get('e')),
+        'language_code_of_table_of_contents': utils.force_list(value.get('f')),
+        'language_code_of_accompanying_material_other_than_librettos': utils.force_list(value.get('g')),
+        'language_code_of_original': utils.force_list(value.get('h')),
+        'language_code_of_subtitles_or_captions': utils.force_list(value.get('j')),
+        'language_code_of_intermediate_translations': utils.force_list(value.get('k')),
+        'language_code_of_original_accompanying_materials_other_than_librettos': utils.force_list(value.get('m')),
+        'language_code_of_original_libretto': utils.force_list(value.get('n')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'translation_indication': indicator_map1.get(key[3]),
         'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4])
     }
 
 
-@marc21.over('authentication_code', '^042..')
+@marc21.over('authentication_code', '^042__')
 @utils.filter_values
 def authentication_code(self, key, value):
     """Authentication Code."""
     return {
-        'authentication_code': utils.force_list(
-            value.get('a')
-        ),
+        'authentication_code': utils.force_list(value.get('a')),
     }
 
 
-@marc21.over('geographic_area_code', '^043..')
+@marc21.over('geographic_area_code', '^043__')
 @utils.filter_values
 def geographic_area_code(self, key, value):
     """Geographic Area Code."""
@@ -1065,29 +892,17 @@ def geographic_area_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'geographic_area_code': utils.force_list(
-            value.get('a')
-        ),
-        'iso_code': utils.force_list(
-            value.get('c')
-        ),
-        'local_gac_code': utils.force_list(
-            value.get('b')
-        ),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
-        'source_of_local_code': utils.force_list(
-            value.get('2')
-        ),
+        'geographic_area_code': utils.force_list(value.get('a')),
+        'local_gac_code': utils.force_list(value.get('b')),
+        'iso_code': utils.force_list(value.get('c')),
+        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
+        'source_of_local_code': utils.force_list(value.get('2')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('country_of_publishing_producing_entity_code', '^044..')
+@marc21.over('country_of_publishing_producing_entity_code', '^044__')
 @utils.for_each_value
 @utils.filter_values
 def country_of_publishing_producing_entity_code(self, key, value):
@@ -1105,26 +920,16 @@ def country_of_publishing_producing_entity_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'marc_country_code': utils.force_list(
-            value.get('a')
-        ),
-        'iso_country_code': utils.force_list(
-            value.get('c')
-        ),
-        'local_subentity_code': utils.force_list(
-            value.get('b')
-        ),
-        'source_of_local_subentity_code': utils.force_list(
-            value.get('2')
-        ),
+        'marc_country_code': utils.force_list(value.get('a')),
+        'local_subentity_code': utils.force_list(value.get('b')),
+        'iso_country_code': utils.force_list(value.get('c')),
+        'source_of_local_subentity_code': utils.force_list(value.get('2')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('time_period_of_content', '^045[10_2].')
+@marc21.over('time_period_of_content', '^045[_012]_')
 @utils.filter_values
 def time_period_of_content(self, key, value):
     """Time Period of Content."""
@@ -1150,24 +955,16 @@ def time_period_of_content(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'time_period_code': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'formatted_pre_9999_bc_time_period': utils.force_list(
-            value.get('c')
-        ),
-        'formatted_9999_bc_through_ce_time_period': utils.force_list(
-            value.get('b')
-        ),
+        'time_period_code': utils.force_list(value.get('a')),
+        'formatted_9999_bc_through_ce_time_period': utils.force_list(value.get('b')),
+        'formatted_pre_9999_bc_time_period': utils.force_list(value.get('c')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_time_period_in_subfield_b_or_c': indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('special_coded_dates', '^046..')
+@marc21.over('special_coded_dates', '^046__')
 @utils.for_each_value
 @utils.filter_values
 def special_coded_dates(self, key, value):
@@ -1195,26 +992,24 @@ def special_coded_dates(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'type_of_date_code': value.get('a'),
-        'date_1_ce_date': value.get('c'),
         'date_1_bc_date': value.get('b'),
-        'date_2_ce_date': value.get('e'),
+        'date_1_ce_date': value.get('c'),
         'date_2_bc_date': value.get('d'),
-        'beginning_or_single_date_created': value.get('k'),
+        'date_2_ce_date': value.get('e'),
         'date_resource_modified': value.get('j'),
-        'beginning_of_date_valid': value.get('m'),
+        'beginning_or_single_date_created': value.get('k'),
         'ending_date_created': value.get('l'),
-        'single_or_starting_date_for_aggregated_content': value.get('o'),
+        'beginning_of_date_valid': value.get('m'),
         'end_of_date_valid': value.get('n'),
+        'single_or_starting_date_for_aggregated_content': value.get('o'),
         'ending_date_for_aggregated_content': value.get('p'),
         'source_of_date': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('form_of_musical_composition_code', '^047.[_7]')
+@marc21.over('form_of_musical_composition_code', '^047_[_7]')
 @utils.for_each_value
 @utils.filter_values
 def form_of_musical_composition_code(self, key, value):
@@ -1237,17 +1032,13 @@ def form_of_musical_composition_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'form_of_musical_composition_code': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'form_of_musical_composition_code': utils.force_list(value.get('a')),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4], '_'),
     }
 
 
-@marc21.over('number_of_musical_instruments_or_voices_code', '^048..')
+@marc21.over('number_of_musical_instruments_or_voices_code', '^048_[_7]')
 @utils.for_each_value
 @utils.filter_values
 def number_of_musical_instruments_or_voices_code(self, key, value):
@@ -1271,20 +1062,14 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'performer_or_ensemble': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'soloist': utils.force_list(
-            value.get('b')
-        ),
+        'performer_or_ensemble': utils.force_list(value.get('a')),
+        'soloist': utils.force_list(value.get('b')),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4], '_'),
     }
 
 
-@marc21.over('library_of_congress_call_number', '^050[10_][0_4]')
+@marc21.over('library_of_congress_call_number', '^050[_01][_04]')
 @utils.for_each_value
 @utils.filter_values
 def library_of_congress_call_number(self, key, value):
@@ -1294,6 +1079,7 @@ def library_of_congress_call_number(self, key, value):
         '0': 'Item is in LC',
         '1': 'Item is not in LC',
     }
+
     indicator_map2 = {
         '0': 'Assigned by LC',
         '4': 'Assigned by agency other than LC',
@@ -1316,21 +1102,17 @@ def library_of_congress_call_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'materials_specified': value.get('3'),
+        'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
+        'materials_specified': value.get('3'),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'existence_in_lc_collection': indicator_map1.get(key[3]),
         'source_of_call_number': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('library_of_congress_copy_issue_offprint_statement', '^051..')
+@marc21.over('library_of_congress_copy_issue_offprint_statement', '^051__')
 @utils.for_each_value
 @utils.filter_values
 def library_of_congress_copy_issue_offprint_statement(self, key, value):
@@ -1347,15 +1129,13 @@ def library_of_congress_copy_issue_offprint_statement(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'copy_information': value.get('c'),
         'item_number': value.get('b'),
+        'copy_information': value.get('c'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('geographic_classification', '^052..')
+@marc21.over('geographic_classification', '^052[_17]_')
 @utils.for_each_value
 @utils.filter_values
 def geographic_classification(self, key, value):
@@ -1383,22 +1163,16 @@ def geographic_classification(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'geographic_classification_area_code': value.get('a'),
-        'geographic_classification_subarea_code': utils.force_list(
-            value.get('b')
-        ),
-        'populated_place_name': utils.force_list(
-            value.get('d')
-        ),
+        'geographic_classification_subarea_code': utils.force_list(value.get('b')),
+        'populated_place_name': utils.force_list(value.get('d')),
         'code_source': value.get('2') if key[3] == '7' else indicator_map1.get(key[3]),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
 @marc21.over(
-    'classification_numbers_assigned_in_canada', '^055[10_][_1032547698]')
+    'classification_numbers_assigned_in_canada', '^055[_01][_0-9]')
 @utils.for_each_value
 @utils.filter_values
 def classification_numbers_assigned_in_canada(self, key, value):
@@ -1440,30 +1214,29 @@ def classification_numbers_assigned_in_canada(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'source_of_call_class_number': value.get('2'),
         'item_number': value.get('b'),
+        'source_of_call_class_number': value.get('2'),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'existence_in_lac_collection': indicator_map1.get(key[3]),
         'type_completeness_source_of_class_call_number': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('national_library_of_medicine_call_number', '^060[10_][0_4]')
+@marc21.over('national_library_of_medicine_call_number', '^060[_01][_04]')
 @utils.for_each_value
 @utils.filter_values
 def national_library_of_medicine_call_number(self, key, value):
     """National Library of Medicine Call Number."""
     indicator_map1 = {
-        "#": "No information provided",
-        "0": "Item is in NLM",
-        "1": "Item is not in NLM",
+        '_': 'No information provided',
+        '0': 'Item is in NLM',
+        '1': 'Item is not in NLM',
     }
+
     indicator_map2 = {
-        "0": "Assigned by NLM",
-        "4": "Assigned by agency other than NLM",
+        '0': 'Assigned by NLM',
+        '4': 'Assigned by agency other than NLM',
     }
 
     field_map = {
@@ -1481,19 +1254,15 @@ def national_library_of_medicine_call_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number_r': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'classification_number_r': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'existence_in_nlm_collection': indicator_map1.get(key[3]),
         'source_of_call_number': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('national_library_of_medicine_copy_statement', '^061..')
+@marc21.over('national_library_of_medicine_copy_statement', '^061__')
 @utils.for_each_value
 @utils.filter_values
 def national_library_of_medicine_copy_statement(self, key, value):
@@ -1509,18 +1278,14 @@ def national_library_of_medicine_copy_statement(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'copy_information': value.get('c'),
+        'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
+        'copy_information': value.get('c'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('character_sets_present', '^066..')
+@marc21.over('character_sets_present', '^066__')
 @utils.filter_values
 def character_sets_present(self, key, value):
     """Character Sets Present."""
@@ -1535,19 +1300,21 @@ def character_sets_present(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'primary_g0_character_set': value.get('a'),
-        'alternate_g0_or_g1_character_set': utils.force_list(
-            value.get('c')
-        ),
         'primary_g1_character_set': value.get('b'),
+        'alternate_g0_or_g1_character_set': utils.force_list(value.get('c')),
     }
 
 
-@marc21.over('national_agricultural_library_call_number', '^070[10_].')
+@marc21.over('national_agricultural_library_call_number', '^070[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def national_agricultural_library_call_number(self, key, value):
     """National Agricultural Library Call Number."""
-    indicator_map1 = {"0": "Item is in NAL", "1": "Item is not in NAL"}
+    indicator_map1 = {
+        '0': 'Item is in NAL',
+        '1': 'Item is not in NAL',
+    }
+
     field_map = {
         'a': 'classification_number',
         'b': 'item_number',
@@ -1561,18 +1328,14 @@ def national_agricultural_library_call_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number_r': utils.force_list(
-            value.get('8')
-        ),
+        'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
+        'field_link_and_sequence_number_r': utils.force_list(value.get('8')),
         'existence_in_nal_collection': indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('national_agricultural_library_copy_statement', '^071..')
+@marc21.over('national_agricultural_library_copy_statement', '^071__')
 @utils.for_each_value
 @utils.filter_values
 def national_agricultural_library_copy_statement(self, key, value):
@@ -1588,28 +1351,22 @@ def national_agricultural_library_copy_statement(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'copy_information': utils.force_list(
-            value.get('c')
-        ),
+        'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
+        'copy_information': utils.force_list(value.get('c')),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('subject_category_code', '^072..')
+@marc21.over('subject_category_code', '^072_[_07]')
 @utils.for_each_value
 @utils.filter_values
 def subject_category_code(self, key, value):
     """Subject Category Code."""
 
     indicator_map2 = {
-        "0": "NAL subject category code list ",
-        "7": "Source specified in subfield $2",
+        '0': 'NAL subject category code list ',
+        '7': 'Source specified in subfield $2',
     }
 
     field_map = {
@@ -1628,19 +1385,15 @@ def subject_category_code(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'subject_category_code': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'subject_category_code_subdivision': utils.force_list(value.get('x')),
         'source': value.get('2'),
-        'subject_category_code_subdivision': utils.force_list(
-            value.get('x')
-        ),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'code_source': indicator_map2.get(key[4], '_'),
     }
 
 
-@marc21.over('gpo_item_number', '^074..')
+@marc21.over('gpo_item_number', '^074__')
 @utils.for_each_value
 @utils.filter_values
 def gpo_item_number(self, key, value):
@@ -1656,16 +1409,12 @@ def gpo_item_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'gpo_item_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_gpo_item_number': utils.force_list(
-            value.get('z')
-        ),
+        'canceled_invalid_gpo_item_number': utils.force_list(value.get('z')),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('universal_decimal_classification_number', '^080[10_].')
+@marc21.over('universal_decimal_classification_number', '^080[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def universal_decimal_classification_number(self, key, value):
@@ -1694,19 +1443,15 @@ def universal_decimal_classification_number(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'universal_decimal_classification_number': value.get('a'),
         'item_number': value.get('b'),
-        'linkage': value.get('6'),
+        'common_auxiliary_subdivision': utils.force_list(value.get('x')),
         'edition_identifier': value.get('2'),
-        'common_auxiliary_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_edition': indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('dewey_decimal_classification_number', '^082[10_7][0_4]')
+@marc21.over('dewey_decimal_classification_number', '^082[_017][_04]')
 @utils.for_each_value
 @utils.filter_values
 def dewey_decimal_classification_number(self, key, value):
@@ -1716,6 +1461,7 @@ def dewey_decimal_classification_number(self, key, value):
         '1': 'Abridged edition',
         '7': 'Other edition specified in subfield $2',
     }
+
     indicator_map2 = {
         '_': 'No information provided',
         '0': 'Assigned by LC',
@@ -1736,29 +1482,24 @@ def dewey_decimal_classification_number(self, key, value):
 
     if key[3] in indicator_map1:
         order.append('type_of_edition')
-
     if key[4] in indicator_map2:
         order.append('source_of_classification_number')
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(
-            value.get('a')
-        ),
+        'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
         'standard_or_optional_designation': value.get('m'),
         'assigning_agency': value.get('q'),
         'edition_number': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_edition': indicator_map1.get(key[3]),
         'source_of_classification_number': indicator_map2.get(key[4]),
     }
 
 
-@marc21.over('additional_dewey_decimal_classification_number', '^083[10_7].')
+@marc21.over('additional_dewey_decimal_classification_number', '^083[_017]_')
 @utils.for_each_value
 @utils.filter_values
 def additional_dewey_decimal_classification_number(self, key, value):
@@ -1788,30 +1529,20 @@ def additional_dewey_decimal_classification_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(
-            value.get('a')
-        ),
-        'classification_number_ending_number_of_span': utils.force_list(
-            value.get('c')
-        ),
+        'classification_number': utils.force_list(value.get('a')),
+        'classification_number_ending_number_of_span': utils.force_list(value.get('c')),
         'standard_or_optional_designation': value.get('m'),
         'assigning_agency': value.get('q'),
+        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(value.get('y')),
+        'table_identification': utils.force_list(value.get('z')),
         'edition_number': value.get('2'),
         'linkage': value.get('6'),
-        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(
-            value.get('y')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'table_identification': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_edition': indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('other_classification_number', '^084..')
+@marc21.over('other_classification_number', '^084__')
 @utils.for_each_value
 @utils.filter_values
 def other_classification_number(self, key, value):
@@ -1829,20 +1560,16 @@ def other_classification_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(
-            value.get('a')
-        ),
+        'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
         'assigning_agency': value.get('q'),
         'number_source': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('synthesized_classification_number_components', '^085..')
+@marc21.over('synthesized_classification_number_components', '^085__')
 @utils.for_each_value
 @utils.filter_values
 def synthesized_classification_number_components(self, key, value):
@@ -1868,50 +1595,24 @@ def synthesized_classification_number_components(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'number_where_instructions_are_found_single_number_or_beginning_number_of_span': utils.force_list(
-            value.get('a')
-        ),
-        'classification_number_ending_number_of_span': utils.force_list(
-            value.get('c')
-        ),
-        'base_number': utils.force_list(
-            value.get('b')
-        ),
-        'facet_designator': utils.force_list(
-            value.get('f')
-        ),
-        'number_in_internal_subarrangement_or_add_table_where_instructions_are_found': utils.force_list(
-            value.get('v')
-        ),
-        'digits_added_from_classification_number_in_schedule_or_external_table': utils.force_list(
-            value.get('s')
-        ),
-        'root_number': utils.force_list(
-            value.get('r')
-        ),
-        'number_being_analyzed': utils.force_list(
-            value.get('u')
-        ),
-        'digits_added_from_internal_subarrangement_or_add_table': utils.force_list(
-            value.get('t')
-        ),
-        'table_identification_internal_subarrangement_or_add_table': utils.force_list(
-            value.get('w')
-        ),
+        'number_where_instructions_are_found_single_number_or_beginning_number_of_span': utils.force_list(value.get('a')),
+        'base_number': utils.force_list(value.get('b')),
+        'classification_number_ending_number_of_span': utils.force_list(value.get('c')),
+        'facet_designator': utils.force_list(value.get('f')),
+        'root_number': utils.force_list(value.get('r')),
+        'digits_added_from_classification_number_in_schedule_or_external_table': utils.force_list(value.get('s')),
+        'digits_added_from_internal_subarrangement_or_add_table': utils.force_list(value.get('t')),
+        'number_being_analyzed': utils.force_list(value.get('u')),
+        'table_identification_internal_subarrangement_or_add_table': utils.force_list(value.get('w')),
+        'number_in_internal_subarrangement_or_add_table_where_instructions_are_found': utils.force_list(value.get('v')),
+        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(value.get('y')),
+        'table_identification': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
-        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(
-            value.get('y')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'table_identification': utils.force_list(
-            value.get('z')
-        ),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
 
 
-@marc21.over('government_document_classification_number', '^086..')
+@marc21.over('government_document_classification_number', '^086[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def government_document_classification_number(self, key, value):
@@ -1938,18 +1639,14 @@ def government_document_classification_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_classification_number': utils.force_list(
-            value.get('z')
-        ),
+        'canceled_invalid_classification_number': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'number_source': value.get('2') if key[3] == '_' else indicator_map1.get(key[3]),
     }
 
 
-@marc21.over('report_number', '^088..')
+@marc21.over('report_number', '^088__')
 @utils.for_each_value
 @utils.filter_values
 def report_number(self, key, value):
@@ -1966,11 +1663,7 @@ def report_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'report_number': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'canceled_invalid_report_number': utils.force_list(
-            value.get('z')
-        ),
+        'canceled_invalid_report_number': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
