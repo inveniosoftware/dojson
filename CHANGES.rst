@@ -1,8 +1,34 @@
 Changes
 =======
 
-Version 1.0.1 (released 2016-01-19):
+Version 1.1.0 (released 2016-03-10):
 ------------------------------------
+
+Incompatible changes
+~~~~~~~~~~~~~~~~~~~~
+
+- Moves `--load` and `--dump` options to global group.
+
+New features
+~~~~~~~~~~~~
+
+- Adds `schema` command to enhance JSON with '$schema' field. (#73)
+- Adds rules and schemas for MARC 21 Format for Authority Data. (#7)
+- Adds rules and schemas for MARC 21 Format for Holdings Data. (#21)
+- Adds support for parsing `<leader/>` tag in MARCXML.
+- Adds new parameter `exception_handlers` to dojson.Overdo.do and
+  dojson.contrib.to_marc21.model.Underdo.do. It can be given to the
+  translation process to deal with non-standard fields in a custom way
+  (#26).
+- Adds new utility `map_order` function to ease renaming of
+  subfields.
+
+Improved features
+~~~~~~~~~~~~~~~~~
+
+- Adds more detailed usage examples.  (#117)
+- Refactors CLI to allow commands chaining.
+- Adds support preserving the order of subfields.
 
 Bug fixes
 ~~~~~~~~~
