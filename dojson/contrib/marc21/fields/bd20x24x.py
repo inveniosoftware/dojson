@@ -60,7 +60,7 @@ def abbreviated_title(self, key, value):
     }
 
 
-@marc21.over('key_title', '^222.[_1032547698]')
+@marc21.over('key_title', '^222_[_0-9]')
 @utils.for_each_value
 @utils.filter_values
 def key_title(self, key, value):
@@ -87,11 +87,11 @@ def key_title(self, key, value):
         ),
         'qualifying_information': value.get('b'),
         'linkage': value.get('6'),
-        'nonfiling_characters': key[4],
+        'nonfiling_characters': utils.int_with_default(key[4], None),
     }
 
 
-@marc21.over('uniform_title', '^240[10_][_1032547698]')
+@marc21.over('uniform_title', '^240[_01][_0-9]')
 @utils.filter_values
 def uniform_title(self, key, value):
     """Uniform Title."""
@@ -161,12 +161,12 @@ def uniform_title(self, key, value):
             value.get('8')
         ),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
-        'nonfiling_characters': key[4],
+        'nonfiling_characters': utils.int_with_default(key[4], None),
     }
 
 
 @marc21.over(
-    'translation_of_title_by_cataloging_agency', '^242[10_][_0123456789]')
+    'translation_of_title_by_cataloging_agency', '^242[_01][_0-9]')
 @utils.for_each_value
 @utils.filter_values
 def translation_of_title_by_cataloging_agency(self, key, value):
@@ -215,11 +215,11 @@ def translation_of_title_by_cataloging_agency(self, key, value):
             value.get('8')
         ),
         'title_added_entry': indicator_map1.get(key[3]),
-        'nonfiling_characters': key[4],
+        'nonfiling_characters': utils.int_with_default(key[4], None),
     }
 
 
-@marc21.over('collective_uniform_title', '^243[10_][_1032547698]')
+@marc21.over('collective_uniform_title', '^243[_01][_0-9]')
 @utils.filter_values
 def collective_uniform_title(self, key, value):
     """Collective Uniform Title."""
@@ -285,11 +285,11 @@ def collective_uniform_title(self, key, value):
             value.get('8')
         ),
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
-        'nonfiling_characters': key[4],
+        'nonfiling_characters': utils.int_with_default(key[4], None),
     }
 
 
-@marc21.over('title_statement', '^245[10_][_1032547698]')
+@marc21.over('title_statement', '^245[_01][_0-9]')
 @utils.filter_values
 def title_statement(self, key, value):
     """Title Statement."""
@@ -344,7 +344,7 @@ def title_statement(self, key, value):
             value.get('8')
         ),
         'title_added_entry': indicator_map1.get(key[3]),
-        'nonfiling_characters': key[4],
+        'nonfiling_characters': utils.int_with_default(key[4], None),
     }
 
 

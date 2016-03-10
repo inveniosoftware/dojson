@@ -308,7 +308,7 @@ def series_statement_added_entry_title(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'nonfiling_characters': key[4],
+        'nonfiling_characters': utils.int_with_default(key[4], None),
     }
 
 

@@ -320,5 +320,5 @@ def series_added_entry_uniform_title(self, key, value):
         'linkage': value.get('6'),
         'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'nonfiling_characters': key[4],
+        'nonfiling_characters': utils.int_with_default(key[4], None),
     }

@@ -385,7 +385,7 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_subject_added_entry_uniform_title(self, key, value):
     """Reverse - Subject Added Entry-Uniform Title."""
-    valid_nonfiling_characters = [str(x) for x in range(10)]
+    valid_nonfiling_characters = [x for x in range(10)]
 
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
@@ -487,7 +487,7 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': value.get('nonfiling_characters', '_'),
+        '$ind1': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
         '$ind2': indicator_map2.get(value.get('thesaurus'), '_'),
     }
 

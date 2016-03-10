@@ -60,7 +60,7 @@ def reverse_abbreviated_title(self, key, value):
 @utils.filter_values
 def reverse_key_title(self, key, value):
     """Reverse - Key Title."""
-    valid_nonfiling_characters = [str(x) for x in range(10)]
+    valid_nonfiling_characters = [x for x in range(10)]
 
     field_map = {
         'key_title': 'a',
@@ -79,7 +79,7 @@ def reverse_key_title(self, key, value):
         'b': value.get('qualifying_information'),
         '6': value.get('linkage'),
         '$ind1': '_',
-        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
+        '$ind2': value.get('nonfiling_characters', '_'),
     }
 
 
@@ -87,7 +87,7 @@ def reverse_key_title(self, key, value):
 @utils.filter_values
 def reverse_uniform_title(self, key, value):
     """Reverse - Uniform Title."""
-    valid_nonfiling_characters = [str(x) for x in range(10)]
+    valid_nonfiling_characters = [x for x in range(10)]
 
     indicator_map1 = {
         'Not printed or displayed': '0',
@@ -143,7 +143,7 @@ def reverse_uniform_title(self, key, value):
         '$ind1': indicator_map1.get(
             value.get('uniform_title_printed_or_displayed'),
             '_'),
-        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
+        '$ind2': value.get('nonfiling_characters', '_'),
     }
 
 
@@ -152,7 +152,7 @@ def reverse_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_translation_of_title_by_cataloging_agency(self, key, value):
     """Reverse - Translation of Title by Cataloging Agency."""
-    valid_nonfiling_characters = [str(x) for x in range(10)]
+    valid_nonfiling_characters = [x for x in range(10)]
 
     indicator_map1 = {
         'No added entry': '0',
@@ -191,7 +191,7 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
-        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
+        '$ind2': value.get('nonfiling_characters', '_'),
     }
 
 
@@ -199,7 +199,7 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
 @utils.filter_values
 def reverse_collective_uniform_title(self, key, value):
     """Reverse - Collective Uniform Title."""
-    valid_nonfiling_characters = [str(x) for x in range(10)]
+    valid_nonfiling_characters = [x for x in range(10)]
 
     indicator_map1 = {
         'Not printed or displayed': '0',
@@ -252,7 +252,7 @@ def reverse_collective_uniform_title(self, key, value):
         '$ind1': indicator_map1.get(
             value.get('uniform_title_printed_or_displayed'),
             '_'),
-        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
+        '$ind2': value.get('nonfiling_characters', '_'),
     }
 
 
@@ -260,7 +260,7 @@ def reverse_collective_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_title_statement(self, key, value):
     """Reverse - Title Statement."""
-    valid_nonfiling_characters = [str(x) for x in range(10)]
+    valid_nonfiling_characters = [x for x in range(10)]
 
     indicator_map1 = {
         'No added entry': '0',
@@ -307,7 +307,7 @@ def reverse_title_statement(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
-        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
+        '$ind2': value.get('nonfiling_characters', '_'),
     }
 
 

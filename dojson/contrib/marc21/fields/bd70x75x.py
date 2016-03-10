@@ -394,7 +394,7 @@ def added_entry_uniform_title(self, key, value):
         'institution_to_which_field_applies': value.get('5'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'nonfiling_characters': key[3],
+        'nonfiling_characters': utils.int_with_default(key[3], None),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
@@ -441,7 +441,7 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'nonfiling_characters': key[3],
+        'nonfiling_characters': utils.int_with_default(key[3], None),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
 
