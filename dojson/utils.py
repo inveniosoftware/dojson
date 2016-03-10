@@ -19,6 +19,14 @@ import six
 from .errors import IgnoreKey
 
 
+def int_with_default(value, default):
+    """Parse and integer from a string and return default if it fails."""
+    try:
+        return int(value)
+    except ValueError:
+        return default
+
+
 def ignore_value(f):
     """Remove key for None value.
 

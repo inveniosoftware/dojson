@@ -239,7 +239,7 @@ def reverse_series_statement_added_entry_meeting_name(self, key, value):
 @utils.filter_values
 def reverse_series_statement_added_entry_title(self, key, value):
     """Reverse - Series Statement/Added Entry-Title."""
-    valid_nonfiling_characters = [str(x) for x in range(10)]
+    valid_nonfiling_characters = [x for x in range(10)]
 
     field_map = {
         'title': 'a',
@@ -277,7 +277,7 @@ def reverse_series_statement_added_entry_title(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
-        '$ind2': value.get('nonfiling_characters', '_'),
+        '$ind2': value.get('nonfiling_characters') if value.get('nonfiling_characters') in valid_nonfiling_characters else '_',
     }
 
 

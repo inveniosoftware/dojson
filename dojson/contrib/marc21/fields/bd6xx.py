@@ -404,6 +404,7 @@ def subject_added_entry_meeting_name(self, key, value):
 def subject_added_entry_uniform_title(self, key, value):
     """Subject Added Entry-Uniform Title."""
     valid_nonfiling_characters = [str(x) for x in range(10)]
+
     indicator_map2 = {
         '0': 'Library of Congress Subject Headings',
         '1': 'LC subject headings for children\u0027s literature',
@@ -509,7 +510,7 @@ def subject_added_entry_uniform_title(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'nonfiling_characters': key[3],
+        'nonfiling_characters': utils.int_with_default(key[3], '_'),
         'thesaurus': indicator_map2.get(key[4]),
     }
 
