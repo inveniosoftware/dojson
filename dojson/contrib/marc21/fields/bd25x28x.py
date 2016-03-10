@@ -322,7 +322,8 @@ def projected_publication_date(self, key, value):
 
 
 @marc21.over(
-    'production_publication_distribution_manufacture_and_copyright_notice', '^264[_23][10324_]')
+    'production_publication_distribution_manufacture_and_copyright_notice',
+    '^264[_23][10324_]')
 @utils.for_each_value
 @utils.filter_values
 def production_publication_distribution_manufacture_and_copyright_notice(
@@ -361,21 +362,19 @@ def production_publication_distribution_manufacture_and_copyright_notice(
     return {
         '__order__': tuple(order) if len(order) else None,
         'place_of_production_publication_distribution_manufacture': utils.force_list(
-            value.get('a')
-        ),
+            value.get('a')),
         'date_of_production_publication_distribution_manufacture_or_copyright_notice': utils.force_list(
-            value.get('c')
-        ),
+            value.get('c')),
         'name_of_producer_publisher_distributor_manufacturer': utils.force_list(
-            value.get('b')
-        ),
+            value.get('b')),
         'materials_specified': value.get('3'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'sequence_of_statements': indicator_map1.get(key[3]),
-        'function_of_entity': indicator_map2.get(key[4]),
+            value.get('8')),
+        'sequence_of_statements': indicator_map1.get(
+            key[3]),
+        'function_of_entity': indicator_map2.get(
+            key[4]),
     }
 
 

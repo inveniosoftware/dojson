@@ -169,23 +169,22 @@ def reverse_formatted_contents_note(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('formatted_contents_note'),
         'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
+            value.get('miscellaneous_information')),
         'r': utils.reverse_force_list(
-            value.get('statement_of_responsibility')
-        ),
+            value.get('statement_of_responsibility')),
         't': utils.reverse_force_list(
-            value.get('title')
-        ),
+            value.get('title')),
         'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
-        ),
+            value.get('uniform_resource_identifier')),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '$ind1': indicator_map1.get(value.get('display_constant_controller'), '_'),
-        '$ind2': indicator_map2.get(value.get('level_of_content_designation'), '_'),
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('display_constant_controller'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('level_of_content_designation'),
+            '_'),
     }
 
 
@@ -2072,8 +2071,9 @@ def reverse_source_of_description_note(self, key, value):
         '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '$ind1': indicator_map1.get(value.get('display_constant_controller'), '_'),
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('display_constant_controller'),
+            '_'),
         '$ind2': '_',
     }

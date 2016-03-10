@@ -59,23 +59,34 @@ def reverse_main_series_entry(self, key, value):
         'c': value.get('qualifying_information'),
         'b': value.get('edition'),
         'd': value.get('place_publisher_and_date_of_publication'),
-        'g': utils.reverse_force_list(value.get('related_parts')),
+        'g': utils.reverse_force_list(
+            value.get('related_parts')),
         'h': value.get('physical_description'),
-        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')),
         'm': value.get('material_specific_details'),
-        'n': utils.reverse_force_list(value.get('note')),
-        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(
+            value.get('note')),
+        'o': utils.reverse_force_list(
+            value.get('other_item_identifier')),
         's': value.get('uniform_title'),
         't': value.get('title'),
-        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'w': utils.reverse_force_list(
+            value.get('record_control_number')),
         'x': value.get('international_standard_serial_number'),
         'y': value.get('coden_designation'),
-        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')),
         '7': value.get('control_subfield'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('note_controller'), '_'),
-        '$ind2': indicator_map2.get(value.get('display_constant_controller'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('note_controller'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('display_constant_controller'),
+            '_'),
     }
 
 
@@ -124,23 +135,34 @@ def reverse_subseries_entry(self, key, value):
         'b': value.get('edition'),
         'c': value.get('qualifying_information'),
         'd': value.get('place_publisher_and_date_of_publication'),
-        'g': utils.reverse_force_list(value.get('related_parts')),
+        'g': utils.reverse_force_list(
+            value.get('related_parts')),
         'h': value.get('physical_description'),
-        'i': utils.reverse_force_list(value.get('relationship_information')),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')),
         'm': value.get('material_specific_details'),
-        'n': utils.reverse_force_list(value.get('note')),
-        'o': utils.reverse_force_list(value.get('other_item_identifier')),
+        'n': utils.reverse_force_list(
+            value.get('note')),
+        'o': utils.reverse_force_list(
+            value.get('other_item_identifier')),
         's': value.get('uniform_title'),
         't': value.get('title'),
-        'w': utils.reverse_force_list(value.get('record_control_number')),
+        'w': utils.reverse_force_list(
+            value.get('record_control_number')),
         'x': value.get('international_standard_serial_number'),
         'y': value.get('coden_designation'),
-        '4': utils.reverse_force_list(value.get('relationship_code')),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')),
         '7': value.get('control_subfield'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('note_controller'), '_'),
-        '$ind2': indicator_map2.get(value.get('display_constant_controller'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('note_controller'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('display_constant_controller'),
+            '_'),
     }
 
 

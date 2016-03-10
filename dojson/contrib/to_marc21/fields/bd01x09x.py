@@ -30,9 +30,12 @@ def reverse_library_of_congress_control_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('lc_control_number'),
-        'b': utils.reverse_force_list(value.get('nucmc_control_number')),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_lc_control_number')),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'b': utils.reverse_force_list(
+            value.get('nucmc_control_number')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_lc_control_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -61,11 +64,15 @@ def reverse_patent_control_information(self, key, value):
         'a': value.get('number'),
         'b': value.get('country'),
         'c': value.get('type_of_number'),
-        'd': utils.reverse_force_list(value.get('date')),
-        'e': utils.reverse_force_list(value.get('status')),
-        'f': utils.reverse_force_list(value.get('party_to_document')),
+        'd': utils.reverse_force_list(
+            value.get('date')),
+        'e': utils.reverse_force_list(
+            value.get('status')),
+        'f': utils.reverse_force_list(
+            value.get('party_to_document')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -89,12 +96,16 @@ def reverse_national_bibliography_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('national_bibliography_number')),
-        'q': utils.reverse_force_list(value.get('qualifying_information')),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_national_bibliography_number')),
+        'a': utils.reverse_force_list(
+            value.get('national_bibliography_number')),
+        'q': utils.reverse_force_list(
+            value.get('qualifying_information')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_national_bibliography_number')),
         '2': value.get('source'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -122,10 +133,14 @@ def reverse_national_bibliographic_agency_control_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('record_control_number'),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_control_number')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_control_number')),
         '2': value.get('source'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('national_bibliographic_agency'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('national_bibliographic_agency'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -155,16 +170,21 @@ def reverse_copyright_or_legal_deposit_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('copyright_or_legal_deposit_number')),
+        'a': utils.reverse_force_list(
+            value.get('copyright_or_legal_deposit_number')),
         'b': value.get('assigning_agency'),
         'd': value.get('date'),
         'i': value.get('display_text'),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_copyright_or_legal_deposit_number')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_copyright_or_legal_deposit_number')),
         '2': value.get('source'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
-        '$ind2': indicator_map2.get(value.get('display_constant_controller'), '_'),
+        '$ind2': indicator_map2.get(
+            value.get('display_constant_controller'),
+            '_'),
     }
 
 
@@ -182,9 +202,11 @@ def reverse_copyright_article_fee_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('copyright_article_fee_code')),
+        'a': utils.reverse_force_list(
+            value.get('copyright_article_fee_code')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -210,10 +232,13 @@ def reverse_international_standard_book_number(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('international_standard_book_number'),
         'c': value.get('terms_of_availability'),
-        'q': utils.reverse_force_list(value.get('qualifying_information')),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_isbn')),
+        'q': utils.reverse_force_list(
+            value.get('qualifying_information')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_isbn')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -247,13 +272,19 @@ def reverse_international_standard_serial_number(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('international_standard_serial_number'),
         'l': value.get('issn_l'),
-        'm': utils.reverse_force_list(value.get('canceled_issn_l')),
-        'y': utils.reverse_force_list(value.get('incorrect_issn')),
-        'z': utils.reverse_force_list(value.get('canceled_issn')),
+        'm': utils.reverse_force_list(
+            value.get('canceled_issn_l')),
+        'y': utils.reverse_force_list(
+            value.get('incorrect_issn')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_issn')),
         '2': value.get('source'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('level_of_international_interest'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('level_of_international_interest'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -292,7 +323,9 @@ def reverse_other_standard_identifier(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map1.get(value.get('type_of_standard_number_or_code'), '7') != '7' and '2' in order:
+    if indicator_map1.get(
+            value.get('type_of_standard_number_or_code'),
+            '7') != '7' and '2' in order:
         order.remove('2')
 
     return {
@@ -300,13 +333,21 @@ def reverse_other_standard_identifier(self, key, value):
         'a': value.get('standard_number_or_code'),
         'c': value.get('terms_of_availability'),
         'd': value.get('additional_codes_following_the_standard_number_or_code'),
-        'q': utils.reverse_force_list(value.get('qualifying_information')),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_standard_number_or_code')),
+        'q': utils.reverse_force_list(
+            value.get('qualifying_information')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_standard_number_or_code')),
         '2': value.get('source_of_number_or_code'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_standard_number_or_code'), '_'),
-        '$ind2': indicator_map2.get(value.get('difference_indicator', '_')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_standard_number_or_code'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get(
+                'difference_indicator',
+                '_')),
     }
 
 
@@ -324,8 +365,10 @@ def reverse_overseas_acquisition_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('overseas_acquisition_number')),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'a': utils.reverse_force_list(
+            value.get('overseas_acquisition_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -355,12 +398,15 @@ def reverse_fingerprint_identifier(self, key, value):
         'a': value.get('first_and_second_groups_of_characters'),
         'b': value.get('third_and_fourth_groups_of_characters'),
         'c': value.get('date'),
-        'd': utils.reverse_force_list(value.get('number_of_volume_or_part')),
+        'd': utils.reverse_force_list(
+            value.get('number_of_volume_or_part')),
         'e': value.get('unparsed_fingerprint'),
         '2': value.get('source'),
-        '5': utils.reverse_force_list(value.get('institution_to_which_field_applies')),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -384,10 +430,13 @@ def reverse_standard_technical_report_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('standard_technical_report_number'),
-        'q': utils.reverse_force_list(value.get('qualifying_information')),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_number')),
+        'q': utils.reverse_force_list(
+            value.get('qualifying_information')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_number')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -428,11 +477,17 @@ def reverse_publisher_number(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('publisher_number'),
         'b': value.get('source'),
-        'q': utils.reverse_force_list(value.get('qualifying_information')),
+        'q': utils.reverse_force_list(
+            value.get('qualifying_information')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_publisher_number'), '_'),
-        '$ind2': indicator_map2.get(value.get('note_added_entry_controller'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_publisher_number'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('note_added_entry_controller'),
+            '_'),
     }
 
 
@@ -453,9 +508,11 @@ def reverse_coden_designation(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('coden'),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_coden')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_coden')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -496,23 +553,31 @@ def reverse_musical_incipits_information(self, key, value):
         'a': value.get('number_of_work'),
         'b': value.get('number_of_movement'),
         'c': value.get('number_of_excerpt'),
-        'd': utils.reverse_force_list(value.get('caption_or_heading')),
+        'd': utils.reverse_force_list(
+            value.get('caption_or_heading')),
         'e': value.get('role'),
         'g': value.get('clef'),
         'm': value.get('voice_instrument'),
         'n': value.get('key_signature'),
         'o': value.get('time_signature'),
         'p': value.get('musical_notation'),
-        'q': utils.reverse_force_list(value.get('general_note')),
+        'q': utils.reverse_force_list(
+            value.get('general_note')),
         'r': value.get('key_or_mode'),
-        's': utils.reverse_force_list(value.get('coded_validity_note')),
-        't': utils.reverse_force_list(value.get('text_incipit')),
-        'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
-        'y': utils.reverse_force_list(value.get('link_text')),
-        'z': utils.reverse_force_list(value.get('public_note')),
+        's': utils.reverse_force_list(
+            value.get('coded_validity_note')),
+        't': utils.reverse_force_list(
+            value.get('text_incipit')),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')),
+        'y': utils.reverse_force_list(
+            value.get('link_text')),
+        'z': utils.reverse_force_list(
+            value.get('public_note')),
         '2': value.get('system_code'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -537,7 +602,8 @@ def reverse_postal_registration_number(self, key, value):
         'a': value.get('postal_registration_number'),
         'b': value.get('source_agency_assigning_number'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -578,17 +644,28 @@ def reverse_date_time_and_place_of_an_event(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('formatted_date_time')),
-        'b': utils.reverse_force_list(value.get('geographic_classification_area_code')),
-        'c': utils.reverse_force_list(value.get('geographic_classification_subarea_code')),
-        'p': utils.reverse_force_list(value.get('place_of_event')),
-        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
-        '2': utils.reverse_force_list(value.get('source_of_term')),
+        'a': utils.reverse_force_list(
+            value.get('formatted_date_time')),
+        'b': utils.reverse_force_list(
+            value.get('geographic_classification_area_code')),
+        'c': utils.reverse_force_list(
+            value.get('geographic_classification_subarea_code')),
+        'p': utils.reverse_force_list(
+            value.get('place_of_event')),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')),
+        '2': utils.reverse_force_list(
+            value.get('source_of_term')),
         '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_date_in_subfield_a'), '_'),
-        '$ind2': indicator_map2.get(value.get('type_of_event'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_date_in_subfield_a'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('type_of_event'),
+            '_'),
     }
 
 
@@ -642,31 +719,42 @@ def reverse_coded_cartographic_mathematical_data(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('category_of_scale'),
-        'b': utils.reverse_force_list(value.get('constant_ratio_linear_horizontal_scale')),
-        'c': utils.reverse_force_list(value.get('constant_ratio_linear_vertical_scale')),
+        'b': utils.reverse_force_list(
+            value.get('constant_ratio_linear_horizontal_scale')),
+        'c': utils.reverse_force_list(
+            value.get('constant_ratio_linear_vertical_scale')),
         'd': value.get('coordinates_westernmost_longitude'),
         'e': value.get('coordinates_easternmost_longitude'),
         'f': value.get('coordinates_northernmost_latitude'),
         'g': value.get('coordinates_southernmost_latitude'),
-        'h': utils.reverse_force_list(value.get('angular_scale')),
+        'h': utils.reverse_force_list(
+            value.get('angular_scale')),
         'j': value.get('declination_northern_limit'),
         'k': value.get('declination_southern_limit'),
         'm': value.get('right_ascension_eastern_limit'),
         'n': value.get('right_ascension_western_limit'),
         'p': value.get('equinox'),
         'r': value.get('distance_from_earth'),
-        's': utils.reverse_force_list(value.get('g_ring_latitude')),
-        't': utils.reverse_force_list(value.get('g_ring_longitude')),
+        's': utils.reverse_force_list(
+            value.get('g_ring_latitude')),
+        't': utils.reverse_force_list(
+            value.get('g_ring_longitude')),
         'x': value.get('beginning_date'),
         'y': value.get('ending_date'),
         'z': value.get('name_of_extraterrestrial_body'),
-        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source'),
         '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_scale'), '_'),
-        '$ind2': indicator_map2.get(value.get('type_of_ring'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_scale'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('type_of_ring'),
+            '_'),
     }
 
 
@@ -687,9 +775,11 @@ def reverse_system_control_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('system_control_number'),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_control_number')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_control_number')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -713,7 +803,8 @@ def reverse_original_study_number_for_computer_data_files(self, key, value):
         'a': value.get('original_study_number'),
         'b': value.get('source_agency_assigning_number'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -749,15 +840,22 @@ def reverse_source_of_acquisition(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('stock_number'),
         'b': value.get('source_of_stock_number_acquisition'),
-        'c': utils.reverse_force_list(value.get('terms_of_availability')),
-        'f': utils.reverse_force_list(value.get('form_of_issue')),
-        'g': utils.reverse_force_list(value.get('additional_format_characteristics')),
-        'n': utils.reverse_force_list(value.get('note')),
+        'c': utils.reverse_force_list(
+            value.get('terms_of_availability')),
+        'f': utils.reverse_force_list(
+            value.get('form_of_issue')),
+        'g': utils.reverse_force_list(
+            value.get('additional_format_characteristics')),
+        'n': utils.reverse_force_list(
+            value.get('note')),
         '3': value.get('materials_specified'),
         '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('source_of_acquisition_sequence'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('source_of_acquisition_sequence'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -778,7 +876,8 @@ def reverse_record_content_licensor(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('record_content_licensor'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -805,10 +904,13 @@ def reverse_cataloging_source(self, key, value):
         'a': value.get('original_cataloging_agency'),
         'b': value.get('language_of_cataloging'),
         'c': value.get('transcribing_agency'),
-        'd': utils.reverse_force_list(value.get('modifying_agency')),
-        'e': utils.reverse_force_list(value.get('description_conventions')),
+        'd': utils.reverse_force_list(
+            value.get('modifying_agency')),
+        'e': utils.reverse_force_list(
+            value.get('description_conventions')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -849,7 +951,9 @@ def reverse_language_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map2.get(value.get('source_of_code'), '7') != '7' and '2' in order:
+    if indicator_map2.get(
+            value.get('source_of_code'),
+            '7') != '7' and '2' in order:
         order.remove('2')
 
     return {
@@ -931,12 +1035,17 @@ def reverse_country_of_publishing_producing_entity_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('marc_country_code')),
-        'b': utils.reverse_force_list(value.get('local_subentity_code')),
-        'c': utils.reverse_force_list(value.get('iso_country_code')),
-        '2': utils.reverse_force_list(value.get('source_of_local_subentity_code')),
+        'a': utils.reverse_force_list(
+            value.get('marc_country_code')),
+        'b': utils.reverse_force_list(
+            value.get('local_subentity_code')),
+        'c': utils.reverse_force_list(
+            value.get('iso_country_code')),
+        '2': utils.reverse_force_list(
+            value.get('source_of_local_subentity_code')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -965,12 +1074,18 @@ def reverse_time_period_of_content(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('time_period_code')),
-        'b': utils.reverse_force_list(value.get('formatted_9999_bc_through_ce_time_period')),
-        'c': utils.reverse_force_list(value.get('formatted_pre_9999_bc_time_period')),
+        'a': utils.reverse_force_list(
+            value.get('time_period_code')),
+        'b': utils.reverse_force_list(
+            value.get('formatted_9999_bc_through_ce_time_period')),
+        'c': utils.reverse_force_list(
+            value.get('formatted_pre_9999_bc_time_period')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_time_period_in_subfield_b_or_c'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_time_period_in_subfield_b_or_c'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -1016,7 +1131,8 @@ def reverse_special_coded_dates(self, key, value):
         'p': value.get('ending_date_for_aggregated_content'),
         '2': value.get('source_of_date'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1045,11 +1161,15 @@ def reverse_form_of_musical_composition_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('form_of_musical_composition_code')),
+        'a': utils.reverse_force_list(
+            value.get('form_of_musical_composition_code')),
         '2': value.get('source_of_code'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
-        '$ind2': indicator_map2.get(value.get('source_of_code'), '7'),
+        '$ind2': indicator_map2.get(
+            value.get('source_of_code'),
+            '7'),
     }
 
 
@@ -1072,17 +1192,24 @@ def reverse_number_of_musical_instruments_or_voices_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map2.get(value.get('source_of_code'), '7') != '7' and '2' in order:
+    if indicator_map2.get(
+            value.get('source_of_code'),
+            '7') != '7' and '2' in order:
         order.remove('2')
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('performer_or_ensemble')),
-        'b': utils.reverse_force_list(value.get('soloist')),
+        'a': utils.reverse_force_list(
+            value.get('performer_or_ensemble')),
+        'b': utils.reverse_force_list(
+            value.get('soloist')),
         '2': value.get('source_of_code'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
-        '$ind2': indicator_map2.get(value.get('source_of_code'), '7'),
+        '$ind2': indicator_map2.get(
+            value.get('source_of_code'),
+            '7'),
     }
 
 
@@ -1114,20 +1241,29 @@ def reverse_library_of_congress_call_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number')),
         'b': value.get('item_number'),
         '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('existence_in_lc_collection'), '_'),
-        '$ind2': indicator_map2.get(value.get('source_of_call_number'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('existence_in_lc_collection'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('source_of_call_number'),
+            '_'),
     }
 
 
 @to_marc21.over('051', '^library_of_congress_copy_issue_offprint_statement$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_library_of_congress_copy_issue_offprint_statement(self, key, value):
+def reverse_library_of_congress_copy_issue_offprint_statement(
+        self,
+        key,
+        value):
     """Reverse - Library of Congress Copy, Issue, Offprint Statement."""
     field_map = {
         'classification_number': 'a',
@@ -1143,7 +1279,8 @@ def reverse_library_of_congress_copy_issue_offprint_statement(self, key, value):
         'a': value.get('classification_number'),
         'b': value.get('item_number'),
         'c': value.get('copy_information'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1177,12 +1314,17 @@ def reverse_geographic_classification(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('geographic_classification_area_code'),
-        'b': utils.reverse_force_list(value.get('geographic_classification_subarea_code')),
-        'd': utils.reverse_force_list(value.get('populated_place_name')),
+        'b': utils.reverse_force_list(
+            value.get('geographic_classification_subarea_code')),
+        'd': utils.reverse_force_list(
+            value.get('populated_place_name')),
         '2': value.get('code_source'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('code_source'), '7'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('code_source'),
+            '7'),
         '$ind2': '_',
     }
 
@@ -1227,9 +1369,14 @@ def reverse_classification_numbers_assigned_in_canada(self, key, value):
         'b': value.get('item_number'),
         '2': value.get('source_of_call_class_number'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('existence_in_lac_collection'), '_'),
-        '$ind2': indicator_map2.get(value.get('type_completeness_source_of_class_call_number'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('existence_in_lac_collection'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('type_completeness_source_of_class_call_number'),
+            '_'),
     }
 
 
@@ -1259,11 +1406,17 @@ def reverse_national_library_of_medicine_call_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number_r')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number_r')),
         'b': value.get('item_number'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('existence_in_nlm_collection'), '_'),
-        '$ind2': indicator_map2.get(value.get('source_of_call_number'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('existence_in_nlm_collection'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('source_of_call_number'),
+            '_'),
     }
 
 
@@ -1283,10 +1436,12 @@ def reverse_national_library_of_medicine_copy_statement(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number')),
         'b': value.get('item_number'),
         'c': value.get('copy_information'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1308,7 +1463,8 @@ def reverse_character_sets_present(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('primary_g0_character_set'),
         'b': value.get('primary_g1_character_set'),
-        'c': utils.reverse_force_list(value.get('alternate_g0_or_g1_character_set')),
+        'c': utils.reverse_force_list(
+            value.get('alternate_g0_or_g1_character_set')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1334,10 +1490,14 @@ def reverse_national_agricultural_library_call_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number')),
         'b': value.get('item_number'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number_r')),
-        '$ind1': indicator_map1.get(value.get('existence_in_nal_collection'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number_r')),
+        '$ind1': indicator_map1.get(
+            value.get('existence_in_nal_collection'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -1358,10 +1518,13 @@ def reverse_national_agricultural_library_copy_statement(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number')),
         'b': value.get('item_number'),
-        'c': utils.reverse_force_list(value.get('copy_information')),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'c': utils.reverse_force_list(
+            value.get('copy_information')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1387,18 +1550,24 @@ def reverse_subject_category_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map2.get(value.get('code_source'), '7') != '7' and '2' in order:
+    if indicator_map2.get(
+            value.get('code_source'),
+            '7') != '7' and '2' in order:
         order.remove('2')
 
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('subject_category_code'),
-        'x': utils.reverse_force_list(value.get('subject_category_code_subdivision')),
+        'x': utils.reverse_force_list(
+            value.get('subject_category_code_subdivision')),
         '2': value.get('source'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
-        '$ind2': indicator_map2.get(value.get('code_source'), '_'),
+        '$ind2': indicator_map2.get(
+            value.get('code_source'),
+            '_'),
     }
 
 
@@ -1418,8 +1587,10 @@ def reverse_gpo_item_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('gpo_item_number'),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_gpo_item_number')),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_gpo_item_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1451,11 +1622,15 @@ def reverse_universal_decimal_classification_number(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('universal_decimal_classification_number'),
         'b': value.get('item_number'),
-        'x': utils.reverse_force_list(value.get('common_auxiliary_subdivision')),
+        'x': utils.reverse_force_list(
+            value.get('common_auxiliary_subdivision')),
         '2': value.get('edition_identifier'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_edition'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_edition'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -1491,15 +1666,21 @@ def reverse_dewey_decimal_classification_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number')),
         'b': value.get('item_number'),
         'm': value.get('standard_or_optional_designation'),
         'q': value.get('assigning_agency'),
         '2': value.get('edition_number'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_edition'), '_'),
-        '$ind2': indicator_map2.get(value.get('source_of_classification_number'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_edition'),
+            '_'),
+        '$ind2': indicator_map2.get(
+            value.get('source_of_classification_number'),
+            '_'),
     }
 
 
@@ -1530,16 +1711,23 @@ def reverse_additional_dewey_decimal_classification_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number')),
-        'c': utils.reverse_force_list(value.get('classification_number_ending_number_of_span')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number')),
+        'c': utils.reverse_force_list(
+            value.get('classification_number_ending_number_of_span')),
         'm': value.get('standard_or_optional_designation'),
         'q': value.get('assigning_agency'),
-        'y': utils.reverse_force_list(value.get('table_sequence_number_for_internal_subarrangement_or_add_table')),
-        'z': utils.reverse_force_list(value.get('table_identification')),
+        'y': utils.reverse_force_list(
+            value.get('table_sequence_number_for_internal_subarrangement_or_add_table')),
+        'z': utils.reverse_force_list(
+            value.get('table_identification')),
         '2': value.get('edition_number'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_edition'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_edition'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -1562,12 +1750,14 @@ def reverse_other_classification_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('classification_number')),
+        'a': utils.reverse_force_list(
+            value.get('classification_number')),
         'b': value.get('item_number'),
         'q': value.get('assigning_agency'),
         '2': value.get('number_source'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1639,17 +1829,23 @@ def reverse_government_document_classification_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map1.get(value.get('number_source'), '_') != '_' and '2' in order:
+    if indicator_map1.get(
+            value.get('number_source'),
+            '_') != '_' and '2' in order:
         order.remove('2')
 
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number'),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_classification_number')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_classification_number')),
         '2': value.get('number_source'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('number_source'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('number_source'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -1671,9 +1867,11 @@ def reverse_report_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('report_number'),
-        'z': utils.reverse_force_list(value.get('canceled_invalid_report_number')),
+        'z': utils.reverse_force_list(
+            value.get('canceled_invalid_report_number')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }

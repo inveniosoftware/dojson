@@ -278,7 +278,10 @@ def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
 
 @to_marc21.over('262', '^imprint_statement_for_sound_recordings_pre_aacr_1$')
 @utils.filter_values
-def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
+def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(
+        self,
+        key,
+        value):
     """Reverse - Imprint Statement for Sound Recordings (Pre-AACR 1)."""
     field_map = {
         'place_of_production_release': 'a',

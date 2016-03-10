@@ -184,18 +184,16 @@ def content_type(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'content_type_term': utils.force_list(
-            value.get('a')
-        ),
+            value.get('a')),
         'content_type_code': utils.force_list(
-            value.get('b')
-        ),
-        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
+            value.get('b')),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')),
         'source': value.get('2'),
         'materials_specified': value.get('3'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
+            value.get('8')),
     }
 
 
@@ -695,13 +693,17 @@ def reverse_digital_file_characteristics(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'format_of_notated_music_term': utils.force_list(value.get('a')),
-        'format_of_notated_music_code': utils.force_list(value.get('b')),
-        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
+        'format_of_notated_music_term': utils.force_list(
+            value.get('a')),
+        'format_of_notated_music_code': utils.force_list(
+            value.get('b')),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')),
         'source_of_term': value.get('2'),
         'materials_specified': value.get('3'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
     }
 
 
@@ -972,15 +974,15 @@ def normalized_date_and_sequential_designation(self, key, value):
         'first_level_textual_designation': value.get('u'),
         'first_level_of_chronology_issuance': value.get('v'),
         'nonpublic_note': utils.force_list(
-            value.get('x')
-        ),
+            value.get('x')),
         'public_note': utils.force_list(
-            value.get('z')
-        ),
+            value.get('z')),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': value.get('8'),
-        'start_end_designator': indicator_map1.get(key[3]),
-        'state_of_issuance': indicator_map2.get(key[4]),
+        'start_end_designator': indicator_map1.get(
+            key[3]),
+        'state_of_issuance': indicator_map2.get(
+            key[4]),
     }
 
 
@@ -1096,17 +1098,24 @@ def associated_place(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'associated_country': utils.force_list(value.get('c')),
-        'other_associated_place': utils.force_list(value.get('f')),
-        'place_of_origin_of_work': utils.force_list(value.get('g')),
+        'associated_country': utils.force_list(
+            value.get('c')),
+        'other_associated_place': utils.force_list(
+            value.get('f')),
+        'place_of_origin_of_work': utils.force_list(
+            value.get('g')),
         'start_period': value.get('s'),
         'end_period': value.get('t'),
-        'uniform_resource_identifier': utils.force_list(value.get('u')),
-        'source_of_information': utils.force_list(value.get('v')),
-        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')),
+        'source_of_information': utils.force_list(
+            value.get('v')),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')),
         'source_of_term': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
     }
 
 
@@ -1484,11 +1493,14 @@ def creator_contributor_characteristics(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'time_period_of_creation_term': utils.force_list(value.get('a')),
-        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
+        'time_period_of_creation_term': utils.force_list(
+            value.get('a')),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')),
         'source_of_term': value.get('2'),
         'materials_specified': value.get('3'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list('8'),
-        'type_of_time_period': indicator_map1.get(key[3]),
+        'type_of_time_period': indicator_map1.get(
+            key[3]),
     }

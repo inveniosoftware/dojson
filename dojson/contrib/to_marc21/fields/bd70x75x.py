@@ -298,11 +298,16 @@ def reverse_added_entry_uncontrolled_name(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('name'),
-        'e': utils.reverse_force_list(value.get('relator_term')),
-        '4': utils.reverse_force_list(value.get('relator_code')),
+        'e': utils.reverse_force_list(
+            value.get('relator_term')),
+        '4': utils.reverse_force_list(
+            value.get('relator_code')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_name'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_name'),
+            '_'),
         '$ind2': '_',
     }
 
@@ -447,15 +452,17 @@ def reverse_added_entry_geographic_name(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('geographic_name'),
-        'e': utils.reverse_force_list(value.get('relator_term')),
+        'e': utils.reverse_force_list(
+            value.get('relator_term')),
         '0': utils.reverse_force_list(
-            value.get('authority_record_control_number_or_standard_number')
-        ),
+            value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_heading_or_term'),
         '3': value.get('materials_specified'),
-        '4': utils.reverse_force_list(value.get('relator_code')),
+        '4': utils.reverse_force_list(
+            value.get('relator_code')),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -484,19 +491,24 @@ def reverse_added_entry_hierarchical_place_name(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('country_or_larger_entity')),
+        'a': utils.reverse_force_list(
+            value.get('country_or_larger_entity')),
         'b': value.get('first_order_political_jurisdiction'),
-        'c': utils.reverse_force_list(value.get('intermediate_political_jurisdiction')),
+        'c': utils.reverse_force_list(
+            value.get('intermediate_political_jurisdiction')),
         'd': value.get('city'),
-        'f': utils.reverse_force_list(value.get('city_subsection')),
-        'g': utils.reverse_force_list(value.get('other_nonjurisdictional_geographic_region_and_feature')),
-        'h': utils.reverse_force_list(value.get('extraterrestrial_area')),
-        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
+        'f': utils.reverse_force_list(
+            value.get('city_subsection')),
+        'g': utils.reverse_force_list(
+            value.get('other_nonjurisdictional_geographic_region_and_feature')),
+        'h': utils.reverse_force_list(
+            value.get('extraterrestrial_area')),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_heading_or_term'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -523,7 +535,8 @@ def reverse_system_details_access_to_computer_files(self, key, value):
         'b': value.get('programming_language'),
         'c': value.get('operating_system'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -550,15 +563,22 @@ def reverse_added_entry_taxonomic_identification(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('taxonomic_name')),
-        'c': utils.reverse_force_list(value.get('taxonomic_category')),
-        'd': utils.reverse_force_list(value.get('common_or_alternative_name')),
-        'x': utils.reverse_force_list(value.get('non_public_note')),
-        'z': utils.reverse_force_list(value.get('public_note')),
-        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
+        'a': utils.reverse_force_list(
+            value.get('taxonomic_name')),
+        'c': utils.reverse_force_list(
+            value.get('taxonomic_category')),
+        'd': utils.reverse_force_list(
+            value.get('common_or_alternative_name')),
+        'x': utils.reverse_force_list(
+            value.get('non_public_note')),
+        'z': utils.reverse_force_list(
+            value.get('public_note')),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_taxonomic_identification'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }

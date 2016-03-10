@@ -584,13 +584,17 @@ def reverse_digital_file_characteristics(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('format_of_notated_music_term')),
-        'b': utils.reverse_force_list(value.get('format_of_notated_music_code')),
-        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
+        'a': utils.reverse_force_list(
+            value.get('format_of_notated_music_term')),
+        'b': utils.reverse_force_list(
+            value.get('format_of_notated_music_code')),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_term'),
         '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -958,17 +962,24 @@ def associated_place(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'c': utils.reverse_force_list(value.get('associated_country')),
-        'f': utils.reverse_force_list(value.get('other_associated_place')),
-        'g': utils.reverse_force_list(value.get('place_of_origin_of_work')),
+        'c': utils.reverse_force_list(
+            value.get('associated_country')),
+        'f': utils.reverse_force_list(
+            value.get('other_associated_place')),
+        'g': utils.reverse_force_list(
+            value.get('place_of_origin_of_work')),
         's': value.get('start_period'),
         't': value.get('end_period'),
-        'u': utils.reverse_force_list(value.get('uniform_resource_identifier')),
-        'v': utils.reverse_force_list(value.get('source_of_information')),
-        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')),
+        'v': utils.reverse_force_list(
+            value.get('source_of_information')),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_term'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -1291,12 +1302,17 @@ def reverse_creator_contributor_characteristics(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': utils.reverse_force_list(value.get('time_period_of_creation_term')),
-        '0': utils.reverse_force_list(value.get('authority_record_control_number_or_standard_number')),
+        'a': utils.reverse_force_list(
+            value.get('time_period_of_creation_term')),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')),
         '2': value.get('source_of_term'),
         '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        '8': utils.reverse_force_list(value.get('field_link_and_sequence_number')),
-        '$ind1': indicator_map1.get(value.get('type_of_time_period'), '_'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')),
+        '$ind1': indicator_map1.get(
+            value.get('type_of_time_period'),
+            '_'),
         '$ind2': '_',
     }

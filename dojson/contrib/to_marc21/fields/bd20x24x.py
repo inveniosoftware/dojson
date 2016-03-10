@@ -75,8 +75,7 @@ def reverse_key_title(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('key_title'),
         '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
+            value.get('field_link_and_sequence_number')),
         'b': value.get('qualifying_information'),
         '6': value.get('linkage'),
         '$ind1': '_',

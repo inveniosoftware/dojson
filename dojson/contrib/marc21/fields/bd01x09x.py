@@ -85,12 +85,16 @@ def national_bibliography_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'national_bibliography_number': utils.force_list(value.get('a')),
-        'qualifying_information': utils.force_list(value.get('q')),
-        'canceled_invalid_national_bibliography_number': utils.force_list(value.get('z')),
+        'national_bibliography_number': utils.force_list(
+            value.get('a')),
+        'qualifying_information': utils.force_list(
+            value.get('q')),
+        'canceled_invalid_national_bibliography_number': utils.force_list(
+            value.get('z')),
         'source': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
     }
 
 
@@ -154,15 +158,19 @@ def copyright_or_legal_deposit_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'copyright_or_legal_deposit_number': utils.force_list(value.get('a')),
+        'copyright_or_legal_deposit_number': utils.force_list(
+            value.get('a')),
         'assigning_agency': value.get('b'),
         'date': value.get('d'),
         'display_text': value.get('i'),
-        'canceled_invalid_copyright_or_legal_deposit_number': utils.force_list(value.get('z')),
+        'canceled_invalid_copyright_or_legal_deposit_number': utils.force_list(
+            value.get('z')),
         'source': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'display_constant_controller': indicator_map2.get(key[4]),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'display_constant_controller': indicator_map2.get(
+            key[4]),
     }
 
 
@@ -296,13 +304,18 @@ def other_standard_identifier(self, key, value):
         'standard_number_or_code': value.get('a'),
         'terms_of_availability': value.get('c'),
         'additional_codes_following_the_standard_number_or_code': value.get('d'),
-        'qualifying_information': utils.force_list(value.get('q')),
-        'canceled_invalid_standard_number_or_code': utils.force_list(value.get('z')),
+        'qualifying_information': utils.force_list(
+            value.get('q')),
+        'canceled_invalid_standard_number_or_code': utils.force_list(
+            value.get('z')),
         'source_of_number_or_code': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'type_of_standard_number_or_code': indicator_map1.get(key[3]),
-        'difference_indicator': indicator_map2.get(key[4]),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'type_of_standard_number_or_code': indicator_map1.get(
+            key[3]),
+        'difference_indicator': indicator_map2.get(
+            key[4]),
     }
 
 
@@ -572,17 +585,26 @@ def date_time_and_place_of_an_event(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'formatted_date_time': utils.force_list(value.get('a')),
-        'geographic_classification_area_code': utils.force_list(value.get('b')),
-        'geographic_classification_subarea_code': utils.force_list(value.get('c')),
-        'place_of_event': utils.force_list(value.get('p')),
-        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
-        'source_of_term': utils.force_list(value.get('2')),
+        'formatted_date_time': utils.force_list(
+            value.get('a')),
+        'geographic_classification_area_code': utils.force_list(
+            value.get('b')),
+        'geographic_classification_subarea_code': utils.force_list(
+            value.get('c')),
+        'place_of_event': utils.force_list(
+            value.get('p')),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')),
+        'source_of_term': utils.force_list(
+            value.get('2')),
         'materials_specified': value.get('3'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'type_of_date_in_subfield_a': indicator_map1.get(key[3]),
-        'type_of_event': indicator_map2.get(key[4]),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'type_of_date_in_subfield_a': indicator_map1.get(
+            key[3]),
+        'type_of_event': indicator_map2.get(
+            key[4]),
     }
 
 
@@ -638,32 +660,41 @@ def coded_cartographic_mathematical_data(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'authority_record_control_number_or_standard_number': utils.force_list(value.get('0')),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')),
         'source': value.get('2'),
         'materials_specified': value.get('3'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
         'category_of_scale': value.get('a'),
-        'constant_ratio_linear_horizontal_scale': utils.force_list(value.get('b')),
-        'constant_ratio_linear_vertical_scale': utils.force_list(value.get('c')),
+        'constant_ratio_linear_horizontal_scale': utils.force_list(
+            value.get('b')),
+        'constant_ratio_linear_vertical_scale': utils.force_list(
+            value.get('c')),
         'coordinates_westernmost_longitude': value.get('d'),
         'coordinates_easternmost_longitude': value.get('e'),
         'coordinates_northernmost_latitude': value.get('f'),
         'coordinates_southernmost_latitude': value.get('g'),
-        'angular_scale': utils.force_list(value.get('h')),
+        'angular_scale': utils.force_list(
+            value.get('h')),
         'declination_northern_limit': value.get('j'),
         'declination_southern_limit': value.get('k'),
         'right_ascension_eastern_limit': value.get('m'),
         'right_ascension_western_limit': value.get('n'),
         'equinox': value.get('p'),
         'distance_from_earth': value.get('r'),
-        'g_ring_latitude': utils.force_list(value.get('s')),
-        'g_ring_longitude': utils.force_list(value.get('t')),
+        'g_ring_latitude': utils.force_list(
+            value.get('s')),
+        'g_ring_longitude': utils.force_list(
+            value.get('t')),
         'beginning_date': value.get('x'),
         'ending_date': value.get('y'),
         'name_of_extraterrestrial_body': value.get('z'),
-        'type_of_scale': indicator_map1.get(key[3]),
-        'type_of_ring': indicator_map2.get(key[4]),
+        'type_of_scale': indicator_map1.get(
+            key[3]),
+        'type_of_ring': indicator_map2.get(
+            key[4]),
     }
 
 
@@ -955,12 +986,17 @@ def time_period_of_content(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'time_period_code': utils.force_list(value.get('a')),
-        'formatted_9999_bc_through_ce_time_period': utils.force_list(value.get('b')),
-        'formatted_pre_9999_bc_time_period': utils.force_list(value.get('c')),
+        'time_period_code': utils.force_list(
+            value.get('a')),
+        'formatted_9999_bc_through_ce_time_period': utils.force_list(
+            value.get('b')),
+        'formatted_pre_9999_bc_time_period': utils.force_list(
+            value.get('c')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'type_of_time_period_in_subfield_b_or_c': indicator_map1.get(key[3]),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'type_of_time_period_in_subfield_b_or_c': indicator_map1.get(
+            key[3]),
     }
 
 
@@ -1032,9 +1068,13 @@ def form_of_musical_composition_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'form_of_musical_composition_code': utils.force_list(value.get('a')),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4], '_'),
+        'form_of_musical_composition_code': utils.force_list(
+            value.get('a')),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(
+            key[4],
+            '_'),
     }
 
 
@@ -1062,10 +1102,15 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'performer_or_ensemble': utils.force_list(value.get('a')),
-        'soloist': utils.force_list(value.get('b')),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4], '_'),
+        'performer_or_ensemble': utils.force_list(
+            value.get('a')),
+        'soloist': utils.force_list(
+            value.get('b')),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(
+            key[4],
+            '_'),
     }
 
 
@@ -1163,11 +1208,15 @@ def geographic_classification(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'geographic_classification_area_code': value.get('a'),
-        'geographic_classification_subarea_code': utils.force_list(value.get('b')),
-        'populated_place_name': utils.force_list(value.get('d')),
-        'code_source': value.get('2') if key[3] == '7' else indicator_map1.get(key[3]),
+        'geographic_classification_subarea_code': utils.force_list(
+            value.get('b')),
+        'populated_place_name': utils.force_list(
+            value.get('d')),
+        'code_source': value.get('2') if key[3] == '7' else indicator_map1.get(
+            key[3]),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
     }
 
 
@@ -1217,9 +1266,12 @@ def classification_numbers_assigned_in_canada(self, key, value):
         'item_number': value.get('b'),
         'source_of_call_class_number': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'existence_in_lac_collection': indicator_map1.get(key[3]),
-        'type_completeness_source_of_class_call_number': indicator_map2.get(key[4]),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'existence_in_lac_collection': indicator_map1.get(
+            key[3]),
+        'type_completeness_source_of_class_call_number': indicator_map2.get(
+            key[4]),
     }
 
 
@@ -1529,16 +1581,22 @@ def additional_dewey_decimal_classification_number(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'classification_number': utils.force_list(value.get('a')),
-        'classification_number_ending_number_of_span': utils.force_list(value.get('c')),
+        'classification_number': utils.force_list(
+            value.get('a')),
+        'classification_number_ending_number_of_span': utils.force_list(
+            value.get('c')),
         'standard_or_optional_designation': value.get('m'),
         'assigning_agency': value.get('q'),
-        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(value.get('y')),
-        'table_identification': utils.force_list(value.get('z')),
+        'table_sequence_number_for_internal_subarrangement_or_add_table': utils.force_list(
+            value.get('y')),
+        'table_identification': utils.force_list(
+            value.get('z')),
         'edition_number': value.get('2'),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'type_of_edition': indicator_map1.get(key[3]),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'type_of_edition': indicator_map1.get(
+            key[3]),
     }
 
 
@@ -1639,10 +1697,13 @@ def government_document_classification_number(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
-        'canceled_invalid_classification_number': utils.force_list(value.get('z')),
+        'canceled_invalid_classification_number': utils.force_list(
+            value.get('z')),
         'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(value.get('8')),
-        'number_source': value.get('2') if key[3] == '_' else indicator_map1.get(key[3]),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')),
+        'number_source': value.get('2') if key[3] == '_' else indicator_map1.get(
+            key[3]),
     }
 
 
