@@ -12,18 +12,17 @@
 from __future__ import print_function
 
 import os
-import re
-import sys
 
-_html_theme = "sphinx_rtd_theme"
-_html_theme_path = []
-try:
-    import sphinx_rtd_theme
-    _html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-except ImportError:
-    print("`sphinx_rtd_theme` not found, pip install it", file=sys.stderr)
-    _html_theme = "default"
+import sphinx.environment
+from docutils.utils import get_source_line
 
+
+def _warn_node(self, msg, node):
+    """Do not warn on external images."""
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -40,8 +39,10 @@ except ImportError:
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
     'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,7 +59,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'DoJSON'
-copyright = u'2014, Invenio collaboration'
+copyright = u'2014, 2015, 2016, Invenio collaboration'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -66,11 +67,11 @@ copyright = u'2014, Invenio collaboration'
 #
 # The short X.Y version.
 
-with open(os.path.join('..', 'dojson', 'version.py'), 'rt') as f:
-    version = re.search(
-        '__version__\s*=\s*"(?P<version>.*)"\n',
-        f.read()
-    ).group('version')
+# Get the version string. Cannot be done with import!
+g = {}
+with open(os.path.join('..', 'dojson', 'version.py'), 'rt') as fp:
+    exec(fp.read(), g)
+    version = g['__version__']
 
 # The full version, including alpha/beta/rc tags.
 release = version
@@ -118,16 +119,29 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = _html_theme
+html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+
+html_theme_options = {
+    'description': 'DoJSON is a simple Pythonic JSON to JSON converter.',
+    'github_user': 'inveniosoftware',
+    'github_repo': 'dojson',
+    'github_button': False,
+    'github_banner': True,
+    'show_powered_by': False,
+    'travis_button': True,
+    'codecov_button': True,
+    'extra_nav_links': {
+        'DoJSON@GitHub': 'http://github.com/inveniosoftware/dojson',
+        'DoJSON@PyPI': 'http://pypi.python.org/pypi/dojson/',
+    }
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
-html_theme_path = _html_theme_path
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".

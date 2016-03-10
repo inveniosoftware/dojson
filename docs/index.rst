@@ -1,77 +1,45 @@
 ..
   This file is part of DoJSON
-  Copyright (C) 2015 CERN.
+  Copyright (C) 2015, 2016 CERN.
 
   DoJSON is free software; you can redistribute it and/or
   modify it under the terms of the Revised BSD License; see LICENSE
   file for more details.
 
-========
- DoJSON
-========
-.. currentmodule:: dojson
+.. include:: ../README.rst
 
-.. raw:: html
+User's Guide
+------------
 
-    <p style="height:22px; margin:0 0 0 2em; float:right">
-        <a href="https://travis-ci.org/inveniosoftware/dojson">
-            <img src="https://travis-ci.org/inveniosoftware/dojson.png?branch=master"
-                 alt="travis-ci badge"/>
-        </a>
-        <a href="https://coveralls.io/r/inveniosoftware/dojson">
-            <img src="https://coveralls.io/repos/inveniosoftware/dojson/badge.png?branch=master"
-                 alt="coveralls.io badge"/>
-        </a>
-    </p>
+This part of the documentation will show you how to get started in using
+DoJSON.
 
-DoJSON is a simple Pythonic JSON to JSON converter.
+.. toctree::
+   :maxdepth: 2
 
-Installation
-============
+   usage
 
-DoJSON is on PyPI so all you need is:
+API Reference
+-------------
 
-.. code-block:: console
+If you are looking for information on a specific function, class or method,
+this part of the documentation is for you.
 
-    $ pip install dojson
+.. toctree::
+   :maxdepth: 2
 
-Example
-=======
+   api
 
-A simple example on how to convert MARCXML to JSON:
+Additional Notes
+----------------
 
-.. code:: python
+Notes on how to contribute, legal information and changes are here for the
+interested.
 
-    from dojson.contrib.marc21.utils import create_record, split_stream
-    from dojson.contrib.marc21 import marc21
-    [marc21.do(create_record(data)) for data in split_stream(open('/tmp/data.xml', 'r'))]
+.. toctree::
+   :maxdepth: 1
 
-
-API
-===
-
-.. automodule:: dojson
-    :members:
-
-Command line interface
-----------------------
-
-.. automodule:: dojson.cli
-    :members:
-
-Contrib
--------
-
-.. automodule:: dojson.contrib.marc21
-    :members:
-
-.. include:: ../CHANGES.rst
-
-.. include:: ../CONTRIBUTING.rst
-
-.. include:: ../AUTHORS.rst
-
-License
-=======
-
-.. include:: ../LICENSE
+   contributing
+   changes
+   license
+   authors

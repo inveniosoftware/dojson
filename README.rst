@@ -2,6 +2,8 @@
  DoJSON
 ========
 
+.. currentmodule:: dojson
+
 .. image:: https://img.shields.io/travis/inveniosoftware/dojson.svg
         :target: https://travis-ci.org/inveniosoftware/dojson
 
@@ -26,22 +28,39 @@ DoJSON is a simple Pythonic JSON to JSON converter.
 Installation
 ============
 
-DoJSON is on PyPI so all you need is: ::
+DoJSON is on PyPI so all you need is:
 
-  pip install dojson
+.. code-block:: console
+
+    $ pip install dojson
 
 Documentation
 =============
 
-Documentation is readable at http://dojson.readthedocs.org or
-it can be built using Sphinx: ::
+Documentation is readable at https://pythonhosted.org/dojson/ or
+it can be built using Sphinx:
 
-  pip install dojson[docs]
-  python setup.py build_sphinx
+.. code-block:: console
+
+    $ pip install dojson[docs]
+    $ python setup.py build_sphinx
 
 Testing
 =======
 
-Running the test suite is as simple as: ::
+Running the test suite is as simple as:
 
-  python setup.py test
+.. code-block:: console
+
+    $ python setup.py test
+
+Example
+=======
+
+A simple example on how to convert MARCXML to JSON:
+
+.. code:: python
+
+    from dojson.contrib.marc21.utils import create_record, split_stream
+    from dojson.contrib.marc21 import marc21
+    [marc21.do(create_record(data)) for data in split_stream(open('/tmp/data.xml', 'r'))]

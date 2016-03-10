@@ -59,3 +59,5 @@ def process_schema(schema):
             yield item
 
     return processor
+
+__all__ = ('process_do', 'process_missing', 'process_schema')
