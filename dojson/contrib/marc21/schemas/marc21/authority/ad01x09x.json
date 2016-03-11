@@ -154,7 +154,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_standard_number_or_code": {
-                        "enum": ["Unspecified type of standard number or code", "Source specified in subfield $2"]
+                        "type": "string"
                     },
                     "standard_number_or_code": {
                         "type": "string"

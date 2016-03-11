@@ -11,7 +11,7 @@
                         "enum": ["Family name", "Surname", "Forename"]
                     },
                     "thesaurus": {
-                        "enum": ["                  Canadian Subject Headings", "                  Medical Subject Headings", "LC subject headings for children\u0027s literature", "                  Library of Congress Subject Headings", "Source specified in subfield $2", "National Agricultural Library subject authority file", "Source not specified", "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -170,7 +170,7 @@
                         "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "thesaurus": {
-                        "enum": ["                  Canadian Subject Headings", "                  Medical Subject Headings", "LC subject headings for children\u0027s literature", "                  Library of Congress Subject Headings", "Source specified in subfield $2", "National Agricultural Library subject authority file", "Source not specified", "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -326,7 +326,7 @@
                         "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "thesaurus": {
-                        "enum": ["                  Canadian Subject Headings", "                  Medical Subject Headings", "LC subject headings for children\u0027s literature", "                  Library of Congress Subject Headings", "Source specified in subfield $2", "National Agricultural Library subject authority file", "Source not specified", "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -467,7 +467,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["                  Canadian Subject Headings", "                  Medical Subject Headings", "LC subject headings for children\u0027s literature", "                  Library of Congress Subject Headings", "Source specified in subfield $2", "National Agricultural Library subject authority file", "Source not specified", "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -602,7 +602,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "chronological_term": {
                         "type": "string"
@@ -680,7 +680,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "topical_term_or_geographic_name_entry_element": {
                         "type": "string"
@@ -767,7 +767,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "geographic_name": {
                         "type": "string"
@@ -851,7 +851,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "genre_form_term_as_entry_element": {
                         "type": "string"
@@ -929,7 +929,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "medium_of_performance_term_as_entry_element": {
                         "type": "string"
@@ -983,7 +983,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "general_subdivision": {
                         "type": "array",
@@ -1058,7 +1058,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "general_subdivision": {
                         "type": "array",
@@ -1133,7 +1133,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "general_subdivision": {
                         "type": "array",
@@ -1208,7 +1208,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "general_subdivision": {
                         "type": "array",
@@ -1280,7 +1280,7 @@
             "description": "Complex Linking Entry Data",
             "properties": {
                 "thesaurus": {
-                    "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                    "type": "string"
                 },
                 "heading_referred_to": {
                     "type": "array",

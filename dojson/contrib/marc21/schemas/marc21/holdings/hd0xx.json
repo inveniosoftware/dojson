@@ -205,7 +205,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_standard_number_or_code": {
-                        "enum": ["International Standard Music Number", "Source specified in subfield $2", "International Standard Recording Code", "International Article Number", "Unspecified type of standard number or code", "Serial Item and Contribution Identifier", "Universal Product Code"]
+                        "type": "string"
                     },
                     "difference_indicator": {
                         "enum": ["No difference", "Difference", "No information provided"]

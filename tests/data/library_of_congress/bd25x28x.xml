@@ -1163,9 +1163,9 @@
     <datafield tag="270" ind1="2" ind2="7">
       <subfield code="i">Billing address:</subfield>
       <subfield code="a">Sears Credit</subfield>
-      <subfield code="b">7023 Albert Pick Rd.</subfield>
-      <subfield code="c">Greensboro</subfield>
-      <subfield code="d">NC</subfield>
+      <subfield code="a">7023 Albert Pick Rd.</subfield>
+      <subfield code="b">Greensboro</subfield>
+      <subfield code="c">NC</subfield>
       <subfield code="e">27409</subfield>
       <subfield code="d">USA</subfield>
       <subfield code="j">1-800-347-8425</subfield>

@@ -118,7 +118,7 @@
                 "type": "object",
                 "properties": {
                     "national_bibliographic_agency": {
-                        "enum": ["Source specified in subfield $2", "Library and Archives Canada"]
+                        "type": "string"
                     },
                     "record_control_number": {
                         "type": "string"
@@ -297,7 +297,7 @@
                 "type": "object",
                 "properties": {
                     "type_of_standard_number_or_code": {
-                        "enum": ["International Standard Music Number", "Source specified in subfield $2", "International Standard Recording Code", "International Article Number", "Unspecified type of standard number or code", "Serial Item and Contribution Identifier", "Universal Product Code"]
+                        "type": "string"
                     },
                     "difference_indicator": {
                         "enum": ["No difference", "Difference", "No information provided"]
@@ -624,10 +624,10 @@
                 "type": "object",
                 "properties": {
                     "type_of_date_in_subfield_a": {
-                        "enum": ["No date information ", "Range of dates ", "Multiple single dates ", "Single date "]
+                        "enum": ["No date information", "Range of dates", "Multiple single dates", "Single date"]
                     },
                     "type_of_event": {
-                        "enum": ["Broadcast ", "Capture ", "No information provided ", "Finding "]
+                        "enum": ["Broadcast", "Capture", "No information provided", "Finding"]
                     },
                     "formatted_date_time": {
                         "type": "array",

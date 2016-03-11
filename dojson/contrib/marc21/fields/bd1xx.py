@@ -133,7 +133,9 @@ def main_entry_corporate_name(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
-        'location_of_meeting': value.get('c'),
+        'location_of_meeting': utils.force_list(
+            value.get('c')
+        ),
         'subordinate_unit': utils.force_list(
             value.get('b')
         ),
@@ -210,7 +212,9 @@ def main_entry_meeting_name(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
-        'location_of_meeting': value.get('c'),
+        'location_of_meeting': utils.force_list(
+            value.get('c')
+        ),
         'subordinate_unit': utils.force_list(
             value.get('e')
         ),

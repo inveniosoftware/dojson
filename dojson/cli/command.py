@@ -9,6 +9,8 @@
 
 """Define chainable commands for processing loaded data."""
 
+import json
+import os
 import sys
 
 import click
@@ -60,4 +62,36 @@ def process_schema(schema):
 
     return processor
 
-__all__ = ('process_do', 'process_missing', 'process_schema')
+
+@click.command('validate')
+@click.argument('schema')
+def process_validate(schema):
+    """Validate data using given JSON schema."""
+    import jsonschema
+
+    schema_dir = os.path.dirname(os.path.abspath(schema))
+    schema_name = os.path.basename(schema)
+
+    with open(schema) as f:
+        schema_json = json.load(f)
+
+    resolver = jsonschema.RefResolver(
+        'file://' + '/'.join(os.path.split(schema_dir)) + '/', schema_name
+    )
+    validator = jsonschema.Draft4Validator(
+        schema_json, resolver=resolver, types=(('array', (list, tuple)), )
+    )
+
+    def processor(iterator):
+        for item in iterator:
+            validator.validate(item)
+            yield item
+
+    return processor
+
+__all__ = (
+    'process_do',
+    'process_missing',
+    'process_schema',
+    'process_validate',
+)

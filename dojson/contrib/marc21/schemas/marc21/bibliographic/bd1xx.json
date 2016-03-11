@@ -103,7 +103,10 @@
                     "type": "string"
                 },
                 "location_of_meeting": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "subordinate_unit": {
                     "type": "array",
@@ -189,7 +192,10 @@
                     "type": "string"
                 },
                 "location_of_meeting": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "subordinate_unit": {
                     "type": "array",
@@ -269,7 +275,7 @@
             "description": "Main Entry-Uniform Title",
             "properties": {
                 "nonfiling_characters": {
-                    "enum": ["Number of nonfiling characters"]
+                    "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                 },
                 "uniform_title": {
                     "type": "string"

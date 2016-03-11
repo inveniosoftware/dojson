@@ -191,16 +191,16 @@ def heading_meeting_name(self, key, value):
 def heading_uniform_title(self, key, value):
     """Heading-Uniform Title."""
     indicator_map2 = {
-        "0": "Number of nonfiling characters",
-        "1": "Number of nonfiling characters",
-        "2": "Number of nonfiling characters",
-        "3": "Number of nonfiling characters",
-        "4": "Number of nonfiling characters",
-        "5": "Number of nonfiling characters",
-        "6": "Number of nonfiling characters",
-        "7": "Number of nonfiling characters",
-        "8": "Number of nonfiling characters",
-        "9": "Number of nonfiling characters"}
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9"}
     return {
         'uniform_title': value.get('a'),
         'general_subdivision': utils.force_list(

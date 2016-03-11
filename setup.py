@@ -38,6 +38,9 @@ extras_require = {
     'docs': [
         'Sphinx>=1.3',
     ],
+    'jsonschema': [
+        'jsonschema>=2.5.1',
+    ],
     'tests': tests_require,
 }
 
@@ -143,6 +146,7 @@ setup(
             'do = dojson.cli.command:process_do',
             'missing = dojson.cli.command:process_missing',
             'schema = dojson.cli.command:process_schema',
+            'validate = dojson.cli.command:process_validate',
         ],
         'dojson.cli.rule': [
             'marc21 = dojson.contrib.marc21:marc21',

@@ -12,6 +12,7 @@
 import codecs
 import os
 
+import pkg_resources
 import pytest
 import simplejson as json
 from click.testing import CliRunner
@@ -59,18 +60,24 @@ def test_xml_to_marc21_to_xml(file_name):
     path = os.path.dirname(__file__)
     # Open explicitly as UTF-8 for Python 2.7 compatibility
     with codecs.open(
-            '{0}/data/{1}'.format(path, file_name),
+            os.path.join(path, 'data', file_name),
             'r',
             'utf-8') as myfile:
         expect = myfile.read()
 
+    schema = pkg_resources.resource_filename(
+        'dojson.contrib.marc21.schemas',
+        'marc21/bibliographic/bd-v1.0.0.json'
+    )
+
     runner = CliRunner()
     result = runner.invoke(
         cli.cli, [
-            '-i', '{0}/data/{1}'.format(path, file_name),
+            '-i', os.path.join(path, 'data', file_name),
             '-l', 'marcxml',
             '-d', 'marcxml',
             'do', 'marc21',
+            'validate', schema,
             'do', 'to_marc21',
         ]
     )

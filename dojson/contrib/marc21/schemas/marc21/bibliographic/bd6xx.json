@@ -11,7 +11,7 @@
                         "enum": ["Family name", "Surname", "Forename"]
                     },
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -158,7 +158,7 @@
                         "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -299,7 +299,7 @@
                         "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
                     },
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -425,10 +425,10 @@
                 "type": "object",
                 "properties": {
                     "nonfiling_characters": {
-                        "enum": ["Number of nonfiling characters"]
+                        "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                     },
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "authority_record_control_number_or_standard_number": {
                         "type": "array",
@@ -557,7 +557,7 @@
                         "enum": ["Date or time period of creation or origin", "No information provided", "Date or time period covered or depicted"]
                     },
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings", "R\u00c3\u00a9pertoire de vedettes-mati\u00c3\u00a8re"]
+                        "type": "string"
                     },
                     "chronological_term": {
                         "type": "string"
@@ -620,7 +620,7 @@
                         "enum": ["No level specified", "Primary", "No information provided", "Secondary"]
                     },
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "topical_term_or_geographic_name_entry_element": {
                         "type": "string"
@@ -701,7 +701,7 @@
                 "type": "object",
                 "properties": {
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "geographic_name": {
                         "type": "string"
@@ -887,7 +887,7 @@
                         "enum": ["Faceted", "Basic"]
                     },
                     "thesaurus": {
-                        "enum": ["Source specified in subfield $2", "LC subject headings for children\u0027s literature", "National Agricultural Library subject authority file", "Canadian Subject Headings", "R\u00e9pertoire de vedettes-mati\u00e8re", "Medical Subject Headings", "Source not specified", "Library of Congress Subject Headings"]
+                        "type": "string"
                     },
                     "genre_form_data_or_focus_term": {
                         "type": "string"

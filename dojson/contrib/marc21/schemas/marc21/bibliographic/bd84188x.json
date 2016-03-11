@@ -29,7 +29,7 @@
                 "type": "object",
                 "properties": {
                     "shelving_scheme": {
-                        "enum": ["No information provided", "Dewey Decimal classification", "Title", "Shelved separately", "Source specified in subfield $2", "Shelving control number", "Superintendent of Documents classification", "Other scheme", "Library of Congress classification", "National Library of Medicine classification"]
+                        "type": "string"
                     },
                     "shelving_order": {
                         "enum": ["No information provided", "Primary enumeration", "Not enumeration", "Alternative enumeration"]

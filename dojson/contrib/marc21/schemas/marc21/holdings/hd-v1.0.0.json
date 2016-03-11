@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "anyOf": [
+    "allOf": [
         {"$ref": "hd00x.json"},
         {"$ref": "hd0xx.json"},
         {"$ref": "hd3xx5xx84x.json"},
