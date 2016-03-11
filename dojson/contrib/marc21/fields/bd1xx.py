@@ -247,7 +247,7 @@ def main_entry_meeting_name(self, key, value):
     }
 
 
-@marc21.over('main_entry_uniform_title', '^130[_1032547698].')
+@marc21.over('main_entry_uniform_title', '^130[_0-9]_')
 @utils.for_each_value
 @utils.filter_values
 def main_entry_uniform_title(self, key, value):
@@ -312,5 +312,5 @@ def main_entry_uniform_title(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'nonfiling_characters': key[3] if key[3] else '_',
+        'nonfiling_characters': utils.int_with_default(key[3], '_'),
     }
