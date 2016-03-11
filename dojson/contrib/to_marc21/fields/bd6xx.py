@@ -27,12 +27,12 @@ def reverse_subject_added_entry_personal_name(self, key, value):
 
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00e9pertoire de vedettes-mati\u00e8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7',
     }
 
@@ -154,12 +154,12 @@ def reverse_subject_added_entry_corporate_name(self, key, value):
     }
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00e9pertoire de vedettes-mati\u00e8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7',
     }
 
@@ -277,12 +277,12 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
     }
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00e9pertoire de vedettes-mati\u00e8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7',
     }
 
@@ -389,12 +389,12 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
 
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00e9pertoire de vedettes-mati\u00e8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7'
     }
 
@@ -505,12 +505,12 @@ def reverse_subject_added_entry_chronological_term(self, key, value):
 
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00c3\u00a9pertoire de vedettes-mati\u00c3\u00a8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7'
     }
 
@@ -572,12 +572,12 @@ def reverse_subject_added_entry_topical_term(self, key, value):
 
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00e9pertoire de vedettes-mati\u00e8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7',
     }
 
@@ -653,12 +653,12 @@ def reverse_subject_added_entry_geographic_name(self, key, value):
     """Reverse - Subject Added Entry-Geographic Name."""
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's' literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00e9pertoire de vedettes-mati\u00e8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7'
     }
 
@@ -848,12 +848,12 @@ def reverse_index_term_genre_form(self, key, value):
 
     indicator_map2 = {
         'Library of Congress Subject Headings': '0',
-        'LC subject headings for children\u0027s literature': '1',
+        "LC subject headings for children's literature": '1',
         'Medical Subject Headings': '2',
         'National Agricultural Library subject authority file': '3',
         'Source not specified': '4',
         'Canadian Subject Headings': '5',
-        'R\u00e9pertoire de vedettes-mati\u00e8re': '6',
+        'Répertoire de vedettes-matière': '6',
         'Source specified in subfield $2': '7'
     }
 

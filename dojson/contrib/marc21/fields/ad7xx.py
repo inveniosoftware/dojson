@@ -23,13 +23,13 @@ def established_heading_linking_entry_personal_name(self, key, value):
     """Established Heading Linking Entry-Personal Name."""
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     indicator_map2 = {
-        "0": "                  Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
-        "2": "                  Medical Subject Headings",
+        "0": "Library of Congress Subject Headings",
+        "1": "LC subject headings for children's literature",
+        "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
-        "5": "                  Canadian Subject Headings",
-        "6": "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "5": "Canadian Subject Headings",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'authority_record_control_number_or_standard_number': utils.force_list(
@@ -114,13 +114,13 @@ def established_heading_linking_entry_corporate_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     indicator_map2 = {
-        "0": "                  Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
-        "2": "                  Medical Subject Headings",
+        "0": "Library of Congress Subject Headings",
+        "1": "LC subject headings for children's literature",
+        "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
-        "5": "                  Canadian Subject Headings",
-        "6": "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "5": "Canadian Subject Headings",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'authority_record_control_number_or_standard_number': utils.force_list(
@@ -205,34 +205,47 @@ def established_heading_linking_entry_meeting_name(self, key, value):
         "1": "Jurisdiction name",
         "2": "Name in direct order"}
     indicator_map2 = {
-        "0": "                  Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
-        "2": "                  Medical Subject Headings",
+        "0": "Library of Congress Subject Headings",
+        "1": "LC subject headings for children's literature",
+        "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
-        "5": "                  Canadian Subject Headings",
-        "6": "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "5": "Canadian Subject Headings",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')), 'source_of_heading_or_term': value.get('2'), 'institution_to_which_field_applies': utils.force_list(
-            value.get('5')), 'relationship_code': utils.force_list(
-                value.get('4')), 'linkage': value.get('6'), 'field_link_and_sequence_number': utils.force_list(
-                    value.get('8')), 'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'), 'location_of_meeting': utils.force_list(
-                        value.get('c')), 'subordinate_unit': utils.force_list(
-                            value.get('e')), 'date_of_meeting': value.get('d'), 'miscellaneous_information': utils.force_list(
-                                value.get('g')), 'date_of_a_work': value.get('f'), 'relationship_information': utils.force_list(
-                                    value.get('i')), 'medium': value.get('h'), 'form_subheading': utils.force_list(
-                                        value.get('k')), 'relator_term': utils.force_list(
-                                            value.get('j')), 'language_of_a_work': value.get('l'), 'number_of_part_section_meeting': utils.force_list(
-                                                value.get('n')), 'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'), 'name_of_part_section_of_a_work': utils.force_list(
-                                                    value.get('p')), 'version': value.get('s'), 'title_of_a_work': value.get('t'), 'control_subfield': value.get('w'), 'form_subdivision': utils.force_list(
-                                                        value.get('v')), 'chronological_subdivision': utils.force_list(
-                                                            value.get('y')), 'general_subdivision': utils.force_list(
-                                                                value.get('x')), 'geographic_subdivision': utils.force_list(
-                                                                    value.get('z')), 'type_of_meeting_name_entry_element': indicator_map1.get(
-                                                                        key[3]), 'thesaurus': indicator_map2.get(
-                                                                            key[4]), }
+            value.get('0')
+        ),
+        'source_of_heading_or_term': value.get('2'),
+        'institution_to_which_field_applies': utils.force_list(value.get('5')),
+        'relationship_code': utils.force_list(value.get('4')),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(value.get('8')),
+        'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': utils.force_list(value.get('c')),
+        'subordinate_unit': utils.force_list(value.get('e')),
+        'date_of_meeting': value.get('d'),
+        'miscellaneous_information': utils.force_list(value.get('g')),
+        'date_of_a_work': value.get('f'),
+        'relationship_information': utils.force_list(value.get('i')),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(value.get('k')),
+        'relator_term': utils.force_list(value.get('j')),
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(value.get('n')),
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'name_of_part_section_of_a_work': utils.force_list(value.get('p')),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
+        'control_subfield': value.get('w'),
+        'form_subdivision': utils.force_list(value.get('v')),
+        'chronological_subdivision': utils.force_list(value.get('y')),
+        'general_subdivision': utils.force_list(value.get('x')),
+        'geographic_subdivision': utils.force_list(value.get('z')),
+        'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
+        'thesaurus': indicator_map2.get(key[4]),
+    }
 
 
 @marc21_authority.over(
@@ -243,13 +256,13 @@ def established_heading_linking_entry_meeting_name(self, key, value):
 def established_heading_linking_entry_uniform_title(self, key, value):
     """Established Heading Linking Entry-Uniform Title."""
     indicator_map2 = {
-        "0": "                  Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
-        "2": "                  Medical Subject Headings",
+        "0": "Library of Congress Subject Headings",
+        "1": "LC subject headings for children's literature",
+        "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
-        "5": "                  Canadian Subject Headings",
-        "6": "                  R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "5": "Canadian Subject Headings",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'authority_record_control_number_or_standard_number': utils.force_list(
@@ -321,12 +334,12 @@ def established_heading_linking_entry_chronological_term(self, key, value):
     """Established Heading Linking Entry-Chronological Term."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'chronological_term': value.get('a'),
@@ -373,12 +386,12 @@ def established_heading_linking_entry_topical_term(self, key, value):
     """Established Heading Linking Entry-Topical Term."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'topical_term_or_geographic_name_entry_element': value.get('a'),
@@ -429,12 +442,12 @@ def established_heading_linking_entry_geographic_name(self, key, value):
     """Established Heading Linking Entry-Geographic Name."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'geographic_name': value.get('a'),
@@ -484,12 +497,12 @@ def established_heading_linking_entry_genre_form_term(self, key, value):
     """Established Heading Linking Entry-Genre/Form Term."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'genre_form_term_as_entry_element': value.get('a'),
@@ -539,12 +552,12 @@ def established_heading_linking_entry_medium_of_performance_term(
     """Established Heading Linking Entry-Medium of Performance Term."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'medium_of_performance_term_as_entry_element': value.get('a'),
@@ -579,12 +592,12 @@ def subdivision_linking_entry_general_subdivision(self, key, value):
     """Subdivision Linking Entry-General Subdivision."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'general_subdivision': utils.force_list(
@@ -630,12 +643,12 @@ def subdivision_linking_entry_geographic_subdivision(self, key, value):
     """Subdivision Linking Entry-Geographic Subdivision."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'general_subdivision': utils.force_list(
@@ -681,12 +694,12 @@ def subdivision_linking_entry_chronological_subdivision(self, key, value):
     """Subdivision Linking Entry-Chronological Subdivision."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'general_subdivision': utils.force_list(
@@ -732,12 +745,12 @@ def subdivision_linking_entry_form_subdivision(self, key, value):
     """Subdivision Linking Entry-Form Subdivision."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'general_subdivision': utils.force_list(
@@ -780,12 +793,12 @@ def complex_linking_entry_data(self, key, value):
     """Complex Linking Entry Data."""
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
-        "1": "LC subject headings for children\u0027s literature",
+        "1": "LC subject headings for children's literature",
         "2": "Medical Subject Headings",
         "3": "National Agricultural Library subject authority file",
         "4": "Source not specified",
         "5": "Canadian Subject Headings",
-        "6": "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re",
+        "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
         'heading_referred_to': utils.force_list(
