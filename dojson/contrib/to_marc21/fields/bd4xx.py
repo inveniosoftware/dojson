@@ -14,6 +14,7 @@ from dojson import utils
 from ..model import to_marc21
 
 
+@utils.deprecated('deprecated datafield: https://www.loc.gov/marc/bibliographic/bdapndxh.html')
 @to_marc21.over('400', '^series_statement_added_entry_personal_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
@@ -82,6 +83,7 @@ def reverse_series_statement_added_entry_personal_name(self, key, value):
     }
 
 
+@utils.deprecated('deprecated datafield: https://www.loc.gov/marc/bibliographic/bdapndxh.html')
 @to_marc21.over('410', '^series_statement_added_entry_corporate_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
@@ -158,6 +160,7 @@ def reverse_series_statement_added_entry_corporate_name(self, key, value):
     }
 
 
+@utils.deprecated('deprecated datafield: https://www.loc.gov/marc/bibliographic/bdapndxh.html')
 @to_marc21.over('411', '^series_statement_added_entry_meeting_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
@@ -234,6 +237,7 @@ def reverse_series_statement_added_entry_meeting_name(self, key, value):
     }
 
 
+@utils.deprecated('deprecated datafield: https://www.loc.gov/marc/bibliographic/bdapndxh.html')
 @to_marc21.over('440', '^series_statement_added_entry_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
