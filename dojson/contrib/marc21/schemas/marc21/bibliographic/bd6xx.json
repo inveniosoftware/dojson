@@ -3,6 +3,7 @@
     "properties": {
         "subject_added_entry_personal_name": {
             "description": "Subject Added Entry-Personal Name",
+            "tag": "600",
             "type": "array",
             "items": {
                 "type": "object",
@@ -150,6 +151,7 @@
         },
         "subject_added_entry_corporate_name": {
             "description": "Subject Added Entry-Corporate Name",
+            "tag": "610",
             "type": "array",
             "items": {
                 "type": "object",
@@ -291,6 +293,7 @@
         },
         "subject_added_entry_meeting_name": {
             "description": "Subject Added Entry-Meeting Name",
+            "tag": "611",
             "type": "array",
             "items": {
                 "type": "object",
@@ -420,6 +423,7 @@
         },
         "subject_added_entry_uniform_title": {
             "description": "Subject Added Entry-Uniform Title",
+            "tag": "630",
             "type": "array",
             "items": {
                 "type": "object",
@@ -549,6 +553,7 @@
         },
         "subject_added_entry_chronological_term": {
             "description": "Subject Added Entry-Chronological Term",
+            "tag": "648",
             "type": "array",
             "items": {
                 "type": "object",
@@ -612,6 +617,7 @@
         },
         "subject_added_entry_topical_term": {
             "description": "Subject Added Entry-Topical Term",
+            "tag": "650",
             "type": "array",
             "items": {
                 "type": "object",
@@ -696,6 +702,7 @@
         },
         "subject_added_entry_geographic_name": {
             "description": "Subject Added Entry-Geographic Name",
+            "tag": "651",
             "type": "array",
             "items": {
                 "type": "object",
@@ -768,6 +775,7 @@
         },
         "index_term_uncontrolled": {
             "description": "Index Term-Uncontrolled",
+            "tag": "653",
             "type": "array",
             "items": {
                 "type": "object",
@@ -798,6 +806,7 @@
         },
         "subject_added_entry_faceted_topical_terms": {
             "description": "Subject Added Entry-Faceted Topical Terms",
+            "tag": "654",
             "type": "array",
             "items": {
                 "type": "object",
@@ -879,6 +888,7 @@
         },
         "index_term_genre_form": {
             "description": "Index Term-Genre/Form",
+            "tag": "655",
             "type": "array",
             "items": {
                 "type": "object",
@@ -957,6 +967,7 @@
         },
         "index_term_occupation": {
             "description": "Index Term-Occupation",
+            "tag": "656",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1017,6 +1028,7 @@
         },
         "index_term_function": {
             "description": "Index Term-Function",
+            "tag": "657",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1074,6 +1086,7 @@
         },
         "index_term_curriculum_objective": {
             "description": "Index Term-Curriculum Objective",
+            "tag": "658",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1110,6 +1123,7 @@
         },
         "subject_added_entry_hierarchical_place_name": {
             "description": "Subject Added Entry-Hierarchical Place Name",
+            "tag": "662",
             "type": "array",
             "items": {
                 "type": "object",

@@ -3,6 +3,7 @@
     "properties": {
         "series_added_entry_personal_name": {
             "description": "Series Added Entry-Personal Name",
+            "tag": "800",
             "type": "array",
             "items": {
                 "type": "object",
@@ -141,6 +142,7 @@
         },
         "series_added_entry_corporate_name": {
             "description": "Series Added Entry-Corporate Name",
+            "tag": "810",
             "type": "array",
             "items": {
                 "type": "object",
@@ -273,6 +275,7 @@
         },
         "series_added_entry_meeting_name": {
             "description": "Series Added Entry-Meeting Name",
+            "tag": "811",
             "type": "array",
             "items": {
                 "type": "object",
@@ -393,6 +396,7 @@
         },
         "series_added_entry_uniform_title": {
             "description": "Series Added Entry-Uniform Title",
+            "tag": "830",
             "type": "array",
             "items": {
                 "type": "object",

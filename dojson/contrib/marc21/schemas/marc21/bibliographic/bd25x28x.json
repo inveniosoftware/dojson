@@ -3,6 +3,7 @@
     "properties": {
         "edition_statement": {
             "description": "Edition Statement",
+            "tag": "250",
             "type": "array",
             "items": {
                 "type": "object",
@@ -30,6 +31,7 @@
         },
         "musical_presentation_statement": {
             "description": "Musical Presentation Statement",
+            "tag": "254",
             "properties": {
                 "musical_presentation_statement": {
                     "type": "string"
@@ -47,6 +49,7 @@
         },
         "cartographic_mathematical_data": {
             "description": "Cartographic Mathematical Data",
+            "tag": "255",
             "type": "array",
             "items": {
                 "type": "object",
@@ -86,6 +89,7 @@
         },
         "computer_file_characteristics": {
             "description": "Computer File Characteristics",
+            "tag": "256",
             "properties": {
                 "computer_file_characteristics": {
                     "type": "string"
@@ -103,6 +107,7 @@
         },
         "country_of_producing_entity": {
             "description": "Country of Producing Entity",
+            "tag": "257",
             "type": "array",
             "items": {
                 "type": "object",
@@ -130,6 +135,7 @@
         },
         "philatelic_issue_data": {
             "description": "Philatelic Issue Data",
+            "tag": "258",
             "type": "array",
             "items": {
                 "type": "object",
@@ -154,6 +160,7 @@
         },
         "publication_distribution_imprint": {
             "description": "Publication, Distribution, etc. (Imprint)",
+            "tag": "260",
             "type": "array",
             "items": {
                 "type": "object",
@@ -287,6 +294,7 @@
         },
         "projected_publication_date": {
             "description": "Projected Publication Date",
+            "tag": "263",
             "properties": {
                 "projected_publication_date": {
                     "type": "string"
@@ -304,6 +312,7 @@
         },
         "production_publication_distribution_manufacture_and_copyright_notice": {
             "description": "Production, Publication, Distribution, Manufacture, and Copyright Notice",
+            "tag": "264",
             "type": "array",
             "items": {
                 "type": "object",
@@ -349,6 +358,7 @@
         },
         "address": {
             "description": "Address",
+            "tag": "270",
             "type": "array",
             "items": {
                 "type": "object",

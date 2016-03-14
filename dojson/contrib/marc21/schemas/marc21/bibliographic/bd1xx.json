@@ -3,6 +3,7 @@
     "properties": {
         "main_entry_personal_name": {
             "description": "Main Entry-Personal Name",
+            "tag": "100",
             "properties": {
                 "type_of_personal_name_entry_element": {
                     "enum": ["Family name", "Surname", "Forename"]
@@ -95,6 +96,7 @@
         },
         "main_entry_corporate_name": {
             "description": "Main Entry-Corporate Name",
+            "tag": "110",
             "properties": {
                 "type_of_corporate_name_entry_element": {
                     "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
@@ -184,6 +186,7 @@
         },
         "main_entry_meeting_name": {
             "description": "Main Entry-Meeting Name",
+            "tag": "111",
             "properties": {
                 "type_of_meeting_name_entry_element": {
                     "enum": ["Inverted name", "Jurisdiction name", "Name in direct order"]
@@ -273,6 +276,7 @@
         },
         "main_entry_uniform_title": {
             "description": "Main Entry-Uniform Title",
+            "tag": "130",
             "properties": {
                 "nonfiling_characters": {
                     "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

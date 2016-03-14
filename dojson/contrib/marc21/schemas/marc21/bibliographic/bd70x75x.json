@@ -3,6 +3,7 @@
     "properties": {
         "added_entry_personal_name": {
             "description": "Added Entry-Personal Name",
+            "tag": "700",
             "type": "array",
             "items": {
                 "type": "object",
@@ -135,6 +136,7 @@
         },
         "added_entry_corporate_name": {
             "description": "Added Entry-Corporate Name",
+            "tag": "710",
             "type": "array",
             "items": {
                 "type": "object",
@@ -261,6 +263,7 @@
         },
         "added_entry_meeting_name": {
             "description": "Added Entry-Meeting Name",
+            "tag": "711",
             "type": "array",
             "items": {
                 "type": "object",
@@ -375,6 +378,7 @@
         },
         "added_entry_uncontrolled_name": {
             "description": "Added Entry-Uncontrolled Name",
+            "tag": "720",
             "type": "array",
             "items": {
                 "type": "object",
@@ -411,6 +415,7 @@
         },
         "added_entry_uniform_title": {
             "description": "Added Entry-Uniform Title",
+            "tag": "730",
             "type": "array",
             "items": {
                 "type": "object",
@@ -513,6 +518,7 @@
         },
         "added_entry_uncontrolled_related_analytical_title": {
             "description": "Added Entry-Uncontrolled Related/Analytical Title",
+            "tag": "740",
             "type": "array",
             "items": {
                 "type": "object",
@@ -558,6 +564,7 @@
         },
         "added_entry_geographic_name": {
             "description": "Added Entry-Geographic Name",
+            "tag": "751",
             "type": "array",
             "items": {
                 "type": "object",
@@ -603,6 +610,7 @@
         },
         "added_entry_hierarchical_place_name": {
             "description": "Added Entry-Hierarchical Place Name",
+            "tag": "752",
             "type": "array",
             "items": {
                 "type": "object",
@@ -666,6 +674,7 @@
         },
         "system_details_access_to_computer_files": {
             "description": "System Details Access to Computer Files",
+            "tag": "753",
             "type": "array",
             "items": {
                 "type": "object",
@@ -693,6 +702,7 @@
         },
         "added_entry_taxonomic_identification": {
             "description": "Added Entry-Taxonomic Identification",
+            "tag": "754",
             "type": "array",
             "items": {
                 "type": "object",

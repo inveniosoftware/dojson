@@ -11,6 +11,7 @@
 
 import codecs
 import functools
+import warnings
 from collections import Counter, OrderedDict
 
 import simplejson as json
@@ -102,6 +103,18 @@ def load(stream):
 def dump(iterator):
     """Dump JSON from iteraror."""
     return json.dumps(list(iterator))
+
+
+def deprecated(explanation):
+    """Decorate as deprecated."""
+    def decorator(f):
+        @functools.wraps(f)
+        def wrapper(self, key, values, **kwargs):
+            warnings.warn('{0}: {1}'.format(key, explanation),
+                          DeprecationWarning)
+            return f(self, key, values, **kwargs)
+
+    return decorator
 
 
 def map_order(field_map, value):

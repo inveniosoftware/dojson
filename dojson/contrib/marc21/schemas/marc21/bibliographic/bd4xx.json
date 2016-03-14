@@ -327,6 +327,7 @@
         },
         "series_statement": {
             "description": "Series Statement",
+            "tag": "490",
             "type": "array",
             "items": {
                 "type": "object",
