@@ -734,6 +734,48 @@
                 }
             }
         },
+        "format_of_notated_music": {
+            "description": "Format of Notated Music",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "format_of_notated_music_term": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "format_of_notated_music_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authority_record_control_number_or_standard_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_term": {
+                        "type": "string"
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "organization_and_arrangement_of_materials": {
             "description": "Organization and Arrangement of Materials",
             "type": "array",
@@ -1126,6 +1168,69 @@
                 }
             }
         },
+        "associated_place": {
+            "description": "Associated Place",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "associated_country": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "other_associated_place": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "place_of_origin_of_work": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "start_period": {
+                        "type": "string"
+                    },
+                    "end_period": {
+                        "type": "string"
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authority_record_control_number_or_standard_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_term": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "associated_language": {
             "description": "Associated Language",
             "type": "array",
@@ -1469,6 +1574,45 @@
                         "items": {
                             "type": "string"
                         }
+                    }
+                }
+            }
+        },
+        "time_period_of_creation": {
+            "description": "Time Period of Creation",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "time_period_of_creation_term": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authority_record_control_number_or_standard_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_term": {
+                        "type": "string"
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "type_of_time_period": {
+                        "type" : "string"
                     }
                 }
             }

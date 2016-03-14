@@ -677,8 +677,8 @@ def digital_file_characteristics(self, key, value):
 @marc21.over('format_of_notated_music', '^348__')
 @utils.for_each_value
 @utils.filter_values
-def reverse_digital_file_characteristics(self, key, value):
-    """Reverse - Digital File Characteristics."""
+def format_of_notated_music(self, key, value):
+    """Format of Notated Music."""
     field_map = {
         'a': 'format_of_notated_music_term',
         'b': 'format_of_notated_music_code',
@@ -1080,6 +1080,7 @@ def trade_availability_information(self, key, value):
 @utils.for_each_value
 @utils.filter_values
 def associated_place(self, key, value):
+    """Associated Place."""
     field_map = {
         'c': 'associated_country',
         'f': 'other_associated_place',
@@ -1469,8 +1470,8 @@ def creator_contributor_characteristics(self, key, value):
 @marc21.over('time_period_of_creation', '^388[_12]_')
 @utils.for_each_value
 @utils.filter_values
-def creator_contributor_characteristics(self, key, value):
-    """Creator/Contributor Characteristics."""
+def time_period_of_creation(self, key, value):
+    """Time Period of Creation."""
     indicator_map1 = {
         '_': 'No information provided',
         '1': 'Creation of work',
