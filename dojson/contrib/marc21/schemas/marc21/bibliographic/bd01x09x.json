@@ -3,6 +3,7 @@
     "properties": {
         "library_of_congress_control_number": {
             "description": "Library of Congress Control Number",
+            "tag": "010",
             "properties": {
                 "lc_control_number": {
                     "type": "string"
@@ -29,6 +30,7 @@
         },
         "patent_control_information": {
             "description": "Patent Control Information",
+            "tag": "013",
             "type": "array",
             "items": {
                 "type": "object",
@@ -74,6 +76,7 @@
         },
         "national_bibliography_number": {
             "description": "National Bibliography Number",
+            "tag": "015",
             "type": "array",
             "items": {
                 "type": "object",
@@ -113,6 +116,7 @@
         },
         "national_bibliographic_agency_control_number": {
             "description": "National Bibliographic Agency Control Number",
+            "tag": "016",
             "type": "array",
             "items": {
                 "type": "object",
@@ -143,6 +147,7 @@
         },
         "copyright_or_legal_deposit_number": {
             "description": "Copyright or Legal Deposit Number",
+            "tag": "017",
             "type": "array",
             "items": {
                 "type": "object",
@@ -188,6 +193,7 @@
         },
         "copyright_article_fee_code": {
             "description": "Copyright Article-Fee Code",
+            "tag": "018",
             "properties": {
                 "copyright_article_fee_code_nr": {
                     "type": "array",
@@ -208,6 +214,7 @@
         },
         "international_standard_book_number": {
             "description": "International Standard Book Number",
+            "tag": "020",
             "type": "array",
             "items": {
                 "type": "object",
@@ -244,6 +251,7 @@
         },
         "international_standard_serial_number": {
             "description": "International Standard Serial Number",
+            "tag": "022",
             "type": "array",
             "items": {
                 "type": "object",
@@ -292,6 +300,7 @@
         },
         "other_standard_identifier": {
             "description": "Other Standard Identifier",
+            "tag": "024",
             "type": "array",
             "items": {
                 "type": "object",
@@ -340,6 +349,7 @@
         },
         "overseas_acquisition_number": {
             "description": "Overseas Acquisition Number",
+            "tag": "025",
             "type": "array",
             "items": {
                 "type": "object",
@@ -361,6 +371,7 @@
         },
         "fingerprint_identifier": {
             "description": "Fingerprint Identifier",
+            "tag": "026",
             "type": "array",
             "items": {
                 "type": "object",
@@ -406,6 +417,7 @@
         },
         "standard_technical_report_number": {
             "description": "Standard Technical Report Number",
+            "tag": "027",
             "type": "array",
             "items": {
                 "type": "object",
@@ -439,6 +451,7 @@
         },
         "publisher_number": {
             "description": "Publisher Number",
+            "tag": "028",
             "type": "array",
             "items": {
                 "type": "object",
@@ -475,6 +488,7 @@
         },
         "coden_designation": {
             "description": "CODEN Designation",
+            "tag": "030",
             "type": "array",
             "items": {
                 "type": "object",
@@ -502,6 +516,7 @@
         },
         "musical_incipits_information": {
             "description": "Musical Incipits Information",
+            "tag": "031",
             "type": "array",
             "items": {
                 "type": "object",
@@ -595,6 +610,7 @@
         },
         "postal_registration_number": {
             "description": "Postal Registration Number",
+            "tag": "032",
             "type": "array",
             "items": {
                 "type": "object",
@@ -619,6 +635,7 @@
         },
         "date_time_and_place_of_an_event": {
             "description": "Date/Time and Place of an Event",
+            "tag": "033",
             "type": "array",
             "items": {
                 "type": "object",
@@ -682,6 +699,7 @@
         },
         "coded_cartographic_mathematical_data": {
             "description": "Coded Cartographic Mathematical Data",
+            "tag": "034",
             "type": "array",
             "items": {
                 "type": "object",
@@ -790,6 +808,7 @@
         },
         "system_control_number": {
             "description": "System Control Number",
+            "tag": "035",
             "type": "array",
             "items": {
                 "type": "object",
@@ -817,6 +836,7 @@
         },
         "original_study_number_for_computer_data_files": {
             "description": "Original Study Number for Computer Data Files",
+            "tag": "036",
             "properties": {
                 "original_study_number": {
                     "type": "string"
@@ -837,6 +857,7 @@
         },
         "source_of_acquisition": {
             "description": "Source of Acquisition",
+            "tag": "037",
             "type": "array",
             "items": {
                 "type": "object",
@@ -885,6 +906,7 @@
         },
         "record_content_licensor": {
             "description": "Record Content Licensor",
+            "tag": "038",
             "properties": {
                 "record_content_licensor": {
                     "type": "string"
@@ -902,6 +924,7 @@
         },
         "cataloging_source": {
             "description": "Cataloging Source",
+            "tag": "040",
             "properties": {
                 "original_cataloging_agency": {
                     "type": "string"
@@ -937,6 +960,7 @@
         },
         "language_code": {
             "description": "Language Code",
+            "tag": "041",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1027,6 +1051,7 @@
         },
         "authentication_code": {
             "description": "Authentication Code",
+            "tag": "042",
             "properties": {
                 "authentication_code": {
                     "type": "array",
@@ -1038,6 +1063,7 @@
         },
         "geographic_area_code": {
             "description": "Geographic Area Code",
+            "tag": "043",
             "properties": {
                 "geographic_area_code": {
                     "type": "array",
@@ -1082,6 +1108,7 @@
         },
         "country_of_publishing_producing_entity_code": {
             "description": "Country of Publishing/Producing Entity Code",
+            "tag": "044",
             "properties": {
                 "marc_country_code": {
                     "type": "array",
@@ -1120,6 +1147,7 @@
         },
         "time_period_of_content": {
             "description": "Time Period of Content",
+            "tag": "045",
             "properties": {
                 "type_of_time_period_in_subfield_b_or_c": {
                     "enum": ["Subfield $b or $c not present", "Range of dates/times", "Single date/time", "Multiple single dates/times"]
@@ -1155,6 +1183,7 @@
         },
         "special_coded_dates": {
             "description": "Special Coded Dates",
+            "tag": "046",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1212,6 +1241,7 @@
         },
         "form_of_musical_composition_code": {
             "description": "Form of Musical Composition Code",
+            "tag": "047",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1236,6 +1266,7 @@
         },
         "number_of_musical_instruments_or_voices_code": {
             "description": "Number of Musical Instruments or Voices Code",
+            "tag": "048",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1266,6 +1297,7 @@
         },
         "library_of_congress_call_number": {
             "description": "Library of Congress Call Number",
+            "tag": "050",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1302,6 +1334,7 @@
         },
         "library_of_congress_copy_issue_offprint_statement": {
             "description": "Library of Congress Copy, Issue, Offprint Statement",
+            "tag": "051",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1326,6 +1359,7 @@
         },
         "geographic_classification": {
             "description": "Geographic Classification",
+            "tag": "052",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1362,6 +1396,7 @@
         },
         "classification_numbers_assigned_in_canada": {
             "description": "Classification Numbers Assigned in Canada",
+            "tag": "055",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1395,6 +1430,7 @@
         },
         "national_library_of_medicine_call_number": {
             "description": "National Library of Medicine Call Number",
+            "tag": "060",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1425,6 +1461,7 @@
         },
         "national_library_of_medicine_copy_statement": {
             "description": "National Library of Medicine Copy Statement",
+            "tag": "061",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1452,6 +1489,7 @@
         },
         "character_sets_present": {
             "description": "Character Sets Present",
+            "tag": "066",
             "properties": {
                 "primary_g0_character_set": {
                     "type": "string"
@@ -1469,6 +1507,7 @@
         },
         "national_agricultural_library_call_number": {
             "description": "National Agricultural Library Call Number",
+            "tag": "070",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1496,6 +1535,7 @@
         },
         "national_agricultural_library_copy_statement": {
             "description": "National Agricultural Library Copy Statement",
+            "tag": "071",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1526,6 +1566,7 @@
         },
         "subject_category_code": {
             "description": "Subject Category Code",
+            "tag": "072",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1556,6 +1597,7 @@
         },
         "gpo_item_number": {
             "description": "GPO Item Number",
+            "tag": "074",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1580,6 +1622,7 @@
         },
         "universal_decimal_classification_number": {
             "description": "Universal Decimal Classification Number",
+            "tag": "080",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1616,6 +1659,7 @@
         },
         "dewey_decimal_classification_number": {
             "description": "Dewey Decimal Classification Number",
+            "tag": "082",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1658,6 +1702,7 @@
         },
         "additional_dewey_decimal_classification_number": {
             "description": "Additional Dewey Decimal Classification Number",
+            "tag": "083",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1712,6 +1757,7 @@
         },
         "other_classification_number": {
             "description": "Other Classification Number",
+            "tag": "084",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1745,6 +1791,7 @@
         },
         "synthesized_classification_number_components": {
             "description": "Synthesized Classification Number Components",
+            "tag": "085",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1835,6 +1882,7 @@
         },
         "government_document_classification_number": {
             "description": "Government Document Classification Number",
+            "tag": "086",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1865,6 +1913,7 @@
         },
         "report_number": {
             "description": "Report Number",
+            "tag": "088",
             "type": "array",
             "items": {
                 "type": "object",

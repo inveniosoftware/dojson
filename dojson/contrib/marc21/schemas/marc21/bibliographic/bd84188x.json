@@ -3,6 +3,7 @@
     "properties": {
         "holding_institution": {
             "description": "Holding Institution",
+            "tag": "850",
             "type": "array",
             "items": {
                 "type": "object",
@@ -24,6 +25,7 @@
         },
         "location": {
             "description": "Location",
+            "tag": "852",
             "type": "array",
             "items": {
                 "type": "object",
@@ -153,6 +155,7 @@
         },
         "electronic_location_and_access": {
             "description": "Electronic Location and Access",
+            "tag": "856",
             "type": "array",
             "items": {
                 "type": "object",
@@ -297,6 +300,7 @@
         },
         "replacement_record_information": {
             "description": "Replacement Record Information",
+            "tag": "882",
             "properties": {
                 "replacement_title": {
                     "type": "array",
@@ -329,6 +333,7 @@
         },
         "machine_generated_metadata_provenance": {
             "description": "Machine-generated Metadata Provenance",
+            "tag": "883",
             "type": "array",
             "items": {
                 "type": "object",
@@ -377,6 +382,7 @@
         },
         "description_conversion_information": {
             "description": "Description Conversion Information",
+            "tag": "884",
             "type": "array",
             "items": {
                 "type": "object",
@@ -404,6 +410,7 @@
         },
         "non_marc_information_field": {
             "description": "Non-MARC Information Field",
+            "tag": "887",
             "type": "array",
             "items": {
                 "type": "object",

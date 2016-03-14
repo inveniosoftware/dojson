@@ -3,6 +3,7 @@
     "properties": {
         "general_note": {
             "description": "General Note",
+            "tag": "500",
             "type": "array",
             "items": {
                 "type": "object",
@@ -30,6 +31,7 @@
         },
         "with_note": {
             "description": "With Note",
+            "tag": "501",
             "type": "array",
             "items": {
                 "type": "object",
@@ -54,6 +56,7 @@
         },
         "dissertation_note": {
             "description": "Dissertation Note",
+            "tag": "502",
             "type": "array",
             "items": {
                 "type": "object",
@@ -96,6 +99,7 @@
         },
         "bibliography_note": {
             "description": "Bibliography, Etc. Note",
+            "tag": "504",
             "type": "array",
             "items": {
                 "type": "object",
@@ -120,6 +124,7 @@
         },
         "formatted_contents_note": {
             "description": "Formatted Contents Note",
+            "tag": "505",
             "type": "array",
             "items": {
                 "type": "object",
@@ -171,6 +176,7 @@
         },
         "restrictions_on_access_note": {
             "description": "Restrictions on Access Note",
+            "tag": "506",
             "type": "array",
             "items": {
                 "type": "object",
@@ -240,6 +246,7 @@
         },
         "scale_note_for_graphic_material": {
             "description": "Scale Note for Graphic Material",
+            "tag": "507",
             "properties": {
                 "representative_fraction_of_scale_note": {
                     "type": "string"
@@ -260,6 +267,7 @@
         },
         "creation_production_credits_note": {
             "description": "Creation/Production Credits Note",
+            "tag": "508",
             "type": "array",
             "items": {
                 "type": "object",
@@ -281,6 +289,7 @@
         },
         "citation_references_note": {
             "description": "Citation/References Note",
+            "tag": "510",
             "type": "array",
             "items": {
                 "type": "object",
@@ -323,6 +332,7 @@
         },
         "participant_or_performer_note": {
             "description": "Participant or Performer Note",
+            "tag": "511",
             "type": "array",
             "items": {
                 "type": "object",
@@ -347,6 +357,7 @@
         },
         "type_of_report_and_period_covered_note": {
             "description": "Type of Report and Period Covered Note",
+            "tag": "513",
             "type": "array",
             "items": {
                 "type": "object",
@@ -371,6 +382,7 @@
         },
         "data_quality_note": {
             "description": "Data Quality Note",
+            "tag": "514",
             "properties": {
                 "attribute_accuracy_report": {
                     "type": "string"
@@ -451,6 +463,7 @@
         },
         "numbering_peculiarities_note": {
             "description": "Numbering Peculiarities Note",
+            "tag": "515",
             "type": "array",
             "items": {
                 "type": "object",
@@ -472,6 +485,7 @@
         },
         "type_of_computer_file_or_data_note": {
             "description": "Type of Computer File or Data Note",
+            "tag": "516",
             "type": "array",
             "items": {
                 "type": "object",
@@ -496,6 +510,7 @@
         },
         "date_time_and_place_of_an_event_note": {
             "description": "Date/Time and Place of an Event Note",
+            "tag": "518",
             "type": "array",
             "items": {
                 "type": "object",
@@ -550,6 +565,7 @@
         },
         "summary": {
             "description": "Summary, Etc.",
+            "tag": "520",
             "type": "array",
             "items": {
                 "type": "object",
@@ -592,6 +608,7 @@
         },
         "target_audience_note": {
             "description": "Target Audience Note",
+            "tag": "521",
             "type": "array",
             "items": {
                 "type": "object",
@@ -625,6 +642,7 @@
         },
         "geographic_coverage_note": {
             "description": "Geographic Coverage Note",
+            "tag": "522",
             "type": "array",
             "items": {
                 "type": "object",
@@ -649,6 +667,7 @@
         },
         "preferred_citation_of_described_materials_note": {
             "description": "Preferred Citation of Described Materials Note",
+            "tag": "524",
             "type": "array",
             "items": {
                 "type": "object",
@@ -679,6 +698,7 @@
         },
         "supplement_note": {
             "description": "Supplement Note",
+            "tag": "525",
             "type": "array",
             "items": {
                 "type": "object",
@@ -700,6 +720,7 @@
         },
         "study_program_information_note": {
             "description": "Study Program Information Note",
+            "tag": "526",
             "type": "array",
             "items": {
                 "type": "object",
@@ -751,6 +772,7 @@
         },
         "additional_physical_form_available_note": {
             "description": "Additional Physical Form Available Note",
+            "tag": "530",
             "type": "array",
             "items": {
                 "type": "object",
@@ -790,6 +812,7 @@
         },
         "reproduction_note": {
             "description": "Reproduction Note",
+            "tag": "533",
             "type": "array",
             "items": {
                 "type": "object",
@@ -856,6 +879,7 @@
         },
         "original_version_note": {
             "description": "Original Version Note",
+            "tag": "534",
             "type": "array",
             "items": {
                 "type": "object",
@@ -937,6 +961,7 @@
         },
         "location_of_originals_duplicates_note": {
             "description": "Location of Originals/Duplicates Note",
+            "tag": "535",
             "type": "array",
             "items": {
                 "type": "object",
@@ -985,6 +1010,7 @@
         },
         "funding_information_note": {
             "description": "Funding Information Note",
+            "tag": "536",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1048,6 +1074,7 @@
         },
         "system_details_note": {
             "description": "System Details Note",
+            "tag": "538",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1087,6 +1114,7 @@
         },
         "terms_governing_use_and_reproduction_note": {
             "description": "Terms Governing Use and Reproduction Note",
+            "tag": "540",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1129,6 +1157,7 @@
         },
         "immediate_source_of_acquisition_note": {
             "description": "Immediate Source of Acquisition Note",
+            "tag": "541",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1189,6 +1218,7 @@
         },
         "information_relating_to_copyright_status": {
             "description": "Information Relating to Copyright Status",
+            "tag": "542",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1297,6 +1327,7 @@
         },
         "location_of_other_archival_materials_note": {
             "description": "Location of Other Archival Materials Note",
+            "tag": "544",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1357,6 +1388,7 @@
         },
         "biographical_or_historical_data": {
             "description": "Biographical or Historical Data",
+            "tag": "545",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1390,6 +1422,7 @@
         },
         "language_note": {
             "description": "Language Note",
+            "tag": "546",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1420,6 +1453,7 @@
         },
         "former_title_complexity_note": {
             "description": "Former Title Complexity Note",
+            "tag": "547",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1441,6 +1475,7 @@
         },
         "issuing_body_note": {
             "description": "Issuing Body Note",
+            "tag": "550",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1462,6 +1497,7 @@
         },
         "entity_and_attribute_information_note": {
             "description": "Entity and Attribute Information Note",
+            "tag": "552",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1552,6 +1588,7 @@
         },
         "cumulative_index_finding_aids_note": {
             "description": "Cumulative Index/Finding Aids Note",
+            "tag": "555",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1597,6 +1634,7 @@
         },
         "information_about_documentation_note": {
             "description": "Information About Documentation Note",
+            "tag": "556",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1627,6 +1665,7 @@
         },
         "ownership_and_custodial_history": {
             "description": "Ownership and Custodial History",
+            "tag": "561",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1663,6 +1702,7 @@
         },
         "copy_and_version_identification_note": {
             "description": "Copy and Version Identification Note",
+            "tag": "562",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1717,6 +1757,7 @@
         },
         "binding_information": {
             "description": "Binding Information",
+            "tag": "563",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1750,6 +1791,7 @@
         },
         "case_file_characteristics_note": {
             "description": "Case File Characteristics Note",
+            "tag": "565",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1801,6 +1843,7 @@
         },
         "methodology_note": {
             "description": "Methodology Note",
+            "tag": "567",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1825,6 +1868,7 @@
         },
         "linking_entry_complexity_note": {
             "description": "Linking Entry Complexity Note",
+            "tag": "580",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1846,6 +1890,7 @@
         },
         "publications_about_described_materials_note": {
             "description": "Publications About Described Materials Note",
+            "tag": "581",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1879,6 +1924,7 @@
         },
         "action_note": {
             "description": "Action Note",
+            "tag": "583",
             "type": "array",
             "items": {
                 "type": "object",
@@ -2002,6 +2048,7 @@
         },
         "accumulation_and_frequency_of_use_note": {
             "description": "Accumulation and Frequency of Use Note",
+            "tag": "584",
             "type": "array",
             "items": {
                 "type": "object",
@@ -2038,6 +2085,7 @@
         },
         "exhibitions_note": {
             "description": "Exhibitions Note",
+            "tag": "585",
             "type": "array",
             "items": {
                 "type": "object",
@@ -2065,6 +2113,7 @@
         },
         "awards_note": {
             "description": "Awards Note",
+            "tag": "586",
             "type": "array",
             "items": {
                 "type": "object",
@@ -2092,6 +2141,7 @@
         },
         "source_of_description_note": {
             "description": "Source of Description Note",
+            "tag": "588",
             "type": "array",
             "items": {
                 "type": "object",

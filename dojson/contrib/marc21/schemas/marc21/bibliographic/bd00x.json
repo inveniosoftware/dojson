@@ -3,26 +3,32 @@
     "properties": {
         "control_number": {
             "description": "Control Number",
+            "tag": "001",
             "type": "string"
         },
         "control_number_identifier": {
             "description": "Control Number Identifier",
+            "tag": "003",
             "type": "string"
         },
         "date_and_time_of_latest_transaction": {
             "description": "Date and Time of Latest Transaction",
+            "tag": "005",
             "type": "string"
         },
         "fixed_length_data_elements_additional_material_characteristics": {
             "description": "Fixed-Length Data Elements-Additional Material Characteristics",
+            "tag": "006",
             "type": "string"
         },
         "physical_description_fixed_field": {
             "description": "Physical Description Fixed Field",
+            "tag": "007",
             "type": "string"
         },
         "fixed_length_data_elements": {
             "description": "Fixed-Length Data Elements",
+            "tag": "008",
             "type": "string"
         }
     }

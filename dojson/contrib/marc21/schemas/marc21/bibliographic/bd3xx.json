@@ -3,6 +3,7 @@
     "properties": {
         "physical_description": {
             "description": "Physical Description",
+            "tag": "300",
             "type": "array",
             "items": {
                 "type": "object",
@@ -54,6 +55,7 @@
         },
         "playing_time": {
             "description": "Playing Time",
+            "tag": "306",
             "properties": {
                 "playing_time": {
                     "type": "array",
@@ -74,6 +76,7 @@
         },
         "hours": {
             "description": "Hours, Etc.",
+            "tag": "307",
             "type": "array",
             "items": {
                 "type": "object",
@@ -101,6 +104,7 @@
         },
         "current_publication_frequency": {
             "description": "Current Publication Frequency",
+            "tag": "310",
             "properties": {
                 "current_publication_frequency": {
                     "type": "string"
@@ -121,6 +125,7 @@
         },
         "former_publication_frequency": {
             "description": "Former Publication Frequency",
+            "tag": "321",
             "type": "array",
             "items": {
                 "type": "object",
@@ -145,6 +150,7 @@
         },
         "content_type": {
             "description": "Content Type",
+            "tag": "336",
             "type": "array",
             "items": {
                 "type": "object",
@@ -181,6 +187,7 @@
         },
         "media_type": {
             "description": "Media Type",
+            "tag": "337",
             "type": "array",
             "items": {
                 "type": "object",
@@ -217,6 +224,7 @@
         },
         "carrier_type": {
             "description": "Carrier Type",
+            "tag": "338",
             "type": "array",
             "items": {
                 "type": "object",
@@ -253,6 +261,7 @@
         },
         "physical_medium": {
             "description": "Physical Medium",
+            "tag": "340",
             "type": "array",
             "items": {
                 "type": "object",
@@ -361,6 +370,7 @@
         },
         "geospatial_reference_data": {
             "description": "Geospatial Reference Data",
+            "tag": "342",
             "type": "array",
             "items": {
                 "type": "object",
@@ -463,6 +473,7 @@
         },
         "planar_coordinate_data": {
             "description": "Planar Coordinate Data",
+            "tag": "343",
             "type": "array",
             "items": {
                 "type": "object",
@@ -508,6 +519,7 @@
         },
         "sound_characteristics": {
             "description": "Sound Characteristics",
+            "tag": "344",
             "type": "array",
             "items": {
                 "type": "object",
@@ -586,6 +598,7 @@
         },
         "projection_characteristics_of_moving_image": {
             "description": "Projection Characteristics of Moving Image",
+            "tag": "345",
             "type": "array",
             "items": {
                 "type": "object",
@@ -628,6 +641,7 @@
         },
         "video_characteristics": {
             "description": "Video Characteristics",
+            "tag": "346",
             "type": "array",
             "items": {
                 "type": "object",
@@ -670,6 +684,7 @@
         },
         "digital_file_characteristics": {
             "description": "Digital File Characteristics",
+            "tag": "347",
             "type": "array",
             "items": {
                 "type": "object",
@@ -736,6 +751,7 @@
         },
         "format_of_notated_music": {
             "description": "Format of Notated Music",
+            "tag": "348",
             "type": "array",
             "items": {
                 "type": "object",
@@ -778,6 +794,7 @@
         },
         "organization_and_arrangement_of_materials": {
             "description": "Organization and Arrangement of Materials",
+            "tag": "351",
             "type": "array",
             "items": {
                 "type": "object",
@@ -814,6 +831,7 @@
         },
         "digital_graphic_representation": {
             "description": "Digital Graphic Representation",
+            "tag": "352",
             "type": "array",
             "items": {
                 "type": "object",
@@ -865,6 +883,7 @@
         },
         "security_classification_control": {
             "description": "Security Classification Control",
+            "tag": "355",
             "type": "array",
             "items": {
                 "type": "object",
@@ -922,6 +941,7 @@
         },
         "originator_dissemination_control": {
             "description": "Originator Dissemination Control",
+            "tag": "357",
             "properties": {
                 "originator_control_term": {
                     "type": "string"
@@ -957,6 +977,7 @@
         },
         "dates_of_publication_and_or_sequential_designation": {
             "description": "Dates of Publication and/or Sequential Designation",
+            "tag": "362",
             "type": "array",
             "items": {
                 "type": "object",
@@ -984,6 +1005,7 @@
         },
         "normalized_date_and_sequential_designation": {
             "description": "Normalized Date and Sequential Designation",
+            "tag": "363",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1062,6 +1084,7 @@
         },
         "trade_price": {
             "description": "Trade Price",
+            "tag": "365",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1119,6 +1142,7 @@
         },
         "trade_availability_information": {
             "description": "Trade Availability Information",
+            "tag": "366",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1170,6 +1194,7 @@
         },
         "associated_place": {
             "description": "Associated Place",
+            "tag": "370",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1233,6 +1258,7 @@
         },
         "associated_language": {
             "description": "Associated Language",
+            "tag": "377",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1266,6 +1292,7 @@
         },
         "form_of_work": {
             "description": "Form of Work",
+            "tag": "380",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1299,6 +1326,7 @@
         },
         "other_distinguishing_characteristics_of_work_or_expression": {
             "description": "Other Distinguishing Characteristics of Work or Expression",
+            "tag": "381",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1344,6 +1372,7 @@
         },
         "medium_of_performance": {
             "description": "Medium of Performance",
+            "tag": "382",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1419,6 +1448,7 @@
         },
         "numeric_designation_of_musical_work": {
             "description": "Numeric Designation of Musical Work",
+            "tag": "383",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1464,6 +1494,7 @@
         },
         "key": {
             "description": "Key",
+            "tag": "384",
             "properties": {
                 "key_type": {
                     "enum": ["Original key", "Transposed key", "Relationship to original unknown"]
@@ -1484,6 +1515,7 @@
         },
         "audience_characteristics": {
             "description": "Audience Characteristics",
+            "tag": "385",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1532,6 +1564,7 @@
         },
         "creator_contributor_characteristics": {
             "description": "Creator/Contributor Characteristics",
+            "tag": "386",
             "type": "array",
             "items": {
                 "type": "object",
@@ -1580,6 +1613,7 @@
         },
         "time_period_of_creation": {
             "description": "Time Period of Creation",
+            "tag": "388",
             "type": "array",
             "items": {
                 "type": "object",
