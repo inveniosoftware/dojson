@@ -375,6 +375,33 @@
                 }
             }
         },
+        "description_conversion_information": {
+            "description": "Description Conversion Information",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "conversion_process": {
+                        "type": "string"
+                    },
+                    "conversion_date": {
+                        "type": "string"
+                    },
+                    "identifier_of_source_metadata": {
+                        "type": "string"
+                    },
+                    "conversion_agency": {
+                        "type": "string"
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "non_marc_information_field": {
             "description": "Non-MARC Information Field",
             "type": "array",

@@ -17,6 +17,10 @@
             "description": "Fixed-Length Data Elements-Additional Material Characteristics",
             "type": "string"
         },
+        "physical_description_fixed_field": {
+            "description": "Physical Description Fixed Field",
+            "type": "string"
+        },
         "fixed_length_data_elements": {
             "description": "Fixed-Length Data Elements",
             "type": "string"

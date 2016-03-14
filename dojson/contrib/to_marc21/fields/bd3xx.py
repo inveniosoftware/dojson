@@ -568,8 +568,8 @@ def reverse_digital_file_characteristics(self, key, value):
 @to_marc21.over('348', '^format_of_notated_music$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_digital_file_characteristics(self, key, value):
-    """Reverse - Digital File Characteristics."""
+def reverse_format_of_notated_music(self, key, value):
+    """Reverse - Format of Notated Music."""
     field_map = {
         'format_of_notated_music_term': 'a',
         'format_of_notated_music_code': 'b',
@@ -943,7 +943,7 @@ def reverse_trade_availability_information(self, key, value):
 @to_marc21.over('370', '^associated_place$')
 @utils.for_each_value
 @utils.filter_values
-def associated_place(self, key, value):
+def reverse_associated_place(self, key, value):
     field_map = {
         'associated_country': 'c',
         'other_associated_place': 'f',
@@ -1238,7 +1238,7 @@ def reverse_audience_characteristics(self, key, value):
 @to_marc21.over('386', '^creator_contributor_characteristics$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def creator_contributor_characteristics(self, key, value):
+def reverse_creator_contributor_characteristics(self, key, value):
     """Creator/Contributor Characteristics."""
     field_map = {
         'creator_contributor_term': 'a',
@@ -1281,8 +1281,8 @@ def creator_contributor_characteristics(self, key, value):
 @to_marc21.over('388', '^time_period_of_creation$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_creator_contributor_characteristics(self, key, value):
-    """Reverse - Creator/Contributor Characteristics."""
+def reverse_time_period_of_creation(self, key, value):
+    """Reverse - Time Period of Creation."""
     indicator_map1 = {
         'No information provided': '_',
         'Creation of work': '1',
