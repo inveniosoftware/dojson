@@ -1,6 +1,14 @@
 Changes
 =======
 
+Version 1.1.1 (released 2016-03-15):
+------------------------------------
+
+Bug fixes
+~~~~~~~~~
+
+- Adds missing schemas for fields bd388, bd370, bd348, bd884.
+
 Version 1.1.0 (released 2016-03-10):
 ------------------------------------
 
