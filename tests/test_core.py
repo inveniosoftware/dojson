@@ -354,7 +354,7 @@ def test_toxml_from_xml():
         back_blob = to_marc21.do(rec)
 
         assert blob == back_blob
-        xml = dumps(back_blob)
+        xml = dumps([back_blob])
 
         options = {'xml_declaration': True,
                    'encoding': 'utf8',

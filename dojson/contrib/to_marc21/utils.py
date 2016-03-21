@@ -11,7 +11,7 @@
 
 import pkg_resources
 from lxml import etree
-from lxml.builder import E
+from lxml.builder import ElementMaker
 from six import iteritems, string_types
 
 from dojson.utils import GroupableOrderedDict
@@ -24,13 +24,12 @@ MARC21_NS = "http://www.loc.gov/MARC21/slim"
 """MARCXML XML Schema"""
 
 
-def dumps_etree(records, xslt_filename=None):
+def dumps_etree(records, xslt_filename=None, prefix=None):
     """Dump records into a etree."""
-    root = etree.Element('collection', nsmap={None: MARC21_NS})
+    E = ElementMaker(namespace=MARC21_NS, nsmap={prefix: MARC21_NS})
 
-    records = [records] if isinstance(records, dict) else records
-
-    for record in records:
+    def dump_record(record):
+        """Dump a single record."""
         rec = E.record()
 
         if isinstance(record, GroupableOrderedDict):
@@ -82,7 +81,14 @@ def dumps_etree(records, xslt_filename=None):
                                 datafield.append(E.subfield(value, code=code))
 
                         rec.append(datafield)
-        root.append(rec)
+        return rec
+
+    if isinstance(records, dict):
+        root = dump_record(records)
+    else:
+        root = E.collection()
+        for record in records:
+            root.append(dump_record(record))
 
     if xslt_filename is not None:
         xslt_root = etree.parse(open(xslt_filename))

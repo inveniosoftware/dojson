@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<dc:collection xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
-  <dc:dc>
-    <dc:creator>Donges, Jonathan F</dc:creator>
-  </dc:dc>
-</dc:collection>
+<oai_dc:dcCollection xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <oai_dc:dc>
+    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Donges, Jonathan F</dc:creator>
+    <dc:type xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+    <dc:language xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+  </oai_dc:dc>
+</oai_dc:dcCollection>
