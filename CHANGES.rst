@@ -1,6 +1,20 @@
 Changes
 =======
 
+Version 1.2.0 (released 2016-03-21):
+------------------------------------
+
+Incompatible changes
+~~~~~~~~~~~~~~~~~~~~
+
+- Removes automatic wrapping to `<collection/>` for single record
+  passed to `dumps_etree`.
+
+Improved features
+~~~~~~~~~~~~~~~~~
+
+- Adds new argument to specify namespace prefix in generated MARCXML.
+
 Version 1.1.1 (released 2016-03-15):
 ------------------------------------
 

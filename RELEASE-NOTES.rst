@@ -1,28 +1,34 @@
 ===============
- DoJSON v1.1.1
+ DoJSON v1.2.0
 ===============
 
-DoJSON v1.1.1 was released on March 15, 2016.
+DoJSON v1.2.0 was released on March 21, 2016.
 
 About
 -----
 
 DoJSON is a simple Pythonic JSON to JSON converter.
 
-Bug fixes
----------
+Incompatible changes
+--------------------
 
-- Adds missing schemas for fields bd388, bd370, bd348, bd884.
+- Removes automatic wrapping to `<collection/>` for single record
+  passed to `dumps_etree`.
+
+Improved features
+-----------------
+
+- Adds new argument to specify namespace prefix in generated MARCXML.
 
 Installation
 ------------
 
-   $ pip install dojson==1.1.1
+   $ pip install dojson==1.2.0
 
 Documentation
 -------------
 
-   http://dojson.readthedocs.org/en/v1.1.1
+   http://dojson.readthedocs.org/en/v1.2.0
 
 Happy hacking and thanks for flying DoJSON.
 
