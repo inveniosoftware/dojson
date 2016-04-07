@@ -94,6 +94,7 @@ setup(
             'dojson = dojson.cli:cli',
         ],
         'dojson.contrib.marc21': [
+            'bdleader = dojson.contrib.marc21.fields.bdleader',
             'bd00x = dojson.contrib.marc21.fields.bd00x',
             'bd01x09x = dojson.contrib.marc21.fields.bd01x09x',
             'bd1xx = dojson.contrib.marc21.fields.bd1xx',
@@ -109,6 +110,7 @@ setup(
             'bd84188x = dojson.contrib.marc21.fields.bd84188x',
         ],
         'dojson.contrib.to_marc21': [
+            'bdleader = dojson.contrib.to_marc21.fields.bdleader',
             'bd00x = dojson.contrib.to_marc21.fields.bd00x',
             'bd01x09x = dojson.contrib.to_marc21.fields.bd01x09x',
             'bd1xx = dojson.contrib.to_marc21.fields.bd1xx',

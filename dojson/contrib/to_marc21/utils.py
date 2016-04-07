@@ -32,6 +32,10 @@ def dumps_etree(records, xslt_filename=None, prefix=None):
         """Dump a single record."""
         rec = E.record()
 
+        leader = record.get('leader')
+        if leader:
+            rec.append(E.leader(leader))
+
         if isinstance(record, GroupableOrderedDict):
             items = record.iteritems(with_order=False, repeated=True)
         else:
@@ -50,6 +54,10 @@ def dumps_etree(records, xslt_filename=None, prefix=None):
                         controlfield.attrib['tag'] = df[0:3]
                         rec.append(controlfield)
             else:
+                # Skip leader.
+                if df == 'leader':
+                    continue
+
                 if not isinstance(subfields, (list, tuple, set)):
                     subfields = (subfields,)
 
