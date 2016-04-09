@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "allOf": [
+        {"$ref": "bdleader.json"},
         {"$ref": "bd00x.json"},
         {"$ref": "bd01x09x.json"},
         {"$ref": "bd1xx.json"},
