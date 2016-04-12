@@ -126,6 +126,7 @@ setup(
             'bd84188x = dojson.contrib.to_marc21.fields.bd84188x',
         ],
         'dojson.contrib.marc21_authority': [
+            'adleader = dojson.contrib.marc21.fields.adleader',
             'ad00x = dojson.contrib.marc21.fields.ad00x',
             'ad01x09x = dojson.contrib.marc21.fields.ad01x09x',
             'ad1xx3xx = dojson.contrib.marc21.fields.ad1xx3xx',
