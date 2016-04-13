@@ -97,9 +97,9 @@ def to_leader(self, key, value):
     }
 
     leader_string = (
-        '{record_length:>5!s}{record_status}{type_of_record}'
+        '{record_length!s:0>5}{record_status}{type_of_record}'
         '{bibliographic_level}{type_of_control}{character_coding_scheme}'
-        '{indicator_count!s}{subfield_code_count!s}{base_address_of_data:>5!s}'
+        '{indicator_count!s}{subfield_code_count!s}{base_address_of_data!s:0>5}'
         '{encoding_level}{descriptive_cataloging_form}'
         '{multipart_resource_record_level}'
         '{length_of_the_length_of_field_portion}'
