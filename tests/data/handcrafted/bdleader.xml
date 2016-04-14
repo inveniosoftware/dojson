@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <leader>01230nama#2200289ucb4500</leader>
+    <datafield tag="100" ind1=" " ind2=" ">
+      <subfield code="a">Author</subfield>
+    </datafield>
+  </record>
+  <record>
+    <leader>01230nam  2200289#  4500</leader>
+    <datafield tag="100" ind1=" " ind2=" ">
+      <subfield code="a">Author2</subfield>
+    </datafield>
+  </record>
+</collection>
