@@ -42,6 +42,7 @@ from test_core import RECORD_999_FIELD, RECORD_SIMPLE
     'handcrafted/bd01x09x.xml',
     'handcrafted/bd3xx.xml',
     'handcrafted/bd6xx.xml',
+    'handcrafted/bdleader.xml',
     'library_of_congress/bd01x09x.xml',
     'library_of_congress/bd1xx.xml',
     'library_of_congress/bd20x24x.xml',
@@ -67,7 +68,7 @@ def test_xml_to_marc21_to_xml(file_name):
 
     schema = pkg_resources.resource_filename(
         'dojson.contrib.marc21.schemas',
-        'marc21/bibliographic/bd-v1.0.0.json'
+        'marc21/bibliographic/bd-v1.0.1.json'
     )
 
     runner = CliRunner()
