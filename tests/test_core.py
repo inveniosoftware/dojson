@@ -217,12 +217,10 @@ def test_simple_record_from_xml():
     data = marc21.do(blob)
     expected = {
         '__order__': ['main_entry_personal_name'],
-        'main_entry_personal_name': [
-            {
-                '__order__': ('personal_name',),
-                'personal_name': 'Donges, Jonathan F',
-            }
-        ],
+        'main_entry_personal_name': {
+            '__order__': ('personal_name',),
+            'personal_name': 'Donges, Jonathan F',
+        }
     }
 
     assert data == expected

@@ -15,7 +15,6 @@ from ..model import marc21
 
 
 @marc21.over('main_entry_personal_name', '^100[013_]_')
-@utils.for_each_value
 @utils.filter_values
 def main_entry_personal_name(self, key, value):
     """Main Entry-Personal Name."""

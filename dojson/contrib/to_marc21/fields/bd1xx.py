@@ -15,7 +15,6 @@ from ..model import to_marc21
 
 
 @to_marc21.over('100', '^main_entry_personal_name$')
-@utils.reverse_for_each_value
 @utils.filter_values
 def reverse_main_entry_personal_name(self, key, value):
     """Reverse - Main Entry-Personal Name."""

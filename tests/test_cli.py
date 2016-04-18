@@ -91,12 +91,10 @@ def test_cli_do_marc21_from_xml():
     """Test MARC21 loading from XML."""
     expected = [{
         '__order__': ['main_entry_personal_name'],
-        'main_entry_personal_name': [
-            {
-                '__order__': ['personal_name'],
-                'personal_name': 'Donges, Jonathan F',
-            }
-        ],
+        'main_entry_personal_name': {
+            '__order__': ['personal_name'],
+            'personal_name': 'Donges, Jonathan F',
+        }
     }]
 
     runner = CliRunner()
@@ -157,12 +155,10 @@ def test_cli_do_marc21_from_json():
     expected = [{
         '$schema': '/schema.json',
         '__order__': ['main_entry_personal_name'],
-        'main_entry_personal_name': [
-            {
-                '__order__': ['personal_name'],
-                'personal_name': 'Donges, Jonathan F',
-            }
-        ],
+        'main_entry_personal_name': {
+            '__order__': ['personal_name'],
+            'personal_name': 'Donges, Jonathan F',
+        }
     }]
 
     runner = CliRunner()
