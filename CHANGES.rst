@@ -1,6 +1,26 @@
 Changes
 =======
 
+Version 1.2.1 (released 2016-05-02):
+------------------------------------
+
+Improved features
+~~~~~~~~~~~~~~~~~
+
+- Improves support for `leader` field conversion to and from
+  MARC21 and adds JSON Schema for this field.  (#133)
+- Adds conversion support for `leader` field in authority
+  records, as well as schema support.
+- Adds support for dashes in keys.  (#139)
+
+Bug fixes
+~~~~~~~~~
+
+- Fixes bug in string formatting, and pads integer fields with
+  zeros (as per MARC standard).
+- Removes list definition from `main_entry_personal_name` as
+  according to Library of Congress is a non repeatable field.
+
 Version 1.2.0 (released 2016-03-21):
 ------------------------------------
 
