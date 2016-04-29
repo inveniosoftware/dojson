@@ -188,6 +188,19 @@ def test_missing_fields():
     assert '0247_' in overdo.missing({'0247_': '024', '247__': '247'})
 
 
+def test_destination_with_dashes():
+    """Test destination with dashes."""
+    overdo = dojson.Overdo()
+
+    @overdo.over('with-dashes', '^247..')
+    def match_247(self, key, value):
+        return key, value
+
+    data = overdo.do({'0247_': '024', '247__': '247'})
+
+    assert ('247__', '247') == data['with-dashes']
+
+
 def test_marc21_field_247_matching():
     """Test MARC21 0247/247 field matching."""
 
