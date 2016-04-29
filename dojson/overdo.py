@@ -43,7 +43,7 @@ class Index(object):
         def make_pattern(rules, flags=0):
             """Compile a rules to single branch with groups."""
             return re.compile('|'.join('(?P<I{name}>{regex})'.format(
-                name=name, regex=regex
+                name=re.escape(name), regex=regex
             ) for regex, (name, creator) in rules), flags=flags)
 
         for rules in zip_longest(*[iter(self.rules)] * self.branch_size):
