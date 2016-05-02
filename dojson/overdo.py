@@ -44,23 +44,21 @@ class Index(object):
             """Compile a rules to single branch with groups."""
             return re.compile('|'.join('(?P<I{name}>{regex})'.format(
                 name=name, regex=regex
-            ) for regex, (name, creator) in rules), flags=flags)
+            ) for name, (regex, _) in enumerate(rules)), flags=flags)
 
         for rules in zip_longest(*[iter(self.rules)] * self.branch_size):
             self._patterns.append(make_pattern([
                 rule for rule in rules if rule is not None
             ]))
 
-        self._lookup = {
-            name: (name, creator) for _, (name, creator) in self.rules
-        }
-
     def query(self, key):
         """Return data matching the key."""
         for section, pattern in enumerate(self._patterns):
             match = pattern.match(key)
             if match:
-                return self._lookup[match.lastgroup[1:]]
+                return self.rules[section * self.branch_size + int(
+                    match.lastgroup[1:]
+                )][1]
 
 
 class Overdo(object):
