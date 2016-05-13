@@ -251,7 +251,6 @@ def main_entry_meeting_name(self, key, value):
 
 
 @marc21.over('main_entry_uniform_title', '^130[_0-9]_')
-@utils.for_each_value
 @utils.filter_values
 def main_entry_uniform_title(self, key, value):
     """Main Entry-Uniform Title."""

@@ -241,7 +241,6 @@ def reverse_main_entry_meeting_name(self, key, value):
 
 
 @to_marc21.over('130', '^main_entry_uniform_title$')
-@utils.reverse_for_each_value
 @utils.filter_values
 def reverse_main_entry_uniform_title(self, key, value):
     """Reverse - Main Entry-Uniform Title."""

@@ -9,6 +9,8 @@
       <subfield code="p">Fioretti.</subfield>
       <subfield code="l">English</subfield>
     </datafield>
+  </record>
+  <record>
     <datafield tag="130" ind1="0" ind2=" ">
       <subfield code="a">
 Scientific reports (Australasian Antarctic Expedition (1911-1914)).
@@ -16,6 +18,8 @@ Scientific reports (Australasian Antarctic Expedition (1911-1914)).
       <subfield code="n">Series C,</subfield>
       <subfield code="p">Zoology and botany</subfield>
     </datafield>
+  </record>
+  <record>
     <datafield tag="130" ind1="0" ind2=" ">
       <subfield code="a">Bible.</subfield>
       <subfield code="p">N.T.</subfield>
@@ -23,6 +27,8 @@ Scientific reports (Australasian Antarctic Expedition (1911-1914)).
       <subfield code="l">Polyglot.</subfield>
       <subfield code="d">1965</subfield>
     </datafield>
+  </record>
+  <record>
     <datafield tag="130" ind1="0" ind2=" ">
       <subfield code="a">Bible.</subfield>
       <subfield code="p">O.T.</subfield>
@@ -31,6 +37,8 @@ Scientific reports (Australasian Antarctic Expedition (1911-1914)).
       <subfield code="s">Pope.</subfield>
       <subfield code="f">1977</subfield>
     </datafield>
+  </record>
+  <record>
     <datafield tag="130" ind1="0" ind2=" ">
       <subfield code="a">Bible.</subfield>
       <subfield code="p">O.T.</subfield>
@@ -40,10 +48,14 @@ Scientific reports (Australasian Antarctic Expedition (1911-1914)).
       <subfield code="f">1957.</subfield>
       <subfield code="s">Pfeiffer</subfield>
     </datafield>
+  </record>
+  <record>
     <datafield tag="130" ind1="0" ind2=" ">
       <subfield code="a">Bulletin</subfield>
       <subfield code="h">[1894-1908] (South Dakota Geological Survey)</subfield>
     </datafield>
+  </record>
+  <record>
     <datafield tag="130" ind1="0" ind2=" ">
       <subfield code="a">Talmud.</subfield>
       <subfield code="t">Minor tractates.</subfield>
