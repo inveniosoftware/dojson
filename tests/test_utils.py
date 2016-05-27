@@ -14,7 +14,7 @@ import copy
 import pytest
 import simplejson as json
 
-from dojson.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict, yield_each_value
 
 
 @pytest.fixture
@@ -155,3 +155,14 @@ def test_groupable_ordered_dict_recreate(god):
                                  'c': 'invenio'})
 
     assert god2 == god
+
+
+def test_yield_each_value():
+    """Test that yield_each_value can yield multiple times."""
+    @yield_each_value
+    def func(self, key, value):
+        yield 1
+        yield 2
+        yield 3
+
+    assert func(None, None, ['a', 'b']) == [1, 2, 3, 1, 2, 3]
