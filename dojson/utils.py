@@ -111,7 +111,7 @@ def force_list(data):
 
 def reverse_force_list(data):
     """Unwrap data from list if its length is == 1."""
-    if isinstance(data, (list, set)) and len(data) == 1:
+    if isinstance(data, (list, tuple, set)) and len(data) == 1:
         return data[0]
     return data
 

@@ -14,7 +14,7 @@ import copy
 import pytest
 import simplejson as json
 
-from dojson.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict, force_list, reverse_force_list
 
 
 @pytest.fixture
@@ -180,3 +180,7 @@ def test_empty_elements():
     assert '037__' in data.keys()
     assert data['037__'] == {}
     assert (('__order__', ('037__', )), ('037__', {})) == data.items()
+
+
+def test_force_list_roundtrips():
+    assert reverse_force_list(force_list('foo')) == 'foo'
