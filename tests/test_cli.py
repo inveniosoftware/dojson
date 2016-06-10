@@ -87,6 +87,49 @@ def test_xml_to_marc21_to_xml(file_name):
     assert result.exit_code == 0
 
 
+@pytest.mark.parametrize('file_name', [
+    'authority/ad01x09x.xml',
+    'authority/ad1xx.xml',
+    'authority/ad3xx.xml',
+    'authority/ad4xx.xml',
+    'authority/ad5xx.xml',
+    'authority/ad6xx.xml',
+    'authority/ad25x28x.xml',
+    'authority/ad70x75x.xml',
+    'authority/ad76x78x.xml',
+    'authority/ad84188x.xml',
+])
+def test_xml_to_marc21_authority_to_xml(file_name):
+    """Test xslt dump."""
+    path = os.path.dirname(__file__)
+    # Open explicitly as UTF-8 for Python 2.7 compatibility
+    with codecs.open(
+            os.path.join(path, 'data', file_name),
+            'r',
+            'utf-8') as myfile:
+        expect = myfile.read()
+
+    schema = pkg_resources.resource_filename(
+        'dojson.contrib.marc21.schemas',
+        'marc21/authority/ad-v1.0.2.json'
+    )
+
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, [
+            '-i', os.path.join(path, 'data', file_name),
+            '-l', 'marcxml',
+            '-d', 'marcxml',
+            'do', 'marc21_authority',
+            'validate', schema,
+            'do', 'to_marc21_authority',
+        ]
+    )
+
+    assert expect.strip('\n') == result.output.strip('\n')
+    assert result.exit_code == 0
+
+
 def test_cli_do_marc21_from_xml():
     """Test MARC21 loading from XML."""
     expected = [{

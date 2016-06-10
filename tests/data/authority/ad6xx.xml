@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="640" ind1="1" ind2=" ">
+      <subfield code="a">dates_of_publication_and_or_sequential_designation</subfield>
+      <subfield code="z">source_of_information</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="641" ind1=" " ind2=" ">
+      <subfield code="a">numbering_peculiarities_note</subfield>
+      <subfield code="z">source_of_information</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="642" ind1=" " ind2=" ">
+      <subfield code="a">series_numbering_example</subfield>
+      <subfield code="d">volumes_dates_to_which_series_numbering_example_applies</subfield>
+      <subfield code="5">institution_copy_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="643" ind1=" " ind2=" ">
+      <subfield code="a">place</subfield>
+      <subfield code="b">publisher_issuing_body</subfield>
+      <subfield code="d">volumes_dates_to_which_place_and_publisher_issuing_body_apply</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="644" ind1=" " ind2=" ">
+      <subfield code="a">series_analysis_practice</subfield>
+      <subfield code="b">exceptions_to_analysis_practice</subfield>
+      <subfield code="d">volumes_dates_to_which_analysis_practice_applies</subfield>
+      <subfield code="5">institution_copy_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="645" ind1=" " ind2=" ">
+      <subfield code="a">series_tracing_practice</subfield>
+      <subfield code="d">volumes_dates_to_which_tracing_practice_applies</subfield>
+      <subfield code="5">institution_copy_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="646" ind1=" " ind2=" ">
+      <subfield code="a">series_classification_practice</subfield>
+      <subfield code="d">volumes_dates_to_which_classification_practice_applies</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="663" ind1=" " ind2=" ">
+      <subfield code="a">explanatory_text</subfield>
+      <subfield code="b">heading_referred_to</subfield>
+      <subfield code="t">title_referred_to</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="664" ind1=" " ind2=" ">
+      <subfield code="a">explanatory_text</subfield>
+      <subfield code="b">heading_referred_to</subfield>
+      <subfield code="t">title_referred_to</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="665" ind1=" " ind2=" ">
+      <subfield code="a">history_reference</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="666" ind1=" " ind2=" ">
+      <subfield code="a">general_explanatory_reference</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="667" ind1=" " ind2=" ">
+      <subfield code="a">nonpublic_general_note</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="670" ind1=" " ind2=" ">
+      <subfield code="a">source_citation</subfield>
+      <subfield code="b">information_found</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="w">bibliographic_record_control_number</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="672" ind1=" " ind2="8">
+      <subfield code="a">title</subfield>
+      <subfield code="b">remainder_of_title</subfield>
+      <subfield code="f">date</subfield>
+      <subfield code="w">bibliographic_record_control_number</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="673" ind1=" " ind2="0">
+      <subfield code="a">title</subfield>
+      <subfield code="b">remainder_of_title</subfield>
+      <subfield code="f">date</subfield>
+      <subfield code="w">bibliographic_record_control_number</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="675" ind1=" " ind2=" ">
+      <subfield code="a">source_citation</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="678" ind1="1" ind2=" ">
+      <subfield code="a">biographical_or_historical_data</subfield>
+      <subfield code="b">expansion</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="680" ind1=" " ind2=" ">
+      <subfield code="a">heading_or_subdivision_term</subfield>
+      <subfield code="i">explanatory_text</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="681" ind1=" " ind2=" ">
+      <subfield code="a">subject_heading_or_subdivision_term</subfield>
+      <subfield code="i">explanatory_text</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="682" ind1=" " ind2=" ">
+      <subfield code="a">replacement_heading</subfield>
+      <subfield code="i">explanatory_text</subfield>
+      <subfield code="0">replacement_authority_record_control_number</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="688" ind1=" " ind2=" ">
+      <subfield code="a">application_history_note</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+  </record>
+</collection>

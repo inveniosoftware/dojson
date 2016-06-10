@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="762" ind1=" " ind2="6">
+      <subfield code="a">medium_of_performance_term_as_entry_element</subfield>
+      <subfield code="i">relationship_information</subfield>
+      <subfield code="w">control_subfield</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_heading_or_term</subfield>
+      <subfield code="4">relationship_code</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="780" ind1=" " ind2="4">
+      <subfield code="i">relationship_information</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="w">control_subfield</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_heading_or_term</subfield>
+      <subfield code="4">relationship_code</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="781" ind1=" " ind2="4">
+      <subfield code="i">relationship_information</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="w">control_subfield</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_heading_or_term</subfield>
+      <subfield code="4">relationship_code</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="782" ind1=" " ind2="1">
+      <subfield code="i">relationship_information</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="w">control_subfield</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_heading_or_term</subfield>
+      <subfield code="4">relationship_code</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="785" ind1=" " ind2="4">
+      <subfield code="i">relationship_information</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="w">control_subfield</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_heading_or_term</subfield>
+      <subfield code="4">relationship_code</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="788" ind1=" " ind2="1">
+      <subfield code="a">heading_referred_to</subfield>
+      <subfield code="i">explanatory_text</subfield>
+      <subfield code="2">source_of_heading_or_term</subfield>
+      <subfield code="4">relationship_code</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+  </record>
+</collection>

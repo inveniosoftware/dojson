@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="010" ind1=" " ind2=" ">
+      <subfield code="a">lc_control_number</subfield>
+      <subfield code="z">canceled_invalid_lc_control_number</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="014" ind1=" " ind2=" ">
+      <subfield code="a">control_number_of_related_bibliographic_record</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="016" ind1=" " ind2=" ">
+      <subfield code="a">record_control_number</subfield>
+      <subfield code="z">canceled_or_invalid_record_control_number</subfield>
+      <subfield code="2">source</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">international_standard_book_number</subfield>
+      <subfield code="c">terms_of_availability</subfield>
+      <subfield code="q">qualifying_information</subfield>
+      <subfield code="z">canceled_invalid_isbn</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="022" ind1=" " ind2=" ">
+      <subfield code="a">international_standard_serial_number</subfield>
+      <subfield code="l">issn_l</subfield>
+      <subfield code="m">canceled_issn_l</subfield>
+      <subfield code="y">incorrect_issn</subfield>
+      <subfield code="z">canceled_issn</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="024" ind1="8" ind2=" ">
+      <subfield code="a">standard_number_or_code</subfield>
+      <subfield code="c">terms_of_availability</subfield>
+      <subfield code="d">qualifying_information</subfield>
+      <subfield code="z">canceled_invalid_standard_number_or_code</subfield>
+      <subfield code="2">source_of_number_or_code</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="031" ind1=" " ind2=" ">
+      <subfield code="a">number_of_work</subfield>
+      <subfield code="b">number_of_movement</subfield>
+      <subfield code="c">number_of_excerpt</subfield>
+      <subfield code="d">caption_or_heading</subfield>
+      <subfield code="e">role</subfield>
+      <subfield code="g">clef</subfield>
+      <subfield code="m">voice_instrument</subfield>
+      <subfield code="n">key_signature</subfield>
+      <subfield code="o">time_signature</subfield>
+      <subfield code="p">musical_notation</subfield>
+      <subfield code="q">general_note</subfield>
+      <subfield code="r">key_or_mode</subfield>
+      <subfield code="s">coded_validity_note</subfield>
+      <subfield code="t">text_incipit</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="y">link_text</subfield>
+      <subfield code="z">public_note</subfield>
+      <subfield code="2">system_code</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="034" ind1=" " ind2=" ">
+      <subfield code="d">coordinates_westernmost_longitude</subfield>
+      <subfield code="e">coordinates_easternmost_longitude</subfield>
+      <subfield code="f">coordinates_northernmost_latitude</subfield>
+      <subfield code="g">coordinates_southernmost_latitude</subfield>
+      <subfield code="j">declination_northern_limit</subfield>
+      <subfield code="k">declination_southern_limit</subfield>
+      <subfield code="m">right_ascension_eastern_limit</subfield>
+      <subfield code="n">right_ascension_western_limit</subfield>
+      <subfield code="p">equinox</subfield>
+      <subfield code="r">distance_from_earth</subfield>
+      <subfield code="s">g_ring_latitude</subfield>
+      <subfield code="t">g_ring_longitude</subfield>
+      <subfield code="x">beginning_date</subfield>
+      <subfield code="y">ending_date</subfield>
+      <subfield code="z">name_of_extraterrestrial_body</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="035" ind1=" " ind2=" ">
+      <subfield code="a">system_control_number</subfield>
+      <subfield code="z">canceled_invalid_system_control_number</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="040" ind1=" " ind2=" ">
+      <subfield code="a">original_cataloging_agency</subfield>
+      <subfield code="b">language_of_cataloging</subfield>
+      <subfield code="c">transcribing_agency</subfield>
+      <subfield code="d">modifying_agency</subfield>
+      <subfield code="e">description_conventions</subfield>
+      <subfield code="f">subject_heading_thesaurus_conventions</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="042" ind1=" " ind2=" ">
+      <subfield code="a">authentication_code</subfield>
+    </datafield>
+    <datafield tag="043" ind1=" " ind2=" ">
+      <subfield code="a">geographic_area_code</subfield>
+      <subfield code="b">local_gac_code</subfield>
+      <subfield code="c">iso_code</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_local_code</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="045" ind1="1" ind2=" ">
+      <subfield code="a">time_period_code</subfield>
+      <subfield code="b">formatted_9999_bc_through_ce_time_period</subfield>
+      <subfield code="c">formatted_pre_9999_bc_time_period</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="046" ind1=" " ind2=" ">
+      <subfield code="f">birth_date</subfield>
+      <subfield code="g">death_date</subfield>
+      <subfield code="k">beginning_or_single_date_created</subfield>
+      <subfield code="l">ending_date_created</subfield>
+      <subfield code="o">single_or_starting_date_for_aggregated_content</subfield>
+      <subfield code="p">ending_date_for_aggregated_content</subfield>
+      <subfield code="q">establishment_date</subfield>
+      <subfield code="r">termination_date</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="2">source_of_date_scheme</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="050" ind1=" " ind2="0">
+      <subfield code="a">classification_number</subfield>
+      <subfield code="b">item_number</subfield>
+      <subfield code="d">volumes_dates_to_which_call_number_applies</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="052" ind1="7" ind2=" ">
+      <subfield code="a">geographic_classification_area_code</subfield>
+      <subfield code="b">geographic_classification_subarea_code</subfield>
+      <subfield code="d">populated_place_name</subfield>
+      <subfield code="2">code_source testing</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="053" ind1=" " ind2="0">
+      <subfield code="a">explanatory_term</subfield>
+      <subfield code="b">classification_number_element_ending_number_of_span</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="055" ind1=" " ind2="4">
+      <subfield code="a">classification_number</subfield>
+      <subfield code="b">item_number</subfield>
+      <subfield code="d">volumes_dates_to_which_call_number_applies</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="060" ind1=" " ind2="4">
+      <subfield code="a">classification_number</subfield>
+      <subfield code="b">item_number</subfield>
+      <subfield code="d">volumes_dates_to_which_call_number_applies</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="065" ind1=" " ind2=" ">
+      <subfield code="a">classification_number_element_single_number_or_beginning_of_span</subfield>
+      <subfield code="b">classification_number_element_ending_number_of_span</subfield>
+      <subfield code="c">explanatory_term</subfield>
+      <subfield code="2">number_source</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="066" ind1=" " ind2=" ">
+      <subfield code="a">primary_g0_character_set</subfield>
+      <subfield code="b">primary_g1_character_set</subfield>
+      <subfield code="c">alternate_g0_or_g1_character_set</subfield>
+    </datafield>
+    <datafield tag="070" ind1=" " ind2=" ">
+      <subfield code="a">classification_number</subfield>
+      <subfield code="b">item_number</subfield>
+      <subfield code="d">volumes_dates_to_which_call_number_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="072" ind1=" " ind2="7">
+      <subfield code="a">subject_category_code</subfield>
+      <subfield code="x">subject_category_code_subdivision</subfield>
+      <subfield code="2">code_source</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="073" ind1=" " ind2=" ">
+      <subfield code="a">subdivision_usage</subfield>
+      <subfield code="z">code_source</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="080" ind1="0" ind2=" ">
+      <subfield code="a">universal_decimal_classification_number</subfield>
+      <subfield code="b">item_number</subfield>
+      <subfield code="x">common_auxiliary_subdivision</subfield>
+      <subfield code="2">edition_identifier</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="082" ind1="7" ind2="0">
+      <subfield code="a">classification_number</subfield>
+      <subfield code="b">item_number</subfield>
+      <subfield code="d">volumes_dates_to_which_call_number_applies</subfield>
+      <subfield code="2">edition_number</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="083" ind1="0" ind2="0">
+      <subfield code="a">classification_number_element_single_number_or_beginning_number_of_span</subfield>
+      <subfield code="b">classification_number_element_ending_number_of_span</subfield>
+      <subfield code="c">explanatory_term</subfield>
+      <subfield code="y">field_link_and_sequence_number</subfield>
+      <subfield code="z">table_identification_table_number</subfield>
+      <subfield code="2">edition_number</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+    </datafield>
+    <datafield tag="086" ind1=" " ind2=" ">
+      <subfield code="a">call_number</subfield>
+      <subfield code="d">volumes_dates_to_which_call_number_applies</subfield>
+      <subfield code="z">canceled_invalid_call_number</subfield>
+      <subfield code="2">number_source</subfield>
+      <subfield code="5">institution_to_which_field_applies</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="087" ind1=" " ind2=" ">
+      <subfield code="a">classification_number_element_single_number_of_beginning_number_of_span</subfield>
+      <subfield code="b">classification_number_element_ending_number_of_span</subfield>
+      <subfield code="c">explanatory_information</subfield>
+      <subfield code="2">number_source test</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+  </record>
+</collection>

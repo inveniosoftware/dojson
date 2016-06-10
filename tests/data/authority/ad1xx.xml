@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="100" ind1="0" ind2=" ">
+      <subfield code="a">personal_name</subfield>
+      <subfield code="b">numeration</subfield>
+      <subfield code="c">titles_and_other_words_associated_with_a_name</subfield>
+      <subfield code="d">dates_associated_with_a_name</subfield>
+      <subfield code="e">relator_term</subfield>
+      <subfield code="f">date_of_a_work</subfield>
+      <subfield code="g">miscellaneous_information</subfield>
+      <subfield code="h">medium</subfield>
+      <subfield code="j">attribution_qualifier</subfield>
+      <subfield code="k">form_subheading</subfield>
+      <subfield code="l">language_of_a_work</subfield>
+      <subfield code="m">medium_of_performance_for_music</subfield>
+      <subfield code="n">number_of_part_section_of_a_work</subfield>
+      <subfield code="o">arranged_statement_for_music</subfield>
+      <subfield code="p">name_of_part_section_of_a_work</subfield>
+      <subfield code="q">fuller_form_of_name</subfield>
+      <subfield code="r">key_for_music</subfield>
+      <subfield code="s">version</subfield>
+      <subfield code="t">title_of_a_work</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="110" ind1="0" ind2=" ">
+      <subfield code="a">corporate_name_or_jurisdiction_name_as_entry_element</subfield>
+      <subfield code="b">subordinate_unit</subfield>
+      <subfield code="c">location_of_meeting</subfield>
+      <subfield code="d">date_of_meeting_or_treaty_signing</subfield>
+      <subfield code="e">relator_term</subfield>
+      <subfield code="f">date_of_a_work</subfield>
+      <subfield code="g">miscellaneous_information</subfield>
+      <subfield code="h">medium</subfield>
+      <subfield code="k">form_subheading</subfield>
+      <subfield code="l">language_of_a_work</subfield>
+      <subfield code="m">medium_of_performance_for_music</subfield>
+      <subfield code="n">number_of_part_section_meeting</subfield>
+      <subfield code="o">arranged_statement_for_music</subfield>
+      <subfield code="p">name_of_part_section_of_a_work</subfield>
+      <subfield code="r">key_for_music</subfield>
+      <subfield code="s">version</subfield>
+      <subfield code="t">title_of_a_work</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="111" ind1="0" ind2=" ">
+      <subfield code="a">meeting_name_or_jurisdiction_name_as_entry_element</subfield>
+      <subfield code="c">location_of_meeting</subfield>
+      <subfield code="d">date_of_meeting</subfield>
+      <subfield code="e">subordinate_unit</subfield>
+      <subfield code="f">date_of_a_work</subfield>
+      <subfield code="g">miscellaneous_information</subfield>
+      <subfield code="h">medium</subfield>
+      <subfield code="j">relator_term</subfield>
+      <subfield code="k">form_subheading</subfield>
+      <subfield code="l">language_of_a_work</subfield>
+      <subfield code="n">number_of_part_section_meeting</subfield>
+      <subfield code="p">name_of_part_section_of_a_work</subfield>
+      <subfield code="q">name_of_meeting_following_jurisdiction_name_entry_element</subfield>
+      <subfield code="s">version</subfield>
+      <subfield code="t">title_of_a_work</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="130" ind1=" " ind2="0">
+      <subfield code="a">uniform_title</subfield>
+      <subfield code="d">date_of_treaty_signing</subfield>
+      <subfield code="f">date_of_a_work</subfield>
+      <subfield code="g">miscellaneous_information</subfield>
+      <subfield code="h">medium</subfield>
+      <subfield code="k">form_subheading</subfield>
+      <subfield code="l">language_of_a_work</subfield>
+      <subfield code="m">medium_of_performance_for_music</subfield>
+      <subfield code="n">number_of_part_section_of_a_work</subfield>
+      <subfield code="o">arranged_statement_for_music</subfield>
+      <subfield code="p">name_of_part_section_of_a_work</subfield>
+      <subfield code="r">key_for_music</subfield>
+      <subfield code="s">version</subfield>
+      <subfield code="t">title_of_a_work</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="148" ind1=" " ind2=" ">
+      <subfield code="a">chronological_term</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="150" ind1=" " ind2=" ">
+      <subfield code="a">topical_term_or_geographic_name_entry_element</subfield>
+      <subfield code="b">topical_term_following_geographic_name_entry_element</subfield>
+      <subfield code="g">miscellaneous_information</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="151" ind1=" " ind2=" ">
+      <subfield code="a">geographic_name</subfield>
+      <subfield code="g">miscellaneous_information</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="155" ind1=" " ind2=" ">
+      <subfield code="a">genre_form_term</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="162" ind1=" " ind2=" ">
+      <subfield code="a">medium_of_performance_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="180" ind1=" " ind2=" ">
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="181" ind1=" " ind2=" ">
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="182" ind1=" " ind2=" ">
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="185" ind1=" " ind2=" ">
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+  </record>
+</collection>

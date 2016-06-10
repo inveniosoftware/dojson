@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="336" ind1=" " ind2=" ">
+      <subfield code="a">content_type_term</subfield>
+      <subfield code="b">content_type_code</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="348" ind1=" " ind2=" ">
+      <subfield code="a">format_of_notated_music_term</subfield>
+      <subfield code="b">format_of_notated_music_code</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="360" ind1=" " ind2=" ">
+      <subfield code="a">heading_referred_to</subfield>
+      <subfield code="i">explanatory_text</subfield>
+      <subfield code="0">authority_record_control_number</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="368" ind1=" " ind2=" ">
+      <subfield code="a">type_of_corporate_body</subfield>
+      <subfield code="b">type_of_jurisdiction</subfield>
+      <subfield code="c">other_designation</subfield>
+      <subfield code="d">title_of_person</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="370" ind1=" " ind2=" ">
+      <subfield code="a">place_of_birth</subfield>
+      <subfield code="b">place_of_death</subfield>
+      <subfield code="c">associated_country</subfield>
+      <subfield code="e">place_of_residence_headquarters</subfield>
+      <subfield code="f">other_associated_place</subfield>
+      <subfield code="g">place_of_origin_of_work</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="0">record_control_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="371" ind1=" " ind2=" ">
+      <subfield code="a">address</subfield>
+      <subfield code="b">city</subfield>
+      <subfield code="c">intermediate_jurisdiction</subfield>
+      <subfield code="d">country</subfield>
+      <subfield code="e">postal_code</subfield>
+      <subfield code="m">electronic_mail_address</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="z">public_note</subfield>
+      <subfield code="4">relator_code</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="372" ind1=" " ind2=" ">
+      <subfield code="a">field_of_activity</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="0">record_control_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="373" ind1=" " ind2=" ">
+      <subfield code="a">associated_group</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="0">record_control_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="374" ind1=" " ind2=" ">
+      <subfield code="a">occupation</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="0">record_control_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="375" ind1=" " ind2=" ">
+      <subfield code="a">gender</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="376" ind1=" " ind2=" ">
+      <subfield code="a">type_of_family</subfield>
+      <subfield code="b">name_of_prominent_member</subfield>
+      <subfield code="c">hereditary_title</subfield>
+      <subfield code="s">start_period</subfield>
+      <subfield code="t">end_period</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="0">record_control_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="377" ind1=" " ind2=" ">
+      <subfield code="a">language_code</subfield>
+      <subfield code="l">language_term</subfield>
+      <subfield code="2">source_of_code</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="378" ind1=" " ind2=" ">
+      <subfield code="q">fuller_form_of_personal_name</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="380" ind1=" " ind2=" ">
+      <subfield code="a">form_of_work</subfield>
+      <subfield code="0">record_control_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="381" ind1=" " ind2=" ">
+      <subfield code="a">other_distinguishing_characteristic</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">source_of_information</subfield>
+      <subfield code="0">record_control_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="382" ind1=" " ind2=" ">
+      <subfield code="a">medium_of_performance</subfield>
+      <subfield code="b">soloist</subfield>
+      <subfield code="d">doubling_instrument</subfield>
+      <subfield code="e">number_of_ensembles</subfield>
+      <subfield code="n">number_of_performers_of_the_same_medium</subfield>
+      <subfield code="p">alternative_medium_of_performance</subfield>
+      <subfield code="r">total_number_of_individuals_performing_alongside_ensembles</subfield>
+      <subfield code="s">total_number_of_performers</subfield>
+      <subfield code="v">note</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="383" ind1=" " ind2=" ">
+      <subfield code="a">serial_number</subfield>
+      <subfield code="b">opus_number</subfield>
+      <subfield code="c">thematic_index_number</subfield>
+      <subfield code="d">thematic_index_code</subfield>
+      <subfield code="e">publisher_associated_with_opus_number</subfield>
+      <subfield code="2">source</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="384" ind1=" " ind2=" ">
+      <subfield code="a">key</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="385" ind1=" " ind2=" ">
+      <subfield code="a">audience_term</subfield>
+      <subfield code="b">audience_code</subfield>
+      <subfield code="m">demographic_group_term</subfield>
+      <subfield code="n">demographic_group_code</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="386" ind1=" " ind2=" ">
+      <subfield code="a">creator_contributor_term</subfield>
+      <subfield code="b">creator_contributor_code</subfield>
+      <subfield code="m">demographic_group_term</subfield>
+      <subfield code="n">demographic_group_code</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="388" ind1="1" ind2=" ">
+      <subfield code="a">time_period_of_creation_term</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="2">source_of_term</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+  </record>
+</collection>

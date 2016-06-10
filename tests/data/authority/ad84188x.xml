@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="856" ind1="7" ind2=" ">
+      <subfield code="a">host_name</subfield>
+      <subfield code="b">access_number</subfield>
+      <subfield code="c">compression_information</subfield>
+      <subfield code="d">path</subfield>
+      <subfield code="f">electronic_name</subfield>
+      <subfield code="h">processor_of_request</subfield>
+      <subfield code="i">instruction</subfield>
+      <subfield code="j">bits_per_second</subfield>
+      <subfield code="k">password</subfield>
+      <subfield code="l">logon</subfield>
+      <subfield code="m">contact_for_access_assistance</subfield>
+      <subfield code="n">name_of_location_of_host</subfield>
+      <subfield code="o">operating_system</subfield>
+      <subfield code="p">port</subfield>
+      <subfield code="q">electronic_format_type</subfield>
+      <subfield code="r">settings</subfield>
+      <subfield code="s">file_size</subfield>
+      <subfield code="t">terminal_emulation</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">hours_access_method_available</subfield>
+      <subfield code="w">record_control_number</subfield>
+      <subfield code="x">nonpublic_note</subfield>
+      <subfield code="y">link_text</subfield>
+      <subfield code="z">public_note</subfield>
+      <subfield code="2">Snail mail</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="880" ind1=" " ind2=" ">
+      <subfield code="a">same_as_associated_field_a</subfield>
+      <subfield code="b">same_as_associated_field_b</subfield>
+      <subfield code="c">same_as_associated_field_c</subfield>
+      <subfield code="d">same_as_associated_field_d</subfield>
+      <subfield code="e">same_as_associated_field_e</subfield>
+      <subfield code="f">same_as_associated_field_f</subfield>
+      <subfield code="g">same_as_associated_field_g</subfield>
+      <subfield code="h">same_as_associated_field_h</subfield>
+      <subfield code="i">same_as_associated_field_i</subfield>
+      <subfield code="j">same_as_associated_field_j</subfield>
+      <subfield code="k">same_as_associated_field_k</subfield>
+      <subfield code="l">same_as_associated_field_l</subfield>
+      <subfield code="m">same_as_associated_field_m</subfield>
+      <subfield code="n">same_as_associated_field_n</subfield>
+      <subfield code="o">same_as_associated_field_o</subfield>
+      <subfield code="p">same_as_associated_field_p</subfield>
+      <subfield code="q">same_as_associated_field_q</subfield>
+      <subfield code="r">same_as_associated_field_r</subfield>
+      <subfield code="s">same_as_associated_field_s</subfield>
+      <subfield code="t">same_as_associated_field_t</subfield>
+      <subfield code="u">same_as_associated_field_u</subfield>
+      <subfield code="v">same_as_associated_field_v</subfield>
+      <subfield code="w">same_as_associated_field_w</subfield>
+      <subfield code="x">same_as_associated_field_x</subfield>
+      <subfield code="y">same_as_associated_field_y</subfield>
+      <subfield code="z">same_as_associated_field_z</subfield>
+      <subfield code="0">same_as_associated_field_0</subfield>
+      <subfield code="1">same_as_associated_field_1</subfield>
+      <subfield code="2">same_as_associated_field_2</subfield>
+      <subfield code="3">same_as_associated_field_3</subfield>
+      <subfield code="4">same_as_associated_field_4</subfield>
+      <subfield code="5">same_as_associated_field_5</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="7">same_as_associated_field_7</subfield>
+      <subfield code="8">same_as_associated_field_8</subfield>
+      <subfield code="9">same_as_associated_field_9</subfield>
+    </datafield>
+    <datafield tag="883" ind1="1" ind2=" ">
+      <subfield code="a">generation_process</subfield>
+      <subfield code="c">confidence_value</subfield>
+      <subfield code="d">generation_date</subfield>
+      <subfield code="q">generation_agency</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="w">bibliographic_record_control_number</subfield>
+      <subfield code="x">validity_end_date</subfield>
+      <subfield code="0">authority_record_control_number_or_standard_number</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="884" ind1=" " ind2=" ">
+      <subfield code="a">conversion_process</subfield>
+      <subfield code="g">conversion_date</subfield>
+      <subfield code="k">identifier_of_source_metadata</subfield>
+      <subfield code="q">conversion_agency</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+    </datafield>
+  </record>
+</collection>
+

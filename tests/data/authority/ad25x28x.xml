@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="260" ind1=" " ind2=" ">
+      <subfield code="a">heading_referred_to</subfield>
+      <subfield code="i">explanatory_text</subfield>
+      <subfield code="0">authority_record_control_number</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+  </record>
+</collection>
