@@ -151,8 +151,8 @@ def reverse_national_bibliographic_agency_control_number(self, key, value):
 def reverse_copyright_or_legal_deposit_number(self, key, value):
     """Reverse - Copyright or Legal Deposit Number."""
     indicator_map2 = {
-        "Copyright or legal deposit number": "_",
-        "No display constant generated": "8",
+        'Copyright or legal deposit number': '_',
+        'No display constant generated': '8',
     }
 
     field_map = {

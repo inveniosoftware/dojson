@@ -20,10 +20,10 @@ from ..model import to_marc21
 @utils.filter_values
 def reverse_series_statement_added_entry_personal_name(self, key, value):
     """Reverse - Series Statement/Added Entry-Personal Name."""
-    indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
+    indicator_map1 = {'Family name': '3', 'Forename': '0', 'Surname': '1'}
     indicator_map2 = {
-        "Main entry not represented by pronoun": "0",
-        "Main entry represented by pronoun": "1"}
+        'Main entry not represented by pronoun': '0',
+        'Main entry represented by pronoun': '1'}
     field_map = {
         'personal_name': 'a',
         'numeration': 'b',
