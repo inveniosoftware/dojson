@@ -97,9 +97,9 @@ def reverse_main_entry_personal_name(self, key, value):
 def reverse_main_entry_corporate_name(self, key, value):
     """Reverse - Main Entry-Corporate Name."""
     indicator_map1 = {
-        "Inverted name": "0",
-        "Jurisdiction name": "1",
-        "Name in direct order": "2",
+        'Inverted name': '0',
+        'Jurisdiction name': '1',
+        'Name in direct order': '2',
     }
 
     field_map = {
@@ -171,9 +171,9 @@ def reverse_main_entry_corporate_name(self, key, value):
 def reverse_main_entry_meeting_name(self, key, value):
     """Reverse - Main Entry-Meeting Name."""
     indicator_map1 = {
-        "Inverted name": "0",
-        "Jurisdiction name": "1",
-        "Name in direct order": "2",
+        'Inverted name': '0',
+        'Jurisdiction name': '1',
+        'Name in direct order': '2',
     }
 
     field_map = {

@@ -177,9 +177,9 @@ def main_entry_corporate_name(self, key, value):
 def main_entry_meeting_name(self, key, value):
     """Main Entry-Meeting Name."""
     indicator_map1 = {
-        "0": "Inverted name",
-        "1": "Jurisdiction name",
-        "2": "Name in direct order",
+        '0': 'Inverted name',
+        '1': 'Jurisdiction name',
+        '2': 'Name in direct order',
     }
 
     field_map = {
