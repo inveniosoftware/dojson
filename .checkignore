@@ -1,0 +1,2 @@
+# This file uses `exec` as it parses a python file.
+dojson/scripts/utils_create_xml.py

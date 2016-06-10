@@ -11,6 +11,7 @@ include *.yml
 include .coveragerc
 include .travis.yml
 include .dockerignore
+include .checkignore
 include Dockerfile
 include LICENSE
 include pytest.ini
