@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "allOf": [
+        {"$ref": "adleader.json"},
+        {"$ref": "ad00x.json"},
+        {"$ref": "ad01x09x-v1.0.1.json"},
+        {"$ref": "ad1xx3xx.json"},
+        {"$ref": "ad260360-v1.0.1.json"},
+        {"$ref": "ad4xx-v1.0.1.json"},
+        {"$ref": "ad5xx-v1.0.1.json"},
+        {"$ref": "ad64x.json"},
+        {"$ref": "ad663666.json"},
+        {"$ref": "ad66768x.json"},
+        {"$ref": "ad7xx.json"},
+        {"$ref": "ad8xx.json"}
+    ]
+}
