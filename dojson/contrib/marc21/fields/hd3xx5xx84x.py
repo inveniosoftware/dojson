@@ -153,9 +153,9 @@ def immediate_source_of_acquisition_note(self, key, value):
 def ownership_and_custodial_history(self, key, value):
     """Ownership and Custodial History."""
     indicator_map1 = {
-        "#": "No information provided",
-        "0": "Private",
-        "1": "Not private"}
+        '#': 'No information provided',
+        '0': 'Private',
+        '1': 'Not private'}
     return {
         'history': value.get('a'),
         'materials_specified': value.get('3'),

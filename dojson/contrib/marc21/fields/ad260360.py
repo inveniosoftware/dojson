@@ -19,11 +19,21 @@ from ..model import marc21_authority
 @utils.filter_values
 def complex_see_reference_subject(self, key, value):
     """Complex See Reference-Subject."""
+    field_map = {
+        'a': 'heading_referred_to',
+        'i': 'explanatory_text',
+        '0': 'authority_record_control_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'heading_referred_to': utils.force_list(
             value.get('a')
         ),
-        'authority_record_control_number_or_standard_number': utils.force_list(
+        'authority_record_control_number': utils.force_list(
             value.get('0')
         ),
         'explanatory_text': utils.force_list(
@@ -41,11 +51,21 @@ def complex_see_reference_subject(self, key, value):
 @utils.filter_values
 def complex_see_also_reference_subject(self, key, value):
     """Complex See Also Reference-Subject."""
+    field_map = {
+        'a': 'heading_referred_to',
+        'i': 'explanatory_text',
+        '0': 'authority_record_control_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'heading_referred_to': utils.force_list(
             value.get('a')
         ),
-        'authority_record_control_number_or_standard_number': utils.force_list(
+        'authority_record_control_number': utils.force_list(
             value.get('0')
         ),
         'explanatory_text': utils.force_list(

@@ -378,9 +378,9 @@ def alternate_graphic_representation(self, key, value):
 def machine_generated_metadata_provenance(self, key, value):
     """Machine-generated Metadata Provenance."""
     indicator_map1 = {
-        "#": "No information provided/not applicable",
-        "0": "Fully machine-generated",
-        "1": "Partially machine-generated"}
+        '#': 'No information provided/not applicable',
+        '0': 'Fully machine-generated',
+        '1': 'Partially machine-generated'}
     return {
         'generation_process': value.get('a'),
         'confidence_value': value.get('c'),

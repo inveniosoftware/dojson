@@ -138,17 +138,17 @@ def international_standard_serial_number(self, key, value):
 def other_standard_identifier(self, key, value):
     """Other Standard Identifier."""
     indicator_map1 = {
-        "0": "International Standard Recording Code",
-        "1": "Universal Product Code",
-        "2": "International Standard Music Number",
-        "3": "International Article Number",
-        "4": "Serial Item and Contribution Identifier",
-        "7": "Source specified in subfield $2",
-        "8": "Unspecified type of standard number or code"}
+        '0': 'International Standard Recording Code',
+        '1': 'Universal Product Code',
+        '2': 'International Standard Music Number',
+        '3': 'International Article Number',
+        '4': 'Serial Item and Contribution Identifier',
+        '7': 'Source specified in subfield $2',
+        '8': 'Unspecified type of standard number or code'}
     indicator_map2 = {
-        "#": "No information provided",
-        "0": "No difference",
-        "1": "Difference"}
+        '#': 'No information provided',
+        '0': 'No difference',
+        '1': 'Difference'}
     return {
         'standard_number_or_code': value.get('a'),
         'terms_of_availability': value.get('c'),

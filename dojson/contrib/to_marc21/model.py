@@ -107,3 +107,7 @@ class Underdo(Overdo):
 
 
 to_marc21 = Underdo(entry_point_group='dojson.contrib.to_marc21')
+
+to_marc21_authority = Underdo(
+    entry_point_group='dojson.contrib.to_marc21_authority')
+"""MARC 21 Format for Authority Data."""

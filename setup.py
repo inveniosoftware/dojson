@@ -139,6 +139,19 @@ setup(
             'ad7xx = dojson.contrib.marc21.fields.ad7xx',
             'ad8xx = dojson.contrib.marc21.fields.ad8xx',
         ],
+        'dojson.contrib.to_marc21_authority': [
+            'ad00x = dojson.contrib.to_marc21.fields.ad00x',
+            'ad01x09x = dojson.contrib.to_marc21.fields.ad01x09x',
+            'ad1xx = dojson.contrib.to_marc21.fields.ad1xx',
+            'ad25x28x = dojson.contrib.to_marc21.fields.ad25x28x',
+            'ad3xx = dojson.contrib.to_marc21.fields.ad3xx',
+            'ad4xx = dojson.contrib.to_marc21.fields.ad4xx',
+            'ad5xx = dojson.contrib.to_marc21.fields.ad5xx',
+            'ad64x = dojson.contrib.to_marc21.fields.ad6xx',
+            'ad70x75x = dojson.contrib.to_marc21.fields.ad70x75x',
+            'ad76x78x = dojson.contrib.to_marc21.fields.ad76x78x',
+            'ad84188x = dojson.contrib.to_marc21.fields.ad84188x',
+        ],
         'dojson.contrib.marc21_holdings': [
             'hd00x = dojson.contrib.marc21.fields.hd00x',
             'hd0xx = dojson.contrib.marc21.fields.hd0xx',
@@ -156,6 +169,7 @@ setup(
             'marc21_authority = dojson.contrib.marc21:marc21_authority',
             'marc21_holdings = dojson.contrib.marc21:marc21_holdings',
             'to_marc21 = dojson.contrib.to_marc21:to_marc21',
+            'to_marc21_authority = dojson.contrib.to_marc21:to_marc21_authority',
         ],
         'dojson.cli.load': [
             'json = dojson.utils:load',
