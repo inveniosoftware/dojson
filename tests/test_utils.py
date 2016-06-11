@@ -14,7 +14,7 @@ import copy
 import pytest
 import simplejson as json
 
-from dojson.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict, force_list, reverse_force_list
 
 
 @pytest.fixture
@@ -155,3 +155,7 @@ def test_groupable_ordered_dict_recreate(god):
                                  'c': 'invenio'})
 
     assert god2 == god
+
+
+def test_force_list_roundtrips():
+    assert reverse_force_list(force_list('foo')) == 'foo'
