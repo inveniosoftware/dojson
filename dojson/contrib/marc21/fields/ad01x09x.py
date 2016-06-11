@@ -18,7 +18,15 @@ from ..model import marc21_authority
 @utils.filter_values
 def library_of_congress_control_number(self, key, value):
     """Library of Congress Control Number."""
+    field_map = {
+        'a': 'lc_control_number',
+        'z': 'canceled_invalid_lc_control_number',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'lc_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -39,7 +47,15 @@ def link_to_bibliographic_record_for_serial_or_multipart_item(
         key,
         value):
     """Link to Bibliographic Record for Serial or Multipart Item."""
+    field_map = {
+        'a': 'control_number_of_related_bibliographic_record',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'control_number_of_related_bibliographic_record': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -55,7 +71,16 @@ def link_to_bibliographic_record_for_serial_or_multipart_item(
 @utils.filter_values
 def national_bibliographic_agency_control_number(self, key, value):
     """National Bibliographic Agency Control Number."""
+    field_map = {
+        'a': 'record_control_number',
+        'z': 'canceled_or_invalid_record_control_number',
+        '2': 'source',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'record_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -72,7 +97,18 @@ def national_bibliographic_agency_control_number(self, key, value):
 @utils.filter_values
 def international_standard_book_number(self, key, value):
     """International Standard Book Number."""
+    field_map = {
+        'a': 'international_standard_book_number',
+        'c': 'terms_of_availability',
+        'q': 'qualifying_information',
+        'z': 'canceled_invalid_isbn',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'international_standard_book_number': value.get('a'),
         'terms_of_availability': value.get('c'),
         'qualifying_information': utils.force_list(
@@ -93,7 +129,19 @@ def international_standard_book_number(self, key, value):
 @utils.filter_values
 def international_standard_serial_number(self, key, value):
     """International Standard Serial Number."""
+    field_map = {
+        'a': 'international_standard_serial_number',
+        'l': 'issn_l',
+        'm': 'canceled_issn_l',
+        'y': 'incorrect_issn',
+        'z': 'canceled_issn',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'international_standard_serial_number': value.get('a'),
         'canceled_issn_l': utils.force_list(
             value.get('m')
@@ -117,10 +165,23 @@ def international_standard_serial_number(self, key, value):
 @utils.filter_values
 def other_standard_identifier(self, key, value):
     """Other Standard Identifier."""
+    field_map = {
+        'a': 'standard_number_or_code',
+        'c': 'terms_of_availability',
+        'd': 'additional_codes_following_the_standard_number_or_code',
+        'q': 'qualifying_information',
+        'z': 'canceled_invalid_standard_number_or_code',
+        '2': 'source_of_number_or_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map1 = {
         "7": "Source specified in subfield $2",
         "8": "Unspecified type of standard number or code"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'standard_number_or_code': value.get('a'),
         'terms_of_availability': value.get('c'),
         'additional_codes_following_the_standard_number_or_code': value.get('d'),
@@ -142,7 +203,32 @@ def other_standard_identifier(self, key, value):
 @utils.filter_values
 def musical_incipits_information(self, key, value):
     """Musical Incipits Information."""
+    field_map = {
+        'a': 'number_of_work',
+        'b': 'number_of_movement',
+        'c': 'number_of_excerpt',
+        'd': 'caption_or_heading',
+        'e': 'role',
+        'g': 'clef',
+        'm': 'voice_instrument',
+        'n': 'key_signature',
+        'o': 'time_signature',
+        'p': 'musical_notation',
+        'q': 'general_note',
+        'r': 'key_or_mode',
+        's': 'coded_validity_note',
+        't': 'text_incipit',
+        'u': 'uniform_resource_identifier',
+        'y': 'link_text',
+        'z': 'public_note',
+        '2': 'system_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'number_of_work': value.get('a'),
         'number_of_excerpt': value.get('c'),
         'number_of_movement': value.get('b'),
@@ -187,11 +273,36 @@ def musical_incipits_information(self, key, value):
 @utils.filter_values
 def coded_cartographic_mathematical_data(self, key, value):
     """Coded Cartographic Mathematical Data."""
+    field_map = {
+        'd': 'coordinates_westernmost_longitude',
+        'e': 'coordinates_easternmost_longitude',
+        'f': 'coordinates_northernmost_latitude',
+        'g': 'coordinates_southernmost_latitude',
+        'j': 'declination_northern_limit',
+        'k': 'declination_southern_limit',
+        'm': 'right_ascension_eastern_limit',
+        'n': 'right_ascension_western_limit',
+        'p': 'equinox',
+        'r': 'distance_from_earth',
+        's': 'g_ring_latitude',
+        't': 'g_ring_longitude',
+        'x': 'beginning_date',
+        'y': 'ending_date',
+        'z': 'name_of_extraterrestrial_body',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "#": "Not applicable",
         "0": "Outer ring",
         "1": "Exclusion ring"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'beginning_date': value.get('x'),
         'name_of_extraterrestrial_body': value.get('z'),
         'coordinates_easternmost_longitude': value.get('e'),
@@ -255,7 +366,20 @@ def system_control_number(self, key, value):
 @utils.filter_values
 def cataloging_source(self, key, value):
     """Cataloging Source."""
+    field_map = {
+        'a': 'original_cataloging_agency',
+        'b': 'language_of_cataloging',
+        'c': 'transcribing_agency',
+        'd': 'modifying_agency',
+        'e': 'description_conventions',
+        'f': 'subject_heading_thesaurus_conventions',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'original_cataloging_agency': value.get('a'),
         'transcribing_agency': value.get('c'),
         'language_of_cataloging': value.get('b'),
@@ -277,7 +401,13 @@ def cataloging_source(self, key, value):
 @utils.filter_values
 def authentication_code(self, key, value):
     """Authentication Code."""
+    field_map = {
+        'a': 'authentication_code',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'authentication_code': utils.force_list(
             value.get('a')
         ),
@@ -288,7 +418,19 @@ def authentication_code(self, key, value):
 @utils.filter_values
 def geographic_area_code(self, key, value):
     """Geographic Area Code."""
+    field_map = {
+        'a': 'geographic_area_code',
+        'b': 'local_gac_code',
+        'c': 'iso_code',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_local_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'geographic_area_code': utils.force_list(
             value.get('a')
         ),
@@ -315,7 +457,17 @@ def geographic_area_code(self, key, value):
 @utils.filter_values
 def time_period_of_heading(self, key, value):
     """Time Period of Heading."""
+    field_map = {
+        'a': 'time_period_code',
+        'b': 'formatted_9999_bc_through_ce_time_period',
+        'c': 'formatted_pre_9999_bc_time_period',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'time_period_code': utils.force_list(
             value.get('a')
         ),
@@ -337,7 +489,27 @@ def time_period_of_heading(self, key, value):
 @utils.filter_values
 def special_coded_dates(self, key, value):
     """Special Coded Dates."""
+    field_map = {
+        'f': 'birth_date',
+        'g': 'death_date',
+        'k': 'beginning_or_single_date_created',
+        'l': 'ending_date_created',
+        'o': 'single_or_starting_date_for_aggregated_content',
+        'p': 'ending_date_for_aggregated_content',
+        'q': 'establishment_date',
+        'r': 'termination_date',
+        's': 'start_period',
+        't': 'end_period',
+        'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        '2': 'source_of_date_scheme',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'death_date': value.get('g'),
         'birth_date': value.get('f'),
         'beginning_or_single_date_created': value.get('k'),
@@ -367,7 +539,18 @@ def special_coded_dates(self, key, value):
 @utils.filter_values
 def library_of_congress_call_number(self, key, value):
     """Library of Congress Call Number."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'd': 'volumes_dates_to_which_call_number_applies',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'item_number': value.get('b'),
         'volumes_dates_to_which_call_number_applies': value.get('d'),
@@ -386,7 +569,18 @@ def library_of_congress_call_number(self, key, value):
 @utils.filter_values
 def geographic_classification(self, key, value):
     """Geographic Classification."""
+    field_map = {
+        'a': 'geographic_classification_area_code',
+        'b': 'geographic_classification_subarea_code',
+        'd': 'populated_place_name',
+        '2': 'code_source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'geographic_classification_area_code': value.get('a'),
         'geographic_classification_subarea_code': utils.force_list(
             value.get('b')
@@ -407,7 +601,18 @@ def geographic_classification(self, key, value):
 @utils.filter_values
 def lc_classification_number(self, key, value):
     """LC Classification Number."""
+    field_map = {
+        'a': 'classification_number_element_single_number_or_beginning_number_of_span',
+        'b': 'classification_number_element_ending_number_of_span',
+        'c': 'explanatory_term',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number_element_single_number_or_beginning_number_of_span': value.get('a'),
         'explanatory_term': value.get('c'),
         'classification_number_element_ending_number_of_span': value.get('b'),
@@ -424,7 +629,18 @@ def lc_classification_number(self, key, value):
 @utils.filter_values
 def library_and_archives_canada_call_number(self, key, value):
     """Library and Archives Canada Call Number."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'd': 'volumes_dates_to_which_call_number_applies',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'item_number': value.get('b'),
         'volumes_dates_to_which_call_number_applies': value.get('d'),
@@ -443,7 +659,18 @@ def library_and_archives_canada_call_number(self, key, value):
 @utils.filter_values
 def national_library_of_medicine_call_number(self, key, value):
     """National Library of Medicine Call Number."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'd': 'volumes_dates_to_which_call_number_applies',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'item_number': value.get('b'),
         'volumes_dates_to_which_call_number_applies': value.get('d'),
@@ -462,7 +689,19 @@ def national_library_of_medicine_call_number(self, key, value):
 @utils.filter_values
 def other_classification_number(self, key, value):
     """Other Classification Number."""
+    field_map = {
+        'a': 'classification_number_element_single_number_or_beginning_of_span',
+        'b': 'classification_number_element_ending_number_of_span',
+        'c': 'explanatory_term',
+        '2': 'number_source',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number_element_single_number_or_beginning_of_span': value.get('a'),
         'explanatory_term': value.get('c'),
         'classification_number_element_ending_number_of_span': value.get('b'),
@@ -479,7 +718,15 @@ def other_classification_number(self, key, value):
 @utils.filter_values
 def character_sets_present(self, key, value):
     """Character Sets Present."""
+    field_map = {
+        'a': 'primary_g0_character_set',
+        'b': 'primary_g1_character_set',
+        'c': 'alternate_g0_or_g1_character_set',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'primary_g0_character_set': value.get('a'),
         'alternate_g0_or_g1_character_set': utils.force_list(
             value.get('c')
@@ -493,7 +740,17 @@ def character_sets_present(self, key, value):
 @utils.filter_values
 def national_agricultural_library_call_number(self, key, value):
     """National Agricultural Library Call Number."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'd': 'volumes_dates_to_which_call_number_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -509,7 +766,17 @@ def national_agricultural_library_call_number(self, key, value):
 @utils.filter_values
 def subject_category_code(self, key, value):
     """Subject Category Code."""
+    field_map = {
+        'a': 'subject_category_code',
+        'x': 'subject_category_code_subdivision',
+        '2': 'code_source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'subject_category_code': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -526,7 +793,16 @@ def subject_category_code(self, key, value):
 @utils.filter_values
 def subdivision_usage(self, key, value):
     """Subdivision Usage."""
+    field_map = {
+        'a': 'subdivision_usage',
+        'z': 'code_source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'subdivision_usage': utils.force_list(
             value.get('a')
         ),
@@ -543,7 +819,18 @@ def subdivision_usage(self, key, value):
 @utils.filter_values
 def universal_decimal_classification_number(self, key, value):
     """Universal Decimal Classification Number."""
+    field_map = {
+        'a': 'universal_decimal_classification_number',
+        'b': 'item_number',
+        'x': 'common_auxiliary_subdivision',
+        '2': 'edition_identifier',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'universal_decimal_classification_number': value.get('a'),
         'item_number': value.get('b'),
         'linkage': value.get('6'),
@@ -562,6 +849,17 @@ def universal_decimal_classification_number(self, key, value):
 @utils.filter_values
 def dewey_decimal_call_number(self, key, value):
     """Dewey Decimal Call Number."""
+    field_map = {
+        'a': 'classification_number',
+        'b': 'item_number',
+        'd': 'volumes_dates_to_which_call_number_applies',
+        '2': 'edition_number',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map1 = {
         "0": "Full",
         "1": "Abridged",
@@ -571,6 +869,7 @@ def dewey_decimal_call_number(self, key, value):
         "0": "Assigned by LC",
         "4": "Assigned by agency other than LC"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'item_number': value.get('b'),
         'volumes_dates_to_which_call_number_applies': value.get('d'),
@@ -594,6 +893,19 @@ def dewey_decimal_call_number(self, key, value):
 @utils.filter_values
 def dewey_decimal_classification_number(self, key, value):
     """Dewey Decimal Classification Number."""
+    field_map = {
+        'a': 'classification_number_element_single_number_or_beginning_number_of_span',
+        'b': 'classification_number_element_ending_number_of_span',
+        'c': 'explanatory_term',
+        'y': 'table_sequence_number_for_internal_subarrangement_or_add_table',
+        'z': 'table_identification_table_number',
+        '2': 'edition_number',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map1 = {
         "0": "Full",
         "1": "Abridged",
@@ -602,6 +914,7 @@ def dewey_decimal_classification_number(self, key, value):
         "0": "Assigned by LC",
         "4": "Assigned by agency other than LC"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number_element_single_number_or_beginning_number_of_span': value.get('a'),
         'explanatory_term': value.get('c'),
         'classification_number_element_ending_number_of_span': value.get('b'),
@@ -626,7 +939,19 @@ def dewey_decimal_classification_number(self, key, value):
 @utils.filter_values
 def government_document_call_number(self, key, value):
     """Government Document Call Number."""
+    field_map = {
+        'a': 'call_number',
+        'd': 'volumes_dates_to_which_call_number_applies',
+        'z': 'canceled_invalid_call_number',
+        '2': 'number_source',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'call_number': value.get('a'),
         'volumes_dates_to_which_call_number_applies': value.get('d'),
         'number_source': value.get('2'),
@@ -648,7 +973,18 @@ def government_document_call_number(self, key, value):
 @utils.filter_values
 def government_document_classification_number(self, key, value):
     """Government Document Classification Number."""
+    field_map = {
+        'a': 'classification_number_element_single_number_of_beginning_number_of_span',
+        'b': 'classification_number_element_ending_number_of_span',
+        'c': 'explanatory_information',
+        '2': 'number_source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'classification_number_element_single_number_of_beginning_number_of_span': value.get('a'),
         'explanatory_information': value.get('c'),
         'classification_number_element_ending_number_of_span': value.get('b'),

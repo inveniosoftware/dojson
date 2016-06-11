@@ -18,7 +18,17 @@ from ..model import marc21_authority
 @utils.filter_values
 def complex_see_also_reference_name(self, key, value):
     """Complex See Also Reference-Name."""
+    field_map = {
+        'a': 'explanatory_text',
+        'b': 'heading_referred_to',
+        't': 'title_referred_to',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'explanatory_text': utils.force_list(
             value.get('a')
         ),
@@ -39,7 +49,17 @@ def complex_see_also_reference_name(self, key, value):
 @utils.filter_values
 def complex_see_reference_name(self, key, value):
     """Complex See Reference-Name."""
+    field_map = {
+        'a': 'explanatory_text',
+        'b': 'heading_referred_to',
+        't': 'title_referred_to',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'explanatory_text': utils.force_list(
             value.get('a')
         ),
@@ -60,7 +80,15 @@ def complex_see_reference_name(self, key, value):
 @utils.filter_values
 def history_reference(self, key, value):
     """History Reference."""
+    field_map = {
+        'a': 'history_reference',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'history_reference': utils.force_list(
             value.get('a')
         ),
@@ -75,7 +103,15 @@ def history_reference(self, key, value):
 @utils.filter_values
 def general_explanatory_reference_name(self, key, value):
     """General Explanatory Reference-Name."""
+    field_map = {
+        'a': 'general_explanatory_reference',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     return {
+        '__order__': tuple(order) if len(order) else None,
         'general_explanatory_reference': utils.force_list(
             value.get('a')
         ),

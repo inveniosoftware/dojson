@@ -21,6 +21,41 @@ from ..model import marc21_authority
 @utils.filter_values
 def established_heading_linking_entry_personal_name(self, key, value):
     """Established Heading Linking Entry-Personal Name."""
+    field_map = {
+        'a': 'personal_name',
+        'b': 'numeration',
+        'c': 'titles_and_other_words_associated_with_a_name',
+        'd': 'dates_associated_with_a_name',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'j': 'attribution_qualifier',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'q': 'fuller_form_of_name',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
@@ -32,6 +67,7 @@ def established_heading_linking_entry_personal_name(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
@@ -109,6 +145,39 @@ def established_heading_linking_entry_personal_name(self, key, value):
 @utils.filter_values
 def established_heading_linking_entry_corporate_name(self, key, value):
     """Established Heading Linking Entry-Corporate Name."""
+    field_map = {
+        'a': 'corporate_name_or_jurisdiction_name_as_entry_element',
+        'b': 'subordinate_unit',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting_or_treaty_signing',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_meeting',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map1 = {
         "0": "Inverted name",
         "1": "Jurisdiction name",
@@ -123,6 +192,7 @@ def established_heading_linking_entry_corporate_name(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
@@ -200,6 +270,37 @@ def established_heading_linking_entry_corporate_name(self, key, value):
 @utils.filter_values
 def established_heading_linking_entry_meeting_name(self, key, value):
     """Established Heading Linking Entry-Meeting Name."""
+    field_map = {
+        'a': 'meeting_name_or_jurisdiction_name_as_entry_element',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting',
+        'e': 'subordinate_unit',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'j': 'relator_term',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_meeting',
+        'p': 'name_of_part_section_of_a_work',
+        'q': 'name_of_meeting_following_jurisdiction_name_entry_element',
+        's': 'version',
+        't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map1 = {
         "0": "Inverted name",
         "1": "Jurisdiction name",
@@ -214,6 +315,7 @@ def established_heading_linking_entry_meeting_name(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
@@ -255,6 +357,36 @@ def established_heading_linking_entry_meeting_name(self, key, value):
 @utils.filter_values
 def established_heading_linking_entry_uniform_title(self, key, value):
     """Established Heading Linking Entry-Uniform Title."""
+    field_map = {
+        'a': 'uniform_title',
+        'd': 'date_of_treaty_signing',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'i': 'relationship_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -265,6 +397,7 @@ def established_heading_linking_entry_uniform_title(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
@@ -332,6 +465,23 @@ def established_heading_linking_entry_uniform_title(self, key, value):
 @utils.filter_values
 def established_heading_linking_entry_chronological_term(self, key, value):
     """Established Heading Linking Entry-Chronological Term."""
+    field_map = {
+        'a': 'chronological_term',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -342,6 +492,7 @@ def established_heading_linking_entry_chronological_term(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'chronological_term': value.get('a'),
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -384,6 +535,25 @@ def established_heading_linking_entry_chronological_term(self, key, value):
 @utils.filter_values
 def established_heading_linking_entry_topical_term(self, key, value):
     """Established Heading Linking Entry-Topical Term."""
+    field_map = {
+        'a': 'topical_term_or_geographic_name_entry_element',
+        'b': 'topical_term_following_geographic_name_entry_element',
+        'g': 'miscellaneous_information',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -394,6 +564,7 @@ def established_heading_linking_entry_topical_term(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'topical_term_or_geographic_name_entry_element': value.get('a'),
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -440,6 +611,24 @@ def established_heading_linking_entry_topical_term(self, key, value):
 @utils.filter_values
 def established_heading_linking_entry_geographic_name(self, key, value):
     """Established Heading Linking Entry-Geographic Name."""
+    field_map = {
+        'a': 'geographic_name',
+        'g': 'miscellaneous_information',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -450,6 +639,7 @@ def established_heading_linking_entry_geographic_name(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'geographic_name': value.get('a'),
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -495,6 +685,23 @@ def established_heading_linking_entry_geographic_name(self, key, value):
 @utils.filter_values
 def established_heading_linking_entry_genre_form_term(self, key, value):
     """Established Heading Linking Entry-Genre/Form Term."""
+    field_map = {
+        'a': 'genre_form_term_as_entry_element',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -505,6 +712,7 @@ def established_heading_linking_entry_genre_form_term(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'genre_form_term_as_entry_element': value.get('a'),
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -550,6 +758,19 @@ def established_heading_linking_entry_medium_of_performance_term(
         key,
         value):
     """Established Heading Linking Entry-Medium of Performance Term."""
+    field_map = {
+        'a': 'medium_of_performance_term_as_entry_element',
+        'i': 'relationship_information',
+        'w': 'control_subfield',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -560,6 +781,7 @@ def established_heading_linking_entry_medium_of_performance_term(
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'medium_of_performance_term_as_entry_element': value.get('a'),
         'relationship_information': utils.force_list(
             value.get('i')
@@ -590,6 +812,22 @@ def established_heading_linking_entry_medium_of_performance_term(
 @utils.filter_values
 def subdivision_linking_entry_general_subdivision(self, key, value):
     """Subdivision Linking Entry-General Subdivision."""
+    field_map = {
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -600,6 +838,7 @@ def subdivision_linking_entry_general_subdivision(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
@@ -641,6 +880,22 @@ def subdivision_linking_entry_general_subdivision(self, key, value):
 @utils.filter_values
 def subdivision_linking_entry_geographic_subdivision(self, key, value):
     """Subdivision Linking Entry-Geographic Subdivision."""
+    field_map = {
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -651,6 +906,7 @@ def subdivision_linking_entry_geographic_subdivision(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
@@ -692,6 +948,22 @@ def subdivision_linking_entry_geographic_subdivision(self, key, value):
 @utils.filter_values
 def subdivision_linking_entry_chronological_subdivision(self, key, value):
     """Subdivision Linking Entry-Chronological Subdivision."""
+    field_map = {
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -702,6 +974,7 @@ def subdivision_linking_entry_chronological_subdivision(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
@@ -743,6 +1016,22 @@ def subdivision_linking_entry_chronological_subdivision(self, key, value):
 @utils.filter_values
 def subdivision_linking_entry_form_subdivision(self, key, value):
     """Subdivision Linking Entry-Form Subdivision."""
+    field_map = {
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -753,6 +1042,7 @@ def subdivision_linking_entry_form_subdivision(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
@@ -791,6 +1081,17 @@ def subdivision_linking_entry_form_subdivision(self, key, value):
 @utils.filter_values
 def complex_linking_entry_data(self, key, value):
     """Complex Linking Entry Data."""
+    field_map = {
+        'a': 'heading_referred_to',
+        'i': 'explanatory_text',
+        '2': 'source_of_heading_or_term',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
+    }
+    order = utils.map_order(field_map, value)
+
     indicator_map2 = {
         "0": "Library of Congress Subject Headings",
         "1": "LC subject headings for children's literature",
@@ -801,6 +1102,7 @@ def complex_linking_entry_data(self, key, value):
         "6": "Répertoire de vedettes-matière",
         "7": "Source specified in subfield $2"}
     return {
+        '__order__': tuple(order) if len(order) else None,
         'heading_referred_to': utils.force_list(
             value.get('a')
         ),
