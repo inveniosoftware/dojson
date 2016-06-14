@@ -14,13 +14,20 @@ import copy
 import pytest
 import simplejson as json
 
-from dojson.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict, filter_values, force_list
 
 
 @pytest.fixture
 def god():
     """Create a GroupableOrderedDict for testing."""
     return GroupableOrderedDict([('a', 'dojson'), ('b', 2), ('c', 'invenio'),
+                                 ('a', 4), ('b', 5)])
+
+
+@pytest.fixture
+def god_with_none():
+    """Create a GroupableOrderedDict for testing, with a None value."""
+    return GroupableOrderedDict([('a', 'dojson'), ('b', 2), ('c', None),
                                  ('a', 4), ('b', 5)])
 
 
@@ -167,3 +174,22 @@ def test_empty_elements():
     assert '037__' in data.keys()
     assert data['037__'] == {}
     assert (('__order__', ('037__', )), ('037__', {})) == data.items()
+
+
+def test_force_list():
+    """Test the behavior of force_list()."""
+    assert force_list([1, 2, 3]) == [1, 2, 3]
+    assert sorted(force_list(set([1, 2, 3]))) == sorted([1, 2, 3])
+    assert force_list((1, 2, 3)) == [1, 2, 3]
+    assert force_list(None) == []
+    assert force_list("foo") == ["foo"]
+
+
+def test_filter_value_on_groupable_ordered_dict(god_with_none):
+    @filter_values
+    def dummy(god):
+        return god
+    assert dummy(god_with_none) == GroupableOrderedDict([('a', 'dojson'),
+                                                         ('b', 2),
+                                                         ('a', 4),
+                                                         ('b', 5)])

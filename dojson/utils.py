@@ -30,7 +30,7 @@ def int_with_default(value, default):
 
 
 def ignore_value(f):
-    """Remove key for None value.
+    """Remove key for None or empty value value.
 
     .. versionadded:: 0.2.0
 
@@ -45,11 +45,14 @@ def ignore_value(f):
 
 
 def filter_values(f):
-    """Remove None values from dictionary."""
+    """Remove None or empty values from dictionary."""
     @functools.wraps(f)
     def wrapper(*args, **kwargs):
         out = f(*args, **kwargs)
-        return dict((k, v) for k, v in six.iteritems(out) if v is not None)
+        out = dict((k, v) for k, v in six.iteritems(out) if v or v is False or v == 0)
+        if '__order__' in out:
+            out['__order__'] = tuple(k for k in out['__order__'] if k in out)
+        return out
     return wrapper
 
 
@@ -96,8 +99,12 @@ def reverse_for_each_value(f):
 
 def force_list(data):
     """Wrap data in list."""
-    if data is not None and not isinstance(data, (list, tuple, set)):
-        return (data,)
+    if data is None:
+        return []
+    elif not isinstance(data, (list, tuple, set)):
+        return [data]
+    elif isinstance(data, (tuple, set)):
+        return list(data)
     return data
 
 
