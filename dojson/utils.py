@@ -80,6 +80,20 @@ def for_each_value(f):
     return wrapper
 
 
+def yield_each_value(f):
+    """Apply function that yields to each item."""
+    # Extends values under same name in output.  This should be possible
+    # because we are alredy expecting list.
+    setattr(f, '__extend__', True)
+
+    @functools.wraps(f)
+    def wrapper(self, key, values, **kwargs):
+        if isinstance(values, (list, tuple, set)):
+            return [el for value in values for el in f(self, key, value, **kwargs)]
+        return [el for el in f(self, key, value, **kwargs)]
+    return wrapper
+
+
 def reverse_for_each_value(f):
     """Undo what `for_each_value` does."""
     @functools.wraps(f)
