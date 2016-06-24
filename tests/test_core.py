@@ -20,7 +20,7 @@ from dojson.contrib.marc21 import marc21
 from dojson.contrib.marc21.utils import create_record, load, split_stream
 from dojson.contrib.to_marc21 import to_marc21
 from dojson.contrib.to_marc21.utils import dumps
-from dojson.utils import ignore_value
+from dojson.utils import flatten, for_each_value, ignore_value
 
 RECORD = """<record>
   <controlfield tag="001">17575</controlfield>
@@ -186,6 +186,29 @@ def test_missing_fields():
         return value
 
     assert '0247_' in overdo.missing({'0247_': '024', '247__': '247'})
+
+
+def test_flatten():
+    """Test result flattening."""
+    overdo = dojson.Overdo()
+
+    @overdo.over('a', 'a')
+    @flatten
+    def times(self, key, value):
+        for item in value:
+            yield [item * 2]
+
+    @overdo.over('b', 'b')
+    @flatten
+    @for_each_value
+    def square(self, key, value):
+        for item in value:
+            yield item * item
+
+    source = {'a': [0, 1], 'b': [[0, 1], [2, 3]]}
+    result = {'a': [0, 2], 'b': [0, 1, 4, 9]}
+
+    assert overdo.do(source) == result
 
 
 def test_destination_with_dashes():

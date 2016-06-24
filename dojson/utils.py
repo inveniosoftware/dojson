@@ -11,6 +11,7 @@
 
 import codecs
 import functools
+import itertools
 import warnings
 from collections import Counter, OrderedDict
 
@@ -49,6 +50,19 @@ def filter_values(f):
     def wrapper(*args, **kwargs):
         out = f(*args, **kwargs)
         return dict((k, v) for k, v in six.iteritems(out) if v is not None)
+    return wrapper
+
+
+def flatten(f):
+    """Flatten list of iterables.
+
+    .. versionadded:: 1.3.0
+    """
+    @functools.wraps(f)
+    def wrapper(self, key, values, **kwargs):
+        return list(itertools.chain.from_iterable(
+            f(self, key, values, **kwargs)
+        ))
     return wrapper
 
 
