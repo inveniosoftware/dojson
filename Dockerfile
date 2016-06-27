@@ -15,7 +15,7 @@ RUN pip install coveralls \
                 ipython \
                 lxml \
                 mock \
-                pep257 \
+                pydocstyle \
                 pytest \
                 pytest-cache \
                 pytest-cov \
