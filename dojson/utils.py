@@ -376,10 +376,16 @@ class GroupableOrderedDict(OrderedDict):
         if not repeated:
             if with_order:
                 yield '__order__', dict.__getitem__(self, '__order__')
+            occurences = {
+                k: len(list(v))
+                for k, v in itertools.groupby(sorted(self.keys()))
+            }
             for key, value in OrderedDict.items(self):
                 if key == '__order__':
                     continue
-                if len(value) == 1:
+                if isinstance(value, (list, tuple)) and \
+                        len(value) == 1 and \
+                        occurences[key] == 1:
                     yield key, value[0]
                 else:
                     yield key, value

@@ -155,3 +155,15 @@ def test_groupable_ordered_dict_recreate(god):
                                  'c': 'invenio'})
 
     assert god2 == god
+
+
+def test_empty_elements():
+    """Test empty elements."""
+    from dojson.contrib.marc21.utils import create_record
+    xml = (
+        '<record><datafield tag="037" ind1=" " ind2=" "></datafield></record>'
+    )
+    data = create_record(xml)
+    assert '037__' in data.keys()
+    assert data['037__'] == {}
+    assert (('__order__', ('037__', )), ('037__', {})) == data.items()
