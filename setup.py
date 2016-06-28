@@ -61,7 +61,7 @@ setup(
     url='http://github.com/inveniosoftware/dojson/',
     license='BSD',
     author='Invenio collaboration',
-    author_email='info@invenio-software.org',
+    author_email='info@inveniosoftware.org',
     description=__doc__,
     long_description=open('README.rst').read(),
     packages=['dojson'],
