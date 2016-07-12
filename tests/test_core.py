@@ -42,7 +42,6 @@ RECORD = """<record>
     <subfield code="a">&lt;p&gt;Model definitions and data...&lt;/p&gt;</subfield>
   </datafield>
   <datafield tag="540" ind1=" " ind2=" ">
-    <subfield code="u"></subfield>
     <subfield code="a">Other (Open)</subfield>
   </datafield>
   <datafield tag="542" ind1=" " ind2=" ">

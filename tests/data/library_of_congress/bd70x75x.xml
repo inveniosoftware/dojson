@@ -694,7 +694,6 @@
     <datafield tag="730" ind1="0" ind2=" ">
       <subfield code="a">Index librorum prohibitorum.</subfield>
       <subfield code="f">1570.</subfield>
-      <subfield code="5"></subfield>
     </datafield>
   </record>
   <record>
@@ -809,7 +808,6 @@
   <record>
     <datafield tag="740" ind1="0" ind2="2">
       <subfield code="a">South Pacific</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -988,7 +986,6 @@
       <subfield code="d">Mediterranean gecko</subfield>
       <subfield code="d">Mediterranean gekko</subfield>
       <subfield code="x">Hemidactylus turcicus.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -1001,7 +998,6 @@
       <subfield code="a">Turcicus</subfield>
       <subfield code="d">Mediterranean gecko</subfield>
       <subfield code="d">Mediterranean gekko.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -1012,7 +1008,6 @@
       <subfield code="a">Hemidactylus</subfield>
       <subfield code="c">species</subfield>
       <subfield code="a">Turcicus.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -1029,7 +1024,6 @@
       <subfield code="x">Andropogon glomeratus</subfield>
       <subfield code="z">Species authority: (Walt.) BSP</subfield>
       <subfield code="z">Variety authority: Vasey turcicus.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -1042,7 +1036,6 @@
       <subfield code="a">agraria</subfield>
       <subfield code="x">Barbula agraria.</subfield>
       <subfield code="z">Species authority: Hedw.turcicus.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -1059,7 +1052,6 @@
       <subfield code="d">Eastern diamondback rattlesnake</subfield>
       <subfield code="d">Rattler</subfield>
       <subfield code="d">Rattlesnake.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -1076,7 +1068,6 @@
       <subfield code="d">Pigmy rattlesnake</subfield>
       <subfield code="d">Rattler</subfield>
       <subfield code="d">Rattlesnake.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -1099,7 +1090,6 @@
       <subfield code="a">setigera</subfield>
       <subfield code="c">variety</subfield>
       <subfield code="a">tomentosa.</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
 </collection>

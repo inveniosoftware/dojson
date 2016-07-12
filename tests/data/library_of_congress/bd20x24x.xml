@@ -262,9 +262,6 @@
     </datafield>
   </record>
   <record>
-    <datafield tag="240" ind1="1" ind2="0"/>
-  </record>
-  <record>
     <datafield tag="240" ind1="1" ind2="4">
       <subfield code="a">The Pickwick papers.</subfield>
       <subfield code="l">French</subfield>
@@ -416,26 +413,6 @@
   </record>
   <record>
     <datafield tag="245" ind1="0" ind2="0">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="245" ind1="0" ind2="0">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="245" ind1="0" ind2="0">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="245" ind1="0" ind2="0">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">4 corners power review.</subfield>
     </datafield>
   </record>
@@ -517,7 +494,6 @@
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Assembly file analysis</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -582,7 +558,6 @@
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">College English</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -609,7 +584,6 @@
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Concerto per piano n. 21, K 467</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -641,7 +615,6 @@
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Daily report.</subfield>
       <subfield code="p">People's Republic of China</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -705,19 +678,16 @@
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Florida bird songs</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Focus on grammar</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Folk songs of S.E. Tennessee</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -752,7 +722,6 @@
       <subfield code="a">Heritage Books archives.</subfield>
       <subfield code="p">Underwood biographical dictionary.</subfield>
       <subfield code="n">Volumes 1 &amp; 2 revised</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -830,7 +799,6 @@
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Life on earth.</subfield>
       <subfield code="p">The swarming hordes</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -920,13 +888,11 @@
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Nineteenth century English drama</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Oklahoma</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -943,7 +909,6 @@
       <subfield code="a">Portals to the world.</subfield>
       <subfield code="p">Selected Internet resources.</subfield>
       <subfield code="p">Maldives</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -972,7 +937,6 @@
   <record>
     <datafield tag="245" ind1="0" ind2="0">
       <subfield code="a">Rubber world</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1058,13 +1022,11 @@
   <record>
     <datafield tag="245" ind1="0" ind2="3">
       <subfield code="a">La mer</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="245" ind1="0" ind2="3">
       <subfield code="a">Le Bureau</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1096,7 +1058,6 @@
   <record>
     <datafield tag="245" ind1="0" ind2="4">
       <subfield code="a">The Green bag</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1148,30 +1109,10 @@
     </datafield>
   </record>
   <record>
-    <datafield tag="245" ind1="0" ind2="5">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="6">880-02</subfield>
       <subfield code="a">Hung Jen-kan /</subfield>
       <subfield code="c">cShen Wei-pin chu.</subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="245" ind1="1" ind2="0">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="245" ind1="1" ind2="0">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="245" ind1="1" ind2="0">
-      <subfield code="a"></subfield>
     </datafield>
   </record>
   <record>
@@ -1253,7 +1194,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Conference on Industrial Development in the Arab Countries :</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -1325,7 +1265,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Gentlemen's quarterly</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1419,7 +1358,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Law and the family, New York /</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -1453,7 +1391,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Newspaper geog. list</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1493,7 +1430,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Proceedings of the Seminar on Cataloging Digital Documents, October 12-14, 1994</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1557,7 +1493,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Trade Union Fellowship Program :</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -1568,7 +1503,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="0">
       <subfield code="a">Vier letzte Lieder</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1679,7 +1613,6 @@
   <record>
     <datafield tag="245" ind1="1" ind2="4">
       <subfield code="a">The New Lost City Ramblers with Cousin Emmy</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
@@ -1732,13 +1665,11 @@
   <record>
     <datafield tag="245" ind1="1" ind2="4">
       <subfield code="a">The printer's manual</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="245" ind1="1" ind2="4">
       <subfield code="a">The royal gazette</subfield>
-      <subfield code="h"></subfield>
     </datafield>
   </record>
   <record>

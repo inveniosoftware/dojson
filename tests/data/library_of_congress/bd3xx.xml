@@ -1365,19 +1365,16 @@
   <record>
     <datafield tag="348" ind1=" " ind2=" ">
       <subfield code="a">part</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="348" ind1=" " ind2=" ">
       <subfield code="a">piano conductor part</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="348" ind1=" " ind2=" ">
       <subfield code="a">score</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -1390,7 +1387,6 @@
   <record>
     <datafield tag="348" ind1=" " ind2=" ">
       <subfield code="a">vocal score</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -2356,25 +2352,21 @@
   <record>
     <datafield tag="388" ind1="1" ind2=" ">
       <subfield code="a">18th century</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="388" ind1="1" ind2=" ">
       <subfield code="a">19th century</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="388" ind1="1" ind2=" ">
       <subfield code="a">Ancient period</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="388" ind1="1" ind2=" ">
       <subfield code="a">Anglo-Saxon period</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -2387,7 +2379,6 @@
     <datafield tag="388" ind1="2" ind2=" ">
       <subfield code="a">20th century</subfield>
       <subfield code="a">21st century</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
 </collection>
