@@ -215,6 +215,15 @@ class GroupableOrderedDict(OrderedDict):
         OrderedDict.__setitem__(new, '__order__', tuple(ordering))
         return new
 
+    def __repr__(self):
+        """Output the representation of the GroupableOrderedDict."""
+        out = ("({!r}, {!r})".format(k, v)
+               for k, v in self.iteritems(repeated=True)
+               if k != '__order__')
+        return 'GroupableOrderedDict(({out}))'.format(out=', '.join(out))
+
+    __str__ = __repr__
+
     def __init__(self, *args, **kwargs):
         """Initialize the GroupableOrderedDict.
 
