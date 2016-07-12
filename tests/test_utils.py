@@ -164,6 +164,11 @@ def test_groupable_ordered_dict_recreate(god):
     assert god2 == god
 
 
+def test_groupable_ordered_dict_repr(god):
+    """Test that a eval(repr(god)) == god."""
+    assert eval(repr(god)) == god
+
+
 def test_empty_elements():
     """Test empty elements."""
     from dojson.contrib.marc21.utils import create_record
