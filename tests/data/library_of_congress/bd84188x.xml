@@ -93,7 +93,6 @@
   <record>
     <datafield tag="852" ind1=" " ind2="0">
       <subfield code="3">Correspondence</subfield>
-      <subfield code="a"></subfield>
     </datafield>
   </record>
   <record>
@@ -465,11 +464,6 @@
   </record>
   <record>
     <datafield tag="856" ind1="4" ind2="1">
-      <subfield code="u"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="856" ind1="4" ind2="1">
       <subfield code="u">http://muse.jhu.edu/journals/american%5Fquarterly/</subfield>
     </datafield>
   </record>
@@ -648,13 +642,11 @@
   <record>
     <datafield tag="887" ind1=" " ind2=" ">
       <subfield code="a">&lt;Box&gt;&lt;eastlimit&gt;0&lt;/eastlimit&gt;&lt;westlimit&gt;180&lt;/westlimit&gt;&lt;/Box&gt;</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="887" ind1=" " ind2=" ">
       <subfield code="a">&lt;TextPublicationDate&gt;20000617&lt;/TextPublicationDate&gt;</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
 </collection>

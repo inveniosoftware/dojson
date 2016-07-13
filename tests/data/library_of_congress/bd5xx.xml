@@ -7,11 +7,6 @@
   </record>
   <record>
     <datafield tag="500" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">"ISSN 0399-3388."</subfield>
     </datafield>
   </record>
@@ -574,7 +569,6 @@
   <record>
     <datafield tag="506" ind1=" " ind2=" ">
       <subfield code="a">Some restrictions apply. Consult restricted access file for restriction details:</subfield>
-      <subfield code="u"></subfield>
     </datafield>
   </record>
   <record>
@@ -1290,19 +1284,16 @@
     <datafield tag="520" ind1="4" ind2=" ">
       <subfield code="a">Contains strong sexual theme and fetish scenes</subfield>
       <subfield code="c">Central County Library</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="520" ind1="4" ind2=" ">
       <subfield code="a">Contains swear words, sex scenes and violence</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="520" ind1="4" ind2=" ">
       <subfield code="a">Contains violence</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -1687,7 +1678,6 @@
     <datafield tag="533" ind1=" " ind2=" ">
       <subfield code="3">v.40-49(1966-1975)</subfield>
       <subfield code="a">Electronic reproduction.</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -1702,19 +1692,16 @@
   <record>
     <datafield tag="533" ind1=" " ind2=" ">
       <subfield code="a">Microfiche.</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="533" ind1=" " ind2=" ">
       <subfield code="a">Microfiche.</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="533" ind1=" " ind2=" ">
       <subfield code="a">Microfiche.</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -1795,7 +1782,6 @@
       <subfield code="a">Microfilm.</subfield>
       <subfield code="b">Washington, D.C. :</subfield>
       <subfield code="c">United States Historical Documents Institute,</subfield>
-      <subfield code="d"></subfield>
     </datafield>
   </record>
   <record>
@@ -1826,7 +1812,6 @@
       <subfield code="m">1960-1968.</subfield>
       <subfield code="b">Washington, D.C. :</subfield>
       <subfield code="c">Library of Congress,</subfield>
-      <subfield code="d"></subfield>
     </datafield>
   </record>
   <record>
@@ -2012,7 +1997,6 @@
   <record>
     <datafield tag="534" ind1=" " ind2=" ">
       <subfield code="p">Originalversion:</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -2032,7 +2016,6 @@
     <datafield tag="534" ind1=" " ind2=" ">
       <subfield code="p">Originalversion:</subfield>
       <subfield code="t">A map of Virginia andMaryland.</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -2608,7 +2591,6 @@
       <subfield code="l">undetermined </subfield>
       <subfield code="m">undetermined</subfield>
       <subfield code="o">20071210 </subfield>
-      <subfield code="q"></subfield>
     </datafield>
   </record>
   <record>
@@ -2619,7 +2601,6 @@
       <subfield code="l">undetermined </subfield>
       <subfield code="m">undetermined</subfield>
       <subfield code="o">20071210 </subfield>
-      <subfield code="q"></subfield>
     </datafield>
   </record>
   <record>
@@ -3567,7 +3548,6 @@
     <datafield tag="583" ind1="0" ind2=" ">
       <subfield code="a">appraised</subfield>
       <subfield code="c">197508</subfield>
-      <subfield code="l"></subfield>
       <subfield code="2">5,000</subfield>
       <subfield code="k">Karl Schach</subfield>
     </datafield>

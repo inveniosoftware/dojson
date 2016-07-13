@@ -309,14 +309,12 @@
     <datafield tag="017" ind1=" " ind2=" ">
       <subfield code="a">99-263</subfield>
       <subfield code="b">BwMiBKP </subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="017" ind1=" " ind2=" ">
       <subfield code="a">99-7356</subfield>
       <subfield code="b">RuMoRKP </subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -532,7 +530,6 @@
   </record>
   <record>
     <datafield tag="020" ind1=" " ind2=" ">
-      <subfield code="c"></subfield>
       <subfield code="8">.95</subfield>
     </datafield>
   </record>
@@ -2524,7 +2521,6 @@
   <record>
     <datafield tag="046" ind1=" " ind2=" ">
       <subfield code="j">2001-07-12</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -2608,13 +2604,11 @@
   <record>
     <datafield tag="047" ind1=" " ind2="7">
       <subfield code="a">hum</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="047" ind1=" " ind2="7">
       <subfield code="a">rgg</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -2662,7 +2656,6 @@
       <subfield code="a">pct01</subfield>
       <subfield code="a">pxy02</subfield>
       <subfield code="a">pta01</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -2671,7 +2664,6 @@
       <subfield code="a">tth01</subfield>
       <subfield code="a">tch01</subfield>
       <subfield code="a">kor01</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -3101,11 +3093,6 @@
   </record>
   <record>
     <datafield tag="066" ind1=" " ind2=" ">
-      <subfield code="b"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="066" ind1=" " ind2=" ">
       <subfield code="b">)Q</subfield>
     </datafield>
   </record>
@@ -3259,20 +3246,17 @@
   <record>
     <datafield tag="080" ind1=" " ind2=" ">
       <subfield code="a">001.81</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="080" ind1=" " ind2=" ">
       <subfield code="a">631.321:631.411.3 </subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="080" ind1=" " ind2=" ">
       <subfield code="a">821.113.1</subfield>
       <subfield code="x">(494) </subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>
@@ -3293,7 +3277,6 @@
       <subfield code="x">(474) </subfield>
       <subfield code="x">"19"</subfield>
       <subfield code="x">(075)</subfield>
-      <subfield code="2"></subfield>
     </datafield>
   </record>
   <record>

@@ -223,11 +223,6 @@
   </record>
   <record>
     <datafield tag="257" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="257" ind1=" " ind2=" ">
       <subfield code="a">France</subfield>
       <subfield code="a">Germany</subfield>
       <subfield code="a">Italy</subfield>
@@ -290,61 +285,6 @@
   </record>
   <record>
     <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
       <subfield code="a">Amsterdam :</subfield>
       <subfield code="b">Elsevier,</subfield>
       <subfield code="c">1979-</subfield>
@@ -390,7 +330,6 @@
   <record>
     <datafield tag="260" ind1=" " ind2=" ">
       <subfield code="a">London :</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -420,7 +359,6 @@
     <datafield tag="260" ind1=" " ind2=" ">
       <subfield code="a">London :</subfield>
       <subfield code="b">Howard League for Penal Reform,</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -536,7 +474,6 @@
       <subfield code="a">Paris :</subfield>
       <subfield code="b">Impr. Vincent,</subfield>
       <subfield code="c">1798</subfield>
-      <subfield code="a"></subfield>
     </datafield>
   </record>
   <record>
@@ -569,7 +506,6 @@
   <record>
     <datafield tag="260" ind1=" " ind2=" ">
       <subfield code="a">Victoria, B.C. :</subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
@@ -599,16 +535,6 @@
       <subfield code="a">Washington, D.C. :</subfield>
       <subfield code="b">U.S. Dept. of Commerce, Bureau of the Census:</subfield>
       <subfield code="b">For sale by the Supt. of Docs., U.S. G.P.O.</subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="c"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -730,7 +656,6 @@
     <datafield tag="262" ind1=" " ind2=" ">
       <subfield code="a">Louisville, KY.,</subfield>
       <subfield code="b">Louisville Orchestra,</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -744,14 +669,12 @@
     <datafield tag="262" ind1=" " ind2=" ">
       <subfield code="b">RCA Victor</subfield>
       <subfield code="k">LM6130.</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
     <datafield tag="262" ind1=" " ind2=" ">
       <subfield code="b">Telefunken</subfield>
       <subfield code="k">SLT 43091.</subfield>
-      <subfield code="c"></subfield>
     </datafield>
   </record>
   <record>
@@ -781,13 +704,7 @@
   </record>
   <record>
     <datafield tag="264" ind1=" " ind2="1">
-      <subfield code="a"></subfield>
-    </datafield>
-  </record>
-  <record>
-    <datafield tag="264" ind1=" " ind2="1">
       <subfield code="a">Boston : </subfield>
-      <subfield code="b"></subfield>
     </datafield>
   </record>
   <record>
