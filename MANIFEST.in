@@ -9,6 +9,7 @@ include *.rst
 include *.sh
 include *.yml
 include .coveragerc
+include .editorconfig
 include .travis.yml
 include .dockerignore
 include Dockerfile

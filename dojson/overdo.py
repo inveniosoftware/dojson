@@ -13,7 +13,6 @@ import re
 
 from pkg_resources import iter_entry_points
 from six import iteritems
-
 from six.moves import zip_longest
 
 from .errors import IgnoreKey, MissingRule
