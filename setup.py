@@ -26,6 +26,7 @@ tests_require = [
     'coverage>=4.0',
     'coverage>=4.0.0',
     'isort>=4.2.2',
+    'jsonschema>=2.5.1',
     'mock>=1.0.0',
     'pydocstyle>=1.0.0',
     'pytest-cache>=1.0',
@@ -52,7 +53,6 @@ install_requires = [
     'click>=5.0.0',
     'lxml>=3.4',
     'simplejson>=3.8.1',
-    'six>=1.7.2',
 ]
 
 setup(

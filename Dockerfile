@@ -20,7 +20,6 @@ RUN pip install coveralls \
                 pytest-cache \
                 pytest-cov \
                 pytest-pep8 \
-                six \
                 sphinx_rtd_theme
 
 # Add sources to `code` and work there:

@@ -13,9 +13,8 @@ import warnings
 from collections import MutableMapping, MutableSequence
 from operator import itemgetter
 
-from six import iteritems
-
 from dojson import Overdo
+from dojson._compat import iteritems
 from dojson.errors import IgnoreKey, MissingRule
 from dojson.utils import GroupableOrderedDict
 

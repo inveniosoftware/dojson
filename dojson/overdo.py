@@ -12,9 +12,8 @@
 import re
 
 from pkg_resources import iter_entry_points
-from six import iteritems
-from six.moves import zip_longest
 
+from ._compat import iteritems, zip_longest
 from .errors import IgnoreKey, MissingRule
 from .utils import GroupableOrderedDict
 

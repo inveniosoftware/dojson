@@ -15,10 +15,14 @@ import itertools
 import warnings
 from collections import Counter, OrderedDict
 
-import simplejson as json
-import six
-
+from ._compat import iteritems
 from .errors import IgnoreKey
+
+try:
+    import simplejson as json
+except ImportError:
+    import json
+
 
 
 def int_with_default(value, default):
@@ -49,7 +53,7 @@ def filter_values(f):
     @functools.wraps(f)
     def wrapper(*args, **kwargs):
         out = f(*args, **kwargs)
-        return dict((k, v) for k, v in six.iteritems(out) if v is not None)
+        return dict((k, v) for k, v in iteritems(out) if v is not None)
     return wrapper
 
 
@@ -187,7 +191,7 @@ class GroupableOrderedDict(OrderedDict):
                         c[key] += 1
                     values = tmp
                 else:
-                    values = six.iteritems(values)
+                    values = iteritems(values)
 
             for key, value in values:
                 if key not in new:

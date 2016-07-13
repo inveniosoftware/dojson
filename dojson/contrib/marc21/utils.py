@@ -14,8 +14,8 @@ from collections import Counter, OrderedDict
 
 import pkg_resources
 from lxml import etree
-from six import StringIO, binary_type, iteritems, text_type
 
+from dojson._compat import StringIO, binary_type, iteritems, text_type
 from dojson.utils import GroupableOrderedDict
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
