@@ -19,7 +19,11 @@ python:
   - "2.7"
   - "3.4"
   - "3.5"
-  - "3.5-dev"
+  - "pypy"
+
+matrix:
+  allow_failures:
+    - python: pypy
 
 before_install:
   - "travis_retry pip install --upgrade pip setuptools"

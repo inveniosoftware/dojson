@@ -15,14 +15,10 @@ import itertools
 import warnings
 from collections import Counter, OrderedDict
 
+import simplejson as json
+
 from ._compat import iteritems
 from .errors import IgnoreKey
-
-try:
-    import simplejson as json
-except ImportError:
-    import json
-
 
 
 def int_with_default(value, default):

@@ -11,6 +11,7 @@
 
 import os
 
+import simplejson as json
 from lxml import etree, objectify
 
 import dojson
@@ -20,12 +21,6 @@ from dojson.contrib.marc21.utils import create_record, load, split_stream
 from dojson.contrib.to_marc21 import to_marc21
 from dojson.contrib.to_marc21.utils import dumps
 from dojson.utils import flatten, for_each_value, ignore_value
-
-try:
-    import simplejson as json
-except ImportError:
-    import json
-
 
 RECORD = """<record>
   <controlfield tag="001">17575</controlfield>
