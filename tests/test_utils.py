@@ -107,6 +107,11 @@ def test_groupable_ordered_dict_copy(god):
 
     assert god == god2
 
+def test_groupable_ordered_dict_deepcopy(god):
+    """Test that a GroupableOrderedDict can be copied deeply."""
+    god2 = copy.deepcopy(god)
+
+    assert god == god2
 
 def test_groupable_ordered_dict_new(god):
     """Test that a GroupableOrderedDict can be created from a same element."""
