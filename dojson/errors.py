@@ -14,7 +14,6 @@ class DoJSONException(Exception):
     """Parent for all DoJSON exceptions.
 
     .. versionadded:: 1.0.0
-
     """
 
 
@@ -22,7 +21,13 @@ class IgnoreKey(DoJSONException):
     """The corresponding key has been ignored.
 
     .. versionadded:: 0.2.0
+    """
 
+
+class IgnoreElement(DoJSONException):
+    """The corresponding element for the current list key has been ignored.
+
+    .. versionadded:: 1.3.0
     """
 
 
@@ -30,5 +35,4 @@ class MissingRule(DoJSONException):
     """Raise when no matching rule was found.
 
     .. versionadded:: 1.0.0
-
     """

@@ -20,7 +20,12 @@ from dojson.contrib.marc21 import marc21
 from dojson.contrib.marc21.utils import create_record, load, split_stream
 from dojson.contrib.to_marc21 import to_marc21
 from dojson.contrib.to_marc21.utils import dumps
-from dojson.utils import flatten, for_each_value, ignore_value
+from dojson.utils import (
+    flatten,
+    for_each_value,
+    ignore_list_element,
+    ignore_value,
+)
 
 RECORD = """<record>
   <controlfield tag="001">17575</controlfield>
@@ -287,6 +292,25 @@ def test_no_none_value():
 
     data = overdo.do({'0247_': 'valid value'})
     assert data.get('024') == 'valid value'
+
+
+def test_none_element():
+    """Test none value for a list element."""
+    overdo = dojson.Overdo()
+
+    @overdo.over('b', 'b')
+    @for_each_value
+    @ignore_list_element
+    def match(self, key, value):
+        if value == 2:
+            return None
+
+        return value
+
+    source = {'b': ['', 0, 1, 2, 3, None]}
+    result = {'b': ['', 0, 1, 3]}
+
+    assert overdo.do(source) == result
 
 
 def test_marc21_loader():

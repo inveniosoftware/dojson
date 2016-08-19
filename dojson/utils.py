@@ -18,7 +18,7 @@ from collections import Counter, OrderedDict
 import simplejson as json
 
 from ._compat import iteritems
-from .errors import IgnoreKey
+from .errors import IgnoreElement, IgnoreKey
 
 
 def int_with_default(value, default):
@@ -33,13 +33,26 @@ def ignore_value(f):
     """Remove key for None value.
 
     .. versionadded:: 0.2.0
-
     """
     @functools.wraps(f)
     def wrapper(self, key, value, **kwargs):
         result = f(self, key, value, **kwargs)
         if result is None:
             raise IgnoreKey(key)
+        return result
+    return wrapper
+
+
+def ignore_list_element(f):
+    """Skip empty element for the current key for None value.
+
+    .. versionadded:: 0.3.0
+    """
+    @functools.wraps(f)
+    def wrapper(self, key, value, **kwargs):
+        result = f(self, key, value, **kwargs)
+        if result is None:
+            raise IgnoreElement(key)
         return result
     return wrapper
 
@@ -74,9 +87,18 @@ def for_each_value(f):
 
     @functools.wraps(f)
     def wrapper(self, key, values, **kwargs):
-        if isinstance(values, (list, tuple, set)):
-            return [f(self, key, value, **kwargs) for value in values]
-        return [f(self, key, values, **kwargs)]
+        parsed_values = []
+
+        if not isinstance(values, (list, tuple, set)):
+            values = [values]
+
+        for value in values:
+            try:
+                parsed_values.append(f(self, key, value, **kwargs))
+            except IgnoreElement:
+                continue
+
+        return parsed_values
     return wrapper
 
 
