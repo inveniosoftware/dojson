@@ -26,6 +26,14 @@ class IgnoreKey(DoJSONException):
     """
 
 
+class IgnoreElem(DoJSONException):
+    """The corresponding elem for the current list key has been ignored.
+
+    .. versionadded:: ??
+
+    """
+
+
 class MissingRule(DoJSONException):
     """Raise when no matching rule was found.
 
