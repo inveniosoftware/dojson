@@ -9,6 +9,7 @@ Contact us at `info@inveniosoftware.org
 
 Active contributors:
 
+* David Caro <david@dcaro.es>
 * Esteban J. G. Gabancho <esteban.jose.garcia.gabancho@cern.ch>
 * Jiri Kuncar <jiri.kuncar@cern.ch>
 * Sami Hiltunen <sami.mikael.hiltunen@cern.ch>

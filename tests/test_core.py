@@ -20,6 +20,7 @@ from dojson.contrib.marc21 import marc21
 from dojson.contrib.marc21.utils import create_record, load, split_stream
 from dojson.contrib.to_marc21 import to_marc21
 from dojson.contrib.to_marc21.utils import dumps
+from dojson.errors import IgnoreItem
 from dojson.utils import flatten, for_each_value, ignore_value
 
 RECORD = """<record>
@@ -287,6 +288,23 @@ def test_no_none_value():
 
     data = overdo.do({'0247_': 'valid value'})
     assert data.get('024') == 'valid value'
+
+
+def test_ignore_item_exception():
+    """Test ignore item exception."""
+    overdo = dojson.Overdo()
+
+    @overdo.over('b', 'b')
+    @for_each_value
+    def match(self, key, value):
+        if not value:
+            raise IgnoreItem()
+        return value
+
+    source = {'b': ['', 0, 1, 2, 3, None]}
+    result = {'b': [1, 2, 3]}
+
+    assert overdo.do(source) == result
 
 
 def test_marc21_loader():

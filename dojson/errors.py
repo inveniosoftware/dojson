@@ -24,6 +24,13 @@ class IgnoreKey(DoJSONException):
     """
 
 
+class IgnoreItem(DoJSONException):
+    """The corresponding item from the current iterable has been ignored.
+
+    .. versionadded:: 1.3.0
+    """
+
+
 class MissingRule(DoJSONException):
     """Raise when no matching rule was found.
 

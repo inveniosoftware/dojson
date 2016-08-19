@@ -18,7 +18,7 @@ from collections import Counter, OrderedDict
 import simplejson as json
 
 from ._compat import iteritems
-from .errors import IgnoreKey
+from .errors import IgnoreItem, IgnoreKey
 
 
 def int_with_default(value, default):
@@ -73,9 +73,18 @@ def for_each_value(f):
 
     @functools.wraps(f)
     def wrapper(self, key, values, **kwargs):
-        if isinstance(values, (list, tuple, set)):
-            return [f(self, key, value, **kwargs) for value in values]
-        return [f(self, key, values, **kwargs)]
+        parsed_values = []
+
+        if not isinstance(values, (list, tuple, set)):
+            values = [values]
+
+        for value in values:
+            try:
+                parsed_values.append(f(self, key, value, **kwargs))
+            except IgnoreItem:
+                continue
+
+        return parsed_values
     return wrapper
 
 
