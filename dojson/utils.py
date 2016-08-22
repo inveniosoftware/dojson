@@ -33,7 +33,6 @@ def ignore_value(f):
     """Remove key for None value.
 
     .. versionadded:: 0.2.0
-
     """
     @functools.wraps(f)
     def wrapper(self, key, value, **kwargs):

@@ -12,6 +12,12 @@ API
 .. automodule:: dojson.overdo
    :members:
 
+Errors
+~~~~~~
+
+.. automodule:: dojson.errors
+   :members:
+
 CLI
 ---
 

@@ -108,16 +108,15 @@ class Overdo(object):
                                    of non-standard codes that are installation
                                    specific.
 
-        .. versionadded:: 1.0.0
+        .. versionchanged:: 1.0.0
 
            ``ignore_missing`` allows to specify if the function should raise
            an exception.
 
-        .. versionadded:: 1.1.0
+        .. versionchanged:: 1.1.0
 
            ``exception_handlers`` allows to set custom handlers for
            non-standard MARC codes.
-
         """
         handlers = {IgnoreKey: None}
         handlers.update(exception_handlers or {})
