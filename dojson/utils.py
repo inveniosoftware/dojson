@@ -233,7 +233,7 @@ class GroupableOrderedDict(OrderedDict):
         """A copy of D."""
         return GroupableOrderedDict(self)
 
-    def __deepcopy__(self):
+    def __deepcopy__(self, memo=None):
         """A copy of D."""
         return self.__copy__()
 
