@@ -10,10 +10,12 @@ include *.sh
 include *.yml
 include .coveragerc
 include .editorconfig
+include .lgtm
 include .travis.yml
 include .dockerignore
 include Dockerfile
 include LICENSE
+include MAINTAINERS
 include pytest.ini
 include tox.ini
 recursive-include docs *.py
