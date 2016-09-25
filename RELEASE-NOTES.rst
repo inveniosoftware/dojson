@@ -34,7 +34,7 @@ Installation
 Documentation
 -------------
 
-   http://dojson.readthedocs.org/en/v1.2.1
+   http://dojson.readthedocs.io/en/v1.2.1
 
 Happy hacking and thanks for flying DoJSON.
 

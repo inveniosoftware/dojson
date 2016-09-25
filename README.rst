@@ -37,7 +37,7 @@ DoJSON is on PyPI so all you need is:
 Documentation
 =============
 
-Documentation is readable at https://pythonhosted.org/dojson/ or
+Documentation is readable at https://dojson.readthedocs.io/ or
 it can be built using Sphinx:
 
 .. code-block:: console
