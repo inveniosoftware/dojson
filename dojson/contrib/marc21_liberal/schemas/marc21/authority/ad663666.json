@@ -1,0 +1,109 @@
+{
+    "type": "object",
+    "properties": {
+        "complex_see_also_reference_name": {
+            "description": "Complex See Also Reference-Name",
+            "properties": {
+                "explanatory_text": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "heading_referred_to": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "title_referred_to": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "complex_see_reference_name": {
+            "description": "Complex See Reference-Name",
+            "properties": {
+                "explanatory_text": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "heading_referred_to": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "title_referred_to": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "history_reference": {
+            "description": "History Reference",
+            "properties": {
+                "history_reference": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "general_explanatory_reference_name": {
+            "description": "General Explanatory Reference-Name",
+            "properties": {
+                "general_explanatory_reference": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

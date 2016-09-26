@@ -1,0 +1,157 @@
+{
+    "type": "object",
+    "properties": {
+        "nonpublic_general_note": {
+            "description": "Nonpublic General Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "nonpublic_general_note": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "public_general_note": {
+            "description": "Public General Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "heading_or_subdivision_term": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "explanatory_text": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "subject_example_tracing_note": {
+            "description": "Subject Example Tracing Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "subject_heading_or_subdivision_term": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "explanatory_text": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "deleted_heading_information": {
+            "description": "Deleted Heading Information",
+            "properties": {
+                "replacement_heading": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "replacement_authority_record_control_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "explanatory_text": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "application_history_note": {
+            "description": "Application History Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "application_history_note": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

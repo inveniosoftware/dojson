@@ -1,0 +1,1084 @@
+{
+    "type": "object",
+    "properties": {
+        "library_of_congress_control_number": {
+            "description": "Library of Congress Control Number",
+            "properties": {
+                "lc_control_number": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "canceled_invalid_lc_control_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "link_to_bibliographic_record_for_serial_or_multipart_item": {
+            "description": "Link to Bibliographic Record for Serial or Multipart Item",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "control_number_of_related_bibliographic_record": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "national_bibliographic_agency_control_number": {
+            "description": "National Bibliographic Agency Control Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "record_control_number": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "canceled_or_invalid_record_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "international_standard_book_number": {
+            "description": "International Standard Book Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "international_standard_book_number": {
+                        "type": "string"
+                    },
+                    "terms_of_availability": {
+                        "type": "string"
+                    },
+                    "qualifying_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_isbn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "international_standard_serial_number": {
+            "description": "International Standard Serial Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "canceled_issn_l": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "issn_l": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "incorrect_issn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_issn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "other_standard_identifier": {
+            "description": "Other Standard Identifier",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type_of_standard_number_or_code": {
+                        "type": "string"
+                    },
+                    "standard_number_or_code": {
+                        "type": "string"
+                    },
+                    "terms_of_availability": {
+                        "type": "string"
+                    },
+                    "additional_codes_following_the_standard_number_or_code": {
+                        "type": "string"
+                    },
+                    "qualifying_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_number_or_code": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_standard_number_or_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "musical_incipits_information": {
+            "description": "Musical Incipits Information",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "number_of_work": {
+                        "type": "string"
+                    },
+                    "number_of_excerpt": {
+                        "type": "string"
+                    },
+                    "number_of_movement": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    },
+                    "caption_or_heading": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "clef": {
+                        "type": "string"
+                    },
+                    "public_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "voice_instrument": {
+                        "type": "string"
+                    },
+                    "time_signature": {
+                        "type": "string"
+                    },
+                    "key_signature": {
+                        "type": "string"
+                    },
+                    "general_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "musical_notation": {
+                        "type": "string"
+                    },
+                    "coded_validity_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "system_code": {
+                        "type": "string"
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "text_incipit": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "link_text": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "key_or_mode": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "coded_cartographic_mathematical_data": {
+            "description": "Coded Cartographic Mathematical Data",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type_of_ring": {
+                        "enum": ["Not applicable", "Exclusion ring", "Outer ring"]
+                    },
+                    "beginning_date": {
+                        "type": "string"
+                    },
+                    "name_of_extraterrestrial_body": {
+                        "type": "string"
+                    },
+                    "coordinates_easternmost_longitude": {
+                        "type": "string"
+                    },
+                    "coordinates_westernmost_longitude": {
+                        "type": "string"
+                    },
+                    "coordinates_southernmost_latitude": {
+                        "type": "string"
+                    },
+                    "coordinates_northernmost_latitude": {
+                        "type": "string"
+                    },
+                    "declination_southern_limit": {
+                        "type": "string"
+                    },
+                    "declination_northern_limit": {
+                        "type": "string"
+                    },
+                    "right_ascension_eastern_limit": {
+                        "type": "string"
+                    },
+                    "g_ring_latitude": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "equinox": {
+                        "type": "string"
+                    },
+                    "right_ascension_western_limit": {
+                        "type": "string"
+                    },
+                    "authority_record_control_number_or_standard_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "g_ring_longitude": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "ending_date": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "distance_from_earth": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "system_control_number": {
+            "description": "System Control Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "system_control_number": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_system_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "cataloging_source": {
+            "description": "Cataloging Source",
+            "properties": {
+                "original_cataloging_agency": {
+                    "type": "string"
+                },
+                "transcribing_agency": {
+                    "type": "string"
+                },
+                "language_of_cataloging": {
+                    "type": "string"
+                },
+                "description_conventions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "modifying_agency": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "subject_heading_thesaurus_conventions": {
+                    "type": "string"
+                },
+                "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "authentication_code": {
+            "description": "Authentication Code",
+            "properties": {
+                "authentication_code": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "geographic_area_code": {
+            "description": "Geographic Area Code",
+            "properties": {
+                "geographic_area_code": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "iso_code": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "local_gac_code": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "authority_record_control_number_or_standard_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "source_of_local_code": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "time_period_of_heading": {
+            "description": "Time Period of Heading",
+            "properties": {
+                "time_period_code": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "formatted_pre_9999_bc_time_period": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "formatted_9999_bc_through_ce_time_period": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "special_coded_dates": {
+            "description": "Special Coded Dates",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "death_date": {
+                        "type": "string"
+                    },
+                    "birth_date": {
+                        "type": "string"
+                    },
+                    "beginning_or_single_date_created": {
+                        "type": "string"
+                    },
+                    "source_of_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "ending_date_created": {
+                        "type": "string"
+                    },
+                    "single_or_starting_date_for_aggregated_content": {
+                        "type": "string"
+                    },
+                    "establishment_date": {
+                        "type": "string"
+                    },
+                    "ending_date_for_aggregated_content": {
+                        "type": "string"
+                    },
+                    "start_period": {
+                        "type": "string"
+                    },
+                    "source_of_date_scheme": {
+                        "type": "string"
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "end_period": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "termination_date": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "library_of_congress_call_number": {
+            "description": "Library of Congress Call Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "classification_number": {
+                        "type": "string"
+                    },
+                    "item_number": {
+                        "type": "string"
+                    },
+                    "volumes_dates_to_which_call_number_applies": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "geographic_classification": {
+            "description": "Geographic Classification",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "geographic_classification_area_code": {
+                        "type": "string"
+                    },
+                    "geographic_classification_subarea_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "populated_place_name": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "code_source": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "lc_classification_number": {
+            "description": "LC Classification Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "classification_number_element_single_number_or_beginning_number_of_span": {
+                        "type": "string"
+                    },
+                    "explanatory_term": {
+                        "type": "string"
+                    },
+                    "classification_number_element_ending_number_of_span": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "library_and_archives_canada_call_number": {
+            "description": "Library and Archives Canada Call Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "classification_number": {
+                        "type": "string"
+                    },
+                    "item_number": {
+                        "type": "string"
+                    },
+                    "volumes_dates_to_which_call_number_applies": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "national_library_of_medicine_call_number": {
+            "description": "National Library of Medicine Call Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "classification_number": {
+                        "type": "string"
+                    },
+                    "item_number": {
+                        "type": "string"
+                    },
+                    "volumes_dates_to_which_call_number_applies": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "other_classification_number": {
+            "description": "Other Classification Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "classification_number_element_single_number_or_beginning_of_span": {
+                        "type": "string"
+                    },
+                    "explanatory_term": {
+                        "type": "string"
+                    },
+                    "classification_number_element_ending_number_of_span": {
+                        "type": "string"
+                    },
+                    "number_source": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "character_sets_present": {
+            "description": "Character Sets Present",
+            "properties": {
+                "primary_g0_character_set": {
+                    "type": "string"
+                },
+                "alternate_g0_or_g1_character_set": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "primary_g1_character_set": {
+                    "type": "string"
+                }
+            }
+        },
+        "national_agricultural_library_call_number": {
+            "description": "National Agricultural Library Call Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "classification_number": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "item_number": {
+                        "type": "string"
+                    },
+                    "volumes_dates_to_which_call_number_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "subject_category_code": {
+            "description": "Subject Category Code",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "subject_category_code": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "code_source": {
+                        "type": "string"
+                    },
+                    "subject_category_code_subdivision": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "subdivision_usage": {
+            "description": "Subdivision Usage",
+            "properties": {
+                "subdivision_usage": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "code_source": {
+                    "type": "string"
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "universal_decimal_classification_number": {
+            "description": "Universal Decimal Classification Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "universal_decimal_classification_number": {
+                        "type": "string"
+                    },
+                    "item_number": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "edition_identifier": {
+                        "type": "string"
+                    },
+                    "common_auxiliary_subdivision": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "dewey_decimal_call_number": {
+            "description": "Dewey Decimal Call Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type_of_edition": {
+                        "enum": ["Full", "Other edition specified in subfield $2", "Abridged"]
+                    },
+                    "source_of_call_number": {
+                        "enum": ["Assigned by agency other than LC", "No information provided", "Assigned by LC"]
+                    },
+                    "classification_number": {
+                        "type": "string"
+                    },
+                    "item_number": {
+                        "type": "string"
+                    },
+                    "volumes_dates_to_which_call_number_applies": {
+                        "type": "string"
+                    },
+                    "edition_number": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "dewey_decimal_classification_number": {
+            "description": "Dewey Decimal Classification Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type_of_edition": {
+                        "enum": ["Full", "Other edition specified in subfield $2", "Abridged"]
+                    },
+                    "source_of_classification_number": {
+                        "enum": ["Assigned by agency other than LC", "Assigned by LC"]
+                    },
+                    "classification_number_element_single_number_or_beginning_number_of_span": {
+                        "type": "string"
+                    },
+                    "explanatory_term": {
+                        "type": "string"
+                    },
+                    "classification_number_element_ending_number_of_span": {
+                        "type": "string"
+                    },
+                    "edition_number": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "table_sequence_number_for_internal_subarrangement_or_add_table": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "table_identification_table_number": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "government_document_call_number": {
+            "description": "Government Document Call Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "call_number": {
+                        "type": "string"
+                    },
+                    "volumes_dates_to_which_call_number_applies": {
+                        "type": "string"
+                    },
+                    "number_source": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_call_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "government_document_classification_number": {
+            "description": "Government Document Classification Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "classification_number_element_single_number_of_beginning_number_of_span": {
+                        "type": "string"
+                    },
+                    "explanatory_information": {
+                        "type": "string"
+                    },
+                    "classification_number_element_ending_number_of_span": {
+                        "type": "string"
+                    },
+                    "number_source": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

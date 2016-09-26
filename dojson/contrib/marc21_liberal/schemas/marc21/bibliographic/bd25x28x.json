@@ -1,0 +1,462 @@
+{
+    "type": "object",
+    "properties": {
+        "edition_statement": {
+            "description": "Edition Statement",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "edition_statement": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "remainder_of_edition_statement": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "musical_presentation_statement": {
+            "description": "Musical Presentation Statement",
+            "properties": {
+                "musical_presentation_statement": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "cartographic_mathematical_data": {
+            "description": "Cartographic Mathematical Data",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "statement_of_scale": {
+                        "type": "string"
+                    },
+                    "statement_of_coordinates": {
+                        "type": "string"
+                    },
+                    "statement_of_projection": {
+                        "type": "string"
+                    },
+                    "statement_of_equinox": {
+                        "type": "string"
+                    },
+                    "statement_of_zone": {
+                        "type": "string"
+                    },
+                    "exclusion_g_ring_coordinate_pairs": {
+                        "type": "string"
+                    },
+                    "outer_g_ring_coordinate_pairs": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "computer_file_characteristics": {
+            "description": "Computer File Characteristics",
+            "properties": {
+                "computer_file_characteristics": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "country_of_producing_entity": {
+            "description": "Country of Producing Entity",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "country_of_producing_entity": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "philatelic_issue_data": {
+            "description": "Philatelic Issue Data",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "issuing_jurisdiction": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "denomination": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "publication_distribution_imprint": {
+            "description": "Publication, Distribution, etc. (Imprint)",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "sequence_of_publishing_statements": {
+                        "enum": ["Intervening publisher", "Current/latest publisher", "Not applicable/No information provided/Earliest available publisher"]
+                    },
+                    "place_of_publication_distribution": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "date_of_publication_distribution": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "name_of_publisher_distributor": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "place_of_manufacture": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "date_of_manufacture": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "manufacturer": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "imprint_statement_for_films_pre_aacr_1_revised": {
+            "description": "Imprint Statement for Films (Pre-AACR 1 Revised)",
+            "properties": {
+                "producing_company": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "releasing_company": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "contractual_producer": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "date_of_production_release": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "place_of_production_release": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "imprint_statement_for_sound_recordings_pre_aacr_1": {
+            "description": "Imprint Statement for Sound Recordings (Pre-AACR 1)",
+            "properties": {
+                "place_of_production_release": {
+                    "type": "string"
+                },
+                "date_of_production_release": {
+                    "type": "string"
+                },
+                "publisher_or_trade_name": {
+                    "type": "string"
+                },
+                "serial_identification": {
+                    "type": "string"
+                },
+                "matrix_and_or_take_number": {
+                    "type": "string"
+                },
+                "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "projected_publication_date": {
+            "description": "Projected Publication Date",
+            "properties": {
+                "projected_publication_date": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "production_publication_distribution_manufacture_and_copyright_notice": {
+            "description": "Production, Publication, Distribution, Manufacture, and Copyright Notice",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "sequence_of_statements": {
+                        "enum": ["Intervening", "Current/latest", "Not applicable/No information provided/Earliest"]
+                    },
+                    "function_of_entity": {
+                        "enum": ["Manufacture", "Distribution", "Production", "Publication", "Copyright notice date"]
+                    },
+                    "place_of_production_publication_distribution_manufacture": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "date_of_production_publication_distribution_manufacture_or_copyright_notice": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "name_of_producer_publisher_distributor_manufacturer": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "address": {
+            "description": "Address",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "level": {
+                        "enum": ["No level specified", "Primary", "Secondary"]
+                    },
+                    "address": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "state_or_province": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "postal_code": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "attention_name": {
+                        "type": "string"
+                    },
+                    "terms_preceding_attention_name": {
+                        "type": "string"
+                    },
+                    "type_of_address": {
+                        "type": "string"
+                    },
+                    "attention_position": {
+                        "type": "string"
+                    },
+                    "telephone_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "specialized_telephone_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "electronic_mail_address": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "fax_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "tdd_or_tty_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "title_of_contact_person": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "contact_person": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "hours": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "relator_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "public_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
