@@ -173,7 +173,6 @@ setup(
             'bd76x78x = dojson.contrib.marc21_liberal.fields.bd76x78x',
             'bd80x83x = dojson.contrib.marc21_liberal.fields.bd80x83x',
             'bd84188x = dojson.contrib.marc21_liberal.fields.bd84188x',
-            'bd999 = dojson.contrib.marc21_liberal.fields.bd999',
         ],
         'dojson.contrib.to_marc21_liberal': [
             'bdleader = dojson.contrib.to_marc21_liberal.fields.bdleader',
@@ -190,7 +189,6 @@ setup(
             'bd76x78x = dojson.contrib.to_marc21_liberal.fields.bd76x78x',
             'bd80x83x = dojson.contrib.to_marc21_liberal.fields.bd80x83x',
             'bd84188x = dojson.contrib.to_marc21_liberal.fields.bd84188x',
-            'bd999 = dojson.contrib.to_marc21_liberal.fields.bd999',
         ],
         'dojson.contrib.marc21_liberal_authority': [
             'adleader = dojson.contrib.marc21_liberal.fields.adleader',
@@ -205,7 +203,6 @@ setup(
             'ad66768x = dojson.contrib.marc21_liberal.fields.ad66768x',
             'ad7xx = dojson.contrib.marc21_liberal.fields.ad7xx',
             'ad8xx = dojson.contrib.marc21_liberal.fields.ad8xx',
-            'ad999 = dojson.contrib.marc21_liberal.fields.ad999',
         ],
         'dojson.contrib.to_marc21_liberal_authority': [
             'ad00x = dojson.contrib.to_marc21_liberal.fields.ad00x',
@@ -219,7 +216,6 @@ setup(
             'ad70x75x = dojson.contrib.to_marc21_liberal.fields.ad70x75x',
             'ad76x78x = dojson.contrib.to_marc21_liberal.fields.ad76x78x',
             'ad84188x = dojson.contrib.to_marc21_liberal.fields.ad84188x',
-            'ad999 = dojson.contrib.to_marc21_liberal.fields.ad999',
         ],
         'dojson.contrib.marc21_liberal_holdings': [
             'hd00x = dojson.contrib.marc21_liberal.fields.hd00x',
