@@ -11,6 +11,6 @@
 
 from __future__ import absolute_import
 
-from .model import marc21, marc21_authority, marc21_holdings
+from .model import marc21_liberal, marc21_liberal_authority, marc21_liberal_holdings
 
-__all__ = ('marc21', 'marc21_authority', 'marc21_holdings')
+__all__ = ('marc21_liberal', 'marc21_liberal_authority', 'marc21_liberal_holdings')

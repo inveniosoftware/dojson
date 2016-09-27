@@ -11,10 +11,11 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('general_note', '^500__')
+@marc21_liberal.over('general_note', '^500__')
 @utils.for_each_value
 @utils.filter_values
 def general_note(self, key, value):
@@ -29,7 +30,7 @@ def general_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_note': value.get('a'),
         'materials_specified': value.get('3'),
@@ -39,9 +40,11 @@ def general_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('with_note', '^501__')
+@marc21_liberal.over('with_note', '^501__')
 @utils.for_each_value
 @utils.filter_values
 def with_note(self, key, value):
@@ -55,7 +58,7 @@ def with_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'with_note': value.get('a'),
         'institution_to_which_field_applies': value.get('5'),
@@ -64,9 +67,11 @@ def with_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('dissertation_note', '^502__')
+@marc21_liberal.over('dissertation_note', '^502__')
 @utils.for_each_value
 @utils.filter_values
 def dissertation_note(self, key, value):
@@ -84,7 +89,7 @@ def dissertation_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'dissertation_note': value.get('a'),
         'degree_type': value.get('b'),
@@ -101,9 +106,11 @@ def dissertation_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('bibliography_note', '^504__')
+@marc21_liberal.over('bibliography_note', '^504__')
 @utils.for_each_value
 @utils.filter_values
 def bibliography_note(self, key, value):
@@ -117,7 +124,7 @@ def bibliography_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'bibliography_note': value.get('a'),
         'number_of_references': value.get('b'),
@@ -126,9 +133,11 @@ def bibliography_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('formatted_contents_note', '^505[_0128][_0]')
+@marc21_liberal.over('formatted_contents_note', '^505[_0128][_0]')
 @utils.for_each_value
 @utils.filter_values
 def formatted_contents_note(self, key, value):
@@ -162,7 +171,7 @@ def formatted_contents_note(self, key, value):
     if key[4] in indicator_map2:
         order.append('level_of_content_designation')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'formatted_contents_note': value.get('a'),
         'miscellaneous_information': utils.force_list(
@@ -184,9 +193,11 @@ def formatted_contents_note(self, key, value):
         'display_constant_controller': indicator_map1.get(key[3]),
         'level_of_content_designation': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('restrictions_on_access_note', '^506[_01]_')
+@marc21_liberal.over('restrictions_on_access_note', '^506[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def restrictions_on_access_note(self, key, value):
@@ -217,7 +228,7 @@ def restrictions_on_access_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('restriction')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'terms_governing_access': value.get('a'),
         'jurisdiction': utils.force_list(
@@ -247,9 +258,11 @@ def restrictions_on_access_note(self, key, value):
         ),
         'restriction': indicator_map1.get(key[3], '_'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('scale_note_for_graphic_material', '^507__')
+@marc21_liberal.over('scale_note_for_graphic_material', '^507__')
 @utils.filter_values
 def scale_note_for_graphic_material(self, key, value):
     """Scale Note for Graphic Material."""
@@ -262,7 +275,7 @@ def scale_note_for_graphic_material(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'representative_fraction_of_scale_note': value.get('a'),
         'remainder_of_scale_note': value.get('b'),
@@ -271,9 +284,11 @@ def scale_note_for_graphic_material(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('creation_production_credits_note', '^508__')
+@marc21_liberal.over('creation_production_credits_note', '^508__')
 @utils.for_each_value
 @utils.filter_values
 def creation_production_credits_note(self, key, value):
@@ -286,7 +301,7 @@ def creation_production_credits_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'creation_production_credits_note': value.get('a'),
         'linkage': value.get('6'),
@@ -294,9 +309,11 @@ def creation_production_credits_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('citation_references_note', '^510[_01234]_')
+@marc21_liberal.over('citation_references_note', '^510[_01234]_')
 @utils.for_each_value
 @utils.filter_values
 def citation_references_note(self, key, value):
@@ -325,7 +342,7 @@ def citation_references_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('coverage_location_in_source')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'name_of_source': value.get('a'),
         'coverage_of_source': value.get('b'),
@@ -341,9 +358,11 @@ def citation_references_note(self, key, value):
         ),
         'coverage_location_in_source': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('participant_or_performer_note', '^511[_01]_')
+@marc21_liberal.over('participant_or_performer_note', '^511[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def participant_or_performer_note(self, key, value):
@@ -364,7 +383,7 @@ def participant_or_performer_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'participant_or_performer_note': value.get('a'),
         'linkage': value.get('6'),
@@ -373,9 +392,11 @@ def participant_or_performer_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('type_of_report_and_period_covered_note', '^513__')
+@marc21_liberal.over('type_of_report_and_period_covered_note', '^513__')
 @utils.for_each_value
 @utils.filter_values
 def type_of_report_and_period_covered_note(self, key, value):
@@ -389,7 +410,7 @@ def type_of_report_and_period_covered_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'type_of_report': value.get('a'),
         'period_covered': value.get('b'),
@@ -398,9 +419,11 @@ def type_of_report_and_period_covered_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('data_quality_note', '^514__')
+@marc21_liberal.over('data_quality_note', '^514__')
 @utils.filter_values
 def data_quality_note(self, key, value):
     """Data Quality Note."""
@@ -425,7 +448,7 @@ def data_quality_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'attribute_accuracy_report': value.get('a'),
         'attribute_accuracy_value': utils.force_list(
@@ -462,9 +485,11 @@ def data_quality_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('numbering_peculiarities_note', '^515__')
+@marc21_liberal.over('numbering_peculiarities_note', '^515__')
 @utils.for_each_value
 @utils.filter_values
 def numbering_peculiarities_note(self, key, value):
@@ -477,7 +502,7 @@ def numbering_peculiarities_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'numbering_peculiarities_note': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -485,9 +510,11 @@ def numbering_peculiarities_note(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('type_of_computer_file_or_data_note', '^516[_8]_')
+@marc21_liberal.over('type_of_computer_file_or_data_note', '^516[_8]_')
 @utils.for_each_value
 @utils.filter_values
 def type_of_computer_file_or_data_note(self, key, value):
@@ -508,7 +535,7 @@ def type_of_computer_file_or_data_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'type_of_computer_file_or_data_note': value.get('a'),
         'linkage': value.get('6'),
@@ -517,9 +544,11 @@ def type_of_computer_file_or_data_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('date_time_and_place_of_an_event_note', '^518__')
+@marc21_liberal.over('date_time_and_place_of_an_event_note', '^518__')
 @utils.for_each_value
 @utils.filter_values
 def date_time_and_place_of_an_event_note(self, key, value):
@@ -538,7 +567,7 @@ def date_time_and_place_of_an_event_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'date_time_and_place_of_an_event_note': value.get('a'),
         'date_of_event': utils.force_list(
@@ -562,9 +591,11 @@ def date_time_and_place_of_an_event_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('summary', '^520[_012348]_')
+@marc21_liberal.over('summary', '^520[_012348]_')
 @utils.for_each_value
 @utils.filter_values
 def summary(self, key, value):
@@ -595,7 +626,7 @@ def summary(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'summary': value.get('a'),
         'expansion_of_summary_note': value.get('b'),
@@ -611,9 +642,11 @@ def summary(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('target_audience_note', '^521[_012348]_')
+@marc21_liberal.over('target_audience_note', '^521[_012348]_')
 @utils.for_each_value
 @utils.filter_values
 def target_audience_note(self, key, value):
@@ -641,7 +674,7 @@ def target_audience_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'target_audience_note': utils.force_list(
             value.get('a')
@@ -654,9 +687,11 @@ def target_audience_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('geographic_coverage_note', '^522[_8]_')
+@marc21_liberal.over('geographic_coverage_note', '^522[_8]_')
 @utils.for_each_value
 @utils.filter_values
 def geographic_coverage_note(self, key, value):
@@ -677,7 +712,7 @@ def geographic_coverage_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'geographic_coverage_note': value.get('a'),
         'linkage': value.get('6'),
@@ -686,9 +721,11 @@ def geographic_coverage_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('preferred_citation_of_described_materials_note', '^524[_8]_')
+@marc21_liberal.over('preferred_citation_of_described_materials_note', '^524[_8]_')
 @utils.for_each_value
 @utils.filter_values
 def preferred_citation_of_described_materials_note(self, key, value):
@@ -711,7 +748,7 @@ def preferred_citation_of_described_materials_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'preferred_citation_of_described_materials_note': value.get('a'),
         'source_of_schema_used': value.get('2'),
@@ -722,9 +759,11 @@ def preferred_citation_of_described_materials_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('supplement_note', '^525__')
+@marc21_liberal.over('supplement_note', '^525__')
 @utils.for_each_value
 @utils.filter_values
 def supplement_note(self, key, value):
@@ -737,7 +776,7 @@ def supplement_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'supplement_note': value.get('a'),
         'linkage': value.get('6'),
@@ -745,9 +784,11 @@ def supplement_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('study_program_information_note', '^526[_08]_')
+@marc21_liberal.over('study_program_information_note', '^526[_08]_')
 @utils.for_each_value
 @utils.filter_values
 def study_program_information_note(self, key, value):
@@ -775,7 +816,7 @@ def study_program_information_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'program_name': value.get('a'),
         'interest_level': value.get('b'),
@@ -795,9 +836,11 @@ def study_program_information_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('additional_physical_form_available_note', '^530__')
+@marc21_liberal.over('additional_physical_form_available_note', '^530..')
 @utils.for_each_value
 @utils.filter_values
 def additional_physical_form_available_note(self, key, value):
@@ -815,7 +858,7 @@ def additional_physical_form_available_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'additional_physical_form_available_note': value.get('a'),
         'availability_source': value.get('b'),
@@ -830,9 +873,12 @@ def additional_physical_form_available_note(self, key, value):
             value.get('8')
         ),
     }
+    # FIXME
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('reproduction_note', '^533__')
+@marc21_liberal.over('reproduction_note', '^533__')
 @utils.for_each_value
 @utils.filter_values
 def reproduction_note(self, key, value):
@@ -855,7 +901,7 @@ def reproduction_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'type_of_reproduction': value.get('a'),
         'place_of_reproduction': utils.force_list(
@@ -883,9 +929,11 @@ def reproduction_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('original_version_note', '^534__')
+@marc21_liberal.over('original_version_note', '^534__')
 @utils.for_each_value
 @utils.filter_values
 def original_version_note(self, key, value):
@@ -912,7 +960,7 @@ def original_version_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_of_original': value.get('a'),
         'edition_statement_of_original': value.get('b'),
@@ -946,9 +994,11 @@ def original_version_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('location_of_originals_duplicates_note', '^535[_12]_')
+@marc21_liberal.over('location_of_originals_duplicates_note', '^535[_12]_')
 @utils.for_each_value
 @utils.filter_values
 def location_of_originals_duplicates_note(self, key, value):
@@ -974,7 +1024,7 @@ def location_of_originals_duplicates_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('custodial_role')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'custodian': value.get('a'),
         'postal_address': utils.force_list(
@@ -994,9 +1044,11 @@ def location_of_originals_duplicates_note(self, key, value):
         ),
         'custodial_role': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('funding_information_note', '^536__')
+@marc21_liberal.over('funding_information_note', '^536__')
 @utils.for_each_value
 @utils.filter_values
 def funding_information_note(self, key, value):
@@ -1016,7 +1068,7 @@ def funding_information_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'text_of_note': value.get('a'),
         'contract_number': utils.force_list(
@@ -1045,9 +1097,11 @@ def funding_information_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('system_details_note', '^538__')
+@marc21_liberal.over('system_details_note', '^538__')
 @utils.for_each_value
 @utils.filter_values
 def system_details_note(self, key, value):
@@ -1064,7 +1118,7 @@ def system_details_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'system_details_note': value.get('a'),
         'display_text': value.get('i'),
@@ -1080,9 +1134,11 @@ def system_details_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('terms_governing_use_and_reproduction_note', '^540__')
+@marc21_liberal.over('terms_governing_use_and_reproduction_note', '^540__')
 @utils.for_each_value
 @utils.filter_values
 def terms_governing_use_and_reproduction_note(self, key, value):
@@ -1101,7 +1157,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'terms_governing_use_and_reproduction': value.get('a'),
         'jurisdiction': value.get('b'),
@@ -1117,9 +1173,11 @@ def terms_governing_use_and_reproduction_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('immediate_source_of_acquisition_note', '^541[_01]_')
+@marc21_liberal.over('immediate_source_of_acquisition_note', '^541[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def immediate_source_of_acquisition_note(self, key, value):
@@ -1151,7 +1209,7 @@ def immediate_source_of_acquisition_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('privacy')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'source_of_acquisition': value.get('a'),
         'address': value.get('b'),
@@ -1174,9 +1232,11 @@ def immediate_source_of_acquisition_note(self, key, value):
         ),
         'privacy': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('information_relating_to_copyright_status', '^542[_01]_')
+@marc21_liberal.over('information_relating_to_copyright_status', '^542[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def information_relating_to_copyright_status(self, key, value):
@@ -1218,7 +1278,7 @@ def information_relating_to_copyright_status(self, key, value):
     if key[3] in indicator_map1:
         order.append('privacy')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'personal_creator': value.get('a'),
         'personal_creator_death_date': value.get('b'),
@@ -1263,9 +1323,11 @@ def information_relating_to_copyright_status(self, key, value):
         ),
         'privacy': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('location_of_other_archival_materials_note', '^544[_01]_')
+@marc21_liberal.over('location_of_other_archival_materials_note', '^544[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def location_of_other_archival_materials_note(self, key, value):
@@ -1293,7 +1355,7 @@ def location_of_other_archival_materials_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('relationship')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'custodian': utils.force_list(
             value.get('a')
@@ -1320,9 +1382,11 @@ def location_of_other_archival_materials_note(self, key, value):
         ),
         'relationship': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('biographical_or_historical_data', '^545[_01]_')
+@marc21_liberal.over('biographical_or_historical_data', '^545[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def biographical_or_historical_data(self, key, value):
@@ -1346,7 +1410,7 @@ def biographical_or_historical_data(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_data')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'biographical_or_historical_data': value.get('a'),
         'expansion': value.get('b'),
@@ -1359,9 +1423,11 @@ def biographical_or_historical_data(self, key, value):
         ),
         'type_of_data': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('language_note', '^546__')
+@marc21_liberal.over('language_note', '^546__')
 @utils.for_each_value
 @utils.filter_values
 def language_note(self, key, value):
@@ -1376,7 +1442,7 @@ def language_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'language_note': value.get('a'),
         'information_code_or_alphabet': utils.force_list(
@@ -1388,9 +1454,11 @@ def language_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('former_title_complexity_note', '^547__')
+@marc21_liberal.over('former_title_complexity_note', '^547__')
 @utils.for_each_value
 @utils.filter_values
 def former_title_complexity_note(self, key, value):
@@ -1403,7 +1471,7 @@ def former_title_complexity_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'former_title_complexity_note': value.get('a'),
         'linkage': value.get('6'),
@@ -1411,9 +1479,11 @@ def former_title_complexity_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('issuing_body_note', '^550__')
+@marc21_liberal.over('issuing_body_note', '^550__')
 @utils.for_each_value
 @utils.filter_values
 def issuing_body_note(self, key, value):
@@ -1426,7 +1496,7 @@ def issuing_body_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'issuing_body_note': value.get('a'),
         'linkage': value.get('6'),
@@ -1434,9 +1504,11 @@ def issuing_body_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('entity_and_attribute_information_note', '^552__')
+@marc21_liberal.over('entity_and_attribute_information_note', '^552__')
 @utils.for_each_value
 @utils.filter_values
 def entity_and_attribute_information_note(self, key, value):
@@ -1466,7 +1538,7 @@ def entity_and_attribute_information_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'entity_type_label': value.get('a'),
         'entity_type_definition_and_source': value.get('b'),
@@ -1503,9 +1575,11 @@ def entity_and_attribute_information_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('cumulative_index_finding_aids_note', '^555[_08]_')
+@marc21_liberal.over('cumulative_index_finding_aids_note', '^555[_08]_')
 @utils.for_each_value
 @utils.filter_values
 def cumulative_index_finding_aids_note(self, key, value):
@@ -1532,7 +1606,7 @@ def cumulative_index_finding_aids_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'cumulative_index_finding_aids_note': value.get('a'),
         'availability_source': utils.force_list(
@@ -1550,9 +1624,11 @@ def cumulative_index_finding_aids_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('information_about_documentation_note', '^556[_8]_')
+@marc21_liberal.over('information_about_documentation_note', '^556[_8]_')
 @utils.for_each_value
 @utils.filter_values
 def information_about_documentation_note(self, key, value):
@@ -1574,7 +1650,7 @@ def information_about_documentation_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'information_about_documentation_note': value.get('a'),
         'international_standard_book_number': utils.force_list(
@@ -1586,9 +1662,11 @@ def information_about_documentation_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('ownership_and_custodial_history', '^561[_01]_')
+@marc21_liberal.over('ownership_and_custodial_history', '^561[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def ownership_and_custodial_history(self, key, value):
@@ -1613,7 +1691,7 @@ def ownership_and_custodial_history(self, key, value):
     if key[3] in indicator_map1:
         order.append('privacy')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'history': value.get('a'),
         'uniform_resource_identifier': utils.force_list(
@@ -1627,9 +1705,11 @@ def ownership_and_custodial_history(self, key, value):
         ),
         'privacy': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('copy_and_version_identification_note', '^562__')
+@marc21_liberal.over('copy_and_version_identification_note', '^562__')
 @utils.for_each_value
 @utils.filter_values
 def copy_and_version_identification_note(self, key, value):
@@ -1648,7 +1728,7 @@ def copy_and_version_identification_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'identifying_markings': utils.force_list(
             value.get('a')
@@ -1672,9 +1752,11 @@ def copy_and_version_identification_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('binding_information', '^563__')
+@marc21_liberal.over('binding_information', '^563__')
 @utils.for_each_value
 @utils.filter_values
 def binding_information(self, key, value):
@@ -1690,7 +1772,7 @@ def binding_information(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'binding_note': value.get('a'),
         'uniform_resource_identifier': utils.force_list(
@@ -1703,9 +1785,11 @@ def binding_information(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('case_file_characteristics_note', '^565[_08]_')
+@marc21_liberal.over('case_file_characteristics_note', '^565[_08]_')
 @utils.for_each_value
 @utils.filter_values
 def case_file_characteristics_note(self, key, value):
@@ -1732,7 +1816,7 @@ def case_file_characteristics_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'number_of_cases_variables': value.get('a'),
         'name_of_variable': utils.force_list(
@@ -1754,9 +1838,11 @@ def case_file_characteristics_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('methodology_note', '^567[_8]_')
+@marc21_liberal.over('methodology_note', '^567[_8]_')
 @utils.for_each_value
 @utils.filter_values
 def methodology_note(self, key, value):
@@ -1777,7 +1863,7 @@ def methodology_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'methodology_note': value.get('a'),
         'linkage': value.get('6'),
@@ -1786,9 +1872,11 @@ def methodology_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('linking_entry_complexity_note', '^580__')
+@marc21_liberal.over('linking_entry_complexity_note', '^580__')
 @utils.for_each_value
 @utils.filter_values
 def linking_entry_complexity_note(self, key, value):
@@ -1801,7 +1889,7 @@ def linking_entry_complexity_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'linking_entry_complexity_note': value.get('a'),
         'linkage': value.get('6'),
@@ -1809,9 +1897,11 @@ def linking_entry_complexity_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('publications_about_described_materials_note', '^581[_8]_')
+@marc21_liberal.over('publications_about_described_materials_note', '^581[_8]_')
 @utils.for_each_value
 @utils.filter_values
 def publications_about_described_materials_note(self, key, value):
@@ -1834,7 +1924,7 @@ def publications_about_described_materials_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'publications_about_described_materials_note': value.get('a'),
         'international_standard_book_number': utils.force_list(
@@ -1847,9 +1937,11 @@ def publications_about_described_materials_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('action_note', '^583[_01]_')
+@marc21_liberal.over('action_note', '^583[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def action_note(self, key, value):
@@ -1889,7 +1981,7 @@ def action_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('privacy')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'action': value.get('a'),
         'action_identification': utils.force_list(
@@ -1946,9 +2038,11 @@ def action_note(self, key, value):
         ),
         'privacy': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('accumulation_and_frequency_of_use_note', '^584__')
+@marc21_liberal.over('accumulation_and_frequency_of_use_note', '^584__')
 @utils.for_each_value
 @utils.filter_values
 def accumulation_and_frequency_of_use_note(self, key, value):
@@ -1964,7 +2058,7 @@ def accumulation_and_frequency_of_use_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'accumulation': utils.force_list(
             value.get('a')
@@ -1979,9 +2073,11 @@ def accumulation_and_frequency_of_use_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('exhibitions_note', '^585__')
+@marc21_liberal.over('exhibitions_note', '^585__')
 @utils.for_each_value
 @utils.filter_values
 def exhibitions_note(self, key, value):
@@ -1996,7 +2092,7 @@ def exhibitions_note(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'exhibitions_note': value.get('a'),
         'materials_specified': value.get('3'),
@@ -2006,9 +2102,11 @@ def exhibitions_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('awards_note', '^586[_8]_')
+@marc21_liberal.over('awards_note', '^586[_8]_')
 @utils.for_each_value
 @utils.filter_values
 def awards_note(self, key, value):
@@ -2030,7 +2128,7 @@ def awards_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'awards_note': value.get('a'),
         'materials_specified': value.get('3'),
@@ -2040,9 +2138,11 @@ def awards_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('source_of_description_note', '^588[_01]_')
+@marc21_liberal.over('source_of_description_note', '^588[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def source_of_description_note(self, key, value):
@@ -2065,7 +2165,7 @@ def source_of_description_note(self, key, value):
     if key[3] in indicator_map1:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'source_of_description_note': value.get('a'),
         'institution_to_which_field_applies': value.get('5'),
@@ -2075,3 +2175,5 @@ def source_of_description_note(self, key, value):
         ),
         'display_constant_controller': indicator_map1.get(key[3])
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

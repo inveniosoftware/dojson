@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21_authority
+from ..model import marc21_liberal_authority
+from ..utils import extend_liberal_json
 
-
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_personal_name',
     '^700[103_][_10325476]')
 @utils.for_each_value
@@ -73,7 +73,7 @@ def established_heading_linking_entry_personal_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
@@ -143,9 +143,11 @@ def established_heading_linking_entry_personal_name(self, key, value):
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_corporate_name',
     '^710[10_2][_10325476]')
 @utils.for_each_value
@@ -205,7 +207,7 @@ def established_heading_linking_entry_corporate_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
@@ -275,9 +277,11 @@ def established_heading_linking_entry_corporate_name(self, key, value):
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_meeting_name',
     '^711[10_2][_10325476]')
 @utils.for_each_value
@@ -335,7 +339,7 @@ def established_heading_linking_entry_meeting_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
@@ -369,9 +373,11 @@ def established_heading_linking_entry_meeting_name(self, key, value):
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_uniform_title',
     '^730.[_10325476]')
 @utils.for_each_value
@@ -422,7 +428,7 @@ def established_heading_linking_entry_uniform_title(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
@@ -482,9 +488,11 @@ def established_heading_linking_entry_uniform_title(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_chronological_term',
     '^748.[_10325476]')
 @utils.for_each_value
@@ -522,7 +530,7 @@ def established_heading_linking_entry_chronological_term(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'chronological_term': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -557,9 +565,11 @@ def established_heading_linking_entry_chronological_term(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_topical_term',
     '^750.[_10325476]')
 @utils.for_each_value
@@ -599,7 +609,7 @@ def established_heading_linking_entry_topical_term(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'topical_term_or_geographic_name_entry_element': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -638,9 +648,11 @@ def established_heading_linking_entry_topical_term(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_geographic_name',
     '^751.[_10325476]')
 @utils.for_each_value
@@ -679,7 +691,7 @@ def established_heading_linking_entry_geographic_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'geographic_name': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -717,9 +729,11 @@ def established_heading_linking_entry_geographic_name(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_genre_form_term',
     '^755.[_10325476]')
 @utils.for_each_value
@@ -757,7 +771,7 @@ def established_heading_linking_entry_genre_form_term(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'genre_form_term_as_entry_element': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -792,9 +806,11 @@ def established_heading_linking_entry_genre_form_term(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'established_heading_linking_entry_medium_of_performance_term',
     '^762.[_10325476]')
 @utils.for_each_value
@@ -831,7 +847,7 @@ def established_heading_linking_entry_medium_of_performance_term(
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'medium_of_performance_term_as_entry_element': value.get('a'),
         'relationship_information': utils.force_list(
@@ -854,9 +870,11 @@ def established_heading_linking_entry_medium_of_performance_term(
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'subdivision_linking_entry_general_subdivision',
     '^780.[_10325476]')
 @utils.for_each_value
@@ -893,7 +911,7 @@ def subdivision_linking_entry_general_subdivision(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -927,9 +945,11 @@ def subdivision_linking_entry_general_subdivision(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'subdivision_linking_entry_geographic_subdivision',
     '^781.[_10325476]')
 @utils.for_each_value
@@ -966,7 +986,7 @@ def subdivision_linking_entry_geographic_subdivision(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -1000,9 +1020,11 @@ def subdivision_linking_entry_geographic_subdivision(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'subdivision_linking_entry_chronological_subdivision',
     '^782.[_10325476]')
 @utils.for_each_value
@@ -1039,7 +1061,7 @@ def subdivision_linking_entry_chronological_subdivision(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -1073,9 +1095,11 @@ def subdivision_linking_entry_chronological_subdivision(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over(
+@marc21_liberal_authority.over(
     'subdivision_linking_entry_form_subdivision',
     '^785.[_10325476]')
 @utils.for_each_value
@@ -1112,7 +1136,7 @@ def subdivision_linking_entry_form_subdivision(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -1146,9 +1170,11 @@ def subdivision_linking_entry_form_subdivision(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('complex_linking_entry_data', '^788.[_10325476]')
+@marc21_liberal_authority.over('complex_linking_entry_data', '^788.[_10325476]')
 @utils.filter_values
 def complex_linking_entry_data(self, key, value):
     """Complex Linking Entry Data."""
@@ -1177,7 +1203,7 @@ def complex_linking_entry_data(self, key, value):
     if key[4] in indicator_map2:
         order.append('thesaurus')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'heading_referred_to': utils.force_list(
             value.get('a')
@@ -1198,3 +1224,5 @@ def complex_linking_entry_data(self, key, value):
         ),
         'thesaurus': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

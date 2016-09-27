@@ -11,28 +11,28 @@
 
 from dojson import utils
 
-from ..model import marc21_authority
+from ..model import marc21_liberal_authority
+from ..utils import extend_liberal_json
 
-
-@marc21_authority.over('control_number', '^001')
+@marc21_liberal_authority.over('control_number', '^001')
 def control_number(self, key, value):
     """Control Number."""
     return value
 
 
-@marc21_authority.over('control_number_identifier', '^003')
+@marc21_liberal_authority.over('control_number_identifier', '^003')
 def control_number_identifier(self, key, value):
     """Control Number Identifier."""
     return value
 
 
-@marc21_authority.over('date_and_time_of_latest_transaction', '^005')
+@marc21_liberal_authority.over('date_and_time_of_latest_transaction', '^005')
 def date_and_time_of_latest_transaction(self, key, value):
     """Date and Time of Latest Transaction."""
     return value
 
 
-@marc21_authority.over('fixed_length_data_elements', '^008')
+@marc21_liberal_authority.over('fixed_length_data_elements', '^008')
 def fixed_length_data_elements(self, key, value):
     """Fixed-Length Data Elements."""
     return value

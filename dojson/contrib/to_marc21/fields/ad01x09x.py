@@ -12,6 +12,7 @@
 from dojson import utils
 
 from ..model import to_marc21_authority
+from ..utils import extend_liberal_marc
 
 
 @to_marc21_authority.over('010', '^library_of_congress_control_number$')
@@ -25,7 +26,7 @@ def reverse_library_of_congress_control_number(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('lc_control_number'),
         '8': utils.reverse_force_list(
@@ -37,6 +38,8 @@ def reverse_library_of_congress_control_number(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
 @to_marc21_authority.over('014', '^link_to_bibliographic_record_for_serial_or_multipart_item$')

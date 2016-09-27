@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21_authority
+from ..model import marc21_liberal_authority
+from ..utils import extend_liberal_json
 
-
-@marc21_authority.over('leader', '^leader')
+@marc21_liberal_authority.over('leader', '^leader')
 @utils.filter_values
 def leader(self, key, value):
     """Leader."""

@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21_authority
+from ..model import marc21_liberal_authority
+from ..utils import extend_liberal_json
 
-
-@marc21_authority.over('electronic_location_and_access', '^856..')
+@marc21_liberal_authority.over('electronic_location_and_access', '^856..')
 @utils.for_each_value
 @utils.filter_values
 def electronic_location_and_access(self, key, value):
@@ -72,7 +72,7 @@ def electronic_location_and_access(self, key, value):
     if key[4] in indicator_map2:
         order.append('relationship')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'materials_specified': value.get('3'),
         'linkage': value.get('6'),
@@ -137,9 +137,11 @@ def electronic_location_and_access(self, key, value):
         else indicator_map1.get(key[3], 'No information provided'),
         'relationship': indicator_map2.get(key[4])
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('alternate_graphic_representation', '^880..')
+@marc21_liberal_authority.over('alternate_graphic_representation', '^880..')
 @utils.for_each_value
 @utils.filter_values
 def alternate_graphic_representation(self, key, value):
@@ -184,7 +186,7 @@ def alternate_graphic_representation(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'same_as_associated_field_1': utils.force_list(
             value.get('1')
@@ -295,9 +297,11 @@ def alternate_graphic_representation(self, key, value):
         'ind1': key[3],
         'ind2': key[4],
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('machine_generated_metadata_provenance', '^883[10_].')
+@marc21_liberal_authority.over('machine_generated_metadata_provenance', '^883[10_].')
 @utils.for_each_value
 @utils.filter_values
 def machine_generated_metadata_provenance(self, key, value):
@@ -323,7 +327,7 @@ def machine_generated_metadata_provenance(self, key, value):
     if key[3] in indicator_map1:
         order.append('method_of_machine_assignment')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'generation_process': value.get('a'),
         'confidence_value': value.get('c'),
@@ -342,9 +346,11 @@ def machine_generated_metadata_provenance(self, key, value):
         ),
         'method_of_machine_assignment': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('description_conversion_information', '^884..')
+@marc21_liberal_authority.over('description_conversion_information', '^884..')
 @utils.for_each_value
 @utils.filter_values
 def description_conversion_information(self, key, value):
@@ -358,7 +364,7 @@ def description_conversion_information(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'conversion_process': value.get('a'),
         'conversion_agency': value.get('q'),
@@ -368,3 +374,5 @@ def description_conversion_information(self, key, value):
         ),
         'conversion_date': value.get('g'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

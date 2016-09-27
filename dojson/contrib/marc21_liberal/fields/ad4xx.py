@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21_authority
+from ..model import marc21_liberal_authority
+from ..utils import extend_liberal_json
 
-
-@marc21_authority.over('see_from_tracing_personal_name', '^400[103_].')
+@marc21_liberal_authority.over('see_from_tracing_personal_name', '^400[103_].')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_personal_name(self, key, value):
@@ -57,7 +57,7 @@ def see_from_tracing_personal_name(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_personal_name_element')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
@@ -122,9 +122,11 @@ def see_from_tracing_personal_name(self, key, value):
         ),
         'type_of_personal_name_element': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_corporate_name', '^410[10_2].')
+@marc21_liberal_authority.over('see_from_tracing_corporate_name', '^410[10_2].')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_corporate_name(self, key, value):
@@ -168,7 +170,7 @@ def see_from_tracing_corporate_name(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_corporate_name_entry_element')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
@@ -233,9 +235,11 @@ def see_from_tracing_corporate_name(self, key, value):
         ),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_meeting_name', '^411[10_2].')
+@marc21_liberal_authority.over('see_from_tracing_meeting_name', '^411[10_2].')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_meeting_name(self, key, value):
@@ -277,7 +281,7 @@ def see_from_tracing_meeting_name(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_meeting_name_entry_element')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')),
@@ -322,9 +326,11 @@ def see_from_tracing_meeting_name(self, key, value):
         'type_of_meeting_name_entry_element': indicator_map1.get(
             key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_uniform_title', '^430.[_1032547698]')
+@marc21_liberal_authority.over('see_from_tracing_uniform_title', '^430.[_1032547698]')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_uniform_title(self, key, value):
@@ -372,7 +378,7 @@ def see_from_tracing_uniform_title(self, key, value):
     if key[4] in indicator_map2:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
@@ -428,9 +434,11 @@ def see_from_tracing_uniform_title(self, key, value):
         ),
         'nonfiling_characters': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_chronological_term', '^448..')
+@marc21_liberal_authority.over('see_from_tracing_chronological_term', '^448..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_chronological_term(self, key, value):
@@ -450,7 +458,7 @@ def see_from_tracing_chronological_term(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'chronological_term': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -480,9 +488,11 @@ def see_from_tracing_chronological_term(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_topical_term', '^450..')
+@marc21_liberal_authority.over('see_from_tracing_topical_term', '^450..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_topical_term(self, key, value):
@@ -504,7 +514,7 @@ def see_from_tracing_topical_term(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'topical_term_or_geographic_name_entry_element': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -538,9 +548,11 @@ def see_from_tracing_topical_term(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_geographic_name', '^451..')
+@marc21_liberal_authority.over('see_from_tracing_geographic_name', '^451..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_geographic_name(self, key, value):
@@ -561,7 +573,7 @@ def see_from_tracing_geographic_name(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'geographic_name': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -594,9 +606,11 @@ def see_from_tracing_geographic_name(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_genre_form_term', '^455..')
+@marc21_liberal_authority.over('see_from_tracing_genre_form_term', '^455..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_genre_form_term(self, key, value):
@@ -616,7 +630,7 @@ def see_from_tracing_genre_form_term(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'genre_form_term': value.get('a'),
         'general_subdivision': utils.force_list(
@@ -646,9 +660,11 @@ def see_from_tracing_genre_form_term(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_medium_of_performance_term', '^462..')
+@marc21_liberal_authority.over('see_from_tracing_medium_of_performance_term', '^462..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_medium_of_performance_term(self, key, value):
@@ -664,7 +680,7 @@ def see_from_tracing_medium_of_performance_term(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'medium_of_performance_term': value.get('a'),
         'relationship_information': utils.force_list(
@@ -682,9 +698,11 @@ def see_from_tracing_medium_of_performance_term(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_general_subdivision', '^480..')
+@marc21_liberal_authority.over('see_from_tracing_general_subdivision', '^480..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_general_subdivision(self, key, value):
@@ -703,7 +721,7 @@ def see_from_tracing_general_subdivision(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -732,9 +750,11 @@ def see_from_tracing_general_subdivision(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_geographic_subdivision', '^481..')
+@marc21_liberal_authority.over('see_from_tracing_geographic_subdivision', '^481..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_geographic_subdivision(self, key, value):
@@ -753,7 +773,7 @@ def see_from_tracing_geographic_subdivision(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -782,9 +802,11 @@ def see_from_tracing_geographic_subdivision(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_chronological_subdivision', '^482..')
+@marc21_liberal_authority.over('see_from_tracing_chronological_subdivision', '^482..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_chronological_subdivision(self, key, value):
@@ -803,7 +825,7 @@ def see_from_tracing_chronological_subdivision(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -832,9 +854,11 @@ def see_from_tracing_chronological_subdivision(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('see_from_tracing_form_subdivision', '^485..')
+@marc21_liberal_authority.over('see_from_tracing_form_subdivision', '^485..')
 @utils.for_each_value
 @utils.filter_values
 def see_from_tracing_form_subdivision(self, key, value):
@@ -853,7 +877,7 @@ def see_from_tracing_form_subdivision(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_subdivision': utils.force_list(
             value.get('x')
@@ -882,3 +906,5 @@ def see_from_tracing_form_subdivision(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

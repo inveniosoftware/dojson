@@ -11,15 +11,16 @@
 
 from dojson import utils
 
-from ..model import marc21_holdings
+from ..model import marc21_liberal_holdings
+from ..utils import extend_liberal_json_holdings
 
 
-@marc21_holdings.over('location', '^852..')
+@marc21_liberal_holdings.over('location', '^852..')
 @utils.for_each_value
 @utils.filter_values
 def location(self, key, value):
     """Location."""
-    return {
+    json_dict = {
         'materials_specified': value.get('3'),
         'source_of_classification_or_shelving_scheme': value.get('2'),
         'linkage': value.get('6'),
@@ -72,43 +73,51 @@ def location(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over(
+@marc21_liberal_holdings.over(
     'captions_and_pattern_basic_bibliographic_unit',
     '^853..')
 @utils.for_each_value
 @utils.filter_values
 def captions_and_pattern_basic_bibliographic_unit(self, key, value):
     """Captions and Pattern-Basic Bibliographic Unit."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('captions_and_pattern_supplementary_material', '^854..')
+@marc21_liberal_holdings.over('captions_and_pattern_supplementary_material', '^854..')
 @utils.for_each_value
 @utils.filter_values
 def captions_and_pattern_supplementary_material(self, key, value):
     """Captions and Pattern-Supplementary Material."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('captions_and_pattern_indexes', '^855..')
+@marc21_liberal_holdings.over('captions_and_pattern_indexes', '^855..')
 @utils.for_each_value
 @utils.filter_values
 def captions_and_pattern_indexes(self, key, value):
     """Captions and Pattern-Indexes."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('electronic_location_and_access', '^856..')
+@marc21_liberal_holdings.over('electronic_location_and_access', '^856..')
 @utils.for_each_value
 @utils.filter_values
 def electronic_location_and_access(self, key, value):
     """Electronic Location and Access."""
-    return {
+    json_dict = {
         'materials_specified': value.get('3'),
         'access_method': value.get('2'),
         'linkage': value.get('6'),
@@ -170,99 +179,119 @@ def electronic_location_and_access(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over(
+@marc21_liberal_holdings.over(
     'enumeration_and_chronology_basic_bibliographic_unit',
     '^863..')
 @utils.for_each_value
 @utils.filter_values
 def enumeration_and_chronology_basic_bibliographic_unit(self, key, value):
     """Enumeration and Chronology-Basic Bibliographic Unit."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over(
+@marc21_liberal_holdings.over(
     'enumeration_and_chronology_supplementary_material',
     '^864..')
 @utils.for_each_value
 @utils.filter_values
 def enumeration_and_chronology_supplementary_material(self, key, value):
     """Enumeration and Chronology-Supplementary Material."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('enumeration_and_chronology_indexes', '^865..')
+@marc21_liberal_holdings.over('enumeration_and_chronology_indexes', '^865..')
 @utils.for_each_value
 @utils.filter_values
 def enumeration_and_chronology_indexes(self, key, value):
     """Enumeration and Chronology-Indexes."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('textual_holdings_basic_bibliographic_unit', '^866..')
+@marc21_liberal_holdings.over('textual_holdings_basic_bibliographic_unit', '^866..')
 @utils.for_each_value
 @utils.filter_values
 def textual_holdings_basic_bibliographic_unit(self, key, value):
     """Textual Holdings-Basic Bibliographic Unit."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('textual_holdings_supplementary_material', '^867..')
+@marc21_liberal_holdings.over('textual_holdings_supplementary_material', '^867..')
 @utils.for_each_value
 @utils.filter_values
 def textual_holdings_supplementary_material(self, key, value):
     """Textual Holdings-Supplementary Material."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('textual_holdings_indexes', '^868..')
+@marc21_liberal_holdings.over('textual_holdings_indexes', '^868..')
 @utils.for_each_value
 @utils.filter_values
 def textual_holdings_indexes(self, key, value):
     """Textual Holdings-Indexes."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('item_information_basic_bibliographic_unit', '^876..')
+@marc21_liberal_holdings.over('item_information_basic_bibliographic_unit', '^876..')
 @utils.for_each_value
 @utils.filter_values
 def item_information_basic_bibliographic_unit(self, key, value):
     """Item Information-Basic Bibliographic Unit."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('item_information_supplementary_material', '^877..')
+@marc21_liberal_holdings.over('item_information_supplementary_material', '^877..')
 @utils.for_each_value
 @utils.filter_values
 def item_information_supplementary_material(self, key, value):
     """Item Information-Supplementary Material."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('item_information_indexes', '^878..')
+@marc21_liberal_holdings.over('item_information_indexes', '^878..')
 @utils.for_each_value
 @utils.filter_values
 def item_information_indexes(self, key, value):
     """Item Information-Indexes."""
-    return {
+    json_dict = {
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('alternate_graphic_representation', '^880..')
+@marc21_liberal_holdings.over('alternate_graphic_representation', '^880..')
 @utils.for_each_value
 @utils.filter_values
 def alternate_graphic_representation(self, key, value):
     """Alternate Graphic Representation."""
-    return {
+    json_dict = {
         'same_as_associated_field': utils.force_list(
             value.get('1')
         ),
@@ -370,9 +399,11 @@ def alternate_graphic_representation(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('machine_generated_metadata_provenance', '^883[10_].')
+@marc21_liberal_holdings.over('machine_generated_metadata_provenance', '^883[10_].')
 @utils.for_each_value
 @utils.filter_values
 def machine_generated_metadata_provenance(self, key, value):
@@ -381,7 +412,7 @@ def machine_generated_metadata_provenance(self, key, value):
         '#': 'No information provided/not applicable',
         '0': 'Fully machine-generated',
         '1': 'Partially machine-generated'}
-    return {
+    json_dict = {
         'generation_process': value.get('a'),
         'confidence_value': value.get('c'),
         'generation_date': value.get('d'),
@@ -399,14 +430,16 @@ def machine_generated_metadata_provenance(self, key, value):
         ),
         'method_of_machine_assignment': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('description_conversion_information', '^884..')
+@marc21_liberal_holdings.over('description_conversion_information', '^884..')
 @utils.for_each_value
 @utils.filter_values
 def description_conversion_information(self, key, value):
     """Description Conversion Information."""
-    return {
+    json_dict = {
         'conversion_process': value.get('a'),
         'conversion_agency': value.get('q'),
         'identifier_of_source_metadata': value.get('k'),
@@ -415,3 +448,5 @@ def description_conversion_information(self, key, value):
         ),
         'conversion_date': value.get('g'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

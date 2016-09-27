@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
-
-@marc21.over('main_entry_personal_name', '^100[013_]_')
+@marc21_liberal.over('main_entry_personal_name', '^100[013_]_')
 @utils.filter_values
 def main_entry_personal_name(self, key, value):
     """Main Entry-Personal Name."""
@@ -51,7 +51,7 @@ def main_entry_personal_name(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_personal_name_entry_element')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'personal_name': value.get('a'),
         'titles_and_words_associated_with_a_name': utils.force_list(
@@ -92,9 +92,11 @@ def main_entry_personal_name(self, key, value):
         'title_of_a_work': value.get('t'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('main_entry_corporate_name', '^110[10_2].')
+@marc21_liberal.over('main_entry_corporate_name', '^110[10_2].')
 @utils.filter_values
 def main_entry_corporate_name(self, key, value):
     """Main Entry-Corporate Name."""
@@ -129,7 +131,7 @@ def main_entry_corporate_name(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_corporate_name_entry_element')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'location_of_meeting': utils.force_list(
@@ -170,9 +172,11 @@ def main_entry_corporate_name(self, key, value):
         'title_of_a_work': value.get('t'),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('main_entry_meeting_name', '^111[10_2].')
+@marc21_liberal.over('main_entry_meeting_name', '^111[10_2].')
 @utils.filter_values
 def main_entry_meeting_name(self, key, value):
     """Main Entry-Meeting Name."""
@@ -208,7 +212,7 @@ def main_entry_meeting_name(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_meeting_name_entry_element')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'location_of_meeting': utils.force_list(
@@ -248,9 +252,11 @@ def main_entry_meeting_name(self, key, value):
         'title_of_a_work': value.get('t'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('main_entry_uniform_title', '^130[_0-9]_')
+@marc21_liberal.over('main_entry_uniform_title', '^130[_0-9].')
 @utils.filter_values
 def main_entry_uniform_title(self, key, value):
     """Main Entry-Uniform Title."""
@@ -281,7 +287,7 @@ def main_entry_uniform_title(self, key, value):
     if key[3] in nonfiling_characters:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'name_of_part_section_of_a_work': utils.force_list(
@@ -316,3 +322,5 @@ def main_entry_uniform_title(self, key, value):
         ),
         'nonfiling_characters': utils.int_with_default(key[3], None),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

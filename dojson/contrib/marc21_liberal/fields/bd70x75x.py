@@ -11,10 +11,11 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('added_entry_personal_name', '^700[_013][_2]')
+@marc21_liberal.over('added_entry_personal_name', '^700[_013][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_personal_name(self, key, value):
@@ -68,7 +69,7 @@ def added_entry_personal_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_added_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'personal_name': value.get('a'),
         'numeration': value.get('b'),
@@ -119,9 +120,11 @@ def added_entry_personal_name(self, key, value):
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('added_entry_corporate_name', '^710[_0-2][_2]')
+@marc21_liberal.over('added_entry_corporate_name', '^710[_0-2][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_corporate_name(self, key, value):
@@ -173,7 +176,7 @@ def added_entry_corporate_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_added_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'subordinate_unit': utils.force_list(value.get('b')),
@@ -206,9 +209,11 @@ def added_entry_corporate_name(self, key, value):
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('added_entry_meeting_name', '^711[_0-2][_2]')
+@marc21_liberal.over('added_entry_meeting_name', '^711[_0-2][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_meeting_name(self, key, value):
@@ -258,7 +263,7 @@ def added_entry_meeting_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_added_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'location_of_meeting': value.get('c'),
@@ -289,9 +294,11 @@ def added_entry_meeting_name(self, key, value):
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('added_entry_uncontrolled_name', '^720[_12]_')
+@marc21_liberal.over('added_entry_uncontrolled_name', '^720[_12]_')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uncontrolled_name(self, key, value):
@@ -315,7 +322,7 @@ def added_entry_uncontrolled_name(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_name')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'name': value.get('a'),
         'relator_term': utils.force_list(value.get('e')),
@@ -324,9 +331,11 @@ def added_entry_uncontrolled_name(self, key, value):
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_name': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('added_entry_uniform_title', '^730[_0-9][_2]')
+@marc21_liberal.over('added_entry_uniform_title', '^730[_0-9][_2]')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_uniform_title(self, key, value):
@@ -369,7 +378,7 @@ def added_entry_uniform_title(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_added_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'date_of_treaty_signing': utils.force_list(value.get('d')),
@@ -397,9 +406,11 @@ def added_entry_uniform_title(self, key, value):
         'nonfiling_characters': utils.int_with_default(key[3], None),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over(
+@marc21_liberal.over(
     'added_entry_uncontrolled_related_analytical_title',
     '^740[_0-9][_2]')
 @utils.for_each_value
@@ -430,7 +441,7 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_added_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'uncontrolled_related_analytical_title': value.get('a'),
         'medium': value.get('h'),
@@ -444,9 +455,11 @@ def added_entry_uncontrolled_related_analytical_title(self, key, value):
         'nonfiling_characters': utils.int_with_default(key[3], None),
         'type_of_added_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('added_entry_geographic_name', '^751__')
+@marc21_liberal.over('added_entry_geographic_name', '^751__')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_geographic_name(self, key, value):
@@ -464,7 +477,7 @@ def added_entry_geographic_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'geographic_name': value.get('a'),
         'relator_term': utils.force_list(value.get('e')),
@@ -479,9 +492,11 @@ def added_entry_geographic_name(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('added_entry_hierarchical_place_name', '^752__')
+@marc21_liberal.over('added_entry_hierarchical_place_name', '^752__')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_hierarchical_place_name(self, key, value):
@@ -502,7 +517,7 @@ def added_entry_hierarchical_place_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'country_or_larger_entity': utils.force_list(value.get('a')),
         'first_order_political_jurisdiction': value.get('b'),
@@ -520,9 +535,11 @@ def added_entry_hierarchical_place_name(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('system_details_access_to_computer_files', '^753__')
+@marc21_liberal.over('system_details_access_to_computer_files', '^753__')
 @utils.for_each_value
 @utils.filter_values
 def system_details_access_to_computer_files(self, key, value):
@@ -537,7 +554,7 @@ def system_details_access_to_computer_files(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'make_and_model_of_machine': value.get('a'),
         'programming_language': value.get('b'),
@@ -545,9 +562,11 @@ def system_details_access_to_computer_files(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('added_entry_taxonomic_identification', '^754__')
+@marc21_liberal.over('added_entry_taxonomic_identification', '^754__')
 @utils.for_each_value
 @utils.filter_values
 def added_entry_taxonomic_identification(self, key, value):
@@ -566,7 +585,7 @@ def added_entry_taxonomic_identification(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'taxonomic_name': utils.force_list(value.get('a')),
         'taxonomic_category': utils.force_list(value.get('c')),
@@ -580,3 +599,5 @@ def added_entry_taxonomic_identification(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

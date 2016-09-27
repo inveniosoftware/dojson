@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21_authority
+from ..model import marc21_liberal_authority
+from ..utils import extend_liberal_json
 
-
-@marc21_authority.over('complex_see_also_reference_name', '^663..')
+@marc21_liberal_authority.over('complex_see_also_reference_name', '^663..')
 @utils.filter_values
 def complex_see_also_reference_name(self, key, value):
     """Complex See Also Reference-Name."""
@@ -27,7 +27,7 @@ def complex_see_also_reference_name(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'explanatory_text': utils.force_list(
             value.get('a')
@@ -43,9 +43,11 @@ def complex_see_also_reference_name(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('complex_see_reference_name', '^664..')
+@marc21_liberal_authority.over('complex_see_reference_name', '^664..')
 @utils.filter_values
 def complex_see_reference_name(self, key, value):
     """Complex See Reference-Name."""
@@ -58,7 +60,7 @@ def complex_see_reference_name(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'explanatory_text': utils.force_list(
             value.get('a')
@@ -74,9 +76,11 @@ def complex_see_reference_name(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('history_reference', '^665..')
+@marc21_liberal_authority.over('history_reference', '^665..')
 @utils.filter_values
 def history_reference(self, key, value):
     """History Reference."""
@@ -87,7 +91,7 @@ def history_reference(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'history_reference': utils.force_list(
             value.get('a')
@@ -97,9 +101,11 @@ def history_reference(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('general_explanatory_reference_name', '^666..')
+@marc21_liberal_authority.over('general_explanatory_reference_name', '^666..')
 @utils.filter_values
 def general_explanatory_reference_name(self, key, value):
     """General Explanatory Reference-Name."""
@@ -110,7 +116,7 @@ def general_explanatory_reference_name(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'general_explanatory_reference': utils.force_list(
             value.get('a')
@@ -120,3 +126,5 @@ def general_explanatory_reference_name(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

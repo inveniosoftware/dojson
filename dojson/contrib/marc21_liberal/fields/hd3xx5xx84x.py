@@ -11,15 +11,16 @@
 
 from dojson import utils
 
-from ..model import marc21_holdings
+from ..model import marc21_liberal_holdings
+from ..utils import extend_liberal_json_holdings
 
 
-@marc21_holdings.over('media_type', '^337..')
+@marc21_liberal_holdings.over('media_type', '^337..')
 @utils.for_each_value
 @utils.filter_values
 def media_type(self, key, value):
     """Media Type."""
-    return {
+    json_dict = {
         'media_type_term': utils.force_list(
             value.get('a')
         ),
@@ -36,14 +37,16 @@ def media_type(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('carrier_type', '^338..')
+@marc21_liberal_holdings.over('carrier_type', '^338..')
 @utils.for_each_value
 @utils.filter_values
 def carrier_type(self, key, value):
     """Carrier Type."""
-    return {
+    json_dict = {
         'carrier_type_term': utils.force_list(
             value.get('a')
         ),
@@ -60,14 +63,16 @@ def carrier_type(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('restrictions_on_access_note', '^506..')
+@marc21_liberal_holdings.over('restrictions_on_access_note', '^506..')
 @utils.for_each_value
 @utils.filter_values
 def restrictions_on_access_note(self, key, value):
     """Restrictions on Access Note."""
-    return {
+    json_dict = {
         'terms_governing_access': value.get('a'),
         'physical_access_provisions': utils.force_list(
             value.get('c')
@@ -95,14 +100,16 @@ def restrictions_on_access_note(self, key, value):
             value.get('u')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('system_details_note', '^538..')
+@marc21_liberal_holdings.over('system_details_note', '^538..')
 @utils.for_each_value
 @utils.filter_values
 def system_details_note(self, key, value):
     """System Details Note."""
-    return {
+    json_dict = {
         'system_details_note': value.get('a'),
         'display_text': value.get('i'),
         'materials_specified': value.get('3'),
@@ -117,14 +124,16 @@ def system_details_note(self, key, value):
             value.get('u')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('immediate_source_of_acquisition_note', '^541..')
+@marc21_liberal_holdings.over('immediate_source_of_acquisition_note', '^541..')
 @utils.for_each_value
 @utils.filter_values
 def immediate_source_of_acquisition_note(self, key, value):
     """Immediate Source of Acquisition Note."""
-    return {
+    json_dict = {
         'source_of_acquisition': value.get('a'),
         'method_of_acquisition': value.get('c'),
         'address': value.get('b'),
@@ -145,9 +154,11 @@ def immediate_source_of_acquisition_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('ownership_and_custodial_history', '^561[10_].')
+@marc21_liberal_holdings.over('ownership_and_custodial_history', '^561[10_].')
 @utils.for_each_value
 @utils.filter_values
 def ownership_and_custodial_history(self, key, value):
@@ -156,7 +167,7 @@ def ownership_and_custodial_history(self, key, value):
         '#': 'No information provided',
         '0': 'Private',
         '1': 'Not private'}
-    return {
+    json_dict = {
         'history': value.get('a'),
         'materials_specified': value.get('3'),
         'institution_to_which_field_applies': value.get('5'),
@@ -169,14 +180,16 @@ def ownership_and_custodial_history(self, key, value):
         ),
         'privacy': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('copy_and_version_identification_note', '^562..')
+@marc21_liberal_holdings.over('copy_and_version_identification_note', '^562..')
 @utils.for_each_value
 @utils.filter_values
 def copy_and_version_identification_note(self, key, value):
     """Copy and Version Identification Note."""
-    return {
+    json_dict = {
         'identifying_markings': utils.force_list(
             value.get('a')
         ),
@@ -199,14 +212,16 @@ def copy_and_version_identification_note(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('binding_information', '^563..')
+@marc21_liberal_holdings.over('binding_information', '^563..')
 @utils.for_each_value
 @utils.filter_values
 def binding_information(self, key, value):
     """Binding Information."""
-    return {
+    json_dict = {
         'binding_note': value.get('a'),
         'materials_specified': value.get('3'),
         'institution_to_which_field_applies': value.get('5'),
@@ -218,14 +233,16 @@ def binding_information(self, key, value):
             value.get('u')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('action_note', '^583..')
+@marc21_liberal_holdings.over('action_note', '^583..')
 @utils.for_each_value
 @utils.filter_values
 def action_note(self, key, value):
     """Action Note."""
-    return {
+    json_dict = {
         'action': value.get('a'),
         'nonpublic_note': utils.force_list(
             value.get('x')
@@ -280,38 +297,44 @@ def action_note(self, key, value):
             value.get('u')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('holdings_coded_data_values', '^841..')
+@marc21_liberal_holdings.over('holdings_coded_data_values', '^841..')
 @utils.filter_values
 def holdings_coded_data_values(self, key, value):
     """Holdings Coded Data Values."""
-    return {
+    json_dict = {
         'type_of_record': value.get('a'),
         'fixed_length_data_elements': value.get('b'),
         'encoding_level': value.get('e'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('textual_physical_form_designator', '^842..')
+@marc21_liberal_holdings.over('textual_physical_form_designator', '^842..')
 @utils.filter_values
 def textual_physical_form_designator(self, key, value):
     """Textual Physical Form Designator."""
-    return {
+    json_dict = {
         'textual_physical_form_designator': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('reproduction_note', '^843..')
+@marc21_liberal_holdings.over('reproduction_note', '^843..')
 @utils.for_each_value
 @utils.filter_values
 def reproduction_note(self, key, value):
     """Reproduction Note."""
-    return {
+    json_dict = {
         'type_of_reproduction': value.get('a'),
         'agency_responsible_for_reproduction': utils.force_list(
             value.get('c')),
@@ -333,27 +356,31 @@ def reproduction_note(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('name_of_unit', '^844..')
+@marc21_liberal_holdings.over('name_of_unit', '^844..')
 @utils.filter_values
 def name_of_unit(self, key, value):
     """Name of Unit."""
-    return {
+    json_dict = {
         'name_of_unit': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('terms_governing_use_and_reproduction_note', '^845..')
+@marc21_liberal_holdings.over('terms_governing_use_and_reproduction_note', '^845..')
 @utils.for_each_value
 @utils.filter_values
 def terms_governing_use_and_reproduction_note(self, key, value):
     """Terms Governing Use and Reproduction Note."""
-    return {
+    json_dict = {
         'terms_governing_use_and_reproduction': value.get('a'),
         'authorization': value.get('c'),
         'jurisdiction': value.get('b'),
@@ -368,3 +395,5 @@ def terms_governing_use_and_reproduction_note(self, key, value):
             value.get('u')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

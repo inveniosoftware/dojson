@@ -11,14 +11,15 @@
 
 from dojson import utils
 
-from ..model import marc21_holdings
+from ..model import marc21_liberal_holdings
+from ..utils import extend_liberal_json_holdings
 
 
-@marc21_holdings.over('library_of_congress_control_number', '^010..')
+@marc21_liberal_holdings.over('library_of_congress_control_number', '^010..')
 @utils.filter_values
 def library_of_congress_control_number(self, key, value):
     """Library of Congress Control Number."""
-    return {
+    json_dict = {
         'lc_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -30,14 +31,16 @@ def library_of_congress_control_number(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('linkage_number', '^014..')
+@marc21_liberal_holdings.over('linkage_number', '^014..')
 @utils.for_each_value
 @utils.filter_values
 def linkage_number(self, key, value):
     """Linkage Number."""
-    return {
+    json_dict = {
         'linkage_number': value.get('a'),
         'source_of_number': value.get('b'),
         'canceled_or_invalid_linkage_number': utils.force_list(
@@ -45,14 +48,16 @@ def linkage_number(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('national_bibliographic_agency_control_number', '^016..')
+@marc21_liberal_holdings.over('national_bibliographic_agency_control_number', '^016..')
 @utils.for_each_value
 @utils.filter_values
 def national_bibliographic_agency_control_number(self, key, value):
     """National Bibliographic Agency Control Number."""
-    return {
+    json_dict = {
         'record_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -62,14 +67,16 @@ def national_bibliographic_agency_control_number(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('copyright_or_legal_deposit_number', '^017..')
+@marc21_liberal_holdings.over('copyright_or_legal_deposit_number', '^017..')
 @utils.for_each_value
 @utils.filter_values
 def copyright_or_legal_deposit_number(self, key, value):
     """Copyright or Legal Deposit Number."""
-    return {
+    json_dict = {
         'copyright_or_legal_deposit_number': utils.force_list(
             value.get('a')
         ),
@@ -85,14 +92,16 @@ def copyright_or_legal_deposit_number(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('international_standard_book_number', '^020..')
+@marc21_liberal_holdings.over('international_standard_book_number', '^020..')
 @utils.for_each_value
 @utils.filter_values
 def international_standard_book_number(self, key, value):
     """International Standard Book Number."""
-    return {
+    json_dict = {
         'international_standard_book_number': value.get('a'),
         'terms_of_availability': value.get('c'),
         'qualifying_information': utils.force_list(
@@ -106,14 +115,16 @@ def international_standard_book_number(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('international_standard_serial_number', '^022..')
+@marc21_liberal_holdings.over('international_standard_serial_number', '^022..')
 @utils.for_each_value
 @utils.filter_values
 def international_standard_serial_number(self, key, value):
     """International Standard Serial Number."""
-    return {
+    json_dict = {
         'international_standard_serial_number': value.get('a'),
         'canceled_issn_l': utils.force_list(
             value.get('m')
@@ -130,9 +141,11 @@ def international_standard_serial_number(self, key, value):
             value.get('z')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('other_standard_identifier', '^024[1032478_][10_]')
+@marc21_liberal_holdings.over('other_standard_identifier', '^024[1032478_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def other_standard_identifier(self, key, value):
@@ -149,7 +162,7 @@ def other_standard_identifier(self, key, value):
         '#': 'No information provided',
         '0': 'No difference',
         '1': 'Difference'}
-    return {
+    json_dict = {
         'standard_number_or_code': value.get('a'),
         'terms_of_availability': value.get('c'),
         'additional_codes_following_the_standard_number_or_code': value.get(
@@ -167,14 +180,16 @@ def other_standard_identifier(self, key, value):
         'difference_indicator': indicator_map2.get(
             key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('standard_technical_report_number', '^027..')
+@marc21_liberal_holdings.over('standard_technical_report_number', '^027..')
 @utils.for_each_value
 @utils.filter_values
 def standard_technical_report_number(self, key, value):
     """Standard Technical Report Number."""
-    return {
+    json_dict = {
         'standard_technical_report_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -187,13 +202,15 @@ def standard_technical_report_number(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('coden_designation', '^030..')
+@marc21_liberal_holdings.over('coden_designation', '^030..')
 @utils.filter_values
 def coden_designation(self, key, value):
     """CODEN Designation."""
-    return {
+    json_dict = {
         'coden': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -203,14 +220,16 @@ def coden_designation(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('system_control_number', '^035..')
+@marc21_liberal_holdings.over('system_control_number', '^035..')
 @utils.for_each_value
 @utils.filter_values
 def system_control_number(self, key, value):
     """System Control Number."""
-    return {
+    json_dict = {
         'system_control_number': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
@@ -220,13 +239,15 @@ def system_control_number(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('record_source', '^040..')
+@marc21_liberal_holdings.over('record_source', '^040..')
 @utils.filter_values
 def record_source(self, key, value):
     """Record Source."""
-    return {
+    json_dict = {
         'original_cataloging_agency': value.get('a'),
         'transcribing_agency': value.get('c'),
         'language_of_cataloging': value.get('b'),
@@ -238,16 +259,20 @@ def record_source(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_holdings.over('character_sets_present', '^066..')
+@marc21_liberal_holdings.over('character_sets_present', '^066..')
 @utils.filter_values
 def character_sets_present(self, key, value):
     """Character Sets Present."""
-    return {
+    json_dict = {
         'primary_g0_character_set': value.get('a'),
         'alternate_g0_or_g1_character_set': utils.force_list(
             value.get('c')
         ),
         'primary_g1_character_set': value.get('b'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

@@ -11,10 +11,11 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('edition_statement', '^250..')
+@marc21_liberal.over('edition_statement', '^250..')
 @utils.for_each_value
 @utils.filter_values
 def edition_statement(self, key, value):
@@ -29,7 +30,7 @@ def edition_statement(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'edition_statement': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -39,9 +40,11 @@ def edition_statement(self, key, value):
         'remainder_of_edition_statement': value.get('b'),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('musical_presentation_statement', '^254..')
+@marc21_liberal.over('musical_presentation_statement', '^254..')
 @utils.filter_values
 def musical_presentation_statement(self, key, value):
     """Musical Presentation Statement."""
@@ -53,7 +56,7 @@ def musical_presentation_statement(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'musical_presentation_statement': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -61,9 +64,11 @@ def musical_presentation_statement(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('cartographic_mathematical_data', '^255..')
+@marc21_liberal.over('cartographic_mathematical_data', '^255..')
 @utils.for_each_value
 @utils.filter_values
 def cartographic_mathematical_data(self, key, value):
@@ -82,7 +87,7 @@ def cartographic_mathematical_data(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'statement_of_scale': value.get('a'),
         'statement_of_coordinates': value.get('c'),
@@ -96,9 +101,11 @@ def cartographic_mathematical_data(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('computer_file_characteristics', '^256..')
+@marc21_liberal.over('computer_file_characteristics', '^256..')
 @utils.filter_values
 def computer_file_characteristics(self, key, value):
     """Computer File Characteristics."""
@@ -110,7 +117,7 @@ def computer_file_characteristics(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'computer_file_characteristics': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -118,9 +125,11 @@ def computer_file_characteristics(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('country_of_producing_entity', '^257..')
+@marc21_liberal.over('country_of_producing_entity', '^257..')
 @utils.for_each_value
 @utils.filter_values
 def country_of_producing_entity(self, key, value):
@@ -134,7 +143,7 @@ def country_of_producing_entity(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'country_of_producing_entity': utils.force_list(
             value.get('a')
@@ -145,9 +154,11 @@ def country_of_producing_entity(self, key, value):
         'source': value.get('2'),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('philatelic_issue_data', '^258..')
+@marc21_liberal.over('philatelic_issue_data', '^258..')
 @utils.for_each_value
 @utils.filter_values
 def philatelic_issue_data(self, key, value):
@@ -161,7 +172,7 @@ def philatelic_issue_data(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'issuing_jurisdiction': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -170,9 +181,11 @@ def philatelic_issue_data(self, key, value):
         'denomination': value.get('b'),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('publication_distribution_imprint', '^260[_23].')
+@marc21_liberal.over('publication_distribution_imprint', '^260[_23].')
 @utils.for_each_value
 @utils.filter_values
 def publication_distribution_imprint(self, key, value):
@@ -200,7 +213,7 @@ def publication_distribution_imprint(self, key, value):
     if key[3] in indicator_map1:
         order.append('sequence_of_publishing_statements')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'place_of_publication_distribution': utils.force_list(
             value.get('a')
@@ -227,9 +240,11 @@ def publication_distribution_imprint(self, key, value):
         ),
         'sequence_of_publishing_statements': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('imprint_statement_for_films_pre_aacr_1_revised', '^261..')
+@marc21_liberal.over('imprint_statement_for_films_pre_aacr_1_revised', '^261..')
 @utils.filter_values
 def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     """Imprint Statement for Films (Pre-AACR 1 Revised)."""
@@ -245,7 +260,7 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'producing_company': utils.force_list(
             value.get('a')
@@ -267,9 +282,11 @@ def imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('imprint_statement_for_sound_recordings_pre_aacr_1', '^262..')
+@marc21_liberal.over('imprint_statement_for_sound_recordings_pre_aacr_1', '^262..')
 @utils.filter_values
 def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     """Imprint Statement for Sound Recordings (Pre-AACR 1)."""
@@ -285,7 +302,7 @@ def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'place_of_production_release': value.get('a'),
         'date_of_production_release': value.get('c'),
@@ -297,9 +314,11 @@ def imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('projected_publication_date', '^263..')
+@marc21_liberal.over('projected_publication_date', '^263..')
 @utils.filter_values
 def projected_publication_date(self, key, value):
     """Projected Publication Date."""
@@ -311,7 +330,7 @@ def projected_publication_date(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'projected_publication_date': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -319,9 +338,11 @@ def projected_publication_date(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over(
+@marc21_liberal.over(
     'production_publication_distribution_manufacture_and_copyright_notice',
     '^264[_23][10324_]')
 @utils.for_each_value
@@ -359,7 +380,7 @@ def production_publication_distribution_manufacture_and_copyright_notice(
     if key[4] in indicator_map2:
         order.append('function_of_entity')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'place_of_production_publication_distribution_manufacture': utils.force_list(
             value.get('a')),
@@ -376,9 +397,11 @@ def production_publication_distribution_manufacture_and_copyright_notice(
         'function_of_entity': indicator_map2.get(
             key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('address', '^270[1_2].')
+@marc21_liberal.over('address', '^270[1_2].')
 @utils.for_each_value
 @utils.filter_values
 def address(self, key, value):
@@ -427,7 +450,7 @@ def address(self, key, value):
     if 'type_of_address' not in order and key[4] in indicator_map2:
         order.append('type_of_address')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'address': utils.force_list(
             value.get('a')
@@ -476,3 +499,5 @@ def address(self, key, value):
         'level': indicator_map1.get(key[3]),
         'type_of_address': value.get('i') if key[4] == '7' else indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

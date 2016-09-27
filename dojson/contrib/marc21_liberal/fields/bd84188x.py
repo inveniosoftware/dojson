@@ -11,10 +11,11 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('holding_institution', '^850__')
+@marc21_liberal.over('holding_institution', '^850__')
 @utils.for_each_value
 @utils.filter_values
 def holding_institution(self, key, value):
@@ -26,7 +27,7 @@ def holding_institution(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'holding_institution': utils.force_list(
             value.get('a')
@@ -35,9 +36,11 @@ def holding_institution(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('location', '^852[_012345678][_012]')
+@marc21_liberal.over('location', '^852[_012345678][_012]')
 @utils.for_each_value
 @utils.filter_values
 def location(self, key, value):
@@ -98,7 +101,7 @@ def location(self, key, value):
     if key[3] == '7':
         order.remove('source_of_classification')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'location': value.get('a'),
         'sublocation_or_collection': utils.force_list(
@@ -155,9 +158,11 @@ def location(self, key, value):
         value.get('2') if key[3] == '7' else indicator_map1.get(key[3]),
         'shelving_order': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('electronic_location_and_access', '^856[_012347][_0128]')
+@marc21_liberal.over('electronic_location_and_access', '^856[_012347][_0128]')
 @utils.for_each_value
 @utils.filter_values
 def electronic_location_and_access(self, key, value):
@@ -215,7 +220,7 @@ def electronic_location_and_access(self, key, value):
     if key[4] in indicator_map2:
         order.append('relationship')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'host_name': utils.force_list(
             value.get('a')
@@ -280,9 +285,11 @@ def electronic_location_and_access(self, key, value):
         value.get('2') if key[3] == '7' else indicator_map1.get(key[3]),
         'relationship': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('replacement_record_information', '^882__')
+@marc21_liberal.over('replacement_record_information', '^882__')
 @utils.filter_values
 def replacement_record_information(self, key, value):
     """Replacement Record Information."""
@@ -296,7 +303,7 @@ def replacement_record_information(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'replacement_title': utils.force_list(
             value.get('a')
@@ -312,9 +319,11 @@ def replacement_record_information(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('machine_generated_metadata_provenance', '^883[_01]_')
+@marc21_liberal.over('machine_generated_metadata_provenance', '^883[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def machine_generated_metadata_provenance(self, key, value):
@@ -341,7 +350,7 @@ def machine_generated_metadata_provenance(self, key, value):
     if key[3] in indicator_map1:
         order.append('method_of_machine_assignment')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'generation_process': value.get('a'),
         'confidence_value': value.get('c'),
@@ -360,9 +369,11 @@ def machine_generated_metadata_provenance(self, key, value):
         ),
         'method_of_machine_assignment': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('description_conversion_information', '^884__')
+@marc21_liberal.over('description_conversion_information', '^884__')
 @utils.for_each_value
 @utils.filter_values
 def description_conversion_information(self, key, value):
@@ -377,7 +388,7 @@ def description_conversion_information(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'conversion_process': value.get('a'),
         'conversion_date': value.get('g'),
@@ -387,9 +398,11 @@ def description_conversion_information(self, key, value):
             value.get('u')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('non_marc_information_field', '^887__')
+@marc21_liberal.over('non_marc_information_field', '^887__')
 @utils.for_each_value
 @utils.filter_values
 def non_marc_information_field(self, key, value):
@@ -401,8 +414,10 @@ def non_marc_information_field(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'content_of_non_marc_field': value.get('a'),
         'source_of_data': value.get('2'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

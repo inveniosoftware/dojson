@@ -11,13 +11,14 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('main_series_entry', '^760[_01][_8]')
+@marc21_liberal.over('main_series_entry', '^760[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
-def main_series_entry(self, key, value):
+def main_series_entry(self, key, elements):
     """Main Series Entry."""
     indicator_map1 = {
         '0': 'Display note',
@@ -30,7 +31,7 @@ def main_series_entry(self, key, value):
     }
 
     field_map = {
-        'a': 'main_entry_heading',
+        'a': ('main_entry_heading', 'string'),
         'b': 'edition',
         'c': 'qualifying_information',
         'd': 'place_publisher_and_date_of_publication',
@@ -51,14 +52,24 @@ def main_series_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value)
+    order = utils.map_order(field_map, elements)
 
     if key[3] in indicator_map1:
         order.append('note_controller')
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    return_dict = {
+        '__order__': tuple(order) if len(order) else None
+    }
+
+    for key, value in elements:
+        if key in field_map.keys():
+            json_dict[field_map[key]] = value if key == 'linkage' else utils.force_list(value)
+        else:
+            json_dict[key] = value
+
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -82,9 +93,11 @@ def main_series_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subseries_entry', '^762[_01][_8]')
+@marc21_liberal.over('subseries_entry', '^762[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def subseries_entry(self, key, value):
@@ -127,7 +140,7 @@ def subseries_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -151,9 +164,11 @@ def subseries_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('original_language_entry', '^765[_01][_8]')
+@marc21_liberal.over('original_language_entry', '^765[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def original_language_entry(self, key, value):
@@ -201,7 +216,7 @@ def original_language_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -229,9 +244,11 @@ def original_language_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('translation_entry', '^767[_01][_8]')
+@marc21_liberal.over('translation_entry', '^767[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def translation_entry(self, key, value):
@@ -279,7 +296,7 @@ def translation_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -307,9 +324,11 @@ def translation_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('supplement_special_issue_entry', '^770[_01][_8]')
+@marc21_liberal.over('supplement_special_issue_entry', '^770[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def supplement_special_issue_entry(self, key, value):
@@ -357,7 +376,7 @@ def supplement_special_issue_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -385,9 +404,11 @@ def supplement_special_issue_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('supplement_parent_entry', '^772[_01][_08]')
+@marc21_liberal.over('supplement_parent_entry', '^772[_01][_08]')
 @utils.for_each_value
 @utils.filter_values
 def supplement_parent_entry(self, key, value):
@@ -436,7 +457,7 @@ def supplement_parent_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -464,9 +485,11 @@ def supplement_parent_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('host_item_entry', '^773[_01][_8]')
+@marc21_liberal.over('host_item_entry', '^773[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def host_item_entry(self, key, value):
@@ -516,7 +539,7 @@ def host_item_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -546,9 +569,11 @@ def host_item_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('constituent_unit_entry', '^774[_01][_8]')
+@marc21_liberal.over('constituent_unit_entry', '^774[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def constituent_unit_entry(self, key, value):
@@ -596,7 +621,7 @@ def constituent_unit_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -624,9 +649,11 @@ def constituent_unit_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('other_edition_entry', '^775[_01][_8]')
+@marc21_liberal.over('other_edition_entry', '^775[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def other_edition_entry(self, key, value):
@@ -676,7 +703,7 @@ def other_edition_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -706,9 +733,11 @@ def other_edition_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('additional_physical_form_entry', '^776[_01][_8]')
+@marc21_liberal.over('additional_physical_form_entry', '^776[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def additional_physical_form_entry(self, key, value):
@@ -756,7 +785,7 @@ def additional_physical_form_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -784,9 +813,11 @@ def additional_physical_form_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('issued_with_entry', '^777[_01][_8]')
+@marc21_liberal.over('issued_with_entry', '^777[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def issued_with_entry(self, key, value):
@@ -831,7 +862,7 @@ def issued_with_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -856,9 +887,11 @@ def issued_with_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('preceding_entry', '^780[_01][_0-7]')
+@marc21_liberal.over('preceding_entry', '^780[_01][_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def preceding_entry(self, key, value):
@@ -912,7 +945,7 @@ def preceding_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_relationship')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -940,9 +973,11 @@ def preceding_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'type_of_relationship': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('succeeding_entry', '^785[_01][_0-8]')
+@marc21_liberal.over('succeeding_entry', '^785[_01][_0-8]')
 @utils.for_each_value
 @utils.filter_values
 def succeeding_entry(self, key, value):
@@ -997,7 +1032,7 @@ def succeeding_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_relationship')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -1025,9 +1060,11 @@ def succeeding_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'type_of_relationship': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('data_source_entry', '^786[_01][_8]')
+@marc21_liberal.over('data_source_entry', '^786[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def data_source_entry(self, key, value):
@@ -1078,7 +1115,7 @@ def data_source_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -1109,9 +1146,11 @@ def data_source_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('other_relationship_entry', '^787[_01][_8]')
+@marc21_liberal.over('other_relationship_entry', '^787[_01][_8]')
 @utils.for_each_value
 @utils.filter_values
 def other_relationship_entry(self, key, value):
@@ -1159,7 +1198,7 @@ def other_relationship_entry(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_entry_heading': value.get('a'),
         'edition': value.get('b'),
@@ -1187,3 +1226,5 @@ def other_relationship_entry(self, key, value):
         'note_controller': indicator_map1.get(key[3]),
         'display_constant_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

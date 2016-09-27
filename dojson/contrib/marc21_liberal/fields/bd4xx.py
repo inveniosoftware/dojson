@@ -11,10 +11,11 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('series_statement_added_entry_personal_name', '^400[_013][_01]')
+@marc21_liberal.over('series_statement_added_entry_personal_name', '^400[_013][_01]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_personal_name(self, key, value):
@@ -58,7 +59,7 @@ def series_statement_added_entry_personal_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('pronoun_represents_main_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'personal_name': value.get('a'),
         'numeration': value.get('b'),
@@ -95,9 +96,11 @@ def series_statement_added_entry_personal_name(self, key, value):
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('series_statement_added_entry_corporate_name', '^410[_012][_01]')
+@marc21_liberal.over('series_statement_added_entry_corporate_name', '^410[_012][_01]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_corporate_name(self, key, value):
@@ -141,7 +144,7 @@ def series_statement_added_entry_corporate_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('pronoun_represents_main_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'subordinate_unit': utils.force_list(
@@ -180,9 +183,11 @@ def series_statement_added_entry_corporate_name(self, key, value):
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('series_statement_added_entry_meeting_name', '^411[_012][_01]')
+@marc21_liberal.over('series_statement_added_entry_meeting_name', '^411[_012][_01]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_meeting_name(self, key, value):
@@ -226,7 +231,7 @@ def series_statement_added_entry_meeting_name(self, key, value):
     if key[4] in indicator_map2:
         order.append('pronoun_represents_main_entry')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'location_of_meeting': value.get('c'),
@@ -261,9 +266,11 @@ def series_statement_added_entry_meeting_name(self, key, value):
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('series_statement_added_entry_title', '^440_[_0-9]')
+@marc21_liberal.over('series_statement_added_entry_title', '^440_[_0-9]')
 @utils.for_each_value
 @utils.filter_values
 def series_statement_added_entry_title(self, key, value):
@@ -287,7 +294,7 @@ def series_statement_added_entry_title(self, key, value):
     if key[4] in valid_nonfiling_characters:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'number_of_part_section_of_a_work': utils.force_list(
@@ -310,9 +317,11 @@ def series_statement_added_entry_title(self, key, value):
         ),
         'nonfiling_characters': utils.int_with_default(key[4], None),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('series_statement', '^490[01_]_')
+@marc21_liberal.over('series_statement', '^490[01_]_')
 @utils.for_each_value
 @utils.filter_values
 def series_statement(self, key, value):
@@ -337,7 +346,7 @@ def series_statement(self, key, value):
     if key[3] in indicator_map1:
         order.append('series_tracing_policy')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'series_statement': utils.force_list(
             value.get('a')
@@ -356,3 +365,5 @@ def series_statement(self, key, value):
         ),
         'series_tracing_policy': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

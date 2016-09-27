@@ -11,10 +11,11 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('abbreviated_title', '^210[10_][0_]')
+@marc21_liberal.over('abbreviated_title', '^210[10_][0_]')
 @utils.for_each_value
 @utils.filter_values
 def abbreviated_title(self, key, value):
@@ -44,7 +45,7 @@ def abbreviated_title(self, key, value):
     if key[4] in indicator_map2:
         order.append('type')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'abbreviated_title': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -58,9 +59,11 @@ def abbreviated_title(self, key, value):
         'title_added_entry': indicator_map1.get(key[3]),
         'type': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('key_title', '^222_[_0-9]')
+@marc21_liberal.over('key_title', '^222_[_0-9]')
 @utils.for_each_value
 @utils.filter_values
 def key_title(self, key, value):
@@ -79,7 +82,7 @@ def key_title(self, key, value):
     if key[4] in valid_nonfiling_characters:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'key_title': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -89,9 +92,11 @@ def key_title(self, key, value):
         'linkage': value.get('6'),
         'nonfiling_characters': utils.int_with_default(key[4], None),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('uniform_title', '^240[_01][_0-9]')
+@marc21_liberal.over('uniform_title', '^240[_01][_0-9]')
 @utils.filter_values
 def uniform_title(self, key, value):
     """Uniform Title."""
@@ -128,7 +133,7 @@ def uniform_title(self, key, value):
     if key[4] in valid_nonfiling_characters:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'name_of_part_section_of_a_work': utils.force_list(
@@ -163,9 +168,11 @@ def uniform_title(self, key, value):
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
         'nonfiling_characters': utils.int_with_default(key[4], None),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over(
+@marc21_liberal.over(
     'translation_of_title_by_cataloging_agency', '^242[_01][_0-9]')
 @utils.for_each_value
 @utils.filter_values
@@ -197,7 +204,7 @@ def translation_of_title_by_cataloging_agency(self, key, value):
     if key[4] in valid_nonfiling_characters:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'statement_of_responsibility': value.get('c'),
@@ -217,9 +224,11 @@ def translation_of_title_by_cataloging_agency(self, key, value):
         'title_added_entry': indicator_map1.get(key[3]),
         'nonfiling_characters': utils.int_with_default(key[4], None),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('collective_uniform_title', '^243[_01][_0-9]')
+@marc21_liberal.over('collective_uniform_title', '^243[_01][_0-9]')
 @utils.filter_values
 def collective_uniform_title(self, key, value):
     """Collective Uniform Title."""
@@ -255,7 +264,7 @@ def collective_uniform_title(self, key, value):
     if key[4] in valid_nonfiling_characters:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'date_of_treaty_signing': utils.force_list(
@@ -287,9 +296,11 @@ def collective_uniform_title(self, key, value):
         'uniform_title_printed_or_displayed': indicator_map1.get(key[3]),
         'nonfiling_characters': utils.int_with_default(key[4], None),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('title_statement', '^245[_01][_0-9]')
+@marc21_liberal.over('title_statement', '^245[_01][_0-9]')
 @utils.filter_values
 def title_statement(self, key, value):
     """Title Statement."""
@@ -321,7 +332,7 @@ def title_statement(self, key, value):
     if key[4] in valid_nonfiling_characters:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'statement_of_responsibility': value.get('c'),
@@ -346,9 +357,11 @@ def title_statement(self, key, value):
         'title_added_entry': indicator_map1.get(key[3]),
         'nonfiling_characters': utils.int_with_default(key[4], None),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('varying_form_of_title', '^246[1032_][_103254768]')
+@marc21_liberal.over('varying_form_of_title', '^246[1032_][_103254768]')
 @utils.for_each_value
 @utils.filter_values
 def varying_form_of_title(self, key, value):
@@ -395,7 +408,7 @@ def varying_form_of_title(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_title')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'title_proper_short_title': value.get('a'),
         'remainder_of_title': value.get('b'),
@@ -417,9 +430,11 @@ def varying_form_of_title(self, key, value):
         'note_added_entry_controller': indicator_map1.get(key[3]),
         'type_of_title': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('former_title', '^247[10_][10_]')
+@marc21_liberal.over('former_title', '^247[10_][10_]')
 @utils.for_each_value
 @utils.filter_values
 def former_title(self, key, value):
@@ -453,7 +468,7 @@ def former_title(self, key, value):
     if key[4] in indicator_map2:
         order.append('note_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'international_standard_serial_number': value.get('x'),
@@ -474,3 +489,5 @@ def former_title(self, key, value):
         'title_added_entry': indicator_map1.get(key[3]),
         'note_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

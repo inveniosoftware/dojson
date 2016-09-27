@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21_authority
+from ..model import marc21_liberal_authority
+from ..utils import extend_liberal_json
 
-
-@marc21_authority.over('nonpublic_general_note', '^667..')
+@marc21_liberal_authority.over('nonpublic_general_note', '^667..')
 @utils.for_each_value
 @utils.filter_values
 def nonpublic_general_note(self, key, value):
@@ -27,7 +27,7 @@ def nonpublic_general_note(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'nonpublic_general_note': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -38,9 +38,11 @@ def nonpublic_general_note(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('source_data_found', '^670..')
+@marc21_liberal_authority.over('source_data_found', '^670..')
 @utils.for_each_value
 @utils.filter_values
 def source_data_found(self, key, value):
@@ -55,7 +57,7 @@ def source_data_found(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'source_citation': value.get('a'),
         'information_found': value.get('b'),
@@ -66,9 +68,11 @@ def source_data_found(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('title_related_to_the_entity', '^672..')
+@marc21_liberal_authority.over('title_related_to_the_entity', '^672..')
 @utils.for_each_value
 @utils.filter_values
 def title_related_to_the_entity(self, key, value):
@@ -100,7 +104,7 @@ def title_related_to_the_entity(self, key, value):
     if key[4] in indicator_map2:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'remainder_of_title': value.get('b'),
@@ -115,9 +119,11 @@ def title_related_to_the_entity(self, key, value):
         'linkage': value.get('6'),
         'nonfiling_characters': indicator_map2.get(key[4])
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('title_not_related_to_the_entity', '^673..')
+@marc21_liberal_authority.over('title_not_related_to_the_entity', '^673..')
 @utils.for_each_value
 @utils.filter_values
 def title_not_related_to_the_entity(self, key, value):
@@ -149,7 +155,7 @@ def title_not_related_to_the_entity(self, key, value):
     if key[4] in indicator_map2:
         order.append('nonfiling_characters')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'title': value.get('a'),
         'remainder_of_title': value.get('b'),
@@ -164,9 +170,11 @@ def title_not_related_to_the_entity(self, key, value):
         'linkage': value.get('6'),
         'nonfiling_characters': indicator_map2.get(key[4])
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('source_data_not_found', '^675..')
+@marc21_liberal_authority.over('source_data_not_found', '^675..')
 @utils.filter_values
 def source_data_not_found(self, key, value):
     """Source Data Not Found."""
@@ -178,7 +186,7 @@ def source_data_not_found(self, key, value):
     order = utils.map_order(field_map, value)
 
     # TODO consider joining with source_data_found as source_data
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'source_citation': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -186,9 +194,11 @@ def source_data_not_found(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('biographical_or_historical_data', '^678..')
+@marc21_liberal_authority.over('biographical_or_historical_data', '^678..')
 @utils.for_each_value
 @utils.filter_values
 def bibliographical_or_historical_data(self, key, value):
@@ -211,7 +221,7 @@ def bibliographical_or_historical_data(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_data')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'biographical_or_historical_data': value.get('a'),
         'expansion': value.get('b'),
@@ -222,9 +232,11 @@ def bibliographical_or_historical_data(self, key, value):
         'linkage': value.get('6'),
         'type_of_data': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('public_general_note', '^680..')
+@marc21_liberal_authority.over('public_general_note', '^680..')
 @utils.for_each_value
 @utils.filter_values
 def public_general_note(self, key, value):
@@ -238,7 +250,7 @@ def public_general_note(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'heading_or_subdivision_term': utils.force_list(
             value.get('a')
@@ -254,9 +266,11 @@ def public_general_note(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('subject_example_tracing_note', '^681..')
+@marc21_liberal_authority.over('subject_example_tracing_note', '^681..')
 @utils.for_each_value
 @utils.filter_values
 def subject_example_tracing_note(self, key, value):
@@ -269,7 +283,7 @@ def subject_example_tracing_note(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'subject_heading_or_subdivision_term': utils.force_list(
             value.get('a')
@@ -282,9 +296,11 @@ def subject_example_tracing_note(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('deleted_heading_information', '^682..')
+@marc21_liberal_authority.over('deleted_heading_information', '^682..')
 @utils.filter_values
 def deleted_heading_information(self, key, value):
     """Deleted Heading Information."""
@@ -297,7 +313,7 @@ def deleted_heading_information(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'replacement_heading': utils.force_list(
             value.get('a')
@@ -313,9 +329,11 @@ def deleted_heading_information(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21_authority.over('application_history_note', '^688..')
+@marc21_liberal_authority.over('application_history_note', '^688..')
 @utils.for_each_value
 @utils.filter_values
 def application_history_note(self, key, value):
@@ -328,7 +346,7 @@ def application_history_note(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'application_history_note': value.get('a'),
         'field_link_and_sequence_number': utils.force_list(
@@ -339,3 +357,5 @@ def application_history_note(self, key, value):
         ),
         'linkage': value.get('6'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

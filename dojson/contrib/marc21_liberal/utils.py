@@ -16,7 +16,7 @@ import pkg_resources
 from lxml import etree
 
 from dojson._compat import StringIO, binary_type, iteritems, text_type
-from dojson.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict, force_list
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 
@@ -104,3 +104,13 @@ def load(source):
     """Load MARC XML and return Python dict."""
     for data in split_stream(source):
         yield create_record(data)
+
+def extend_liberal_json(field_map, value, json_dict):
+    if not json_dict['__order__']:
+        json_dict['__order__'] = []
+    json_dict['__order__'] = list(json_dict['__order__'])
+    for subkey, subval in value.iteritems():
+        if not field_map.get(subkey) and not subkey == '__order__':
+            json_dict[subkey] = force_list(subval)
+            json_dict['__order__'].append(subkey)
+

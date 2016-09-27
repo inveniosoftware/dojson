@@ -11,10 +11,10 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
-
-@marc21.over('library_of_congress_control_number', '^010__')
+@marc21_liberal.over('library_of_congress_control_number', '^010__')
 @utils.filter_values
 def library_of_congress_control_number(self, key, value):
     """Library of Congress Control Number."""
@@ -27,16 +27,18 @@ def library_of_congress_control_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'lc_control_number': value.get('a'),
         'nucmc_control_number': utils.force_list(value.get('b')),
         'canceled_invalid_lc_control_number': utils.force_list(value.get('z')),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('patent_control_information', '^013__')
+@marc21_liberal.over('patent_control_information', '^013__')
 @utils.for_each_value
 @utils.filter_values
 def patent_control_information(self, key, value):
@@ -54,7 +56,7 @@ def patent_control_information(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'number': value.get('a'),
         'country': value.get('b'),
@@ -65,9 +67,11 @@ def patent_control_information(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('national_bibliography_number', '^015__')
+@marc21_liberal.over('national_bibliography_number', '^015__')
 @utils.for_each_value
 @utils.filter_values
 def national_bibliography_number(self, key, value):
@@ -83,7 +87,7 @@ def national_bibliography_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'national_bibliography_number': utils.force_list(
             value.get('a')),
@@ -96,9 +100,11 @@ def national_bibliography_number(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('national_bibliographic_agency_control_number', '^016[_7]_')
+@marc21_liberal.over('national_bibliographic_agency_control_number', '^016[_7]_')
 @utils.for_each_value
 @utils.filter_values
 def national_bibliographic_agency_control_number(self, key, value):
@@ -120,7 +126,7 @@ def national_bibliographic_agency_control_number(self, key, value):
     if key[3] in indicator_map1:
         order.append('national_bibliographic_agency')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'record_control_number': value.get('a'),
         'canceled_invalid_control_number': utils.force_list(value.get('z')),
@@ -128,9 +134,11 @@ def national_bibliographic_agency_control_number(self, key, value):
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'national_bibliographic_agency': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('copyright_or_legal_deposit_number', '^017_[_8]')
+@marc21_liberal.over('copyright_or_legal_deposit_number', '^017_[_8]')
 @utils.for_each_value
 @utils.filter_values
 def copyright_or_legal_deposit_number(self, key, value):
@@ -156,7 +164,7 @@ def copyright_or_legal_deposit_number(self, key, value):
     if key[4] in indicator_map2:
         order.append('display_constant_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'copyright_or_legal_deposit_number': utils.force_list(
             value.get('a')),
@@ -172,9 +180,11 @@ def copyright_or_legal_deposit_number(self, key, value):
         'display_constant_controller': indicator_map2.get(
             key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('copyright_article_fee_code', '^018__')
+@marc21_liberal.over('copyright_article_fee_code', '^018__')
 @utils.filter_values
 def copyright_article_fee_code(self, key, value):
     """Copyright Article-Fee Code."""
@@ -186,15 +196,17 @@ def copyright_article_fee_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'copyright_article_fee_code': utils.force_list(value.get('a')),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('international_standard_book_number', '^020__')
+@marc21_liberal.over('international_standard_book_number', '^020__')
 @utils.for_each_value
 @utils.filter_values
 def international_standard_book_number(self, key, value):
@@ -210,7 +222,7 @@ def international_standard_book_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'international_standard_book_number': value.get('a'),
         'terms_of_availability': value.get('c'),
@@ -219,9 +231,11 @@ def international_standard_book_number(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('international_standard_serial_number', '^022[_01]_')
+@marc21_liberal.over('international_standard_serial_number', '^022[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def international_standard_serial_number(self, key, value):
@@ -248,7 +262,7 @@ def international_standard_serial_number(self, key, value):
     if key[3] in indicator_map1:
         order.append('level_of_international_interest')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'international_standard_serial_number': value.get('a'),
         'issn_l': value.get('l'),
@@ -260,9 +274,11 @@ def international_standard_serial_number(self, key, value):
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'level_of_international_interest': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('other_standard_identifier', '^024[_0123478][_01]')
+@marc21_liberal.over('other_standard_identifier', '^024[_0123478][_01]')
 @utils.for_each_value
 @utils.filter_values
 def other_standard_identifier(self, key, value):
@@ -299,7 +315,7 @@ def other_standard_identifier(self, key, value):
     if key[4] in indicator_map2:
         order.append('difference_indicator')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'standard_number_or_code': value.get('a'),
         'terms_of_availability': value.get('c'),
@@ -317,9 +333,11 @@ def other_standard_identifier(self, key, value):
         'difference_indicator': indicator_map2.get(
             key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('overseas_acquisition_number', '^025__')
+@marc21_liberal.over('overseas_acquisition_number', '^025__')
 @utils.for_each_value
 @utils.filter_values
 def overseas_acquisition_number(self, key, value):
@@ -331,14 +349,16 @@ def overseas_acquisition_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'overseas_acquisition_number': utils.force_list(value.get('a')),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('fingerprint_identifier', '^026__')
+@marc21_liberal.over('fingerprint_identifier', '^026__')
 @utils.for_each_value
 @utils.filter_values
 def fingerprint_identifier(self, key, value):
@@ -357,7 +377,7 @@ def fingerprint_identifier(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'first_and_second_groups_of_characters': value.get('a'),
         'third_and_fourth_groups_of_characters': value.get('b'),
@@ -369,9 +389,11 @@ def fingerprint_identifier(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('standard_technical_report_number', '^027__')
+@marc21_liberal.over('standard_technical_report_number', '^027__')
 @utils.for_each_value
 @utils.filter_values
 def standard_technical_report_number(self, key, value):
@@ -386,7 +408,7 @@ def standard_technical_report_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'standard_technical_report_number': value.get('a'),
         'qualifying_information': utils.force_list(value.get('q')),
@@ -394,9 +416,11 @@ def standard_technical_report_number(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('publisher_number', '^028[_0-5][_0-4]')
+@marc21_liberal.over('publisher_number', '^028[_0-5][_0-4]')
 @utils.for_each_value
 @utils.filter_values
 def publisher_number(self, key, value):
@@ -432,7 +456,7 @@ def publisher_number(self, key, value):
     if key[4] in indicator_map2:
         order.append('note_added_entry_controller')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'publisher_number': value.get('a'),
         'source': value.get('b'),
@@ -442,9 +466,11 @@ def publisher_number(self, key, value):
         'type_of_publisher_number': indicator_map1.get(key[3]),
         'note_added_entry_controller': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('coden_designation', '^030__')
+@marc21_liberal.over('coden_designation', '^030__')
 @utils.for_each_value
 @utils.filter_values
 def coden_designation(self, key, value):
@@ -458,16 +484,18 @@ def coden_designation(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'coden': value.get('a'),
         'canceled_invalid_coden': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('musical_incipits_information', '^031__')
+@marc21_liberal.over('musical_incipits_information', '^031__')
 @utils.for_each_value
 @utils.filter_values
 def musical_incipits_information(self, key, value):
@@ -497,7 +525,7 @@ def musical_incipits_information(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'number_of_work': value.get('a'),
         'number_of_movement': value.get('b'),
@@ -520,9 +548,11 @@ def musical_incipits_information(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('postal_registration_number', '^032__')
+@marc21_liberal.over('postal_registration_number', '^032__')
 @utils.for_each_value
 @utils.filter_values
 def postal_registration_number(self, key, value):
@@ -536,16 +566,18 @@ def postal_registration_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'postal_registration_number': value.get('a'),
         'source_agency_assigning_number': value.get('b'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('date_time_and_place_of_an_event', '^033[_0-2][_0-2]')
+@marc21_liberal.over('date_time_and_place_of_an_event', '^033[_0-2][_0-2]')
 @utils.for_each_value
 @utils.filter_values
 def date_time_and_place_of_an_event(self, key, value):
@@ -583,7 +615,7 @@ def date_time_and_place_of_an_event(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_event')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'formatted_date_time': utils.force_list(
             value.get('a')),
@@ -606,9 +638,11 @@ def date_time_and_place_of_an_event(self, key, value):
         'type_of_event': indicator_map2.get(
             key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('coded_cartographic_mathematical_data', '^034[_013][_01]')
+@marc21_liberal.over('coded_cartographic_mathematical_data', '^034[_013][_01]')
 @utils.for_each_value
 @utils.filter_values
 def coded_cartographic_mathematical_data(self, key, value):
@@ -658,7 +692,7 @@ def coded_cartographic_mathematical_data(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_ring')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')),
@@ -696,9 +730,11 @@ def coded_cartographic_mathematical_data(self, key, value):
         'type_of_ring': indicator_map2.get(
             key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('system_control_number', '^035__')
+@marc21_liberal.over('system_control_number', '^035__')
 @utils.for_each_value
 @utils.filter_values
 def system_control_number(self, key, value):
@@ -712,16 +748,18 @@ def system_control_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'system_control_number': value.get('a'),
         'canceled_invalid_control_number': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('original_study_number_for_computer_data_files', '^036__')
+@marc21_liberal.over('original_study_number_for_computer_data_files', '^036__')
 @utils.filter_values
 def original_study_number_for_computer_data_files(self, key, value):
     """Original Study Number for Computer Data Files."""
@@ -734,16 +772,18 @@ def original_study_number_for_computer_data_files(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'original_study_number': value.get('a'),
         'source_agency_assigning_number': value.get('b'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('source_of_acquisition', '^037[_23]_')
+@marc21_liberal.over('source_of_acquisition', '^037[_23]_')
 @utils.for_each_value
 @utils.filter_values
 def source_of_acquisition(self, key, value):
@@ -772,7 +812,7 @@ def source_of_acquisition(self, key, value):
     if key[3] in indicator_map1:
         order.append('source_of_acquisition_sequence')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'stock_number': value.get('a'),
         'source_of_stock_number_acquisition': value.get('b'),
@@ -786,9 +826,11 @@ def source_of_acquisition(self, key, value):
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'source_of_acquisition_sequence': indicator_map1.get(key[3], '_'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('record_content_licensor', '^038__')
+@marc21_liberal.over('record_content_licensor', '^038__')
 @utils.filter_values
 def record_content_licensor(self, key, value):
     """Record Content Licensor."""
@@ -800,15 +842,17 @@ def record_content_licensor(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'record_content_licensor': value.get('a'),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('cataloging_source', '^040__')
+@marc21_liberal.over('cataloging_source', '^040__')
 @utils.filter_values
 def cataloging_source(self, key, value):
     """Cataloging Source."""
@@ -824,7 +868,7 @@ def cataloging_source(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'original_cataloging_agency': value.get('a'),
         'language_of_cataloging': value.get('b'),
@@ -834,9 +878,11 @@ def cataloging_source(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('language_code', '^041[_01][_7]')
+@marc21_liberal.over('language_code', '^041..')
 @utils.for_each_value
 @utils.filter_values
 def language_code(self, key, value):
@@ -876,7 +922,7 @@ def language_code(self, key, value):
     if key[4] in indicator_map2 and 'source_of_code' not in order:
         order.append('source_of_code')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'language_code_of_text_sound_track_or_separate_title': utils.force_list(value.get('a')),
         'language_code_of_summary_or_abstract': utils.force_list(value.get('b')),
@@ -894,18 +940,22 @@ def language_code(self, key, value):
         'translation_indication': indicator_map1.get(key[3]),
         'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4])
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('authentication_code', '^042__')
+@marc21_liberal.over('authentication_code', '^042__')
 @utils.filter_values
 def authentication_code(self, key, value):
     """Authentication Code."""
-    return {
+    json_dict = {
         'authentication_code': utils.force_list(value.get('a')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('geographic_area_code', '^043__')
+@marc21_liberal.over('geographic_area_code', '^043__')
 @utils.filter_values
 def geographic_area_code(self, key, value):
     """Geographic Area Code."""
@@ -921,7 +971,7 @@ def geographic_area_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'geographic_area_code': utils.force_list(value.get('a')),
         'local_gac_code': utils.force_list(value.get('b')),
@@ -931,9 +981,11 @@ def geographic_area_code(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('country_of_publishing_producing_entity_code', '^044__')
+@marc21_liberal.over('country_of_publishing_producing_entity_code', '^044__')
 @utils.for_each_value
 @utils.filter_values
 def country_of_publishing_producing_entity_code(self, key, value):
@@ -949,7 +1001,7 @@ def country_of_publishing_producing_entity_code(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'marc_country_code': utils.force_list(value.get('a')),
         'local_subentity_code': utils.force_list(value.get('b')),
@@ -958,9 +1010,11 @@ def country_of_publishing_producing_entity_code(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('time_period_of_content', '^045[_012]_')
+@marc21_liberal.over('time_period_of_content', '^045[_012]_')
 @utils.filter_values
 def time_period_of_content(self, key, value):
     """Time Period of Content."""
@@ -984,7 +1038,7 @@ def time_period_of_content(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_time_period_in_subfield_b_or_c')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'time_period_code': utils.force_list(
             value.get('a')),
@@ -998,9 +1052,11 @@ def time_period_of_content(self, key, value):
         'type_of_time_period_in_subfield_b_or_c': indicator_map1.get(
             key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('special_coded_dates', '^046__')
+@marc21_liberal.over('special_coded_dates', '^046__')
 @utils.for_each_value
 @utils.filter_values
 def special_coded_dates(self, key, value):
@@ -1025,7 +1081,7 @@ def special_coded_dates(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'type_of_date_code': value.get('a'),
         'date_1_bc_date': value.get('b'),
@@ -1043,9 +1099,11 @@ def special_coded_dates(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('form_of_musical_composition_code', '^047_[_7]')
+@marc21_liberal.over('form_of_musical_composition_code', '^047_[_7]')
 @utils.for_each_value
 @utils.filter_values
 def form_of_musical_composition_code(self, key, value):
@@ -1066,7 +1124,7 @@ def form_of_musical_composition_code(self, key, value):
     if 'source_of_code' not in order and key[4] in indicator_map2:
         order.append('source_of_code')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'form_of_musical_composition_code': utils.force_list(
             value.get('a')),
@@ -1076,9 +1134,11 @@ def form_of_musical_composition_code(self, key, value):
             key[4],
             '_'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('number_of_musical_instruments_or_voices_code', '^048_[_7]')
+@marc21_liberal.over('number_of_musical_instruments_or_voices_code', '^048_[_7]')
 @utils.for_each_value
 @utils.filter_values
 def number_of_musical_instruments_or_voices_code(self, key, value):
@@ -1100,7 +1160,7 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
     if 'source_of_code' not in order and key[4] in indicator_map2:
         order.append('source_of_code')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'performer_or_ensemble': utils.force_list(
             value.get('a')),
@@ -1112,9 +1172,11 @@ def number_of_musical_instruments_or_voices_code(self, key, value):
             key[4],
             '_'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('library_of_congress_call_number', '^050[_01][_04]')
+@marc21_liberal.over('library_of_congress_call_number', '^050[_01][_04]')
 @utils.for_each_value
 @utils.filter_values
 def library_of_congress_call_number(self, key, value):
@@ -1145,7 +1207,7 @@ def library_of_congress_call_number(self, key, value):
     if key[4] in indicator_map2:
         order.append('source_of_call_number')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
@@ -1155,9 +1217,11 @@ def library_of_congress_call_number(self, key, value):
         'existence_in_lc_collection': indicator_map1.get(key[3]),
         'source_of_call_number': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('library_of_congress_copy_issue_offprint_statement', '^051__')
+@marc21_liberal.over('library_of_congress_copy_issue_offprint_statement', '^051__')
 @utils.for_each_value
 @utils.filter_values
 def library_of_congress_copy_issue_offprint_statement(self, key, value):
@@ -1171,16 +1235,18 @@ def library_of_congress_copy_issue_offprint_statement(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'item_number': value.get('b'),
         'copy_information': value.get('c'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('geographic_classification', '^052[_17]_')
+@marc21_liberal.over('geographic_classification', '^052[_17]_')
 @utils.for_each_value
 @utils.filter_values
 def geographic_classification(self, key, value):
@@ -1205,7 +1271,7 @@ def geographic_classification(self, key, value):
     if 'code_source' not in order and key[3] in indicator_map1:
         order.append('code_source')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'geographic_classification_area_code': value.get('a'),
         'geographic_classification_subarea_code': utils.force_list(
@@ -1218,9 +1284,11 @@ def geographic_classification(self, key, value):
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over(
+@marc21_liberal.over(
     'classification_numbers_assigned_in_canada', '^055[_01][_0-9]')
 @utils.for_each_value
 @utils.filter_values
@@ -1260,7 +1328,7 @@ def classification_numbers_assigned_in_canada(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_completeness_source_of_class_call_number')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'item_number': value.get('b'),
@@ -1273,9 +1341,11 @@ def classification_numbers_assigned_in_canada(self, key, value):
         'type_completeness_source_of_class_call_number': indicator_map2.get(
             key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('national_library_of_medicine_call_number', '^060[_01][_04]')
+@marc21_liberal.over('national_library_of_medicine_call_number', '^060[_01][_04]')
 @utils.for_each_value
 @utils.filter_values
 def national_library_of_medicine_call_number(self, key, value):
@@ -1304,7 +1374,7 @@ def national_library_of_medicine_call_number(self, key, value):
     if key[4] in indicator_map2:
         order.append('source_of_call_number')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number_r': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
@@ -1312,9 +1382,11 @@ def national_library_of_medicine_call_number(self, key, value):
         'existence_in_nlm_collection': indicator_map1.get(key[3]),
         'source_of_call_number': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('national_library_of_medicine_copy_statement', '^061__')
+@marc21_liberal.over('national_library_of_medicine_copy_statement', '^061__')
 @utils.for_each_value
 @utils.filter_values
 def national_library_of_medicine_copy_statement(self, key, value):
@@ -1328,16 +1400,18 @@ def national_library_of_medicine_copy_statement(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
         'copy_information': value.get('c'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('character_sets_present', '^066__')
+@marc21_liberal.over('character_sets_present', '^066__')
 @utils.filter_values
 def character_sets_present(self, key, value):
     """Character Sets Present."""
@@ -1349,15 +1423,17 @@ def character_sets_present(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'primary_g0_character_set': value.get('a'),
         'primary_g1_character_set': value.get('b'),
         'alternate_g0_or_g1_character_set': utils.force_list(value.get('c')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('national_agricultural_library_call_number', '^070[_01]_')
+@marc21_liberal.over('national_agricultural_library_call_number', '^070[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def national_agricultural_library_call_number(self, key, value):
@@ -1378,16 +1454,18 @@ def national_agricultural_library_call_number(self, key, value):
     if key[3] in indicator_map1:
         order.append('existence_in_nal_collection')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
         'field_link_and_sequence_number_r': utils.force_list(value.get('8')),
         'existence_in_nal_collection': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('national_agricultural_library_copy_statement', '^071__')
+@marc21_liberal.over('national_agricultural_library_copy_statement', '^071__')
 @utils.for_each_value
 @utils.filter_values
 def national_agricultural_library_copy_statement(self, key, value):
@@ -1401,16 +1479,18 @@ def national_agricultural_library_copy_statement(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
         'copy_information': utils.force_list(value.get('c')),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_category_code', '^072_[_07]')
+@marc21_liberal.over('subject_category_code', '^072_[_07]')
 @utils.for_each_value
 @utils.filter_values
 def subject_category_code(self, key, value):
@@ -1434,7 +1514,7 @@ def subject_category_code(self, key, value):
     if key[4] in indicator_map2:
         order.append('code_source')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'subject_category_code': value.get('a'),
         'subject_category_code_subdivision': utils.force_list(value.get('x')),
@@ -1443,9 +1523,11 @@ def subject_category_code(self, key, value):
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'code_source': indicator_map2.get(key[4], '_'),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('gpo_item_number', '^074__')
+@marc21_liberal.over('gpo_item_number', '^074__')
 @utils.for_each_value
 @utils.filter_values
 def gpo_item_number(self, key, value):
@@ -1458,15 +1540,17 @@ def gpo_item_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'gpo_item_number': value.get('a'),
         'canceled_invalid_gpo_item_number': utils.force_list(value.get('z')),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('universal_decimal_classification_number', '^080[_01]_')
+@marc21_liberal.over('universal_decimal_classification_number', '^080[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def universal_decimal_classification_number(self, key, value):
@@ -1491,7 +1575,7 @@ def universal_decimal_classification_number(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_edition')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'universal_decimal_classification_number': value.get('a'),
         'item_number': value.get('b'),
@@ -1501,9 +1585,11 @@ def universal_decimal_classification_number(self, key, value):
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
         'type_of_edition': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('dewey_decimal_classification_number', '^082[_017][_04]')
+@marc21_liberal.over('dewey_decimal_classification_number', '^082[_017][_04]')
 @utils.for_each_value
 @utils.filter_values
 def dewey_decimal_classification_number(self, key, value):
@@ -1537,7 +1623,7 @@ def dewey_decimal_classification_number(self, key, value):
     if key[4] in indicator_map2:
         order.append('source_of_classification_number')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
@@ -1549,9 +1635,11 @@ def dewey_decimal_classification_number(self, key, value):
         'type_of_edition': indicator_map1.get(key[3]),
         'source_of_classification_number': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('additional_dewey_decimal_classification_number', '^083[_017]_')
+@marc21_liberal.over('additional_dewey_decimal_classification_number', '^083[_017]_')
 @utils.for_each_value
 @utils.filter_values
 def additional_dewey_decimal_classification_number(self, key, value):
@@ -1579,7 +1667,7 @@ def additional_dewey_decimal_classification_number(self, key, value):
     if key[3] in indicator_map1:
         order.append('type_of_edition')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(
             value.get('a')),
@@ -1598,9 +1686,11 @@ def additional_dewey_decimal_classification_number(self, key, value):
         'type_of_edition': indicator_map1.get(
             key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('other_classification_number', '^084__')
+@marc21_liberal.over('other_classification_number', '^084__')
 @utils.for_each_value
 @utils.filter_values
 def other_classification_number(self, key, value):
@@ -1616,7 +1706,7 @@ def other_classification_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': utils.force_list(value.get('a')),
         'item_number': value.get('b'),
@@ -1625,9 +1715,11 @@ def other_classification_number(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('synthesized_classification_number_components', '^085__')
+@marc21_liberal.over('synthesized_classification_number_components', '^085__')
 @utils.for_each_value
 @utils.filter_values
 def synthesized_classification_number_components(self, key, value):
@@ -1651,7 +1743,7 @@ def synthesized_classification_number_components(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'number_where_instructions_are_found_single_number_or_beginning_number_of_span': utils.force_list(value.get('a')),
         'base_number': utils.force_list(value.get('b')),
@@ -1668,9 +1760,11 @@ def synthesized_classification_number_components(self, key, value):
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('government_document_classification_number', '^086[_01]_')
+@marc21_liberal.over('government_document_classification_number', '^086[_01]_')
 @utils.for_each_value
 @utils.filter_values
 def government_document_classification_number(self, key, value):
@@ -1694,7 +1788,7 @@ def government_document_classification_number(self, key, value):
     if key[3] in indicator_map1 and 'number_source' not in order:
         order.append('number_source')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'classification_number': value.get('a'),
         'canceled_invalid_classification_number': utils.force_list(
@@ -1705,9 +1799,11 @@ def government_document_classification_number(self, key, value):
         'number_source': value.get('2') if key[3] == '_' else indicator_map1.get(
             key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('report_number', '^088__')
+@marc21_liberal.over('report_number', '^088__')
 @utils.for_each_value
 @utils.filter_values
 def report_number(self, key, value):
@@ -1721,10 +1817,12 @@ def report_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'report_number': value.get('a'),
         'canceled_invalid_report_number': utils.force_list(value.get('z')),
         'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(value.get('8')),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict

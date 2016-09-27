@@ -11,10 +11,11 @@
 
 from dojson import utils
 
-from ..model import marc21
+from ..model import marc21_liberal
+from ..utils import extend_liberal_json
 
 
-@marc21.over('subject_added_entry_personal_name', '^600[_013][_0-7]')
+@marc21_liberal.over('subject_added_entry_personal_name', '^600[_013][_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_personal_name(self, key, value):
@@ -82,7 +83,7 @@ def subject_added_entry_personal_name(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'personal_name': value.get('a'),
         'numeration': value.get('b'),
@@ -145,9 +146,11 @@ def subject_added_entry_personal_name(self, key, value):
         'type_of_personal_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_added_entry_corporate_name', '^610[_0-2][_0-7]')
+@marc21_liberal.over('subject_added_entry_corporate_name', '^610[_0-2][_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_corporate_name(self, key, value):
@@ -213,7 +216,7 @@ def subject_added_entry_corporate_name(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'subordinate_unit': utils.force_list(
@@ -274,9 +277,11 @@ def subject_added_entry_corporate_name(self, key, value):
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_added_entry_meeting_name', '^611[_0-2][_0-7]')
+@marc21_liberal.over('subject_added_entry_meeting_name', '^611[_0-2][_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_meeting_name(self, key, value):
@@ -340,7 +345,7 @@ def subject_added_entry_meeting_name(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
         'location_of_meeting': value.get('c'),
@@ -395,9 +400,11 @@ def subject_added_entry_meeting_name(self, key, value):
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over(
+@marc21_liberal.over(
     'subject_added_entry_uniform_title', '^630[_0-9][_0-7]')
 @utils.for_each_value
 @utils.filter_values
@@ -457,7 +464,7 @@ def subject_added_entry_uniform_title(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'uniform_title': value.get('a'),
         'date_of_treaty_signing': utils.force_list(
@@ -513,9 +520,11 @@ def subject_added_entry_uniform_title(self, key, value):
         'nonfiling_characters': utils.int_with_default(key[3], None),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_added_entry_chronological_term', '^648[_01][_0-7]')
+@marc21_liberal.over('subject_added_entry_chronological_term', '^648[_01][_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_chronological_term(self, key, value):
@@ -557,7 +566,7 @@ def subject_added_entry_chronological_term(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'chronological_term': value.get('a'),
         'form_subdivision': utils.force_list(
@@ -584,9 +593,11 @@ def subject_added_entry_chronological_term(self, key, value):
         'type_of_date_or_time_period': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_added_entry_topical_term', '^650[_0-2][_0-7]')
+@marc21_liberal.over('subject_added_entry_topical_term', '^650[_0-2][_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_topical_term(self, key, value):
@@ -641,7 +652,7 @@ def subject_added_entry_topical_term(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'topical_term_or_geographic_name_entry_element': value.get('a'),
         'topical_term_following_geographic_name_entry_element': value.get('b'),
@@ -677,9 +688,11 @@ def subject_added_entry_topical_term(self, key, value):
         'level_of_subject': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_added_entry_geographic_name', '^651_[_0-7]')
+@marc21_liberal.over('subject_added_entry_geographic_name', '^651_[_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_geographic_name(self, key, value):
@@ -722,7 +735,7 @@ def subject_added_entry_geographic_name(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'geographic_name': value.get('a'),
         'relator_term': utils.force_list(
@@ -754,9 +767,11 @@ def subject_added_entry_geographic_name(self, key, value):
         ),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('index_term_uncontrolled', '^653[_0-2][_0-6]')
+@marc21_liberal.over('index_term_uncontrolled', '^653[_0-2][_0-6]')
 @utils.for_each_value
 @utils.filter_values
 def index_term_uncontrolled(self, key, value):
@@ -792,7 +807,7 @@ def index_term_uncontrolled(self, key, value):
     if key[4] in indicator_map2:
         order.append('type_of_term_or_name')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'uncontrolled_term': utils.force_list(
             value.get('a')
@@ -804,9 +819,11 @@ def index_term_uncontrolled(self, key, value):
         'level_of_index_term': indicator_map1.get(key[3]),
         'type_of_term_or_name': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_added_entry_faceted_topical_terms', '^654[_0-2]_')
+@marc21_liberal.over('subject_added_entry_faceted_topical_terms', '^654[_0-2]_')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_faceted_topical_terms(self, key, value):
@@ -839,7 +856,7 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
     if key[3] in indicator_map1:
         order.append('level_of_subject')
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'focus_term': utils.force_list(
             value.get('a')
@@ -876,9 +893,11 @@ def subject_added_entry_faceted_topical_terms(self, key, value):
         ),
         'level_of_subject': indicator_map1.get(key[3]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('index_term_genre_form', '^655[_0][_0-7]')
+@marc21_liberal.over('index_term_genre_form', '^655[_0][_0-7]')
 @utils.for_each_value
 @utils.filter_values
 def index_term_genre_form(self, key, value):
@@ -927,7 +946,7 @@ def index_term_genre_form(self, key, value):
         except ValueError:
             pass
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'genre_form_data_or_focus_term': value.get('a'),
         'non_focus_term': utils.force_list(
@@ -961,9 +980,11 @@ def index_term_genre_form(self, key, value):
         'type_of_heading': indicator_map1.get(key[3]),
         'thesaurus': indicator_map2.get(key[4]),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('index_term_occupation', '^656_7')
+@marc21_liberal.over('index_term_occupation', '^656_7')
 @utils.for_each_value
 @utils.filter_values
 def index_term_occupation(self, key, value):
@@ -984,7 +1005,7 @@ def index_term_occupation(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'occupation': value.get('a'),
         'form': value.get('k'),
@@ -1010,9 +1031,11 @@ def index_term_occupation(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('index_term_function', '^657_7')
+@marc21_liberal.over('index_term_function', '^657_7')
 @utils.for_each_value
 @utils.filter_values
 def index_term_function(self, key, value):
@@ -1032,7 +1055,7 @@ def index_term_function(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'function': value.get('a'),
         'form_subdivision': utils.force_list(
@@ -1057,9 +1080,11 @@ def index_term_function(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('index_term_curriculum_objective', '^658__')
+@marc21_liberal.over('index_term_curriculum_objective', '^658__')
 @utils.for_each_value
 @utils.filter_values
 def index_term_curriculum_objective(self, key, value):
@@ -1076,7 +1101,7 @@ def index_term_curriculum_objective(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'main_curriculum_objective': value.get('a'),
         'subordinate_curriculum_objective': utils.force_list(
@@ -1090,9 +1115,11 @@ def index_term_curriculum_objective(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
 
 
-@marc21.over('subject_added_entry_hierarchical_place_name', '^662__')
+@marc21_liberal.over('subject_added_entry_hierarchical_place_name', '^662__')
 @utils.for_each_value
 @utils.filter_values
 def subject_added_entry_hierarchical_place_name(self, key, value):
@@ -1115,7 +1142,7 @@ def subject_added_entry_hierarchical_place_name(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'country_or_larger_entity': utils.force_list(
             value.get('a')
@@ -1149,3 +1176,5 @@ def subject_added_entry_hierarchical_place_name(self, key, value):
             value.get('8')
         ),
     }
+    extend_liberal_json(field_map, value, json_dict)
+    return json_dict
