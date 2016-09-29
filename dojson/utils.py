@@ -103,7 +103,14 @@ def reverse_for_each_value(f):
 
 
 def force_list(data):
-    """Wrap data in list."""
+    """Wrap data in a tuple.
+
+    Wraps its argument in a tuple so that it can be iterated over, unless
+    it was a list, a tuple, or a set (therefore already iterable).
+
+    Note that if ``data`` is ``None`` this method will return ``None``, which
+    is not iterable.
+    """
     if data is not None and not isinstance(data, (list, tuple, set)):
         return (data,)
     return data
