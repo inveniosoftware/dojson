@@ -934,7 +934,6 @@ def geographic_area_code(self, key, value):
 
 
 @marc21.over('country_of_publishing_producing_entity_code', '^044__')
-@utils.for_each_value
 @utils.filter_values
 def country_of_publishing_producing_entity_code(self, key, value):
     """Country of Publishing/Producing Entity Code."""
