@@ -105,13 +105,14 @@ import sys
 
 import click
 
+from .._compat import stdin
 from .utils import open_entry_point, with_plugins
 
 
 @with_plugins('dojson.cli')
 @click.group(chain=True, invoke_without_command=True)
 @click.option('-i', '--input', 'source', type=click.File('rb'),
-              default=sys.stdin)
+              default=stdin)
 @click.option('-l', '--load', callback=open_entry_point('dojson.cli.load'),
               default='json')
 @click.option('-d', '--dump', callback=open_entry_point('dojson.cli.dump'),

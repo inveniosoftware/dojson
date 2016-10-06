@@ -22,6 +22,7 @@ if PY3:
     import io
     StringIO = io.StringIO
     BytesIO = io.BytesIO
+    stdin = getattr(sys.stdin, 'buffer', sys.stdin)
 
     binary_type = bytes
     string_types = str,
@@ -35,6 +36,7 @@ if PY3:
 else:
     import StringIO
     StringIO = BytesIO = StringIO.StringIO
+    stdin = sys.stdin
 
     binary_type = str
     string_types = basestring,
