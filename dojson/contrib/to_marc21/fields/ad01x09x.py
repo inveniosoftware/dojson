@@ -39,7 +39,8 @@ def reverse_library_of_congress_control_number(self, key, value):
     }
 
 
-@to_marc21_authority.over('014', '^link_to_bibliographic_record_for_serial_or_multipart_item$')
+@to_marc21_authority.over(
+    '014', '^link_to_bibliographic_record_for_serial_or_multipart_item$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_link_to_bibliographic_record_for_serial_or_multipart_item(self,
@@ -65,7 +66,8 @@ def reverse_link_to_bibliographic_record_for_serial_or_multipart_item(self,
     }
 
 
-@to_marc21_authority.over('016', '^national_bibliographic_agency_control_number$')
+@to_marc21_authority.over(
+    '016', '^national_bibliographic_agency_control_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_bibliographic_agency_control_number(self, key, value):
@@ -201,7 +203,9 @@ def reverse_other_standard_identifier(self, key, value):
         'z': utils.reverse_force_list(
             value.get('canceled_invalid_standard_number_or_code')
         ),
-        '$ind1': '7' if value.get('type_of_standard_number_or_code') == value.get('source_of_number_or_code')
+        '$ind1': '7' if value.get('type_of_standard_number_or_code') and
+        value.get('type_of_standard_number_or_code') == value.get(
+            'source_of_number_or_code')
         else indicator_map1.get(
             value.get('type_of_standard_number_or_code'), '_'),
         '$ind2': '_',
@@ -972,7 +976,8 @@ def reverse_dewey_decimal_call_number(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': '7' if value.get('type_of_edition') == value.get('edition_number')
+        '$ind1': '7' if value.get('type_of_edition') and
+        value.get('type_of_edition') == value.get('edition_number')
                  else indicator_map1.get(value.get('type_of_edition'), '_'),
         '$ind2': indicator_map2.get(value.get('source_of_call_number'), '_'),
     }
@@ -1018,7 +1023,8 @@ def reverse_dewey_decimal_classification_number(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         'z': value.get('table_identification_table_number'),
-        '$ind1': '7' if value.get('type_of_edition') == value.get('edition_number')
+        '$ind1': '7' if value.get('type_of_edition') and
+        value.get('type_of_edition') == value.get('edition_number')
                  else indicator_map1.get(value.get('type_of_edition'), '_'),
         '$ind2': indicator_map2.get(
             value.get('source_of_classification_number'), '_'),

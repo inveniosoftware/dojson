@@ -14,10 +14,12 @@ from dojson import utils
 from ..model import to_marc21_authority
 
 
-@to_marc21_authority.over('640', '^series_dates_of_publication_and_or_sequential_designation$')
+@to_marc21_authority.over(
+    '640', '^series_dates_of_publication_and_or_sequential_designation$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_series_dates_of_publication_and_or_sequential_designation(self, key, value):
+def reverse_series_dates_of_publication_and_or_sequential_designation(
+        self, key, value):
     """Reverse - Series Dates of Publication and/or Sequential Designation."""
     field_map = {
         'dates_of_publication_and_or_sequential_designation': 'a',

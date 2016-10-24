@@ -14,7 +14,8 @@ from dojson import utils
 from ..model import to_marc21_authority
 
 
-@to_marc21_authority.over('700', '^established_heading_linking_entry_personal_name$')
+@to_marc21_authority.over(
+    '700', '^established_heading_linking_entry_personal_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_established_heading_linking_entry_personal_name(self, key, value):
@@ -132,12 +133,13 @@ def reverse_established_heading_linking_entry_personal_name(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element'), '_'),
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('710', '^established_heading_linking_entry_corporate_name$')
+@to_marc21_authority.over(
+    '710', '^established_heading_linking_entry_corporate_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_established_heading_linking_entry_corporate_name(self, key, value):
@@ -254,12 +256,13 @@ def reverse_established_heading_linking_entry_corporate_name(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element'), '_'),
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('711', '^established_heading_linking_entry_meeting_name$')
+@to_marc21_authority.over(
+    '711', '^established_heading_linking_entry_meeting_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_established_heading_linking_entry_meeting_name(self, key, value):
@@ -368,12 +371,13 @@ def reverse_established_heading_linking_entry_meeting_name(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element'), '_'),
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('730', '^established_heading_linking_entry_uniform_title$')
+@to_marc21_authority.over(
+    '730', '^established_heading_linking_entry_uniform_title$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_established_heading_linking_entry_uniform_title(self, key, value):
@@ -476,15 +480,17 @@ def reverse_established_heading_linking_entry_uniform_title(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('748', '^established_heading_linking_entry_chronological_term$')
+@to_marc21_authority.over(
+    '748', '^established_heading_linking_entry_chronological_term$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_established_heading_linking_entry_chronological_term(self, key, value):
+def reverse_established_heading_linking_entry_chronological_term(
+        self, key, value):
     """Reverse - Established Heading Linking Entry-Chronological Term."""
     field_map = {
         'chronological_term': 'a',
@@ -546,12 +552,13 @@ def reverse_established_heading_linking_entry_chronological_term(self, key, valu
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('750', '^established_heading_linking_entry_topical_term$')
+@to_marc21_authority.over(
+    '750', '^established_heading_linking_entry_topical_term$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_established_heading_linking_entry_topical_term(self, key, value):
@@ -622,15 +629,17 @@ def reverse_established_heading_linking_entry_topical_term(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('751', '^established_heading_linking_entry_geographic_name$')
+@to_marc21_authority.over(
+    '751', '^established_heading_linking_entry_geographic_name$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_established_heading_linking_entry_geographic_name(self, key, value):
+def reverse_established_heading_linking_entry_geographic_name(
+        self, key, value):
     """Reverse - Established Heading Linking Entry-Geographic Name."""
     field_map = {
         'geographic_name': 'a',
@@ -696,15 +705,17 @@ def reverse_established_heading_linking_entry_geographic_name(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('755', '^established_heading_linking_entry_genre_form_term$')
+@to_marc21_authority.over(
+    '755', '^established_heading_linking_entry_genre_form_term$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_established_heading_linking_entry_genre_form_term(self, key, value):
+def reverse_established_heading_linking_entry_genre_form_term(
+        self, key, value):
     """Reverse - Established Heading Linking Entry-Genre/Form Term."""
     field_map = {
         'genre_form_term_as_entry_element': 'a',
@@ -766,6 +777,6 @@ def reverse_established_heading_linking_entry_genre_form_term(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }

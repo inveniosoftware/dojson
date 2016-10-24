@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "allOf": [
+        {"$ref": "bdleader.json"},
+        {"$ref": "bd00x-v1.0.1.json"},
+        {"$ref": "bd01x09x-v1.0.1.json"},
+        {"$ref": "bd1xx-v1.0.1.json"},
+        {"$ref": "bd20x24x-v1.0.1.json"},
+        {"$ref": "bd25x28x.json"},
+        {"$ref": "bd3xx-v1.0.1.json"},
+        {"$ref": "bd4xx-v1.0.1.json"},
+        {"$ref": "bd5xx-v1.0.1.json"},
+        {"$ref": "bd6xx-v1.0.1.json"},
+        {"$ref": "bd70x75x-v1.0.1.json"},
+        {"$ref": "bd76x78x.json"},
+        {"$ref": "bd80x83x-v1.0.1.json"},
+        {"$ref": "bd84188x-v1.0.1.json"}
+    ]
+}

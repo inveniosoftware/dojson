@@ -9,6 +9,8 @@
 
 """MARC 21 model definition."""
 
+from dojson import utils
+
 from ..model import marc21
 
 
@@ -38,9 +40,9 @@ def fixed_length_data_elements_additional_material_characteristics(
     return value
 
 
-@marc21.over('physical_description_fixed_field', '^007')
-def reverse_physical_description_fixed_field(self, key, value):
-    """Physical Description Fixed Field."""
+@marc21.over('physical_description_fixed_field_general_information', '^007')
+def physical_description_fixed_field_general_information(self, key, value):
+    """Physical Description Fixed Field-General Information."""
     return value
 
 

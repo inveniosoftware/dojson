@@ -70,7 +70,7 @@ def test_xml_to_marc21_to_xml(file_name):
 
     schema = pkg_resources.resource_filename(
         'dojson.contrib.marc21.schemas',
-        'marc21/bibliographic/bd-v1.0.1.json'
+        'marc21/bibliographic/bd-v1.0.2.json'
     )
 
     runner = CliRunner()
