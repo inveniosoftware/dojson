@@ -14,10 +14,12 @@ from dojson import utils
 from ..model import to_marc21_authority
 
 
-@to_marc21_authority.over('762', '^established_heading_linking_entry_medium_of_performance_term$')
+@to_marc21_authority.over(
+    '762', '^established_heading_linking_entry_medium_of_performance_term$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_established_heading_linking_entry_medium_of_performance_term(self, key, value):
+def reverse_established_heading_linking_entry_medium_of_performance_term(
+        self, key, value):
     """Reverse - Established Heading Linking Entry-Medium of Performance Term."""
     field_map = {
         'medium_of_performance_term_as_entry_element': 'a',
@@ -63,12 +65,13 @@ def reverse_established_heading_linking_entry_medium_of_performance_term(self, k
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('780', '^subdivision_linking_entry_general_subdivision$')
+@to_marc21_authority.over(
+    '780', '^subdivision_linking_entry_general_subdivision$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subdivision_linking_entry_general_subdivision(self, key, value):
@@ -131,12 +134,13 @@ def reverse_subdivision_linking_entry_general_subdivision(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('781', '^subdivision_linking_entry_geographic_subdivision$')
+@to_marc21_authority.over(
+    '781', '^subdivision_linking_entry_geographic_subdivision$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subdivision_linking_entry_geographic_subdivision(self, key, value):
@@ -199,15 +203,17 @@ def reverse_subdivision_linking_entry_geographic_subdivision(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('782', '^subdivision_linking_entry_chronological_subdivision$')
+@to_marc21_authority.over(
+    '782', '^subdivision_linking_entry_chronological_subdivision$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_subdivision_linking_entry_chronological_subdivision(self, key, value):
+def reverse_subdivision_linking_entry_chronological_subdivision(
+        self, key, value):
     """Reverse - Subdivision Linking Entry-Chronological Subdivision."""
     field_map = {
         'relationship_information': 'i',
@@ -267,12 +273,13 @@ def reverse_subdivision_linking_entry_chronological_subdivision(self, key, value
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
 
-@to_marc21_authority.over('785', '^subdivision_linking_entry_form_subdivision$')
+@to_marc21_authority.over(
+    '785', '^subdivision_linking_entry_form_subdivision$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subdivision_linking_entry_form_subdivision(self, key, value):
@@ -335,7 +342,7 @@ def reverse_subdivision_linking_entry_form_subdivision(self, key, value):
             value.get('geographic_subdivision')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }
 
@@ -384,6 +391,6 @@ def reverse_complex_linking_entry_data(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
-        '$ind2': '7' if value.get('thesaurus') == value.get('source_of_heading_or_term')
+        '$ind2': '7' if value.get('thesaurus') and value.get('thesaurus') == value.get('source_of_heading_or_term')
         else indicator_map2.get(value.get('thesaurus'), '_'),
     }

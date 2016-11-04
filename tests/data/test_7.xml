@@ -43,13 +43,11 @@
       <subfield code="u">CERN</subfield>
       <subfield code="4">ths</subfield>
       <subfield code="a">Smith, Jane</subfield>
-      <subfield code="0">(orcid)0000-0002-1825-0097</subfield>
     </datafield>
     <datafield tag="700" ind1=" " ind2=" ">
       <subfield code="u">CERN</subfield>
       <subfield code="4">ths</subfield>
       <subfield code="a">Kowalski, Jane</subfield>
-      <subfield code="0">(gnd)170118215</subfield>
     </datafield>
     <datafield tag="653" ind1="1" ind2=" ">
       <subfield code="a">kw1</subfield>
@@ -66,7 +64,6 @@
     <datafield tag="700" ind1=" " ind2=" ">
       <subfield code="u">CERN</subfield>
       <subfield code="a">Doe, Jane</subfield>
-      <subfield code="0">(orcid)0000-0002-1825-0097</subfield>
     </datafield>
     <datafield tag="700" ind1=" " ind2=" ">
       <subfield code="u">CERN</subfield>
@@ -75,7 +72,6 @@
     <datafield tag="700" ind1=" " ind2=" ">
       <subfield code="u">CERN</subfield>
       <subfield code="a">Nowak, Jack</subfield>
-      <subfield code="0">(gnd)170118215</subfield>
     </datafield>
     <datafield tag="035" ind1=" " ind2=" ">
       <subfield code="a">9876</subfield>
@@ -88,7 +84,6 @@
       <subfield code="u">CERN</subfield>
       <subfield code="4">oth</subfield>
       <subfield code="a">Smith, Other</subfield>
-      <subfield code="0">(orcid)0000-0002-1825-0097</subfield>
     </datafield>
     <datafield tag="700" ind1=" " ind2=" ">
       <subfield code="u"></subfield>
@@ -99,7 +94,6 @@
       <subfield code="u">CERN</subfield>
       <subfield code="4">dtm</subfield>
       <subfield code="a">Kowalski, Manager</subfield>
-      <subfield code="0">(gnd)170118215</subfield>
     </datafield>
     <datafield tag="540" ind1=" " ind2=" ">
       <subfield code="u">http://zenodo.org</subfield>
@@ -114,7 +108,6 @@
     </datafield>
     <datafield tag="650" ind1="1" ind2=" ">
       <subfield code="a">test_term</subfield>
-      <subfield code="0">(gnd)170118215</subfield>
     </datafield>
     <datafield tag="500" ind1=" " ind2=" ">
       <subfield code="a">notes</subfield>
@@ -122,8 +115,6 @@
     <datafield tag="100" ind1=" " ind2=" ">
       <subfield code="u">CERN</subfield>
       <subfield code="a">Doe, John</subfield>
-      <subfield code="0">(gnd)170118215</subfield>
-      <subfield code="0">(orcid)0000-0002-1694-233X</subfield>
     </datafield>
     <datafield tag="773" ind1=" " ind2=" ">
       <subfield code="a">10.1234/foo.bar</subfield>

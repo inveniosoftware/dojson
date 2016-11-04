@@ -686,7 +686,8 @@ def reverse_see_also_from_tracing_genre_form_term(self, key, value):
     }
 
 
-@to_marc21_authority.over('562', '^see_also_from_tracing_medium_of_performance_term$')
+@to_marc21_authority.over(
+    '562', '^see_also_from_tracing_medium_of_performance_term$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_see_also_from_tracing_medium_of_performance_term(self, key, value):
@@ -784,7 +785,8 @@ def reverse_see_also_from_tracing_general_subdivision(self, key, value):
     }
 
 
-@to_marc21_authority.over('581', '^see_also_from_tracing_geographic_subdivision$')
+@to_marc21_authority.over(
+    '581', '^see_also_from_tracing_geographic_subdivision$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_see_also_from_tracing_geographic_subdivision(self, key, value):
@@ -840,7 +842,8 @@ def reverse_see_also_from_tracing_geographic_subdivision(self, key, value):
     }
 
 
-@to_marc21_authority.over('582', '^see_also_from_tracing_chronological_subdivision$')
+@to_marc21_authority.over(
+    '582', '^see_also_from_tracing_chronological_subdivision$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_see_also_from_tracing_chronological_subdivision(self, key, value):

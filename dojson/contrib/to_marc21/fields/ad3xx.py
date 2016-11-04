@@ -124,7 +124,8 @@ def reverse_complex_see_also_reference_subject(self, key, value):
     }
 
 
-@to_marc21_authority.over('368', '^other_attributes_of_person_or_corporate_body$')
+@to_marc21_authority.over(
+    '368', '^other_attributes_of_person_or_corporate_body$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_attributes_of_person_or_corporate_body(self, key, value):
@@ -621,10 +622,12 @@ def reverse_form_of_work(self, key, value):
     }
 
 
-@to_marc21_authority.over('381', '^other_distinguishing_characteristics_of_work_or_expression$')
+@to_marc21_authority.over(
+    '381', '^other_distinguishing_characteristics_of_work_or_expression$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_other_distinguishing_characteristics_of_work_or_expression(self, key, value):
+def reverse_other_distinguishing_characteristics_of_work_or_expression(
+        self, key, value):
     """Reverse - Other Distinguishing Characteristics of Work or Expression."""
     field_map = {
         'other_distinguishing_characteristic': 'a',
@@ -709,7 +712,8 @@ def reverse_medium_of_performance(self, key, value):
             value.get('number_of_performers_of_the_same_medium')
         ),
         'r': utils.reverse_force_list(
-            value.get('total_number_of_individuals_performing_alongside_ensembles')
+            value.get(
+                'total_number_of_individuals_performing_alongside_ensembles')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
