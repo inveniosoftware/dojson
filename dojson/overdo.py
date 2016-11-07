@@ -62,7 +62,8 @@ class Index(object):
 class Overdo(object):
     """Translation index."""
 
-    def __init__(self, bases=None, entry_point_group=None):
+    def __init__(self, bases=None, entry_point_group=None,
+                 exception_handlers=None):
         """Constructor."""
         self.rules = []
         if bases:
@@ -70,6 +71,8 @@ class Overdo(object):
                 base._collect_entry_points()
                 self.rules.extend(base.rules)
         self.entry_point_group = entry_point_group
+        self.exception_handlers = {IgnoreKey: None}
+        self.exception_handlers.update(exception_handlers or {})
         self.index = None
 
     def _collect_entry_points(self):
@@ -93,7 +96,8 @@ class Overdo(object):
             return creator
         return decorator
 
-    def do(self, blob, ignore_missing=True, exception_handlers=None):
+    def do(self, blob, ignore_missing=True,
+           exception_handlers=None):
         """Translate blob values and instantiate new model instance.
 
         Raises ``MissingRule`` when no rule matched and ``ignore_missing``
@@ -118,7 +122,7 @@ class Overdo(object):
            ``exception_handlers`` allows to set custom handlers for
            non-standard MARC codes.
         """
-        handlers = {IgnoreKey: None}
+        handlers = self.exception_handlers
         handlers.update(exception_handlers or {})
 
         def clean_missing(exc, output, key, value):

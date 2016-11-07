@@ -155,6 +155,13 @@
       <subfield code="6">linkage</subfield>
       <subfield code="8">field_link_and_sequence_number</subfield>
     </datafield>
+    <datafield tag="052" ind1="1" ind2=" ">
+      <subfield code="a">geographic_classification_area_code</subfield>
+      <subfield code="b">geographic_classification_subarea_code</subfield>
+      <subfield code="d">populated_place_name</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
     <datafield tag="053" ind1=" " ind2="0">
       <subfield code="a">explanatory_term</subfield>
       <subfield code="b">classification_number_element_ending_number_of_span</subfield>
@@ -203,6 +210,12 @@
       <subfield code="a">subject_category_code</subfield>
       <subfield code="x">subject_category_code_subdivision</subfield>
       <subfield code="2">code_source</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="072" ind1=" " ind2="0">
+      <subfield code="a">subject_category_code</subfield>
+      <subfield code="x">subject_category_code_subdivision</subfield>
       <subfield code="6">linkage</subfield>
       <subfield code="8">field_link_and_sequence_number</subfield>
     </datafield>

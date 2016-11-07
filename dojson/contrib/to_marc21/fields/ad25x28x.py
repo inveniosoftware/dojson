@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -20,29 +20,30 @@ from ..model import to_marc21_authority
 def reverse_complex_see_reference_subject(self, key, value):
     """Reverse - Complex See Reference-Subject."""
     field_map = {
+        'field_link_and_sequence_number': '8',
         'heading_referred_to': 'a',
         'explanatory_text': 'i',
-        'authority_record_control_number': '0',
         'linkage': '6',
-        'field_link_and_sequence_number': '8',
+        'authority_record_control_number': '0',
     }
+
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         'a': utils.reverse_force_list(
             value.get('heading_referred_to')
-        ),
-        '0': utils.reverse_force_list(
-            value.get('authority_record_control_number')
         ),
         'i': utils.reverse_force_list(
             value.get('explanatory_text')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         '6': value.get('linkage'),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number')
+        ),
         '$ind1': '_',
         '$ind2': '_',
     }

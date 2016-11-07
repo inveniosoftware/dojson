@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <controlfield tag="001">136</controlfield>
+    <controlfield tag="005">20160203181958.0</controlfield>
+    <controlfield tag="008">030529s1993\\\\ne\a\\\\\b\\\\101\0\eng\d</controlfield>
+    <datafield tag="020" ind1=" " ind2=" ">
+      <subfield code="a">0444899251</subfield>
+    </datafield>
+    <datafield tag="049" ind1="1" ind2="5">
+      <subfield code="a">en</subfield>
+      <subfield code="a">fr</subfield>
+      <subfield code="a">it</subfield>
+      <subfield code="2">iso639-1</subfield>
+    </datafield>
+    <datafield tag="141" ind1="2" ind2="4">
+      <subfield code="a">IFIP International Workshop on Protocols for High Speed Networks</subfield>
+      <subfield code="n">(3rd :</subfield>
+      <subfield code="d">1992 :</subfield>
+      <subfield code="c">Stockholm, Sweden)</subfield>
+    </datafield>
+    <datafield tag="248" ind1="4" ind2="8">
+      <subfield code="a">Protocols for high-speed networks III.:</subfield>
+      <subfield code="b">proceedings of the IFIP WG 6.1 / WG 6.4  Third International Workshop on Protocols for High Speed Networks, Stockholm, Sweden,  13-15 May, 1992 /</subfield>
+      <subfield code="c">edited by B. Pehrson, P. Gunningberg and S. Pink.</subfield>
+    </datafield>
+    <datafield tag="990" ind1="9" ind2="9">
+      <subfield code="a">Amsterdam :</subfield>
+      <subfield code="b">North-Holland,</subfield>
+      <subfield code="c">c.1993.</subfield>
+    </datafield>
+  </record>
+</collection>

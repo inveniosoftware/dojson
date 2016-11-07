@@ -128,10 +128,16 @@
       <subfield code="6">linkage</subfield>
       <subfield code="8">field_link_and_sequence_number</subfield>
     </datafield>
-    <datafield tag="377" ind1=" " ind2=" ">
+    <datafield tag="377" ind1=" " ind2="7">
       <subfield code="a">language_code</subfield>
       <subfield code="l">language_term</subfield>
       <subfield code="2">source_of_code</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="377" ind1=" " ind2=" ">
+      <subfield code="a">language_code</subfield>
+      <subfield code="l">language_term</subfield>
       <subfield code="6">linkage</subfield>
       <subfield code="8">field_link_and_sequence_number</subfield>
     </datafield>

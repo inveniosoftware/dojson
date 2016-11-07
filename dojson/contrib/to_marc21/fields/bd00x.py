@@ -32,18 +32,14 @@ def reverse_date_and_time_of_latest_transaction(self, key, value):
     return [value]
 
 
-@to_marc21.over(
-    '006', '^fixed_length_data_elements_additional_material_characteristics$')
-def reverse_fixed_length_data_elements_additional_material_characteristics(
-        self, key, value):
+@to_marc21.over('006', '^fixed_length_data_elements_additional_material_characteristics$')
+def reverse_fixed_length_data_elements_additional_material_characteristics(self, key, value):
     """Reverse - Fixed-Length Data Elements-Additional Material Characteristics."""
     return [value]
 
 
-@to_marc21.over(
-    '007', '^physical_description_fixed_field_general_information$')
-def reverse_physical_description_fixed_field_general_information(
-        self, key, value):
+@to_marc21.over('007', '^physical_description_fixed_field_general_information$')
+def reverse_physical_description_fixed_field_general_information(self, key, value):
     """Reverse - Physical Description Fixed Field-General Information."""
     return [value]
 

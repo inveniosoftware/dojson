@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015 CERN.
+# Copyright (C) 2015, 2016 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -19,123 +19,112 @@ from ..model import to_marc21_authority
 @utils.filter_values
 def reverse_electronic_location_and_access(self, key, value):
     """Reverse - Electronic Location and Access."""
+    indicator_map1 = {"Dial-up": "3", "Email": "0", "FTP": "1", "HTTP": "4", "Method specified in subfield $2": "7", "No information provided": "_", "Remote login (Telnet)": "2"}
+    indicator_map2 = {"No display constant generated": "8", "No information provided": "_", "Related resource": "2", "Resource": "0", "Version of resource": "1"}
     field_map = {
-        'host_name': 'a',
-        'access_number': 'b',
-        'compression_information': 'c',
-        'path': 'd',
-        'electronic_name': 'f',
-        'processor_of_request': 'h',
-        'instruction': 'i',
-        'bits_per_second': 'j',
-        'password': 'k',
         'logon': 'l',
-        'contact_for_access_assistance': 'm',
-        'name_of_location_of_host': 'n',
         'operating_system': 'o',
-        'port': 'p',
-        'electronic_format_type': 'q',
-        'settings': 'r',
-        'file_size': 's',
-        'terminal_emulation': 't',
-        'uniform_resource_identifier': 'u',
-        'hours_access_method_available': 'v',
-        'record_control_number': 'w',
+        'compression_information': 'c',
         'nonpublic_note': 'x',
-        'link_text': 'y',
-        'public_note': 'z',
-        'materials_specified': '3',
-        'linkage': '6',
+        'port': 'p',
         'field_link_and_sequence_number': '8',
+        'name_of_location_of_host': 'n',
+        'materials_specified': '3',
+        'processor_of_request': 'h',
+        'access_number': 'b',
+        'public_note': 'z',
+        'path': 'd',
+        'terminal_emulation': 't',
+        'access_method': '2',
+        'password': 'k',
+        'contact_for_access_assistance': 'm',
+        'bits_per_second': 'j',
+        'electronic_name': 'f',
+        'instruction': 'i',
+        'record_control_number': 'w',
+        'linkage': '6',
+        'hours_access_method_available': 'v',
+        'host_name': 'a',
+        'settings': 'r',
+        'electronic_format_type': 'q',
+        'uniform_resource_identifier': 'u',
+        'link_text': 'y',
+        'file_size': 's',
     }
-
-    indicator_map1 = {
-        'No information provided': '_',
-        'Email': '0',
-        'FTP': '1',
-        'Remote login (Telnet)': '2',
-        'Dial-up': '3',
-        'HTTP': '4',
-        'Method specified in subfield $2': '7',
-    }
-    indicator_map2 = {
-        'No information provided': '_',
-        'Resource': '0',
-        'Version of resource': '1',
-        'Related resource': '2',
-        'No display constant generated': '8',
-    }
-
-    if value.get('access_method') not in indicator_map1:
-        field_map['access_method'] = '2'
 
     order = utils.map_order(field_map, value)
 
+    if indicator_map1.get(value.get('access_method'), '7') != '7' and\
+            field_map.get('access_method'):
+        order.remove(field_map.get('access_method'))
+
     return {
         '__order__': tuple(order) if len(order) else None,
-        '3': value.get('materials_specified'),
-        '2': value.get('access_method') if value.get('access_method') not in indicator_map1 else None,
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'a': utils.reverse_force_list(
-            value.get('host_name')
-        ),
+        'l': value.get('logon'),
+        'o': value.get('operating_system'),
         'c': utils.reverse_force_list(
             value.get('compression_information')
         ),
+        'x': utils.reverse_force_list(
+            value.get('nonpublic_note')
+        ),
+        'p': value.get('port'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
+        'n': value.get('name_of_location_of_host'),
+        '3': value.get('materials_specified'),
+        'h': value.get('processor_of_request'),
         'b': utils.reverse_force_list(
             value.get('access_number')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('public_note')
         ),
         'd': utils.reverse_force_list(
             value.get('path')
         ),
+        't': utils.reverse_force_list(
+            value.get('terminal_emulation')
+        ),
+        '2': value.get('access_method'),
+        'k': value.get('password'),
+        'm': utils.reverse_force_list(
+            value.get('contact_for_access_assistance')
+        ),
+        'j': value.get('bits_per_second'),
         'f': utils.reverse_force_list(
             value.get('electronic_name')
         ),
         'i': utils.reverse_force_list(
             value.get('instruction')
         ),
-        'h': value.get('processor_of_request'),
-        'k': value.get('password'),
-        'j': value.get('bits_per_second'),
-        'm': utils.reverse_force_list(
-            value.get('contact_for_access_assistance')
-        ),
-        'l': value.get('logon'),
-        'o': value.get('operating_system'),
-        'n': value.get('name_of_location_of_host'),
-        'q': value.get('electronic_format_type'),
-        'p': value.get('port'),
-        's': utils.reverse_force_list(
-            value.get('file_size')
-        ),
-        'r': value.get('settings'),
-        'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
-        ),
-        't': utils.reverse_force_list(
-            value.get('terminal_emulation')
-        ),
         'w': utils.reverse_force_list(
             value.get('record_control_number')
         ),
+        '6': value.get('linkage'),
         'v': utils.reverse_force_list(
             value.get('hours_access_method_available')
+        ),
+        'a': utils.reverse_force_list(
+            value.get('host_name')
+        ),
+        'r': value.get('settings'),
+        'q': value.get('electronic_format_type'),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')
         ),
         'y': utils.reverse_force_list(
             value.get('link_text')
         ),
-        'x': utils.reverse_force_list(
-            value.get('nonpublic_note')
+        's': utils.reverse_force_list(
+            value.get('file_size')
         ),
-        'z': utils.reverse_force_list(
-            value.get('public_note')
-        ),
-        '$ind1': '7' if value.get('access_method') and value.get('access_method') not in indicator_map1
+        '$ind1': '7' if 'access_method' in value and
+        not indicator_map1.get(value.get('access_method')) and
+        value.get('access_method') == value.get('access_method')
         else indicator_map1.get(value.get('access_method'), '_'),
-        '$ind2': indicator_map2.get(value.get('relationship'), '_')
+        '$ind2': indicator_map2.get(value.get('relationship'), '_'),
     }
 
 
@@ -145,92 +134,113 @@ def reverse_electronic_location_and_access(self, key, value):
 def reverse_alternate_graphic_representation(self, key, value):
     """Reverse - Alternate Graphic Representation."""
     field_map = {
-        'same_as_associated_field_a': 'a',
-        'same_as_associated_field_b': 'b',
+        'same_as_associated_field_l': 'l',
+        'same_as_associated_field_o': 'o',
         'same_as_associated_field_c': 'c',
+        'same_as_associated_field_x': 'x',
+        'same_as_associated_field_u': 'u',
+        'same_as_associated_field_w': 'w',
+        'same_as_associated_field_p': 'p',
+        'same_as_associated_field_8': '8',
+        'same_as_associated_field_5': '5',
+        'same_as_associated_field_n': 'n',
+        'same_as_associated_field_3': '3',
+        'same_as_associated_field_h': 'h',
         'same_as_associated_field_d': 'd',
         'same_as_associated_field_e': 'e',
-        'same_as_associated_field_f': 'f',
-        'same_as_associated_field_g': 'g',
-        'same_as_associated_field_h': 'h',
-        'same_as_associated_field_i': 'i',
-        'same_as_associated_field_j': 'j',
-        'same_as_associated_field_k': 'k',
-        'same_as_associated_field_l': 'l',
-        'same_as_associated_field_m': 'm',
-        'same_as_associated_field_n': 'n',
-        'same_as_associated_field_o': 'o',
-        'same_as_associated_field_p': 'p',
-        'same_as_associated_field_q': 'q',
-        'same_as_associated_field_r': 'r',
-        'same_as_associated_field_s': 's',
-        'same_as_associated_field_t': 't',
-        'same_as_associated_field_u': 'u',
-        'same_as_associated_field_v': 'v',
-        'same_as_associated_field_w': 'w',
-        'same_as_associated_field_x': 'x',
-        'same_as_associated_field_y': 'y',
+        'same_as_associated_field_b': 'b',
         'same_as_associated_field_z': 'z',
-        'same_as_associated_field_0': '0',
-        'same_as_associated_field_1': '1',
+        'same_as_associated_field_g': 'g',
+        'same_as_associated_field_t': 't',
         'same_as_associated_field_2': '2',
-        'same_as_associated_field_3': '3',
-        'same_as_associated_field_4': '4',
-        'same_as_associated_field_5': '5',
-        'linkage': '6',
-        'same_as_associated_field_7': '7',
-        'same_as_associated_field_8': '8',
+        'same_as_associated_field_k': 'k',
+        'same_as_associated_field_m': 'm',
+        'same_as_associated_field_j': 'j',
+        'same_as_associated_field_f': 'f',
+        'same_as_associated_field_i': 'i',
         'same_as_associated_field_9': '9',
+        'same_as_associated_field_0': '0',
+        'linkage': '6',
+        'same_as_associated_field_v': 'v',
+        'same_as_associated_field_a': 'a',
+        'same_as_associated_field_r': 'r',
+        'same_as_associated_field_q': 'q',
+        'same_as_associated_field_1': '1',
+        'same_as_associated_field_7': '7',
+        'same_as_associated_field_y': 'y',
+        'same_as_associated_field_4': '4',
+        'same_as_associated_field_s': 's',
     }
+
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '1': utils.reverse_force_list(
-            value.get('same_as_associated_field_1')
+        'l': utils.reverse_force_list(
+            value.get('same_as_associated_field_l')
         ),
-        '0': utils.reverse_force_list(
-            value.get('same_as_associated_field_0')
-        ),
-        '3': utils.reverse_force_list(
-            value.get('same_as_associated_field_3')
-        ),
-        '2': utils.reverse_force_list(
-            value.get('same_as_associated_field_2')
-        ),
-        '5': utils.reverse_force_list(
-            value.get('same_as_associated_field_5')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('same_as_associated_field_4')
-        ),
-        '7': utils.reverse_force_list(
-            value.get('same_as_associated_field_7')
-        ),
-        '6': value.get('linkage'),
-        '9': utils.reverse_force_list(
-            value.get('same_as_associated_field_9')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('same_as_associated_field_8')
-        ),
-        'a': utils.reverse_force_list(
-            value.get('same_as_associated_field_a')
+        'o': utils.reverse_force_list(
+            value.get('same_as_associated_field_o')
         ),
         'c': utils.reverse_force_list(
             value.get('same_as_associated_field_c')
         ),
-        'b': utils.reverse_force_list(
-            value.get('same_as_associated_field_b')
+        'x': utils.reverse_force_list(
+            value.get('same_as_associated_field_x')
         ),
-        'e': utils.reverse_force_list(
-            value.get('same_as_associated_field_e')
+        'u': utils.reverse_force_list(
+            value.get('same_as_associated_field_u')
+        ),
+        'w': utils.reverse_force_list(
+            value.get('same_as_associated_field_w')
+        ),
+        'p': utils.reverse_force_list(
+            value.get('same_as_associated_field_p')
+        ),
+        '8': utils.reverse_force_list(
+            value.get('same_as_associated_field_8')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('same_as_associated_field_5')
+        ),
+        'n': utils.reverse_force_list(
+            value.get('same_as_associated_field_n')
+        ),
+        '3': utils.reverse_force_list(
+            value.get('same_as_associated_field_3')
+        ),
+        'h': utils.reverse_force_list(
+            value.get('same_as_associated_field_h')
         ),
         'd': utils.reverse_force_list(
             value.get('same_as_associated_field_d')
         ),
+        'e': utils.reverse_force_list(
+            value.get('same_as_associated_field_e')
+        ),
+        'b': utils.reverse_force_list(
+            value.get('same_as_associated_field_b')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('same_as_associated_field_z')
+        ),
         'g': utils.reverse_force_list(
             value.get('same_as_associated_field_g')
+        ),
+        't': utils.reverse_force_list(
+            value.get('same_as_associated_field_t')
+        ),
+        '2': utils.reverse_force_list(
+            value.get('same_as_associated_field_2')
+        ),
+        'k': utils.reverse_force_list(
+            value.get('same_as_associated_field_k')
+        ),
+        'm': utils.reverse_force_list(
+            value.get('same_as_associated_field_m')
+        ),
+        'j': utils.reverse_force_list(
+            value.get('same_as_associated_field_j')
         ),
         'f': utils.reverse_force_list(
             value.get('same_as_associated_field_f')
@@ -238,62 +248,42 @@ def reverse_alternate_graphic_representation(self, key, value):
         'i': utils.reverse_force_list(
             value.get('same_as_associated_field_i')
         ),
-        'h': utils.reverse_force_list(
-            value.get('same_as_associated_field_h')
+        '9': utils.reverse_force_list(
+            value.get('same_as_associated_field_9')
         ),
-        'k': utils.reverse_force_list(
-            value.get('same_as_associated_field_k')
+        '0': utils.reverse_force_list(
+            value.get('same_as_associated_field_0')
         ),
-        'j': utils.reverse_force_list(
-            value.get('same_as_associated_field_j')
+        '6': value.get('linkage'),
+        'v': utils.reverse_force_list(
+            value.get('same_as_associated_field_v')
         ),
-        'm': utils.reverse_force_list(
-            value.get('same_as_associated_field_m')
-        ),
-        'l': utils.reverse_force_list(
-            value.get('same_as_associated_field_l')
-        ),
-        'o': utils.reverse_force_list(
-            value.get('same_as_associated_field_o')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('same_as_associated_field_n')
-        ),
-        'q': utils.reverse_force_list(
-            value.get('same_as_associated_field_q')
-        ),
-        'p': utils.reverse_force_list(
-            value.get('same_as_associated_field_p')
-        ),
-        's': utils.reverse_force_list(
-            value.get('same_as_associated_field_s')
+        'a': utils.reverse_force_list(
+            value.get('same_as_associated_field_a')
         ),
         'r': utils.reverse_force_list(
             value.get('same_as_associated_field_r')
         ),
-        'u': utils.reverse_force_list(
-            value.get('same_as_associated_field_u')
+        'q': utils.reverse_force_list(
+            value.get('same_as_associated_field_q')
         ),
-        't': utils.reverse_force_list(
-            value.get('same_as_associated_field_t')
+        '1': utils.reverse_force_list(
+            value.get('same_as_associated_field_1')
         ),
-        'w': utils.reverse_force_list(
-            value.get('same_as_associated_field_w')
-        ),
-        'v': utils.reverse_force_list(
-            value.get('same_as_associated_field_v')
+        '7': utils.reverse_force_list(
+            value.get('same_as_associated_field_7')
         ),
         'y': utils.reverse_force_list(
             value.get('same_as_associated_field_y')
         ),
-        'x': utils.reverse_force_list(
-            value.get('same_as_associated_field_x')
+        '4': utils.reverse_force_list(
+            value.get('same_as_associated_field_4')
         ),
-        'z': utils.reverse_force_list(
-            value.get('same_as_associated_field_z')
+        's': utils.reverse_force_list(
+            value.get('same_as_associated_field_s')
         ),
-        '$ind1': value.get('ind1', '_'),
-        '$ind2': value.get('ind2', '_'),
+        '$ind1': '_',
+        '$ind2': '_',
     }
 
 
@@ -302,38 +292,38 @@ def reverse_alternate_graphic_representation(self, key, value):
 @utils.filter_values
 def reverse_machine_generated_metadata_provenance(self, key, value):
     """Reverse - Machine-generated Metadata Provenance."""
+    indicator_map1 = {"Fully machine-generated": "0", "No information provided/not applicable": "_", "Partially machine-generated": "1"}
     field_map = {
-        'generation_process': 'a',
-        'confidence_value': 'c',
         'generation_date': 'd',
-        'generation_agency': 'q',
-        'uniform_resource_identifier': 'u',
-        'bibliographic_record_control_number': 'w',
+        'confidence_value': 'c',
         'validity_end_date': 'x',
-        'authority_record_control_number_or_standard_number': '0',
+        'bibliographic_record_control_number': 'w',
+        'uniform_resource_identifier': 'u',
+        'generation_agency': 'q',
         'field_link_and_sequence_number': '8',
+        'authority_record_control_number_or_standard_number': '0',
+        'generation_process': 'a',
     }
+
     order = utils.map_order(field_map, value)
 
-    indicator_map1 = {'Fully machine-generated': '0',
-                      'No information provided/not applicable': '_', 'Partially machine-generated': '1'}
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': value.get('generation_process'),
-        'c': value.get('confidence_value'),
         'd': value.get('generation_date'),
-        'q': value.get('generation_agency'),
-        '0': utils.reverse_force_list(
-            value.get('authority_record_control_number_or_standard_number')
-        ),
-        'u': value.get('uniform_resource_identifier'),
+        'c': value.get('confidence_value'),
+        'x': value.get('validity_end_date'),
         'w': utils.reverse_force_list(
             value.get('bibliographic_record_control_number')
         ),
-        'x': value.get('validity_end_date'),
+        'u': value.get('uniform_resource_identifier'),
+        'q': value.get('generation_agency'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')
+        ),
+        'a': value.get('generation_process'),
         '$ind1': indicator_map1.get(value.get('method_of_machine_assignment'), '_'),
         '$ind2': '_',
     }
@@ -345,23 +335,24 @@ def reverse_machine_generated_metadata_provenance(self, key, value):
 def reverse_description_conversion_information(self, key, value):
     """Reverse - Description Conversion Information."""
     field_map = {
-        'conversion_process': 'a',
         'conversion_date': 'g',
-        'identifier_of_source_metadata': 'k',
         'conversion_agency': 'q',
         'uniform_resource_identifier': 'u',
+        'identifier_of_source_metadata': 'k',
+        'conversion_process': 'a',
     }
+
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'a': value.get('conversion_process'),
+        'g': value.get('conversion_date'),
         'q': value.get('conversion_agency'),
-        'k': value.get('identifier_of_source_metadata'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
         ),
-        'g': value.get('conversion_date'),
+        'k': value.get('identifier_of_source_metadata'),
+        'a': value.get('conversion_process'),
         '$ind1': '_',
         '$ind2': '_',
     }
