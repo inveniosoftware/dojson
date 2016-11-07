@@ -20,10 +20,10 @@ from ..model import to_marc21
 def reverse_edition_statement(self, key, value):
     """Reverse - Edition Statement."""
     field_map = {
-        'materials_specified': '3',
         'linkage': '6',
-        'remainder_of_edition_statement': 'b',
         'edition_statement': 'a',
+        'remainder_of_edition_statement': 'b',
+        'materials_specified': '3',
         'field_link_and_sequence_number': '8',
     }
 
@@ -31,10 +31,10 @@ def reverse_edition_statement(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        'b': value.get('remainder_of_edition_statement'),
         'a': value.get('edition_statement'),
+        'b': value.get('remainder_of_edition_statement'),
+        '3': value.get('materials_specified'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
@@ -73,32 +73,32 @@ def reverse_musical_presentation_statement(self, key, value):
 def reverse_cartographic_mathematical_data(self, key, value):
     """Reverse - Cartographic Mathematical Data."""
     field_map = {
-        'statement_of_zone': 'd',
         'linkage': '6',
-        'statement_of_coordinates': 'c',
-        'exclusion_g_ring_coordinate_pairs': 'g',
-        'statement_of_scale': 'a',
-        'field_link_and_sequence_number': '8',
-        'outer_g_ring_coordinate_pairs': 'f',
         'statement_of_equinox': 'e',
+        'statement_of_zone': 'd',
+        'outer_g_ring_coordinate_pairs': 'f',
+        'field_link_and_sequence_number': '8',
         'statement_of_projection': 'b',
+        'statement_of_scale': 'a',
+        'exclusion_g_ring_coordinate_pairs': 'g',
+        'statement_of_coordinates': 'c',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'd': value.get('statement_of_zone'),
         '6': value.get('linkage'),
-        'c': value.get('statement_of_coordinates'),
-        'g': value.get('exclusion_g_ring_coordinate_pairs'),
-        'a': value.get('statement_of_scale'),
+        'e': value.get('statement_of_equinox'),
+        'd': value.get('statement_of_zone'),
+        'f': value.get('outer_g_ring_coordinate_pairs'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'f': value.get('outer_g_ring_coordinate_pairs'),
-        'e': value.get('statement_of_equinox'),
         'b': value.get('statement_of_projection'),
+        'a': value.get('statement_of_scale'),
+        'g': value.get('exclusion_g_ring_coordinate_pairs'),
+        'c': value.get('statement_of_coordinates'),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -135,8 +135,8 @@ def reverse_country_of_producing_entity(self, key, value):
     """Reverse - Country of Producing Entity."""
     field_map = {
         'source': '2',
-        'country_of_producing_entity': 'a',
         'linkage': '6',
+        'country_of_producing_entity': 'a',
         'field_link_and_sequence_number': '8',
     }
 
@@ -145,10 +145,10 @@ def reverse_country_of_producing_entity(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         '2': value.get('source'),
+        '6': value.get('linkage'),
         'a': utils.reverse_force_list(
             value.get('country_of_producing_entity')
         ),
-        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
@@ -164,8 +164,8 @@ def reverse_philatelic_issue_data(self, key, value):
     """Reverse - Philatelic Issue Data."""
     field_map = {
         'linkage': '6',
-        'denomination': 'b',
         'issuing_jurisdiction': 'a',
+        'denomination': 'b',
         'field_link_and_sequence_number': '8',
     }
 
@@ -174,8 +174,8 @@ def reverse_philatelic_issue_data(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         '6': value.get('linkage'),
-        'b': value.get('denomination'),
         'a': value.get('issuing_jurisdiction'),
+        'b': value.get('denomination'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
@@ -189,56 +189,46 @@ def reverse_philatelic_issue_data(self, key, value):
 @utils.filter_values
 def reverse_publication_distribution_imprint(self, key, value):
     """Reverse - Publication, Distribution, etc. (Imprint)."""
-    indicator_map1 = {
-        "Current/latest publisher": "3",
-        "Intervening publisher": "2",
-        "Not applicable/No information provided/Earliest available publisher": "_"}
+    indicator_map1 = {"Current/latest publisher": "3", "Intervening publisher": "2", "Not applicable/No information provided/Earliest available publisher": "_"}
     field_map = {
         'linkage': '6',
-        'date_of_publication_distribution': 'c',
-        'date_of_manufacture': 'g',
-        'place_of_publication_distribution': 'a',
-        'field_link_and_sequence_number': '8',
-        'manufacturer': 'f',
-        'materials_specified': '3',
         'place_of_manufacture': 'e',
+        'manufacturer': 'f',
+        'field_link_and_sequence_number': '8',
         'name_of_publisher_distributor': 'b',
+        'place_of_publication_distribution': 'a',
+        'date_of_manufacture': 'g',
+        'date_of_publication_distribution': 'c',
+        'materials_specified': '3',
     }
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map1.get(
-            value.get('sequence_of_publishing_statements'), '7') != '7':
-        try:
-            order.remove(field_map.get('sequence_of_publishing_statements'))
-        except ValueError:
-            pass
-
     return {
         '__order__': tuple(order) if len(order) else None,
         '6': value.get('linkage'),
-        'c': utils.reverse_force_list(
-            value.get('date_of_publication_distribution')
-        ),
-        'g': utils.reverse_force_list(
-            value.get('date_of_manufacture')
-        ),
-        'a': utils.reverse_force_list(
-            value.get('place_of_publication_distribution')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'e': utils.reverse_force_list(
+            value.get('place_of_manufacture')
         ),
         'f': utils.reverse_force_list(
             value.get('manufacturer')
         ),
-        '3': value.get('materials_specified'),
-        'e': utils.reverse_force_list(
-            value.get('place_of_manufacture')
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         'b': utils.reverse_force_list(
             value.get('name_of_publisher_distributor')
         ),
+        'a': utils.reverse_force_list(
+            value.get('place_of_publication_distribution')
+        ),
+        'g': utils.reverse_force_list(
+            value.get('date_of_manufacture')
+        ),
+        'c': utils.reverse_force_list(
+            value.get('date_of_publication_distribution')
+        ),
+        '3': value.get('materials_specified'),
         '$ind1': indicator_map1.get(value.get('sequence_of_publishing_statements'), '_'),
         '$ind2': '_',
     }
@@ -249,37 +239,37 @@ def reverse_publication_distribution_imprint(self, key, value):
 def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
     """Reverse - Imprint Statement for Films (Pre-AACR 1 Revised)."""
     field_map = {
-        'date_of_production_release': 'd',
         'linkage': '6',
-        'place_of_production_release': 'f',
-        'producing_company': 'a',
-        'field_link_and_sequence_number': '8',
         'contractual_producer': 'e',
+        'date_of_production_release': 'd',
+        'place_of_production_release': 'f',
+        'field_link_and_sequence_number': '8',
         'releasing_company': 'b',
+        'producing_company': 'a',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
+        '6': value.get('linkage'),
+        'e': utils.reverse_force_list(
+            value.get('contractual_producer')
+        ),
         'd': utils.reverse_force_list(
             value.get('date_of_production_release')
         ),
-        '6': value.get('linkage'),
         'f': utils.reverse_force_list(
             value.get('place_of_production_release')
-        ),
-        'a': utils.reverse_force_list(
-            value.get('producing_company')
         ),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'e': utils.reverse_force_list(
-            value.get('contractual_producer')
-        ),
         'b': utils.reverse_force_list(
             value.get('releasing_company')
+        ),
+        'a': utils.reverse_force_list(
+            value.get('producing_company')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -288,32 +278,31 @@ def reverse_imprint_statement_for_films_pre_aacr_1_revised(self, key, value):
 
 @to_marc21.over('262', '^imprint_statement_for_sound_recordings_pre_aacr_1$')
 @utils.filter_values
-def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(
-        self, key, value):
+def reverse_imprint_statement_for_sound_recordings_pre_aacr_1(self, key, value):
     """Reverse - Imprint Statement for Sound Recordings (Pre-AACR 1)."""
     field_map = {
-        'matrix_and_or_take_number': 'l',
         'linkage': '6',
-        'date_of_production_release': 'c',
-        'place_of_production_release': 'a',
-        'field_link_and_sequence_number': '8',
         'serial_identification': 'k',
+        'field_link_and_sequence_number': '8',
         'publisher_or_trade_name': 'b',
+        'place_of_production_release': 'a',
+        'matrix_and_or_take_number': 'l',
+        'date_of_production_release': 'c',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'l': value.get('matrix_and_or_take_number'),
         '6': value.get('linkage'),
-        'c': value.get('date_of_production_release'),
-        'a': value.get('place_of_production_release'),
+        'k': value.get('serial_identification'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'k': value.get('serial_identification'),
         'b': value.get('publisher_or_trade_name'),
+        'a': value.get('place_of_production_release'),
+        'l': value.get('matrix_and_or_take_number'),
+        'c': value.get('date_of_production_release'),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -343,61 +332,40 @@ def reverse_projected_publication_date(self, key, value):
     }
 
 
-@to_marc21.over(
-    '264', '^production_publication_distribution_manufacture_and_copyright_notice$')
+@to_marc21.over('264', '^production_publication_distribution_manufacture_and_copyright_notice$')
 @utils.reverse_for_each_value
 @utils.filter_values
-def reverse_production_publication_distribution_manufacture_and_copyright_notice(
-        self, key, value):
+def reverse_production_publication_distribution_manufacture_and_copyright_notice(self, key, value):
     """Reverse - Production, Publication, Distribution, Manufacture, and Copyright Notice."""
-    indicator_map1 = {"Current/Latest": "3", "Intervening": "2",
-                      "Not applicable/No information provided/Earliest": "_"}
-    indicator_map2 = {
-        "Copyright notice date": "4",
-        "Distribution": "2",
-        "Manufacture": "3",
-        "Production": "0",
-        "Publication": "1"}
+    indicator_map1 = {"Current/Latest": "3", "Intervening": "2", "Not applicable/No information provided/Earliest": "_"}
+    indicator_map2 = {"Copyright notice date": "4", "Distribution": "2", "Manufacture": "3", "Production": "0", "Publication": "1"}
     field_map = {
         'linkage': '6',
-        'date_of_production_publication_distribution_manufacture_or_copyright_notice': 'c',
-        'place_of_production_publication_distribution_manufacture': 'a',
         'field_link_and_sequence_number': '8',
-        'materials_specified': '3',
         'name_of_producer_publisher_distributor_manufacturer': 'b',
+        'place_of_production_publication_distribution_manufacture': 'a',
+        'date_of_production_publication_distribution_manufacture_or_copyright_notice': 'c',
+        'materials_specified': '3',
     }
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map1.get(value.get('sequence_of_statements'), '7') != '7':
-        try:
-            order.remove(field_map.get('sequence_of_statements'))
-        except ValueError:
-            pass
-
-    if indicator_map2.get(value.get('function_of_entity'), '7') != '7':
-        try:
-            order.remove(field_map.get('function_of_entity'))
-        except ValueError:
-            pass
-
     return {
         '__order__': tuple(order) if len(order) else None,
         '6': value.get('linkage'),
-        'c': utils.reverse_force_list(
-            value.get(
-                'date_of_production_publication_distribution_manufacture_or_copyright_notice')
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
+        'b': utils.reverse_force_list(
+            value.get('name_of_producer_publisher_distributor_manufacturer')
         ),
         'a': utils.reverse_force_list(
             value.get('place_of_production_publication_distribution_manufacture')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'c': utils.reverse_force_list(
+            value.get('date_of_production_publication_distribution_manufacture_or_copyright_notice')
         ),
         '3': value.get('materials_specified'),
-        'b': utils.reverse_force_list(
-            value.get('name_of_producer_publisher_distributor_manufacturer')
-        ),
         '$ind1': indicator_map1.get(value.get('sequence_of_statements'), '_'),
         '$ind2': indicator_map2.get(value.get('function_of_entity'), '_'),
     }
@@ -408,98 +376,84 @@ def reverse_production_publication_distribution_manufacture_and_copyright_notice
 @utils.filter_values
 def reverse_address(self, key, value):
     """Reverse - Address."""
-    indicator_map1 = {
-        "No level specified": "_",
-        "Primary": "1",
-        "Secondary": "2"}
-    indicator_map2 = {
-        "Mailing": "0",
-        "No type specified": "_",
-        "Type specified in subfield $i": "7"}
+    indicator_map1 = {"No level specified": "_", "Primary": "1", "Secondary": "2"}
+    indicator_map2 = {"Mailing": "0", "No type specified": "_", "Type specified in subfield $i": "7"}
     field_map = {
         'relator_code': '4',
-        'country': 'd',
         'telephone_number': 'k',
+        'terms_preceding_attention_name': 'f',
+        'tdd_or_tty_number': 'n',
+        'city': 'b',
+        'attention_position': 'h',
+        'type_of_address': 'i',
+        'specialized_telephone_number': 'j',
+        'fax_number': 'l',
+        'title_of_contact_person': 'q',
+        'linkage': '6',
+        'postal_code': 'e',
+        'country': 'd',
+        'contact_person': 'p',
+        'hours': 'r',
+        'attention_name': 'g',
+        'public_note': 'z',
+        'field_link_and_sequence_number': '8',
+        'address': 'a',
         'state_or_province': 'c',
         'electronic_mail_address': 'm',
-        'contact_person': 'p',
-        'attention_position': 'h',
-        'city': 'b',
-        'title_of_contact_person': 'q',
-        'fax_number': 'l',
-        'tdd_or_tty_number': 'n',
-        'linkage': '6',
-        'attention_name': 'g',
-        'address': 'a',
-        'field_link_and_sequence_number': '8',
-        'type_of_address': 'i',
-        'terms_preceding_attention_name': 'f',
-        'hours': 'r',
-        'postal_code': 'e',
-        'public_note': 'z',
-        'specialized_telephone_number': 'j',
     }
 
     order = utils.map_order(field_map, value)
 
-    if indicator_map1.get(value.get('level'), '7') != '7':
-        try:
-            order.remove(field_map.get('level'))
-        except ValueError:
-            pass
-
-    if indicator_map2.get(value.get('type_of_address'), '7') != '7':
-        try:
-            order.remove(field_map.get('type_of_address'))
-        except ValueError:
-            pass
+    if indicator_map2.get(value.get('type_of_address'), '7') != '7' and\
+            field_map.get('type_of_address'):
+        order.remove(field_map.get('type_of_address'))
 
     return {
         '__order__': tuple(order) if len(order) else None,
         '4': utils.reverse_force_list(
             value.get('relator_code')
         ),
-        'd': value.get('country'),
         'k': utils.reverse_force_list(
             value.get('telephone_number')
         ),
-        'c': value.get('state_or_province'),
-        'm': utils.reverse_force_list(
-            value.get('electronic_mail_address')
+        'f': value.get('terms_preceding_attention_name'),
+        'n': utils.reverse_force_list(
+            value.get('tdd_or_tty_number')
         ),
-        'p': utils.reverse_force_list(
-            value.get('contact_person')
-        ),
-        'h': value.get('attention_position'),
         'b': value.get('city'),
-        'q': utils.reverse_force_list(
-            value.get('title_of_contact_person')
+        'h': value.get('attention_position'),
+        'i': value.get('type_of_address'),
+        'j': utils.reverse_force_list(
+            value.get('specialized_telephone_number')
         ),
         'l': utils.reverse_force_list(
             value.get('fax_number')
         ),
-        'n': utils.reverse_force_list(
-            value.get('tdd_or_tty_number')
+        'q': utils.reverse_force_list(
+            value.get('title_of_contact_person')
         ),
         '6': value.get('linkage'),
+        'e': value.get('postal_code'),
+        'd': value.get('country'),
+        'p': utils.reverse_force_list(
+            value.get('contact_person')
+        ),
+        'r': utils.reverse_force_list(
+            value.get('hours')
+        ),
         'g': value.get('attention_name'),
-        'a': utils.reverse_force_list(
-            value.get('address')
+        'z': utils.reverse_force_list(
+            value.get('public_note')
         ),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'i': value.get('type_of_address'),
-        'f': value.get('terms_preceding_attention_name'),
-        'r': utils.reverse_force_list(
-            value.get('hours')
+        'a': utils.reverse_force_list(
+            value.get('address')
         ),
-        'e': value.get('postal_code'),
-        'z': utils.reverse_force_list(
-            value.get('public_note')
-        ),
-        'j': utils.reverse_force_list(
-            value.get('specialized_telephone_number')
+        'c': value.get('state_or_province'),
+        'm': utils.reverse_force_list(
+            value.get('electronic_mail_address')
         ),
         '$ind1': indicator_map1.get(value.get('level'), '_'),
         '$ind2': '7' if 'type_of_address' in value and

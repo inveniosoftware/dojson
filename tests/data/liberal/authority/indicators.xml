@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+  <record>
+    <datafield tag="148" ind1="9" ind2="2">
+      <subfield code="a">chronological_term</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="150" ind1="3" ind2="5">
+      <subfield code="a">topical_term_or_geographic_name_entry_element</subfield>
+      <subfield code="b">topical_term_following_geographic_name_entry_element</subfield>
+      <subfield code="g">miscellaneous_information</subfield>
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="162" ind1="2" ind2="7">
+      <subfield code="a">medium_of_performance_term</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="180" ind1="3" ind2="1">
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="181" ind1="0" ind2="0">
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+    <datafield tag="185" ind1="3" ind2="3">
+      <subfield code="v">form_subdivision</subfield>
+      <subfield code="x">general_subdivision</subfield>
+      <subfield code="y">chronological_subdivision</subfield>
+      <subfield code="z">geographic_subdivision</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
+  </record>
+</collection>

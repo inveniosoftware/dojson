@@ -132,6 +132,114 @@ def test_xml_to_marc21_authority_to_xml(file_name):
     assert result.exit_code == 0
 
 
+@pytest.mark.parametrize('file_name', [
+    'liberal/indicators.xml',
+    'liberal/subfields.xml',
+    'liberal/subfields_inds.xml',
+    'liberal/datafields.xml',
+    'liberal/datafields_2.xml',
+    'liberal/liberal_all.xml',
+    'test_1.xml',
+    'test_2.xml',
+    'test_3.xml',
+    'test_4.xml',
+    'test_5.xml',
+    'test_6.xml',
+    'test_7.xml',
+    'test_8.xml',
+    'test_9.xml',
+    'test_11.xml',
+    'test_12.xml',
+    'test_13.xml',
+    'test_14.xml',
+    'test_15.xml',
+    'test_16.xml',
+    'test_cds_marc21.xml',
+    'handcrafted/bd01x09x.xml',
+    'handcrafted/bd3xx.xml',
+    'handcrafted/bd6xx.xml',
+    'handcrafted/bdleader.xml',
+    'library_of_congress/bd01x09x.xml',
+    'library_of_congress/bd1xx.xml',
+    'library_of_congress/bd20x24x.xml',
+    'library_of_congress/bd25x28x.xml',
+    'library_of_congress/bd3xx.xml',
+    'library_of_congress/bd4xx.xml',
+    'library_of_congress/bd5xx.xml',
+    'library_of_congress/bd6xx.xml',
+    'library_of_congress/bd70x75x.xml',
+    'library_of_congress/bd76x78x.xml',
+    'library_of_congress/bd80x83x.xml',
+    'library_of_congress/bd84188x.xml',
+])
+def test_xml_to_marc21_liberal_to_xml(file_name):
+    """Test xslt dump."""
+    path = os.path.dirname(__file__)
+    # Open explicitly as UTF-8 for Python 2.7 compatibility
+    with codecs.open(
+            os.path.join(path, 'data', file_name),
+            'r',
+            'utf-8') as myfile:
+        expect = myfile.read()
+
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, [
+            '-i', os.path.join(path, 'data', file_name),
+            '-l', 'marcxml',
+            '-d', 'marcxml',
+            'do', 'marc21_liberal',
+            'do', 'to_marc21_liberal',
+        ]
+    )
+
+    assert expect.strip('\n') == result.output.strip('\n')
+    assert result.exit_code == 0
+
+
+@pytest.mark.parametrize('file_name', [
+    'liberal/authority/datafields.xml',
+    'liberal/authority/datafields_inds.xml',
+    'liberal/authority/subfields.xml',
+    'liberal/authority/subfields_inds.xml',
+    'liberal/authority/indicators.xml',
+    'liberal/liberal_all.xml',
+    'authority/ad01x09x.xml',
+    'authority/ad1xx.xml',
+    'authority/ad3xx.xml',
+    'authority/ad4xx.xml',
+    'authority/ad5xx.xml',
+    'authority/ad6xx.xml',
+    'authority/ad25x28x.xml',
+    'authority/ad70x75x.xml',
+    'authority/ad76x78x.xml',
+    'authority/ad84188x.xml',
+])
+def test_xml_to_marc21_liberal_authority_to_xml(file_name):
+    """Test xslt dump."""
+    path = os.path.dirname(__file__)
+    # Open explicitly as UTF-8 for Python 2.7 compatibility
+    with codecs.open(
+            os.path.join(path, 'data', file_name),
+            'r',
+            'utf-8') as myfile:
+        expect = myfile.read()
+
+    runner = CliRunner()
+    result = runner.invoke(
+        cli.cli, [
+            '-i', os.path.join(path, 'data', file_name),
+            '-l', 'marcxml',
+            '-d', 'marcxml',
+            'do', 'marc21_liberal_authority',
+            'do', 'to_marc21_liberal_authority',
+        ]
+    )
+
+    assert expect.strip('\n') == result.output.strip('\n')
+    assert result.exit_code == 0
+
+
 def test_cli_do_marc21_from_xml():
     """Test MARC21 loading from XML."""
     expected = [{

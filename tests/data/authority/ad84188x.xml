@@ -31,6 +31,35 @@
       <subfield code="6">linkage</subfield>
       <subfield code="8">field_link_and_sequence_number</subfield>
     </datafield>
+    <datafield tag="856" ind1="4" ind2=" ">
+      <subfield code="a">host_name</subfield>
+      <subfield code="b">access_number</subfield>
+      <subfield code="c">compression_information</subfield>
+      <subfield code="d">path</subfield>
+      <subfield code="f">electronic_name</subfield>
+      <subfield code="h">processor_of_request</subfield>
+      <subfield code="i">instruction</subfield>
+      <subfield code="j">bits_per_second</subfield>
+      <subfield code="k">password</subfield>
+      <subfield code="l">logon</subfield>
+      <subfield code="m">contact_for_access_assistance</subfield>
+      <subfield code="n">name_of_location_of_host</subfield>
+      <subfield code="o">operating_system</subfield>
+      <subfield code="p">port</subfield>
+      <subfield code="q">electronic_format_type</subfield>
+      <subfield code="r">settings</subfield>
+      <subfield code="s">file_size</subfield>
+      <subfield code="t">terminal_emulation</subfield>
+      <subfield code="u">uniform_resource_identifier</subfield>
+      <subfield code="v">hours_access_method_available</subfield>
+      <subfield code="w">record_control_number</subfield>
+      <subfield code="x">nonpublic_note</subfield>
+      <subfield code="y">link_text</subfield>
+      <subfield code="z">public_note</subfield>
+      <subfield code="3">materials_specified</subfield>
+      <subfield code="6">linkage</subfield>
+      <subfield code="8">field_link_and_sequence_number</subfield>
+    </datafield>
     <datafield tag="880" ind1=" " ind2=" ">
       <subfield code="a">same_as_associated_field_a</subfield>
       <subfield code="b">same_as_associated_field_b</subfield>
@@ -89,4 +118,3 @@
     </datafield>
   </record>
 </collection>
-

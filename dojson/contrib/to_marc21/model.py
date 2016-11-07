@@ -49,7 +49,7 @@ class Underdo(Overdo):
            ``exception_handlers`` allows unknown keys to treated in a custom
            fashion.
         """
-        handlers = {IgnoreKey: None}
+        handlers = self.exception_handlers
         handlers.update(exception_handlers or {})
 
         if ignore_missing:
