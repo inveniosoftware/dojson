@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal_authority
 
@@ -28,7 +29,7 @@ def reverse_complex_see_reference_subject(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

@@ -10,8 +10,9 @@
 """MARC 21 model definition."""
 
 from dojson import Overdo, utils
-from dojson.handlers import marc21_liberal_handler
 from dojson.errors import MissingRule
+
+from .utils import marc21_liberal_handler
 
 marc21_liberal = Overdo(entry_point_group='dojson.contrib.marc21_liberal',
                         exception_handlers={MissingRule: marc21_liberal_handler})

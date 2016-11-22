@@ -11,6 +11,7 @@
 
 from dojson import utils
 
+from ..utils import liberal_map_order
 from ..model import marc21_liberal
 
 
@@ -42,7 +43,7 @@ def series_statement_added_entry_personal_name(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('type_of_personal_name_entry_element')
@@ -123,7 +124,7 @@ def series_statement_added_entry_corporate_name(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('type_of_corporate_name_entry_element')
@@ -206,7 +207,7 @@ def series_statement_added_entry_meeting_name(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('type_of_meeting_name_entry_element')
@@ -275,7 +276,7 @@ def series_statement_added_entry_title(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -331,7 +332,7 @@ def series_statement(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('series_tracing_policy')

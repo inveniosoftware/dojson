@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal_authority
 
@@ -53,7 +54,7 @@ def reverse_electronic_location_and_access(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['access_method', 'relationship'])
+    order = liberal_map_order(field_map, value, indicators=['access_method', 'relationship'])
 
     if (indicator_map1.get(value.get('access_method'), '7') != '7' or len(value.get('access_method', '')) == 1) and\
             field_map.get('access_method'):
@@ -181,7 +182,7 @@ def reverse_alternate_graphic_representation(self, key, value):
         'same_as_associated_field_9': '9',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -321,7 +322,7 @@ def reverse_machine_generated_metadata_provenance(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['method_of_machine_assignment', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['method_of_machine_assignment', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -365,7 +366,7 @@ def reverse_description_conversion_information(self, key, value):
         'uniform_resource_identifier': 'u',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

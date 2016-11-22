@@ -11,7 +11,8 @@
 
 from dojson.contrib.to_marc21.model import Underdo
 from dojson.errors import MissingRule
-from dojson.handlers import to_marc21_liberal_handler
+
+from .utils import to_marc21_liberal_handler
 
 to_marc21_liberal = Underdo(
     entry_point_group='dojson.contrib.to_marc21_liberal',

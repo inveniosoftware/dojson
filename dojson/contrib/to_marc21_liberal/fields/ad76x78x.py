@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal_authority
 
@@ -33,7 +34,7 @@ def reverse_established_heading_linking_entry_medium_of_performance_term(self, k
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -93,7 +94,7 @@ def reverse_subdivision_linking_entry_general_subdivision(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -164,7 +165,7 @@ def reverse_subdivision_linking_entry_geographic_subdivision(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -235,7 +236,7 @@ def reverse_subdivision_linking_entry_chronological_subdivision(self, key, value
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -306,7 +307,7 @@ def reverse_subdivision_linking_entry_form_subdivision(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -371,7 +372,7 @@ def reverse_complex_linking_entry_data(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

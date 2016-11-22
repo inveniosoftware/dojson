@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal
 
@@ -53,7 +54,7 @@ def reverse_added_entry_personal_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_personal_name_entry_element', 'type_of_added_entry'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_personal_name_entry_element', 'type_of_added_entry'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -157,7 +158,7 @@ def reverse_added_entry_corporate_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_corporate_name_entry_element', 'type_of_added_entry'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_corporate_name_entry_element', 'type_of_added_entry'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -259,7 +260,7 @@ def reverse_added_entry_meeting_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_meeting_name_entry_element', 'type_of_added_entry'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_meeting_name_entry_element', 'type_of_added_entry'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -335,7 +336,7 @@ def reverse_added_entry_uncontrolled_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_name', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_name', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -393,7 +394,7 @@ def reverse_added_entry_uniform_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['nonfiling_characters', 'type_of_added_entry'])
+    order = liberal_map_order(field_map, value, indicators=['nonfiling_characters', 'type_of_added_entry'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -465,7 +466,7 @@ def reverse_added_entry_uncontrolled_related_analytical_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['nonfiling_characters', 'type_of_added_entry'])
+    order = liberal_map_order(field_map, value, indicators=['nonfiling_characters', 'type_of_added_entry'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -510,7 +511,7 @@ def reverse_added_entry_geographic_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -561,7 +562,7 @@ def reverse_added_entry_hierarchical_place_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -617,7 +618,7 @@ def reverse_system_details_access_to_computer_files(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -661,7 +662,7 @@ def reverse_added_entry_taxonomic_identification(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

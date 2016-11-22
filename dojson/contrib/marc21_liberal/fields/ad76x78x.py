@@ -11,6 +11,7 @@
 
 from dojson import utils
 
+from ..utils import liberal_map_order
 from ..model import marc21_liberal_authority
 
 
@@ -32,7 +33,7 @@ def established_heading_linking_entry_medium_of_performance_term(self, key, valu
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -93,7 +94,7 @@ def subdivision_linking_entry_general_subdivision(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -165,7 +166,7 @@ def subdivision_linking_entry_geographic_subdivision(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -237,7 +238,7 @@ def subdivision_linking_entry_chronological_subdivision(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -309,7 +310,7 @@ def subdivision_linking_entry_form_subdivision(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -375,7 +376,7 @@ def complex_linking_entry_data(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')

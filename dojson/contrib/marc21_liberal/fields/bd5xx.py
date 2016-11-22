@@ -11,6 +11,7 @@
 
 from dojson import utils
 
+from ..utils import liberal_map_order
 from ..model import marc21_liberal
 
 
@@ -27,7 +28,7 @@ def general_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -67,7 +68,7 @@ def with_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -110,7 +111,7 @@ def dissertation_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -157,7 +158,7 @@ def bibliography_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -201,7 +202,7 @@ def formatted_contents_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -260,7 +261,7 @@ def restrictions_on_access_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('restriction')
@@ -318,7 +319,7 @@ def scale_note_for_graphic_material(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -356,7 +357,7 @@ def creation_production_credits_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -399,7 +400,7 @@ def citation_references_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('coverage_location_in_source')
@@ -444,7 +445,7 @@ def participant_or_performer_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -482,7 +483,7 @@ def type_of_report_and_period_covered_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -532,7 +533,7 @@ def data_quality_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -598,7 +599,7 @@ def numbering_peculiarities_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -636,7 +637,7 @@ def type_of_computer_file_or_data_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -679,7 +680,7 @@ def date_time_and_place_of_an_event_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -738,7 +739,7 @@ def summary(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -785,7 +786,7 @@ def target_audience_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -827,7 +828,7 @@ def geographic_coverage_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -867,7 +868,7 @@ def preferred_citation_of_described_materials_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -906,7 +907,7 @@ def supplement_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -951,7 +952,7 @@ def study_program_information_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -1004,7 +1005,7 @@ def additional_physical_form_available_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1058,7 +1059,7 @@ def reproduction_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1129,7 +1130,7 @@ def original_version_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1198,7 +1199,7 @@ def location_of_originals_duplicates_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('custodial_role')
@@ -1253,7 +1254,7 @@ def funding_information_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1315,7 +1316,7 @@ def system_details_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1366,7 +1367,7 @@ def terms_governing_use_and_reproduction_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1422,7 +1423,7 @@ def immediate_source_of_acquisition_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('privacy')
@@ -1494,7 +1495,7 @@ def information_relating_to_copyright_status(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('privacy')
@@ -1574,7 +1575,7 @@ def location_of_other_archival_materials_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('relationship')
@@ -1632,7 +1633,7 @@ def biographical_or_historical_data(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('type_of_data')
@@ -1675,7 +1676,7 @@ def language_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1716,7 +1717,7 @@ def former_title_complexity_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1753,7 +1754,7 @@ def issuing_body_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1807,7 +1808,7 @@ def entity_and_attribute_information_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1879,7 +1880,7 @@ def cumulative_index_finding_aids_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -1927,7 +1928,7 @@ def information_about_documentation_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -1971,7 +1972,7 @@ def ownership_and_custodial_history(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('privacy')
@@ -2019,7 +2020,7 @@ def copy_and_version_identification_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -2075,7 +2076,7 @@ def binding_information(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -2123,7 +2124,7 @@ def case_file_characteristics_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -2174,7 +2175,7 @@ def methodology_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -2211,7 +2212,7 @@ def linking_entry_complexity_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -2251,7 +2252,7 @@ def publications_about_described_materials_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -2311,7 +2312,7 @@ def action_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('privacy')
@@ -2399,7 +2400,7 @@ def accumulation_and_frequency_of_use_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -2445,7 +2446,7 @@ def exhibitions_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -2486,7 +2487,7 @@ def awards_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -2526,7 +2527,7 @@ def source_of_description_note(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')

@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal_authority
 
@@ -48,7 +49,7 @@ def reverse_heading_personal_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_personal_name_entry_element', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_personal_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -146,7 +147,7 @@ def reverse_heading_corporate_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_corporate_name_entry_element', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_corporate_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -242,7 +243,7 @@ def reverse_heading_meeting_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_meeting_name_entry_element', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_meeting_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -331,7 +332,7 @@ def reverse_heading_uniform_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'nonfiling_characters'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -403,7 +404,7 @@ def reverse_heading_chronological_term(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -452,7 +453,7 @@ def reverse_heading_topical_term(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -504,7 +505,7 @@ def reverse_heading_geographic_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -554,7 +555,7 @@ def reverse_heading_genre_form_term(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -597,7 +598,7 @@ def reverse_heading_medium_of_performance_term(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -631,7 +632,7 @@ def reverse_heading_general_subdivision(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -676,7 +677,7 @@ def reverse_heading_geographic_subdivision(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -721,7 +722,7 @@ def reverse_heading_chronological_subdivision(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -766,7 +767,7 @@ def reverse_heading_form_subdivision(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

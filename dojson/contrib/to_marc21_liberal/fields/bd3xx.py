@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal
 
@@ -32,7 +33,7 @@ def reverse_physical_description(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -77,7 +78,7 @@ def reverse_playing_time(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -113,7 +114,7 @@ def reverse_hours(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -146,7 +147,7 @@ def reverse_current_publication_frequency(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -180,7 +181,7 @@ def reverse_former_publication_frequency(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -217,7 +218,7 @@ def reverse_content_type(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -263,7 +264,7 @@ def reverse_media_type(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -309,7 +310,7 @@ def reverse_carrier_type(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -366,7 +367,7 @@ def reverse_physical_medium(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -466,7 +467,7 @@ def reverse_geospatial_reference_data(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['geospatial_reference_dimension', 'geospatial_reference_method'])
+    order = liberal_map_order(field_map, value, indicators=['geospatial_reference_dimension', 'geospatial_reference_method'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -537,7 +538,7 @@ def reverse_planar_coordinate_data(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -587,7 +588,7 @@ def reverse_sound_characteristics(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -651,7 +652,7 @@ def reverse_projection_characteristics_of_moving_image(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -697,7 +698,7 @@ def reverse_video_characteristics(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -747,7 +748,7 @@ def reverse_digital_file_characteristics(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -805,7 +806,7 @@ def reverse_format_of_notated_music(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -850,7 +851,7 @@ def reverse_organization_and_arrangement_of_materials(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -897,7 +898,7 @@ def reverse_digital_graphic_representation(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -950,7 +951,7 @@ def reverse_security_classification_control(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['controlled_element', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['controlled_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -998,7 +999,7 @@ def reverse_originator_dissemination_control(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1041,7 +1042,7 @@ def reverse_dates_of_publication_and_or_sequential_designation(self, key, value)
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['format_of_date', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['format_of_date', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1092,7 +1093,7 @@ def reverse_normalized_date_and_sequential_designation(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['start_end_designator', 'state_of_issuance'])
+    order = liberal_map_order(field_map, value, indicators=['start_end_designator', 'state_of_issuance'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1154,7 +1155,7 @@ def reverse_trade_price(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1208,7 +1209,7 @@ def reverse_trade_availability_information(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1258,7 +1259,7 @@ def reverse_associated_place(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1313,7 +1314,7 @@ def reverse_associated_language(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'source_of_code'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'source_of_code'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1357,7 +1358,7 @@ def reverse_form_of_work(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1399,7 +1400,7 @@ def reverse_other_distinguishing_characteristics_of_work_or_expression(self, key
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1456,7 +1457,7 @@ def reverse_medium_of_performance(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'access_control'])
+    order = liberal_map_order(field_map, value, indicators=['display_constant_controller', 'access_control'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1520,7 +1521,7 @@ def reverse_numeric_designation_of_musical_work(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1563,7 +1564,7 @@ def reverse_key(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['key_type', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['key_type', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1601,7 +1602,7 @@ def reverse_audience_characteristics(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1651,7 +1652,7 @@ def reverse_creator_contributor_characteristics(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1699,7 +1700,7 @@ def reverse_time_period_of_creation(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_time_period', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_time_period', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

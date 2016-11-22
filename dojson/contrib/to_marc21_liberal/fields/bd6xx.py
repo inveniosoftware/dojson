@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal
 
@@ -55,7 +56,7 @@ def reverse_subject_added_entry_personal_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_personal_name_entry_element', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_personal_name_entry_element', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -173,7 +174,7 @@ def reverse_subject_added_entry_corporate_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_corporate_name_entry_element', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_corporate_name_entry_element', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -289,7 +290,7 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_meeting_name_entry_element', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_meeting_name_entry_element', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -398,7 +399,7 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['nonfiling_characters', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['nonfiling_characters', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -490,7 +491,7 @@ def reverse_subject_added_entry_chronological_term(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -558,7 +559,7 @@ def reverse_subject_added_entry_topical_term(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['level_of_subject', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['level_of_subject', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -634,7 +635,7 @@ def reverse_subject_added_entry_geographic_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -698,7 +699,7 @@ def reverse_index_term_uncontrolled(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['level_of_index_term', 'type_of_term_or_name'])
+    order = liberal_map_order(field_map, value, indicators=['level_of_index_term', 'type_of_term_or_name'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -743,7 +744,7 @@ def reverse_subject_added_entry_faceted_topical_terms(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['level_of_subject', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['level_of_subject', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -815,7 +816,7 @@ def reverse_index_term_genre_form(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_heading', 'thesaurus'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_heading', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -884,7 +885,7 @@ def reverse_index_term_occupation(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'source_of_term'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'source_of_term'])
 
     if (indicator_map2.get(value.get('source_of_term'), '7') != '7' or len(value.get('source_of_term', '')) == 1) and\
             field_map.get('source_of_term'):
@@ -950,7 +951,7 @@ def reverse_index_term_function(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'source_of_term'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'source_of_term'])
 
     if (indicator_map2.get(value.get('source_of_term'), '7') != '7' or len(value.get('source_of_term', '')) == 1) and\
             field_map.get('source_of_term'):
@@ -1011,7 +1012,7 @@ def reverse_index_term_curriculum_objective(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -1059,7 +1060,7 @@ def reverse_subject_added_entry_hierarchical_place_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

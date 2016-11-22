@@ -11,6 +11,7 @@
 
 from dojson import utils
 
+from ..utils import liberal_map_order
 from ..model import marc21_liberal
 
 
@@ -43,7 +44,7 @@ def main_series_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -126,7 +127,7 @@ def subseries_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -213,7 +214,7 @@ def original_language_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -310,7 +311,7 @@ def translation_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -407,7 +408,7 @@ def supplement_special_issue_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -504,7 +505,7 @@ def supplement_parent_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -603,7 +604,7 @@ def host_item_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -702,7 +703,7 @@ def constituent_unit_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -801,7 +802,7 @@ def other_edition_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -900,7 +901,7 @@ def additional_physical_form_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -994,7 +995,7 @@ def issued_with_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -1084,7 +1085,7 @@ def preceding_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -1181,7 +1182,7 @@ def succeeding_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -1281,7 +1282,7 @@ def data_source_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')
@@ -1381,7 +1382,7 @@ def other_relationship_entry(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('note_controller')

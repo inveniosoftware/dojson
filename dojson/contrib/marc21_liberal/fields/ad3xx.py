@@ -11,6 +11,7 @@
 
 from dojson import utils
 
+from ..utils import liberal_map_order
 from ..model import marc21_liberal_authority
 
 
@@ -29,7 +30,7 @@ def content_type(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -80,7 +81,7 @@ def format_of_notated_music(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -129,7 +130,7 @@ def complex_see_also_reference_subject(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -183,7 +184,7 @@ def other_attributes_of_person_or_corporate_body(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -254,7 +255,7 @@ def associated_place(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -327,7 +328,7 @@ def address(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -393,7 +394,7 @@ def field_of_activity(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -450,7 +451,7 @@ def associated_group(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -507,7 +508,7 @@ def occupation(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -563,7 +564,7 @@ def gender(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -619,7 +620,7 @@ def family_information(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -679,7 +680,7 @@ def associated_language(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -722,7 +723,7 @@ def fuller_form_of_personal_name(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -767,7 +768,7 @@ def form_of_work(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -814,7 +815,7 @@ def other_distinguishing_characteristics_of_work_or_expression(self, key, value)
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -875,7 +876,7 @@ def medium_of_performance(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('display_constant_controller')
@@ -944,7 +945,7 @@ def numeric_designation_of_musical_work(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -991,7 +992,7 @@ def key(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1034,7 +1035,7 @@ def audience_characteristics(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1089,7 +1090,7 @@ def creator_contributor_characteristics(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -1142,7 +1143,7 @@ def time_period_of_creation(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('type_of_time_period')

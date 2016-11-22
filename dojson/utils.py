@@ -146,7 +146,7 @@ def deprecated(explanation):
     return decorator
 
 
-def map_order(field_map, value, liberal=False, indicators=None):
+def map_order(field_map, value):
     """Ordered list of fields to be able to pass the order along.
 
     .. note:: It returns a list as you may want to alter it based on the
@@ -161,18 +161,7 @@ def map_order(field_map, value, liberal=False, indicators=None):
     else:
         order = value.keys()
 
-    if liberal:
-        if not indicators:
-            indicators = []
-        returnlist = []
-        for k in order:
-            if k in field_map:
-                returnlist.append(field_map[k])
-            elif k not in indicators + ['$ind1', '$ind2']:
-                returnlist.append(k)
-        return returnlist
-    else:
-        return [field_map[k] for k in order if field_map.get(k) is not None]
+    return [field_map[k] for k in order if field_map.get(k) is not None]
 
 
 class GroupableOrderedDict(OrderedDict):

@@ -11,6 +11,7 @@
 
 from dojson import utils
 
+from ..utils import liberal_map_order
 from ..model import marc21_liberal
 
 
@@ -24,7 +25,7 @@ def holding_institution(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -86,7 +87,7 @@ def location(self, key, value):
         '8': 'sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('shelving_scheme')
@@ -196,7 +197,7 @@ def electronic_location_and_access(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_' and '2' not in value:
         order.append('access_method')
@@ -288,7 +289,7 @@ def replacement_record_information(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -340,7 +341,7 @@ def machine_generated_metadata_provenance(self, key, value):
         '8': 'field_link_and_sequence_number',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('method_of_machine_assignment')
@@ -389,7 +390,7 @@ def description_conversion_information(self, key, value):
         'u': 'uniform_resource_identifier',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')
@@ -427,7 +428,7 @@ def non_marc_information_field(self, key, value):
         '2': 'source_of_data',
     }
 
-    order = utils.map_order(field_map, value, liberal=True)
+    order = liberal_map_order(field_map, value)
 
     if key[3] != '_':
         order.append('$ind1')

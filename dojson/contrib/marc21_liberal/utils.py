@@ -1,0 +1,70 @@
+# -*- coding: utf-8 -*-
+#
+# This file is part of DoJSON
+# Copyright (C) 2015 CERN.
+#
+# DoJSON is free software; you can redistribute it and/or
+# modify it under the terms of the Revised BSD License; see LICENSE
+# file for more details.
+
+"""MARC 21 liberal utils."""
+
+from dojson.errors import MissingRule
+from dojson.utils import GroupableOrderedDict
+
+
+def marc21_liberal_handler(exc, output, key, value):
+    """When a key cannot be translated, simply use the number instead."""
+    if exc.__class__ is MissingRule:
+        if key != '__order__':
+            field = key[:3]
+
+            # Convert value from GroupableOrderedDict for mutability
+            value = dict(value)
+
+            # Convert '__order__' to list for mutability
+            value['__order__'] = list(value['__order__'])
+            if key[3] != '_':
+                value['$ind1'] = key[3]
+                value['__order__'].append('$ind1')
+            if key[4] != '_':
+                value['$ind2'] = key[4]
+                value['__order__'].append('$ind2')
+
+            value = GroupableOrderedDict(value)
+
+            # Rewrite the record's '__order__' to remove indicators
+            output['__order__'] = [field if elem == key else elem
+                                   for elem in output['__order__']]
+
+            output[field] = value
+        else:
+            pass
+    else:
+        raise exc
+
+
+def liberal_map_order(field_map, value, indicators=None):
+    """Ordered list of fields to be able to pass the order along.
+
+    .. note:: It returns a list as you may want to alter it based on the
+       indicators. The final structure should use a tuple for immutability.
+
+    Returns an empty list if no `__order__' is found in the value.
+
+    .. versionadded:: 1.1.0
+    """
+    if '__order__'in value:
+        order = value['__order__']
+    else:
+        order = value.keys()
+
+    if not indicators:
+        indicators = []
+    returnlist = []
+    for k in order:
+        if k in field_map:
+            returnlist.append(field_map[k])
+        elif k not in indicators + ['$ind1', '$ind2']:
+            returnlist.append(k)
+    return returnlist

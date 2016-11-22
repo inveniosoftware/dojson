@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal
 
@@ -30,7 +31,7 @@ def reverse_abbreviated_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['title_added_entry', 'type'])
+    order = liberal_map_order(field_map, value, indicators=['title_added_entry', 'type'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -68,7 +69,7 @@ def reverse_key_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'nonfiling_characters'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -115,7 +116,7 @@ def reverse_uniform_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['uniform_title_printed_or_displayed', 'nonfiling_characters'])
+    order = liberal_map_order(field_map, value, indicators=['uniform_title_printed_or_displayed', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -182,7 +183,7 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['title_added_entry', 'nonfiling_characters'])
+    order = liberal_map_order(field_map, value, indicators=['title_added_entry', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -237,7 +238,7 @@ def reverse_collective_uniform_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['uniform_title_printed_or_displayed', 'nonfiling_characters'])
+    order = liberal_map_order(field_map, value, indicators=['uniform_title_printed_or_displayed', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -303,7 +304,7 @@ def reverse_title_statement(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['title_added_entry', 'nonfiling_characters'])
+    order = liberal_map_order(field_map, value, indicators=['title_added_entry', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -360,7 +361,7 @@ def reverse_varying_form_of_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['note_added_entry_controller', 'type_of_title'])
+    order = liberal_map_order(field_map, value, indicators=['note_added_entry_controller', 'type_of_title'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -415,7 +416,7 @@ def reverse_former_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['title_added_entry', 'note_controller'])
+    order = liberal_map_order(field_map, value, indicators=['title_added_entry', 'note_controller'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,

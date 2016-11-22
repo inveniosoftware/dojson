@@ -10,6 +10,7 @@
 """To MARC 21 model definition."""
 
 from dojson import utils
+from dojson.contrib.marc21_liberal.utils import liberal_map_order
 
 from ..model import to_marc21_liberal
 
@@ -54,7 +55,7 @@ def reverse_series_added_entry_personal_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_personal_name_entry_element', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_personal_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -163,7 +164,7 @@ def reverse_series_added_entry_corporate_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_corporate_name_entry_element', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_corporate_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -270,7 +271,7 @@ def reverse_series_added_entry_meeting_name(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_meeting_name_entry_element', 'None'])
+    order = liberal_map_order(field_map, value, indicators=['type_of_meeting_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
@@ -368,7 +369,7 @@ def reverse_series_added_entry_uniform_title(self, key, value):
         'field_link_and_sequence_number': '8',
     }
 
-    order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'nonfiling_characters'])
+    order = liberal_map_order(field_map, value, indicators=['None', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
