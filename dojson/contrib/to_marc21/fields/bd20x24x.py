@@ -25,8 +25,8 @@ def reverse_abbreviated_title(self, key, value):
         'abbreviated_title': 'a',
         'qualifying_information': 'b',
         'source': '2',
-        'field_link_and_sequence_number': '8',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
@@ -38,10 +38,10 @@ def reverse_abbreviated_title(self, key, value):
         '2': utils.reverse_force_list(
             value.get('source')
         ),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '6': value.get('linkage'),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
         '$ind2': indicator_map2.get(value.get('type'), '_'),
     }
@@ -56,8 +56,8 @@ def reverse_key_title(self, key, value):
     field_map = {
         'key_title': 'a',
         'qualifying_information': 'b',
-        'field_link_and_sequence_number': '8',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
@@ -66,10 +66,10 @@ def reverse_key_title(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('key_title'),
         'b': value.get('qualifying_information'),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '6': value.get('linkage'),
         '$ind1': '_',
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
     }
@@ -83,21 +83,21 @@ def reverse_uniform_title(self, key, value):
     indicator_map2 = {str(x): str(x) for x in range(10)}
     field_map = {
         'uniform_title': 'a',
-        'form_subheading': 'k',
-        'field_link_and_sequence_number': '8',
-        'number_of_part_section_of_a_work': 'n',
-        'version': 's',
-        'key_for_music': 'r',
-        'language_of_a_work': 'l',
-        'medium': 'h',
-        'medium_of_performance_for_music': 'm',
         'date_of_treaty_signing': 'd',
-        'arranged_statement_for_music': 'o',
-        'name_of_part_section_of_a_work': 'p',
-        'authority_record_control_number_or_standard_number': '0',
         'date_of_a_work': 'f',
         'miscellaneous_information': 'g',
+        'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'authority_record_control_number_or_standard_number': '0',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
@@ -105,37 +105,37 @@ def reverse_uniform_title(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('uniform_title'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
-        's': value.get('version'),
-        'r': value.get('key_for_music'),
-        'l': value.get('language_of_a_work'),
-        'h': value.get('medium'),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
         'd': utils.reverse_force_list(
             value.get('date_of_treaty_signing')
-        ),
-        'o': value.get('arranged_statement_for_music'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        '0': utils.reverse_force_list(
-            value.get('authority_record_control_number_or_standard_number')
         ),
         'f': value.get('date_of_a_work'),
         'g': utils.reverse_force_list(
             value.get('miscellaneous_information')
         ),
+        'h': value.get('medium'),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
+        ),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_of_a_work')
+        ),
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')
+        ),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('uniform_title_printed_or_displayed'), '_'),
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
     }
@@ -152,12 +152,12 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
         'title': 'a',
         'remainder_of_title': 'b',
         'statement_of_responsibility': 'c',
-        'field_link_and_sequence_number': '8',
-        'name_of_part_section_of_a_work': 'p',
-        'number_of_part_section_of_a_work': 'n',
-        'language_code_of_translated_title': 'y',
         'medium': 'h',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'language_code_of_translated_title': 'y',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
@@ -167,18 +167,18 @@ def reverse_translation_of_title_by_cataloging_agency(self, key, value):
         'a': value.get('title'),
         'b': value.get('remainder_of_title'),
         'c': value.get('statement_of_responsibility'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'h': value.get('medium'),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_of_a_work')
         ),
         'p': utils.reverse_force_list(
             value.get('name_of_part_section_of_a_work')
         ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
         'y': value.get('language_code_of_translated_title'),
-        'h': value.get('medium'),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
     }
@@ -192,20 +192,20 @@ def reverse_collective_uniform_title(self, key, value):
     indicator_map2 = {str(x): str(x) for x in range(10)}
     field_map = {
         'uniform_title': 'a',
-        'form_subheading': 'k',
-        'date_of_a_work': 'f',
-        'version': 's',
-        'key_for_music': 'r',
-        'language_of_a_work': 'l',
-        'medium': 'h',
-        'medium_of_performance_for_music': 'm',
         'date_of_treaty_signing': 'd',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
         'arranged_statement_for_music': 'o',
         'name_of_part_section_of_a_work': 'p',
-        'number_of_part_section_of_a_work': 'n',
-        'field_link_and_sequence_number': '8',
-        'miscellaneous_information': 'g',
+        'key_for_music': 'r',
+        'version': 's',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
@@ -213,34 +213,34 @@ def reverse_collective_uniform_title(self, key, value):
     return {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('uniform_title'),
+        'd': utils.reverse_force_list(
+            value.get('date_of_treaty_signing')
+        ),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
         'k': utils.reverse_force_list(
             value.get('form_subheading')
         ),
-        'f': value.get('date_of_a_work'),
-        's': value.get('version'),
-        'r': value.get('key_for_music'),
         'l': value.get('language_of_a_work'),
-        'h': value.get('medium'),
         'm': utils.reverse_force_list(
             value.get('medium_of_performance_for_music')
         ),
-        'd': utils.reverse_force_list(
-            value.get('date_of_treaty_signing')
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_of_a_work')
         ),
         'o': value.get('arranged_statement_for_music'),
         'p': utils.reverse_force_list(
             value.get('name_of_part_section_of_a_work')
         ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        '6': value.get('linkage'),
         '$ind1': indicator_map1.get(value.get('uniform_title_printed_or_displayed'), '_'),
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
     }
@@ -255,16 +255,16 @@ def reverse_title_statement(self, key, value):
     field_map = {
         'title': 'a',
         'remainder_of_title': 'b',
-        'form': 'k',
-        'field_link_and_sequence_number': '8',
-        'version': 's',
-        'medium': 'h',
         'statement_of_responsibility': 'c',
-        'name_of_part_section_of_a_work': 'p',
-        'number_of_part_section_of_a_work': 'n',
         'inclusive_dates': 'f',
         'bulk_dates': 'g',
+        'medium': 'h',
+        'form': 'k',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'version': 's',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
@@ -273,24 +273,24 @@ def reverse_title_statement(self, key, value):
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('title'),
         'b': value.get('remainder_of_title'),
+        'c': value.get('statement_of_responsibility'),
+        'f': value.get('inclusive_dates'),
+        'g': value.get('bulk_dates'),
+        'h': value.get('medium'),
         'k': utils.reverse_force_list(
             value.get('form')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        's': value.get('version'),
-        'h': value.get('medium'),
-        'c': value.get('statement_of_responsibility'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
         ),
         'n': utils.reverse_force_list(
             value.get('number_of_part_section_of_a_work')
         ),
-        'f': value.get('inclusive_dates'),
-        'g': value.get('bulk_dates'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        's': value.get('version'),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
     }
@@ -304,42 +304,42 @@ def reverse_varying_form_of_title(self, key, value):
     indicator_map1 = {"No note, added entry": "3", "No note, no added entry": "2", "Note, added entry": "1", "Note, no added entry": "0"}
     indicator_map2 = {"Added title page title": "5", "Caption title": "6", "Cover title": "4", "Distinctive title": "2", "No type specified": "_", "Other title": "3", "Parallel title": "1", "Portion of title": "0", "Running title": "7", "Spine title": "8"}
     field_map = {
-        'institution_to_which_field_applies': '5',
         'title_proper_short_title': 'a',
-        'display_text': 'i',
-        'date_or_sequential_designation': 'f',
-        'field_link_and_sequence_number': '8',
-        'name_of_part_section_of_a_work': 'p',
-        'number_of_part_section_of_a_work': 'n',
         'remainder_of_title': 'b',
+        'date_or_sequential_designation': 'f',
         'miscellaneous_information': 'g',
         'medium': 'h',
+        'display_text': 'i',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '5': value.get('institution_to_which_field_applies'),
         'a': value.get('title_proper_short_title'),
-        'i': value.get('display_text'),
-        'f': value.get('date_or_sequential_designation'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
         'b': value.get('remainder_of_title'),
+        'f': value.get('date_or_sequential_designation'),
         'g': utils.reverse_force_list(
             value.get('miscellaneous_information')
         ),
         'h': value.get('medium'),
+        'i': value.get('display_text'),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_of_a_work')
+        ),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('note_added_entry_controller'), '_'),
         '$ind2': indicator_map2.get(value.get('type_of_title'), '_'),
     }
@@ -356,13 +356,13 @@ def reverse_former_title(self, key, value):
         'title': 'a',
         'remainder_of_title': 'b',
         'date_or_sequential_designation': 'f',
-        'name_of_part_section_of_a_work': 'p',
-        'number_of_part_section_of_a_work': 'n',
-        'field_link_and_sequence_number': '8',
-        'international_standard_serial_number': 'x',
         'miscellaneous_information': 'g',
         'medium': 'h',
+        'number_of_part_section_of_a_work': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'international_standard_serial_number': 'x',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
@@ -372,21 +372,21 @@ def reverse_former_title(self, key, value):
         'a': value.get('title'),
         'b': value.get('remainder_of_title'),
         'f': value.get('date_or_sequential_designation'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'x': value.get('international_standard_serial_number'),
         'g': utils.reverse_force_list(
             value.get('miscellaneous_information')
         ),
         'h': value.get('medium'),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_of_a_work')
+        ),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'x': value.get('international_standard_serial_number'),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('title_added_entry'), '_'),
         '$ind2': indicator_map2.get(value.get('note_controller'), '_'),
     }

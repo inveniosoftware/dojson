@@ -21,30 +21,30 @@ def heading_personal_name(self, key, value):
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     field_map = {
         'a': 'personal_name',
-        's': 'version',
-        'n': 'number_of_part_section_of_a_work',
-        'j': 'attribution_qualifier',
-        'm': 'medium_of_performance_for_music',
-        'e': 'relator_term',
-        'q': 'fuller_form_of_name',
-        'k': 'form_subheading',
-        '8': 'field_link_and_sequence_number',
-        'g': 'miscellaneous_information',
-        'c': 'titles_and_other_words_associated_with_a_name',
-        '6': 'linkage',
-        'd': 'dates_associated_with_a_name',
-        'v': 'form_subdivision',
-        'o': 'arranged_statement_for_music',
-        'x': 'general_subdivision',
         'b': 'numeration',
-        'l': 'language_of_a_work',
-        'r': 'key_for_music',
-        'z': 'geographic_subdivision',
+        'c': 'titles_and_other_words_associated_with_a_name',
+        'd': 'dates_associated_with_a_name',
+        'e': 'relator_term',
         'f': 'date_of_a_work',
-        't': 'title_of_a_work',
-        'p': 'name_of_part_section_of_a_work',
+        'g': 'miscellaneous_information',
         'h': 'medium',
+        'j': 'attribution_qualifier',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'q': 'fuller_form_of_name',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -58,55 +58,55 @@ def heading_personal_name(self, key, value):
     record_dict = {
         '__order__': order if len(order) else None,
         'personal_name': value.get('a'),
-        'version': value.get('s'),
-        'number_of_part_section_of_a_work': utils.force_list(
-            value.get('n')
-        ),
-        'attribution_qualifier': utils.force_list(
-            value.get('j')
-        ),
-        'medium_of_performance_for_music': utils.force_list(
-            value.get('m')
-        ),
-        'relator_term': utils.force_list(
-            value.get('e')
-        ),
-        'fuller_form_of_name': value.get('q'),
-        'form_subheading': utils.force_list(
-            value.get('k')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
-        ),
+        'numeration': value.get('b'),
         'titles_and_other_words_associated_with_a_name': utils.force_list(
             value.get('c')
         ),
-        'linkage': value.get('6'),
         'dates_associated_with_a_name': value.get('d'),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
-        'arranged_statement_for_music': value.get('o'),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'numeration': value.get('b'),
-        'language_of_a_work': value.get('l'),
-        'key_for_music': value.get('r'),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
         'date_of_a_work': value.get('f'),
-        'title_of_a_work': value.get('t'),
+        'miscellaneous_information': utils.force_list(
+            value.get('g')
+        ),
+        'medium': value.get('h'),
+        'attribution_qualifier': utils.force_list(
+            value.get('j')
+        ),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
+        ),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
+        ),
+        'arranged_statement_for_music': value.get('o'),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
         ),
-        'medium': value.get('h'),
+        'fuller_form_of_name': value.get('q'),
+        'key_for_music': value.get('r'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3], key[3]),
         '$ind2': key[4] if key[4] != '_' else None,
@@ -126,28 +126,28 @@ def heading_corporate_name(self, key, value):
     indicator_map1 = {"0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
     field_map = {
         'a': 'corporate_name_or_jurisdiction_name_as_entry_element',
-        's': 'version',
         'b': 'subordinate_unit',
-        'm': 'medium_of_performance_for_music',
-        'e': 'relator_term',
-        'k': 'form_subheading',
-        '8': 'field_link_and_sequence_number',
-        'g': 'miscellaneous_information',
         'c': 'location_of_meeting',
-        '6': 'linkage',
         'd': 'date_of_meeting_or_treaty_signing',
-        'v': 'form_subdivision',
-        'o': 'arranged_statement_for_music',
-        'x': 'general_subdivision',
-        'n': 'number_of_part_section_meeting',
-        'l': 'language_of_a_work',
-        'r': 'key_for_music',
-        'z': 'geographic_subdivision',
+        'e': 'relator_term',
         'f': 'date_of_a_work',
-        't': 'title_of_a_work',
-        'p': 'name_of_part_section_of_a_work',
+        'g': 'miscellaneous_information',
         'h': 'medium',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_meeting',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -161,55 +161,55 @@ def heading_corporate_name(self, key, value):
     record_dict = {
         '__order__': order if len(order) else None,
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
-        'version': value.get('s'),
         'subordinate_unit': utils.force_list(
             value.get('b')
-        ),
-        'medium_of_performance_for_music': utils.force_list(
-            value.get('m')
-        ),
-        'relator_term': utils.force_list(
-            value.get('e')
-        ),
-        'form_subheading': utils.force_list(
-            value.get('k')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
         ),
         'location_of_meeting': utils.force_list(
             value.get('c')
         ),
-        'linkage': value.get('6'),
         'date_of_meeting_or_treaty_signing': utils.force_list(
             value.get('d')
         ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
-        'arranged_statement_for_music': value.get('o'),
-        'general_subdivision': utils.force_list(
-            value.get('x')
+        'date_of_a_work': value.get('f'),
+        'miscellaneous_information': utils.force_list(
+            value.get('g')
+        ),
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
         'number_of_part_section_meeting': utils.force_list(
             value.get('n')
         ),
-        'language_of_a_work': value.get('l'),
-        'key_for_music': value.get('r'),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'date_of_a_work': value.get('f'),
-        'title_of_a_work': value.get('t'),
+        'arranged_statement_for_music': value.get('o'),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
         ),
-        'medium': value.get('h'),
+        'key_for_music': value.get('r'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3], key[3]),
         '$ind2': key[4] if key[4] != '_' else None,
@@ -228,27 +228,27 @@ def heading_meeting_name(self, key, value):
     """Heading-Meeting Name."""
     indicator_map1 = {"0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
     field_map = {
-        '6': 'linkage',
         'a': 'meeting_name_or_jurisdiction_name_as_entry_element',
-        't': 'title_of_a_work',
-        'q': 'name_of_meeting_following_jurisdiction_name_entry_element',
-        's': 'version',
-        'n': 'number_of_part_section_meeting',
-        'z': 'geographic_subdivision',
-        'j': 'relator_term',
+        'c': 'location_of_meeting',
         'd': 'date_of_meeting',
-        '8': 'field_link_and_sequence_number',
         'e': 'subordinate_unit',
+        'f': 'date_of_a_work',
         'g': 'miscellaneous_information',
-        'v': 'form_subdivision',
+        'h': 'medium',
+        'j': 'relator_term',
         'k': 'form_subheading',
         'l': 'language_of_a_work',
-        'x': 'general_subdivision',
-        'f': 'date_of_a_work',
-        'c': 'location_of_meeting',
+        'n': 'number_of_part_section_meeting',
         'p': 'name_of_part_section_of_a_work',
-        'h': 'medium',
+        'q': 'name_of_meeting_following_jurisdiction_name_entry_element',
+        's': 'version',
+        't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -261,50 +261,50 @@ def heading_meeting_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
-        'title_of_a_work': value.get('t'),
-        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
-        'version': value.get('s'),
-        'number_of_part_section_meeting': utils.force_list(
-            value.get('n')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'relator_term': utils.force_list(
-            value.get('j')
+        'location_of_meeting': utils.force_list(
+            value.get('c')
         ),
         'date_of_meeting': value.get('d'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
         'subordinate_unit': utils.force_list(
             value.get('e')
         ),
+        'date_of_a_work': value.get('f'),
         'miscellaneous_information': utils.force_list(
             value.get('g')
         ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
+        'medium': value.get('h'),
+        'relator_term': utils.force_list(
+            value.get('j')
         ),
         'form_subheading': utils.force_list(
             value.get('k')
         ),
         'language_of_a_work': value.get('l'),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'date_of_a_work': value.get('f'),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
         ),
-        'medium': value.get('h'),
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3], key[3]),
         '$ind2': key[4] if key[4] != '_' else None,
@@ -323,26 +323,26 @@ def heading_uniform_title(self, key, value):
     """Heading-Uniform Title."""
     indicator_map2 = {str(x): str(x) for x in range(10)}
     field_map = {
-        '6': 'linkage',
         'a': 'uniform_title',
-        'v': 'form_subdivision',
-        '8': 'field_link_and_sequence_number',
+        'd': 'date_of_treaty_signing',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'h': 'medium',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
         'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
         'r': 'key_for_music',
         's': 'version',
-        'x': 'general_subdivision',
-        'n': 'number_of_part_section_of_a_work',
-        'd': 'date_of_treaty_signing',
-        'l': 'language_of_a_work',
-        'g': 'miscellaneous_information',
-        'k': 'form_subheading',
-        'm': 'medium_of_performance_for_music',
-        'z': 'geographic_subdivision',
-        'f': 'date_of_a_work',
         't': 'title_of_a_work',
-        'p': 'name_of_part_section_of_a_work',
-        'h': 'medium',
+        'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -355,47 +355,47 @@ def heading_uniform_title(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'uniform_title': value.get('a'),
-        'form_subdivision': utils.force_list(
-            value.get('v')
+        'date_of_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
+        'date_of_a_work': value.get('f'),
+        'miscellaneous_information': utils.force_list(
+            value.get('g')
         ),
-        'arranged_statement_for_music': value.get('o'),
-        'key_for_music': value.get('r'),
-        'version': value.get('s'),
-        'general_subdivision': utils.force_list(
-            value.get('x')
+        'medium': value.get('h'),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
         ),
         'number_of_part_section_of_a_work': utils.force_list(
             value.get('n')
         ),
-        'date_of_treaty_signing': utils.force_list(
-            value.get('d')
+        'arranged_statement_for_music': value.get('o'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
-        'language_of_a_work': value.get('l'),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
+        'key_for_music': value.get('r'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
         ),
-        'form_subheading': utils.force_list(
-            value.get('k')
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
-        'medium_of_performance_for_music': utils.force_list(
-            value.get('m')
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
         ),
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
-        'date_of_a_work': value.get('f'),
-        'title_of_a_work': value.get('t'),
-        'name_of_part_section_of_a_work': utils.force_list(
-            value.get('p')
-        ),
-        'medium': value.get('h'),
-        'chronological_subdivision': utils.force_list(
-            value.get('y')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         '$ind1': key[3] if key[3] != '_' else None,
         'nonfiling_characters': indicator_map2.get(key[4], key[4]),
@@ -413,12 +413,12 @@ def heading_uniform_title(self, key, value):
 def heading_chronological_term(self, key, value):
     """Heading-Chronological Term."""
     field_map = {
-        '6': 'linkage',
         'a': 'chronological_term',
         'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
         'z': 'geographic_subdivision',
-        'x': 'general_subdivision',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -432,10 +432,12 @@ def heading_chronological_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'chronological_term': value.get('a'),
         'form_subdivision': utils.force_list(
             value.get('v')
+        ),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
@@ -443,9 +445,7 @@ def heading_chronological_term(self, key, value):
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -465,14 +465,14 @@ def heading_chronological_term(self, key, value):
 def heading_topical_term(self, key, value):
     """Heading-Topical Term."""
     field_map = {
-        '6': 'linkage',
         'a': 'topical_term_or_geographic_name_entry_element',
+        'b': 'topical_term_following_geographic_name_entry_element',
+        'g': 'miscellaneous_information',
         'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
         'z': 'geographic_subdivision',
-        'g': 'miscellaneous_information',
-        'x': 'general_subdivision',
-        'b': 'topical_term_following_geographic_name_entry_element',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -486,10 +486,16 @@ def heading_topical_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'topical_term_or_geographic_name_entry_element': value.get('a'),
+        'topical_term_following_geographic_name_entry_element': value.get('b'),
+        'miscellaneous_information': utils.force_list(
+            value.get('g')
+        ),
         'form_subdivision': utils.force_list(
             value.get('v')
+        ),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
@@ -497,13 +503,7 @@ def heading_topical_term(self, key, value):
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'topical_term_following_geographic_name_entry_element': value.get('b'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -523,13 +523,13 @@ def heading_topical_term(self, key, value):
 def heading_geographic_name(self, key, value):
     """Heading-Geographic Name."""
     field_map = {
-        '6': 'linkage',
         'a': 'geographic_name',
+        'g': 'miscellaneous_information',
         'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
         'z': 'geographic_subdivision',
-        'g': 'miscellaneous_information',
-        'x': 'general_subdivision',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -543,10 +543,15 @@ def heading_geographic_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'geographic_name': value.get('a'),
+        'miscellaneous_information': utils.force_list(
+            value.get('g')
+        ),
         'form_subdivision': utils.force_list(
             value.get('v')
+        ),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
@@ -554,12 +559,7 @@ def heading_geographic_name(self, key, value):
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
-        'miscellaneous_information': utils.force_list(
-            value.get('g')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -579,12 +579,12 @@ def heading_geographic_name(self, key, value):
 def heading_genre_form_term(self, key, value):
     """Heading-Genre/Form Term."""
     field_map = {
-        '6': 'linkage',
         'a': 'genre_form_term',
         'v': 'form_subdivision',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
         'z': 'geographic_subdivision',
-        'x': 'general_subdivision',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -598,10 +598,12 @@ def heading_genre_form_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'genre_form_term': value.get('a'),
         'form_subdivision': utils.force_list(
             value.get('v')
+        ),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
@@ -609,9 +611,7 @@ def heading_genre_form_term(self, key, value):
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -631,8 +631,8 @@ def heading_genre_form_term(self, key, value):
 def heading_medium_of_performance_term(self, key, value):
     """Heading-Medium of Performance Term."""
     field_map = {
-        '6': 'linkage',
         'a': 'medium_of_performance_term',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -646,8 +646,8 @@ def heading_medium_of_performance_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'medium_of_performance_term': value.get('a'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -667,12 +667,12 @@ def heading_medium_of_performance_term(self, key, value):
 def heading_general_subdivision(self, key, value):
     """Heading-General Subdivision."""
     field_map = {
-        '6': 'linkage',
         'v': 'form_subdivision',
-        '8': 'field_link_and_sequence_number',
-        'z': 'geographic_subdivision',
         'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -685,21 +685,21 @@ def heading_general_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'form_subdivision': utils.force_list(
             value.get('v')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
         ),
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         '$ind1': key[3] if key[3] != '_' else None,
         '$ind2': key[4] if key[4] != '_' else None,
@@ -717,12 +717,12 @@ def heading_general_subdivision(self, key, value):
 def heading_geographic_subdivision(self, key, value):
     """Heading-Geographic Subdivision."""
     field_map = {
-        '6': 'linkage',
         'v': 'form_subdivision',
-        '8': 'field_link_and_sequence_number',
-        'z': 'geographic_subdivision',
         'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -735,21 +735,21 @@ def heading_geographic_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'form_subdivision': utils.force_list(
             value.get('v')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
         ),
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         '$ind1': key[3] if key[3] != '_' else None,
         '$ind2': key[4] if key[4] != '_' else None,
@@ -767,12 +767,12 @@ def heading_geographic_subdivision(self, key, value):
 def heading_chronological_subdivision(self, key, value):
     """Heading-Chronological Subdivision."""
     field_map = {
-        '6': 'linkage',
         'v': 'form_subdivision',
-        '8': 'field_link_and_sequence_number',
-        'z': 'geographic_subdivision',
         'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -785,21 +785,21 @@ def heading_chronological_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'form_subdivision': utils.force_list(
             value.get('v')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
         ),
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         '$ind1': key[3] if key[3] != '_' else None,
         '$ind2': key[4] if key[4] != '_' else None,
@@ -817,12 +817,12 @@ def heading_chronological_subdivision(self, key, value):
 def heading_form_subdivision(self, key, value):
     """Heading-Form Subdivision."""
     field_map = {
-        '6': 'linkage',
         'v': 'form_subdivision',
-        '8': 'field_link_and_sequence_number',
-        'z': 'geographic_subdivision',
         'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -835,21 +835,21 @@ def heading_form_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
         'form_subdivision': utils.force_list(
             value.get('v')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
         ),
         'general_subdivision': utils.force_list(
             value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         '$ind1': key[3] if key[3] != '_' else None,
         '$ind2': key[4] if key[4] != '_' else None,

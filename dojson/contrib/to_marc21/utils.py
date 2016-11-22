@@ -73,7 +73,8 @@ def dumps_etree(records, xslt_filename=None, prefix=None):
                         datafield.attrib['ind2'] = df[4]
 
                         if isinstance(s, GroupableOrderedDict):
-                            items = s.iteritems(with_order=False, repeated=True)
+                            items = s.iteritems(
+                                with_order=False, repeated=True)
                         elif isinstance(s, dict):
                             items = iteritems(s)
                         else:

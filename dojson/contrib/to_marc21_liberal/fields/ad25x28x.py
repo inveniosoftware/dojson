@@ -19,30 +19,31 @@ from ..model import to_marc21_liberal_authority
 @utils.filter_values
 def reverse_complex_see_reference_subject(self, key, value):
     """Reverse - Complex See Reference-Subject."""
+
     field_map = {
-        'field_link_and_sequence_number': '8',
         'heading_referred_to': 'a',
-        'linkage': '6',
         'explanatory_text': 'i',
         'authority_record_control_number': '0',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'a': utils.reverse_force_list(
             value.get('heading_referred_to')
         ),
-        '6': value.get('linkage'),
         'i': utils.reverse_force_list(
             value.get('explanatory_text')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),

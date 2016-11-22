@@ -20,87 +20,87 @@ def reverse_heading_personal_name(self, key, value):
     """Reverse - Heading-Personal Name."""
     indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
     field_map = {
-        'form_subheading': 'k',
-        'fuller_form_of_name': 'q',
-        'general_subdivision': 'x',
-        'medium': 'h',
-        'number_of_part_section_of_a_work': 'n',
-        'numeration': 'b',
-        'miscellaneous_information': 'g',
-        'date_of_a_work': 'f',
         'personal_name': 'a',
-        'chronological_subdivision': 'y',
-        'medium_of_performance_for_music': 'm',
-        'field_link_and_sequence_number': '8',
-        'relator_term': 'e',
-        'key_for_music': 'r',
-        'name_of_part_section_of_a_work': 'p',
-        'arranged_statement_for_music': 'o',
-        'dates_associated_with_a_name': 'd',
-        'language_of_a_work': 'l',
-        'title_of_a_work': 't',
-        'attribution_qualifier': 'j',
-        'form_subdivision': 'v',
+        'numeration': 'b',
         'titles_and_other_words_associated_with_a_name': 'c',
+        'dates_associated_with_a_name': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'attribution_qualifier': 'j',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'fuller_form_of_name': 'q',
+        'key_for_music': 'r',
         'version': 's',
-        'linkage': '6',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'q': value.get('fuller_form_of_name'),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        'h': value.get('medium'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
-        'b': value.get('numeration'),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        'f': value.get('date_of_a_work'),
         'a': value.get('personal_name'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        'r': value.get('key_for_music'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        'o': value.get('arranged_statement_for_music'),
-        'd': value.get('dates_associated_with_a_name'),
-        'l': value.get('language_of_a_work'),
-        't': value.get('title_of_a_work'),
-        'j': utils.reverse_force_list(
-            value.get('attribution_qualifier')
-        ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
+        'b': value.get('numeration'),
         'c': utils.reverse_force_list(
             value.get('titles_and_other_words_associated_with_a_name')
         ),
+        'd': value.get('dates_associated_with_a_name'),
+        'e': utils.reverse_force_list(
+            value.get('relator_term')
+        ),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
+        'j': utils.reverse_force_list(
+            value.get('attribution_qualifier')
+        ),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
+        ),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_of_a_work')
+        ),
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'q': value.get('fuller_form_of_name'),
+        'r': value.get('key_for_music'),
         's': value.get('version'),
-        '6': value.get('linkage'),
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element'), '_'),
         '$ind2': '_',
@@ -113,86 +113,86 @@ def reverse_heading_corporate_name(self, key, value):
     """Reverse - Heading-Corporate Name."""
     indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
     field_map = {
-        'form_subheading': 'k',
-        'general_subdivision': 'x',
-        'medium': 'h',
-        'number_of_part_section_meeting': 'n',
-        'subordinate_unit': 'b',
-        'miscellaneous_information': 'g',
-        'date_of_a_work': 'f',
         'corporate_name_or_jurisdiction_name_as_entry_element': 'a',
-        'chronological_subdivision': 'y',
-        'medium_of_performance_for_music': 'm',
-        'field_link_and_sequence_number': '8',
-        'relator_term': 'e',
-        'key_for_music': 'r',
-        'name_of_part_section_of_a_work': 'p',
-        'arranged_statement_for_music': 'o',
-        'date_of_meeting_or_treaty_signing': 'd',
-        'language_of_a_work': 'l',
-        'title_of_a_work': 't',
-        'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
+        'subordinate_unit': 'b',
         'location_of_meeting': 'c',
+        'date_of_meeting_or_treaty_signing': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_meeting': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
         'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
         'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        'h': value.get('medium'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
+        'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
         'b': utils.reverse_force_list(
             value.get('subordinate_unit')
-        ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        'f': value.get('date_of_a_work'),
-        'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        'r': value.get('key_for_music'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        'o': value.get('arranged_statement_for_music'),
-        'd': utils.reverse_force_list(
-            value.get('date_of_meeting_or_treaty_signing')
-        ),
-        'l': value.get('language_of_a_work'),
-        't': value.get('title_of_a_work'),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
-        ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
         ),
         'c': utils.reverse_force_list(
             value.get('location_of_meeting')
         ),
+        'd': utils.reverse_force_list(
+            value.get('date_of_meeting_or_treaty_signing')
+        ),
+        'e': utils.reverse_force_list(
+            value.get('relator_term')
+        ),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
+        ),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_meeting')
+        ),
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'r': value.get('key_for_music'),
         's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
+        ),
         '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element'), '_'),
         '$ind2': '_',
     }
@@ -204,77 +204,77 @@ def reverse_heading_meeting_name(self, key, value):
     """Reverse - Heading-Meeting Name."""
     indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
     field_map = {
-        'form_subheading': 'k',
-        'field_link_and_sequence_number': '8',
-        'subordinate_unit': 'e',
-        'name_of_part_section_of_a_work': 'p',
-        'medium': 'h',
-        'number_of_part_section_meeting': 'n',
-        'version': 's',
-        'date_of_meeting': 'd',
-        'geographic_subdivision': 'z',
-        'language_of_a_work': 'l',
-        'date_of_a_work': 'f',
-        'title_of_a_work': 't',
-        'relator_term': 'j',
-        'name_of_meeting_following_jurisdiction_name_entry_element': 'q',
         'meeting_name_or_jurisdiction_name_as_entry_element': 'a',
-        'chronological_subdivision': 'y',
         'location_of_meeting': 'c',
-        'form_subdivision': 'v',
+        'date_of_meeting': 'd',
+        'subordinate_unit': 'e',
+        'date_of_a_work': 'f',
         'miscellaneous_information': 'g',
-        'linkage': '6',
+        'medium': 'h',
+        'relator_term': 'j',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'number_of_part_section_meeting': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'name_of_meeting_following_jurisdiction_name_entry_element': 'q',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
         'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
+        'c': utils.reverse_force_list(
+            value.get('location_of_meeting')
+        ),
+        'd': value.get('date_of_meeting'),
+        'e': utils.reverse_force_list(
+            value.get('subordinate_unit')
+        ),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
+        'j': utils.reverse_force_list(
+            value.get('relator_term')
+        ),
         'k': utils.reverse_force_list(
             value.get('form_subheading')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'e': utils.reverse_force_list(
-            value.get('subordinate_unit')
+        'l': value.get('language_of_a_work'),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_meeting')
         ),
         'p': utils.reverse_force_list(
             value.get('name_of_part_section_of_a_work')
         ),
-        'h': value.get('medium'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
-        's': value.get('version'),
-        'd': value.get('date_of_meeting'),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
-        ),
-        'l': value.get('language_of_a_work'),
-        'f': value.get('date_of_a_work'),
-        't': value.get('title_of_a_work'),
-        'j': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
         'q': value.get('name_of_meeting_following_jurisdiction_name_entry_element'),
-        'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'c': utils.reverse_force_list(
-            value.get('location_of_meeting')
-        ),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
         'v': utils.reverse_force_list(
             value.get('form_subdivision')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        '6': value.get('linkage'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element'), '_'),
         '$ind2': '_',
@@ -287,73 +287,73 @@ def reverse_heading_uniform_title(self, key, value):
     """Reverse - Heading-Uniform Title."""
     indicator_map2 = {str(x): str(x) for x in range(10)}
     field_map = {
-        'form_subheading': 'k',
-        'field_link_and_sequence_number': '8',
-        'name_of_part_section_of_a_work': 'p',
+        'uniform_title': 'a',
+        'date_of_treaty_signing': 'd',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
         'medium': 'h',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
         'number_of_part_section_of_a_work': 'n',
         'arranged_statement_for_music': 'o',
-        'version': 's',
-        'date_of_treaty_signing': 'd',
+        'name_of_part_section_of_a_work': 'p',
         'key_for_music': 'r',
-        'language_of_a_work': 'l',
-        'date_of_a_work': 'f',
+        'version': 's',
         'title_of_a_work': 't',
-        'geographic_subdivision': 'z',
-        'uniform_title': 'a',
-        'chronological_subdivision': 'y',
-        'medium_of_performance_for_music': 'm',
         'form_subdivision': 'v',
-        'miscellaneous_information': 'g',
-        'linkage': '6',
         'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('uniform_title'),
+        'd': utils.reverse_force_list(
+            value.get('date_of_treaty_signing')
+        ),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
         'k': utils.reverse_force_list(
             value.get('form_subheading')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
         ),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        'h': value.get('medium'),
         'n': utils.reverse_force_list(
             value.get('number_of_part_section_of_a_work')
         ),
         'o': value.get('arranged_statement_for_music'),
-        's': value.get('version'),
-        'd': utils.reverse_force_list(
-            value.get('date_of_treaty_signing')
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
         ),
         'r': value.get('key_for_music'),
-        'l': value.get('language_of_a_work'),
-        'f': value.get('date_of_a_work'),
+        's': value.get('version'),
         't': value.get('title_of_a_work'),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
-        ),
-        'a': value.get('uniform_title'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
         'v': utils.reverse_force_list(
             value.get('form_subdivision')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        '6': value.get('linkage'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), '_'),
@@ -365,35 +365,35 @@ def reverse_heading_uniform_title(self, key, value):
 def reverse_heading_chronological_term(self, key, value):
     """Reverse - Heading-Chronological Term."""
     field_map = {
-        'field_link_and_sequence_number': '8',
-        'general_subdivision': 'x',
         'chronological_term': 'a',
-        'chronological_subdivision': 'y',
         'form_subdivision': 'v',
-        'linkage': '6',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'a': value.get('chronological_term'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
         ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
-        'a': value.get('chronological_term'),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '6': value.get('linkage'),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -405,41 +405,41 @@ def reverse_heading_chronological_term(self, key, value):
 def reverse_heading_topical_term(self, key, value):
     """Reverse - Heading-Topical Term."""
     field_map = {
-        'chronological_subdivision': 'y',
-        'field_link_and_sequence_number': '8',
-        'general_subdivision': 'x',
         'topical_term_or_geographic_name_entry_element': 'a',
         'topical_term_following_geographic_name_entry_element': 'b',
-        'form_subdivision': 'v',
         'miscellaneous_information': 'g',
-        'linkage': '6',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
+        'a': value.get('topical_term_or_geographic_name_entry_element'),
+        'b': value.get('topical_term_following_geographic_name_entry_element'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
         ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
-        'a': value.get('topical_term_or_geographic_name_entry_element'),
-        'b': value.get('topical_term_following_geographic_name_entry_element'),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        '6': value.get('linkage'),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -451,39 +451,39 @@ def reverse_heading_topical_term(self, key, value):
 def reverse_heading_geographic_name(self, key, value):
     """Reverse - Heading-Geographic Name."""
     field_map = {
-        'field_link_and_sequence_number': '8',
-        'general_subdivision': 'x',
         'geographic_name': 'a',
-        'chronological_subdivision': 'y',
-        'form_subdivision': 'v',
         'miscellaneous_information': 'g',
-        'linkage': '6',
+        'form_subdivision': 'v',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
         'a': value.get('geographic_name'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
         ),
         'v': utils.reverse_force_list(
             value.get('form_subdivision')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
         ),
-        '6': value.get('linkage'),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -495,35 +495,35 @@ def reverse_heading_geographic_name(self, key, value):
 def reverse_heading_genre_form_term(self, key, value):
     """Reverse - Heading-Genre/Form Term."""
     field_map = {
-        'field_link_and_sequence_number': '8',
-        'general_subdivision': 'x',
         'genre_form_term': 'a',
-        'chronological_subdivision': 'y',
         'form_subdivision': 'v',
-        'linkage': '6',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'a': value.get('genre_form_term'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
         ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
-        'a': value.get('genre_form_term'),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '6': value.get('linkage'),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -535,20 +535,20 @@ def reverse_heading_genre_form_term(self, key, value):
 def reverse_heading_medium_of_performance_term(self, key, value):
     """Reverse - Heading-Medium of Performance Term."""
     field_map = {
-        'field_link_and_sequence_number': '8',
-        'linkage': '6',
         'medium_of_performance_term': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('medium_of_performance_term'),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '6': value.get('linkage'),
-        'a': value.get('medium_of_performance_term'),
         '$ind1': '_',
         '$ind2': '_',
     }
@@ -559,20 +559,20 @@ def reverse_heading_medium_of_performance_term(self, key, value):
 def reverse_heading_general_subdivision(self, key, value):
     """Reverse - Heading-General Subdivision."""
     field_map = {
-        'field_link_and_sequence_number': '8',
+        'form_subdivision': 'v',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'form_subdivision': 'v',
-        'linkage': '6',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
         ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -580,12 +580,12 @@ def reverse_heading_general_subdivision(self, key, value):
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '6': value.get('linkage'),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -597,20 +597,20 @@ def reverse_heading_general_subdivision(self, key, value):
 def reverse_heading_geographic_subdivision(self, key, value):
     """Reverse - Heading-Geographic Subdivision."""
     field_map = {
-        'field_link_and_sequence_number': '8',
+        'form_subdivision': 'v',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'form_subdivision': 'v',
-        'linkage': '6',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
         ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -618,12 +618,12 @@ def reverse_heading_geographic_subdivision(self, key, value):
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '6': value.get('linkage'),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -635,20 +635,20 @@ def reverse_heading_geographic_subdivision(self, key, value):
 def reverse_heading_chronological_subdivision(self, key, value):
     """Reverse - Heading-Chronological Subdivision."""
     field_map = {
-        'field_link_and_sequence_number': '8',
+        'form_subdivision': 'v',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'form_subdivision': 'v',
-        'linkage': '6',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
         ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -656,12 +656,12 @@ def reverse_heading_chronological_subdivision(self, key, value):
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '6': value.get('linkage'),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',
@@ -673,20 +673,20 @@ def reverse_heading_chronological_subdivision(self, key, value):
 def reverse_heading_form_subdivision(self, key, value):
     """Reverse - Heading-Form Subdivision."""
     field_map = {
-        'field_link_and_sequence_number': '8',
+        'form_subdivision': 'v',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'form_subdivision': 'v',
-        'linkage': '6',
         'geographic_subdivision': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
         ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
@@ -694,12 +694,12 @@ def reverse_heading_form_subdivision(self, key, value):
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '6': value.get('linkage'),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': '_',
         '$ind2': '_',

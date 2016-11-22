@@ -20,34 +20,34 @@ from ..model import marc21_authority
 def content_type(self, key, value):
     """Content Type."""
     field_map = {
-        '0': 'authority_record_control_number_or_standard_number',
         'a': 'content_type_term',
-        '8': 'field_link_and_sequence_number',
         'b': 'content_type_code',
-        '6': 'linkage',
+        '0': 'authority_record_control_number_or_standard_number',
         '2': 'source',
         '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
         'content_type_term': utils.force_list(
             value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
         ),
         'content_type_code': utils.force_list(
             value.get('b')
         ),
-        'linkage': value.get('6'),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
         'source': value.get('2'),
         'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -57,34 +57,34 @@ def content_type(self, key, value):
 def format_of_notated_music(self, key, value):
     """Format of Notated Music."""
     field_map = {
-        '0': 'authority_record_control_number_or_standard_number',
         'a': 'format_of_notated_music_term',
-        '8': 'field_link_and_sequence_number',
         'b': 'format_of_notated_music_code',
-        '6': 'linkage',
+        '0': 'authority_record_control_number_or_standard_number',
         '2': 'source_of_term',
         '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
         'format_of_notated_music_term': utils.force_list(
             value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
         ),
         'format_of_notated_music_code': utils.force_list(
             value.get('b')
         ),
-        'linkage': value.get('6'),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
         'source_of_term': value.get('2'),
         'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -94,10 +94,10 @@ def format_of_notated_music(self, key, value):
 def complex_see_also_reference_subject(self, key, value):
     """Complex See Also Reference-Subject."""
     field_map = {
-        'i': 'explanatory_text',
-        '6': 'linkage',
-        '0': 'authority_record_control_number',
         'a': 'heading_referred_to',
+        'i': 'explanatory_text',
+        '0': 'authority_record_control_number',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -105,16 +105,16 @@ def complex_see_also_reference_subject(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'explanatory_text': utils.force_list(
-            value.get('i')
-        ),
-        'linkage': value.get('6'),
-        'authority_record_control_number': utils.force_list(
-            value.get('0')
-        ),
         'heading_referred_to': utils.force_list(
             value.get('a')
         ),
+        'explanatory_text': utils.force_list(
+            value.get('i')
+        ),
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -127,52 +127,52 @@ def complex_see_also_reference_subject(self, key, value):
 def other_attributes_of_person_or_corporate_body(self, key, value):
     """Other Attributes of Person or Corporate Body."""
     field_map = {
-        '6': 'linkage',
-        'v': 'source_of_information',
-        't': 'end_period',
-        'c': 'other_designation',
-        'b': 'type_of_jurisdiction',
-        's': 'start_period',
-        '0': 'authority_record_control_number_or_standard_number',
         'a': 'type_of_corporate_body',
-        '8': 'field_link_and_sequence_number',
-        'u': 'uniform_resource_identifier',
+        'b': 'type_of_jurisdiction',
+        'c': 'other_designation',
         'd': 'title_of_person',
+        's': 'start_period',
+        't': 'end_period',
+        'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        '0': 'authority_record_control_number_or_standard_number',
         '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'linkage': value.get('6'),
-        'source_of_information': utils.force_list(
-            value.get('v')
-        ),
-        'end_period': value.get('t'),
-        'other_designation': utils.force_list(
-            value.get('c')
+        'type_of_corporate_body': utils.force_list(
+            value.get('a')
         ),
         'type_of_jurisdiction': utils.force_list(
             value.get('b')
         ),
-        'start_period': value.get('s'),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
-        'type_of_corporate_body': utils.force_list(
-            value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
+        'other_designation': utils.force_list(
+            value.get('c')
         ),
         'title_of_person': utils.force_list(
             value.get('d')
         ),
+        'start_period': value.get('s'),
+        'end_period': value.get('t'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
+        ),
+        'source_of_information': utils.force_list(
+            value.get('v')
+        ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
         'source': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -182,55 +182,55 @@ def other_attributes_of_person_or_corporate_body(self, key, value):
 def associated_place(self, key, value):
     """Associated Place."""
     field_map = {
-        'f': 'other_associated_place',
-        '0': 'record_control_number',
-        's': 'start_period',
-        'u': 'uniform_resource_identifier',
-        'b': 'place_of_death',
-        '6': 'linkage',
-        't': 'end_period',
-        'e': 'place_of_residence_headquarters',
-        'g': 'place_of_origin_of_work',
         'a': 'place_of_birth',
-        '8': 'field_link_and_sequence_number',
+        'b': 'place_of_death',
         'c': 'associated_country',
-        '2': 'source_of_term',
+        'e': 'place_of_residence_headquarters',
+        'f': 'other_associated_place',
+        'g': 'place_of_origin_of_work',
+        's': 'start_period',
+        't': 'end_period',
+        'u': 'uniform_resource_identifier',
         'v': 'source_of_information',
+        '0': 'record_control_number',
+        '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'other_associated_place': utils.force_list(
-            value.get('f')
-        ),
-        'record_control_number': utils.force_list(
-            value.get('0')
-        ),
-        'start_period': value.get('s'),
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
+        'place_of_birth': value.get('a'),
         'place_of_death': value.get('b'),
-        'linkage': value.get('6'),
-        'end_period': value.get('t'),
+        'associated_country': utils.force_list(
+            value.get('c')
+        ),
         'place_of_residence_headquarters': utils.force_list(
             value.get('e')
+        ),
+        'other_associated_place': utils.force_list(
+            value.get('f')
         ),
         'place_of_origin_of_work': utils.force_list(
             value.get('g')
         ),
-        'place_of_birth': value.get('a'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
+        'start_period': value.get('s'),
+        'end_period': value.get('t'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
-        'associated_country': utils.force_list(
-            value.get('c')
-        ),
-        'source_of_term': value.get('2'),
         'source_of_information': utils.force_list(
             value.get('v')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
     }
 
@@ -241,54 +241,54 @@ def associated_place(self, key, value):
 def address(self, key, value):
     """Address."""
     field_map = {
-        '6': 'linkage',
-        'v': 'source_of_information',
-        'm': 'electronic_mail_address',
-        't': 'end_period',
-        'u': 'uniform_resource_identifier',
-        'b': 'city',
-        's': 'start_period',
         'a': 'address',
-        'e': 'postal_code',
-        'z': 'public_note',
-        '8': 'field_link_and_sequence_number',
-        '4': 'relator_code',
+        'b': 'city',
         'c': 'intermediate_jurisdiction',
         'd': 'country',
+        'e': 'postal_code',
+        'm': 'electronic_mail_address',
+        's': 'start_period',
+        't': 'end_period',
+        'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        'z': 'public_note',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'linkage': value.get('6'),
-        'source_of_information': utils.force_list(
-            value.get('v')
+        'address': utils.force_list(
+            value.get('a')
         ),
+        'city': value.get('b'),
+        'intermediate_jurisdiction': value.get('c'),
+        'country': value.get('d'),
+        'postal_code': value.get('e'),
         'electronic_mail_address': utils.force_list(
             value.get('m')
         ),
+        'start_period': value.get('s'),
         'end_period': value.get('t'),
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
-        'city': value.get('b'),
-        'start_period': value.get('s'),
-        'address': utils.force_list(
-            value.get('a')
+        'source_of_information': utils.force_list(
+            value.get('v')
         ),
-        'postal_code': value.get('e'),
         'public_note': utils.force_list(
             value.get('z')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
         ),
         'relator_code': utils.force_list(
             value.get('4')
         ),
-        'intermediate_jurisdiction': value.get('c'),
-        'country': value.get('d'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -298,40 +298,40 @@ def address(self, key, value):
 def field_of_activity(self, key, value):
     """Field of Activity."""
     field_map = {
-        'u': 'uniform_resource_identifier',
-        '0': 'record_control_number',
         'a': 'field_of_activity',
-        'v': 'source_of_information',
         's': 'start_period',
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         't': 'end_period',
+        'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        '0': 'record_control_number',
         '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
-        'record_control_number': utils.force_list(
-            value.get('0')
-        ),
         'field_of_activity': utils.force_list(
             value.get('a')
+        ),
+        'start_period': value.get('s'),
+        'end_period': value.get('t'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
         'source_of_information': utils.force_list(
             value.get('v')
         ),
-        'start_period': value.get('s'),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'linkage': value.get('6'),
-        'end_period': value.get('t'),
-        'source_of_term': value.get('2'),
     }
 
 
@@ -341,40 +341,40 @@ def field_of_activity(self, key, value):
 def associated_group(self, key, value):
     """Associated Group."""
     field_map = {
-        'u': 'uniform_resource_identifier',
-        '0': 'record_control_number',
         'a': 'associated_group',
-        'v': 'source_of_information',
         's': 'start_period',
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         't': 'end_period',
+        'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        '0': 'record_control_number',
         '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
-        'record_control_number': utils.force_list(
-            value.get('0')
-        ),
         'associated_group': utils.force_list(
             value.get('a')
+        ),
+        'start_period': value.get('s'),
+        'end_period': value.get('t'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
         'source_of_information': utils.force_list(
             value.get('v')
         ),
-        'start_period': value.get('s'),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'linkage': value.get('6'),
-        'end_period': value.get('t'),
-        'source_of_term': value.get('2'),
     }
 
 
@@ -384,40 +384,40 @@ def associated_group(self, key, value):
 def occupation(self, key, value):
     """Occupation."""
     field_map = {
-        'u': 'uniform_resource_identifier',
-        '0': 'record_control_number',
         'a': 'occupation',
-        'v': 'source_of_information',
         's': 'start_period',
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         't': 'end_period',
+        'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        '0': 'record_control_number',
         '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
-        'record_control_number': utils.force_list(
-            value.get('0')
-        ),
         'occupation': utils.force_list(
             value.get('a')
+        ),
+        'start_period': value.get('s'),
+        'end_period': value.get('t'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
         'source_of_information': utils.force_list(
             value.get('v')
         ),
-        'start_period': value.get('s'),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'linkage': value.get('6'),
-        'end_period': value.get('t'),
-        'source_of_term': value.get('2'),
     }
 
 
@@ -427,36 +427,36 @@ def occupation(self, key, value):
 def gender(self, key, value):
     """Gender."""
     field_map = {
-        'u': 'uniform_resource_identifier',
         'a': 'gender',
-        'v': 'source_of_information',
         's': 'start_period',
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         't': 'end_period',
+        'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
         '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
         'gender': utils.force_list(
             value.get('a')
+        ),
+        'start_period': value.get('s'),
+        'end_period': value.get('t'),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
         'source_of_information': utils.force_list(
             value.get('v')
         ),
-        'start_period': value.get('s'),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'linkage': value.get('6'),
-        'end_period': value.get('t'),
-        'source_of_term': value.get('2'),
     }
 
 
@@ -466,48 +466,48 @@ def gender(self, key, value):
 def family_information(self, key, value):
     """Family Information."""
     field_map = {
-        't': 'end_period',
-        '0': 'record_control_number',
         'a': 'type_of_family',
-        'v': 'source_of_information',
-        's': 'start_period',
-        '8': 'field_link_and_sequence_number',
         'b': 'name_of_prominent_member',
-        '6': 'linkage',
         'c': 'hereditary_title',
+        's': 'start_period',
+        't': 'end_period',
         'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        '0': 'record_control_number',
         '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'end_period': value.get('t'),
-        'record_control_number': utils.force_list(
-            value.get('0')
-        ),
         'type_of_family': utils.force_list(
             value.get('a')
-        ),
-        'source_of_information': utils.force_list(
-            value.get('v')
-        ),
-        'start_period': value.get('s'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
         ),
         'name_of_prominent_member': utils.force_list(
             value.get('b')
         ),
-        'linkage': value.get('6'),
         'hereditary_title': utils.force_list(
             value.get('c')
         ),
+        'start_period': value.get('s'),
+        'end_period': value.get('t'),
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
+        'source_of_information': utils.force_list(
+            value.get('v')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
         'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -518,11 +518,11 @@ def associated_language(self, key, value):
     """Associated Language."""
     indicator_map2 = {"7": "Source specified in $2", "_": "MARC language code"}
     field_map = {
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         'a': 'language_code',
         'l': 'language_term',
         '2': 'source_of_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
@@ -532,15 +532,15 @@ def associated_language(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'linkage': value.get('6'),
         'language_code': utils.force_list(
             value.get('a')
         ),
         'language_term': utils.force_list(
             value.get('l')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'source_of_code': value.get('2') if key[4] == '7' else indicator_map2.get(key[4]),
     }
@@ -551,27 +551,27 @@ def associated_language(self, key, value):
 def fuller_form_of_personal_name(self, key, value):
     """Fuller Form of Personal Name."""
     field_map = {
-        'u': 'uniform_resource_identifier',
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         'q': 'fuller_form_of_personal_name',
+        'u': 'uniform_resource_identifier',
         'v': 'source_of_information',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
+        'fuller_form_of_personal_name': value.get('q'),
         'uniform_resource_identifier': utils.force_list(
             value.get('u')
         ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'linkage': value.get('6'),
-        'fuller_form_of_personal_name': value.get('q'),
         'source_of_information': utils.force_list(
             value.get('v')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
     }
 
@@ -582,10 +582,10 @@ def fuller_form_of_personal_name(self, key, value):
 def form_of_work(self, key, value):
     """Form of Work."""
     field_map = {
-        '6': 'linkage',
-        '0': 'record_control_number',
         'a': 'form_of_work',
+        '0': 'record_control_number',
         '2': 'source_of_term',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -593,14 +593,14 @@ def form_of_work(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'linkage': value.get('6'),
-        'record_control_number': utils.force_list(
-            value.get('0')
-        ),
         'form_of_work': utils.force_list(
             value.get('a')
         ),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
         'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -613,36 +613,36 @@ def form_of_work(self, key, value):
 def other_distinguishing_characteristics_of_work_or_expression(self, key, value):
     """Other Distinguishing Characteristics of Work or Expression."""
     field_map = {
-        '0': 'record_control_number',
         'a': 'other_distinguishing_characteristic',
-        'v': 'source_of_information',
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         'u': 'uniform_resource_identifier',
+        'v': 'source_of_information',
+        '0': 'record_control_number',
         '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'record_control_number': utils.force_list(
-            value.get('0')
-        ),
         'other_distinguishing_characteristic': utils.force_list(
             value.get('a')
+        ),
+        'uniform_resource_identifier': utils.force_list(
+            value.get('u')
         ),
         'source_of_information': utils.force_list(
             value.get('v')
         ),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'linkage': value.get('6'),
-        'uniform_resource_identifier': utils.force_list(
-            value.get('u')
-        ),
-        'source_of_term': value.get('2'),
     }
 
 
@@ -653,20 +653,20 @@ def medium_of_performance(self, key, value):
     """Medium of Performance."""
     indicator_map1 = {"0": "Medium of performance", "1": "Partial medium of performance", "_": "No information provided"}
     field_map = {
-        'v': 'note',
-        's': 'total_number_of_performers',
-        'b': 'soloist',
-        '6': 'linkage',
-        't': 'total_number_of_ensembles',
-        'p': 'alternative_medium_of_performance',
         'a': 'medium_of_performance',
-        'r': 'total_number_of_individuals_performing_alongside_ensembles',
-        '0': 'authority_record_control_number_or_standard_number',
-        'e': 'number_of_ensembles_of_the_same_type',
-        '8': 'field_link_and_sequence_number',
-        'n': 'number_of_performers_of_the_same_medium',
+        'b': 'soloist',
         'd': 'doubling_instrument',
+        'e': 'number_of_ensembles_of_the_same_type',
+        'n': 'number_of_performers_of_the_same_medium',
+        'p': 'alternative_medium_of_performance',
+        'r': 'total_number_of_individuals_performing_alongside_ensembles',
+        's': 'total_number_of_performers',
+        't': 'total_number_of_ensembles',
+        'v': 'note',
+        '0': 'authority_record_control_number_or_standard_number',
         '2': 'source_of_term',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
@@ -676,38 +676,38 @@ def medium_of_performance(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'note': utils.force_list(
-            value.get('v')
-        ),
-        'total_number_of_performers': value.get('s'),
-        'soloist': utils.force_list(
-            value.get('b')
-        ),
-        'linkage': value.get('6'),
-        'total_number_of_ensembles': value.get('t'),
-        'alternative_medium_of_performance': utils.force_list(
-            value.get('p')
-        ),
         'medium_of_performance': utils.force_list(
             value.get('a')
         ),
-        'total_number_of_individuals_performing_alongside_ensembles': value.get('r'),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
-        'number_of_ensembles_of_the_same_type': utils.force_list(
-            value.get('e')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'number_of_performers_of_the_same_medium': utils.force_list(
-            value.get('n')
+        'soloist': utils.force_list(
+            value.get('b')
         ),
         'doubling_instrument': utils.force_list(
             value.get('d')
         ),
+        'number_of_ensembles_of_the_same_type': utils.force_list(
+            value.get('e')
+        ),
+        'number_of_performers_of_the_same_medium': utils.force_list(
+            value.get('n')
+        ),
+        'alternative_medium_of_performance': utils.force_list(
+            value.get('p')
+        ),
+        'total_number_of_individuals_performing_alongside_ensembles': value.get('r'),
+        'total_number_of_performers': value.get('s'),
+        'total_number_of_ensembles': value.get('t'),
+        'note': utils.force_list(
+            value.get('v')
+        ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
         'source_of_term': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
         'display_constant_controller': indicator_map1.get(key[3]),
     }
 
@@ -718,36 +718,36 @@ def medium_of_performance(self, key, value):
 def numeric_designation_of_musical_work(self, key, value):
     """Numeric Designation of Musical Work."""
     field_map = {
-        'e': 'publisher_associated_with_opus_number',
         'a': 'serial_number',
-        '8': 'field_link_and_sequence_number',
         'b': 'opus_number',
-        '6': 'linkage',
         'c': 'thematic_index_number',
         'd': 'thematic_index_code',
+        'e': 'publisher_associated_with_opus_number',
         '2': 'source',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'publisher_associated_with_opus_number': value.get('e'),
         'serial_number': utils.force_list(
             value.get('a')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
         ),
         'opus_number': utils.force_list(
             value.get('b')
         ),
-        'linkage': value.get('6'),
         'thematic_index_number': utils.force_list(
             value.get('c')
         ),
         'thematic_index_code': value.get('d'),
+        'publisher_associated_with_opus_number': value.get('e'),
         'source': value.get('2'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -756,20 +756,20 @@ def numeric_designation_of_musical_work(self, key, value):
 def key(self, key, value):
     """Key."""
     field_map = {
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
         'a': 'key',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
+        'key': value.get('a'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'linkage': value.get('6'),
-        'key': value.get('a'),
     }
 
 
@@ -779,38 +779,38 @@ def key(self, key, value):
 def audience_characteristics(self, key, value):
     """Audience Characteristics."""
     field_map = {
+        'a': 'audience_term',
+        'b': 'audience_code',
+        'm': 'demographic_group_term',
         'n': 'demographic_group_code',
         '0': 'authority_record_control_number_or_standard_number',
-        'a': 'audience_term',
-        'm': 'demographic_group_term',
-        '8': 'field_link_and_sequence_number',
-        'b': 'audience_code',
-        '6': 'linkage',
         '2': 'source',
         '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'demographic_group_code': value.get('n'),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
         'audience_term': utils.force_list(
             value.get('a')
-        ),
-        'demographic_group_term': value.get('m'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
         ),
         'audience_code': utils.force_list(
             value.get('b')
         ),
-        'linkage': value.get('6'),
+        'demographic_group_term': value.get('m'),
+        'demographic_group_code': value.get('n'),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
         'source': value.get('2'),
         'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -820,38 +820,38 @@ def audience_characteristics(self, key, value):
 def creator_contributor_characteristics(self, key, value):
     """Creator/Contributor Characteristics."""
     field_map = {
+        'a': 'creator_contributor_term',
+        'b': 'creator_contributor_code',
+        'm': 'demographic_group_term',
         'n': 'demographic_group_code',
         '0': 'authority_record_control_number_or_standard_number',
-        'a': 'creator_contributor_term',
-        'm': 'demographic_group_term',
-        '8': 'field_link_and_sequence_number',
-        'b': 'creator_contributor_code',
-        '6': 'linkage',
         '2': 'source',
         '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'demographic_group_code': value.get('n'),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
         'creator_contributor_term': utils.force_list(
             value.get('a')
-        ),
-        'demographic_group_term': value.get('m'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
         ),
         'creator_contributor_code': utils.force_list(
             value.get('b')
         ),
-        'linkage': value.get('6'),
+        'demographic_group_term': value.get('m'),
+        'demographic_group_code': value.get('n'),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
         'source': value.get('2'),
         'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }
 
 
@@ -862,12 +862,12 @@ def time_period_of_creation(self, key, value):
     """Time Period of Creation."""
     indicator_map1 = {"1": "Creation of work", "2": "Creation of aggregate work", "_": "No information provided"}
     field_map = {
-        '0': 'authority_record_control_number_or_standard_number',
         'a': 'time_period_of_creation_term',
-        '8': 'field_link_and_sequence_number',
-        '6': 'linkage',
+        '0': 'authority_record_control_number_or_standard_number',
         '2': 'source_of_term',
         '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
@@ -877,17 +877,17 @@ def time_period_of_creation(self, key, value):
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
         'time_period_of_creation_term': utils.force_list(
             value.get('a')
         ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
+        'source_of_term': value.get('2'),
+        'materials_specified': value.get('3'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
-        'linkage': value.get('6'),
-        'source_of_term': value.get('2'),
-        'materials_specified': value.get('3'),
         'type_of_time_period': indicator_map1.get(key[3]),
     }

@@ -20,103 +20,104 @@ from ..model import to_marc21_liberal_authority
 def reverse_see_from_tracing_personal_name(self, key, value):
     """Reverse - See From Tracing-Personal Name."""
     indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
+
     field_map = {
-        'title_of_a_work': 't',
-        'institution_to_which_field_applies': '5',
-        'general_subdivision': 'x',
-        'date_of_a_work': 'f',
-        'chronological_subdivision': 'y',
-        'relationship_information': 'i',
-        'control_subfield': 'w',
-        'relator_term': 'e',
-        'fuller_form_of_name': 'q',
-        'number_of_part_section_of_a_work': 'n',
-        'form_subdivision': 'v',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
-        'numeration': 'b',
-        'version': 's',
-        'key_for_music': 'r',
-        'form_subheading': 'k',
-        'medium': 'h',
         'personal_name': 'a',
-        'dates_associated_with_a_name': 'd',
+        'numeration': 'b',
         'titles_and_other_words_associated_with_a_name': 'c',
-        'attribution_qualifier': 'j',
-        'name_of_part_section_of_a_work': 'p',
-        'language_of_a_work': 'l',
-        'geographic_subdivision': 'z',
-        'linkage': '6',
+        'dates_associated_with_a_name': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
         'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'attribution_qualifier': 'j',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
         'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
         'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'fuller_form_of_name': 'q',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_personal_name_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        't': value.get('title_of_a_work'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'a': value.get('personal_name'),
+        'b': value.get('numeration'),
+        'c': utils.reverse_force_list(
+            value.get('titles_and_other_words_associated_with_a_name')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        'f': value.get('date_of_a_work'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'w': value.get('control_subfield'),
+        'd': value.get('dates_associated_with_a_name'),
         'e': utils.reverse_force_list(
             value.get('relator_term')
         ),
-        'q': value.get('fuller_form_of_name'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_of_a_work')
-        ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'b': value.get('numeration'),
-        's': value.get('version'),
-        'r': value.get('key_for_music'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
         ),
         'h': value.get('medium'),
-        'a': value.get('personal_name'),
-        'd': value.get('dates_associated_with_a_name'),
-        'c': utils.reverse_force_list(
-            value.get('titles_and_other_words_associated_with_a_name')
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
         ),
         'j': utils.reverse_force_list(
             value.get('attribution_qualifier')
         ),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
         ),
         'l': value.get('language_of_a_work'),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
-        ),
-        '6': value.get('linkage'),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
         'm': utils.reverse_force_list(
             value.get('medium_of_performance_for_music')
         ),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_of_a_work')
+        ),
         'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'q': value.get('fuller_form_of_name'),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
+        ),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('type_of_personal_name_element'), value.get('type_of_personal_name_element', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -134,101 +135,102 @@ def reverse_see_from_tracing_personal_name(self, key, value):
 def reverse_see_from_tracing_corporate_name(self, key, value):
     """Reverse - See From Tracing-Corporate Name."""
     indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+
     field_map = {
-        'title_of_a_work': 't',
-        'institution_to_which_field_applies': '5',
-        'general_subdivision': 'x',
-        'date_of_a_work': 'f',
-        'relationship_information': 'i',
-        'control_subfield': 'w',
-        'relator_term': 'e',
-        'number_of_part_section_meeting': 'n',
-        'chronological_subdivision': 'y',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
-        'subordinate_unit': 'b',
-        'version': 's',
-        'key_for_music': 'r',
-        'form_subheading': 'k',
-        'medium': 'h',
         'corporate_name_or_jurisdiction_name_as_entry_element': 'a',
-        'date_of_meeting_or_treaty_signing': 'd',
+        'subordinate_unit': 'b',
         'location_of_meeting': 'c',
-        'form_subdivision': 'v',
-        'name_of_part_section_of_a_work': 'p',
-        'language_of_a_work': 'l',
-        'geographic_subdivision': 'z',
-        'linkage': '6',
+        'date_of_meeting_or_treaty_signing': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
         'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
         'medium_of_performance_for_music': 'm',
+        'number_of_part_section_meeting': 'n',
         'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_corporate_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        't': value.get('title_of_a_work'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        'f': value.get('date_of_a_work'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'w': value.get('control_subfield'),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
+        'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
         'b': utils.reverse_force_list(
             value.get('subordinate_unit')
-        ),
-        's': value.get('version'),
-        'r': value.get('key_for_music'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'h': value.get('medium'),
-        'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
-        'd': utils.reverse_force_list(
-            value.get('date_of_meeting_or_treaty_signing')
         ),
         'c': utils.reverse_force_list(
             value.get('location_of_meeting')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        'd': utils.reverse_force_list(
+            value.get('date_of_meeting_or_treaty_signing')
         ),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
+        'e': utils.reverse_force_list(
+            value.get('relator_term')
         ),
-        'l': value.get('language_of_a_work'),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
-        ),
-        '6': value.get('linkage'),
+        'f': value.get('date_of_a_work'),
         'g': utils.reverse_force_list(
             value.get('miscellaneous_information')
         ),
+        'h': value.get('medium'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
         'm': utils.reverse_force_list(
             value.get('medium_of_performance_for_music')
         ),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_meeting')
+        ),
         'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
+        ),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element'), value.get('type_of_corporate_name_entry_element', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -246,93 +248,94 @@ def reverse_see_from_tracing_corporate_name(self, key, value):
 def reverse_see_from_tracing_meeting_name(self, key, value):
     """Reverse - See From Tracing-Meeting Name."""
     indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
+
     field_map = {
-        'institution_to_which_field_applies': '5',
-        'general_subdivision': 'x',
-        'date_of_a_work': 'f',
-        'chronological_subdivision': 'y',
-        'relationship_information': 'i',
-        'control_subfield': 'w',
-        'subordinate_unit': 'e',
-        'name_of_meeting_following_jurisdiction_name_entry_element': 'q',
-        'date_of_meeting': 'd',
-        'number_of_part_section_meeting': 'n',
-        'form_subdivision': 'v',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
-        'version': 's',
-        'form_subheading': 'k',
-        'medium': 'h',
         'meeting_name_or_jurisdiction_name_as_entry_element': 'a',
-        'title_of_a_work': 't',
         'location_of_meeting': 'c',
-        'relator_term': 'j',
-        'name_of_part_section_of_a_work': 'p',
-        'geographic_subdivision': 'z',
-        'linkage': '6',
+        'date_of_meeting': 'd',
+        'subordinate_unit': 'e',
+        'date_of_a_work': 'f',
         'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'relator_term': 'j',
+        'form_subheading': 'k',
         'language_of_a_work': 'l',
+        'number_of_part_section_meeting': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'name_of_meeting_following_jurisdiction_name_entry_element': 'q',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_meeting_name_entry_element', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
+        'c': utils.reverse_force_list(
+            value.get('location_of_meeting')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        'f': value.get('date_of_a_work'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'w': value.get('control_subfield'),
+        'd': value.get('date_of_meeting'),
         'e': utils.reverse_force_list(
             value.get('subordinate_unit')
         ),
-        'q': value.get('name_of_meeting_following_jurisdiction_name_entry_element'),
-        'd': value.get('date_of_meeting'),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        's': value.get('version'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
         ),
         'h': value.get('medium'),
-        'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
-        't': value.get('title_of_a_work'),
-        'c': utils.reverse_force_list(
-            value.get('location_of_meeting')
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
         ),
         'j': utils.reverse_force_list(
             value.get('relator_term')
         ),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_meeting')
+        ),
         'p': utils.reverse_force_list(
             value.get('name_of_part_section_of_a_work')
+        ),
+        'q': value.get('name_of_meeting_following_jurisdiction_name_entry_element'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
         ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        '6': value.get('linkage'),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
         ),
-        'l': value.get('language_of_a_work'),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element'), value.get('type_of_meeting_name_entry_element', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -350,89 +353,90 @@ def reverse_see_from_tracing_meeting_name(self, key, value):
 def reverse_see_from_tracing_uniform_title(self, key, value):
     """Reverse - See From Tracing-Uniform Title."""
     indicator_map2 = {str(x): str(x) for x in range(10)}
+
     field_map = {
-        'institution_to_which_field_applies': '5',
-        'general_subdivision': 'x',
-        'date_of_a_work': 'f',
-        'relationship_information': 'i',
-        'control_subfield': 'w',
-        'date_of_treaty_signing': 'd',
-        'number_of_part_section_of_a_work': 'n',
-        'chronological_subdivision': 'y',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
-        'version': 's',
-        'key_for_music': 'r',
-        'form_subheading': 'k',
-        'medium': 'h',
         'uniform_title': 'a',
+        'date_of_treaty_signing': 'd',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
         'title_of_a_work': 't',
         'form_subdivision': 'v',
-        'name_of_part_section_of_a_work': 'p',
-        'language_of_a_work': 'l',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
-        'miscellaneous_information': 'g',
-        'medium_of_performance_for_music': 'm',
-        'arranged_statement_for_music': 'o',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'nonfiling_characters'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
+        'a': value.get('uniform_title'),
+        'd': utils.reverse_force_list(
+            value.get('date_of_treaty_signing')
         ),
         'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
         ),
-        'w': value.get('control_subfield'),
-        'd': utils.reverse_force_list(
-            value.get('date_of_treaty_signing')
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
         ),
         'n': utils.reverse_force_list(
             value.get('number_of_part_section_of_a_work')
         ),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
         ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        's': value.get('version'),
         'r': value.get('key_for_music'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'h': value.get('medium'),
-        'a': value.get('uniform_title'),
+        's': value.get('version'),
         't': value.get('title_of_a_work'),
         'v': utils.reverse_force_list(
             value.get('form_subdivision')
         ),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
         ),
-        'l': value.get('language_of_a_work'),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
         '6': value.get('linkage'),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        'o': value.get('arranged_statement_for_music'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': indicator_map2.get(value.get('nonfiling_characters'), value.get('nonfiling_characters', '_')),
     }
@@ -449,50 +453,51 @@ def reverse_see_from_tracing_uniform_title(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_chronological_term(self, key, value):
     """Reverse - See From Tracing-Chronological Term."""
+
     field_map = {
-        'linkage': '6',
+        'chronological_term': 'a',
+        'relationship_information': 'i',
+        'form_subdivision': 'v',
         'control_subfield': 'w',
         'general_subdivision': 'x',
-        'institution_to_which_field_applies': '5',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
-        'chronological_term': 'a',
         'chronological_subdivision': 'y',
-        'relationship_information': 'i',
         'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'a': value.get('chronological_term'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
         'w': value.get('control_subfield'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'a': value.get('chronological_term'),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
-        ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
         ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -510,57 +515,58 @@ def reverse_see_from_tracing_chronological_term(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_topical_term(self, key, value):
     """Reverse - See From Tracing-Topical Term."""
+
     field_map = {
-        'institution_to_which_field_applies': '5',
-        'general_subdivision': 'x',
-        'geographic_subdivision': 'z',
         'topical_term_or_geographic_name_entry_element': 'a',
-        'chronological_subdivision': 'y',
+        'topical_term_following_geographic_name_entry_element': 'b',
+        'miscellaneous_information': 'g',
         'relationship_information': 'i',
-        'control_subfield': 'w',
-        'relationship_code': '4',
         'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'miscellaneous_information': 'g',
-        'topical_term_following_geographic_name_entry_element': 'b',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
-        ),
         'a': value.get('topical_term_or_geographic_name_entry_element'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
+        'b': value.get('topical_term_following_geographic_name_entry_element'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
         ),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
         ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
         'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
+        ),
         '4': utils.reverse_force_list(
             value.get('relationship_code')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
         ),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        'b': value.get('topical_term_following_geographic_name_entry_element'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -577,54 +583,55 @@ def reverse_see_from_tracing_topical_term(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_geographic_name(self, key, value):
     """Reverse - See From Tracing-Geographic Name."""
+
     field_map = {
-        'institution_to_which_field_applies': '5',
-        'general_subdivision': 'x',
-        'form_subdivision': 'v',
         'geographic_name': 'a',
+        'miscellaneous_information': 'g',
         'relationship_information': 'i',
-        'geographic_subdivision': 'z',
+        'form_subdivision': 'v',
         'control_subfield': 'w',
-        'relationship_code': '4',
+        'general_subdivision': 'x',
         'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'miscellaneous_information': 'g',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'a': value.get('geographic_name'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
         ),
         'v': utils.reverse_force_list(
             value.get('form_subdivision')
         ),
-        'a': value.get('geographic_name'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
-        ),
         'w': value.get('control_subfield'),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
+        ),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
-        ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -642,50 +649,51 @@ def reverse_see_from_tracing_geographic_name(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_genre_form_term(self, key, value):
     """Reverse - See From Tracing-Genre/Form Term."""
+
     field_map = {
-        'linkage': '6',
+        'genre_form_term': 'a',
+        'relationship_information': 'i',
+        'form_subdivision': 'v',
         'control_subfield': 'w',
         'general_subdivision': 'x',
-        'institution_to_which_field_applies': '5',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
-        'genre_form_term': 'a',
         'chronological_subdivision': 'y',
-        'relationship_information': 'i',
         'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'a': value.get('genre_form_term'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
         'w': value.get('control_subfield'),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'a': value.get('genre_form_term'),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
-        ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
         ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -703,35 +711,36 @@ def reverse_see_from_tracing_genre_form_term(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_medium_of_performance_term(self, key, value):
     """Reverse - See From Tracing-Medium of Performance Term."""
+
     field_map = {
-        'linkage': '6',
-        'institution_to_which_field_applies': '5',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
         'medium_of_performance_term': 'a',
         'relationship_information': 'i',
         'control_subfield': 'w',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'a': value.get('medium_of_performance_term'),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
         ),
         'w': value.get('control_subfield'),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -748,48 +757,49 @@ def reverse_see_from_tracing_medium_of_performance_term(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_general_subdivision(self, key, value):
     """Reverse - See From Tracing-General Subdivision."""
+
     field_map = {
-        'linkage': '6',
+        'relationship_information': 'i',
+        'form_subdivision': 'v',
         'control_subfield': 'w',
-        'institution_to_which_field_applies': '5',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'relationship_information': 'i',
         'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
         'w': value.get('control_subfield'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -807,48 +817,49 @@ def reverse_see_from_tracing_general_subdivision(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_geographic_subdivision(self, key, value):
     """Reverse - See From Tracing-Geographic Subdivision."""
+
     field_map = {
-        'linkage': '6',
+        'relationship_information': 'i',
+        'form_subdivision': 'v',
         'control_subfield': 'w',
-        'institution_to_which_field_applies': '5',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'relationship_information': 'i',
         'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
         'w': value.get('control_subfield'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -866,48 +877,49 @@ def reverse_see_from_tracing_geographic_subdivision(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_chronological_subdivision(self, key, value):
     """Reverse - See From Tracing-Chronological Subdivision."""
+
     field_map = {
-        'linkage': '6',
+        'relationship_information': 'i',
+        'form_subdivision': 'v',
         'control_subfield': 'w',
-        'institution_to_which_field_applies': '5',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'relationship_information': 'i',
         'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
         'w': value.get('control_subfield'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -925,48 +937,49 @@ def reverse_see_from_tracing_chronological_subdivision(self, key, value):
 @utils.filter_values
 def reverse_see_from_tracing_form_subdivision(self, key, value):
     """Reverse - See From Tracing-Form Subdivision."""
+
     field_map = {
-        'linkage': '6',
+        'relationship_information': 'i',
+        'form_subdivision': 'v',
         'control_subfield': 'w',
-        'institution_to_which_field_applies': '5',
-        'relationship_code': '4',
-        'field_link_and_sequence_number': '8',
         'general_subdivision': 'x',
         'chronological_subdivision': 'y',
-        'relationship_information': 'i',
         'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
         'w': value.get('control_subfield'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'x': utils.reverse_force_list(
             value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),

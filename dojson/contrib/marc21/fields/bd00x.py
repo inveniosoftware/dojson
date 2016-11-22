@@ -32,10 +32,8 @@ def date_and_time_of_latest_transaction(self, key, value):
     return value
 
 
-@marc21.over(
-    'fixed_length_data_elements_additional_material_characteristics', '^006')
-def fixed_length_data_elements_additional_material_characteristics(
-        self, key, value):
+@marc21.over('fixed_length_data_elements_additional_material_characteristics', '^006')
+def fixed_length_data_elements_additional_material_characteristics(self, key, value):
     """Fixed-Length Data Elements-Additional Material Characteristics."""
     return value
 

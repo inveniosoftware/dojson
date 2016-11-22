@@ -20,28 +20,28 @@ from ..model import marc21_authority
 def complex_see_reference_subject(self, key, value):
     """Complex See Reference-Subject."""
     field_map = {
-        '0': 'authority_record_control_number',
-        '8': 'field_link_and_sequence_number',
         'a': 'heading_referred_to',
         'i': 'explanatory_text',
+        '0': 'authority_record_control_number',
         '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value)
 
     return {
         '__order__': tuple(order) if len(order) else None,
-        'authority_record_control_number': utils.force_list(
-            value.get('0')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
         'heading_referred_to': utils.force_list(
             value.get('a')
         ),
         'explanatory_text': utils.force_list(
             value.get('i')
         ),
+        'authority_record_control_number': utils.force_list(
+            value.get('0')
+        ),
         'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
+        ),
     }

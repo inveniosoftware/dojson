@@ -19,25 +19,26 @@ from ..model import to_marc21_liberal
 @utils.filter_values
 def reverse_general_note(self, key, value):
     """Reverse - General Note."""
+
     field_map = {
+        'general_note': 'a',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'materials_specified': '3',
-        'general_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('general_note'),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '5': value.get('institution_to_which_field_applies'),
-        '3': value.get('materials_specified'),
-        'a': value.get('general_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -54,23 +55,24 @@ def reverse_general_note(self, key, value):
 @utils.filter_values
 def reverse_with_note(self, key, value):
     """Reverse - With Note."""
+
     field_map = {
+        'with_note': 'a',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'with_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('with_note'),
+        '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '5': value.get('institution_to_which_field_applies'),
-        'a': value.get('with_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -87,34 +89,35 @@ def reverse_with_note(self, key, value):
 @utils.filter_values
 def reverse_dissertation_note(self, key, value):
     """Reverse - Dissertation Note."""
+
     field_map = {
-        'linkage': '6',
-        'year_degree_granted': 'd',
-        'name_of_granting_institution': 'c',
         'dissertation_note': 'a',
-        'field_link_and_sequence_number': '8',
         'degree_type': 'b',
-        'dissertation_identifier': 'o',
+        'name_of_granting_institution': 'c',
+        'year_degree_granted': 'd',
         'miscellaneous_information': 'g',
+        'dissertation_identifier': 'o',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': value.get('year_degree_granted'),
-        'c': value.get('name_of_granting_institution'),
         'a': value.get('dissertation_note'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'b': value.get('degree_type'),
+        'c': value.get('name_of_granting_institution'),
+        'd': value.get('year_degree_granted'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
         'o': utils.reverse_force_list(
             value.get('dissertation_identifier')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -132,23 +135,24 @@ def reverse_dissertation_note(self, key, value):
 @utils.filter_values
 def reverse_bibliography_note(self, key, value):
     """Reverse - Bibliography, Etc. Note."""
+
     field_map = {
+        'bibliography_note': 'a',
+        'number_of_references': 'b',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'number_of_references': 'b',
-        'bibliography_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('bibliography_note'),
+        'b': value.get('number_of_references'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'b': value.get('number_of_references'),
-        'a': value.get('bibliography_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -167,36 +171,37 @@ def reverse_formatted_contents_note(self, key, value):
     """Reverse - Formatted Contents Note."""
     indicator_map1 = {"Contents": "0", "Incomplete contents": "1", "No display constant generated": "8", "Partial contents": "2"}
     indicator_map2 = {"Basic": "_", "Enhanced": "0"}
+
     field_map = {
-        'linkage': '6',
+        'formatted_contents_note': 'a',
+        'miscellaneous_information': 'g',
+        'statement_of_responsibility': 'r',
         'title': 't',
         'uniform_resource_identifier': 'u',
-        'formatted_contents_note': 'a',
+        'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'statement_of_responsibility': 'r',
-        'miscellaneous_information': 'g',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'level_of_content_designation'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'a': value.get('formatted_contents_note'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'r': utils.reverse_force_list(
+            value.get('statement_of_responsibility')
+        ),
         't': utils.reverse_force_list(
             value.get('title')
         ),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
         ),
-        'a': value.get('formatted_contents_note'),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
-        ),
-        'r': utils.reverse_force_list(
-            value.get('statement_of_responsibility')
-        ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
         ),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': indicator_map2.get(value.get('level_of_content_designation'), value.get('level_of_content_designation', '_')),
@@ -215,50 +220,51 @@ def reverse_formatted_contents_note(self, key, value):
 def reverse_restrictions_on_access_note(self, key, value):
     """Reverse - Restrictions on Access Note."""
     indicator_map1 = {"No information provided": "_", "No restrictions": "0", "Restrictions apply": "1"}
+
     field_map = {
-        'linkage': '6',
-        'authorized_users': 'd',
-        'materials_specified': '3',
-        'physical_access_provisions': 'c',
-        'authorization': 'e',
-        'jurisdiction': 'b',
         'terms_governing_access': 'a',
+        'jurisdiction': 'b',
+        'physical_access_provisions': 'c',
+        'authorized_users': 'd',
+        'authorization': 'e',
         'standardized_terminology_for_access_restriction': 'f',
-        'source_of_term': '2',
-        'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
         'uniform_resource_identifier': 'u',
+        'source_of_term': '2',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['restriction', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': utils.reverse_force_list(
-            value.get('authorized_users')
+        'a': value.get('terms_governing_access'),
+        'b': utils.reverse_force_list(
+            value.get('jurisdiction')
         ),
-        '3': value.get('materials_specified'),
         'c': utils.reverse_force_list(
             value.get('physical_access_provisions')
+        ),
+        'd': utils.reverse_force_list(
+            value.get('authorized_users')
         ),
         'e': utils.reverse_force_list(
             value.get('authorization')
         ),
-        'b': utils.reverse_force_list(
-            value.get('jurisdiction')
-        ),
-        'a': value.get('terms_governing_access'),
         'f': utils.reverse_force_list(
             value.get('standardized_terminology_for_access_restriction')
         ),
-        '2': value.get('source_of_term'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': value.get('institution_to_which_field_applies'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '2': value.get('source_of_term'),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('restriction'), value.get('restriction', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -275,23 +281,24 @@ def reverse_restrictions_on_access_note(self, key, value):
 @utils.filter_values
 def reverse_scale_note_for_graphic_material(self, key, value):
     """Reverse - Scale Note for Graphic Material."""
+
     field_map = {
+        'representative_fraction_of_scale_note': 'a',
+        'remainder_of_scale_note': 'b',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'remainder_of_scale_note': 'b',
-        'representative_fraction_of_scale_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('representative_fraction_of_scale_note'),
+        'b': value.get('remainder_of_scale_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'b': value.get('remainder_of_scale_note'),
-        'a': value.get('representative_fraction_of_scale_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -308,21 +315,22 @@ def reverse_scale_note_for_graphic_material(self, key, value):
 @utils.filter_values
 def reverse_creation_production_credits_note(self, key, value):
     """Reverse - Creation/Production Credits Note."""
+
     field_map = {
+        'creation_production_credits_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'creation_production_credits_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('creation_production_credits_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('creation_production_credits_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -340,32 +348,33 @@ def reverse_creation_production_credits_note(self, key, value):
 def reverse_citation_references_note(self, key, value):
     """Reverse - Citation/References Note."""
     indicator_map1 = {"Coverage complete": "1", "Coverage is selective": "2", "Coverage unknown": "0", "Location in source given": "4", "Location in source not given": "3"}
+
     field_map = {
-        'linkage': '6',
+        'name_of_source': 'a',
+        'coverage_of_source': 'b',
+        'location_within_source': 'c',
+        'uniform_resource_identifier': 'u',
         'international_standard_serial_number': 'x',
         'materials_specified': '3',
-        'location_within_source': 'c',
-        'name_of_source': 'a',
+        'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'coverage_of_source': 'b',
-        'uniform_resource_identifier': 'u',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['coverage_location_in_source', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'x': value.get('international_standard_serial_number'),
-        '3': value.get('materials_specified'),
-        'c': value.get('location_within_source'),
         'a': value.get('name_of_source'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'b': value.get('coverage_of_source'),
+        'c': value.get('location_within_source'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        'x': value.get('international_standard_serial_number'),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('coverage_location_in_source'), value.get('coverage_location_in_source', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -384,21 +393,22 @@ def reverse_citation_references_note(self, key, value):
 def reverse_participant_or_performer_note(self, key, value):
     """Reverse - Participant or Performer Note."""
     indicator_map1 = {"Cast": "1", "No display constant generated": "0"}
+
     field_map = {
+        'participant_or_performer_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'participant_or_performer_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('participant_or_performer_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('participant_or_performer_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -415,23 +425,24 @@ def reverse_participant_or_performer_note(self, key, value):
 @utils.filter_values
 def reverse_type_of_report_and_period_covered_note(self, key, value):
     """Reverse - Type of Report and Period Covered Note."""
+
     field_map = {
+        'type_of_report': 'a',
+        'period_covered': 'b',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'period_covered': 'b',
-        'type_of_report': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('type_of_report'),
+        'b': value.get('period_covered'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'b': value.get('period_covered'),
-        'a': value.get('type_of_report'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -447,62 +458,63 @@ def reverse_type_of_report_and_period_covered_note(self, key, value):
 @utils.filter_values
 def reverse_data_quality_note(self, key, value):
     """Reverse - Data Quality Note."""
+
     field_map = {
-        'linkage': '6',
-        'vertical_positional_accuracy_value': 'j',
-        'logical_consistency_report': 'd',
-        'uniform_resource_identifier': 'u',
-        'attribute_accuracy_explanation': 'c',
-        'display_note': 'z',
-        'completeness_report': 'e',
-        'attribute_accuracy_value': 'b',
         'attribute_accuracy_report': 'a',
-        'horizontal_position_accuracy_explanation': 'h',
+        'attribute_accuracy_value': 'b',
+        'attribute_accuracy_explanation': 'c',
+        'logical_consistency_report': 'd',
+        'completeness_report': 'e',
         'horizontal_position_accuracy_report': 'f',
-        'cloud_cover': 'm',
-        'field_link_and_sequence_number': '8',
-        'vertical_positional_accuracy_explanation': 'k',
-        'vertical_positional_accuracy_report': 'i',
         'horizontal_position_accuracy_value': 'g',
+        'horizontal_position_accuracy_explanation': 'h',
+        'vertical_positional_accuracy_report': 'i',
+        'vertical_positional_accuracy_value': 'j',
+        'vertical_positional_accuracy_explanation': 'k',
+        'cloud_cover': 'm',
+        'uniform_resource_identifier': 'u',
+        'display_note': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'j': utils.reverse_force_list(
-            value.get('vertical_positional_accuracy_value')
-        ),
-        'd': value.get('logical_consistency_report'),
-        'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
+        'a': value.get('attribute_accuracy_report'),
+        'b': utils.reverse_force_list(
+            value.get('attribute_accuracy_value')
         ),
         'c': utils.reverse_force_list(
             value.get('attribute_accuracy_explanation')
         ),
-        'z': utils.reverse_force_list(
-            value.get('display_note')
-        ),
+        'd': value.get('logical_consistency_report'),
         'e': value.get('completeness_report'),
-        'b': utils.reverse_force_list(
-            value.get('attribute_accuracy_value')
+        'f': value.get('horizontal_position_accuracy_report'),
+        'g': utils.reverse_force_list(
+            value.get('horizontal_position_accuracy_value')
         ),
-        'a': value.get('attribute_accuracy_report'),
         'h': utils.reverse_force_list(
             value.get('horizontal_position_accuracy_explanation')
         ),
-        'f': value.get('horizontal_position_accuracy_report'),
-        'm': value.get('cloud_cover'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'i': value.get('vertical_positional_accuracy_report'),
+        'j': utils.reverse_force_list(
+            value.get('vertical_positional_accuracy_value')
         ),
         'k': utils.reverse_force_list(
             value.get('vertical_positional_accuracy_explanation')
         ),
-        'i': value.get('vertical_positional_accuracy_report'),
-        'g': utils.reverse_force_list(
-            value.get('horizontal_position_accuracy_value')
+        'm': value.get('cloud_cover'),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('display_note')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -520,21 +532,22 @@ def reverse_data_quality_note(self, key, value):
 @utils.filter_values
 def reverse_numbering_peculiarities_note(self, key, value):
     """Reverse - Numbering Peculiarities Note."""
+
     field_map = {
+        'numbering_peculiarities_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'numbering_peculiarities_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('numbering_peculiarities_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('numbering_peculiarities_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -552,21 +565,22 @@ def reverse_numbering_peculiarities_note(self, key, value):
 def reverse_type_of_computer_file_or_data_note(self, key, value):
     """Reverse - Type of Computer File or Data Note."""
     indicator_map1 = {"No display constant generated": "8", "Type of file": "_"}
+
     field_map = {
+        'type_of_computer_file_or_data_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'type_of_computer_file_or_data_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('type_of_computer_file_or_data_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('type_of_computer_file_or_data_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -583,42 +597,43 @@ def reverse_type_of_computer_file_or_data_note(self, key, value):
 @utils.filter_values
 def reverse_date_time_and_place_of_an_event_note(self, key, value):
     """Reverse - Date/Time and Place of an Event Note."""
+
     field_map = {
-        'linkage': '6',
+        'date_time_and_place_of_an_event_note': 'a',
         'date_of_event': 'd',
+        'other_event_information': 'o',
+        'place_of_event': 'p',
+        'record_control_number': '0',
         'source_of_term': '2',
         'materials_specified': '3',
-        'date_time_and_place_of_an_event_note': 'a',
-        'record_control_number': '0',
+        'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'place_of_event': 'p',
-        'other_event_information': 'o',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
+        'a': value.get('date_time_and_place_of_an_event_note'),
         'd': utils.reverse_force_list(
             value.get('date_of_event')
+        ),
+        'o': utils.reverse_force_list(
+            value.get('other_event_information')
+        ),
+        'p': utils.reverse_force_list(
+            value.get('place_of_event')
+        ),
+        '0': utils.reverse_force_list(
+            value.get('record_control_number')
         ),
         '2': utils.reverse_force_list(
             value.get('source_of_term')
         ),
         '3': value.get('materials_specified'),
-        'a': value.get('date_time_and_place_of_an_event_note'),
-        '0': utils.reverse_force_list(
-            value.get('record_control_number')
-        ),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
-        ),
-        'p': utils.reverse_force_list(
-            value.get('place_of_event')
-        ),
-        'o': utils.reverse_force_list(
-            value.get('other_event_information')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -637,32 +652,33 @@ def reverse_date_time_and_place_of_an_event_note(self, key, value):
 def reverse_summary(self, key, value):
     """Reverse - Summary, Etc.."""
     indicator_map1 = {"Abstract": "3", "Content advice": "4", "No display constant generated": "8", "Review": "1", "Scope and content": "2", "Subject": "0", "Summary": "_"}
+
     field_map = {
-        'linkage': '6',
+        'summary': 'a',
+        'expansion_of_summary_note': 'b',
+        'assigning_source': 'c',
+        'uniform_resource_identifier': 'u',
         'source': '2',
         'materials_specified': '3',
-        'assigning_source': 'c',
-        'summary': 'a',
+        'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'expansion_of_summary_note': 'b',
-        'uniform_resource_identifier': 'u',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '2': value.get('source'),
-        '3': value.get('materials_specified'),
-        'c': value.get('assigning_source'),
         'a': value.get('summary'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'b': value.get('expansion_of_summary_note'),
+        'c': value.get('assigning_source'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '2': value.get('source'),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -681,26 +697,27 @@ def reverse_summary(self, key, value):
 def reverse_target_audience_note(self, key, value):
     """Reverse - Target Audience Note."""
     indicator_map1 = {"Audience": "_", "Interest age level": "1", "Interest grade level": "2", "Motivation/interest level": "4", "No display constant generated": "8", "Reading grade level": "0", "Special audience characteristics": "3"}
+
     field_map = {
-        'linkage': '6',
-        'field_link_and_sequence_number': '8',
+        'target_audience_note': 'a',
         'source': 'b',
         'materials_specified': '3',
-        'target_audience_note': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'a': utils.reverse_force_list(
+            value.get('target_audience_note')
         ),
         'b': value.get('source'),
         '3': value.get('materials_specified'),
-        'a': utils.reverse_force_list(
-            value.get('target_audience_note')
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -719,21 +736,22 @@ def reverse_target_audience_note(self, key, value):
 def reverse_geographic_coverage_note(self, key, value):
     """Reverse - Geographic Coverage Note."""
     indicator_map1 = {"Geographic coverage": "_", "No display constant generated": "8"}
+
     field_map = {
+        'geographic_coverage_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'geographic_coverage_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('geographic_coverage_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('geographic_coverage_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -751,25 +769,26 @@ def reverse_geographic_coverage_note(self, key, value):
 def reverse_preferred_citation_of_described_materials_note(self, key, value):
     """Reverse - Preferred Citation of Described Materials Note."""
     indicator_map1 = {"Cite as": "_", "No display constant generated": "8"}
+
     field_map = {
-        'linkage': '6',
-        'field_link_and_sequence_number': '8',
+        'preferred_citation_of_described_materials_note': 'a',
         'source_of_schema_used': '2',
         'materials_specified': '3',
-        'preferred_citation_of_described_materials_note': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('preferred_citation_of_described_materials_note'),
+        '2': value.get('source_of_schema_used'),
+        '3': value.get('materials_specified'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '2': value.get('source_of_schema_used'),
-        '3': value.get('materials_specified'),
-        'a': value.get('preferred_citation_of_described_materials_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -786,21 +805,22 @@ def reverse_preferred_citation_of_described_materials_note(self, key, value):
 @utils.filter_values
 def reverse_supplement_note(self, key, value):
     """Reverse - Supplement Note."""
+
     field_map = {
+        'supplement_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'supplement_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('supplement_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('supplement_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -818,39 +838,40 @@ def reverse_supplement_note(self, key, value):
 def reverse_study_program_information_note(self, key, value):
     """Reverse - Study Program Information Note."""
     indicator_map1 = {"No display constant generated": "8", "Reading program": "0"}
+
     field_map = {
-        'linkage': '6',
-        'public_note': 'z',
-        'title_point_value': 'd',
-        'nonpublic_note': 'x',
-        'reading_level': 'c',
         'program_name': 'a',
-        'institution_to_which_field_applies': '5',
-        'field_link_and_sequence_number': '8',
         'interest_level': 'b',
+        'reading_level': 'c',
+        'title_point_value': 'd',
         'display_text': 'i',
+        'nonpublic_note': 'x',
+        'public_note': 'z',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'z': utils.reverse_force_list(
-            value.get('public_note')
-        ),
+        'a': value.get('program_name'),
+        'b': value.get('interest_level'),
+        'c': value.get('reading_level'),
         'd': value.get('title_point_value'),
+        'i': value.get('display_text'),
         'x': utils.reverse_force_list(
             value.get('nonpublic_note')
         ),
-        'c': value.get('reading_level'),
-        'a': value.get('program_name'),
+        'z': utils.reverse_force_list(
+            value.get('public_note')
+        ),
         '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'b': value.get('interest_level'),
-        'i': value.get('display_text'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -867,32 +888,33 @@ def reverse_study_program_information_note(self, key, value):
 @utils.filter_values
 def reverse_additional_physical_form_available_note(self, key, value):
     """Reverse - Additional Physical Form Available Note."""
+
     field_map = {
-        'linkage': '6',
-        'order_number': 'd',
-        'materials_specified': '3',
-        'availability_conditions': 'c',
         'additional_physical_form_available_note': 'a',
-        'field_link_and_sequence_number': '8',
         'availability_source': 'b',
+        'availability_conditions': 'c',
+        'order_number': 'd',
         'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': value.get('order_number'),
-        '3': value.get('materials_specified'),
-        'c': value.get('availability_conditions'),
         'a': value.get('additional_physical_form_available_note'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'b': value.get('availability_source'),
+        'c': value.get('availability_conditions'),
+        'd': value.get('order_number'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -910,50 +932,51 @@ def reverse_additional_physical_form_available_note(self, key, value):
 @utils.filter_values
 def reverse_reproduction_note(self, key, value):
     """Reverse - Reproduction Note."""
+
     field_map = {
-        'linkage': '6',
-        'date_of_reproduction': 'd',
-        'materials_specified': '3',
-        'agency_responsible_for_reproduction': 'c',
-        'physical_description_of_reproduction': 'e',
-        'place_of_reproduction': 'b',
         'type_of_reproduction': 'a',
+        'place_of_reproduction': 'b',
+        'agency_responsible_for_reproduction': 'c',
+        'date_of_reproduction': 'd',
+        'physical_description_of_reproduction': 'e',
         'series_statement_of_reproduction': 'f',
+        'dates_and_or_sequential_designation_of_issues_reproduced': 'm',
+        'note_about_reproduction': 'n',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
         'fixed_length_data_elements_of_reproduction': '7',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'note_about_reproduction': 'n',
-        'dates_and_or_sequential_designation_of_issues_reproduced': 'm',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': value.get('date_of_reproduction'),
-        '3': value.get('materials_specified'),
-        'c': utils.reverse_force_list(
-            value.get('agency_responsible_for_reproduction')
-        ),
-        'e': value.get('physical_description_of_reproduction'),
+        'a': value.get('type_of_reproduction'),
         'b': utils.reverse_force_list(
             value.get('place_of_reproduction')
         ),
-        'a': value.get('type_of_reproduction'),
+        'c': utils.reverse_force_list(
+            value.get('agency_responsible_for_reproduction')
+        ),
+        'd': value.get('date_of_reproduction'),
+        'e': value.get('physical_description_of_reproduction'),
         'f': utils.reverse_force_list(
             value.get('series_statement_of_reproduction')
         ),
-        '7': value.get('fixed_length_data_elements_of_reproduction'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'm': utils.reverse_force_list(
+            value.get('dates_and_or_sequential_designation_of_issues_reproduced')
         ),
-        '5': value.get('institution_to_which_field_applies'),
         'n': utils.reverse_force_list(
             value.get('note_about_reproduction')
         ),
-        'm': utils.reverse_force_list(
-            value.get('dates_and_or_sequential_designation_of_issues_reproduced')
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
+        '7': value.get('fixed_length_data_elements_of_reproduction'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -971,61 +994,62 @@ def reverse_reproduction_note(self, key, value):
 @utils.filter_values
 def reverse_original_version_note(self, key, value):
     """Reverse - Original Version Note."""
+
     field_map = {
-        'linkage': '6',
-        'materials_specified': '3',
-        'publication_distribution_of_original': 'c',
-        'location_of_original': 'l',
-        'international_standard_book_number': 'z',
-        'physical_description_of_original': 'e',
-        'edition_statement_of_original': 'b',
-        'other_resource_identifier': 'o',
-        'international_standard_serial_number': 'x',
         'main_entry_of_original': 'a',
+        'edition_statement_of_original': 'b',
+        'publication_distribution_of_original': 'c',
+        'physical_description_of_original': 'e',
         'series_statement_of_original': 'f',
-        'title_statement_of_original': 't',
-        'introductory_phrase': 'p',
-        'field_link_and_sequence_number': '8',
         'key_title_of_original': 'k',
-        'note_about_original': 'n',
+        'location_of_original': 'l',
         'material_specific_details': 'm',
+        'note_about_original': 'n',
+        'other_resource_identifier': 'o',
+        'introductory_phrase': 'p',
+        'title_statement_of_original': 't',
+        'international_standard_serial_number': 'x',
+        'international_standard_book_number': 'z',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '3': value.get('materials_specified'),
-        'c': value.get('publication_distribution_of_original'),
-        'l': value.get('location_of_original'),
-        'z': utils.reverse_force_list(
-            value.get('international_standard_book_number')
-        ),
-        'e': value.get('physical_description_of_original'),
-        'b': value.get('edition_statement_of_original'),
-        'o': utils.reverse_force_list(
-            value.get('other_resource_identifier')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('international_standard_serial_number')
-        ),
         'a': value.get('main_entry_of_original'),
+        'b': value.get('edition_statement_of_original'),
+        'c': value.get('publication_distribution_of_original'),
+        'e': value.get('physical_description_of_original'),
         'f': utils.reverse_force_list(
             value.get('series_statement_of_original')
-        ),
-        't': value.get('title_statement_of_original'),
-        'p': value.get('introductory_phrase'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
         ),
         'k': utils.reverse_force_list(
             value.get('key_title_of_original')
         ),
+        'l': value.get('location_of_original'),
+        'm': value.get('material_specific_details'),
         'n': utils.reverse_force_list(
             value.get('note_about_original')
         ),
-        'm': value.get('material_specific_details'),
+        'o': utils.reverse_force_list(
+            value.get('other_resource_identifier')
+        ),
+        'p': value.get('introductory_phrase'),
+        't': value.get('title_statement_of_original'),
+        'x': utils.reverse_force_list(
+            value.get('international_standard_serial_number')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('international_standard_book_number')
+        ),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1043,37 +1067,38 @@ def reverse_original_version_note(self, key, value):
 def reverse_location_of_originals_duplicates_note(self, key, value):
     """Reverse - Location of Originals/Duplicates Note."""
     indicator_map1 = {"Holder of duplicates": "2", "Holder of originals": "1"}
+
     field_map = {
-        'linkage': '6',
-        'telecommunications_address': 'd',
-        'materials_specified': '3',
-        'country': 'c',
         'custodian': 'a',
-        'field_link_and_sequence_number': '8',
         'postal_address': 'b',
+        'country': 'c',
+        'telecommunications_address': 'd',
         'repository_location_code': 'g',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['custodial_role', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': utils.reverse_force_list(
-            value.get('telecommunications_address')
-        ),
-        '3': value.get('materials_specified'),
-        'c': utils.reverse_force_list(
-            value.get('country')
-        ),
         'a': value.get('custodian'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'b': utils.reverse_force_list(
             value.get('postal_address')
         ),
+        'c': utils.reverse_force_list(
+            value.get('country')
+        ),
+        'd': utils.reverse_force_list(
+            value.get('telecommunications_address')
+        ),
         'g': value.get('repository_location_code'),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('custodial_role'), value.get('custodial_role', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1090,48 +1115,49 @@ def reverse_location_of_originals_duplicates_note(self, key, value):
 @utils.filter_values
 def reverse_funding_information_note(self, key, value):
     """Reverse - Funding Information Note."""
+
     field_map = {
-        'linkage': '6',
-        'work_unit_number': 'h',
-        'undifferentiated_number': 'd',
-        'project_number': 'f',
-        'grant_number': 'c',
         'text_of_note': 'a',
-        'field_link_and_sequence_number': '8',
-        'program_element_number': 'e',
         'contract_number': 'b',
+        'grant_number': 'c',
+        'undifferentiated_number': 'd',
+        'program_element_number': 'e',
+        'project_number': 'f',
         'task_number': 'g',
+        'work_unit_number': 'h',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'h': utils.reverse_force_list(
-            value.get('work_unit_number')
-        ),
-        'd': utils.reverse_force_list(
-            value.get('undifferentiated_number')
-        ),
-        'f': utils.reverse_force_list(
-            value.get('project_number')
+        'a': value.get('text_of_note'),
+        'b': utils.reverse_force_list(
+            value.get('contract_number')
         ),
         'c': utils.reverse_force_list(
             value.get('grant_number')
         ),
-        'a': value.get('text_of_note'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'd': utils.reverse_force_list(
+            value.get('undifferentiated_number')
         ),
         'e': utils.reverse_force_list(
             value.get('program_element_number')
         ),
-        'b': utils.reverse_force_list(
-            value.get('contract_number')
+        'f': utils.reverse_force_list(
+            value.get('project_number')
         ),
         'g': utils.reverse_force_list(
             value.get('task_number')
+        ),
+        'h': utils.reverse_force_list(
+            value.get('work_unit_number')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -1149,32 +1175,33 @@ def reverse_funding_information_note(self, key, value):
 @utils.filter_values
 def reverse_system_details_note(self, key, value):
     """Reverse - System Details Note."""
+
     field_map = {
-        'linkage': '6',
-        'materials_specified': '3',
         'system_details_note': 'a',
-        'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
         'display_text': 'i',
         'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '3': value.get('materials_specified'),
         'a': value.get('system_details_note'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
         'i': value.get('display_text'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '3': value.get('materials_specified'),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -1192,34 +1219,35 @@ def reverse_system_details_note(self, key, value):
 @utils.filter_values
 def reverse_terms_governing_use_and_reproduction_note(self, key, value):
     """Reverse - Terms Governing Use and Reproduction Note."""
+
     field_map = {
-        'linkage': '6',
-        'authorized_users': 'd',
-        'materials_specified': '3',
-        'authorization': 'c',
         'terms_governing_use_and_reproduction': 'a',
         'jurisdiction': 'b',
-        'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
+        'authorization': 'c',
+        'authorized_users': 'd',
         'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': value.get('authorized_users'),
-        '3': value.get('materials_specified'),
-        'c': value.get('authorization'),
         'a': value.get('terms_governing_use_and_reproduction'),
         'b': value.get('jurisdiction'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': value.get('institution_to_which_field_applies'),
+        'c': value.get('authorization'),
+        'd': value.get('authorized_users'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -1238,44 +1266,45 @@ def reverse_terms_governing_use_and_reproduction_note(self, key, value):
 def reverse_immediate_source_of_acquisition_note(self, key, value):
     """Reverse - Immediate Source of Acquisition Note."""
     indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
+
     field_map = {
-        'linkage': '6',
-        'date_of_acquisition': 'd',
-        'materials_specified': '3',
-        'method_of_acquisition': 'c',
-        'accession_number': 'e',
-        'address': 'b',
-        'type_of_unit': 'o',
         'source_of_acquisition': 'a',
-        'purchase_price': 'h',
+        'address': 'b',
+        'method_of_acquisition': 'c',
+        'date_of_acquisition': 'd',
+        'accession_number': 'e',
         'owner': 'f',
-        'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
+        'purchase_price': 'h',
         'extent': 'n',
+        'type_of_unit': 'o',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['privacy', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': value.get('date_of_acquisition'),
-        '3': value.get('materials_specified'),
-        'c': value.get('method_of_acquisition'),
-        'e': value.get('accession_number'),
+        'a': value.get('source_of_acquisition'),
         'b': value.get('address'),
+        'c': value.get('method_of_acquisition'),
+        'd': value.get('date_of_acquisition'),
+        'e': value.get('accession_number'),
+        'f': value.get('owner'),
+        'h': value.get('purchase_price'),
+        'n': utils.reverse_force_list(
+            value.get('extent')
+        ),
         'o': utils.reverse_force_list(
             value.get('type_of_unit')
         ),
-        'a': value.get('source_of_acquisition'),
-        'h': value.get('purchase_price'),
-        'f': value.get('owner'),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
-        ),
-        '5': value.get('institution_to_which_field_applies'),
-        'n': utils.reverse_force_list(
-            value.get('extent')
         ),
         '$ind1': indicator_map1.get(value.get('privacy'), value.get('privacy', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -1294,77 +1323,78 @@ def reverse_immediate_source_of_acquisition_note(self, key, value):
 def reverse_information_relating_to_copyright_status(self, key, value):
     """Reverse - Information Relating to Copyright Status."""
     indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
+
     field_map = {
-        'linkage': '6',
-        'creation_date': 'j',
-        'copyright_holder': 'd',
-        'materials_specified': '3',
-        'corporate_creator': 'c',
-        'source_of_information': 's',
-        'supplying_agency': 'q',
         'personal_creator': 'a',
+        'personal_creator_death_date': 'b',
+        'corporate_creator': 'c',
+        'copyright_holder': 'd',
+        'copyright_holder_contact_information': 'e',
         'copyright_statement': 'f',
-        'country_of_publication_or_creation': 'p',
-        'field_link_and_sequence_number': '8',
+        'copyright_date': 'g',
+        'copyright_renewal_date': 'h',
+        'publication_date': 'i',
+        'creation_date': 'j',
         'publisher': 'k',
         'copyright_status': 'l',
-        'uniform_resource_identifier': 'u',
-        'copyright_holder_contact_information': 'e',
-        'personal_creator_death_date': 'b',
-        'research_date': 'o',
-        'jurisdiction_of_copyright_assessment': 'r',
-        'publication_date': 'i',
-        'copyright_renewal_date': 'h',
-        'copyright_date': 'g',
-        'note': 'n',
         'publication_status': 'm',
+        'note': 'n',
+        'research_date': 'o',
+        'country_of_publication_or_creation': 'p',
+        'supplying_agency': 'q',
+        'jurisdiction_of_copyright_assessment': 'r',
+        'source_of_information': 's',
+        'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['privacy', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'j': value.get('creation_date'),
+        'a': value.get('personal_creator'),
+        'b': value.get('personal_creator_death_date'),
+        'c': value.get('corporate_creator'),
         'd': utils.reverse_force_list(
             value.get('copyright_holder')
-        ),
-        '3': value.get('materials_specified'),
-        'c': value.get('corporate_creator'),
-        's': value.get('source_of_information'),
-        'q': value.get('supplying_agency'),
-        'a': value.get('personal_creator'),
-        'f': utils.reverse_force_list(
-            value.get('copyright_statement')
-        ),
-        'p': utils.reverse_force_list(
-            value.get('country_of_publication_or_creation')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'k': utils.reverse_force_list(
-            value.get('publisher')
-        ),
-        'l': value.get('copyright_status'),
-        'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
         ),
         'e': utils.reverse_force_list(
             value.get('copyright_holder_contact_information')
         ),
-        'b': value.get('personal_creator_death_date'),
-        'o': value.get('research_date'),
-        'r': value.get('jurisdiction_of_copyright_assessment'),
-        'i': value.get('publication_date'),
+        'f': utils.reverse_force_list(
+            value.get('copyright_statement')
+        ),
+        'g': value.get('copyright_date'),
         'h': utils.reverse_force_list(
             value.get('copyright_renewal_date')
         ),
-        'g': value.get('copyright_date'),
+        'i': value.get('publication_date'),
+        'j': value.get('creation_date'),
+        'k': utils.reverse_force_list(
+            value.get('publisher')
+        ),
+        'l': value.get('copyright_status'),
+        'm': value.get('publication_status'),
         'n': utils.reverse_force_list(
             value.get('note')
         ),
-        'm': value.get('publication_status'),
+        'o': value.get('research_date'),
+        'p': utils.reverse_force_list(
+            value.get('country_of_publication_or_creation')
+        ),
+        'q': value.get('supplying_agency'),
+        'r': value.get('jurisdiction_of_copyright_assessment'),
+        's': value.get('source_of_information'),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')
+        ),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('privacy'), value.get('privacy', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1382,44 +1412,45 @@ def reverse_information_relating_to_copyright_status(self, key, value):
 def reverse_location_of_other_archival_materials_note(self, key, value):
     """Reverse - Location of Other Archival Materials Note."""
     indicator_map1 = {"Associated materials": "0", "No information provided": "_", "Related materials": "1"}
+
     field_map = {
-        'linkage': '6',
-        'title': 'd',
-        'materials_specified': '3',
-        'country': 'c',
         'custodian': 'a',
-        'field_link_and_sequence_number': '8',
-        'provenance': 'e',
         'address': 'b',
+        'country': 'c',
+        'title': 'd',
+        'provenance': 'e',
         'note': 'n',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['relationship', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': utils.reverse_force_list(
-            value.get('title')
-        ),
-        '3': value.get('materials_specified'),
-        'c': utils.reverse_force_list(
-            value.get('country')
-        ),
         'a': utils.reverse_force_list(
             value.get('custodian')
-        ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'e': utils.reverse_force_list(
-            value.get('provenance')
         ),
         'b': utils.reverse_force_list(
             value.get('address')
         ),
+        'c': utils.reverse_force_list(
+            value.get('country')
+        ),
+        'd': utils.reverse_force_list(
+            value.get('title')
+        ),
+        'e': utils.reverse_force_list(
+            value.get('provenance')
+        ),
         'n': utils.reverse_force_list(
             value.get('note')
+        ),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('relationship'), value.get('relationship', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -1438,27 +1469,28 @@ def reverse_location_of_other_archival_materials_note(self, key, value):
 def reverse_biographical_or_historical_data(self, key, value):
     """Reverse - Biographical or Historical Data."""
     indicator_map1 = {"Administrative history": "1", "Biographical sketch": "0", "No information provided": "_"}
+
     field_map = {
-        'linkage': '6',
-        'field_link_and_sequence_number': '8',
+        'biographical_or_historical_data': 'a',
         'expansion': 'b',
         'uniform_resource_identifier': 'u',
-        'biographical_or_historical_data': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_data', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
+        'a': value.get('biographical_or_historical_data'),
         'b': value.get('expansion'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
         ),
-        'a': value.get('biographical_or_historical_data'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('type_of_data'), value.get('type_of_data', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1475,27 +1507,28 @@ def reverse_biographical_or_historical_data(self, key, value):
 @utils.filter_values
 def reverse_language_note(self, key, value):
     """Reverse - Language Note."""
+
     field_map = {
-        'linkage': '6',
-        'field_link_and_sequence_number': '8',
+        'language_note': 'a',
         'information_code_or_alphabet': 'b',
         'materials_specified': '3',
-        'language_note': 'a',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
+        'a': value.get('language_note'),
         'b': utils.reverse_force_list(
             value.get('information_code_or_alphabet')
         ),
         '3': value.get('materials_specified'),
-        'a': value.get('language_note'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1512,21 +1545,22 @@ def reverse_language_note(self, key, value):
 @utils.filter_values
 def reverse_former_title_complexity_note(self, key, value):
     """Reverse - Former Title Complexity Note."""
+
     field_map = {
+        'former_title_complexity_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'former_title_complexity_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('former_title_complexity_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('former_title_complexity_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1543,21 +1577,22 @@ def reverse_former_title_complexity_note(self, key, value):
 @utils.filter_values
 def reverse_issuing_body_note(self, key, value):
     """Reverse - Issuing Body Note."""
+
     field_map = {
+        'issuing_body_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'issuing_body_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('issuing_body_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('issuing_body_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1574,67 +1609,68 @@ def reverse_issuing_body_note(self, key, value):
 @utils.filter_values
 def reverse_entity_and_attribute_information_note(self, key, value):
     """Reverse - Entity and Attribute Information Note."""
+
     field_map = {
-        'linkage': '6',
-        'attribute_units_of_measurement_and_resolution': 'j',
-        'attribute_definition_and_source': 'd',
-        'uniform_resource_identifier': 'u',
-        'attribute_label': 'c',
-        'attribute_value_accuracy': 'l',
-        'display_note': 'z',
-        'enumerated_domain_value': 'e',
-        'entity_type_definition_and_source': 'b',
-        'entity_and_attribute_overview': 'o',
-        'attribute_measurement_frequency': 'n',
         'entity_type_label': 'a',
-        'codeset_name_and_source': 'h',
+        'entity_type_definition_and_source': 'b',
+        'attribute_label': 'c',
+        'attribute_definition_and_source': 'd',
+        'enumerated_domain_value': 'e',
         'enumerated_domain_value_definition_and_source': 'f',
-        'entity_and_attribute_detail_citation': 'p',
-        'attribute_value_accuracy_explanation': 'm',
-        'field_link_and_sequence_number': '8',
-        'beginning_and_ending_date_of_attribute_values': 'k',
-        'unrepresentable_domain': 'i',
         'range_domain_minimum_and_maximum': 'g',
+        'codeset_name_and_source': 'h',
+        'unrepresentable_domain': 'i',
+        'attribute_units_of_measurement_and_resolution': 'j',
+        'beginning_and_ending_date_of_attribute_values': 'k',
+        'attribute_value_accuracy': 'l',
+        'attribute_value_accuracy_explanation': 'm',
+        'attribute_measurement_frequency': 'n',
+        'entity_and_attribute_overview': 'o',
+        'entity_and_attribute_detail_citation': 'p',
+        'uniform_resource_identifier': 'u',
+        'display_note': 'z',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'j': value.get('attribute_units_of_measurement_and_resolution'),
-        'd': value.get('attribute_definition_and_source'),
-        'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
-        ),
+        'a': value.get('entity_type_label'),
+        'b': value.get('entity_type_definition_and_source'),
         'c': value.get('attribute_label'),
-        'l': value.get('attribute_value_accuracy'),
-        'z': utils.reverse_force_list(
-            value.get('display_note')
-        ),
+        'd': value.get('attribute_definition_and_source'),
         'e': utils.reverse_force_list(
             value.get('enumerated_domain_value')
         ),
-        'b': value.get('entity_type_definition_and_source'),
-        'o': utils.reverse_force_list(
-            value.get('entity_and_attribute_overview')
-        ),
-        'n': value.get('attribute_measurement_frequency'),
-        'a': value.get('entity_type_label'),
-        'h': value.get('codeset_name_and_source'),
         'f': utils.reverse_force_list(
             value.get('enumerated_domain_value_definition_and_source')
+        ),
+        'g': value.get('range_domain_minimum_and_maximum'),
+        'h': value.get('codeset_name_and_source'),
+        'i': value.get('unrepresentable_domain'),
+        'j': value.get('attribute_units_of_measurement_and_resolution'),
+        'k': value.get('beginning_and_ending_date_of_attribute_values'),
+        'l': value.get('attribute_value_accuracy'),
+        'm': value.get('attribute_value_accuracy_explanation'),
+        'n': value.get('attribute_measurement_frequency'),
+        'o': utils.reverse_force_list(
+            value.get('entity_and_attribute_overview')
         ),
         'p': utils.reverse_force_list(
             value.get('entity_and_attribute_detail_citation')
         ),
-        'm': value.get('attribute_value_accuracy_explanation'),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('display_note')
+        ),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'k': value.get('beginning_and_ending_date_of_attribute_values'),
-        'i': value.get('unrepresentable_domain'),
-        'g': value.get('range_domain_minimum_and_maximum'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1652,34 +1688,35 @@ def reverse_entity_and_attribute_information_note(self, key, value):
 def reverse_cumulative_index_finding_aids_note(self, key, value):
     """Reverse - Cumulative Index/Finding Aids Note."""
     indicator_map1 = {"Finding aids": "0", "Indexes": "_", "No display constant generated": "8"}
+
     field_map = {
-        'linkage': '6',
-        'bibliographic_reference': 'd',
-        'materials_specified': '3',
-        'degree_of_control': 'c',
         'cumulative_index_finding_aids_note': 'a',
-        'field_link_and_sequence_number': '8',
         'availability_source': 'b',
+        'degree_of_control': 'c',
+        'bibliographic_reference': 'd',
         'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': value.get('bibliographic_reference'),
-        '3': value.get('materials_specified'),
-        'c': value.get('degree_of_control'),
         'a': value.get('cumulative_index_finding_aids_note'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'b': utils.reverse_force_list(
             value.get('availability_source')
         ),
+        'c': value.get('degree_of_control'),
+        'd': value.get('bibliographic_reference'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -1698,25 +1735,26 @@ def reverse_cumulative_index_finding_aids_note(self, key, value):
 def reverse_information_about_documentation_note(self, key, value):
     """Reverse - Information About Documentation Note."""
     indicator_map1 = {"Documentation": "_", "No display constant generated": "8"}
+
     field_map = {
+        'information_about_documentation_note': 'a',
+        'international_standard_book_number': 'z',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'international_standard_book_number': 'z',
-        'information_about_documentation_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('information_about_documentation_note'),
+        'z': utils.reverse_force_list(
+            value.get('international_standard_book_number')
+        ),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'z': utils.reverse_force_list(
-            value.get('international_standard_book_number')
-        ),
-        'a': value.get('information_about_documentation_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1734,28 +1772,29 @@ def reverse_information_about_documentation_note(self, key, value):
 def reverse_ownership_and_custodial_history(self, key, value):
     """Reverse - Ownership and Custodial History."""
     indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
+
     field_map = {
-        'linkage': '6',
-        'materials_specified': '3',
         'history': 'a',
-        'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
         'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['privacy', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '3': value.get('materials_specified'),
         'a': value.get('history'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': value.get('institution_to_which_field_applies'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('privacy'), value.get('privacy', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -1773,43 +1812,44 @@ def reverse_ownership_and_custodial_history(self, key, value):
 @utils.filter_values
 def reverse_copy_and_version_identification_note(self, key, value):
     """Reverse - Copy and Version Identification Note."""
+
     field_map = {
-        'linkage': '6',
-        'presentation_format': 'd',
-        'materials_specified': '3',
-        'version_identification': 'c',
         'identifying_markings': 'a',
         'copy_identification': 'b',
-        'field_link_and_sequence_number': '8',
+        'version_identification': 'c',
+        'presentation_format': 'd',
         'number_of_copies': 'e',
+        'materials_specified': '3',
         'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': utils.reverse_force_list(
-            value.get('presentation_format')
-        ),
-        '3': value.get('materials_specified'),
-        'c': utils.reverse_force_list(
-            value.get('version_identification')
-        ),
         'a': utils.reverse_force_list(
             value.get('identifying_markings')
         ),
         'b': utils.reverse_force_list(
             value.get('copy_identification')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'c': utils.reverse_force_list(
+            value.get('version_identification')
+        ),
+        'd': utils.reverse_force_list(
+            value.get('presentation_format')
         ),
         'e': utils.reverse_force_list(
             value.get('number_of_copies')
         ),
+        '3': value.get('materials_specified'),
         '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1826,28 +1866,29 @@ def reverse_copy_and_version_identification_note(self, key, value):
 @utils.filter_values
 def reverse_binding_information(self, key, value):
     """Reverse - Binding Information."""
+
     field_map = {
-        'linkage': '6',
-        'materials_specified': '3',
         'binding_note': 'a',
-        'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
         'uniform_resource_identifier': 'u',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '3': value.get('materials_specified'),
         'a': value.get('binding_note'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': value.get('institution_to_which_field_applies'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
+        ),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -1866,38 +1907,39 @@ def reverse_binding_information(self, key, value):
 def reverse_case_file_characteristics_note(self, key, value):
     """Reverse - Case File Characteristics Note."""
     indicator_map1 = {"Case file characteristics": "0", "File size": "_", "No display constant generated": "8"}
+
     field_map = {
-        'linkage': '6',
-        'universe_of_data': 'd',
-        'materials_specified': '3',
-        'unit_of_analysis': 'c',
         'number_of_cases_variables': 'a',
-        'field_link_and_sequence_number': '8',
-        'filing_scheme_or_code': 'e',
         'name_of_variable': 'b',
+        'unit_of_analysis': 'c',
+        'universe_of_data': 'd',
+        'filing_scheme_or_code': 'e',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'd': utils.reverse_force_list(
-            value.get('universe_of_data')
+        'a': value.get('number_of_cases_variables'),
+        'b': utils.reverse_force_list(
+            value.get('name_of_variable')
         ),
-        '3': value.get('materials_specified'),
         'c': utils.reverse_force_list(
             value.get('unit_of_analysis')
         ),
-        'a': value.get('number_of_cases_variables'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'd': utils.reverse_force_list(
+            value.get('universe_of_data')
         ),
         'e': utils.reverse_force_list(
             value.get('filing_scheme_or_code')
         ),
-        'b': utils.reverse_force_list(
-            value.get('name_of_variable')
+        '3': value.get('materials_specified'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -1916,21 +1958,22 @@ def reverse_case_file_characteristics_note(self, key, value):
 def reverse_methodology_note(self, key, value):
     """Reverse - Methodology Note."""
     indicator_map1 = {"Methodology": "_", "No display constant generated": "8"}
+
     field_map = {
+        'methodology_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'methodology_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('methodology_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('methodology_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1947,21 +1990,22 @@ def reverse_methodology_note(self, key, value):
 @utils.filter_values
 def reverse_linking_entry_complexity_note(self, key, value):
     """Reverse - Linking Entry Complexity Note."""
+
     field_map = {
+        'linking_entry_complexity_note': 'a',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'linking_entry_complexity_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('linking_entry_complexity_note'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        'a': value.get('linking_entry_complexity_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -1979,27 +2023,28 @@ def reverse_linking_entry_complexity_note(self, key, value):
 def reverse_publications_about_described_materials_note(self, key, value):
     """Reverse - Publications About Described Materials Note."""
     indicator_map1 = {"No display constant generated": "8", "Publications": "_"}
+
     field_map = {
+        'publications_about_described_materials_note': 'a',
         'international_standard_book_number': 'z',
+        'materials_specified': '3',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'materials_specified': '3',
-        'publications_about_described_materials_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('publications_about_described_materials_note'),
         'z': utils.reverse_force_list(
             value.get('international_standard_book_number')
         ),
+        '3': value.get('materials_specified'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '3': value.get('materials_specified'),
-        'a': value.get('publications_about_described_materials_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -2017,86 +2062,87 @@ def reverse_publications_about_described_materials_note(self, key, value):
 def reverse_action_note(self, key, value):
     """Reverse - Action Note."""
     indicator_map1 = {"No information provided": "_", "Not private": "1", "Private": "0"}
+
     field_map = {
-        'linkage': '6',
-        'site_of_action': 'j',
-        'action_interval': 'd',
-        'nonpublic_note': 'x',
-        'materials_specified': '3',
-        'time_date_of_action': 'c',
-        'status': 'l',
-        'public_note': 'z',
-        'contingency_for_action': 'e',
-        'action_identification': 'b',
-        'type_of_unit': 'o',
-        'extent': 'n',
         'action': 'a',
-        'jurisdiction': 'h',
+        'action_identification': 'b',
+        'time_date_of_action': 'c',
+        'action_interval': 'd',
+        'contingency_for_action': 'e',
         'authorization': 'f',
-        'source_of_term': '2',
-        'uniform_resource_identifier': 'u',
-        'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
+        'jurisdiction': 'h',
         'method_of_action': 'i',
+        'site_of_action': 'j',
         'action_agent': 'k',
+        'status': 'l',
+        'extent': 'n',
+        'type_of_unit': 'o',
+        'uniform_resource_identifier': 'u',
+        'nonpublic_note': 'x',
+        'public_note': 'z',
+        'source_of_term': '2',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['privacy', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        'j': utils.reverse_force_list(
-            value.get('site_of_action')
+        'a': value.get('action'),
+        'b': utils.reverse_force_list(
+            value.get('action_identification')
+        ),
+        'c': utils.reverse_force_list(
+            value.get('time_date_of_action')
         ),
         'd': utils.reverse_force_list(
             value.get('action_interval')
         ),
-        'x': utils.reverse_force_list(
-            value.get('nonpublic_note')
-        ),
-        '3': value.get('materials_specified'),
-        'c': utils.reverse_force_list(
-            value.get('time_date_of_action')
-        ),
-        'l': utils.reverse_force_list(
-            value.get('status')
-        ),
-        'z': utils.reverse_force_list(
-            value.get('public_note')
-        ),
         'e': utils.reverse_force_list(
             value.get('contingency_for_action')
-        ),
-        'b': utils.reverse_force_list(
-            value.get('action_identification')
-        ),
-        'o': utils.reverse_force_list(
-            value.get('type_of_unit')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('extent')
-        ),
-        'a': value.get('action'),
-        'h': utils.reverse_force_list(
-            value.get('jurisdiction')
         ),
         'f': utils.reverse_force_list(
             value.get('authorization')
         ),
-        '2': value.get('source_of_term'),
-        'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
+        'h': utils.reverse_force_list(
+            value.get('jurisdiction')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': value.get('institution_to_which_field_applies'),
         'i': utils.reverse_force_list(
             value.get('method_of_action')
         ),
+        'j': utils.reverse_force_list(
+            value.get('site_of_action')
+        ),
         'k': utils.reverse_force_list(
             value.get('action_agent')
+        ),
+        'l': utils.reverse_force_list(
+            value.get('status')
+        ),
+        'n': utils.reverse_force_list(
+            value.get('extent')
+        ),
+        'o': utils.reverse_force_list(
+            value.get('type_of_unit')
+        ),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')
+        ),
+        'x': utils.reverse_force_list(
+            value.get('nonpublic_note')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('public_note')
+        ),
+        '2': value.get('source_of_term'),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('privacy'), value.get('privacy', '_')),
         '$ind2': value.get('$ind2', '_'),
@@ -2114,31 +2160,32 @@ def reverse_action_note(self, key, value):
 @utils.filter_values
 def reverse_accumulation_and_frequency_of_use_note(self, key, value):
     """Reverse - Accumulation and Frequency of Use Note."""
+
     field_map = {
-        'linkage': '6',
-        'materials_specified': '3',
         'accumulation': 'a',
         'frequency_of_use': 'b',
-        'field_link_and_sequence_number': '8',
+        'materials_specified': '3',
         'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '6': value.get('linkage'),
-        '3': value.get('materials_specified'),
         'a': utils.reverse_force_list(
             value.get('accumulation')
         ),
         'b': utils.reverse_force_list(
             value.get('frequency_of_use')
         ),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
+        '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '5': value.get('institution_to_which_field_applies'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -2155,25 +2202,26 @@ def reverse_accumulation_and_frequency_of_use_note(self, key, value):
 @utils.filter_values
 def reverse_exhibitions_note(self, key, value):
     """Reverse - Exhibitions Note."""
+
     field_map = {
+        'exhibitions_note': 'a',
+        'materials_specified': '3',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'materials_specified': '3',
-        'exhibitions_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('exhibitions_note'),
+        '3': value.get('materials_specified'),
+        '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '5': value.get('institution_to_which_field_applies'),
-        '3': value.get('materials_specified'),
-        'a': value.get('exhibitions_note'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -2191,23 +2239,24 @@ def reverse_exhibitions_note(self, key, value):
 def reverse_awards_note(self, key, value):
     """Reverse - Awards Note."""
     indicator_map1 = {"Awards": "_", "No display constant generated": "8"}
+
     field_map = {
+        'awards_note': 'a',
+        'materials_specified': '3',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'materials_specified': '3',
-        'awards_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('awards_note'),
+        '3': value.get('materials_specified'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '3': value.get('materials_specified'),
-        'a': value.get('awards_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -2225,23 +2274,24 @@ def reverse_awards_note(self, key, value):
 def reverse_source_of_description_note(self, key, value):
     """Reverse - Source of Description Note."""
     indicator_map1 = {"Latest issue consulted": "1", "No information provided": "_", "Source of description": "0"}
+
     field_map = {
+        'source_of_description_note': 'a',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'source_of_description_note': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['display_constant_controller', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('source_of_description_note'),
+        '5': value.get('institution_to_which_field_applies'),
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '5': value.get('institution_to_which_field_applies'),
-        'a': value.get('source_of_description_note'),
         '$ind1': indicator_map1.get(value.get('display_constant_controller'), value.get('display_constant_controller', '_')),
         '$ind2': value.get('$ind2', '_'),
     }

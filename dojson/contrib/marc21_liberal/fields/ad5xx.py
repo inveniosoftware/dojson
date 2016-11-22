@@ -21,36 +21,36 @@ def see_also_from_tracing_personal_name(self, key, value):
     """See Also From Tracing-Personal Name."""
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     field_map = {
-        'o': 'arranged_statement_for_music',
-        'k': 'form_subheading',
-        'm': 'medium_of_performance_for_music',
+        'a': 'personal_name',
+        'b': 'numeration',
+        'c': 'titles_and_other_words_associated_with_a_name',
+        'd': 'dates_associated_with_a_name',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
         'g': 'miscellaneous_information',
         'h': 'medium',
-        'b': 'numeration',
-        'v': 'form_subdivision',
-        'a': 'personal_name',
-        'z': 'geographic_subdivision',
-        '0': 'authority_record_control_number_or_standard_number',
-        'l': 'language_of_a_work',
-        'c': 'titles_and_other_words_associated_with_a_name',
-        'n': 'number_of_part_section_of_a_work',
-        'j': 'attribution_qualifier',
-        '8': 'field_link_and_sequence_number',
-        'w': 'control_subfield',
-        '6': 'linkage',
-        's': 'version',
-        'f': 'date_of_a_work',
-        '4': 'relationship_code',
-        'd': 'dates_associated_with_a_name',
-        'p': 'name_of_part_section_of_a_work',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
-        '5': 'institution_to_which_field_applies',
-        'e': 'relator_term',
         'i': 'relationship_information',
+        'j': 'attribution_qualifier',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
         'q': 'fuller_form_of_name',
         'r': 'key_for_music',
+        's': 'version',
         't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -63,70 +63,70 @@ def see_also_from_tracing_personal_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'arranged_statement_for_music': value.get('o'),
-        'form_subheading': utils.force_list(
-            value.get('k')
+        'personal_name': value.get('a'),
+        'numeration': value.get('b'),
+        'titles_and_other_words_associated_with_a_name': utils.force_list(
+            value.get('c')
         ),
-        'medium_of_performance_for_music': utils.force_list(
-            value.get('m')
+        'dates_associated_with_a_name': value.get('d'),
+        'relator_term': utils.force_list(
+            value.get('e')
         ),
+        'date_of_a_work': value.get('f'),
         'miscellaneous_information': utils.force_list(
             value.get('g')
         ),
         'medium': value.get('h'),
-        'numeration': value.get('b'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'attribution_qualifier': utils.force_list(
+            value.get('j')
+        ),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
+        ),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
+        ),
+        'arranged_statement_for_music': value.get('o'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
+        ),
+        'fuller_form_of_name': value.get('q'),
+        'key_for_music': value.get('r'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
         'form_subdivision': utils.force_list(
             value.get('v')
         ),
-        'personal_name': value.get('a'),
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
+        ),
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
-        'language_of_a_work': value.get('l'),
-        'titles_and_other_words_associated_with_a_name': utils.force_list(
-            value.get('c')
-        ),
-        'number_of_part_section_of_a_work': utils.force_list(
-            value.get('n')
-        ),
-        'attribution_qualifier': utils.force_list(
-            value.get('j')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
-        'version': value.get('s'),
-        'date_of_a_work': value.get('f'),
         'relationship_code': utils.force_list(
             value.get('4')
-        ),
-        'dates_associated_with_a_name': value.get('d'),
-        'name_of_part_section_of_a_work': utils.force_list(
-            value.get('p')
-        ),
-        'chronological_subdivision': utils.force_list(
-            value.get('y')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relator_term': utils.force_list(
-            value.get('e')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'fuller_form_of_name': value.get('q'),
-        'key_for_music': value.get('r'),
-        'title_of_a_work': value.get('t'),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3], key[3]),
         '$ind2': key[4] if key[4] != '_' else None,
     }
@@ -145,34 +145,34 @@ def see_also_from_tracing_corporate_name(self, key, value):
     """See Also From Tracing-Corporate Name."""
     indicator_map1 = {"0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
     field_map = {
-        'o': 'arranged_statement_for_music',
-        'k': 'form_subheading',
-        'm': 'medium_of_performance_for_music',
+        'a': 'corporate_name_or_jurisdiction_name_as_entry_element',
+        'b': 'subordinate_unit',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting_or_treaty_signing',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
         'g': 'miscellaneous_information',
         'h': 'medium',
-        'b': 'subordinate_unit',
+        'i': 'relationship_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_meeting',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
+        'r': 'key_for_music',
+        's': 'version',
+        't': 'title_of_a_work',
         'v': 'form_subdivision',
-        'a': 'corporate_name_or_jurisdiction_name_as_entry_element',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
         'z': 'geographic_subdivision',
         '0': 'authority_record_control_number_or_standard_number',
-        'l': 'language_of_a_work',
-        'c': 'location_of_meeting',
-        'n': 'number_of_part_section_meeting',
-        '8': 'field_link_and_sequence_number',
-        'w': 'control_subfield',
-        '6': 'linkage',
-        's': 'version',
-        'f': 'date_of_a_work',
         '4': 'relationship_code',
-        'd': 'date_of_meeting_or_treaty_signing',
-        'p': 'name_of_part_section_of_a_work',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
         '5': 'institution_to_which_field_applies',
-        'e': 'relator_term',
-        'i': 'relationship_information',
-        'r': 'key_for_music',
-        't': 'title_of_a_work',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -185,70 +185,70 @@ def see_also_from_tracing_corporate_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'arranged_statement_for_music': value.get('o'),
-        'form_subheading': utils.force_list(
-            value.get('k')
+        'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'subordinate_unit': utils.force_list(
+            value.get('b')
         ),
-        'medium_of_performance_for_music': utils.force_list(
-            value.get('m')
+        'location_of_meeting': utils.force_list(
+            value.get('c')
         ),
+        'date_of_meeting_or_treaty_signing': utils.force_list(
+            value.get('d')
+        ),
+        'relator_term': utils.force_list(
+            value.get('e')
+        ),
+        'date_of_a_work': value.get('f'),
         'miscellaneous_information': utils.force_list(
             value.get('g')
         ),
         'medium': value.get('h'),
-        'subordinate_unit': utils.force_list(
-            value.get('b')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
+        ),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
+        ),
+        'arranged_statement_for_music': value.get('o'),
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
+        ),
+        'key_for_music': value.get('r'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
         'form_subdivision': utils.force_list(
             value.get('v')
         ),
-        'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
+        ),
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
-        'language_of_a_work': value.get('l'),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
-        ),
-        'number_of_part_section_meeting': utils.force_list(
-            value.get('n')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
-        'version': value.get('s'),
-        'date_of_a_work': value.get('f'),
         'relationship_code': utils.force_list(
             value.get('4')
-        ),
-        'date_of_meeting_or_treaty_signing': utils.force_list(
-            value.get('d')
-        ),
-        'name_of_part_section_of_a_work': utils.force_list(
-            value.get('p')
-        ),
-        'chronological_subdivision': utils.force_list(
-            value.get('y')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relator_term': utils.force_list(
-            value.get('e')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'key_for_music': value.get('r'),
-        'title_of_a_work': value.get('t'),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3], key[3]),
         '$ind2': key[4] if key[4] != '_' else None,
     }
@@ -267,32 +267,32 @@ def see_also_from_tracing_meeting_name(self, key, value):
     """See Also From Tracing-Meeting Name."""
     indicator_map1 = {"0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
     field_map = {
-        'k': 'form_subheading',
+        'a': 'meeting_name_or_jurisdiction_name_as_entry_element',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting',
+        'e': 'subordinate_unit',
+        'f': 'date_of_a_work',
         'g': 'miscellaneous_information',
         'h': 'medium',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
-        'a': 'meeting_name_or_jurisdiction_name_as_entry_element',
-        '0': 'authority_record_control_number_or_standard_number',
-        'l': 'language_of_a_work',
-        'c': 'location_of_meeting',
-        'n': 'number_of_part_section_meeting',
-        'j': 'relator_term',
-        '8': 'field_link_and_sequence_number',
-        'w': 'control_subfield',
-        '6': 'linkage',
-        's': 'version',
-        'f': 'date_of_a_work',
-        '4': 'relationship_code',
-        'd': 'date_of_meeting',
-        'p': 'name_of_part_section_of_a_work',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
-        '5': 'institution_to_which_field_applies',
-        'e': 'subordinate_unit',
         'i': 'relationship_information',
+        'j': 'relator_term',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_meeting',
+        'p': 'name_of_part_section_of_a_work',
         'q': 'name_of_meeting_following_jurisdiction_name_entry_element',
+        's': 'version',
         't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -305,64 +305,64 @@ def see_also_from_tracing_meeting_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'form_subheading': utils.force_list(
-            value.get('k')
+        'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': utils.force_list(
+            value.get('c')
         ),
+        'date_of_meeting': value.get('d'),
+        'subordinate_unit': utils.force_list(
+            value.get('e')
+        ),
+        'date_of_a_work': value.get('f'),
         'miscellaneous_information': utils.force_list(
             value.get('g')
         ),
         'medium': value.get('h'),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
-        'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
-        'language_of_a_work': value.get('l'),
-        'location_of_meeting': utils.force_list(
-            value.get('c')
-        ),
-        'number_of_part_section_meeting': utils.force_list(
-            value.get('n')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
         'relator_term': utils.force_list(
             value.get('j')
         ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
-        'version': value.get('s'),
-        'date_of_a_work': value.get('f'),
-        'relationship_code': utils.force_list(
-            value.get('4')
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
         ),
-        'date_of_meeting': value.get('d'),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
+        ),
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
         ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'subordinate_unit': utils.force_list(
-            value.get('e')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
-        'title_of_a_work': value.get('t'),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3], key[3]),
         '$ind2': key[4] if key[4] != '_' else None,
     }
@@ -381,31 +381,31 @@ def see_also_from_tracing_uniform_title(self, key, value):
     """See Also From Tracing-Uniform Title."""
     indicator_map2 = {str(x): str(x) for x in range(10)}
     field_map = {
-        'o': 'arranged_statement_for_music',
-        'k': 'form_subheading',
-        'm': 'medium_of_performance_for_music',
+        'a': 'uniform_title',
+        'd': 'date_of_treaty_signing',
+        'f': 'date_of_a_work',
         'g': 'miscellaneous_information',
         'h': 'medium',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
-        'a': 'uniform_title',
-        '0': 'authority_record_control_number_or_standard_number',
-        'l': 'language_of_a_work',
-        'n': 'number_of_part_section_of_a_work',
-        '8': 'field_link_and_sequence_number',
-        'w': 'control_subfield',
-        '6': 'linkage',
-        's': 'version',
-        'f': 'date_of_a_work',
-        '4': 'relationship_code',
-        'd': 'date_of_treaty_signing',
-        'p': 'name_of_part_section_of_a_work',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
-        '5': 'institution_to_which_field_applies',
         'i': 'relationship_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'm': 'medium_of_performance_for_music',
+        'n': 'number_of_part_section_of_a_work',
+        'o': 'arranged_statement_for_music',
+        'p': 'name_of_part_section_of_a_work',
         'r': 'key_for_music',
+        's': 'version',
         't': 'title_of_a_work',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -418,61 +418,61 @@ def see_also_from_tracing_uniform_title(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'arranged_statement_for_music': value.get('o'),
-        'form_subheading': utils.force_list(
-            value.get('k')
+        'uniform_title': value.get('a'),
+        'date_of_treaty_signing': utils.force_list(
+            value.get('d')
         ),
-        'medium_of_performance_for_music': utils.force_list(
-            value.get('m')
-        ),
+        'date_of_a_work': value.get('f'),
         'miscellaneous_information': utils.force_list(
             value.get('g')
         ),
         'medium': value.get('h'),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
-        'uniform_title': value.get('a'),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
+        'form_subheading': utils.force_list(
+            value.get('k')
         ),
         'language_of_a_work': value.get('l'),
+        'medium_of_performance_for_music': utils.force_list(
+            value.get('m')
+        ),
         'number_of_part_section_of_a_work': utils.force_list(
             value.get('n')
         ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
-        'version': value.get('s'),
-        'date_of_a_work': value.get('f'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'date_of_treaty_signing': utils.force_list(
-            value.get('d')
-        ),
+        'arranged_statement_for_music': value.get('o'),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
+        ),
+        'key_for_music': value.get('r'),
+        'version': value.get('s'),
+        'title_of_a_work': value.get('t'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
         ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
-        'key_for_music': value.get('r'),
-        'title_of_a_work': value.get('t'),
         '$ind1': key[3] if key[3] != '_' else None,
         'nonfiling_characters': indicator_map2.get(key[4], key[4]),
     }
@@ -490,17 +490,17 @@ def see_also_from_tracing_uniform_title(self, key, value):
 def see_also_from_tracing_chronological_term(self, key, value):
     """See Also From Tracing-Chronological Term."""
     field_map = {
-        'w': 'control_subfield',
-        '6': 'linkage',
-        '4': 'relationship_code',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
         'a': 'chronological_term',
-        '0': 'record_control_number',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
-        '5': 'institution_to_which_field_applies',
         'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'record_control_number',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -514,33 +514,33 @@ def see_also_from_tracing_chronological_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
+        'chronological_term': value.get('a'),
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
         'form_subdivision': utils.force_list(
             value.get('v')
         ),
-        'chronological_term': value.get('a'),
-        'record_control_number': utils.force_list(
-            value.get('0')
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
         ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -561,19 +561,19 @@ def see_also_from_tracing_chronological_term(self, key, value):
 def see_also_from_tracing_topical_term(self, key, value):
     """See Also From Tracing-Topical Term."""
     field_map = {
-        'w': 'control_subfield',
-        '6': 'linkage',
-        'g': 'miscellaneous_information',
-        '4': 'relationship_code',
-        'b': 'topical_term_following_geographic_name_entry_element',
-        'v': 'form_subdivision',
         'a': 'topical_term_or_geographic_name_entry_element',
+        'b': 'topical_term_following_geographic_name_entry_element',
+        'g': 'miscellaneous_information',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
         'z': 'geographic_subdivision',
         '0': 'authority_record_control_number_or_standard_number',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
+        '4': 'relationship_code',
         '5': 'institution_to_which_field_applies',
-        'i': 'relationship_information',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -587,37 +587,37 @@ def see_also_from_tracing_topical_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
+        'topical_term_or_geographic_name_entry_element': value.get('a'),
+        'topical_term_following_geographic_name_entry_element': value.get('b'),
         'miscellaneous_information': utils.force_list(
             value.get('g')
         ),
-        'relationship_code': utils.force_list(
-            value.get('4')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
-        'topical_term_following_geographic_name_entry_element': value.get('b'),
         'form_subdivision': utils.force_list(
             value.get('v')
         ),
-        'topical_term_or_geographic_name_entry_element': value.get('a'),
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
+        ),
         'geographic_subdivision': utils.force_list(
             value.get('z')
         ),
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
-        'chronological_subdivision': utils.force_list(
-            value.get('y')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
+        'relationship_code': utils.force_list(
+            value.get('4')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -638,18 +638,18 @@ def see_also_from_tracing_topical_term(self, key, value):
 def see_also_from_tracing_geographic_name(self, key, value):
     """See Also From Tracing-Geographic Name."""
     field_map = {
-        'w': 'control_subfield',
-        '6': 'linkage',
-        'g': 'miscellaneous_information',
-        '4': 'relationship_code',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
         'a': 'geographic_name',
-        '0': 'authority_record_control_number_or_standard_number',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
-        '5': 'institution_to_which_field_applies',
+        'g': 'miscellaneous_information',
         'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'authority_record_control_number_or_standard_number',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -663,36 +663,36 @@ def see_also_from_tracing_geographic_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
+        'geographic_name': value.get('a'),
         'miscellaneous_information': utils.force_list(
             value.get('g')
-        ),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
-        'geographic_name': value.get('a'),
-        'authority_record_control_number_or_standard_number': utils.force_list(
-            value.get('0')
-        ),
-        'chronological_subdivision': utils.force_list(
-            value.get('y')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'institution_to_which_field_applies': utils.force_list(
-            value.get('5')
         ),
         'relationship_information': utils.force_list(
             value.get('i')
         ),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
+        'chronological_subdivision': utils.force_list(
+            value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'authority_record_control_number_or_standard_number': utils.force_list(
+            value.get('0')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'institution_to_which_field_applies': utils.force_list(
+            value.get('5')
+        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -713,17 +713,17 @@ def see_also_from_tracing_geographic_name(self, key, value):
 def see_also_from_tracing_genre_form_term(self, key, value):
     """See Also From Tracing-Genre/Form Term."""
     field_map = {
-        'w': 'control_subfield',
-        '6': 'linkage',
-        '4': 'relationship_code',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
         'a': 'genre_form_term',
-        '0': 'record_control_number',
-        'y': 'chronological_subdivision',
-        'x': 'general_subdivision',
-        '5': 'institution_to_which_field_applies',
         'i': 'relationship_information',
+        'v': 'form_subdivision',
+        'w': 'control_subfield',
+        'x': 'general_subdivision',
+        'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'record_control_number',
+        '4': 'relationship_code',
+        '5': 'institution_to_which_field_applies',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -737,33 +737,33 @@ def see_also_from_tracing_genre_form_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'control_subfield': value.get('w'),
-        'linkage': value.get('6'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
+        'genre_form_term': value.get('a'),
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
         'form_subdivision': utils.force_list(
             value.get('v')
         ),
-        'genre_form_term': value.get('a'),
-        'record_control_number': utils.force_list(
-            value.get('0')
+        'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
         ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
         ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -784,13 +784,13 @@ def see_also_from_tracing_genre_form_term(self, key, value):
 def see_also_from_tracing_medium_of_performance_term(self, key, value):
     """See Also From Tracing-Medium of Performance Term."""
     field_map = {
-        '0': 'authority_record_control_number_or_standard_number',
-        '6': 'linkage',
+        'a': 'medium_of_performance_term',
+        'i': 'relationship_information',
         'w': 'control_subfield',
+        '0': 'authority_record_control_number_or_standard_number',
         '4': 'relationship_code',
         '5': 'institution_to_which_field_applies',
-        'i': 'relationship_information',
-        'a': 'medium_of_performance_term',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -804,21 +804,21 @@ def see_also_from_tracing_medium_of_performance_term(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'medium_of_performance_term': value.get('a'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'control_subfield': value.get('w'),
         'authority_record_control_number_or_standard_number': utils.force_list(
             value.get('0')
         ),
-        'linkage': value.get('6'),
-        'control_subfield': value.get('w'),
         'relationship_code': utils.force_list(
             value.get('4')
         ),
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'medium_of_performance_term': value.get('a'),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -839,16 +839,16 @@ def see_also_from_tracing_medium_of_performance_term(self, key, value):
 def see_also_from_tracing_general_subdivision(self, key, value):
     """See Also From Tracing-General Subdivision."""
     field_map = {
-        '0': 'record_control_number',
-        '6': 'linkage',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
         'w': 'control_subfield',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'record_control_number',
         '4': 'relationship_code',
         '5': 'institution_to_which_field_applies',
-        'i': 'relationship_information',
-        'x': 'general_subdivision',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -862,13 +862,24 @@ def see_also_from_tracing_general_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'record_control_number': utils.force_list(
-            value.get('0')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
-        'linkage': value.get('6'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
         'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
         ),
         'relationship_code': utils.force_list(
             value.get('4')
@@ -876,18 +887,7 @@ def see_also_from_tracing_general_subdivision(self, key, value):
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -908,16 +908,16 @@ def see_also_from_tracing_general_subdivision(self, key, value):
 def see_also_from_tracing_geographic_subdivision(self, key, value):
     """See Also From Tracing-Geographic Subdivision."""
     field_map = {
-        '0': 'record_control_number',
-        '6': 'linkage',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
         'w': 'control_subfield',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'record_control_number',
         '4': 'relationship_code',
         '5': 'institution_to_which_field_applies',
-        'i': 'relationship_information',
-        'x': 'general_subdivision',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -931,13 +931,24 @@ def see_also_from_tracing_geographic_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'record_control_number': utils.force_list(
-            value.get('0')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
-        'linkage': value.get('6'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
         'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
         ),
         'relationship_code': utils.force_list(
             value.get('4')
@@ -945,18 +956,7 @@ def see_also_from_tracing_geographic_subdivision(self, key, value):
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -977,16 +977,16 @@ def see_also_from_tracing_geographic_subdivision(self, key, value):
 def see_also_from_tracing_chronological_subdivision(self, key, value):
     """See Also From Tracing-Chronological Subdivision."""
     field_map = {
-        '0': 'record_control_number',
-        '6': 'linkage',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
         'w': 'control_subfield',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'record_control_number',
         '4': 'relationship_code',
         '5': 'institution_to_which_field_applies',
-        'i': 'relationship_information',
-        'x': 'general_subdivision',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -1000,13 +1000,24 @@ def see_also_from_tracing_chronological_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'record_control_number': utils.force_list(
-            value.get('0')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
-        'linkage': value.get('6'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
         'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
         ),
         'relationship_code': utils.force_list(
             value.get('4')
@@ -1014,18 +1025,7 @@ def see_also_from_tracing_chronological_subdivision(self, key, value):
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -1046,16 +1046,16 @@ def see_also_from_tracing_chronological_subdivision(self, key, value):
 def see_also_from_tracing_form_subdivision(self, key, value):
     """See Also From Tracing-Form Subdivision."""
     field_map = {
-        '0': 'record_control_number',
-        '6': 'linkage',
+        'i': 'relationship_information',
+        'v': 'form_subdivision',
         'w': 'control_subfield',
+        'x': 'general_subdivision',
         'y': 'chronological_subdivision',
+        'z': 'geographic_subdivision',
+        '0': 'record_control_number',
         '4': 'relationship_code',
         '5': 'institution_to_which_field_applies',
-        'i': 'relationship_information',
-        'x': 'general_subdivision',
-        'z': 'geographic_subdivision',
-        'v': 'form_subdivision',
+        '6': 'linkage',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -1069,13 +1069,24 @@ def see_also_from_tracing_form_subdivision(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'record_control_number': utils.force_list(
-            value.get('0')
+        'relationship_information': utils.force_list(
+            value.get('i')
         ),
-        'linkage': value.get('6'),
+        'form_subdivision': utils.force_list(
+            value.get('v')
+        ),
         'control_subfield': value.get('w'),
+        'general_subdivision': utils.force_list(
+            value.get('x')
+        ),
         'chronological_subdivision': utils.force_list(
             value.get('y')
+        ),
+        'geographic_subdivision': utils.force_list(
+            value.get('z')
+        ),
+        'record_control_number': utils.force_list(
+            value.get('0')
         ),
         'relationship_code': utils.force_list(
             value.get('4')
@@ -1083,18 +1094,7 @@ def see_also_from_tracing_form_subdivision(self, key, value):
         'institution_to_which_field_applies': utils.force_list(
             value.get('5')
         ),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'general_subdivision': utils.force_list(
-            value.get('x')
-        ),
-        'geographic_subdivision': utils.force_list(
-            value.get('z')
-        ),
-        'form_subdivision': utils.force_list(
-            value.get('v')
-        ),
+        'linkage': value.get('6'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),

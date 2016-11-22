@@ -19,20 +19,21 @@ from ..model import to_marc21_liberal
 @utils.filter_values
 def reverse_holding_institution(self, key, value):
     """Reverse - Holding Institution."""
+
     field_map = {
-        'field_link_and_sequence_number': '8',
         'holding_institution': 'a',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
         'a': utils.reverse_force_list(
             value.get('holding_institution')
+        ),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -52,89 +53,90 @@ def reverse_location(self, key, value):
     """Reverse - Location."""
     indicator_map1 = {"Dewey Decimal classification": "1", "Library of Congress classification": "0", "National Library of Medicine classification": "2", "No information provided": "_", "Other scheme": "8", "Shelved separately": "6", "Shelving control number": "4", "Source specified in subfield $2": "7", "Superintendent of Documents classification": "3", "Title": "5"}
     indicator_map2 = {"Alternative enumeration": "2", "No information provided": "_", "Not enumeration": "0", "Primary enumeration": "1"}
+
     field_map = {
-        'shelving_form_of_title': 'l',
-        'piece_designation': 'p',
-        'sublocation_or_collection': 'b',
-        'non_coded_location_qualifier': 'g',
-        'former_shelving_location': 'd',
-        'materials_specified': '3',
-        'country_code': 'n',
-        'coded_location_qualifier': 'f',
-        'address': 'e',
-        'call_number_suffix': 'm',
-        'public_note': 'z',
-        'call_number_prefix': 'k',
-        'sequence_number': '8',
-        'uniform_resource_identifier': 'u',
         'location': 'a',
-        'item_part': 'i',
-        'classification_part': 'h',
-        'nonpublic_note': 'x',
-        'copy_number': 't',
-        'source_of_classification_or_shelving_scheme': '2',
-        'copyright_article_fee_code': 's',
-        'linkage': '6',
-        'piece_physical_condition': 'q',
+        'sublocation_or_collection': 'b',
         'shelving_location': 'c',
+        'former_shelving_location': 'd',
+        'address': 'e',
+        'coded_location_qualifier': 'f',
+        'non_coded_location_qualifier': 'g',
+        'classification_part': 'h',
+        'item_part': 'i',
         'shelving_control_number': 'j',
+        'call_number_prefix': 'k',
+        'shelving_form_of_title': 'l',
+        'call_number_suffix': 'm',
+        'country_code': 'n',
+        'piece_designation': 'p',
+        'piece_physical_condition': 'q',
+        'copyright_article_fee_code': 's',
+        'copy_number': 't',
+        'uniform_resource_identifier': 'u',
+        'nonpublic_note': 'x',
+        'public_note': 'z',
+        'source_of_classification_or_shelving_scheme': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['shelving_scheme', 'shelving_order'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'l': value.get('shelving_form_of_title'),
-        'p': value.get('piece_designation'),
+        'a': value.get('location'),
         'b': utils.reverse_force_list(
             value.get('sublocation_or_collection')
         ),
-        'g': utils.reverse_force_list(
-            value.get('non_coded_location_qualifier')
+        'c': utils.reverse_force_list(
+            value.get('shelving_location')
         ),
         'd': utils.reverse_force_list(
             value.get('former_shelving_location')
         ),
-        '3': value.get('materials_specified'),
-        'n': value.get('country_code'),
-        'f': utils.reverse_force_list(
-            value.get('coded_location_qualifier')
-        ),
         'e': utils.reverse_force_list(
             value.get('address')
         ),
+        'f': utils.reverse_force_list(
+            value.get('coded_location_qualifier')
+        ),
+        'g': utils.reverse_force_list(
+            value.get('non_coded_location_qualifier')
+        ),
+        'h': value.get('classification_part'),
+        'i': utils.reverse_force_list(
+            value.get('item_part')
+        ),
+        'j': value.get('shelving_control_number'),
+        'k': utils.reverse_force_list(
+            value.get('call_number_prefix')
+        ),
+        'l': value.get('shelving_form_of_title'),
         'm': utils.reverse_force_list(
             value.get('call_number_suffix')
+        ),
+        'n': value.get('country_code'),
+        'p': value.get('piece_designation'),
+        'q': value.get('piece_physical_condition'),
+        's': utils.reverse_force_list(
+            value.get('copyright_article_fee_code')
+        ),
+        't': value.get('copy_number'),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')
+        ),
+        'x': utils.reverse_force_list(
+            value.get('nonpublic_note')
         ),
         'z': utils.reverse_force_list(
             value.get('public_note')
         ),
-        'k': utils.reverse_force_list(
-            value.get('call_number_prefix')
-        ),
-        '8': value.get('sequence_number'),
-        'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
-        ),
-        'a': value.get('location'),
-        'i': utils.reverse_force_list(
-            value.get('item_part')
-        ),
-        'h': value.get('classification_part'),
-        'x': utils.reverse_force_list(
-            value.get('nonpublic_note')
-        ),
-        't': value.get('copy_number'),
         '2': value.get('source_of_classification_or_shelving_scheme'),
-        's': utils.reverse_force_list(
-            value.get('copyright_article_fee_code')
-        ),
+        '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        'q': value.get('piece_physical_condition'),
-        'c': utils.reverse_force_list(
-            value.get('shelving_location')
-        ),
-        'j': value.get('shelving_control_number'),
+        '8': value.get('sequence_number'),
         '$ind1': '7' if 'shelving_scheme' in value and
         not indicator_map1.get(value.get('shelving_scheme')) and
         value.get('shelving_scheme') == value.get('source_of_classification_or_shelving_scheme') and
@@ -157,35 +159,36 @@ def reverse_electronic_location_and_access(self, key, value):
     """Reverse - Electronic Location and Access."""
     indicator_map1 = {"Dial-up": "3", "Email": "0", "FTP": "1", "HTTP": "4", "Method specified in subfield $2": "7", "No information provided": "_", "Remote login (Telnet)": "2"}
     indicator_map2 = {"No display constant generated": "8", "No information provided": "_", "Related resource": "2", "Resource": "0", "Version of resource": "1"}
+
     field_map = {
-        'logon': 'l',
-        'port': 'p',
-        'access_number': 'b',
-        'record_control_number': 'w',
-        'hours_access_method_available': 'v',
-        'path': 'd',
-        'materials_specified': '3',
-        'name_of_location_of_host': 'n',
-        'link_text': 'y',
-        'electronic_name': 'f',
-        'contact_for_access_assistance': 'm',
-        'public_note': 'z',
-        'password': 'k',
-        'field_link_and_sequence_number': '8',
-        'operating_system': 'o',
-        'settings': 'r',
-        'uniform_resource_identifier': 'u',
         'host_name': 'a',
-        'instruction': 'i',
-        'processor_of_request': 'h',
-        'nonpublic_note': 'x',
-        'terminal_emulation': 't',
-        'access_method': '2',
-        'file_size': 's',
-        'linkage': '6',
-        'electronic_format_type': 'q',
+        'access_number': 'b',
         'compression_information': 'c',
+        'path': 'd',
+        'electronic_name': 'f',
+        'processor_of_request': 'h',
+        'instruction': 'i',
         'bits_per_second': 'j',
+        'password': 'k',
+        'logon': 'l',
+        'contact_for_access_assistance': 'm',
+        'name_of_location_of_host': 'n',
+        'operating_system': 'o',
+        'port': 'p',
+        'electronic_format_type': 'q',
+        'settings': 'r',
+        'file_size': 's',
+        'terminal_emulation': 't',
+        'uniform_resource_identifier': 'u',
+        'hours_access_method_available': 'v',
+        'record_control_number': 'w',
+        'nonpublic_note': 'x',
+        'link_text': 'y',
+        'public_note': 'z',
+        'access_method': '2',
+        'materials_specified': '3',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['access_method', 'relationship'])
@@ -196,66 +199,66 @@ def reverse_electronic_location_and_access(self, key, value):
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'l': value.get('logon'),
-        'p': value.get('port'),
+        'a': utils.reverse_force_list(
+            value.get('host_name')
+        ),
         'b': utils.reverse_force_list(
             value.get('access_number')
         ),
-        'w': utils.reverse_force_list(
-            value.get('record_control_number')
-        ),
-        'v': utils.reverse_force_list(
-            value.get('hours_access_method_available')
+        'c': utils.reverse_force_list(
+            value.get('compression_information')
         ),
         'd': utils.reverse_force_list(
             value.get('path')
         ),
-        '3': value.get('materials_specified'),
-        'n': value.get('name_of_location_of_host'),
-        'y': utils.reverse_force_list(
-            value.get('link_text')
-        ),
         'f': utils.reverse_force_list(
             value.get('electronic_name')
         ),
-        'm': utils.reverse_force_list(
-            value.get('contact_for_access_assistance')
-        ),
-        'z': utils.reverse_force_list(
-            value.get('public_note')
-        ),
-        'k': value.get('password'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'o': value.get('operating_system'),
-        'r': value.get('settings'),
-        'u': utils.reverse_force_list(
-            value.get('uniform_resource_identifier')
-        ),
-        'a': utils.reverse_force_list(
-            value.get('host_name')
-        ),
+        'h': value.get('processor_of_request'),
         'i': utils.reverse_force_list(
             value.get('instruction')
         ),
-        'h': value.get('processor_of_request'),
-        'x': utils.reverse_force_list(
-            value.get('nonpublic_note')
+        'j': value.get('bits_per_second'),
+        'k': value.get('password'),
+        'l': value.get('logon'),
+        'm': utils.reverse_force_list(
+            value.get('contact_for_access_assistance')
+        ),
+        'n': value.get('name_of_location_of_host'),
+        'o': value.get('operating_system'),
+        'p': value.get('port'),
+        'q': value.get('electronic_format_type'),
+        'r': value.get('settings'),
+        's': utils.reverse_force_list(
+            value.get('file_size')
         ),
         't': utils.reverse_force_list(
             value.get('terminal_emulation')
         ),
+        'u': utils.reverse_force_list(
+            value.get('uniform_resource_identifier')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('hours_access_method_available')
+        ),
+        'w': utils.reverse_force_list(
+            value.get('record_control_number')
+        ),
+        'x': utils.reverse_force_list(
+            value.get('nonpublic_note')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('link_text')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('public_note')
+        ),
         '2': value.get('access_method'),
-        's': utils.reverse_force_list(
-            value.get('file_size')
-        ),
+        '3': value.get('materials_specified'),
         '6': value.get('linkage'),
-        'q': value.get('electronic_format_type'),
-        'c': utils.reverse_force_list(
-            value.get('compression_information')
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
-        'j': value.get('bits_per_second'),
         '$ind1': '7' if 'access_method' in value and
         not indicator_map1.get(value.get('access_method')) and
         value.get('access_method') == value.get('access_method') and
@@ -275,18 +278,22 @@ def reverse_electronic_location_and_access(self, key, value):
 @utils.filter_values
 def reverse_replacement_record_information(self, key, value):
     """Reverse - Replacement Record Information."""
+
     field_map = {
+        'replacement_title': 'a',
         'explanatory_text': 'i',
         'replacement_bibliographic_record_control_number': 'w',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'replacement_title': 'a',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': utils.reverse_force_list(
+            value.get('replacement_title')
+        ),
         'i': utils.reverse_force_list(
             value.get('explanatory_text')
         ),
@@ -296,9 +303,6 @@ def reverse_replacement_record_information(self, key, value):
         '6': value.get('linkage'),
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
-        ),
-        'a': utils.reverse_force_list(
-            value.get('replacement_title')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
@@ -317,37 +321,38 @@ def reverse_replacement_record_information(self, key, value):
 def reverse_machine_generated_metadata_provenance(self, key, value):
     """Reverse - Machine-generated Metadata Provenance."""
     indicator_map1 = {"Fully machine-generated": "0", "No information provided/not applicable": "_", "Partially machine-generated": "1"}
+
     field_map = {
+        'generation_process': 'a',
+        'confidence_value': 'c',
+        'generation_date': 'd',
+        'generation_agency': 'q',
         'uniform_resource_identifier': 'u',
         'bibliographic_record_control_number': 'w',
-        'field_link_and_sequence_number': '8',
-        'generation_process': 'a',
-        'authority_record_control_number_or_standard_number': '0',
         'validity_end_date': 'x',
-        'generation_date': 'd',
-        'confidence_value': 'c',
-        'generation_agency': 'q',
+        'authority_record_control_number_or_standard_number': '0',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['method_of_machine_assignment', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('generation_process'),
+        'c': value.get('confidence_value'),
+        'd': value.get('generation_date'),
+        'q': value.get('generation_agency'),
         'u': value.get('uniform_resource_identifier'),
         'w': utils.reverse_force_list(
             value.get('bibliographic_record_control_number')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        'a': value.get('generation_process'),
+        'x': value.get('validity_end_date'),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        'x': value.get('validity_end_date'),
-        'd': value.get('generation_date'),
-        'c': value.get('confidence_value'),
-        'q': value.get('generation_agency'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
+        ),
         '$ind1': indicator_map1.get(value.get('method_of_machine_assignment'), value.get('method_of_machine_assignment', '_')),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -364,25 +369,26 @@ def reverse_machine_generated_metadata_provenance(self, key, value):
 @utils.filter_values
 def reverse_description_conversion_information(self, key, value):
     """Reverse - Description Conversion Information."""
+
     field_map = {
-        'uniform_resource_identifier': 'u',
-        'identifier_of_source_metadata': 'k',
-        'conversion_date': 'g',
-        'conversion_agency': 'q',
         'conversion_process': 'a',
+        'conversion_date': 'g',
+        'identifier_of_source_metadata': 'k',
+        'conversion_agency': 'q',
+        'uniform_resource_identifier': 'u',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
+        'a': value.get('conversion_process'),
+        'g': value.get('conversion_date'),
+        'k': value.get('identifier_of_source_metadata'),
+        'q': value.get('conversion_agency'),
         'u': utils.reverse_force_list(
             value.get('uniform_resource_identifier')
         ),
-        'k': value.get('identifier_of_source_metadata'),
-        'g': value.get('conversion_date'),
-        'q': value.get('conversion_agency'),
-        'a': value.get('conversion_process'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }
@@ -399,17 +405,18 @@ def reverse_description_conversion_information(self, key, value):
 @utils.filter_values
 def reverse_non_marc_information_field(self, key, value):
     """Reverse - Non-MARC Information Field."""
+
     field_map = {
-        'source_of_data': '2',
         'content_of_non_marc_field': 'a',
+        'source_of_data': '2',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'None'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        '2': value.get('source_of_data'),
         'a': value.get('content_of_non_marc_field'),
+        '2': value.get('source_of_data'),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': value.get('$ind2', '_'),
     }

@@ -22,24 +22,24 @@ def series_statement_added_entry_personal_name(self, key, value):
     indicator_map1 = {"0": "Forename", "1": "Surname", "3": "Family name"}
     indicator_map2 = {"0": "Main entry not represented by pronoun", "1": "Main entry represented by pronoun"}
     field_map = {
-        'k': 'form_subheading',
-        'n': 'number_of_part_section_of_a_work',
-        '8': 'field_link_and_sequence_number',
-        'v': 'volume_sequential_designation',
-        '6': 'linkage',
-        '4': 'relator_code',
-        'g': 'miscellaneous_information',
-        'u': 'affiliation',
-        'd': 'dates_associated_with_a_name',
         'a': 'personal_name',
-        'e': 'relator_term',
-        'l': 'language_of_a_work',
-        'x': 'international_standard_serial_number',
-        't': 'title_of_a_work',
-        'f': 'date_of_a_work',
-        'c': 'titles_and_other_words_associated_with_a_name',
         'b': 'numeration',
+        'c': 'titles_and_other_words_associated_with_a_name',
+        'd': 'dates_associated_with_a_name',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_of_a_work',
         'p': 'name_of_part_section_of_a_work',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'v': 'volume_sequential_designation',
+        'x': 'international_standard_serial_number',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -52,37 +52,37 @@ def series_statement_added_entry_personal_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'form_subheading': utils.force_list(
-            value.get('k')
-        ),
-        'number_of_part_section_of_a_work': utils.force_list(
-            value.get('n')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'volume_sequential_designation': value.get('v'),
-        'linkage': value.get('6'),
-        'relator_code': utils.force_list(
-            value.get('4')
-        ),
-        'miscellaneous_information': value.get('g'),
-        'affiliation': value.get('u'),
-        'dates_associated_with_a_name': value.get('d'),
         'personal_name': value.get('a'),
-        'relator_term': utils.force_list(
-            value.get('e')
-        ),
-        'language_of_a_work': value.get('l'),
-        'international_standard_serial_number': value.get('x'),
-        'title_of_a_work': value.get('t'),
-        'date_of_a_work': value.get('f'),
+        'numeration': value.get('b'),
         'titles_and_other_words_associated_with_a_name': utils.force_list(
             value.get('c')
         ),
-        'numeration': value.get('b'),
+        'dates_associated_with_a_name': value.get('d'),
+        'relator_term': utils.force_list(
+            value.get('e')
+        ),
+        'date_of_a_work': value.get('f'),
+        'miscellaneous_information': value.get('g'),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_of_a_work': utils.force_list(
+            value.get('n')
+        ),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
+        ),
+        'title_of_a_work': value.get('t'),
+        'affiliation': value.get('u'),
+        'volume_sequential_designation': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
+        'relator_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'type_of_personal_name_entry_element': indicator_map1.get(key[3], key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4], key[4]),
@@ -103,24 +103,24 @@ def series_statement_added_entry_corporate_name(self, key, value):
     indicator_map1 = {"0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
     indicator_map2 = {"0": "Main entry not represented by pronoun", "1": "Main entry represented by pronoun"}
     field_map = {
-        'k': 'form_subheading',
-        'n': 'number_of_part_section_meeting',
-        '8': 'field_link_and_sequence_number',
-        'v': 'volume_sequential_designation',
-        '6': 'linkage',
-        '4': 'relator_code',
-        'g': 'miscellaneous_information',
-        'u': 'affiliation',
-        'd': 'date_of_meeting_or_treaty_signing',
         'a': 'corporate_name_or_jurisdiction_name_as_entry_element',
-        'e': 'relator_term',
-        'l': 'language_of_a_work',
-        'x': 'international_standard_serial_number',
-        't': 'title_of_a_work',
-        'f': 'date_of_a_work',
-        'c': 'location_of_meeting',
         'b': 'subordinate_unit',
+        'c': 'location_of_meeting',
+        'd': 'date_of_meeting_or_treaty_signing',
+        'e': 'relator_term',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_meeting',
         'p': 'name_of_part_section_of_a_work',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'v': 'volume_sequential_designation',
+        'x': 'international_standard_serial_number',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -133,39 +133,39 @@ def series_statement_added_entry_corporate_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'form_subheading': utils.force_list(
-            value.get('k')
-        ),
-        'number_of_part_section_meeting': utils.force_list(
-            value.get('n')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'volume_sequential_designation': value.get('v'),
-        'linkage': value.get('6'),
-        'relator_code': utils.force_list(
-            value.get('4')
-        ),
-        'miscellaneous_information': value.get('g'),
-        'affiliation': value.get('u'),
-        'date_of_meeting_or_treaty_signing': utils.force_list(
-            value.get('d')
-        ),
         'corporate_name_or_jurisdiction_name_as_entry_element': value.get('a'),
-        'relator_term': utils.force_list(
-            value.get('e')
-        ),
-        'language_of_a_work': value.get('l'),
-        'international_standard_serial_number': value.get('x'),
-        'title_of_a_work': value.get('t'),
-        'date_of_a_work': value.get('f'),
-        'location_of_meeting': value.get('c'),
         'subordinate_unit': utils.force_list(
             value.get('b')
         ),
+        'location_of_meeting': value.get('c'),
+        'date_of_meeting_or_treaty_signing': utils.force_list(
+            value.get('d')
+        ),
+        'relator_term': utils.force_list(
+            value.get('e')
+        ),
+        'date_of_a_work': value.get('f'),
+        'miscellaneous_information': value.get('g'),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
+        ),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
+        ),
+        'title_of_a_work': value.get('t'),
+        'affiliation': value.get('u'),
+        'volume_sequential_designation': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
+        'relator_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'type_of_corporate_name_entry_element': indicator_map1.get(key[3], key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4], key[4]),
@@ -186,24 +186,24 @@ def series_statement_added_entry_meeting_name(self, key, value):
     indicator_map1 = {"0": "Inverted name", "1": "Jurisdiction name", "2": "Name in direct order"}
     indicator_map2 = {"0": "Main entry not represented by pronoun", "1": "Main entry represented by pronoun"}
     field_map = {
-        'k': 'form_subheading',
-        'n': 'number_of_part_section_meeting',
-        '8': 'field_link_and_sequence_number',
-        'v': 'volume_sequential_designation',
-        'q': 'name_of_meeting_following_jurisdiction_name_entry_element',
-        '6': 'linkage',
-        '4': 'relator_code',
-        'g': 'miscellaneous_information',
-        'u': 'affiliation',
         'a': 'meeting_name_or_jurisdiction_name_as_entry_element',
-        'e': 'subordinate_unit',
-        'l': 'language_of_a_work',
-        'x': 'international_standard_serial_number',
-        't': 'title_of_a_work',
-        'f': 'date_of_a_work',
         'c': 'location_of_meeting',
         'd': 'date_of_meeting',
+        'e': 'subordinate_unit',
+        'f': 'date_of_a_work',
+        'g': 'miscellaneous_information',
+        'k': 'form_subheading',
+        'l': 'language_of_a_work',
+        'n': 'number_of_part_section_meeting',
         'p': 'name_of_part_section_of_a_work',
+        'q': 'name_of_meeting_following_jurisdiction_name_entry_element',
+        't': 'title_of_a_work',
+        'u': 'affiliation',
+        'v': 'volume_sequential_designation',
+        'x': 'international_standard_serial_number',
+        '4': 'relator_code',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -216,35 +216,35 @@ def series_statement_added_entry_meeting_name(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'form_subheading': utils.force_list(
-            value.get('k')
-        ),
-        'number_of_part_section_meeting': utils.force_list(
-            value.get('n')
-        ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'volume_sequential_designation': value.get('v'),
-        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
-        'linkage': value.get('6'),
-        'relator_code': utils.force_list(
-            value.get('4')
-        ),
-        'miscellaneous_information': value.get('g'),
-        'affiliation': value.get('u'),
         'meeting_name_or_jurisdiction_name_as_entry_element': value.get('a'),
+        'location_of_meeting': value.get('c'),
+        'date_of_meeting': value.get('d'),
         'subordinate_unit': utils.force_list(
             value.get('e')
         ),
-        'language_of_a_work': value.get('l'),
-        'international_standard_serial_number': value.get('x'),
-        'title_of_a_work': value.get('t'),
         'date_of_a_work': value.get('f'),
-        'location_of_meeting': value.get('c'),
-        'date_of_meeting': value.get('d'),
+        'miscellaneous_information': value.get('g'),
+        'form_subheading': utils.force_list(
+            value.get('k')
+        ),
+        'language_of_a_work': value.get('l'),
+        'number_of_part_section_meeting': utils.force_list(
+            value.get('n')
+        ),
         'name_of_part_section_of_a_work': utils.force_list(
             value.get('p')
+        ),
+        'name_of_meeting_following_jurisdiction_name_entry_element': value.get('q'),
+        'title_of_a_work': value.get('t'),
+        'affiliation': value.get('u'),
+        'volume_sequential_designation': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
+        'relator_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'type_of_meeting_name_entry_element': indicator_map1.get(key[3], key[3]),
         'pronoun_represents_main_entry': indicator_map2.get(key[4], key[4]),
@@ -264,15 +264,15 @@ def series_statement_added_entry_title(self, key, value):
     """Series Statement/Added Entry-Title."""
     indicator_map2 = {str(x): str(x) for x in range(10)}
     field_map = {
-        'w': 'bibliographic_record_control_number',
-        'n': 'number_of_part_section_of_a_work',
-        '8': 'field_link_and_sequence_number',
-        '0': 'authority_record_control_number',
-        'v': 'volume_sequential_designation',
-        '6': 'linkage',
         'a': 'title',
-        'x': 'international_standard_serial_number',
+        'n': 'number_of_part_section_of_a_work',
         'p': 'name_of_part_section_of_a_work',
+        'v': 'volume_sequential_designation',
+        'w': 'bibliographic_record_control_number',
+        'x': 'international_standard_serial_number',
+        '0': 'authority_record_control_number',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -285,24 +285,24 @@ def series_statement_added_entry_title(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'bibliographic_record_control_number': utils.force_list(
-            value.get('w')
-        ),
+        'title': value.get('a'),
         'number_of_part_section_of_a_work': utils.force_list(
             value.get('n')
         ),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
+        'name_of_part_section_of_a_work': utils.force_list(
+            value.get('p')
         ),
+        'volume_sequential_designation': value.get('v'),
+        'bibliographic_record_control_number': utils.force_list(
+            value.get('w')
+        ),
+        'international_standard_serial_number': value.get('x'),
         'authority_record_control_number': utils.force_list(
             value.get('0')
         ),
-        'volume_sequential_designation': value.get('v'),
         'linkage': value.get('6'),
-        'title': value.get('a'),
-        'international_standard_serial_number': value.get('x'),
-        'name_of_part_section_of_a_work': utils.force_list(
-            value.get('p')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         '$ind1': key[3] if key[3] != '_' else None,
         'nonfiling_characters': indicator_map2.get(key[4], key[4]),
@@ -322,13 +322,13 @@ def series_statement(self, key, value):
     """Series Statement."""
     indicator_map1 = {"0": "Series not traced", "1": "Series traced"}
     field_map = {
-        'x': 'international_standard_serial_number',
-        'l': 'library_of_congress_call_number',
-        '8': 'field_link_and_sequence_number',
-        '3': 'materials_specified',
-        'v': 'volume_sequential_designation',
-        '6': 'linkage',
         'a': 'series_statement',
+        'l': 'library_of_congress_call_number',
+        'v': 'volume_sequential_designation',
+        'x': 'international_standard_serial_number',
+        '3': 'materials_specified',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -341,20 +341,20 @@ def series_statement(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'international_standard_serial_number': utils.force_list(
-            value.get('x')
+        'series_statement': utils.force_list(
+            value.get('a')
         ),
         'library_of_congress_call_number': value.get('l'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
-        ),
-        'materials_specified': value.get('3'),
         'volume_sequential_designation': utils.force_list(
             value.get('v')
         ),
+        'international_standard_serial_number': utils.force_list(
+            value.get('x')
+        ),
+        'materials_specified': value.get('3'),
         'linkage': value.get('6'),
-        'series_statement': utils.force_list(
-            value.get('a')
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         'series_tracing_policy': indicator_map1.get(key[3], key[3]),
         '$ind2': key[4] if key[4] != '_' else None,

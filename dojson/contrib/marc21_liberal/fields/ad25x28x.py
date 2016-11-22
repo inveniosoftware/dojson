@@ -20,11 +20,11 @@ from ..model import marc21_liberal_authority
 def complex_see_reference_subject(self, key, value):
     """Complex See Reference-Subject."""
     field_map = {
-        '6': 'linkage',
-        '8': 'field_link_and_sequence_number',
+        'a': 'heading_referred_to',
         'i': 'explanatory_text',
         '0': 'authority_record_control_number',
-        'a': 'heading_referred_to',
+        '6': 'linkage',
+        '8': 'field_link_and_sequence_number',
     }
 
     order = utils.map_order(field_map, value, liberal=True)
@@ -37,9 +37,8 @@ def complex_see_reference_subject(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'linkage': value.get('6'),
-        'field_link_and_sequence_number': utils.force_list(
-            value.get('8')
+        'heading_referred_to': utils.force_list(
+            value.get('a')
         ),
         'explanatory_text': utils.force_list(
             value.get('i')
@@ -47,8 +46,9 @@ def complex_see_reference_subject(self, key, value):
         'authority_record_control_number': utils.force_list(
             value.get('0')
         ),
-        'heading_referred_to': utils.force_list(
-            value.get('a')
+        'linkage': value.get('6'),
+        'field_link_and_sequence_number': utils.force_list(
+            value.get('8')
         ),
         '$ind1': key[3] if key[3] != '_' else None,
         '$ind2': key[4] if key[4] != '_' else None,

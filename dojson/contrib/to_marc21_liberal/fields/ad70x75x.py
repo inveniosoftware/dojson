@@ -21,108 +21,109 @@ def reverse_established_heading_linking_entry_personal_name(self, key, value):
     """Reverse - Established Heading Linking Entry-Personal Name."""
     indicator_map1 = {"Family name": "3", "Forename": "0", "Surname": "1"}
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'personal_name': 'a',
-        'name_of_part_section_of_a_work': 'p',
-        'field_link_and_sequence_number': '8',
-        'attribution_qualifier': 'j',
-        'medium': 'h',
-        'chronological_subdivision': 'y',
-        'key_for_music': 'r',
-        'relationship_information': 'i',
-        'number_of_part_section_of_a_work': 'n',
-        'title_of_a_work': 't',
-        'institution_to_which_field_applies': '5',
-        'relator_term': 'e',
-        'authority_record_control_number_or_standard_number': '0',
-        'medium_of_performance_for_music': 'm',
-        'fuller_form_of_name': 'q',
-        'relationship_code': '4',
-        'miscellaneous_information': 'g',
-        'dates_associated_with_a_name': 'd',
         'numeration': 'b',
-        'source_of_heading_or_term': '2',
-        'form_subheading': 'k',
-        'date_of_a_work': 'f',
-        'form_subdivision': 'v',
-        'general_subdivision': 'x',
-        'linkage': '6',
-        'arranged_statement_for_music': 'o',
-        'language_of_a_work': 'l',
-        'version': 's',
         'titles_and_other_words_associated_with_a_name': 'c',
+        'dates_associated_with_a_name': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'attribution_qualifier': 'j',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'fuller_form_of_name': 'q',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_personal_name_entry_element', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('personal_name'),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
+        'b': value.get('numeration'),
+        'c': utils.reverse_force_list(
+            value.get('titles_and_other_words_associated_with_a_name')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'd': value.get('dates_associated_with_a_name'),
+        'e': utils.reverse_force_list(
+            value.get('relator_term')
+        ),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
         ),
         'j': utils.reverse_force_list(
             value.get('attribution_qualifier')
         ),
-        'h': value.get('medium'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
         ),
-        'r': value.get('key_for_music'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
         ),
         'n': utils.reverse_force_list(
             value.get('number_of_part_section_of_a_work')
         ),
-        't': value.get('title_of_a_work'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
         ),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
+        'q': value.get('fuller_form_of_name'),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        'q': value.get('fuller_form_of_name'),
+        '2': value.get('source_of_heading_or_term'),
         '4': utils.reverse_force_list(
             value.get('relationship_code')
         ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        'd': value.get('dates_associated_with_a_name'),
-        'b': value.get('numeration'),
-        '2': value.get('source_of_heading_or_term'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'f': value.get('date_of_a_work'),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
         ),
         '6': value.get('linkage'),
-        'o': value.get('arranged_statement_for_music'),
-        'l': value.get('language_of_a_work'),
-        's': value.get('version'),
-        'c': utils.reverse_force_list(
-            value.get('titles_and_other_words_associated_with_a_name')
-        ),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_personal_name_entry_element'), value.get('type_of_personal_name_entry_element', '_')),
         '$ind2': '7' if 'thesaurus' in value and
@@ -146,106 +147,107 @@ def reverse_established_heading_linking_entry_corporate_name(self, key, value):
     """Reverse - Established Heading Linking Entry-Corporate Name."""
     indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'corporate_name_or_jurisdiction_name_as_entry_element': 'a',
-        'field_link_and_sequence_number': '8',
-        'linkage': '6',
-        'medium': 'h',
-        'chronological_subdivision': 'y',
-        'key_for_music': 'r',
-        'relationship_information': 'i',
-        'number_of_part_section_meeting': 'n',
-        'title_of_a_work': 't',
-        'institution_to_which_field_applies': '5',
-        'relator_term': 'e',
-        'authority_record_control_number_or_standard_number': '0',
-        'medium_of_performance_for_music': 'm',
-        'relationship_code': '4',
-        'miscellaneous_information': 'g',
-        'date_of_meeting_or_treaty_signing': 'd',
         'subordinate_unit': 'b',
-        'source_of_heading_or_term': '2',
-        'form_subheading': 'k',
-        'date_of_a_work': 'f',
-        'form_subdivision': 'v',
-        'general_subdivision': 'x',
-        'name_of_part_section_of_a_work': 'p',
-        'arranged_statement_for_music': 'o',
-        'language_of_a_work': 'l',
-        'version': 's',
         'location_of_meeting': 'c',
+        'date_of_meeting_or_treaty_signing': 'd',
+        'relator_term': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_meeting': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_corporate_name_entry_element', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('corporate_name_or_jurisdiction_name_as_entry_element'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'b': utils.reverse_force_list(
+            value.get('subordinate_unit')
         ),
-        '6': value.get('linkage'),
-        'h': value.get('medium'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'r': value.get('key_for_music'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
-        't': value.get('title_of_a_work'),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
-        'e': utils.reverse_force_list(
-            value.get('relator_term')
-        ),
-        '0': utils.reverse_force_list(
-            value.get('authority_record_control_number_or_standard_number')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
+        'c': utils.reverse_force_list(
+            value.get('location_of_meeting')
         ),
         'd': utils.reverse_force_list(
             value.get('date_of_meeting_or_treaty_signing')
         ),
-        'b': utils.reverse_force_list(
-            value.get('subordinate_unit')
+        'e': utils.reverse_force_list(
+            value.get('relator_term')
         ),
-        '2': value.get('source_of_heading_or_term'),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
         'k': utils.reverse_force_list(
             value.get('form_subheading')
         ),
-        'f': value.get('date_of_a_work'),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_meeting')
         ),
+        'o': value.get('arranged_statement_for_music'),
         'p': utils.reverse_force_list(
             value.get('name_of_part_section_of_a_work')
         ),
-        'o': value.get('arranged_statement_for_music'),
-        'l': value.get('language_of_a_work'),
+        'r': value.get('key_for_music'),
         's': value.get('version'),
-        'c': utils.reverse_force_list(
-            value.get('location_of_meeting')
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
         ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')
+        ),
+        '2': value.get('source_of_heading_or_term'),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_corporate_name_entry_element'), value.get('type_of_corporate_name_entry_element', '_')),
         '$ind2': '7' if 'thesaurus' in value and
@@ -269,98 +271,99 @@ def reverse_established_heading_linking_entry_meeting_name(self, key, value):
     """Reverse - Established Heading Linking Entry-Meeting Name."""
     indicator_map1 = {"Inverted name": "0", "Jurisdiction name": "1", "Name in direct order": "2"}
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'meeting_name_or_jurisdiction_name_as_entry_element': 'a',
-        'language_of_a_work': 'l',
-        'relator_term': 'j',
-        'medium': 'h',
-        'linkage': '6',
-        'chronological_subdivision': 'y',
-        'number_of_part_section_meeting': 'n',
-        'institution_to_which_field_applies': '5',
-        'subordinate_unit': 'e',
-        'authority_record_control_number_or_standard_number': '0',
-        'form_subheading': 'k',
-        'name_of_meeting_following_jurisdiction_name_entry_element': 'q',
-        'relationship_code': '4',
-        'miscellaneous_information': 'g',
-        'date_of_meeting': 'd',
-        'source_of_heading_or_term': '2',
-        'relationship_information': 'i',
-        'date_of_a_work': 'f',
-        'form_subdivision': 'v',
-        'general_subdivision': 'x',
-        'name_of_part_section_of_a_work': 'p',
-        'field_link_and_sequence_number': '8',
-        'title_of_a_work': 't',
-        'version': 's',
         'location_of_meeting': 'c',
+        'date_of_meeting': 'd',
+        'subordinate_unit': 'e',
+        'date_of_a_work': 'f',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'relator_term': 'j',
+        'form_subheading': 'k',
+        'language_of_a_work': 'l',
+        'number_of_part_section_meeting': 'n',
+        'name_of_part_section_of_a_work': 'p',
+        'name_of_meeting_following_jurisdiction_name_entry_element': 'q',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['type_of_meeting_name_entry_element', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('meeting_name_or_jurisdiction_name_as_entry_element'),
-        'l': value.get('language_of_a_work'),
-        'j': utils.reverse_force_list(
-            value.get('relator_term')
+        'c': utils.reverse_force_list(
+            value.get('location_of_meeting')
         ),
-        'h': value.get('medium'),
-        '6': value.get('linkage'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
-        'n': utils.reverse_force_list(
-            value.get('number_of_part_section_meeting')
-        ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
-        ),
+        'd': value.get('date_of_meeting'),
         'e': utils.reverse_force_list(
             value.get('subordinate_unit')
         ),
-        '0': utils.reverse_force_list(
-            value.get('authority_record_control_number_or_standard_number')
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
+        'h': value.get('medium'),
+        'i': utils.reverse_force_list(
+            value.get('relationship_information')
+        ),
+        'j': utils.reverse_force_list(
+            value.get('relator_term')
         ),
         'k': utils.reverse_force_list(
             value.get('form_subheading')
         ),
-        'q': value.get('name_of_meeting_following_jurisdiction_name_entry_element'),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        'd': value.get('date_of_meeting'),
-        '2': value.get('source_of_heading_or_term'),
-        'i': utils.reverse_force_list(
-            value.get('relationship_information')
-        ),
-        'f': value.get('date_of_a_work'),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
+        'l': value.get('language_of_a_work'),
+        'n': utils.reverse_force_list(
+            value.get('number_of_part_section_meeting')
         ),
         'p': utils.reverse_force_list(
             value.get('name_of_part_section_of_a_work')
         ),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        't': value.get('title_of_a_work'),
+        'q': value.get('name_of_meeting_following_jurisdiction_name_entry_element'),
         's': value.get('version'),
-        'c': utils.reverse_force_list(
-            value.get('location_of_meeting')
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
         ),
         'z': utils.reverse_force_list(
             value.get('geographic_subdivision')
+        ),
+        '0': utils.reverse_force_list(
+            value.get('authority_record_control_number_or_standard_number')
+        ),
+        '2': value.get('source_of_heading_or_term'),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
+        ),
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': indicator_map1.get(value.get('type_of_meeting_name_entry_element'), value.get('type_of_meeting_name_entry_element', '_')),
         '$ind2': '7' if 'thesaurus' in value and
@@ -383,94 +386,95 @@ def reverse_established_heading_linking_entry_meeting_name(self, key, value):
 def reverse_established_heading_linking_entry_uniform_title(self, key, value):
     """Reverse - Established Heading Linking Entry-Uniform Title."""
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'uniform_title': 'a',
-        'field_link_and_sequence_number': '8',
-        'linkage': '6',
-        'medium': 'h',
-        'chronological_subdivision': 'y',
-        'relationship_information': 'i',
-        'number_of_part_section_of_a_work': 'n',
-        'institution_to_which_field_applies': '5',
-        'authority_record_control_number_or_standard_number': '0',
-        'key_for_music': 'r',
-        'miscellaneous_information': 'g',
-        'medium_of_performance_for_music': 'm',
         'date_of_treaty_signing': 'd',
-        'source_of_heading_or_term': '2',
-        'form_subheading': 'k',
         'date_of_a_work': 'f',
-        'form_subdivision': 'v',
-        'general_subdivision': 'x',
-        'name_of_part_section_of_a_work': 'p',
-        'arranged_statement_for_music': 'o',
-        'title_of_a_work': 't',
-        'version': 's',
-        'relationship_code': '4',
+        'miscellaneous_information': 'g',
+        'medium': 'h',
+        'relationship_information': 'i',
+        'form_subheading': 'k',
         'language_of_a_work': 'l',
+        'medium_of_performance_for_music': 'm',
+        'number_of_part_section_of_a_work': 'n',
+        'arranged_statement_for_music': 'o',
+        'name_of_part_section_of_a_work': 'p',
+        'key_for_music': 'r',
+        'version': 's',
+        'title_of_a_work': 't',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
+        'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
         'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
+        'linkage': '6',
+        'field_link_and_sequence_number': '8',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('uniform_title'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
+        'd': utils.reverse_force_list(
+            value.get('date_of_treaty_signing')
         ),
-        '6': value.get('linkage'),
+        'f': value.get('date_of_a_work'),
+        'g': utils.reverse_force_list(
+            value.get('miscellaneous_information')
+        ),
         'h': value.get('medium'),
-        'y': utils.reverse_force_list(
-            value.get('chronological_subdivision')
-        ),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
+        ),
+        'k': utils.reverse_force_list(
+            value.get('form_subheading')
+        ),
+        'l': value.get('language_of_a_work'),
+        'm': utils.reverse_force_list(
+            value.get('medium_of_performance_for_music')
         ),
         'n': utils.reverse_force_list(
             value.get('number_of_part_section_of_a_work')
         ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'o': value.get('arranged_statement_for_music'),
+        'p': utils.reverse_force_list(
+            value.get('name_of_part_section_of_a_work')
+        ),
+        'r': value.get('key_for_music'),
+        's': value.get('version'),
+        't': value.get('title_of_a_work'),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
+        ),
+        'y': utils.reverse_force_list(
+            value.get('chronological_subdivision')
+        ),
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        'r': value.get('key_for_music'),
-        'g': utils.reverse_force_list(
-            value.get('miscellaneous_information')
-        ),
-        'm': utils.reverse_force_list(
-            value.get('medium_of_performance_for_music')
-        ),
-        'd': utils.reverse_force_list(
-            value.get('date_of_treaty_signing')
-        ),
         '2': value.get('source_of_heading_or_term'),
-        'k': utils.reverse_force_list(
-            value.get('form_subheading')
-        ),
-        'f': value.get('date_of_a_work'),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
-        ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        'p': utils.reverse_force_list(
-            value.get('name_of_part_section_of_a_work')
-        ),
-        'o': value.get('arranged_statement_for_music'),
-        't': value.get('title_of_a_work'),
-        's': value.get('version'),
         '4': utils.reverse_force_list(
             value.get('relationship_code')
         ),
-        'l': value.get('language_of_a_work'),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': '7' if 'thesaurus' in value and
@@ -493,56 +497,57 @@ def reverse_established_heading_linking_entry_uniform_title(self, key, value):
 def reverse_established_heading_linking_entry_chronological_term(self, key, value):
     """Reverse - Established Heading Linking Entry-Chronological Term."""
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'chronological_term': 'a',
-        'relationship_code': '4',
-        'source_of_heading_or_term': '2',
         'relationship_information': 'i',
-        'chronological_subdivision': 'y',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
         'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'authority_record_control_number_or_standard_number': '0',
-        'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('chronological_term'),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '2': value.get('source_of_heading_or_term'),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
+        '2': value.get('source_of_heading_or_term'),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': '7' if 'thesaurus' in value and
@@ -565,62 +570,63 @@ def reverse_established_heading_linking_entry_chronological_term(self, key, valu
 def reverse_established_heading_linking_entry_topical_term(self, key, value):
     """Reverse - Established Heading Linking Entry-Topical Term."""
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'topical_term_or_geographic_name_entry_element': 'a',
-        'relationship_code': '4',
-        'miscellaneous_information': 'g',
         'topical_term_following_geographic_name_entry_element': 'b',
-        'source_of_heading_or_term': '2',
+        'miscellaneous_information': 'g',
         'relationship_information': 'i',
-        'chronological_subdivision': 'y',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
         'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'authority_record_control_number_or_standard_number': '0',
-        'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('topical_term_or_geographic_name_entry_element'),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
+        'b': value.get('topical_term_following_geographic_name_entry_element'),
         'g': utils.reverse_force_list(
             value.get('miscellaneous_information')
         ),
-        'b': value.get('topical_term_following_geographic_name_entry_element'),
-        '2': value.get('source_of_heading_or_term'),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
+        '2': value.get('source_of_heading_or_term'),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': '7' if 'thesaurus' in value and
@@ -643,60 +649,61 @@ def reverse_established_heading_linking_entry_topical_term(self, key, value):
 def reverse_established_heading_linking_entry_geographic_name(self, key, value):
     """Reverse - Established Heading Linking Entry-Geographic Name."""
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'geographic_name': 'a',
-        'relationship_code': '4',
         'miscellaneous_information': 'g',
-        'source_of_heading_or_term': '2',
         'relationship_information': 'i',
-        'chronological_subdivision': 'y',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
         'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'authority_record_control_number_or_standard_number': '0',
-        'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('geographic_name'),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
         'g': utils.reverse_force_list(
             value.get('miscellaneous_information')
         ),
-        '2': value.get('source_of_heading_or_term'),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
+        '2': value.get('source_of_heading_or_term'),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': '7' if 'thesaurus' in value and
@@ -719,56 +726,57 @@ def reverse_established_heading_linking_entry_geographic_name(self, key, value):
 def reverse_established_heading_linking_entry_genre_form_term(self, key, value):
     """Reverse - Established Heading Linking Entry-Genre/Form Term."""
     indicator_map2 = {"Canadian Subject Headings": "5", "LC subject headings for children\u0027s literature": "1", "Library of Congress Subject Headings": "0", "Medical Subject Headings": "2", "National Agricultural Library subject authority file": "3", "R\\xc3\\xa9pertoire de vedettes-mati\\xc3\\xa8re": "6", "Source not specified": "4", "Source specified in subfield $2": "7"}
+
     field_map = {
-        'control_subfield': 'w',
         'genre_form_term_as_entry_element': 'a',
-        'relationship_code': '4',
-        'source_of_heading_or_term': '2',
         'relationship_information': 'i',
-        'chronological_subdivision': 'y',
+        'form_subdivision': 'v',
+        'control_subfield': 'w',
         'general_subdivision': 'x',
+        'chronological_subdivision': 'y',
+        'geographic_subdivision': 'z',
+        'authority_record_control_number_or_standard_number': '0',
+        'source_of_heading_or_term': '2',
+        'relationship_code': '4',
+        'institution_to_which_field_applies': '5',
         'linkage': '6',
         'field_link_and_sequence_number': '8',
-        'institution_to_which_field_applies': '5',
-        'authority_record_control_number_or_standard_number': '0',
-        'geographic_subdivision': 'z',
-        'form_subdivision': 'v',
     }
 
     order = utils.map_order(field_map, value, liberal=True, indicators=['None', 'thesaurus'])
 
     record_dict = {
         '__order__': tuple(order) if len(order) else None,
-        'w': value.get('control_subfield'),
         'a': value.get('genre_form_term_as_entry_element'),
-        '4': utils.reverse_force_list(
-            value.get('relationship_code')
-        ),
-        '2': value.get('source_of_heading_or_term'),
         'i': utils.reverse_force_list(
             value.get('relationship_information')
+        ),
+        'v': utils.reverse_force_list(
+            value.get('form_subdivision')
+        ),
+        'w': value.get('control_subfield'),
+        'x': utils.reverse_force_list(
+            value.get('general_subdivision')
         ),
         'y': utils.reverse_force_list(
             value.get('chronological_subdivision')
         ),
-        'x': utils.reverse_force_list(
-            value.get('general_subdivision')
-        ),
-        '6': value.get('linkage'),
-        '8': utils.reverse_force_list(
-            value.get('field_link_and_sequence_number')
-        ),
-        '5': utils.reverse_force_list(
-            value.get('institution_to_which_field_applies')
+        'z': utils.reverse_force_list(
+            value.get('geographic_subdivision')
         ),
         '0': utils.reverse_force_list(
             value.get('authority_record_control_number_or_standard_number')
         ),
-        'z': utils.reverse_force_list(
-            value.get('geographic_subdivision')
+        '2': value.get('source_of_heading_or_term'),
+        '4': utils.reverse_force_list(
+            value.get('relationship_code')
         ),
-        'v': utils.reverse_force_list(
-            value.get('form_subdivision')
+        '5': utils.reverse_force_list(
+            value.get('institution_to_which_field_applies')
+        ),
+        '6': value.get('linkage'),
+        '8': utils.reverse_force_list(
+            value.get('field_link_and_sequence_number')
         ),
         '$ind1': value.get('$ind1', '_'),
         '$ind2': '7' if 'thesaurus' in value and

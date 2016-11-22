@@ -22,24 +22,24 @@ def main_series_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Main series"}
     field_map = {
-        'm': 'material_specific_details',
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        's': 'uniform_title',
         'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
         'h': 'physical_description',
         'i': 'relationship_information',
-        'b': 'edition',
-        'y': 'coden_designation',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        's': 'uniform_title',
         't': 'title',
-        'x': 'international_standard_serial_number',
-        '6': 'linkage',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -53,36 +53,36 @@ def main_series_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'material_specific_details': value.get('m'),
-        'place_publisher_and_date_of_publication': value.get('d'),
-        'note': utils.force_list(
-            value.get('n')
-        ),
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
         'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
+        'place_publisher_and_date_of_publication': value.get('d'),
         'related_parts': utils.force_list(
             value.get('g')
         ),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'uniform_title': value.get('s'),
-        'main_entry_heading': value.get('a'),
         'physical_description': value.get('h'),
         'relationship_information': utils.force_list(
             value.get('i')
         ),
-        'edition': value.get('b'),
-        'coden_designation': value.get('y'),
+        'material_specific_details': value.get('m'),
+        'note': utils.force_list(
+            value.get('n')
+        ),
+        'other_item_identifier': utils.force_list(
+            value.get('o')
+        ),
+        'uniform_title': value.get('s'),
         'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'linkage': value.get('6'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -105,24 +105,24 @@ def subseries_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Has subseries"}
     field_map = {
-        'm': 'material_specific_details',
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        's': 'uniform_title',
         'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
         'h': 'physical_description',
         'i': 'relationship_information',
-        'b': 'edition',
-        'y': 'coden_designation',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        's': 'uniform_title',
         't': 'title',
-        'x': 'international_standard_serial_number',
-        '6': 'linkage',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -136,36 +136,36 @@ def subseries_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'material_specific_details': value.get('m'),
-        'place_publisher_and_date_of_publication': value.get('d'),
-        'note': utils.force_list(
-            value.get('n')
-        ),
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
         'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
+        'place_publisher_and_date_of_publication': value.get('d'),
         'related_parts': utils.force_list(
             value.get('g')
         ),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'uniform_title': value.get('s'),
-        'main_entry_heading': value.get('a'),
         'physical_description': value.get('h'),
         'relationship_information': utils.force_list(
             value.get('i')
         ),
-        'edition': value.get('b'),
-        'coden_designation': value.get('y'),
+        'material_specific_details': value.get('m'),
+        'note': utils.force_list(
+            value.get('n')
+        ),
+        'other_item_identifier': utils.force_list(
+            value.get('o')
+        ),
+        'uniform_title': value.get('s'),
         'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'linkage': value.get('6'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -188,28 +188,28 @@ def original_language_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Translation of"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -223,46 +223,46 @@ def original_language_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -285,28 +285,28 @@ def translation_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Translated as"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -320,46 +320,46 @@ def translation_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -382,28 +382,28 @@ def supplement_special_issue_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Has supplement"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -417,46 +417,46 @@ def supplement_special_issue_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -479,28 +479,28 @@ def supplement_parent_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"0": "Parent", "8": "No display constant generated", "_": "Supplement to"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -514,46 +514,46 @@ def supplement_parent_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -576,30 +576,30 @@ def host_item_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "In"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        '3': 'materials_specified',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'q': 'enumeration_and_first_page',
-        'p': 'abbreviated_title',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'p': 'abbreviated_title',
+        'q': 'enumeration_and_first_page',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '3': 'materials_specified',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -613,48 +613,48 @@ def host_item_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
         'place_publisher_and_date_of_publication': value.get('d'),
-        'note': utils.force_list(
-            value.get('n')
-        ),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
         'related_parts': utils.force_list(
             value.get('g')
         ),
-        'materials_specified': value.get('3'),
-        'report_number': utils.force_list(
-            value.get('r')
-        ),
-        'main_entry_heading': value.get('a'),
+        'physical_description': value.get('h'),
         'relationship_information': utils.force_list(
             value.get('i')
         ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'enumeration_and_first_page': value.get('q'),
-        'abbreviated_title': value.get('p'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
-        'uniform_title': value.get('s'),
-        'edition': value.get('b'),
         'series_data_for_related_item': utils.force_list(
             value.get('k')
         ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'material_specific_details': value.get('m'),
+        'note': utils.force_list(
+            value.get('n')
+        ),
+        'other_item_identifier': utils.force_list(
+            value.get('o')
+        ),
+        'abbreviated_title': value.get('p'),
+        'enumeration_and_first_page': value.get('q'),
+        'report_number': utils.force_list(
+            value.get('r')
+        ),
+        'uniform_title': value.get('s'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'materials_specified': value.get('3'),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -677,28 +677,28 @@ def constituent_unit_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Constituent unit"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -712,46 +712,46 @@ def constituent_unit_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -774,30 +774,30 @@ def other_edition_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Other edition available"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
-        'e': 'language_code',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
         'a': 'main_entry_heading',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
-        'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
-        'w': 'record_control_number',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'e': 'language_code',
         'f': 'country_code',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'k': 'series_data_for_related_item',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -811,48 +811,48 @@ def other_edition_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'language_code': value.get('e'),
+        'country_code': value.get('f'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'language_code': value.get('e'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'main_entry_heading': value.get('a'),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
-        'country_code': value.get('f'),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -875,28 +875,28 @@ def additional_physical_form_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Available in another form"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -910,46 +910,46 @@ def additional_physical_form_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -972,25 +972,25 @@ def issued_with_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Issued with"}
     field_map = {
-        'm': 'material_specific_details',
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        's': 'uniform_title',
         'a': 'main_entry_heading',
+        'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
         'h': 'physical_description',
         'i': 'relationship_information',
-        'b': 'edition',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        's': 'uniform_title',
         't': 'title',
-        'x': 'international_standard_serial_number',
-        '6': 'linkage',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -1004,39 +1004,39 @@ def issued_with_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'material_specific_details': value.get('m'),
-        'place_publisher_and_date_of_publication': value.get('d'),
-        'note': utils.force_list(
-            value.get('n')
-        ),
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
         'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
+        'place_publisher_and_date_of_publication': value.get('d'),
         'related_parts': utils.force_list(
             value.get('g')
         ),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'uniform_title': value.get('s'),
-        'main_entry_heading': value.get('a'),
         'physical_description': value.get('h'),
         'relationship_information': utils.force_list(
             value.get('i')
         ),
-        'edition': value.get('b'),
         'series_data_for_related_item': utils.force_list(
             value.get('k')
         ),
-        'coden_designation': value.get('y'),
+        'material_specific_details': value.get('m'),
+        'note': utils.force_list(
+            value.get('n')
+        ),
+        'other_item_identifier': utils.force_list(
+            value.get('o')
+        ),
+        'uniform_title': value.get('s'),
         'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'linkage': value.get('6'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -1059,28 +1059,28 @@ def preceding_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"0": "Continues", "1": "Continues in part", "2": "Supersedes", "3": "Supersedes in part", "4": "Formed by the union of ... and ...", "5": "Absorbed", "6": "Absorbed in part", "7": "Separated from"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -1094,46 +1094,46 @@ def preceding_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -1156,28 +1156,28 @@ def succeeding_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"0": "Continued by", "1": "Continued in part by", "2": "Superseded by", "3": "Superseded in part by", "4": "Absorbed by", "5": "Absorbed in part by", "6": "Split into ... and ...", "7": "Merged with ... to form ...", "8": "Changed back to"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -1191,46 +1191,46 @@ def succeeding_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -1253,31 +1253,31 @@ def data_source_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Data source"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'j': 'period_of_content',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'p': 'abbreviated_title',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
+        'j': 'period_of_content',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
-        'w': 'record_control_number',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'p': 'abbreviated_title',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'v': 'source_contribution',
+        'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -1291,49 +1291,49 @@ def data_source_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
-        'place_publisher_and_date_of_publication': value.get('d'),
-        'note': utils.force_list(
-            value.get('n')
-        ),
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
         'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
+        'place_publisher_and_date_of_publication': value.get('d'),
         'related_parts': utils.force_list(
             value.get('g')
         ),
-        'period_of_content': value.get('j'),
-        'report_number': utils.force_list(
-            value.get('r')
-        ),
-        'main_entry_heading': value.get('a'),
+        'physical_description': value.get('h'),
         'relationship_information': utils.force_list(
             value.get('i')
         ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'abbreviated_title': value.get('p'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
-        'uniform_title': value.get('s'),
-        'edition': value.get('b'),
+        'period_of_content': value.get('j'),
         'series_data_for_related_item': utils.force_list(
             value.get('k')
         ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'material_specific_details': value.get('m'),
+        'note': utils.force_list(
+            value.get('n')
+        ),
+        'other_item_identifier': utils.force_list(
+            value.get('o')
+        ),
+        'abbreviated_title': value.get('p'),
+        'report_number': utils.force_list(
+            value.get('r')
+        ),
+        'uniform_title': value.get('s'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
+        'source_contribution': value.get('v'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
-        'source_contribution': value.get('v'),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
@@ -1356,28 +1356,28 @@ def other_relationship_entry(self, key, value):
     indicator_map1 = {"0": "Display note", "1": "Do not display note"}
     indicator_map2 = {"8": "No display constant generated", "_": "Related item"}
     field_map = {
-        'd': 'place_publisher_and_date_of_publication',
-        'n': 'note',
-        'c': 'qualifying_information',
-        '4': 'relationship_code',
-        'g': 'related_parts',
-        'r': 'report_number',
         'a': 'main_entry_heading',
-        'i': 'relationship_information',
-        'z': 'international_standard_book_number',
-        't': 'title',
-        'x': 'international_standard_serial_number',
-        'm': 'material_specific_details',
-        'u': 'standard_technical_report_number',
-        'o': 'other_item_identifier',
-        '7': 'control_subfield',
-        'h': 'physical_description',
-        's': 'uniform_title',
         'b': 'edition',
+        'c': 'qualifying_information',
+        'd': 'place_publisher_and_date_of_publication',
+        'g': 'related_parts',
+        'h': 'physical_description',
+        'i': 'relationship_information',
         'k': 'series_data_for_related_item',
-        'y': 'coden_designation',
-        '6': 'linkage',
+        'm': 'material_specific_details',
+        'n': 'note',
+        'o': 'other_item_identifier',
+        'r': 'report_number',
+        's': 'uniform_title',
+        't': 'title',
+        'u': 'standard_technical_report_number',
         'w': 'record_control_number',
+        'x': 'international_standard_serial_number',
+        'y': 'coden_designation',
+        'z': 'international_standard_book_number',
+        '4': 'relationship_code',
+        '6': 'linkage',
+        '7': 'control_subfield',
         '8': 'field_link_and_sequence_number',
     }
 
@@ -1391,46 +1391,46 @@ def other_relationship_entry(self, key, value):
 
     record_dict = {
         '__order__': order if len(order) else None,
+        'main_entry_heading': value.get('a'),
+        'edition': value.get('b'),
+        'qualifying_information': value.get('c'),
         'place_publisher_and_date_of_publication': value.get('d'),
+        'related_parts': utils.force_list(
+            value.get('g')
+        ),
+        'physical_description': value.get('h'),
+        'relationship_information': utils.force_list(
+            value.get('i')
+        ),
+        'series_data_for_related_item': utils.force_list(
+            value.get('k')
+        ),
+        'material_specific_details': value.get('m'),
         'note': utils.force_list(
             value.get('n')
         ),
-        'qualifying_information': value.get('c'),
-        'relationship_code': utils.force_list(
-            value.get('4')
-        ),
-        'related_parts': utils.force_list(
-            value.get('g')
+        'other_item_identifier': utils.force_list(
+            value.get('o')
         ),
         'report_number': utils.force_list(
             value.get('r')
         ),
-        'main_entry_heading': value.get('a'),
-        'relationship_information': utils.force_list(
-            value.get('i')
-        ),
-        'international_standard_book_number': utils.force_list(
-            value.get('z')
-        ),
-        'title': value.get('t'),
-        'international_standard_serial_number': value.get('x'),
-        'material_specific_details': value.get('m'),
-        'standard_technical_report_number': value.get('u'),
-        'other_item_identifier': utils.force_list(
-            value.get('o')
-        ),
-        'control_subfield': value.get('7'),
-        'physical_description': value.get('h'),
         'uniform_title': value.get('s'),
-        'edition': value.get('b'),
-        'series_data_for_related_item': utils.force_list(
-            value.get('k')
-        ),
-        'coden_designation': value.get('y'),
-        'linkage': value.get('6'),
+        'title': value.get('t'),
+        'standard_technical_report_number': value.get('u'),
         'record_control_number': utils.force_list(
             value.get('w')
         ),
+        'international_standard_serial_number': value.get('x'),
+        'coden_designation': value.get('y'),
+        'international_standard_book_number': utils.force_list(
+            value.get('z')
+        ),
+        'relationship_code': utils.force_list(
+            value.get('4')
+        ),
+        'linkage': value.get('6'),
+        'control_subfield': value.get('7'),
         'field_link_and_sequence_number': utils.force_list(
             value.get('8')
         ),
