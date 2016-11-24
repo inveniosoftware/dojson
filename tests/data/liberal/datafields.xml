@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <collection xmlns="http://www.loc.gov/MARC21/slim">
   <record>
+    <controlfield tag="000">00634nam  2200181#  4500</controlfield>
     <controlfield tag="001">136</controlfield>
     <controlfield tag="005">20160203181958.0</controlfield>
     <controlfield tag="008">030529s1993\\\\ne\a\\\\\b\\\\101\0\eng\d</controlfield>
@@ -12,6 +13,11 @@
       <subfield code="a">fr</subfield>
       <subfield code="a">it</subfield>
       <subfield code="2">iso639-1</subfield>
+    </datafield>
+    <datafield tag="049" ind1=" " ind2=" ">
+      <subfield code="a">asr</subfield>
+      <subfield code="a">isst</subfield>
+      <subfield code="2">iso639-2</subfield>
     </datafield>
     <datafield tag="141" ind1=" " ind2=" ">
       <subfield code="a">IFIP International Workshop on Protocols for High Speed Networks</subfield>

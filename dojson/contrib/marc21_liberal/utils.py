@@ -19,25 +19,32 @@ def marc21_liberal_handler(exc, output, key, value):
         if key != '__order__':
             field = key[:3]
 
-            # Convert value from GroupableOrderedDict for mutability
-            value = dict(value)
+            # Is it a datafield (i.e. do we have subfields)?
+            if isinstance(value, GroupableOrderedDict):
+                # Convert value from GroupableOrderedDict for mutability
+                value = dict(value)
+                # Convert '__order__' to list for mutability
+                value['__order__'] = list(value['__order__'])
 
-            # Convert '__order__' to list for mutability
-            value['__order__'] = list(value['__order__'])
-            if key[3] != '_':
-                value['$ind1'] = key[3]
-                value['__order__'].append('$ind1')
-            if key[4] != '_':
-                value['$ind2'] = key[4]
-                value['__order__'].append('$ind2')
+                # Do we have indicators?
+                if key[3] != '_':
+                    value['$ind1'] = key[3]
+                    value['__order__'].append('$ind1')
+                if key[4] != '_':
+                    value['$ind2'] = key[4]
+                    value['__order__'].append('$ind2')
 
-            value = GroupableOrderedDict(value)
+                value = GroupableOrderedDict(value)
 
-            # Rewrite the record's '__order__' to remove indicators
-            output['__order__'] = [field if elem == key else elem
-                                   for elem in output['__order__']]
+                # Rewrite the record's '__order__' to remove indicators
+                output['__order__'] = [field if elem == key else elem
+                                       for elem in output['__order__']]
 
-            output[field] = value
+            # Treat all custom fields as repeatable
+            if field in output:
+                output[field].append(value)
+            else:
+                output[field] = [value]
         else:
             pass
     else:
