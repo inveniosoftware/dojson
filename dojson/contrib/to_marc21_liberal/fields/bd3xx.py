@@ -507,7 +507,7 @@ def reverse_geospatial_reference_data(self, key, value):
         '$ind2': '7' if 'geospatial_reference_method' in value and
         not indicator_map2.get(value.get('geospatial_reference_method')) and
         value.get('geospatial_reference_method') == value.get('reference_method_used') and
-        field_map.get('geospatial_reference_method') in order
+        field_map.get('reference_method_used') in order
         else indicator_map2.get(value.get('geospatial_reference_method'), value.get('geospatial_reference_method', '_')),
     }
 
@@ -1333,7 +1333,7 @@ def reverse_associated_language(self, key, value):
         '$ind2': '7' if 'source_of_code' in value and
         not indicator_map2.get(value.get('source_of_code')) and
         value.get('source_of_code') == value.get('source') and
-        field_map.get('source_of_code') in order
+        field_map.get('source') in order
         else indicator_map2.get(value.get('source_of_code'), value.get('source_of_code', '_')),
     }
 

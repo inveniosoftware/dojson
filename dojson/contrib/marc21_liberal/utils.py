@@ -9,6 +9,8 @@
 
 """MARC 21 liberal utils."""
 
+import re
+
 from dojson.errors import MissingRule
 from dojson.utils import GroupableOrderedDict
 
@@ -16,7 +18,11 @@ from dojson.utils import GroupableOrderedDict
 def marc21_liberal_handler(exc, output, key, value):
     """When a key cannot be translated, simply use the number instead."""
     if exc.__class__ is MissingRule:
-        if key != '__order__':
+
+        datafield_pattern = re.compile('^\d{3}[\d\w_]{0,2}$')
+        if datafield_pattern.match(key):
+
+            key = "{0:_<5}".format(key)
             field = key[:3]
 
             # Is it a datafield (i.e. do we have subfields)?

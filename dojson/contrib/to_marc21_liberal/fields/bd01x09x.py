@@ -1830,7 +1830,7 @@ def reverse_subject_category_code(self, key, value):
         '$ind2': '7' if 'code_source' in value and
         not indicator_map2.get(value.get('code_source')) and
         value.get('code_source') == value.get('source') and
-        field_map.get('code_source') in order
+        field_map.get('source') in order
         else indicator_map2.get(value.get('code_source'), value.get('code_source', '_')),
     }
 

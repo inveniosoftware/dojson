@@ -61,7 +61,7 @@ def reverse_established_heading_linking_entry_medium_of_performance_term(self, k
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -132,7 +132,7 @@ def reverse_subdivision_linking_entry_general_subdivision(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -203,7 +203,7 @@ def reverse_subdivision_linking_entry_geographic_subdivision(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -274,7 +274,7 @@ def reverse_subdivision_linking_entry_chronological_subdivision(self, key, value
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -345,7 +345,7 @@ def reverse_subdivision_linking_entry_form_subdivision(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -397,7 +397,7 @@ def reverse_complex_linking_entry_data(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 

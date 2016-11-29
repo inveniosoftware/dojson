@@ -124,7 +124,7 @@ def reverse_subject_added_entry_personal_name(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -242,7 +242,7 @@ def reverse_subject_added_entry_corporate_name(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -352,7 +352,7 @@ def reverse_subject_added_entry_meeting_name(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -460,7 +460,7 @@ def reverse_subject_added_entry_uniform_title(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -521,7 +521,7 @@ def reverse_subject_added_entry_chronological_term(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -601,7 +601,7 @@ def reverse_subject_added_entry_topical_term(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -674,7 +674,7 @@ def reverse_subject_added_entry_geographic_name(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_heading_or_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_heading_or_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
@@ -853,7 +853,7 @@ def reverse_index_term_genre_form(self, key, value):
         '$ind2': '7' if 'thesaurus' in value and
         not indicator_map2.get(value.get('thesaurus')) and
         value.get('thesaurus') == value.get('source_of_term') and
-        field_map.get('thesaurus') in order
+        field_map.get('source_of_term') in order
         else indicator_map2.get(value.get('thesaurus'), value.get('thesaurus', '_')),
     }
 
