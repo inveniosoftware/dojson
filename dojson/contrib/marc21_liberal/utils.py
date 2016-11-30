@@ -78,6 +78,6 @@ def liberal_map_order(field_map, value, indicators=None):
     for k in order:
         if k in field_map:
             returnlist.append(field_map[k])
-        elif k not in indicators + ['$ind1', '$ind2']:
+        elif len(k) == 1:
             returnlist.append(k)
     return returnlist
