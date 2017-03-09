@@ -1025,9 +1025,6 @@
                             "type": "string"
                         }
                     },
-                    "source_of_code": {
-                        "type": "string"
-                    },
                     "linkage": {
                         "type": "string"
                     },
@@ -1245,9 +1242,6 @@
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "source_of_code": {
-                        "type": "string"
                     }
                 }
             }
@@ -1272,9 +1266,6 @@
                         "items": {
                             "type": "string"
                         }
-                    },
-                    "source_of_code": {
-                        "type": "string"
                     },
                     "soloist": {
                         "type": "array",

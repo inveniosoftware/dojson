@@ -166,9 +166,6 @@
                     "materials_specified": {
                         "type": "string"
                     },
-                    "access_method": {
-                        "type": "string"
-                    },
                     "linkage": {
                         "type": "string"
                     },
