@@ -1,6 +1,14 @@
 Changes
 =======
 
+Version 1.3.1 (released 2017-03-14):
+------------------------------------
+
+Bug fixes
+~~~~~~~~~
+
+- Removes duplicate fields in MARC 21 JSON Schemas (closes #189).
+
 Version 1.3.0 (released 2017-02-14):
 ------------------------------------
 
