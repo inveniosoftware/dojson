@@ -129,7 +129,9 @@ class Overdo(object):
         if ignore_missing:
             handlers.setdefault(MissingRule, clean_missing)
 
-        output = {}
+        output = {
+            "__original_blob__": blob,
+        }
 
         if self.index is None:
             self.build()
@@ -161,6 +163,7 @@ class Overdo(object):
                 else:
                     raise
 
+        del output["__original_blob__"]
         return output
 
     def missing(self, blob):
