@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "properties": {
+        "leader": {
+            "description": "Leader",
+            "type": "object",
+            "properties": {
+                "record_length": {
+                    "type": "integer"
+                },
+                "record_status": {
+                    "type": "string"
+                },
+                "type_of_record": {
+                    "type": "string"
+                },
+                "bibliographic_level": {
+                    "type": "string"
+                },
+                "type_of_control": {
+                    "type": "string"
+                },
+                "character_coding_scheme": {
+                    "type": "string"
+                },
+                "indicator_count": {
+                    "type": "integer"
+                },
+                "subfield_code_count": {
+                    "type": "integer"
+                },
+                "base_address_of_data": {
+                    "type": "integer"
+                },
+                "encoding_level": {
+                    "type": "string"
+                },
+                "descriptive_cataloging_form": {
+                    "type": "string"
+                },
+                "multipart_resource_record_level": {
+                    "type": "string"
+                },
+                "length_of_the_length_of_field_portion": {
+                    "type": "integer"
+                },
+                "length_of_the_starting_character_position_portion": {
+                    "type": "integer"
+                },
+                "length_of_the_implementation_defined_portion": {
+                    "type": "integer"
+                },
+                "undefined": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

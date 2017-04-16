@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "properties": {
+        "complex_see_reference_subject": {
+            "description": "Complex See Reference-Subject",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "heading_referred_to": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authority_record_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "explanatory_text": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "complex_see_also_reference_subject": {
+            "description": "Complex See Also Reference-Subject",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "heading_referred_to": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authority_record_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "explanatory_text": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

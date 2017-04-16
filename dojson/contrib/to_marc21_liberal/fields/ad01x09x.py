@@ -11,11 +11,11 @@
 
 from dojson import utils
 
-from ..model import to_marc21_authority
+from ..model import to_marc21_liberal_authority
 from ..utils import extend_liberal_marc
 
 
-@to_marc21_authority.over('010', '^library_of_congress_control_number$')
+@to_marc21_liberal_authority.over('010', '^library_of_congress_control_number$')
 @utils.filter_values
 def reverse_library_of_congress_control_number(self, key, value):
     """Reverse - Library of Congress Control Number."""
@@ -42,8 +42,7 @@ def reverse_library_of_congress_control_number(self, key, value):
     return json_dict
 
 
-@to_marc21_authority.over(
-    '014', '^link_to_bibliographic_record_for_serial_or_multipart_item$')
+@to_marc21_liberal_authority.over('014', '^link_to_bibliographic_record_for_serial_or_multipart_item$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_link_to_bibliographic_record_for_serial_or_multipart_item(self,
@@ -57,7 +56,7 @@ def reverse_link_to_bibliographic_record_for_serial_or_multipart_item(self,
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('control_number_of_related_bibliographic_record'),
         '8': utils.reverse_force_list(
@@ -67,10 +66,11 @@ def reverse_link_to_bibliographic_record_for_serial_or_multipart_item(self,
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over(
-    '016', '^national_bibliographic_agency_control_number$')
+@to_marc21_liberal_authority.over('016', '^national_bibliographic_agency_control_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_bibliographic_agency_control_number(self, key, value):
@@ -83,7 +83,7 @@ def reverse_national_bibliographic_agency_control_number(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('record_control_number'),
         '8': utils.reverse_force_list(
@@ -97,9 +97,11 @@ def reverse_national_bibliographic_agency_control_number(self, key, value):
             'national_bibliographic_agency') == value.get('source') else '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('020', '^international_standard_book_number$')
+@to_marc21_liberal_authority.over('020', '^international_standard_book_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_international_standard_book_number(self, key, value):
@@ -114,7 +116,7 @@ def reverse_international_standard_book_number(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('international_standard_book_number'),
         'c': value.get('terms_of_availability'),
@@ -131,9 +133,11 @@ def reverse_international_standard_book_number(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('022', '^international_standard_serial_number$')
+@to_marc21_liberal_authority.over('022', '^international_standard_serial_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_international_standard_serial_number(self, key, value):
@@ -149,7 +153,7 @@ def reverse_international_standard_serial_number(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('international_standard_serial_number'),
         'm': utils.reverse_force_list(
@@ -169,9 +173,11 @@ def reverse_international_standard_serial_number(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('024', '^other_standard_identifier$')
+@to_marc21_liberal_authority.over('024', '^other_standard_identifier$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_standard_identifier(self, key, value):
@@ -189,7 +195,7 @@ def reverse_other_standard_identifier(self, key, value):
     order = utils.map_order(field_map, value)
 
     indicator_map1 = {'Unspecified type of standard number or code': '8'}
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('standard_number_or_code'),
         'c': value.get('terms_of_availability'),
@@ -206,16 +212,16 @@ def reverse_other_standard_identifier(self, key, value):
         'z': utils.reverse_force_list(
             value.get('canceled_invalid_standard_number_or_code')
         ),
-        '$ind1': '7' if value.get('type_of_standard_number_or_code') and
-        value.get('type_of_standard_number_or_code') == value.get(
-            'source_of_number_or_code')
+        '$ind1': '7' if value.get('type_of_standard_number_or_code') == value.get('source_of_number_or_code')
         else indicator_map1.get(
             value.get('type_of_standard_number_or_code'), '_'),
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('031', '^musical_incipits_information$')
+@to_marc21_liberal_authority.over('031', '^musical_incipits_information$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_musical_incipits_information(self, key, value):
@@ -244,7 +250,7 @@ def reverse_musical_incipits_information(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('number_of_work'),
         'c': value.get('number_of_excerpt'),
@@ -285,9 +291,11 @@ def reverse_musical_incipits_information(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('034', '^coded_cartographic_mathematical_data$')
+@to_marc21_liberal_authority.over('034', '^coded_cartographic_mathematical_data$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_coded_cartographic_mathematical_data(self, key, value):
@@ -318,7 +326,7 @@ def reverse_coded_cartographic_mathematical_data(self, key, value):
 
     indicator_map2 = {'Exclusion ring': '1',
                       'Not applicable': '_', 'Outer ring': '0'}
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'x': value.get('beginning_date'),
         'z': value.get('name_of_extraterrestrial_body'),
@@ -351,9 +359,11 @@ def reverse_coded_cartographic_mathematical_data(self, key, value):
         '$ind1': '_',
         '$ind2': indicator_map2.get(value.get('type_of_ring'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('035', '^system_control_number$')
+@to_marc21_liberal_authority.over('035', '^system_control_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_system_control_number(self, key, value):
@@ -366,7 +376,7 @@ def reverse_system_control_number(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('system_control_number'),
         '8': utils.reverse_force_list(
@@ -379,9 +389,11 @@ def reverse_system_control_number(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('040', '^cataloging_source$')
+@to_marc21_liberal_authority.over('040', '^cataloging_source$')
 @utils.filter_values
 def reverse_cataloging_source(self, key, value):
     """Reverse - Cataloging Source."""
@@ -397,7 +409,7 @@ def reverse_cataloging_source(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('original_cataloging_agency'),
         'c': value.get('transcribing_agency'),
@@ -416,9 +428,11 @@ def reverse_cataloging_source(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('042', '^authentication_code$')
+@to_marc21_liberal_authority.over('042', '^authentication_code$')
 @utils.filter_values
 def reverse_authentication_code(self, key, value):
     """Reverse - Authentication Code."""
@@ -427,7 +441,7 @@ def reverse_authentication_code(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('authentication_code')
@@ -435,9 +449,11 @@ def reverse_authentication_code(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('043', '^geographic_area_code$')
+@to_marc21_liberal_authority.over('043', '^geographic_area_code$')
 @utils.filter_values
 def reverse_geographic_area_code(self, key, value):
     """Reverse - Geographic Area Code."""
@@ -452,7 +468,7 @@ def reverse_geographic_area_code(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('geographic_area_code')
@@ -476,9 +492,11 @@ def reverse_geographic_area_code(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('045', '^time_period_of_heading$')
+@to_marc21_liberal_authority.over('045', '^time_period_of_heading$')
 @utils.filter_values
 def reverse_time_period_of_heading(self, key, value):
     """Reverse - Time Period of Heading."""
@@ -497,7 +515,7 @@ def reverse_time_period_of_heading(self, key, value):
         'Multiple single dates/times': '1',
         'Range of dates/times': '2'
     }
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('time_period_code')
@@ -516,9 +534,11 @@ def reverse_time_period_of_heading(self, key, value):
             value.get('type_of_time_period_in_subfield_b_or_c'), '_'),
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('046', '^special_coded_dates$')
+@to_marc21_liberal_authority.over('046', '^special_coded_dates$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_special_coded_dates(self, key, value):
@@ -542,7 +562,7 @@ def reverse_special_coded_dates(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'g': value.get('death_date'),
         'f': value.get('birth_date'),
@@ -568,9 +588,11 @@ def reverse_special_coded_dates(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('050', '^library_of_congress_call_number$')
+@to_marc21_liberal_authority.over('050', '^library_of_congress_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_library_of_congress_call_number(self, key, value):
@@ -589,7 +611,7 @@ def reverse_library_of_congress_call_number(self, key, value):
         'Assigned by LC': '0',
         'Assigned by agency other than LC': '4',
     }
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number'),
         'b': value.get('item_number'),
@@ -604,9 +626,11 @@ def reverse_library_of_congress_call_number(self, key, value):
         '$ind1': '_',
         '$ind2': indicator_map2.get(value.get('source_of_call_number'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('052', '^geographic_classification$')
+@to_marc21_liberal_authority.over('052', '^geographic_classification$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_geographic_classification(self, key, value):
@@ -630,7 +654,7 @@ def reverse_geographic_classification(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('geographic_classification_area_code'),
         'b': utils.reverse_force_list(
@@ -647,9 +671,11 @@ def reverse_geographic_classification(self, key, value):
         '$ind1': indicator_map1.get(value.get('code_source'), '7'),
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('053', '^lc_classification_number$')
+@to_marc21_liberal_authority.over('053', '^lc_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_lc_classification_number(self, key, value):
@@ -668,7 +694,7 @@ def reverse_lc_classification_number(self, key, value):
         'Assigned by LC': '0',
         'Assigned by agency other than LC': '4',
     }
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get(
             'classification_number_element_single_number_or_beginning_number_of_span'),
@@ -685,9 +711,11 @@ def reverse_lc_classification_number(self, key, value):
         '$ind2': indicator_map2.get(
             value.get('source_of_classification_number'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('055', '^library_and_archives_canada_call_number$')
+@to_marc21_liberal_authority.over('055', '^library_and_archives_canada_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_library_and_archives_canada_call_number(self, key, value):
@@ -706,7 +734,7 @@ def reverse_library_and_archives_canada_call_number(self, key, value):
         'Assigned by LAC': '0',
         'Assigned by agency other than LAC': '4',
     }
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number'),
         'b': value.get('item_number'),
@@ -721,9 +749,11 @@ def reverse_library_and_archives_canada_call_number(self, key, value):
         '$ind1': '_',
         '$ind2': indicator_map2.get(value.get('source_of_call_number'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('060', '^national_library_of_medicine_call_number$')
+@to_marc21_liberal_authority.over('060', '^national_library_of_medicine_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_library_of_medicine_call_number(self, key, value):
@@ -742,7 +772,7 @@ def reverse_national_library_of_medicine_call_number(self, key, value):
         'Assigned by NLM': '0',
         'Assigned by agency other than NLM': '4',
     }
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number'),
         'b': value.get('item_number'),
@@ -757,9 +787,11 @@ def reverse_national_library_of_medicine_call_number(self, key, value):
         '$ind1': '_',
         '$ind2': indicator_map2.get(value.get('source_of_call_number'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('065', '^other_classification_number$')
+@to_marc21_liberal_authority.over('065', '^other_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_other_classification_number(self, key, value):
@@ -775,7 +807,7 @@ def reverse_other_classification_number(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number_element_single_number_or_beginning_of_span'),
         'c': value.get('explanatory_term'),
@@ -791,9 +823,11 @@ def reverse_other_classification_number(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('066', '^character_sets_present$')
+@to_marc21_liberal_authority.over('066', '^character_sets_present$')
 @utils.filter_values
 def reverse_character_sets_present(self, key, value):
     """Reverse - Character Sets Present."""
@@ -804,7 +838,7 @@ def reverse_character_sets_present(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('primary_g0_character_set'),
         'c': utils.reverse_force_list(
@@ -814,9 +848,11 @@ def reverse_character_sets_present(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('070', '^national_agricultural_library_call_number$')
+@to_marc21_liberal_authority.over('070', '^national_agricultural_library_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_national_agricultural_library_call_number(self, key, value):
@@ -830,7 +866,7 @@ def reverse_national_agricultural_library_call_number(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number'),
         '8': utils.reverse_force_list(
@@ -842,9 +878,11 @@ def reverse_national_agricultural_library_call_number(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('072', '^subject_category_code$')
+@to_marc21_liberal_authority.over('072', '^subject_category_code$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_subject_category_code(self, key, value):
@@ -863,7 +901,7 @@ def reverse_subject_category_code(self, key, value):
         'NAL subject category code list': '0',
         'Source specified in subfield $2': '7',
     }
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('subject_category_code'),
         '8': utils.reverse_force_list(
@@ -879,9 +917,11 @@ def reverse_subject_category_code(self, key, value):
         '$ind2': '7' if value.get('code_source') not in indicator_map2
                  else indicator_map2.get(value.get('code_source'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('073', '^subdivision_usage$')
+@to_marc21_liberal_authority.over('073', '^subdivision_usage$')
 @utils.filter_values
 def reverse_subdivision_usage(self, key, value):
     """Reverse - Subdivision Usage."""
@@ -893,7 +933,7 @@ def reverse_subdivision_usage(self, key, value):
     }
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': utils.reverse_force_list(
             value.get('subdivision_usage')
@@ -906,9 +946,11 @@ def reverse_subdivision_usage(self, key, value):
         '$ind1': '_',
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('080', '^universal_decimal_classification_number$')
+@to_marc21_liberal_authority.over('080', '^universal_decimal_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_universal_decimal_classification_number(self, key, value):
@@ -928,7 +970,7 @@ def reverse_universal_decimal_classification_number(self, key, value):
         'Full': '0',
         'Abridged': '1',
     }
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('universal_decimal_classification_number'),
         'b': value.get('item_number'),
@@ -943,9 +985,11 @@ def reverse_universal_decimal_classification_number(self, key, value):
         '$ind1': indicator_map1.get(value.get('type_of_edition'), '_'),
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('082', '^dewey_decimal_call_number$')
+@to_marc21_liberal_authority.over('082', '^dewey_decimal_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dewey_decimal_call_number(self, key, value):
@@ -966,7 +1010,7 @@ def reverse_dewey_decimal_call_number(self, key, value):
     indicator_map2 = {'Assigned by LC': '0',
                       'Assigned by agency other than LC': '4',
                       'No information provided': '_'}
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number'),
         'b': value.get('item_number'),
@@ -979,14 +1023,15 @@ def reverse_dewey_decimal_call_number(self, key, value):
         '8': utils.reverse_force_list(
             value.get('field_link_and_sequence_number')
         ),
-        '$ind1': '7' if value.get('type_of_edition') and
-        value.get('type_of_edition') == value.get('edition_number')
+        '$ind1': '7' if value.get('type_of_edition') == value.get('edition_number')
                  else indicator_map1.get(value.get('type_of_edition'), '_'),
         '$ind2': indicator_map2.get(value.get('source_of_call_number'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('083', '^dewey_decimal_classification_number$')
+@to_marc21_liberal_authority.over('083', '^dewey_decimal_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_dewey_decimal_classification_number(self, key, value):
@@ -1008,7 +1053,7 @@ def reverse_dewey_decimal_classification_number(self, key, value):
                       'Other edition specified in subfield $2': '7'}
     indicator_map2 = {'Assigned by LC': '0',
                       'Assigned by agency other than LC': '4'}
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number_element_single_number_or_beginning_number_of_span'),
         'c': value.get('explanatory_term'),
@@ -1026,15 +1071,16 @@ def reverse_dewey_decimal_classification_number(self, key, value):
             value.get('field_link_and_sequence_number')
         ),
         'z': value.get('table_identification_table_number'),
-        '$ind1': '7' if value.get('type_of_edition') and
-        value.get('type_of_edition') == value.get('edition_number')
+        '$ind1': '7' if value.get('type_of_edition') == value.get('edition_number')
                  else indicator_map1.get(value.get('type_of_edition'), '_'),
         '$ind2': indicator_map2.get(
             value.get('source_of_classification_number'), '_'),
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('086', '^government_document_call_number$')
+@to_marc21_liberal_authority.over('086', '^government_document_call_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_government_document_call_number(self, key, value):
@@ -1058,7 +1104,7 @@ def reverse_government_document_call_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('call_number'),
         'd': value.get('volumes_dates_to_which_call_number_applies'),
@@ -1076,9 +1122,11 @@ def reverse_government_document_call_number(self, key, value):
         '$ind1': indicator_map1.get(value.get('number_source'), '_'),
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict
 
 
-@to_marc21_authority.over('087', '^government_document_classification_number$')
+@to_marc21_liberal_authority.over('087', '^government_document_classification_number$')
 @utils.reverse_for_each_value
 @utils.filter_values
 def reverse_government_document_classification_number(self, key, value):
@@ -1101,7 +1149,7 @@ def reverse_government_document_classification_number(self, key, value):
 
     order = utils.map_order(field_map, value)
 
-    return {
+    json_dict = {
         '__order__': tuple(order) if len(order) else None,
         'a': value.get('classification_number_element_single_number_of_beginning_number_of_span'),
         'c': value.get('explanatory_information'),
@@ -1114,3 +1162,5 @@ def reverse_government_document_classification_number(self, key, value):
         '$ind1': indicator_map1.get(value.get('number_source'), '_'),
         '$ind2': '_',
     }
+    extend_liberal_marc(field_map, value, json_dict)
+    return json_dict

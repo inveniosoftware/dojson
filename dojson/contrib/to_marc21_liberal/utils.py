@@ -14,7 +14,7 @@ from lxml import etree
 from lxml.builder import ElementMaker
 
 from dojson._compat import iteritems, string_types
-from dojson.utils import GroupableOrderedDict
+from dojson.utils import GroupableOrderedDict, reverse_force_list
 
 MARC21_DTD = pkg_resources.resource_filename(
     'dojson.contrib.marc21', 'MARC21slim.dtd')
@@ -82,8 +82,6 @@ def dumps_etree(records, xslt_filename=None, prefix=None):
                             items = tuple()
 
                         for code, value in items:
-                            if isinstance(value, int):
-                                value = str(value)
                             if not isinstance(value, string_types):
                                 for v in value:
                                     datafield.append(E.subfield(v, code=code))
@@ -118,3 +116,15 @@ def dumps(records, xslt_filename=None, **kwargs):
         encoding='UTF-8',
         **kwargs
     )
+
+def extend_liberal_marc(field_map, value, json_dict):
+    if not json_dict['__order__']:
+        json_dict['__order__'] = []
+    json_dict['__order__'] = list(json_dict['__order__'])
+    for subkey, subval in value.iteritems():
+        if not field_map.get(subkey) and len(subkey) == 1:
+            # We don't accept anything but one character keys
+            # because we don't want to enter indicators twice
+            # (also because there shouldn't be any from liberal mode)
+            json_dict[subkey] = reverse_force_list(subval)
+            json_dict['__order__'].append(subkey)

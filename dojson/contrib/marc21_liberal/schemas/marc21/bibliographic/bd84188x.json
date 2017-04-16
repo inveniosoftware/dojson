@@ -1,0 +1,421 @@
+{
+    "type": "object",
+    "properties": {
+        "holding_institution": {
+            "description": "Holding Institution",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "holding_institution": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "location": {
+            "description": "Location",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "shelving_scheme": {
+                        "type": "string"
+                    },
+                    "shelving_order": {
+                        "enum": ["No information provided", "Primary enumeration", "Not enumeration", "Alternative enumeration"]
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "source_of_classification_or_shelving_scheme": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "sequence_number": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "shelving_location": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "sublocation_or_collection": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "address": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "former_shelving_location": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "non_coded_location_qualifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "coded_location_qualifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "item_part": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "classification_part": {
+                        "type": "string"
+                    },
+                    "call_number_prefix": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "shelving_control_number": {
+                        "type": "string"
+                    },
+                    "call_number_suffix": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "shelving_form_of_title": {
+                        "type": "string"
+                    },
+                    "country_code": {
+                        "type": "string"
+                    },
+                    "piece_physical_condition": {
+                        "type": "string"
+                    },
+                    "piece_designation": {
+                        "type": "string"
+                    },
+                    "copyright_article_fee_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "copy_number": {
+                        "type": "string"
+                    },
+                    "nonpublic_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "public_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "electronic_location_and_access": {
+            "description": "Electronic Location and Access",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "relationship": {
+                        "enum": ["Version of resource", "No information provided", "Resource", "Related resource", "No display constant generated"]
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "access_method": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "host_name": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "compression_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "access_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "path": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "electronic_name": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "instruction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "processor_of_request": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "bits_per_second": {
+                        "type": "string"
+                    },
+                    "contact_for_access_assistance": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "logon": {
+                        "type": "string"
+                    },
+                    "operating_system": {
+                        "type": "string"
+                    },
+                    "name_of_location_of_host": {
+                        "type": "string"
+                    },
+                    "electronic_format_type": {
+                        "type": "string"
+                    },
+                    "port": {
+                        "type": "string"
+                    },
+                    "file_size": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "settings": {
+                        "type": "string"
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "terminal_emulation": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "record_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "hours_access_method_available": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "link_text": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "nonpublic_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "public_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "replacement_record_information": {
+            "description": "Replacement Record Information",
+            "properties": {
+                "replacement_title": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "explanatory_text": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "replacement_bibliographic_record_control_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "machine_generated_metadata_provenance": {
+            "description": "Machine-generated Metadata Provenance",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "method_of_machine_assignment": {
+                        "enum": ["Fully machine-generated", "No information provided/not applicable", "Partially machine-generated"]
+                    },
+                    "generation_process": {
+                        "type": "string"
+                    },
+                    "confidence_value": {
+                        "type": "string"
+                    },
+                    "generation_date": {
+                        "type": "string"
+                    },
+                    "generation_agency": {
+                        "type": "string"
+                    },
+                    "authority_record_control_number_or_standard_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "string"
+                    },
+                    "bibliographic_record_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "validity_end_date": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "description_conversion_information": {
+            "description": "Description Conversion Information",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "conversion_process": {
+                        "type": "string"
+                    },
+                    "conversion_date": {
+                        "type": "string"
+                    },
+                    "identifier_of_source_metadata": {
+                        "type": "string"
+                    },
+                    "conversion_agency": {
+                        "type": "string"
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "non_marc_information_field": {
+            "description": "Non-MARC Information Field",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "content_of_non_marc_field": {
+                        "type": "string"
+                    },
+                    "source_of_data": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

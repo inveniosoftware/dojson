@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "allOf": [
+        {"$ref": "hd00x.json"},
+        {"$ref": "hd0xx.json"},
+        {"$ref": "hd3xx5xx84x.json"},
+        {"$ref": "hd85xhd88x.json"}
+    ]
+}

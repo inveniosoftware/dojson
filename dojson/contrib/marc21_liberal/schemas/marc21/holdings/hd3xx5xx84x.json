@@ -1,0 +1,650 @@
+{
+    "type": "object",
+    "properties": {
+        "media_type": {
+            "description": "Media Type",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "media_type_term": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "media_type_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authority_record_control_number_or_standard_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "carrier_type": {
+            "description": "Carrier Type",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "carrier_type_term": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "carrier_type_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authority_record_control_number_or_standard_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "restrictions_on_access_note": {
+            "description": "Restrictions on Access Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "terms_governing_access": {
+                        "type": "string"
+                    },
+                    "physical_access_provisions": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "jurisdiction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authorization": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authorized_users": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "standardized_terminology_for_access_restriction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "source_of_term": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "system_details_note": {
+            "description": "System Details Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "system_details_note": {
+                        "type": "string"
+                    },
+                    "display_text": {
+                        "type": "string"
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "immediate_source_of_acquisition_note": {
+            "description": "Immediate Source of Acquisition Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "source_of_acquisition": {
+                        "type": "string"
+                    },
+                    "method_of_acquisition": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "accession_number": {
+                        "type": "string"
+                    },
+                    "date_of_acquisition": {
+                        "type": "string"
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "purchase_price": {
+                        "type": "string"
+                    },
+                    "type_of_unit": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "extent": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "ownership_and_custodial_history": {
+            "description": "Ownership and Custodial History",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "privacy": {
+                        "enum": ["Not private", "No information provided", "Private"]
+                    },
+                    "history": {
+                        "type": "string"
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "copy_and_version_identification_note": {
+            "description": "Copy and Version Identification Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "identifying_markings": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "version_identification": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "copy_identification": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "number_of_copies": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "presentation_format": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "binding_information": {
+            "description": "Binding Information",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "binding_note": {
+                        "type": "string"
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "action_note": {
+            "description": "Action Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "type": "string"
+                    },
+                    "nonpublic_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "time_date_of_action": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "action_identification": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "contingency_for_action": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "action_interval": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authorization": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "method_of_action": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "jurisdiction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "action_agent": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "site_of_action": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "status": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "type_of_unit": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "extent": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "source_of_term": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "public_note": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "holdings_coded_data_values": {
+            "description": "Holdings Coded Data Values",
+            "properties": {
+                "type_of_record": {
+                    "type": "string"
+                },
+                "fixed_length_data_elements": {
+                    "type": "string"
+                },
+                "encoding_level": {
+                    "type": "string"
+                }
+            }
+        },
+        "textual_physical_form_designator": {
+            "description": "Textual Physical Form Designator",
+            "properties": {
+                "textual_physical_form_designator": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "reproduction_note": {
+            "description": "Reproduction Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type_of_reproduction": {
+                        "type": "string"
+                    },
+                    "agency_responsible_for_reproduction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "place_of_reproduction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "physical_description_of_reproduction": {
+                        "type": "string"
+                    },
+                    "date_of_reproduction": {
+                        "type": "string"
+                    },
+                    "series_statement_of_reproduction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "dates_of_publication_and_or_sequential_designation_of_issues_reproduced": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "note_about_reproduction": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "fixed_length_data_elements_of_reproduction": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "name_of_unit": {
+            "description": "Name of Unit",
+            "properties": {
+                "name_of_unit": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "terms_governing_use_and_reproduction_note": {
+            "description": "Terms Governing Use and Reproduction Note",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "terms_governing_use_and_reproduction": {
+                        "type": "string"
+                    },
+                    "authorization": {
+                        "type": "string"
+                    },
+                    "jurisdiction": {
+                        "type": "string"
+                    },
+                    "authorized_users": {
+                        "type": "string"
+                    },
+                    "materials_specified": {
+                        "type": "string"
+                    },
+                    "institution_to_which_field_applies": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "uniform_resource_identifier": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,379 @@
+{
+    "type": "object",
+    "properties": {
+        "library_of_congress_control_number": {
+            "description": "Library of Congress Control Number",
+            "properties": {
+                "lc_control_number": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "nucmc_control_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "canceled_or_invalid_lc_control_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "linkage_number": {
+            "description": "Linkage Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "linkage_number": {
+                        "type": "string"
+                    },
+                    "source_of_number": {
+                        "type": "string"
+                    },
+                    "canceled_or_invalid_linkage_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "national_bibliographic_agency_control_number": {
+            "description": "National Bibliographic Agency Control Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "record_control_number": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "canceled_or_invalid_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "copyright_or_legal_deposit_number": {
+            "description": "Copyright or Legal Deposit Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "copyright_or_legal_deposit_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "assigning_agency": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "string"
+                    },
+                    "display_text": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_copyright_or_legal_deposit_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "international_standard_book_number": {
+            "description": "International Standard Book Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "international_standard_book_number": {
+                        "type": "string"
+                    },
+                    "terms_of_availability": {
+                        "type": "string"
+                    },
+                    "qualifying_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_isbn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "international_standard_serial_number": {
+            "description": "International Standard Serial Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "international_standard_serial_number": {
+                        "type": "string"
+                    },
+                    "canceled_issn_l": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "issn_l": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "incorrect_issn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_issn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "other_standard_identifier": {
+            "description": "Other Standard Identifier",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type_of_standard_number_or_code": {
+                        "type": "string"
+                    },
+                    "difference_indicator": {
+                        "enum": ["No difference", "Difference", "No information provided"]
+                    },
+                    "standard_number_or_code": {
+                        "type": "string"
+                    },
+                    "terms_of_availability": {
+                        "type": "string"
+                    },
+                    "additional_codes_following_the_standard_number_or_code": {
+                        "type": "string"
+                    },
+                    "qualifying_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "source_of_number_or_code": {
+                        "type": "string"
+                    },
+                    "linkage": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_standard_number_or_code": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "standard_technical_report_number": {
+            "description": "Standard Technical Report Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "standard_technical_report_number": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_invalid_strn": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "qualifying_information": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "coden_designation": {
+            "description": "CODEN Designation",
+            "properties": {
+                "coden": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "canceled_invalid_coden": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                }
+            }
+        },
+        "system_control_number": {
+            "description": "System Control Number",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "system_control_number": {
+                        "type": "string"
+                    },
+                    "field_link_and_sequence_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "canceled_or_invalid_control_number": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "linkage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "record_source": {
+            "description": "Record Source",
+            "properties": {
+                "original_cataloging_agency": {
+                    "type": "string"
+                },
+                "transcribing_agency": {
+                    "type": "string"
+                },
+                "language_of_cataloging": {
+                    "type": "string"
+                },
+                "modifying_agency": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "linkage": {
+                    "type": "string"
+                },
+                "field_link_and_sequence_number": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "character_sets_present": {
+            "description": "Character Sets Present",
+            "properties": {
+                "primary_g0_character_set": {
+                    "type": "string"
+                },
+                "alternate_g0_or_g1_character_set": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "primary_g1_character_set": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "allOf": [
+        {"$ref": "ad00x.json"},
+        {"$ref": "ad01x09x.json"},
+        {"$ref": "ad1xx3xx.json"},
+        {"$ref": "ad260360.json"},
+        {"$ref": "ad4xx.json"},
+        {"$ref": "ad5xx.json"},
+        {"$ref": "ad64x.json"},
+        {"$ref": "ad663666.json"},
+        {"$ref": "ad66768x.json"},
+        {"$ref": "ad7xx.json"},
+        {"$ref": "ad8xx.json"}
+    ]
+}
