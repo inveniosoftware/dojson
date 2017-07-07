@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of DoJSON
-# Copyright (C) 2015, 2016 CERN.
+# Copyright (C) 2015, 2016, 2017 CERN.
 #
 # DoJSON is free software; you can redistribute it and/or
 # modify it under the terms of the Revised BSD License; see LICENSE
@@ -180,7 +180,7 @@ class GroupableOrderedDict(OrderedDict):
         values = args[0]
 
         if values:
-            if isinstance(values, GroupableOrderedDict):
+            if isinstance(values, cls):
                 values = values.iteritems(with_order=False, repeated=True)
             elif isinstance(values, dict):
                 if '__order__' in values:
@@ -214,7 +214,7 @@ class GroupableOrderedDict(OrderedDict):
                         ordering.append(key)
                 elif isinstance(value, dict):
                     if '__order__' in value:
-                        value = GroupableOrderedDict(value)
+                        value = cls(value)
                     v.append(value)
                     ordering.append(key)
                 else:
@@ -246,16 +246,16 @@ class GroupableOrderedDict(OrderedDict):
         """
 
     def __copy__(self):
-        """A copy of D."""
-        return GroupableOrderedDict(self)
+        """Copy of D."""
+        return self.__class__(self)
 
     def __deepcopy__(self, memo=None):
-        """A copy of D."""
+        """Copy of D."""
         return self.__copy__()
 
     def __reduce__(self):
-        """Helper for pickle."""
-        return GroupableOrderedDict, (dict(self.items()), )
+        """Pickle helper."""
+        return self.__class__, (dict(self.items()), )
 
     def __eq__(self, other):
         """Comparison help."""
