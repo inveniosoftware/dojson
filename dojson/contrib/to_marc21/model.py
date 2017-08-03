@@ -9,7 +9,6 @@
 
 """To MARC 21 model definition."""
 
-import warnings
 from collections import MutableMapping, MutableSequence
 from operator import itemgetter
 
@@ -17,8 +16,6 @@ from dojson import Overdo
 from dojson._compat import iteritems
 from dojson.errors import IgnoreKey, MissingRule
 from dojson.utils import GroupableOrderedDict
-
-warnings.warn('MARC21 undo feature is experimental')
 
 
 class Underdo(Overdo):
