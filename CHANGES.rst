@@ -1,6 +1,11 @@
 Changes
 =======
 
+Version 1.3.2 (released 2017-08-07):
+------------------------------------
+
+- Removes experimental warning from MARC21 Undo feature.
+
 Version 1.3.1 (released 2017-03-14):
 ------------------------------------
 

@@ -1,8 +1,8 @@
 ===============
- DoJSON v1.3.1
+ DoJSON v1.3.2
 ===============
 
-DoJSON v1.3.1 was released on March 14, 2017.
+DoJSON v1.3.2 was released on August 7, 2017.
 
 About
 -----
@@ -12,17 +12,17 @@ DoJSON is a simple Pythonic JSON to JSON converter.
 Bug fixes
 ---------
 
-- Removes duplicate fields in MARC 21 JSON Schemas (closes #189).
+- Removes experimental warning from MARC21 Undo feature.
 
 Installation
 ------------
 
-   $ pip install dojson==1.3.1
+   $ pip install dojson==1.3.2
 
 Documentation
 -------------
 
-   http://dojson.readthedocs.io/en/v1.3.1
+   http://dojson.readthedocs.io/en/v1.3.2
 
 Happy hacking and thanks for flying DoJSON.
 
