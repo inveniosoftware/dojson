@@ -75,7 +75,7 @@ def create_record(marcxml, correct=False, keep_singletons=True):
         fields = []
         subfield_iterator = datafield.iter(tag='{*}subfield')
         for subfield in subfield_iterator:
-            code = subfield.attrib.get('code', '!')  # .encode("UTF-8")
+            code = subfield.attrib.get('code', '!').lower()  # .encode("UTF-8")
             text = subfield.text or ''
             if text or keep_singletons:
                 fields.append((code, text))
