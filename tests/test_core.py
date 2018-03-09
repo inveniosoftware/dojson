@@ -484,6 +484,18 @@ def test_marc21_856_indicators():
         assert blob == back_blob, name
 
 
+def test_marc21_create_record_ignores_subfield_code_case():
+    record = '''
+        <datafield tag="100" ind1=" " ind2=" ">
+            <subfield code="A">Smith, John</subfield>
+        </datafield>
+        '''
+
+    blob = create_record(record)
+
+    assert blob['100__']['a'] == 'Smith, John'
+
+
 def test_leader():
     """Test XML parser for <leader/>."""
     from dojson.contrib.marc21.utils import create_record
