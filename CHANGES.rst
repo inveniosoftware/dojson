@@ -1,6 +1,12 @@
 Changes
 =======
 
+Version 1.4.0 (released 2018-03-12):
+------------------------------------
+
+- Changes subfield codes to be case-insensitive by always forcing subfield
+  codes to be lowercase.
+
 Version 1.3.2 (released 2017-08-07):
 ------------------------------------
 
