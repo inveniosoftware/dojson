@@ -63,7 +63,7 @@ class Overdo(object):
     """Translation index."""
 
     def __init__(self, bases=None, entry_point_group=None):
-        """Constructor."""
+        """Initialize."""
         self.rules = []
         if bases:
             for base in bases:

@@ -337,7 +337,7 @@ class GroupableOrderedDict(OrderedDict):
                         .format(self.__class__.__name__))
 
     def __iter__(self):
-        """Iterator."""
+        """Iterate."""
         occurences = Counter()
         order = self['__order__']
         yield '__order__'

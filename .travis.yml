@@ -16,13 +16,14 @@ env:
   - REQUIREMENTS=release
 
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
   - "pypy"
 
 matrix:
   allow_failures:
+    - python: 3.8
     - python: pypy
 
 before_install:
@@ -52,4 +53,4 @@ deploy:
   distributions: "sdist bdist_wheel"
   on:
     tags: true
-    python: "2.7"
+  skip_existing: true

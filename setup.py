@@ -23,11 +23,10 @@ with open(os.path.join('dojson', 'version.py'), 'rt') as f:
 
 tests_require = [
     'check-manifest>=0.25',
-    'coverage>=4.0',
     'coverage>=4.0.0',
     'isort>=4.2.2',
     'jsonschema>=2.5.1',
-    'mock>=1.0.0',
+    'mock>=1.3.0',
     'pydocstyle>=1.0.0',
     'pytest-cache>=1.0',
     'pytest-cov>=2.1.0',
@@ -50,8 +49,8 @@ for name, reqs in extras_require.items():
     extras_require['all'].extend(reqs)
 
 install_requires = [
-    'click>=5.0.0',
-    'lxml>=3.4',
+    'click>=6.1.0',
+    'lxml>=4.1.1',
     'simplejson>=3.8.1',
 ]
 
@@ -79,11 +78,9 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Development Status :: 4 - Beta',
     ],
