@@ -1,12 +1,10 @@
 Changes
 =======
 
-Version 1.4.1 (released to-be-determined)
------------------------------------------
+Version 1.4.1 (released 2020-05-06):
+------------------------------------
 
-- Removed support for Python 2.
-- Removed support for Python 3.4, 3.5.
-- Added support for Python 3.6, 3.7, 3.8.
+- Deprecated Python versions lower than 3.6.0. Now supporting 3.6.0 and 3.7.0.
 
 Version 1.4.0 (released 2018-03-12):
 ------------------------------------
