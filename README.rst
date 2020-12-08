@@ -4,8 +4,8 @@
 
 .. currentmodule:: dojson
 
-.. image:: https://img.shields.io/travis/inveniosoftware/dojson.svg
-        :target: https://travis-ci.org/inveniosoftware/dojson
+.. image:: https://github.com/inveniosoftware/dojson/workflows/CI/badge.svg
+        :target: https://github.com/inveniosoftware/dojson/actions
 
 .. image:: https://img.shields.io/coveralls/inveniosoftware/dojson.svg
         :target: https://coveralls.io/r/inveniosoftware/dojson
