@@ -126,7 +126,6 @@ html_theme_options = {
     'github_button': False,
     'github_banner': True,
     'show_powered_by': False,
-    'travis_button': True,
     'codecov_button': True,
     'extra_nav_links': {
         'DoJSON@GitHub': 'http://github.com/inveniosoftware/dojson',

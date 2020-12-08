@@ -11,7 +11,6 @@ include *.yml
 include .coveragerc
 include .editorconfig
 include .lgtm
-include .travis.yml
 include .dockerignore
 include docs/requirements.txt
 include Dockerfile
@@ -27,3 +26,4 @@ recursive-include dojson *.json
 recursive-include tests *.py
 recursive-include tests *.xml
 recursive-include tests *.xslt
+recursive-include .github/workflows *.yml
