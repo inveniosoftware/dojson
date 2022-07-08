@@ -9,7 +9,7 @@
 
 """To MARC 21 model definition."""
 
-from collections import MutableMapping, MutableSequence
+from collections.abc import MutableMapping, MutableSequence
 from operator import itemgetter
 
 from dojson import Overdo

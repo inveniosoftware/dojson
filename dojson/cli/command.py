@@ -69,6 +69,17 @@ def process_validate(schema):
     """Validate data using given JSON schema."""
     import jsonschema
 
+    def _customize_validator():
+        # jsonschema 3.x reworked how to customize types,
+        # the old way was removed in 4.x
+        type_checker = jsonschema.Draft4Validator.TYPE_CHECKER.redefine(
+            'array', lambda checker, instance: isinstance(instance, (list, tuple))
+        )
+        validator_cls = jsonschema.validators.extend(
+            jsonschema.Draft4Validator, type_checker=type_checker
+        )
+        return validator_cls
+
     schema_dir = os.path.dirname(os.path.abspath(schema))
     schema_name = os.path.basename(schema)
 
@@ -78,9 +89,8 @@ def process_validate(schema):
     resolver = jsonschema.RefResolver(
         'file://' + '/'.join(os.path.split(schema_dir)) + '/', schema_name
     )
-    validator = jsonschema.Draft4Validator(
-        schema_json, resolver=resolver, types=(('array', (list, tuple)), )
-    )
+    validator_cls = _customize_validator()
+    validator = validator_cls(schema_json, resolver=resolver)
 
     def processor(iterator):
         for item in iterator:

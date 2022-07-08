@@ -121,7 +121,7 @@ def cli(**kwargs):
     """Command line interface."""
 
 
-@cli.resultcallback()
+@cli.result_callback()
 def process_pipeline(processors, source, load, dump):
     """Call data processors."""
     def loader(iterator):
