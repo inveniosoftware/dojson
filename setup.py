@@ -22,7 +22,7 @@ with open(os.path.join('dojson', 'version.py'), 'rt') as f:
     ).group('version')
 
 tests_require = [
-    'jsonschema>=2.5.1',
+    'jsonschema>=3.0',
     'mock>=1.3.0',
     'pytest-invenio>=1.4.0',
 ]
@@ -42,7 +42,7 @@ for name, reqs in extras_require.items():
     extras_require['all'].extend(reqs)
 
 install_requires = [
-    'click>=7',
+    'click>=8.1',
     'lxml>=4.1.1',
     'simplejson>=3.8.1',
 ]
