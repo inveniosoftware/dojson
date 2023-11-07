@@ -98,7 +98,7 @@ def test_groupable_ordered_dict_eq(god):
 
     # switching the comparisons to use __eq__.
     assert god == expected
-    assert not(god != expected)
+    assert not (god != expected)
 
 
 def test_groupable_ordered_dict_copy(god):
