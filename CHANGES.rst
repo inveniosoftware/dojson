@@ -1,6 +1,16 @@
 Changes
 =======
 
+Version 1.5.0 (released 2023-11-08):
+------------------------------------
+
+- migrate CI to gh-actions
+- make custom type checks compatible with jsonschema >= 4.0
+- fix the use of deleted deprecated function of click >=8.1
+- fix python imports of MutableMapping and MutableSequence
+- fix tests not able to import MARC21slimUtils.xsl from remote
+- move python support to 3.8 and 3.9
+
 Version 1.4.1 (released 2020-05-06):
 ------------------------------------
 
