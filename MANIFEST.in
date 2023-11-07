@@ -25,5 +25,6 @@ recursive-include dojson *.py
 recursive-include dojson *.json
 recursive-include tests *.py
 recursive-include tests *.xml
+recursive-include tests *.xsl
 recursive-include tests *.xslt
 recursive-include .github/workflows *.yml
