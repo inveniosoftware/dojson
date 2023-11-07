@@ -2,8 +2,6 @@
  DoJSON
 ========
 
-.. currentmodule:: dojson
-
 .. image:: https://github.com/inveniosoftware/dojson/workflows/CI/badge.svg
         :target: https://github.com/inveniosoftware/dojson/actions
 
