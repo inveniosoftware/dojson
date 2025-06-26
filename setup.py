@@ -22,6 +22,7 @@ with open(os.path.join('dojson', 'version.py'), 'rt') as f:
     ).group('version')
 
 tests_require = [
+    'importlib_metadata>=8.0.0',
     'jsonschema>=3.0',
     'mock>=1.3.0',
     'pytest-invenio>=1.4.0',

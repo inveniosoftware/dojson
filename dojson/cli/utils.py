@@ -12,18 +12,17 @@
 import traceback
 
 import click
-import pkg_resources
+
+from ..utils import entry_points
 
 
 def open_entry_point(group_name):
     """Open entry point."""
     def loader(dummy_ctx, param, value):
         """Load entry point from group name based on given value."""
-        entry_points = list(pkg_resources.iter_entry_points(
-            group_name, value
-        ))
-        assert len(entry_points) == 1
-        return entry_points[0].load()
+        eps = [ep for ep in entry_points(group=group_name) if ep.name == value]
+        assert len(eps) == 1
+        return eps[0].load()
     return loader
 
 
@@ -35,7 +34,7 @@ def with_plugins(group_name):
             raise TypeError(
                 'Plugins can only be attached to an instance of click.Group.'
             )
-        for entry_point in pkg_resources.iter_entry_points(group_name):
+        for entry_point in entry_points(group=group_name):
             try:
                 group.add_command(entry_point.load())
             except Exception:

@@ -9,15 +9,15 @@
 
 """Utilities for converting to MARC21."""
 
-import pkg_resources
+import importlib.resources
+
 from lxml import etree
 from lxml.builder import ElementMaker
 
 from dojson._compat import iteritems, string_types
 from dojson.utils import GroupableOrderedDict
 
-MARC21_DTD = pkg_resources.resource_filename(
-    'dojson.contrib.marc21', 'MARC21slim.dtd')
+MARC21_DTD = importlib.resources.files('dojson.contrib.marc21') / 'MARC21slim.dtd'
 """Location of the MARC21 DTD file"""
 
 MARC21_NS = "http://www.loc.gov/MARC21/slim"
