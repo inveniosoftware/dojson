@@ -12,9 +12,9 @@
 from __future__ import absolute_import
 
 import codecs
+import importlib.resources
 import os
 
-import pkg_resources
 import pytest
 import simplejson as json
 from click.testing import CliRunner
@@ -68,10 +68,7 @@ def test_xml_to_marc21_to_xml(file_name):
             'utf-8') as myfile:
         expect = myfile.read()
 
-    schema = pkg_resources.resource_filename(
-        'dojson.contrib.marc21.schemas',
-        'marc21/bibliographic/bd-v1.0.2.json'
-    )
+    schema = str(importlib.resources.files('dojson.contrib.marc21.schemas') / 'marc21/bibliographic/bd-v1.0.2.json')
 
     runner = CliRunner()
     result = runner.invoke(
@@ -111,10 +108,7 @@ def test_xml_to_marc21_authority_to_xml(file_name):
             'utf-8') as myfile:
         expect = myfile.read()
 
-    schema = pkg_resources.resource_filename(
-        'dojson.contrib.marc21.schemas',
-        'marc21/authority/ad-v1.0.2.json'
-    )
+    schema = str(importlib.resources.files('dojson.contrib.marc21.schemas') / 'marc21/authority/ad-v1.0.2.json')
 
     runner = CliRunner()
     result = runner.invoke(

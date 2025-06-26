@@ -9,10 +9,10 @@
 
 """Utilities for converting MARC21."""
 
+import importlib.resources
 import re
 from collections import Counter, OrderedDict
 
-import pkg_resources
 from lxml import etree
 
 from dojson._compat import StringIO, binary_type, iteritems, text_type
@@ -20,8 +20,8 @@ from dojson.utils import GroupableOrderedDict
 
 split_marc = re.compile('<record.*?>.*?</record>', re.DOTALL)
 
-MARC21_DTD = pkg_resources.resource_filename(
-    'dojson.contrib.marc21', 'MARC21slim.dtd')
+
+MARC21_DTD = importlib.resources.files('dojson.contrib.marc21') / 'MARC21slim.dtd'
 """Location of the MARC21 DTD file"""
 
 

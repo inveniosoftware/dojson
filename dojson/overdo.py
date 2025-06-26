@@ -11,11 +11,9 @@
 
 import re
 
-from pkg_resources import iter_entry_points
-
 from ._compat import iteritems, zip_longest
 from .errors import IgnoreKey, MissingRule
-from .utils import GroupableOrderedDict
+from .utils import GroupableOrderedDict, entry_points
 
 try:
     from _sre import MAXGROUPS
@@ -75,8 +73,7 @@ class Overdo(object):
     def _collect_entry_points(self):
         """Collect entry points."""
         if self.entry_point_group is not None:
-            for entry_point in iter_entry_points(
-                    group=self.entry_point_group, name=None):
+            for entry_point in entry_points(group=self.entry_point_group):
                 entry_point.load()
 
     def build(self):

@@ -11,7 +11,6 @@
 
 import os
 
-import pkg_resources
 import pytest
 from click.testing import CliRunner
 from lxml import etree
@@ -19,6 +18,7 @@ from lxml.etree import _Element
 
 from dojson.contrib.marc21.utils import load
 from dojson.contrib.to_marc21.utils import dumps, dumps_etree
+from dojson.utils import entry_points
 from test_core import RECORD_SIMPLE
 
 
@@ -47,9 +47,8 @@ def test_xslt_dump():
 
 def test_entry_points():
     """Test entry points."""
-    dump = list(pkg_resources.iter_entry_points(
-        'dojson.cli.dump', 'marcxml'
-    ))[0].load()
+    eps = [ep for ep in entry_points('dojson.cli.dump') if ep.name == 'marcxml']
+    dump = eps[0].load()
     path = os.path.dirname(__file__)
     with open("{0}/demo_marc21_to_dc.converted.xml".format(path)) as myfile:
         expect = myfile.read()

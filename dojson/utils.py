@@ -11,14 +11,29 @@
 
 import codecs
 import functools
+import importlib.metadata as m
 import itertools
 import warnings
 from collections import Counter, OrderedDict
+from sys import version_info
 
 import simplejson as json
 
 from ._compat import iteritems
 from .errors import IgnoreItem, IgnoreKey
+
+
+def entry_points(group):
+    """Entry points."""
+    # copy pasted from invenio-base
+    if version_info < (3, 10):
+        eps = m.entry_points()
+        if isinstance(eps, dict):
+            eps = eps.get(group, [])
+    else:
+        eps = m.entry_points(group=group)
+
+    return set(eps)
 
 
 def int_with_default(value, default):
