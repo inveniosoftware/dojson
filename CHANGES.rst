@@ -1,6 +1,12 @@
 Changes
 =======
 
+Version 1.6.0 (released 2025-07-02):
+------------------------------------
+
+- setup: change to reusable workflows
+- fix: pkg_resources DeprecationWarning
+
 Version 1.5.0 (released 2023-11-08):
 ------------------------------------
 
