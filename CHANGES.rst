@@ -1,6 +1,11 @@
 Changes
 =======
 
+Version v1.7.0 (released 2025-07-14)
+
+- chores: removed unused importlib-metadata from test dependencies
+- setup: remove unused action
+
 Version 1.6.0 (released 2025-07-02):
 ------------------------------------
 
