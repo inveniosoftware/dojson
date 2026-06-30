@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2016 CERN.
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""Utility function to manage CLI entry points"""
+"""Utility function to manage CLI entry points."""
 
 import traceback
 
