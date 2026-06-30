@@ -165,7 +165,7 @@ def map_order(field_map, value):
 
     .. versionadded:: 1.1.0
     """
-    if '__order__'in value:
+    if '__order__' in value:
         order = value['__order__']
     else:
         order = value.keys()

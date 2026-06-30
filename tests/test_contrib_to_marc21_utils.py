@@ -9,11 +9,11 @@ import pytest
 from click.testing import CliRunner
 from lxml import etree
 from lxml.etree import _Element
+from test_core import RECORD_SIMPLE
 
 from dojson.contrib.marc21.utils import load
 from dojson.contrib.to_marc21.utils import dumps, dumps_etree
 from dojson.utils import entry_points
-from test_core import RECORD_SIMPLE
 
 
 def test_xslt_not_found():
