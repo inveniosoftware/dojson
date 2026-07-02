@@ -1,7 +1,15 @@
 Changes
 =======
 
+Version v1.7.1 (released 2026-07-02)
+------------------------------------
+
+- chore(setup): migrate from setuptools to hatchling
+- chore(lint): fix pydocstyle and pycodestyle complaints
+- chore(licenses): update license headers to use SPDX
+
 Version v1.7.0 (released 2025-07-14)
+------------------------------------
 
 - chores: removed unused importlib-metadata from test dependencies
 - setup: remove unused action
